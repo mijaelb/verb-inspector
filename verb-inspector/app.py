@@ -18,7 +18,7 @@ class App(QWidget):
     
     def __init__(self):
         super().__init__()
-        self.title = 'Verb Inspector (Plot Points)'
+        self.title = 'Verb Inspector (Plot Points Inspector)'
         self.left = 10
         self.top = 10
         self.width = 320
