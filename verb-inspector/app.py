@@ -7,14 +7,14 @@ Created on Tue Dec  3 14:58:40 2019
 import sys
 import json
 import xml.etree.ElementTree as ET
-from PyQt5.QtWidgets import QApplication, QWidget, QPushButton
-from PyQt5.QtCore import pyqtSlot, Qt,QSize
+import PyQt5.QtWidgets as QtWidgets
+from PyQt5.QtCore import pyqtSlot, Qt, QSize
 from PyQt5.QtGui import QPalette, QColor, QIcon
 
 verbnet_json = 'verbnet.json'
 propbank_json = 'propbank.json'
 
-class App(QWidget):
+class App(QtWidgets.QWidget):
     
     def __init__(self):
         super().__init__()
@@ -27,19 +27,30 @@ class App(QWidget):
     
     def initUI(self):
         self.setWindowTitle(self.title)
+        self.setMinimumSize(600, 400)
         self.setGeometry(self.left, self.top, self.width, self.height)
-        
         self.initPalette()
-        
+       
         self.app_icon = QIcon()
         self.app_icon.addFile('gui/icons/32x32.png', QSize(32,32))
         self.setWindowIcon(self.app_icon)
         
-        self.reloadClassesButton = QPushButton('Reload vn classes', self)
+        self.list = QtWidgets.QListWidget()
+        self.layout = QtWidgets.QVBoxLayout()
+        for i in range(10):
+             self.list.addItem('Item %s' % (i + 1))
+        self.entry = QtWidgets.QLineEdit()
+        
+        
+        self.reloadClassesButton =  QtWidgets.QPushButton('Reload vn classes')
         self.reloadClassesButton.setToolTip('Reload verbnet corpora classes into a json file')
         self.reloadClassesButton.move(100,70)
         self.reloadClassesButton.clicked.connect(self.reloadClasses)
         
+        self.layout.addWidget(self.entry)
+        self.layout.addWidget(self.list)
+        self.layout.addWidget(self.reloadClassesButton)
+        self.setLayout(self.layout)
         self.show()
     
     def initPalette(self):
@@ -68,7 +79,7 @@ class App(QWidget):
         print('Reload Classes')
 
 if __name__ == '__main__':
-    app = QApplication(sys.argv)
+    app = QtWidgets.QApplication(sys.argv)
     ex = App()
     sys.exit(app.exec_())
     
