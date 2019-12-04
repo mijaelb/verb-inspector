@@ -1,0 +1,4577 @@
+absorb absorb-39.8 
+ingest absorb-39.8 devour-39.4 
+take devour-39.4 render-29.90 
+accept accept-77.1 obtain-13.5.2 
+buy get-13.5.1 
+understand accept-77.1 comprehend-87.2-1-1-1 
+encourage accept-77.1 promote-102 
+accompany accompany-51.7 
+conduct act-114 
+escort accompany-51.7 captain-29.8-1 
+guide accompany-51.7 
+lead compel-59.1 result-27.2 
+misdirect accompany-51.7 
+shepherd accompany-51.7 captain-29.8-1 
+steer accompany-51.7 
+accede acquiesce-95.1 
+bow assuming_position-50 modes_of_being_with_motion-47.3 spatial_configuration-47.6 
+capitulate acquiesce-95.1 
+defer acquiesce-95.1 
+fall die-42.4 escape-51.1-1 long-32.2-1 
+give_way acquiesce-95.1 
+give_in acquiesce-95.1 
+succumb acquiesce-95.1 
+yield acquiesce-95.1 future_having-13.3-1 
+acquiesce acquiesce-95.1-1 
+consent acquiesce-95.1-1 
+submit acquiesce-95.1-1 contribute-13.2-1-1 
+action act-114 
+carry_out act-114 
+carry_through act-114 
+execute murder-42.1 
+fulfill act-114 satisfy-55.7 
+make act-114 
+cause act-114 engender-27.1-1 result-27.2 
+engage_in act-114 
+do act-114-1 
+perform act-114-1 function-105.2.1-1 
+act masquerade-29.6-1 seem-109-1 
+move caused_calibratable_cos-45.6.2-1 roll-51.3.1 slide-11.2 
+addict addict-96 
+bias addict-96 
+dispose addict-96 
+incline addict-96 
+predispose addict-96 
+woo addict-96 
+slant addict-96 meander-47.7-1 
+adapt adjust-26.9 
+accommodate adjust-26.9 
+conform adjust-26.9 
+adjust adjust-26.9 
+gear adjust-26.9 
+fit adjust-26.9 fit-54.3 funnel-9.3-1 
+readjust adjust-26.9 
+readapt adjust-26.9 
+assimilate adjust-26.9 
+admire admire-31.2 
+adore admire-31.2 
+appreciate comprehend-87.2 
+applaud admire-31.2 
+bear support-15.3 
+bewail admire-31.2 
+cherish admire-31.2 
+deify admire-31.2 
+detest admire-31.2 
+esteem admire-31.2 consider-29.9-1 
+exalt admire-31.2 
+fancy admire-31.2 characterize-29.2 want-32.1 
+favor admire-31.2 
+grudge admire-31.2 
+idolize admire-31.2 
+miss admire-31.2 
+mistrust admire-31.2 
+prefer admire-31.2 want-32.1-1-1 
+affirm admire-31.2 conjecture-29.5 indicate-78-1-1 
+reaffirm admire-31.2 indicate-78-1-1 
+prize admire-31.2 
+respect admire-31.2 
+relish admire-31.2 
+revere admire-31.2 
+savor admire-31.2 sight-30.2 
+stand assuming_position-50 put_spatial-9.2-1 spatial_configuration-47.6-1 
+support admire-31.2 contiguous_location-47.8 support-15.3-1 
+tolerate admire-31.2 allow-64.1 
+treasure admire-31.2 
+trust admire-31.2 conjecture-29.5-1 
+value price-54.4 
+venerate admire-31.2 
+worship admire-31.2 
+abhor admire-31.2 
+deplore admire-31.2 
+distrust admire-31.2 
+dread admire-31.2 
+envy admire-31.2 
+execrate admire-31.2 
+lament admire-31.2 
+loathe admire-31.2 
+mourn admire-31.2 marvel-31.3 
+pity admire-31.2 
+resent admire-31.2 
+rue admire-31.2 
+believe admire-31.2 conjecture-29.5-1 
+suffer admire-31.2 marvel-31.3 
+despise admire-31.2-1 
+disdain admire-31.2-1 
+dislike admire-31.2-1 
+regret admire-31.2-1 
+like want-32.1-1-1 
+love admire-31.2-1 
+enjoy admire-31.2-1 
+fear admire-31.2-1 
+hate admire-31.2-1 
+allow admit-64.3 allow-64.1-1 future_having-13.3-1 
+let admit-64.3 let-64.2 
+hail characterize-29.2 judgment-33.1-1-1 
+admit confess-37.10 conjecture-29.5 
+include involve-107.1 
+permit admit-64.3-1 allow-64.1-1 
+receive obtain-13.5.2 
+welcome judgment-33.1-1 
+abide-by adopt-93 
+assume adopt-93 declare-29.4-1 
+adopt adopt-93 appoint-29.1 
+follow chase-51.6 comprehend-87.2-1 contiguous_location-47.8 occur-48.3-1 
+take_over adopt-93 
+take_on adopt-93 confront-98 
+alert advise-37.9 
+assure advise-37.9 promise-37.13 
+brief advise-37.9 
+educate advise-37.9 
+notify advise-37.9 tell-37.2 
+admonish advise-37.9-1 urge-58.1-1-1 
+advise advise-37.9-1 say-37.7-1-1 
+caution advise-37.9-1 
+counsel advise-37.9-1 
+instruct advise-37.9-1 
+warn advise-37.9-1 
+approve allow-64.1 judgment-33.1-1 
+authorize allow-64.1 order-58.3-1 
+endorse allow-64.1 
+okay allow-64.1 
+sanction allow-64.1 
+intermarry amalgamate-22.2 
+couple amalgamate-22.2-1 harmonize-22.6 
+incorporate amalgamate-22.2-1 amalgamate-22.2-2 
+integrate amalgamate-22.2-1 amalgamate-22.2-2 
+match harmonize-22.6 
+overlap amalgamate-22.2-1 
+amalgamate amalgamate-22.2-1-1 mix-22.1-1-1 
+coalesce amalgamate-22.2-1-1 amalgamate-22.2-2-1 appear-48.1.1 mix-22.1-1-1 
+consolidate amalgamate-22.2-1-1 amalgamate-22.2-2-1 mix-22.1-1 
+intermingle amalgamate-22.2-1-1 amalgamate-22.2-2-1 
+conjoin amalgamate-22.2-2 
+entangle amalgamate-22.2-2 fill-9.8-1 
+muddle amalgamate-22.2-2 amuse-31.1 
+pair amalgamate-22.2-2 harmonize-22.6 mix-22.1-2-1 shake-22.3-2 
+team amalgamate-22.2-2 
+affiliate amalgamate-22.2-2 
+associate amalgamate-22.2-2 
+compare amalgamate-22.2-2 
+confederate amalgamate-22.2-2 
+confuse amalgamate-22.2-2 
+total amalgamate-22.2-2 register-54.1-1-1 
+identity amalgamate-22.2-2 
+alternate amalgamate-22.2-2-1 harmonize-22.6 
+crisscross amalgamate-22.2-2-1 meander-47.7-1 
+entwine amalgamate-22.2-2-1 
+interchange amalgamate-22.2-2-1 
+interconnect amalgamate-22.2-2-1 
+interlace amalgamate-22.2-2-1 fill-9.8 
+interlink amalgamate-22.2-2-1 
+interlock amalgamate-22.2-2-1 
+intersperse amalgamate-22.2-2-1 fill-9.8 
+intertwine amalgamate-22.2-2-1 
+interweave amalgamate-22.2-2-1 fill-9.8 
+mate amalgamate-22.2-2-1 
+unite amalgamate-22.2-2-1 mix-22.1-2-1 
+coincide amalgamate-22.2-2-1 
+conflate amalgamate-22.2-2-1 remedy-45.7-1 
+contrast amalgamate-22.2-2-1 
+correlate amalgamate-22.2-2-1 correlate-86.1 
+harmonize amalgamate-22.2-2-1 harmonize-22.6 
+interrelate amalgamate-22.2-2-1 
+repackage amalgamate-22.2-2-1 
+rhyme amalgamate-22.2-2-1 harmonize-22.6 
+unify amalgamate-22.2-2-1 
+oppose amalgamate-22.2-3 
+introduce amalgamate-22.2-3-1 establish-55.5-1 
+figure amalgamate-22.2-3-1 rely-70 
+marry amalgamate-22.2-3-1-1 marry-36.2 
+remarry amalgamate-22.2-3-1-1 
+wed amalgamate-22.2-3-1-1 
+engage amuse-31.1 
+abash amuse-31.1 
+affect amuse-31.1 
+afflict amuse-31.1 
+affront amuse-31.1 
+aggravate amuse-31.1 
+aggrieve amuse-31.1 
+agitate amuse-31.1 
+agonize amuse-31.1 marvel-31.3 
+alarm amuse-31.1 
+alienate amuse-31.1 
+amaze amuse-31.1 
+amuse amuse-31.1 
+anger amuse-31.1 marvel-31.3 
+annoy amuse-31.1 bully-59.5 
+antagonize amuse-31.1 
+appall amuse-31.1 
+appease amuse-31.1 
+arouse engender-27.1-1 
+assuage amuse-31.1 
+astonish amuse-31.1 
+astound amuse-31.1 
+awe amuse-31.1 
+baffle amuse-31.1 
+befuddle amuse-31.1 
+beguile amuse-31.1 
+bewilder amuse-31.1 
+bewitch amuse-31.1 lure-59.3 
+boggle amuse-31.1 
+bore amuse-31.1 carve-21.2-2 rummage-35.5 
+bother marvel-31.3 
+browbeat amuse-31.1 
+bug amuse-31.1 
+calm amuse-31.1 
+captivate amuse-31.1 
+chagrin amuse-31.1 
+charm amuse-31.1 
+cheer amuse-31.1 
+chill amuse-31.1 
+cloy amuse-31.1 
+comfort amuse-31.1 
+concern relate-86.2-1 
+confound amuse-31.1 
+console amuse-31.1 
+content amuse-31.1 
+convince amuse-31.1 compel-59.1 
+cow amuse-31.1 
+crush break-45.1 carve-21.2-1 
+cut amuse-31.1 braid-41.2.2 cut-21.1-1 hurt-40.8.3-2 split-23.2 
+daunt amuse-31.1 
+daze amuse-31.1 
+dazzle amuse-31.1 
+deject amuse-31.1 
+delight amuse-31.1 marvel-31.3 
+demolish destroy-44 
+demoralize amuse-31.1 
+depress amuse-31.1 
+devastate destroy-44 
+disappoint amuse-31.1 
+disarm deprive-10.6.2 
+discombobulate amuse-31.1 
+discomfit amuse-31.1 
+disconcert amuse-31.1 
+discompose amuse-31.1 
+discourage amuse-31.1 
+disgrace amuse-31.1 
+disgruntle amuse-31.1 
+disgust amuse-31.1 
+dishearten amuse-31.1 
+dishonour amuse-31.1 
+disillusion amuse-31.1 
+dismay amuse-31.1 
+dispirit amuse-31.1 
+displease amuse-31.1 
+disquiet amuse-31.1 
+dissatisfy amuse-31.1 
+distract amuse-31.1 
+distress amuse-31.1 
+disturb amuse-31.1 
+divert amuse-31.1 
+dumbfound amuse-31.1 
+elate amuse-31.1 
+electrify amuse-31.1 
+embarrass amuse-31.1 
+embolden amuse-31.1 
+enchant amuse-31.1 
+enervate amuse-31.1 
+enflame amuse-31.1 
+engross amuse-31.1 
+enlighten amuse-31.1 
+enliven amuse-31.1 
+enrage amuse-31.1 
+enrapture amuse-31.1 
+entertain amuse-31.1 
+enthrall amuse-31.1 
+enthuse amuse-31.1 marvel-31.3 
+entice amuse-31.1 lure-59.3 
+entrance amuse-31.1 
+exasperate amuse-31.1 
+excite amuse-31.1 
+exhaust amuse-31.1 
+exhilarate amuse-31.1 
+fascinate amuse-31.1 
+fatigue amuse-31.1 
+faze amuse-31.1 
+flabbergast amuse-31.1 
+flatter amuse-31.1 lure-59.3 
+floor amuse-31.1 
+flummox amuse-31.1 
+fluster amuse-31.1 
+fox amuse-31.1 trick-59.2 
+frighten amuse-31.1 bully-59.5 
+frustrate amuse-31.1 
+fuddle amuse-31.1 
+gall amuse-31.1 
+galvanize amuse-31.1 
+gladden amuse-31.1 marvel-31.3 other_cos-45.4 
+gratify amuse-31.1 
+grieve amuse-31.1 marvel-31.3 
+harass amuse-31.1 bully-59.5 
+harm amuse-31.1 
+haunt amuse-31.1 
+hearten amuse-31.1 
+horrify amuse-31.1 
+humble amuse-31.1 
+humiliate amuse-31.1 
+hurt hurt-40.8.3-2 marvel-31.3 pain-40.8.1 
+hypnotize amuse-31.1 
+impair amuse-31.1 
+impress amuse-31.1 
+incense amuse-31.1 
+inflame amuse-31.1 
+infuriate amuse-31.1 
+inspire amuse-31.1 engender-27.1-1 
+insult amuse-31.1 judgment-33.1-1 
+interest amuse-31.1 
+intimidate amuse-31.1 
+intoxicate amuse-31.1 
+intrigue amuse-31.1 
+invigorate amuse-31.1 
+irk amuse-31.1 
+irritate amuse-31.1 
+jade amuse-31.1 
+jar amuse-31.1 appeal-31.4-2 pocket-9.10 
+jollify amuse-31.1 
+jolt stimulate-59.4 
+kill murder-42.1-1 spend_time-104 subjugate-42.3 
+lull amuse-31.1 subjugate-42.3 
+madden amuse-31.1 marvel-31.3 
+menace amuse-31.1 
+mesmerize amuse-31.1 
+miff amuse-31.1 
+misguide amuse-31.1 
+molest amuse-31.1 
+mollify amuse-31.1 
+mortify amuse-31.1 
+mystify amuse-31.1 
+nauseate amuse-31.1 
+nettle amuse-31.1 
+nonplus amuse-31.1 
+numb amuse-31.1 
+obsess amuse-31.1 marvel-31.3 
+occupy amuse-31.1 
+offend amuse-31.1 
+outrage amuse-31.1 
+overawe amuse-31.1 
+overwhelm amuse-31.1 
+pacify amuse-31.1 
+pain amuse-31.1 pain-40.8.1 
+peeve amuse-31.1 
+perplex amuse-31.1 
+perturb amuse-31.1 
+pester amuse-31.1 
+pique amuse-31.1 
+placate amuse-31.1 
+plague amuse-31.1 
+please amuse-31.1 
+preoccupy amuse-31.1 
+provoke engender-27.1-1 
+puzzle amuse-31.1 
+quench amuse-31.1 subjugate-42.3 
+rag amuse-31.1 
+rankle amuse-31.1 
+ravish amuse-31.1 
+reassure amuse-31.1 
+recharge amuse-31.1 
+refresh amuse-31.1 
+rejuvenate amuse-31.1 
+relax amuse-31.1 
+relieve amuse-31.1 free-10.6.3-1-1 free-80-1-1 
+repel amuse-31.1 
+repulse amuse-31.1 
+revitalize amuse-31.1 
+revolt amuse-31.1 
+rile amuse-31.1 
+ruffle amuse-31.1 
+sadden amuse-31.1 marvel-31.3 
+satisfy amuse-31.1 satisfy-55.7 
+scandalize amuse-31.1 
+scare amuse-31.1 
+shake body_internal_states-40.6 crane-40.3.2 funnel-9.3-1-1 knead-26.5 modes_of_being_with_motion-47.3 shake-22.3-2 
+shame amuse-31.1 bully-59.5 judgment-33.1-1 
+shock amuse-31.1 bully-59.5 
+sicken amuse-31.1 change_bodily_state-40.8.4 marvel-31.3 other_cos-45.4 
+sober amuse-31.1 other_cos-45.4 
+solace amuse-31.1 
+soothe amuse-31.1 lure-59.3 
+spellbind amuse-31.1 
+spook amuse-31.1 
+stagger run-51.3.2 
+startle amuse-31.1 
+stimulate amuse-31.1 engender-27.1-1 stimulate-59.4 
+sting hurt-40.8.3-1 tingle-40.8.2 touch-20-1 
+stir modes_of_being_with_motion-47.3 
+strike amuse-31.1 attack-60.1-1 bump-18.4-1 hit-18.1-1 sound_emission-43.2 
+stump amuse-31.1 
+stun amuse-31.1 
+stupefy amuse-31.1 
+surprise amuse-31.1 
+tantalize amuse-31.1 
+tempt amuse-31.1 
+terrify amuse-31.1 bully-59.5 
+terrorize amuse-31.1 
+threaten amuse-31.1 
+thrill amuse-31.1 marvel-31.3 
+throw throw-17.1-1-1 
+tickle tingle-40.8.2 touch-20-1 
+tire other_cos-45.4 
+titillate amuse-31.1 
+torment amuse-31.1 
+torture amuse-31.1 
+touch touch-20-1 
+transfix amuse-31.1 
+transport send-11.1 
+trouble amuse-31.1 
+try try-61.1 
+unnerve amuse-31.1 
+unsettle amuse-31.1 
+uplift amuse-31.1 
+upset amuse-31.1 
+vex amuse-31.1 
+weary amuse-31.1 marvel-31.3 
+worry amuse-31.1 care-88.1-1 marvel-31.3 
+wound amuse-31.1 
+wow amuse-31.1 
+roil amuse-31.1 entity_specific_modes_being-47.2 modes_of_being_with_motion-47.3 
+smite hit-18.1 
+baa animal_sounds-38 
+bark animal_sounds-38 hurt-40.8.3-2 manner_speaking-37.3 
+bay animal_sounds-38 
+bellow animal_sounds-38 manner_speaking-37.3 sound_emission-43.2 
+blat animal_sounds-38 sound_emission-43.2 
+bleat animal_sounds-38 manner_speaking-37.3 
+bray animal_sounds-38 manner_speaking-37.3 
+buzz animal_sounds-38 bulge-47.5.3 sound_emission-43.2 
+cackle animal_sounds-38 manner_speaking-37.3 nonverbal_expression-40.2 
+call dub-29.3 get-13.5.1 
+caw animal_sounds-38 
+chatter animal_sounds-38 sound_emission-43.2 
+cheep animal_sounds-38 
+chirp animal_sounds-38 manner_speaking-37.3 
+chirrup animal_sounds-38 
+chitter animal_sounds-38 sound_emission-43.2 
+cluck animal_sounds-38 manner_speaking-37.3 
+coo animal_sounds-38 manner_speaking-37.3 
+croak break_down-45.8 die-42.4-1 disfunction-105.2.2 
+crow manner_speaking-37.3 
+cuckoo animal_sounds-38 
+drone animal_sounds-38 manner_speaking-37.3 sound_emission-43.2 
+gobble animal_sounds-38 gobble-39.3-1 
+growl animal_sounds-38 manner_speaking-37.3 nonverbal_expression-40.2 sound_emission-43.2 
+grunt animal_sounds-38 manner_speaking-37.3 
+hee-haw animal_sounds-38 
+hiss animal_sounds-38 manner_speaking-37.3 
+honk animal_sounds-38 sound_emission-43.2 
+hoot animal_sounds-38 manner_speaking-37.3 sound_emission-43.2 
+howl animal_sounds-38 manner_speaking-37.3 nonverbal_expression-40.2 sound_emission-43.2 weather-57 
+ki-yi animal_sounds-38 
+low animal_sounds-38 
+meow animal_sounds-38 
+mew animal_sounds-38 
+moo animal_sounds-38 
+neigh animal_sounds-38 
+oink animal_sounds-38 
+peep animal_sounds-38 peer-30.3 
+pipe animal_sounds-38 sound_emission-43.2 
+purr animal_sounds-38 sound_emission-43.2 
+quack animal_sounds-38 
+roar animal_sounds-38 run-51.3.2 sound_emission-43.2 
+rooroo animal_sounds-38 
+scrawk animal_sounds-38 
+squawk animal_sounds-38 manner_speaking-37.3 sound_emission-43.2 
+squeak animal_sounds-38 manner_speaking-37.3 sound_emission-43.2 
+squeal animal_sounds-38 manner_speaking-37.3 sound_emission-43.2 
+stridulate animal_sounds-38 
+trill animal_sounds-38 manner_speaking-37.3 sound_emission-43.2 
+tweet animal_sounds-38 
+twitter animal_sounds-38 manner_speaking-37.3 
+wail animal_sounds-38 manner_speaking-37.3 sound_emission-43.2 
+warble animal_sounds-38 manner_speaking-37.3 
+whimper animal_sounds-38 manner_speaking-37.3 
+whinny animal_sounds-38 
+whistle animal_sounds-38 manner_speaking-37.3 nonverbal_expression-40.2 performance-26.7-1 
+woof animal_sounds-38 
+yap animal_sounds-38 manner_speaking-37.3 
+yell animal_sounds-38 manner_speaking-37.3 
+yelp animal_sounds-38 manner_speaking-37.3 
+yip animal_sounds-38 
+yowl animal_sounds-38 
+boom sound_emission-43.2 
+rattle animal_sounds-38 sound_emission-43.2 
+groan animal_sounds-38 manner_speaking-37.3 nonverbal_expression-40.2 sound_emission-43.2 
+ululate animal_sounds-38 sound_emission-43.2 
+moan animal_sounds-38 complain-37.8 manner_speaking-37.3 nonverbal_expression-40.2 sound_emission-43.2 
+rumble animal_sounds-38 manner_speaking-37.3 sound_emission-43.2 
+screech animal_sounds-38 manner_speaking-37.3 sound_emission-43.2 
+snarl animal_sounds-38 manner_speaking-37.3 
+thunder animal_sounds-38 manner_speaking-37.3 sound_emission-43.2 weather-57 
+trumpet animal_sounds-38 manner_speaking-37.3 
+wheeze animal_sounds-38 hiccup-40.1.1 manner_speaking-37.3 sound_emission-43.2 
+whine animal_sounds-38 complain-37.8 sound_emission-43.2 
+niggle appeal-31.4-1 
+grate appeal-31.4-2 
+appeal appeal-31.4-3 
+appear seem-109-1-1-1 
+arise appear-48.1.1 
+awake appear-48.1.1 other_cos-45.4-1 
+awaken appear-48.1.1 other_cos-45.4-1 
+break break-45.1 hurt-40.8.3-1-1 split-23.2 
+burst other_cos-45.4 
+come escape-51.1-1 register-54.1 
+dawn appear-48.1.1 
+derive appear-48.1.1 
+develop appear-48.1.1 build-26.1 grow-26.2.1 occur-48.3-1 
+emanate appear-48.1.1 substance_emission-43.4-1 
+emerge appear-48.1.1 escape-51.1-1 meander-47.7 
+erupt appear-48.1.1 
+evolve appear-48.1.1 grow-26.2.1 
+exude appear-48.1.1 substance_emission-43.4-1 
+flow appear-48.1.1 entity_specific_modes_being-47.2 
+form comprise-107.2 create-26.4 
+grow become-109.1-1 
+gush appear-48.1.1 substance_emission-43.4-1 
+irrupt appear-48.1.1 
+issue fulfilling-13.4.1 future_having-13.3-1 
+materialize appear-48.1.1 
+open appear-48.1.1 crane-40.3.2 other_cos-45.4 
+plop appear-48.1.1 assuming_position-50 sound_emission-43.2 spatial_configuration-47.6-1 
+pop_up appear-48.1.1 
+reappear appear-48.1.1 
+re-emerge appear-48.1.1 
+result appear-48.1.1 occur-48.3-1 result-27.2 
+rise assuming_position-50 escape-51.1-1 meander-47.7-1 spatial_configuration-47.6 
+show_up appear-48.1.1 
+spill appear-48.1.1 pour-9.5 substance_emission-43.4-1 
+spread appear-48.1.1 spray-9.7-1 
+spring up appear-48.1.1 
+steal steal-10.5-1 
+stem appear-48.1.1 
+stream appear-48.1.1 
+supervene appear-48.1.1 
+surge appear-48.1.1 
+take_shape appear-48.1.1 
+turn_up appear-48.1.1 
+turn_out appear-48.1.1 
+wax braid-41.2.2 butter-9.9 
+appoint appoint-29.1 
+coronate appoint-29.1 
+crown appoint-29.1 butter-9.9 dub-29.3 
+designate appoint-29.1 
+elect appoint-29.1 
+install put-9.1-1 
+proclaim appoint-29.1 
+mark image_impression-25.1 
+ordain appoint-29.1 
+upgrade appoint-29.1 
+reelect appoint-29.1 
+want appoint-29.1 want-32.1-1-1 
+name appoint-29.1 dub-29.3 
+nominate appoint-29.1 
+analyse assessment-34.1 
+analyze assessment-34.1 
+appraise assessment-34.1 price-54.4 
+assay assessment-34.1 
+assess assessment-34.1 estimate-34.2-1 price-54.4 
+audit assessment-34.1 
+check assessment-34.1 peer-30.3 search-35.2 
+consult assessment-34.1 inquire-37.1.2 meet-36.3-1 
+examine assessment-34.1 investigate-35.4 
+evaluate assessment-34.1 
+feel_out assessment-34.1 
+go_over assessment-34.1 occur-48.3-2 
+inspect assessment-34.1 investigate-35.4 
+investigate assessment-34.1 investigate-35.4 
+monitor assessment-34.1 investigate-35.4 
+peruse assessment-34.1 
+proofread assessment-34.1 
+regard characterize-29.2 
+research assessment-34.1 
+review assessment-34.1 
+sample assessment-34.1 
+scan assessment-34.1 investigate-35.4 
+scrutinize assessment-34.1 investigate-35.4 
+study assessment-34.1 discover-84-1-1 learn-14-1 
+surveil assessment-34.1 investigate-35.4 
+survey assessment-34.1 investigate-35.4 
+taste assessment-34.1 see-30.1-1 seem-109 stimulus_subject-30.4 
+test investigate-35.4 
+try_on assessment-34.1 
+try_out assessment-34.1 
+watch assessment-34.1 
+bend meander-47.7-1 
+crouch assuming_position-50 spatial_configuration-47.6 
+flop assuming_position-50 spatial_configuration-47.6-1 
+hang assuming_position-50 put_spatial-9.2-1 spatial_configuration-47.6-1 spray-9.7-1 
+hunch assuming_position-50 crane-40.3.2 spatial_configuration-47.6 
+hunch_up assuming_position-50 
+kneel assuming_position-50 curtsey-40.3.3 spatial_configuration-47.6 
+lean assuming_position-50 spatial_configuration-47.6 
+lie assuming_position-50 spatial_configuration-47.6 
+lie_down assuming_position-50 
+perch assuming_position-50 put_spatial-9.2-1 spatial_configuration-47.6-1 
+sit assuming_position-50 put_spatial-9.2-1 spatial_configuration-47.6-1 
+sit_down assuming_position-50 
+slouch assuming_position-50 run-51.3.2 spatial_configuration-47.6 
+slump assuming_position-50 spatial_configuration-47.6 
+sprawl assuming_position-50 spatial_configuration-47.6-1 
+squat assuming_position-50 spatial_configuration-47.6 
+squat_down assuming_position-50 
+stand_up assuming_position-50 
+stoop assuming_position-50 spatial_configuration-47.6 
+straddle assuming_position-50 contiguous_location-47.8 spatial_configuration-47.6-1 
+ambush attack-60.1 
+assail attack-60.1 judgment-33.1-1 
+assault attack-60.1 judgment-33.1 
+bomb attack-60.1 
+bombard attack-60.1 fill-9.8 pelt-17.2 
+charge attack-60.1-1 bill-54.5 
+fall_upon attack-60.1 
+jump calibratable_cos-45.6.1-1 run-51.3.2-2-1 
+lay_into attack-60.1 
+round_on attack-60.1 
+set_upon attack-60.1 
+attack attack-60.1-1 
+raid attack-60.1-1 investigate-35.4 
+attend attend-107.4-1 peer-30.3 
+patronize attend-107.4-1 
+go escape-51.1-1 help-72.1-2 occur-48.3-2 
+belong attend-107.4-2 
+avoid avoid-52 
+boycott avoid-52 
+circumvent avoid-52 
+dodge avoid-52 
+duck avoid-52 
+elude avoid-52 
+eschew avoid-52 
+evade avoid-52 
+forgo avoid-52 neglect-75.1 
+shun avoid-52 
+sidestep avoid-52 
+banish banish-10.2 
+deport banish-10.2 
+evacuate banish-10.2 
+exile banish-10.2 
+expel banish-10.2 fire-10.10 remove-10.1 
+extradite banish-10.2 
+recall banish-10.2 
+recuse banish-10.2 
+remove banish-10.2 fire-10.10 remove-10.1 
+shanghai banish-10.2 
+turn-away banish-10.2 
+turn-back banish-10.2 
+turn-out banish-10.2 create-26.4 
+boot throw-17.1-1 
+base base-97.1 
+establish establish-55.5-1 
+ground pocket-9.10-1 
+found establish-55.5-1 
+build build-26.1-1 
+construe base-97.1 
+argue battle-36.4 chit_chat-37.6-1 correspond-36.1.1-1-1 settle-36.1.2-1 
+bargain battle-36.4 correspond-36.1.1 rely-70 settle-36.1.2 
+bicker battle-36.4 
+brawl battle-36.4 
+clash battle-36.4 bump-18.4-1 sound_emission-43.2 
+collide bump-18.4-1 
+compete battle-36.4 
+contend battle-36.4 
+dicker battle-36.4 
+dispute battle-36.4 
+fence butter-9.9 contiguous_location-47.8 
+feud battle-36.4 
+joust battle-36.4 
+quarrel battle-36.4 
+quibble battle-36.4 
+scrap battle-36.4 
+scuffle battle-36.4 
+skirmish battle-36.4 
+spar battle-36.4 
+spat battle-36.4 
+squabble battle-36.4 
+struggle battle-36.4 
+tilt other_cos-45.4 spatial_configuration-47.6-1 
+tussle battle-36.4 
+vie battle-36.4 
+war battle-36.4 
+wrangle battle-36.4 
+battle battle-36.4-1 meet-36.3-2 
+box battle-36.4-1 pocket-9.10 
+combat battle-36.4-1 confront-98 
+debate chit_chat-37.6-1 correspond-36.1.1-1-1 meet-36.3-2 settle-36.1.2-1 
+duel battle-36.4-1 
+fight meet-36.3-2 
+refight battle-36.4-1 
+wrestle battle-36.4-1 
+come_out become-109.1 
+get comprehend-87.2-1 get-13.5.1-1 
+turn convert-26.6.2 meander-47.7-1 roll-51.3.1 rotate-51.9.1-1 turn-26.6.1-1 
+become become-109.1-1-1 
+end_up become-109.1-1-1 
+leave become-109.1-1-1 escape-51.1-1-1 leave-51.2-1 resign-10.11-2 
+request beg-58.2 
+importune beg-58.2 
+supplicate beg-58.2-1 
+beg beg-58.2-1-1 
+go_on begin-55.1 occur-48.3 say-37.7 
+pledge begin-55.1 
+proceed begin-55.1 
+set_out escape-51.1-1 
+set_about begin-55.1-1 
+begin begin-55.1-1-1 terminus-47.9 
+start terminus-47.9 
+start_off begin-55.1-1-1 
+commence begin-55.1-1-1 
+recommence begin-55.1-1-1 
+resume begin-55.1-1-1 
+undertake begin-55.1-1-1 confront-98 
+attire being_dressed-41.3.3 
+clad being_dressed-41.3.3 
+garb being_dressed-41.3.3 
+outfit being_dressed-41.3.3 equip-13.4.2-1 
+robe being_dressed-41.3.3 butter-9.9 fill-9.8-1 
+crease bend-45.2 
+crinkle bend-45.2 
+crumple bend-45.2 carve-21.2-1 
+distend bend-45.2 
+flex crane-40.3.2 
+fold bend-45.2 build-26.1 
+furrow bend-45.2 
+hyperextend bend-45.2 
+roll bend-45.2 crane-40.3.2 roll-51.3.1 run-51.3.2-2 slide-11.2-1 sound_existence-47.4 split-23.2 
+round bend-45.2 
+rumple bend-45.2 
+scrunch bend-45.2 carve-21.2-1 
+splay bend-45.2 
+straighten bend-45.2 
+stretch bend-45.2 body_motion-49.2-1-1 meander-47.7 
+unfold bend-45.2 
+unfurl bend-45.2 
+unroll bend-45.2 
+unwind bend-45.2 
+warp bend-45.2 
+wrinkle bend-45.2 crane-40.3.2 
+unbend bend-45.2 
+benefit benefit-72.2 
+profit benefit-72.2 
+antique berry-13.7 
+berry berry-13.7 
+birdnest berry-13.7 
+blackberry berry-13.7 
+clam berry-13.7 
+crab berry-13.7 complain-37.8 
+fish berry-13.7 hunt-35.1 
+fowl berry-13.7 
+grouse berry-13.7 complain-37.8 
+hog berry-13.7 
+hay berry-13.7 
+log berry-13.7 
+mushroom calibratable_cos-45.6.1-1 
+nest berry-13.7 
+nut berry-13.7 
+oyster berry-13.7 
+pearl berry-13.7 
+prawn berry-13.7 
+rabbit berry-13.7 
+scollop carve-21.2-2 
+seal tape-22.4 
+shark berry-13.7 
+shrimp berry-13.7 
+snail berry-13.7 pit-10.7 
+snipe berry-13.7 
+sponge berry-13.7 wipe_instr-10.4.2 
+whale berry-13.7 
+whelk berry-13.7 
+whore captain-29.8 orphan-29.7 
+hawk give-13.1-1 
+amerce bill-54.5 
+bet bill-54.5 risk-94 
+bill bill-54.5 
+fine bill-54.5 
+invoice bill-54.5 
+mulct bill-54.5 
+overcharge bill-54.5 
+save get-13.5.1-1 
+scrimp bill-54.5 
+spare bill-54.5 
+tax bill-54.5 
+tip throw-17.1-1-1 
+undercharge bill-54.5 
+wager bill-54.5 rely-70 risk-94 
+reproduce birth-28.2 other_cos-45.4 
+multiply calibratable_cos-45.6.1-1 multiply-108-1 
+procreate birth-28.2 
+beget birth-28.2-1 engender-27.1 
+birth birth-28.2-1 
+bring_forth birth-28.2-1 
+deliver birth-28.2-1 send-11.1 
+father birth-28.2-1 
+generate birth-28.2-1 engender-27.1 grow-26.2.1 
+have devour-39.4 own-100.1 
+mother birth-28.2-1 captain-29.8-1 
+sire birth-28.2-1 engender-27.1 
+spawn calve-28.1 engender-27.1 
+buck body_internal_motion-49.1 
+fidget body_internal_motion-49.1 
+flap body_internal_motion-49.1 crane-40.3.2 modes_of_being_with_motion-47.3 
+gyrate body_internal_motion-49.1 
+jiggle body_internal_motion-49.1 modes_of_being_with_motion-47.3 
+kick body_internal_motion-49.1 carry-11.4-1-1 crane-40.3.2 hit-18.1-1 split-23.2 swat-18.2 throw-17.1-1-1 
+rock body_internal_motion-49.1 modes_of_being_with_motion-47.3 
+squirm body_internal_motion-49.1 
+sway body_internal_motion-49.1 compel-59.1 modes_of_being_with_motion-47.3 
+teeter body_internal_motion-49.1 modes_of_being_with_motion-47.3 
+totter body_internal_motion-49.1 modes_of_being_with_motion-47.3 run-51.3.2 
+twitch body_internal_motion-49.1 crane-40.3.2 
+waggle body_internal_motion-49.1 crane-40.3.2 
+wiggle body_internal_motion-49.1 crane-40.3.2 modes_of_being_with_motion-47.3 
+wobble body_internal_motion-49.1 modes_of_being_with_motion-47.3 
+wriggle body_internal_motion-49.1 
+convulse body_internal_states-40.6 
+cower body_internal_states-40.6 flinch-40.5 
+quake body_internal_states-40.6 modes_of_being_with_motion-47.3 
+quiver body_internal_states-40.6 modes_of_being_with_motion-47.3 
+shiver body_internal_states-40.6 hiccup-40.1.1 
+shudder body_internal_states-40.6 
+tremble body_internal_states-40.6 modes_of_being_with_motion-47.3 
+writhe body_internal_states-40.6 modes_of_being_with_motion-47.3 
+hold body_motion-49.2 fit-54.3 support-15.3 
+extend body_motion-49.2-1 exist-47.1 
+reach reach-51.8 
+bob modes_of_being_with_motion-47.3 
+braid braid-41.2.2 
+brush braid-41.2.2 floss-41.2.1 wipe_instr-10.4.2-1 
+clip braid-41.2.2 cut-21.1-1 
+coldcream braid-41.2.2 
+comb braid-41.2.2 wipe_instr-10.4.2-1 
+condition braid-41.2.2 
+crimp braid-41.2.2 
+crop braid-41.2.2 carve-21.2-2 
+curl braid-41.2.2 coil-9.6-1 rotate-51.9.1-1 
+dye braid-41.2.2 coloring-24 
+file braid-41.2.2 carve-21.2-2 wipe_instr-10.4.2 
+gel braid-41.2.2 
+henna braid-41.2.2 
+highlight braid-41.2.2 
+lather braid-41.2.2 spank-18.3 
+manicure braid-41.2.2 
+part braid-41.2.2 separate-23.1-2 
+perm braid-41.2.2 
+paint braid-41.2.2 coloring-24 create-26.4-1-1 image_impression-25.1 
+plait braid-41.2.2 
+pluck braid-41.2.2 get-13.5.1 wipe_manner-10.4.1-1 
+powder braid-41.2.2 butter-9.9 
+rinse braid-41.2.2 wipe_manner-10.4.1-1 
+rouge braid-41.2.2 butter-9.9 
+set put-9.1-2 
+shampoo braid-41.2.2 
+soap braid-41.2.2 
+style braid-41.2.2 create-26.4 
+talc braid-41.2.2 
+tease bully-59.5 
+towel braid-41.2.2 wipe_instr-10.4.2 
+trim braid-41.2.2 wipe_manner-10.4.1 
+tweeze braid-41.2.2 
+wave wink-40.3.1 
+break_apart break-45.1 
+break_down break-45.1 break_down-45.8 
+break_up break-45.1 
+chip break-45.1 carve-21.2-1 cut-21.1-1 hurt-40.8.3-1-1 
+cleave break-45.1 carve-21.2-1 
+crack break-45.1 
+crash break-45.1 bump-18.4-1 
+dissolve break-45.1 other_cos-45.4 
+fissure break-45.1 
+fracture break-45.1 hurt-40.8.3-1-1 
+fragment break-45.1 
+rend break-45.1 
+rive break-45.1 
+rip break-45.1 cut-21.1-1 split-23.2 
+shatter break-45.1 destroy-44 
+shred break-45.1 carve-21.2-1 
+sliver break-45.1 split-23.2 
+smash break-45.1 bump-18.4-1 carve-21.2-1 hit-18.1-1 throw-17.1-1 
+snap break-45.1 split-23.2 
+splinter break-45.1 hurt-40.8.3-1-1 
+split break-45.1 hurt-40.8.3-1-1 leave-51.2 split-23.2 
+tear break-45.1 hurt-40.8.3-1-1 split-23.2 
+die break_down-45.8 die-42.4-1 disappearance-48.2 
+expire break_down-45.8 die-42.4-1 disappearance-48.2-1 
+fall_apart break_down-45.8 
+go_out break_down-45.8 
+go_down break_down-45.8 occur-48.3-2 
+go_off break_down-45.8 occur-48.3-2 
+give_out break_down-45.8 
+give give-13.1-1 
+kick_the_bucket break_down-45.8 die-42.4 
+pass_away break_down-45.8 die-42.4-1 
+perish break_down-45.8 die-42.4-1 disappearance-48.2-1 
+poop_out break_down-45.8 disfunction-105.2.2 
+fizzle_out break_down-45.8 disfunction-105.2.2 
+barf breathe-40.1.2 
+bleed breathe-40.1.2 substance_emission-43.4-1-1 
+dribble breathe-40.1.2 pour-9.5 
+drool breathe-40.1.2 substance_emission-43.4-1 
+pee breathe-40.1.2 
+piss breathe-40.1.2 
+puke breathe-40.1.2 
+shit breathe-40.1.2 
+spit breathe-40.1.2 
+sweat breathe-40.1.2 substance_emission-43.4-1 
+throw_up breathe-40.1.2 
+vomit breathe-40.1.2 
+weep breathe-40.1.2 marvel-31.3 nonverbal_expression-40.2 
+breathe breathe-40.1.2-1 
+cough breathe-40.1.2-1 nonverbal_expression-40.2 
+cry nonverbal_expression-40.2 sound_emission-43.2 
+defecate breathe-40.1.2-1 exhale-40.1.3-1 
+expectorate breathe-40.1.2-1 exhale-40.1.3-1 
+retch breathe-40.1.2-1 
+slobber breathe-40.1.2-1 
+urinate breathe-40.1.2-1 exhale-40.1.3-1 
+bring bring-11.3-1 earn-54.6 urge-58.1 
+arrange build-26.1 put-9.1 
+assemble build-26.1 
+bake build-26.1 cooking-45.3 preparing-26.3-1 
+bead substance_emission-43.4-1 
+blow crane-40.3.2 split-23.2 
+cast throw-17.1 
+chisel build-26.1 
+churn build-26.1 
+compile build-26.1 
+cook build-26.1 cooking-45.3 preparing-26.3-1 
+crochet build-26.1 
+embroider build-26.1 image_impression-25.1 
+erect build-26.1 
+fashion build-26.1 
+forge build-26.1 
+formulate create-26.4 
+grind crane-40.3.2 
+hack build-26.1 cut-21.1-1 split-23.2 
+hammer bump-18.4-1 funnel-9.3-1-1 hit-18.1-1 
+knit build-26.1 
+mold build-26.1 
+pound build-26.1 funnel-9.3-1-1 hit-18.1-1 
+reassemble build-26.1 
+refashion build-26.1 
+sculpture build-26.1 
+sew shake-22.3-2 spray-9.7-1 
+spin coil-9.6 roll-51.3.1 rotate-51.9.1-1 tingle-40.8.2 
+stitch build-26.1 tape-22.4 
+weave run-51.3.2 
+whittle build-26.1 
+carve build-26.1-1 carve-21.2-2 disassemble-23.3 scribble-25.2-1 
+remake build-26.1-1 
+sculpt build-26.1-1 
+shape build-26.1-1 
+bristle entity_specific_modes_being-47.2 
+bulge bulge-47.5.3 entity_specific_modes_being-47.2 
+hum bulge-47.5.3 manner_speaking-37.3 performance-26.7-1 sound_emission-43.2 tingle-40.8.2 
+hyperventilate bulge-47.5.3 
+seethe bulge-47.5.3 
+badger bully-59.5 
+bullock bully-59.5 
+bully bully-59.5 captain-29.8-1 
+harry bully-59.5 
+hustle bully-59.5 
+nag bully-59.5 
+panic bully-59.5 
+taunt bully-59.5 
+hit bump-18.4 contiguous_location-47.8-1 hit-18.1-1 hurt-40.8.3-1 throw-17.1-1 
+run bump-18.4 carry-11.4 run-51.3.2-2-1 
+bang bump-18.4-1 funnel-9.3-1-1 hit-18.1 sound_emission-43.2 
+bash bump-18.4-1 hit-18.1 throw-17.1-1 
+bump bump-18.4-1 hit-18.1-1 hurt-40.8.3-2 
+butt bump-18.4-1 hit-18.1-1 
+clang bump-18.4-1 sound_emission-43.2 
+clatter bump-18.4-1 sound_emission-43.2 
+crunch bump-18.4-1 sound_emission-43.2 
+knock bump-18.4-1 hit-18.1-1 sound_emission-43.2 split-23.2 throw-17.1-1 
+ram bump-18.4-1 
+rap bump-18.4-1 chit_chat-37.6 hit-18.1-1 sound_emission-43.2 
+slam bump-18.4-1 spank-18.3 throw-17.1-1 
+slap bump-18.4-1 hit-18.1-1 
+smack bump-18.4-1 hit-18.1-1 
+squash bump-18.4-1 carve-21.2-1 funnel-9.3-1 hit-18.1 knead-26.5 
+thud bump-18.4-1 sound_emission-43.2 
+thump bump-18.4-1 hit-18.1 sound_emission-43.2 spank-18.3 
+aromatize butter-9.9 
+asphalt butter-9.9 
+bait butter-9.9 compel-59.1 
+black butter-9.9 
+blanket butter-9.9 contiguous_location-47.8 fill-9.8-1 
+blindfold butter-9.9 
+board lodge-46 
+bread butter-9.9 
+brick butter-9.9 
+bridle butter-9.9 
+bronze butter-9.9 
+butter butter-9.9 
+buttonhole butter-9.9 
+calk butter-9.9 
+camouflage butter-9.9 
+cap butter-9.9 contiguous_location-47.8 
+carpet butter-9.9 fill-9.8-1 
+caulk butter-9.9 
+chrome butter-9.9 
+clay butter-9.9 
+cloak butter-9.9 contiguous_location-47.8 fill-9.8-1 
+coal butter-9.9 
+cork butter-9.9 
+crumb butter-9.9 
+diaper butter-9.9 
+dope fill-9.8 
+drug butter-9.9 
+feather butter-9.9 
+flour butter-9.9 
+forest butter-9.9 
+frame butter-9.9 contiguous_location-47.8 fill-9.8-1 
+frost butter-9.9 other_cos-45.4 
+fuel butter-9.9 
+glaze butter-9.9 coloring-24 
+gag butter-9.9 subjugate-42.3 
+garland butter-9.9 fill-9.8 
+gas butter-9.9 poison-42.2 
+gild butter-9.9 illustrate-25.3 
+glass butter-9.9 
+glove butter-9.9 
+graffiti butter-9.9 
+grass butter-9.9 
+gravel butter-9.9 
+grease butter-9.9 
+groove butter-9.9 marvel-31.3 
+halter butter-9.9 
+harness butter-9.9 tape-22.4 
+hat butter-9.9 
+heel put_direction-9.4 
+ice butter-9.9 illustrate-25.3 
+ink scribble-25.2-1 
+label dub-29.3 
+leash butter-9.9 tape-22.4 
+leaven butter-9.9 
+lipstick butter-9.9 
+lubricate butter-9.9 
+mantle butter-9.9 
+mulch butter-9.9 
+muzzle butter-9.9 subjugate-42.3 tape-22.4 
+nickel butter-9.9 
+oil butter-9.9 
+ornament butter-9.9 fill-9.8 illustrate-25.3 
+panel butter-9.9 fill-9.8-1 
+paper butter-9.9 
+parquet butter-9.9 
+patch butter-9.9 
+pepper butter-9.9 
+perfume butter-9.9 
+plank butter-9.9 cooking-45.3 
+plaster butter-9.9 spray-9.7-1 tape-22.4 
+poison poison-42.2 
+polish butter-9.9 wipe_manner-10.4.1 
+pomade butter-9.9 
+poster butter-9.9 
+postmark butter-9.9 
+punctuate butter-9.9 
+putty butter-9.9 
+roof butter-9.9 
+rosin butter-9.9 
+rut butter-9.9 
+saddle butter-9.9 equip-13.4.2-1 
+salt butter-9.9 
+salve butter-9.9 
+sand butter-9.9 carve-21.2-2 
+scent butter-9.9 
+seed butter-9.9 spray-9.7-1 
+sequin butter-9.9 
+shawl butter-9.9 
+shingle butter-9.9 
+shoe butter-9.9 
+shutter butter-9.9 
+side butter-9.9 
+silver butter-9.9 other_cos-45.4 
+slate butter-9.9 
+slime butter-9.9 
+slipcover butter-9.9 
+sod butter-9.9 
+soil butter-9.9 fill-9.8 
+sole butter-9.9 
+spice butter-9.9 
+stain butter-9.9 coloring-24 fill-9.8-1 
+starch butter-9.9 coloring-24 
+stopper butter-9.9 
+stress marvel-31.3 
+string pocket-9.10 spray-9.7-1 
+stucco butter-9.9 
+sugar butter-9.9 
+sulphur butter-9.9 
+tag butter-9.9 illustrate-25.3 
+tar butter-9.9 
+tarmac butter-9.9 
+tassel butter-9.9 pit-10.7 pocket-9.10 
+thatch butter-9.9 
+ticket butter-9.9 
+tile butter-9.9 fill-9.8-1 
+tinsel butter-9.9 
+top exceed-90 
+turf butter-9.9 
+varnish butter-9.9 coloring-24 
+veil butter-9.9 contiguous_location-47.8 fill-9.8-1 
+veneer butter-9.9 
+wallpaper butter-9.9 
+water butter-9.9 
+wharf butter-9.9 
+whitewash butter-9.9 
+wreathe butter-9.9 contiguous_location-47.8 
+yoke butter-9.9 tape-22.4 
+zipcode butter-9.9 
+insulate butter-9.9 
+sauce butter-9.9 
+climb calibratable_cos-45.6.1-1 escape-51.1-1-3 run-51.3.2 
+decline calibratable_cos-45.6.1-1 reject-77.2 
+dip funnel-9.3 meander-47.7-1 
+dive calibratable_cos-45.6.1-1 meander-47.7 
+depreciate calibratable_cos-45.6.1-1 
+drop put_direction-9.4 roll-51.3.1 
+dwindle calibratable_cos-45.6.1-1 
+explode other_cos-45.4 
+fall_away calibratable_cos-45.6.1-1 
+fall-off calibratable_cos-45.6.1-1 
+fluctuate calibratable_cos-45.6.1-1 
+gain get-13.5.1-1 
+go_up calibratable_cos-45.6.1-1 
+plummet calibratable_cos-45.6.1-1 
+plump calibratable_cos-45.6.1-1 
+plunge escape-51.1-1 meander-47.7-1 
+retreat escape-51.1-1 withdraw-82-3 
+rocket calibratable_cos-45.6.1-1 vehicle-51.4.1 
+seesaw calibratable_cos-45.6.1-1 run-51.3.2 
+skyrocket calibratable_cos-45.6.1-1 
+slide roll-51.3.1 run-51.3.2-2 slide-11.2-1 
+slip send-11.1-1 
+soar roll-51.3.1 
+swing coil-9.6-1 roll-51.3.1 rotate-51.9.1-1 
+tumble calibratable_cos-45.6.1-1 escape-51.1-1 meander-47.7 
+swell calibratable_cos-45.6.1-1 entity_specific_cos-45.5 
+calve calve-28.1 
+cub calve-28.1 
+fawn calve-28.1 
+foal calve-28.1 
+kitten calve-28.1 
+lamb calve-28.1 
+litter fill-9.8 
+pup calve-28.1 
+whelp calve-28.1 
+butcher captain-29.8 murder-42.1 
+judge captain-29.8 
+lawyer captain-29.8 
+midwife captain-29.8 
+model create-26.4 
+prostitute captain-29.8 
+soldier captain-29.8 
+volunteer captain-29.8 say-37.7-1-1 
+babysit captain-29.8-1 caring-75.2-1 
+boss captain-29.8-1 supervision-95.2.2 
+butler captain-29.8-1 
+caddy captain-29.8-1 
+captain captain-29.8-1 
+champion captain-29.8-1 
+chaperone captain-29.8-1 
+chauffeur captain-29.8-1 
+clerk captain-29.8-1 employment-95.3 
+coach captain-29.8-1 
+cox captain-29.8-1 
+crew captain-29.8-1 
+doctor captain-29.8-1 
+emcee captain-29.8-1 
+guard captain-29.8-1 defend-72.3 
+host captain-29.8-1 conduct-111.1 
+nurse feeding-39.7 
+partner captain-29.8-1 conspire-71 
+pilot captain-29.8-1 
+pioneer captain-29.8-1 establish-55.5 
+police captain-29.8-1 
+referee captain-29.8-1 
+skipper captain-29.8-1 
+sponsor captain-29.8-1 
+tailor captain-29.8-1 
+tutor captain-29.8-1 
+umpire captain-29.8-1 
+understudy captain-29.8-1 
+usher captain-29.8-1 
+valet captain-29.8-1 
+witness captain-29.8-1 sight-30.2 
+star captain-29.8-1-1 
+mind care-88.1 marvel-31.3 
+care care-88.1-1 marvel-31.3 
+wonder care-88.1-1 focus-87.1-1 
+look_after caring-75.2-1 
+manage succeed-74-1-1 
+wait_on caring-75.2-1 
+tend caring-75.2-1-1 
+look_out caring-75.2-2 
+carry carry-11.4 
+drag carry-11.4 
+draw carry-11.4 lure-59.3 
+haul carry-11.4 
+heft carry-11.4 
+hoist put_direction-9.4 
+lug carry-11.4 
+nudge carry-11.4 push-12-1-1 throw-17.1-1 touch-20-1 
+pull carry-11.4 get-13.5.1 push-12-1 split-23.2 
+schlep carry-11.4 
+tote carry-11.4 
+tow carry-11.4 
+tug carry-11.4 push-12-1 split-23.2 touch-20-1 
+yank carry-11.4 push-12-1 split-23.2 
+heave carry-11.4-1-1 push-12 
+push carry-11.4-1-1 funnel-9.3-1-1 push-12-1-1 split-23.2 urge-58.1-1 
+shove push-12-1-1 
+thrust carry-11.4-1-1 push-12-1-1 
+bruise carve-21.2-1 hurt-40.8.3-2 
+crumble carve-21.2-1 other_cos-45.4 
+cube carve-21.2-1 
+dent carve-21.2-1 
+dice carve-21.2-1 
+fillet carve-21.2-1 
+flake carve-21.2-1 
+flatten carve-21.2-1 other_cos-45.4 
+gash carve-21.2-1 
+gouge carve-21.2-1 
+mangle carve-21.2-1 carve-21.2-2 
+mash carve-21.2-1 
+mince run-51.3.2 
+nick carve-21.2-1 hurt-40.8.3-2 steal-10.5-1 
+notch carve-21.2-1 
+perforate carve-21.2-1 
+pulverize carve-21.2-1 other_cos-45.4 
+quarter lodge-46 
+slice carve-21.2-1 cut-21.1-1 disassemble-23.3 swat-18.2 
+slit carve-21.2-1 
+squish carve-21.2-1 funnel-9.3-1 knead-26.5 
+trench carve-21.2-1 
+chop carve-21.2-2 cut-21.1-1 swat-18.2 
+drill carve-21.2-2 
+lance carve-21.2-2 meander-47.7 
+mill carve-21.2-2 
+mow carve-21.2-2 
+pink sound_emission-43.2 
+punch swat-18.2 
+prune carve-21.2-2 wipe_manner-10.4.1-1 
+spear carve-21.2-2 
+tool drive-11.5 
+tread run-51.3.2 
+raise caused_calibratable_cos-45.6.2 earn-54.6 
+reduce caused_calibratable_cos-45.6.2 limit-76 subjugate-42.3 
+advance caused_calibratable_cos-45.6.2-1 escape-51.1-1 
+balloon caused_calibratable_cos-45.6.2-1 
+build-up caused_calibratable_cos-45.6.2-1 
+decrease caused_calibratable_cos-45.6.2-1 other_cos-45.4 
+diminish caused_calibratable_cos-45.6.2-1 other_cos-45.4 
+increase caused_calibratable_cos-45.6.2-1 other_cos-45.4 
+shift caused_calibratable_cos-45.6.2-1 send-11.1 
+vary caused_calibratable_cos-45.6.2-1 differ-23.4 other_cos-45.4 
+lower put_direction-9.4 
+blanch change_bodily_state-40.8.4 cooking-45.3 
+blench change_bodily_state-40.8.4 
+faint change_bodily_state-40.8.4 
+pale change_bodily_state-40.8.4 other_cos-45.4 
+black_out change_bodily_state-40.8.4 
+swoon change_bodily_state-40.8.4 marvel-31.3 
+doze change_bodily_state-40.8.4 snooze-40.4 
+doze_off change_bodily_state-40.8.4 
+drowse change_bodily_state-40.8.4 snooze-40.4 
+drowse_off change_bodily_state-40.8.4 
+drift_off change_bodily_state-40.8.4 
+konk_out change_bodily_state-40.8.4 
+nod_off change_bodily_state-40.8.4 
+pass_out change_bodily_state-40.8.4 contribute-13.2 
+zonk_out change_bodily_state-40.8.4 
+count estimate-34.2-1 multiply-108 
+depict characterize-29.2 
+detail characterize-29.2 
+envision characterize-29.2 
+interpret characterize-29.2 
+moot characterize-29.2 
+peg characterize-29.2 price-54.4 
+picture characterize-29.2 
+pigeonhole characterize-29.2 
+recast characterize-29.2 
+redraw characterize-29.2 
+specify characterize-29.2 
+stereotype characterize-29.2 
+typecast characterize-29.2 
+diagnose characterize-29.2 
+certify characterize-29.2 patent-101 
+praise characterize-29.2 judgment-33.1-1-1 
+treat characterize-29.2 
+rank characterize-29.2 masquerade-29.6 
+perceive see-30.1-1-1 sight-30.2 
+class characterize-29.2 classify-29.10 
+classify characterize-29.2 classify-29.10 
+select characterize-29.2 obtain-13.5.2 
+subselect characterize-29.2 obtain-13.5.2 
+pidgeonhole characterize-29.2 
+stamp crane-40.3.2 
+characterize characterize-29.2-1 
+conceive characterize-29.2-1 deduce-97.2 
+view characterize-29.2-1 
+underestimate characterize-29.2-1 
+portray characterize-29.2-1-1 
+define characterize-29.2-1-1 reflexive_appearance-48.1.2 
+describe characterize-29.2-1-1 
+represent representation-110.1 
+envisage characterize-29.2-1-1 
+identify characterize-29.2-1-1 
+imagine characterize-29.2-1-1 
+visualize characterize-29.2-1-1 
+remember characterize-29.2-1-1 
+recollect characterize-29.2-1-1 
+report characterize-29.2-1-2 consider-29.9-1-1 say-37.7-1-1 
+reveal indicate-78-1-1 reflexive_appearance-48.1.2 
+chase chase-51.6 
+pursue chase-51.6 
+shadow chase-51.6 
+tail chase-51.6 
+track chase-51.6 stalk-35.3 
+trail chase-51.6 
+cheat cheat-10.6.1 
+gull cheat-10.6.1 
+con cheat-10.6.1-1 trick-59.2 
+cozen cheat-10.6.1-1 
+fleece cheat-10.6.1-1 
+defraud cheat-10.6.1-1 
+swindle cheat-10.6.1-1 
+rob cheat-10.6.1-1-1 rob-10.6.4 steal-10.5 
+strip cheat-10.6.1-1-1 dress-41.1.1 remove-10.1 rob-10.6.4 wipe_manner-10.4.1-1 
+milk cheat-10.6.1-1-1 rob-10.6.4 steal-10.5 
+cull cheat-10.6.1-1-1 remove-10.1 rob-10.6.4 steal-10.5 
+chew chew-39.2-1 
+chomp chew-39.2-1 
+gnaw chew-39.2-1 
+gum tape-22.4 tape-22.4-1 
+masticate chew-39.2-1 
+munch chew-39.2-1 
+nibble chew-39.2-1 
+pick get-13.5.1 
+peck chew-39.2-1 swat-18.2 touch-20-1 
+lick chew-39.2-1 touch-20-1 wipe_manner-10.4.1-1 
+teethe chew-39.2-1 
+lap chew-39.2-2 
+sip chew-39.2-2 
+slurp chew-39.2-2 
+suck chew-39.2-2 wipe_manner-10.4.1-1 
+chat chit_chat-37.6 
+chitchat chit_chat-37.6 
+confer correspond-36.1.1 
+converse chit_chat-37.6 
+flirt chit_chat-37.6 
+gab chit_chat-37.6 
+gossip chit_chat-37.6 
+jest chit_chat-37.6 
+joke chit_chat-37.6 
+palaver compel-59.1 
+schmooze chit_chat-37.6 
+yak chit_chat-37.6 
+discuss chit_chat-37.6-1 
+constellate classify-29.10 
+sort classify-29.10 
+isolate classify-29.10 concealment-16 
+reclassify classify-29.10 
+group classify-29.10 herd-47.5.2 shake-22.3-2 
+regroup classify-29.10 
+bracket classify-29.10 contiguous_location-47.8 tape-22.4 
+lump classify-29.10 shake-22.3-1 
+chunk classify-29.10 
+grade classify-29.10 
+number classify-29.10 
+catalogue classify-29.10 
+sort_out classify-29.10 
+separate classify-29.10 remove-10.1 separate-23.1-2 
+categorize classify-29.10 remedy-45.7-1 
+code classify-29.10 
+recode classify-29.10 
+clean clear-10.3 other_cos-45.4 
+hollow clear-10.3 
+clear clear-10.3-1 free-10.6.3-1 free-80-1 other_cos-45.4 preparing-26.3-1 weather-57 
+drain clear-10.3-1 deprive-10.6.2 other_cos-45.4 
+empty clear-10.3-1 other_cos-45.4 
+adhere cling-22.5 
+cling cling-22.5 
+cognise cognize-85 
+cognize cognize-85 
+loop other_cos-45.4 
+rotate coil-9.6 modes_of_being_with_motion-47.3 orbit-51.9.2 roll-51.3.1 rotate-51.9.1-1 
+swirl coil-9.6 modes_of_being_with_motion-47.3 shake-22.3-1-1 
+twine coil-9.6 
+whirl coil-9.6 roll-51.3.1 
+wind meander-47.7 pit-10.7 roll-51.3.1 
+coil coil-9.6-1 roll-51.3.1 rotate-51.9.1-1 
+hook coil-9.6-1 rotate-51.9.1-1 tape-22.4 
+twirl coil-9.6-1 knead-26.5 orbit-51.9.2 roll-51.3.1 rotate-51.9.1-1 
+twist roll-51.3.1 
+color coloring-24 
+distemper coloring-24 
+enamel coloring-24 
+japan coloring-24 
+lacquer coloring-24 
+repaint coloring-24 
+shellac coloring-24 
+spraypaint coloring-24 scribble-25.2-1 
+tint coloring-24 
+arm-twist compel-59.1 
+bribe compel-59.1 
+compel compel-59.1 
+commandeer compel-59.1 obtain-13.5.2 steal-10.5 
+dragoon compel-59.1 
+drive compel-59.1 drive-11.5 nonvehicle-51.4.2-1 
+goad compel-59.1 
+hound compel-59.1 
+impel compel-59.1 
+induce compel-59.1 
+influence compel-59.1 
+motivate compel-59.1 
+obligate compel-59.1 
+oblige compel-59.1 
+persuade compel-59.1 
+railroad compel-59.1 
+rush run-51.3.2-2-1 rush-53.2 
+sandbag compel-59.1 
+steamroller compel-59.1 
+suborn compel-59.1 
+wheedle compel-59.1 
+bellyache complain-37.8 
+bitch complain-37.8 
+boast complain-37.8 
+brag complain-37.8 
+caterwaul complain-37.8 sound_emission-43.2 
+complain complain-37.8 
+gripe complain-37.8 
+grouch complain-37.8 
+grumble complain-37.8 manner_speaking-37.3 
+kvetch complain-37.8 
+object complain-37.8 
+accomplish complete-55.2 
+achieve complete-55.2 
+bring-off complete-55.2 
+pull-off complete-55.2 
+complete complete-55.2-1 
+discontinue complete-55.2-1 stop-55.4-1-1 
+quit complete-55.2-1 stop-55.4-1-1 
+misconstrue comprehend-87.2 
+misinterpret comprehend-87.2 
+misunderstand comprehend-87.2 
+misapprehend comprehend-87.2 
+grasp hold-15.1 touch-20-1 
+comprehend comprehend-87.2-1 
+apprehend comprehend-87.2-1 
+fathom comprehend-87.2-1 
+read learn-14-1 learn-14-2-1 
+realize comprehend-87.2-1 discover-84 
+recognise comprehend-87.2-1 
+recognize comprehend-87.2-1 sight-30.2 
+see comprehend-87.2-1-1 see-30.1-1-1 
+know comprehend-87.2-1-1-1 
+comprise comprise-107.2-1 
+compose create-26.4-1 
+make_up comprise-107.2 
+constitute comprise-107.2 
+consist_of comprise-107.2-1 
+encompass comprise-107.2-1 contiguous_location-47.8 
+contain comprise-107.2-1 contain-15.4 fit-54.3 
+block concealment-16 fill-9.8-1 
+cloister concealment-16 pocket-9.10 
+conceal concealment-16 
+curtain concealment-16 
+impound concealment-16 
+quarantine concealment-16 
+repress concealment-16 subjugate-42.3 
+screen concealment-16 
+seclude concealment-16 
+sequester concealment-16 steal-10.5 
+shelter concealment-16 exist-47.1 lodge-46 
+suppress subjugate-42.3 
+hide concealment-16-1 
+head conduct-111.1 contiguous_location-47.8 
+spearhead conduct-111.1 
+confess confess-37.10 declare-29.4 
+acknowledge confess-37.10 consider-29.9-1 
+fess_up confess-37.10 
+institutionalize confine-92 
+incarcerate confine-92 
+hospitalize confine-92 
+detain confine-92 
+jail confine-92 pocket-9.10 
+imprison confine-92 pocket-9.10 
+jug confine-92 pocket-9.10 
+immure confine-92 
+commit invest-13.5.4-1 
+recommit confine-92-1 
+send send-11.1-1 
+confine limit-76 
+face confront-98 
+confront confront-98 
+head_on confront-98 
+tackle confront-98 
+go_about confront-98 
+approach escape-51.1-1 escape-51.1-1-2 
+brave confront-98 
+handle hold-15.1 
+intercept confront-98 
+target confront-98 
+rival confront-98 
+counter confront-98 
+pre-empt confront-98 
+breast confront-98 reach-51.8 
+move_in_on confront-98 
+assert conjecture-29.5 
+conjecture conjecture-29.5 
+deny conjecture-29.5 
+determine discover-84 
+doubt conjecture-29.5 
+prognosticate conjecture-29.5 indicate-78 
+repute conjecture-29.5 
+spectulate conjecture-29.5 
+surmise conjecture-29.5 
+swear conjecture-29.5 
+anticipate conjecture-29.5-1 
+expect conjecture-29.5-1 wish-62 
+foreknow conjecture-29.5-1 
+foresee conjecture-29.5-1 
+foretell conjecture-29.5-1 
+guess conjecture-29.5-1 discover-84 estimate-34.2-1 
+infer conjecture-29.5-1 deduce-97.2 
+presume conjecture-29.5-1 
+prophesy conjecture-29.5-1 
+vaticinate conjecture-29.5-1 
+feel marvel-31.3 see-30.1-1-1 seem-109-1-1 stimulus_subject-30.4 
+deem consider-29.9-1 
+rate price-54.4 
+reckon consider-29.9-1 
+consider consider-29.9-1-1-1 
+suspect consider-29.9-2 
+think consider-29.9-2 
+suppose consider-29.9-2 
+posit consider-29.9-2 
+ally conspire-71 
+collaborate cooperate-73.1-1 correspond-36.1.1 settle-36.1.2 
+collude conspire-71 
+conspire conspire-71 
+discriminate conspire-71 
+legislate conspire-71 
+protest conspire-71 
+rebel conspire-71 respond-113 
+retaliate conspire-71 respond-113 
+scheme conspire-71 
+sin conspire-71 
+team_up conspire-71 
+befriend conspire-71 
+use use-105.1 
+consume devour-39.4 
+reuse consume-66-1 use-105.1 
+misspend consume-66-1 spend_time-104 
+spend spend_time-104 
+squander consume-66-1 pay-68 
+waste consume-66-1 pay-68 spend_time-104 
+bestride contiguous_location-47.8 
+border contiguous_location-47.8 
+bound run-51.3.2 
+bridge contiguous_location-47.8 
+circle contiguous_location-47.8 
+cover contiguous_location-47.8 fill-9.8-1 
+edge meander-47.7 
+encircle contiguous_location-47.8 fill-9.8 
+enclose contiguous_location-47.8 
+engulf contiguous_location-47.8 
+envelop contiguous_location-47.8 
+fill contiguous_location-47.8 fill-9.8 other_cos-45.4 
+flank contiguous_location-47.8 
+hug marry-36.2 
+line contiguous_location-47.8 
+neighbor contiguous_location-47.8 
+overcast contiguous_location-47.8 
+overhang contiguous_location-47.8 
+precede contiguous_location-47.8 
+predate contiguous_location-47.8 
+rim contiguous_location-47.8 
+ring sound_emission-43.2 
+skirt meander-47.7 
+span contiguous_location-47.8 
+surmount contiguous_location-47.8 
+surround contiguous_location-47.8 fill-9.8-1 
+traverse contiguous_location-47.8 
+underlie contiguous_location-47.8 
+enshroud contiguous_location-47.8 
+abut contiguous_location-47.8-1 
+adjoin contiguous_location-47.8-1 
+cross escape-51.1-1-3 meander-47.7 
+intersect contiguous_location-47.8-1 
+meet encounter-30.5 meet-36.3-1 
+dominate contiguous_location-47.8-2 
+continue continue-55.3 
+betroth contribute-13.2 
+refer relate-86.2-2 
+relinquish contribute-13.2 
+remit contribute-13.2 
+resign contribute-13.2 resign-10.11-1 resign-10.11-2 
+restore contribute-13.2 
+gift contribute-13.2 
+give-away contribute-13.2 
+give-out contribute-13.2 
+give-up contribute-13.2 
+hand_out contribute-13.2 
+shell_out contribute-13.2 
+abnegate contribute-13.2 
+turn-in contribute-13.2 
+turn-over contribute-13.2 
+disseminate contribute-13.2-1 
+distribute contribute-13.2-1 
+administer contribute-13.2-1-1 
+circularize contribute-13.2-1-1 
+contribute contribute-13.2-1-1 
+donate contribute-13.2-1-1 
+forfeit contribute-13.2-1-1 
+resubmit contribute-13.2-1-1 
+sacrifice contribute-13.2-1-1 
+surrender contribute-13.2-1-1 
+disburse contribute-13.2-2 
+proffer contribute-13.2-2 reflexive_appearance-48.1.2 volunteer-95.4 
+transfer contribute-13.2-2 send-11.1 
+reimburse contribute-13.2-2-1 
+advert convert-26.6.2 
+come_around convert-26.6.2 
+get_around convert-26.6.2 
+get_down convert-26.6.2 
+go_back convert-26.6.2 
+resort convert-26.6.2 
+return convert-26.6.2 escape-51.1-1 
+revert convert-26.6.2 convert-26.6.2-1 
+settle_down convert-26.6.2 
+change_over convert-26.6.2-1-1 
+convert turn-26.6.1-1 
+move_over convert-26.6.2-1-1 
+switch convert-26.6.2-1-1 substitute-13.6.2 
+switch_over convert-26.6.2-1-1 
+barbecue cooking-45.3 preparing-26.3-2 
+barbeque cooking-45.3 preparing-26.3-2 
+boil cooking-45.3 
+braise cooking-45.3 
+broil cooking-45.3 preparing-26.3-2 
+brown cooking-45.3 
+char cooking-45.3 other_cos-45.4 
+charbroil cooking-45.3 
+charcoal-broil cooking-45.3 
+coddle cooking-45.3 
+crisp cooking-45.3 other_cos-45.4 
+deep-fry cooking-45.3 
+french-fry cooking-45.3 
+fry cooking-45.3 preparing-26.3-2 
+grill cooking-45.3 preparing-26.3-2 
+hardboil cooking-45.3 preparing-26.3-2 
+heat cooking-45.3 other_cos-45.4 
+microwave cooking-45.3 preparing-26.3-2 
+oven-fry cooking-45.3 
+oven-poach cooking-45.3 
+overbake cooking-45.3 preparing-26.3-2 
+overcook cooking-45.3 
+overheat cooking-45.3 
+pan-broil cooking-45.3 
+pan-fry cooking-45.3 
+parboil cooking-45.3 
+parch cooking-45.3 
+percolate cooking-45.3 substance_emission-43.4-1 
+perk cooking-45.3 
+pickle cooking-45.3 
+poach cooking-45.3 hunt-35.1 preparing-26.3-2 
+pot-roast cooking-45.3 
+reheat cooking-45.3 
+rissole cooking-45.3 
+roast cooking-45.3 preparing-26.3-2 
+saute cooking-45.3 
+scald cooking-45.3 hurt-40.8.3-2 
+scallop cooking-45.3 
+sear cooking-45.3 other_cos-45.4 
+shirr cooking-45.3 
+simmer cooking-45.3 
+softboil cooking-45.3 preparing-26.3-2 
+steam substance_emission-43.4-1 
+steam-bake cooking-45.3 
+steep cooking-45.3 other_cos-45.4 
+stew marvel-31.3 
+stir-fry cooking-45.3 
+toast cooking-45.3 judgment-33.1-1 preparing-26.3-2 
+warm_up cooking-45.3 
+cooperate cooperate-73.1-1 correspond-36.1.1 settle-36.1.2 
+join mix-22.1-2-1 
+participate cooperate-73.1-2 
+labour cooperate-73.1-3 work-73.2 
+work cooperate-73.1-3 employment-95.3 work-73.2 
+deal cope-83 
+cope cope-83-1 
+grapple cope-83-1-1 
+get_by cope-83-1-1 
+get_through cope-83-1-1 
+flip-flop correlate-86.1 
+co-occur correlate-86.1 
+banter correspond-36.1.1 
+commiserate correspond-36.1.1 empathize-88.2 settle-36.1.2 
+communicate correspond-36.1.1 settle-36.1.2 transfer_mesg-37.1.1 
+compromise correspond-36.1.1 settle-36.1.2 
+concur correspond-36.1.1 settle-36.1.2 
+correspond correspond-36.1.1 settle-36.1.2 
+deliberate correspond-36.1.1 focus-87.1-1 meet-36.3-1 settle-36.1.2 
+differ differ-23.4 
+disagree correspond-36.1.1 settle-36.1.2 
+interact correspond-36.1.1 interact-36.6 settle-36.1.2 
+negotiate correspond-36.1.1 
+plot correspond-36.1.1 
+agree correspond-36.1.1-1 settle-36.1.2-1 
+cost cost-54.2 
+last cost-54.2 
+net cost-54.2 
+arch crane-40.3.2 
+bare crane-40.3.2 
+bat throw-17.1-1 
+beat crane-40.3.2 sound_emission-43.2 
+clench crane-40.3.2 
+click sound_emission-43.2 
+close crane-40.3.2 other_cos-45.4 
+cock crane-40.3.2 
+crane crane-40.3.2 
+crook crane-40.3.2 
+drum crane-40.3.2 hit-18.1-1 
+flash light_emission-43.1 
+flick crane-40.3.2 throw-17.1-1 
+flutter crane-40.3.2 modes_of_being_with_motion-47.3 
+gnash crane-40.3.2 
+pucker crane-40.3.2 tingle-40.8.2 
+purse crane-40.3.2 
+rub crane-40.3.2 spray-9.7-1 touch-20-1 wipe_manner-10.4.1-1 
+show indicate-78-1-1 reflexive_appearance-48.1.2 transfer_mesg-37.1.1-1-1 
+shuffle crane-40.3.2 run-51.3.2 waltz-51.5 
+toss throw-17.1-1-1 
+twiddle crane-40.3.2 
+wag crane-40.3.2 
+wring crane-40.3.2 funnel-9.3-1 touch-20-1 wipe_manner-10.4.1 
+author create-26.4 
+coin create-26.4 
+compute create-26.4 
+concoct create-26.4 
+construct create-26.4 remedy-45.7 
+contrive create-26.4 
+cowrite create-26.4 
+create create-26.4 engender-27.1 
+fabricate create-26.4 
+lay put_spatial-9.2 
+manufacture create-26.4 
+mass-produce create-26.4 
+organize create-26.4 establish-55.5-1 
+produce create-26.4 engender-27.1 
+publish create-26.4 
+rearrange create-26.4 
+rebuild create-26.4 
+reconstitute create-26.4 
+reorganize create-26.4 
+synthesize create-26.4 
+choreograph create-26.4-1 
+draft create-26.4-1 
+improvise create-26.4-1 performance-26.7 
+invent create-26.4-1 preparing-26.3-1 
+scriptwrite create-26.4-1 
+silkscreen create-26.4-1 
+write create-26.4-1 lecture-37.11-1 say-37.7-1 transfer_mesg-37.1.1-1-1 
+conjure create-26.4-1-1 
+craft create-26.4-1-1 
+design create-26.4-1-1 
+dig hunt-35.1 poke-19 
+curtsey curtsey-40.3.3 
+genuflect curtsey-40.3.3 
+salaam curtsey-40.3.3 
+salute judgment-33.1-1 
+hew cut-21.1-1 split-23.2 
+saw cut-21.1-1 split-23.2 
+scarify cut-21.1-1 
+scrape cut-21.1-1 funnel-9.3-1 wipe_manner-10.4.1-1 
+scratch cut-21.1-1 hurt-40.8.3-2 swat-18.2 wipe_manner-10.4.1-1 
+slash cut-21.1-1 
+snip cut-21.1-1 
+ream cut-21.1-1 
+deaccent debone-10.8 
+debark debone-10.8 
+debone debone-10.8 
+debowel debone-10.8 
+debug debone-10.8 
+debur debone-10.8 
+declaw debone-10.8 
+decontaminate debone-10.8 
+defang debone-10.8 
+defat debone-10.8 
+defeather debone-10.8 
+deflea debone-10.8 
+deflesh debone-10.8 
+deflower debone-10.8 
+defoam debone-10.8 
+defog debone-10.8 
+deforest debone-10.8 
+defrost debone-10.8 other_cos-45.4 
+defuzz debone-10.8 
+degas debone-10.8 
+degerm debone-10.8 
+deglaze debone-10.8 
+degrease debone-10.8 
+degrit debone-10.8 
+degum debone-10.8 
+degut debone-10.8 
+dehair debone-10.8 
+dehead debone-10.8 
+dehorn debone-10.8 
+dehull debone-10.8 
+dehusk debone-10.8 
+deice debone-10.8 
+deink debone-10.8 
+delint debone-10.8 
+delouse debone-10.8 
+deluster debone-10.8 
+demast debone-10.8 
+derat debone-10.8 
+derib debone-10.8 
+derind debone-10.8 
+desalt debone-10.8 
+descale debone-10.8 
+desex debone-10.8 
+desprout debone-10.8 
+destarch debone-10.8 
+destress debone-10.8 
+detassel debone-10.8 
+detusk debone-10.8 
+devein debone-10.8 
+dewater debone-10.8 
+dewax debone-10.8 
+deworm debone-10.8 
+disembowel debone-10.8 poison-42.2 
+eviscerate debone-10.8 
+avow declare-29.4 
+adjudge declare-29.4-1 
+maintain sustain-55.6 
+prove declare-29.4-1-1 deduce-97.2 indicate-78-1-1 
+declare declare-29.4-1-1-1 order-58.3 reflexive_appearance-48.1.2 say-37.7-1-1 
+find discover-84 get-13.5.1 
+profess declare-29.4-1-1-3 
+dedicate dedicate-79 
+devote dedicate-79 
+reason deduce-97.2 
+reason_out deduce-97.2 
+conclude stop-55.4-1-1 
+disprove deduce-97.2 
+deduct multiply-108-2 remove-10.1 
+deduce deduce-97.2 discover-84 
+gather get-13.5.1 herd-47.5.2 shake-22.3-2 
+rationalize deduce-97.2 discover-84 
+defend defend-72.3 
+insure defend-72.3 
+protect defend-72.3 
+shade defend-72.3 
+preserve defend-72.3 
+safeguard defend-72.3 
+speak_for defend-72.3 
+burgle deprive-10.6.2 
+despoil deprive-10.6.2 
+disabuse deprive-10.6.2 
+plunder deprive-10.6.2 steal-10.5 
+rid deprive-10.6.2 
+depopulate deprive-10.6.2 
+bereave deprive-10.6.2 
+denude deprive-10.6.2 
+dispossess deprive-10.6.2 
+deplete deprive-10.6.2 
+divest deprive-10.6.2 
+deprive deprive-10.6.2 
+sap deprive-10.6.2 
+annihilate destroy-44 murder-42.1 
+blight destroy-44 
+blitz destroy-44 
+damage destroy-44 
+decimate destroy-44 
+desecrate destroy-44 
+destroy destroy-44 
+disfigure destroy-44 
+efface destroy-44 
+exterminate destroy-44 murder-42.1 
+extirpate destroy-44 remove-10.1 
+level destroy-44 
+louse_up destroy-44 
+maim destroy-44 
+mutilate destroy-44 
+obliterate destroy-44 
+rack destroy-44 
+ravage destroy-44 
+raze destroy-44 
+ruin destroy-44 
+shipwreck destroy-44 
+smoke eat-39.1-3 
+undo destroy-44 
+unmake destroy-44 
+vaporize destroy-44 other_cos-45.4 
+wrack destroy-44 
+wreck destroy-44 
+devour devour-39.4 
+down devour-39.4 
+imbibe devour-39.4 
+swill devour-39.4 
+buy_the_farm die-42.4 
+decease die-42.4 
+give_up_the_ghost die-42.4 
+pass die-42.4 escape-51.1-1-3 
+pop_off die-42.4 
+snuff_it die-42.4 
+choke die-42.4-1 subjugate-42.3 suffocate-40.7 
+conk die-42.4-1 spank-18.3 
+drop_dead die-42.4-1 
+branch differ-23.4 
+deviate differ-23.4 
+diverge differ-23.4 
+banquet dine-39.5 
+breakfast dine-39.5 
+brunch dine-39.5 
+dine dine-39.5 
+feast dine-39.5 
+graze dine-39.5 
+junket weekend-56 
+lunch dine-39.5 
+luncheon dine-39.5 
+nosh dine-39.5 
+picnic dine-39.5 
+snack dine-39.5 
+sup dine-39.5 
+disappear disappearance-48.2-1 
+lapse disappearance-48.2-1 
+vanish disappearance-48.2-1 
+detach disassemble-23.3 
+disassemble disassemble-23.3 
+disconnect disassemble-23.3 separate-23.1-2 
+dismantle disassemble-23.3 
+dismount disassemble-23.3 
+pare disassemble-23.3 
+partition disassemble-23.3 remove-10.1 
+segregate disassemble-23.3 separate-23.1-1 
+sift disassemble-23.3 
+sunder disassemble-23.3 
+unbolt disassemble-23.3 
+unbuckle disassemble-23.3 
+unbutton disassemble-23.3 
+unchain disassemble-23.3 
+unclamp disassemble-23.3 
+unclasp disassemble-23.3 
+unclip disassemble-23.3 
+unfasten disassemble-23.3 
+unfix disassemble-23.3 
+unglue disassemble-23.3 
+unhinge disassemble-23.3 
+unhitch disassemble-23.3 
+unhook disassemble-23.3 
+unlace disassemble-23.3 
+unlatch disassemble-23.3 
+unlock disassemble-23.3 
+unleash disassemble-23.3 
+unpeg disassemble-23.3 
+unpin disassemble-23.3 
+unscrew disassemble-23.3 
+unseal disassemble-23.3 
+unshackle disassemble-23.3 
+unstaple disassemble-23.3 
+unstitch disassemble-23.3 
+untie disassemble-23.3 
+unzip disassemble-23.3 
+sieve disassemble-23.3 
+discover discover-84 sight-30.2 
+ascertain discover-84 
+relearn discover-84 learn-14-1 
+scent_out discover-84 sight-30.2 
+solve discover-84 
+chance_across discover-84 encounter-30.5 
+chance_on discover-84 
+chance_upon discover-84 encounter-30.5 
+work_out discover-84 
+pick_up discover-84-1 
+hear discover-84-1-1 see-30.1-1-1-1 
+learn learn-14-1 learn-14-2-1 
+find_out discover-84-1-1 
+figure_out discover-84-1-1 
+tell_apart distinguish-23.5 
+distinguish distinguish-23.5-1 
+differentiate distinguish-23.5-1 separate-23.1-1 
+bathe dress-41.1.1 
+change other_cos-45.4 turn-26.6.1-1 
+clothe dress-41.1.1 
+disrobe dress-41.1.1 
+dress dress-41.1.1 dressing_well-41.3.2 
+exercise rehearse-26.8-1 
+frock dress-41.1.1 
+lave dress-41.1.1 
+moisturize dress-41.1.1 
+preen dress-41.1.1 
+primp dress-41.1.1 
+shave dress-41.1.1 floss-41.2.1 
+shower pelt-17.2 spray-9.7-1 
+sunbathe dress-41.1.1 
+tan dress-41.1.1 other_cos-45.4 
+unclothe dress-41.1.1 
+undress dress-41.1.1 
+wash dress-41.1.1 floss-41.2.1 preparing-26.3-2 wipe_manner-10.4.1-1 
+doll dressing_well-41.3.2 
+gussy dressing_well-41.3.2 
+spruce dressing_well-41.3.2 
+tog dressing_well-41.3.2 
+trick dressing_well-41.3.2 trick-59.2 
+bike drive-11.5 vehicle-51.4.1-1 
+row drive-11.5 nonvehicle-51.4.2 
+motor drive-11.5 vehicle-51.4.1 
+paddle drive-11.5 nonvehicle-51.4.2 
+tool_around drive-11.5 
+trundle drive-11.5 run-51.3.2 
+wheel drive-11.5 
+barge drive-11.5-1 
+bus drive-11.5-1 vehicle-51.4.1 
+cart drive-11.5-1 
+ferry drive-11.5-1 vehicle-51.4.1 
+fly drive-11.5-1 nonvehicle-51.4.2-1 run-51.3.2-2-1 spatial_configuration-47.6-1 
+shuttle drive-11.5-1 
+truck drive-11.5-1 
+decree dub-29.3 
+dub dub-29.3 
+pronounce pronounce-29.3.1 
+rename dub-29.3 
+rule dub-29.3 
+term dub-29.3 
+vote dub-29.3 future_having-13.3-1 
+anoint dub-29.3 fill-9.8 
+baptize dub-29.3 
+brand illustrate-25.3 
+christen dub-29.3 
+consecrate dub-29.3 
+nickname dub-29.3 
+attract earn-54.6 lure-59.3 
+bring_in earn-54.6 
+earn earn-54.6 get-13.5.1-1 
+fetch earn-54.6 get-13.5.1-1 
+eat eat-39.1-1 
+drink eat-39.1-2 
+huff eat-39.1-3 
+inject eat-39.1-3 fill-9.8 
+mainline eat-39.1-3 
+snort nonverbal_expression-40.2 
+shoot_up eat-39.1-3 
+empathize empathize-88.2 
+sympathize empathize-88.2 
+freelance employment-95.3 
+subcontract employment-95.3 hire-13.5.3 
+temp employment-95.3 
+come_across encounter-30.5 
+encounter encounter-30.5 
+happen_on encounter-30.5 
+happen_upon encounter-30.5 
+meet_with encounter-30.5 
+stumble_on encounter-30.5 
+stumble_upon encounter-30.5 
+control enforce-63 
+enforce enforce-63 
+impose enforce-63 
+bring_about establish-55.5-1 
+engender engender-27.1 
+kindle engender-27.1 other_cos-45.4 preparing-26.3-1 
+set-in_motion engender-27.1 
+set_off engender-27.1 escape-51.1-1 
+actuate engender-27.1-1 
+call_forth engender-27.1-1 
+elicit engender-27.1-1 
+incite engender-27.1-1 stimulate-59.4 
+instigate engender-27.1-1 establish-55.5-1 
+prompt engender-27.1-1 stimulate-59.4 
+spark engender-27.1-1 
+stir_up engender-27.1-1 
+trigger engender-27.1-1 
+ensure ensure-99 
+guarantee future_having-13.3-1 promise-37.13 
+secure ensure-99 get-13.5.1-1 
+reinsure ensure-99 
+provide fulfilling-13.4.1-2 
+apostatize entity_specific_cos-45.5 
+atrophy entity_specific_cos-45.5 
+blister entity_specific_cos-45.5 
+bloom entity_specific_cos-45.5 entity_specific_modes_being-47.2 
+blossom entity_specific_cos-45.5 entity_specific_modes_being-47.2 
+bud entity_specific_cos-45.5 
+burgeon entity_specific_cos-45.5 
+burn hurt-40.8.3-2 other_cos-45.4 pain-40.8.1 
+corrode entity_specific_cos-45.5 other_cos-45.4 
+crust entity_specific_cos-45.5 
+decay entity_specific_cos-45.5 
+decompose entity_specific_cos-45.5 
+deteriorate entity_specific_cos-45.5 other_cos-45.4 
+ebb entity_specific_cos-45.5 
+erode entity_specific_cos-45.5 
+ferment entity_specific_cos-45.5 
+fester entity_specific_cos-45.5 entity_specific_modes_being-47.2 
+flower entity_specific_cos-45.5 entity_specific_modes_being-47.2 
+foliate entity_specific_cos-45.5 
+germinate entity_specific_cos-45.5 
+green entity_specific_cos-45.5 
+molder entity_specific_cos-45.5 
+molt entity_specific_cos-45.5 
+moult entity_specific_cos-45.5 
+oxidize entity_specific_cos-45.5 other_cos-45.4 
+phosphoresce entity_specific_cos-45.5 
+progress entity_specific_cos-45.5 
+putrefy entity_specific_cos-45.5 other_cos-45.4 
+rot entity_specific_cos-45.5 
+rust entity_specific_cos-45.5 
+spoil entity_specific_cos-45.5 
+sprout entity_specific_cos-45.5 entity_specific_modes_being-47.2 other_cos-45.4 substance_emission-43.4-1 
+stagnate entity_specific_cos-45.5 
+subside entity_specific_cos-45.5 
+suppurate entity_specific_cos-45.5 
+tarnish entity_specific_cos-45.5 
+wane entity_specific_cos-45.5 
+wilt entity_specific_cos-45.5 
+wither entity_specific_cos-45.5 
+pullulate entity_specific_cos-45.5 swarm-47.5.1-1 
+billow entity_specific_modes_being-47.2 
+effervesce entity_specific_modes_being-47.2 
+fizz entity_specific_modes_being-47.2 sound_emission-43.2 
+flux entity_specific_modes_being-47.2 
+foam entity_specific_modes_being-47.2 substance_emission-43.4-1 
+froth entity_specific_modes_being-47.2 
+moil entity_specific_modes_being-47.2 
+propagate entity_specific_modes_being-47.2 other_cos-45.4 
+rage entity_specific_modes_being-47.2 manner_speaking-37.3 marvel-31.3 
+ripple entity_specific_modes_being-47.2 fill-9.8 
+smolder entity_specific_modes_being-47.2 
+invest invest-13.5.4-1 
+ply equip-13.4.2 
+arm equip-13.4.2-1 
+equip equip-13.4.2-1 
+rearm equip-13.4.2-1 
+recompense equip-13.4.2-1 
+redress equip-13.4.2-1 
+regale equip-13.4.2-1 
+remunerate equip-13.4.2-1 
+repay equip-13.4.2-1 pay-68-1 
+reward equip-13.4.2-1 judgment-33.1-1 
+armor equip-13.4.2-1-1 
+encumber equip-13.4.2-1-1 
+fortify remedy-45.7 
+overburden equip-13.4.2-1-1 
+weight equip-13.4.2-1-1 
+burden equip-13.4.2-1-1 
+compensate equip-13.4.2-1-1 
+make_it escape-51.1 
+decamp escape-51.1-1 
+recede escape-51.1-1 
+arrive escape-51.1-1 
+bolt escape-51.1-1 run-51.3.2 
+emigrate escape-51.1-1 
+skedaddle escape-51.1-1 run-51.3.2 
+vamoose escape-51.1-1 
+withdraw escape-51.1-1 resign-10.11-1 withdraw-82-3 
+depart escape-51.1-1-1 resign-10.11-2 
+disembark escape-51.1-1-1 
+escape escape-51.1-1-1 
+exit escape-51.1-1-1 
+flee escape-51.1-1-1 
+vacate escape-51.1-1-1 resign-10.11-2 
+enter escape-51.1-1-2 
+ascend escape-51.1-1-3 meander-47.7-1 
+descend escape-51.1-1-3 meander-47.7-1 
+constitutionalize establish-55.5 
+innovate establish-55.5 
+machinate establish-55.5 
+stage performance-26.7-1 
+initiate establish-55.5-1 
+fake establish-55.5-1 
+feign establish-55.5-1 
+format establish-55.5-1 
+plant put-9.1-1 spray-9.7-2 
+implement establish-55.5-1 
+institute establish-55.5-1 
+originate establish-55.5-1 
+prepare establish-55.5-1 preparing-26.3-1 
+premise establish-55.5-1 
+devise establish-55.5-1 
+mount meander-47.7 put-9.1 
+simulate establish-55.5-1 
+strike_up establish-55.5-1 
+synthesise establish-55.5-1 
+launch throw-17.1-1-1 
+open_up establish-55.5-1 
+put put-9.1-2 
+estimate estimate-34.2-1 price-54.4 
+gauge estimate-34.2-1 price-54.4 
+approximate estimate-34.2-1 price-54.4 
+quantize estimate-34.2-1 
+guesstimate estimate-34.2-1 
+project estimate-34.2-1 
+overcome exceed-90 
+overleap exceed-90 
+transcend exceed-90 
+better exceed-90 
+exceed exceed-90 satisfy-55.7 
+outbid exceed-90 
+outdo exceed-90 
+outmatch exceed-90 
+outnumber exceed-90 
+outrace exceed-90 
+outshine exceed-90 
+outsmart exceed-90 
+outstrip exceed-90 
+outweigh exceed-90 
+outwit exceed-90 
+overreach exceed-90 
+overstep exceed-90 
+surpass exceed-90 
+barter exchange-13.6.1 
+exchange exchange-13.6.1 
+trade exchange-13.6.1 
+omit exclude-107.3 remove-10.1 
+exclude exclude-107.3-1 forbid-64.4-1 
+preclude exclude-107.3-1 forbid-64.4-1 
+exhale exhale-40.1.3-1 
+hemorrhage exhale-40.1.3-1 
+perspire exhale-40.1.3-1 
+regurgitate exhale-40.1.3-1 
+whiff exhale-40.1.3-1 stalk-35.3 
+inhale exhale-40.1.3-2 
+coexist exist-47.1 
+dwell focus-87.1 lecture-37.11-2 
+exist exist-47.1 
+flourish exist-47.1 gorge-39.6 
+languish exist-47.1 
+linger exist-47.1 
+live exist-47.1 
+loom exist-47.1 
+lurk exist-47.1 
+persist exist-47.1 
+predominate exist-47.1 
+prevail exist-47.1 
+prosper exist-47.1 gorge-39.6 
+remain exist-47.1 seem-109-1-1 
+reside exist-47.1 lodge-46 
+stay exist-47.1 lodge-46 seem-109-1-1 
+thrive exist-47.1 gorge-39.6 
+tower exist-47.1 spatial_configuration-47.6 
+vegetate exist-47.1 
+wait exist-47.1 
+persevere exist-47.1 
+endure exist-47.1-1 
+survive exist-47.1-1 gorge-39.6 
+bottlefeed feeding-39.7 
+breastfeed feeding-39.7 
+feed feeding-39.7 
+force-feed feeding-39.7 
+handfeed feeding-39.7 
+spoonfeed feeding-39.7 
+suckle feeding-39.7 
+ferret ferret-35.6 
+nose roll-51.3.1 
+bandage fill-9.8 
+bestrew fill-9.8 
+blacktop fill-9.8 
+blockade fill-9.8 
+blot fill-9.8 
+clog fill-9.8 other_cos-45.4 
+clutter fill-9.8 
+contaminate fill-9.8 
+dam fill-9.8 
+deluge fill-9.8 
+dirty fill-9.8 other_cos-45.4 
+dot fill-9.8 
+embellish fill-9.8 illustrate-25.3 
+emblazon fill-9.8 
+endow fill-9.8 
+enrich fill-9.8 
+fleck fill-9.8 
+flood fill-9.8 other_cos-45.4 
+garnish fill-9.8 
+grace fill-9.8 
+gum_up fill-9.8 
+honeycomb fill-9.8 
+imbue fill-9.8 
+impregnate fill-9.8 
+infect fill-9.8 
+infest fill-9.8 
+inlay fill-9.8 
+interlard fill-9.8 
+interleave fill-9.8 
+inundate fill-9.8 
+lard fill-9.8 
+lash hit-18.1-1 
+mask fill-9.8 
+mottle fill-9.8 
+pad fill-9.8 
+plate fill-9.8 
+plug fill-9.8 
+prefill fill-9.8 
+replenish fill-9.8 
+repopulate fill-9.8 
+resupply fill-9.8 fulfilling-13.4.1-1 
+riddle fill-9.8 
+season fill-9.8 
+smut fill-9.8 
+splotch fill-9.8 
+staff fill-9.8 
+stipple fill-9.8 image_impression-25.1 
+stop_up fill-9.8 
+stud fill-9.8 
+suffuse fill-9.8 
+sully fill-9.8 
+taint fill-9.8 
+tinge fill-9.8 
+adorn fill-9.8-1 illustrate-25.3 
+bind shake-22.3-2-1 
+coat fill-9.8-1 
+dapple fill-9.8-1 
+deck fill-9.8-1 
+decorate fill-9.8-1 illustrate-25.3 
+disguise fill-9.8-1 
+douse fill-9.8-1 
+drench fill-9.8-1 
+encrust fill-9.8-1 
+festoon fill-9.8-1 
+marinate fill-9.8-1 
+pave fill-9.8-1 
+redecorate fill-9.8-1 illustrate-25.3 
+saturate fill-9.8-1 
+shroud fill-9.8-1 
+smother fill-9.8-1 subjugate-42.3 
+soak fill-9.8-1 other_cos-45.4 wipe_manner-10.4.1 
+speckle fill-9.8-1 
+spot sight-30.2 
+swaddle fill-9.8-1 
+swathe fill-9.8-1 
+vein fill-9.8-1 pit-10.7 
+fire throw-17.1-1 
+dismiss reject-77.2-1 
+sack fire-10.10 
+unseat fire-10.10 
+oust fire-10.10 remove-10.1 
+can pocket-9.10 
+send_away fire-10.10 
+suspend put_spatial-9.2-1 
+force_out fire-10.10 
+terminate stop-55.4-1 terminus-47.9 
+give_the_boot fire-10.10 
+lay_off fire-10.10 
+let_go fire-10.10 
+shitcan fire-10.10 
+hibernate fit-54.3 
+house fit-54.3 pocket-9.10 
+reseat fit-54.3 
+seat fit-54.3 
+serve fit-54.3 masquerade-29.6-2 pay-68 
+sleep snooze-40.4-1 
+store fit-54.3 keep-15.2 
+balk flinch-40.5 
+cringe flinch-40.5 marvel-31.3 
+flinch flinch-40.5 
+quail flinch-40.5 
+recoil flinch-40.5 
+shrink other_cos-45.4 
+wince flinch-40.5 
+floss floss-41.2.1 
+focus focus-87.1 
+focalize focus-87.1 
+center focus-87.1 
+concentrate focus-87.1 
+contemplate focus-87.1 
+converge focus-87.1 meander-47.7-1 
+fixate focus-87.1 
+brood focus-87.1-1 
+meditate focus-87.1-1 
+muse focus-87.1-1 marvel-31.3 
+ponder focus-87.1-1 
+reflect marvel-31.3 
+ruminate focus-87.1-1 marvel-31.3 
+dissuade forbid-64.4 
+keep seem-109 
+ban forbid-64.4-1 
+bar forbid-64.4-1 
+deter forbid-64.4-1 
+forbid forbid-64.4-1 
+hamper forbid-64.4-1 
+hinder forbid-64.4-1 
+impede forbid-64.4-1 
+inhibit forbid-64.4-1 
+obstruct forbid-64.4-1 
+prevent forbid-64.4-1 
+prohibit forbid-64.4-1 
+restrain forbid-64.4-1 
+stop stop-55.4-1-1 
+alleviate free-10.6.3 free-80 remedy-45.7 
+liberate steal-10.5 
+discharge remove-10.1 
+exonerate free-10.6.3 free-80 
+unburden free-10.6.3 free-80 
+cleanse free-10.6.3 free-80 groom-41.1.2 
+disencumber free-10.6.3 free-80 
+wean free-10.6.3 free-80 
+ease free-10.6.3 free-80 other_cos-45.4 
+absolve free-10.6.3-1 free-80-1 
+acquit free-10.6.3-1 free-80-1 
+free free-10.6.3-1 free-80-1 
+emancipate free-10.6.3-1 free-80-1 steal-10.5 
+release free-10.6.3-1 free-80-1 
+rerelease free-10.6.3-1 free-80-1 
+cure free-10.6.3-1-1 free-80-1-1 
+purge free-10.6.3-1-1 free-80-1-1 wipe_manner-10.4.1 
+purify free-10.6.3-1-1 free-80-1-1 other_cos-45.4 
+present fulfilling-13.4.1 reflexive_appearance-48.1.2 
+credit fulfilling-13.4.1-1 
+entrust fulfilling-13.4.1-1 
+furnish fulfilling-13.4.1-1 
+supply fulfilling-13.4.1-1 
+function masquerade-29.6 
+operate function-105.2.1-1 other_cos-45.4 
+dunk funnel-9.3 
+ladle funnel-9.3 
+hoe funnel-9.3 
+scoop funnel-9.3 
+siphon funnel-9.3 wipe_instr-10.4.2-1 
+sop funnel-9.3 
+channelize funnel-9.3 
+channel funnel-9.3-1 
+rake funnel-9.3-1 wipe_instr-10.4.2-1 
+shovel funnel-9.3-1 wipe_instr-10.4.2-1 
+spoon funnel-9.3-1 
+tuck funnel-9.3-1 
+wipe funnel-9.3-1 wipe_manner-10.4.1-1 
+dump funnel-9.3-1-1 
+funnel funnel-9.3-1-1 
+squeeze knead-26.5 touch-20-1 wipe_manner-10.4.1-1 
+sweep run-51.3.2-1 
+wedge funnel-9.3-1-1 
+accord future_having-13.3 
+devolve future_having-13.3 
+portion-out future_having-13.3 
+ration future_having-13.3 
+allocate future_having-13.3-1 invest-13.5.4-1 
+allot future_having-13.3-1 
+apportion future_having-13.3-1 
+assign future_having-13.3-1 
+award future_having-13.3-1 
+bequeath future_having-13.3-1 
+cede future_having-13.3-1 
+concede future_having-13.3-1 
+grant future_having-13.3-1 
+offer future_having-13.3-1 reflexive_appearance-48.1.2 
+owe future_having-13.3-1 
+promise future_having-13.3-1 promise-37.13 
+reallocate future_having-13.3-1 
+reassign future_having-13.3-1 
+will future_having-13.3-1 
+attain get-13.5.1 
+book get-13.5.1 
+catch get-13.5.1 
+charter get-13.5.1 
+choose get-13.5.1 
+hire get-13.5.1 hire-13.5.3 
+lease get-13.5.1 
+order order-58.3-1 
+phone get-13.5.1 initiate_communication-37.4.2-1 instr_communication-37.4.1 
+procure get-13.5.1 
+rent give-13.1-1 
+reserve get-13.5.1 
+win succeed-74-2 
+cash get-13.5.1-1 
+score get-13.5.1-1 
+give-back give-13.1 
+lend give-13.1 
+loan give-13.1 
+peddle give-13.1 
+refund give-13.1 
+render render-29.90 
+hock give-13.1-1 
+sell give-13.1-1 
+pawn give-13.1-1 
+wolf gobble-39.3-1 
+gulp gobble-39.3-2 
+guzzle gobble-39.3-2 
+quaff gobble-39.3-2 
+slug gobble-39.3-2 swat-18.2 
+swallow gobble-39.3-2 hiccup-40.1.1 
+swig gobble-39.3-2 
+gorge gorge-39.6 
+subsist gorge-39.6 
+curry groom-41.1.2 
+groom groom-41.1.2 
+neaten groom-41.1.2 
+hatch grow-26.2.1 
+maturate grow-26.2.1 
+mature grow-26.2.1 other_cos-45.4 
+redevelop grow-26.2.1 
+cohere harmonize-22.6 
+dovetail harmonize-22.6 
+jibe harmonize-22.6 
+square harmonize-22.6 
+succor help-72.1-1 
+aid help-72.1-1-1 
+abet help-72.1-1-1 
+assist help-72.1-1-1 
+help help-72.1-1-1 
+accumulate herd-47.5.2 obtain-13.5.2 
+aggregate herd-47.5.2 
+amass herd-47.5.2 
+cluster herd-47.5.2 shake-22.3-2 
+collect herd-47.5.2 knead-26.5 obtain-13.5.2 other_cos-45.4 shake-22.3-2 
+congregate herd-47.5.2 
+convene herd-47.5.2 
+flock herd-47.5.2 
+herd herd-47.5.2 shake-22.3-2 
+huddle herd-47.5.2 spatial_configuration-47.6 
+mass herd-47.5.2 shake-22.3-1 
+reconvene herd-47.5.2 
+belch hiccup-40.1.1 substance_emission-43.4-1 
+blink hiccup-40.1.1 wink-40.3.1 
+blush hiccup-40.1.1 
+burp hiccup-40.1.1 
+eruct hiccup-40.1.1 
+fart hiccup-40.1.1 
+flush hiccup-40.1.1 
+hiccup hiccup-40.1.1 
+pant hiccup-40.1.1 manner_speaking-37.3 
+salivate hiccup-40.1.1 marvel-31.3 
+sneeze hiccup-40.1.1 nonverbal_expression-40.2 
+sniffle hiccup-40.1.1 
+snore hiccup-40.1.1 nonverbal_expression-40.2 
+snuff hiccup-40.1.1 
+snuffle hiccup-40.1.1 
+yawn hiccup-40.1.1 nonverbal_expression-40.2 
+commission hire-13.5.3 order-58.3-1 
+contract hire-13.5.3 
+employ hire-13.5.3 
+enlist hire-13.5.3 volunteer-95.4-1 
+recruit hire-13.5.3 orphan-29.7 
+reinstate hire-13.5.3 
+sign hire-13.5.3 image_impression-25.1 
+sign_on hire-13.5.3 
+sign_up hire-13.5.3 volunteer-95.4-1 
+train hire-13.5.3 
+blast hit-18.1 remedy-45.7 sound_emission-43.2 
+bop hit-18.1 waltz-51.5 
+dash run-51.3.2-2 
+knap hit-18.1 
+squelch hit-18.1 sound_emission-43.2 subjugate-42.3 
+tamp hit-18.1 
+thwack hit-18.1 
+trounce hit-18.1 
+whack hit-18.1 
+wham hit-18.1 spank-18.3 
+whang hit-18.1 hit-18.1-1 
+whap hit-18.1 spank-18.3 
+whop hit-18.1 spank-18.3 
+batter hit-18.1-1 
+jab hit-18.1-1 poke-19 
+stomp hit-18.1-1 run-51.3.2 
+tap investigate-35.4 throw-17.1-1 
+clasp hold-15.1 
+clutch hold-15.1 
+grab hold-15.1 obtain-13.5.2 steal-10.5-1 
+grip hold-15.1 touch-20-1 
+seize hold-15.1 obtain-13.5.2 
+wield hold-15.1 
+hunt hunt-35.1 
+mine hunt-35.1 mine-10.9 
+pan hunt-35.1 
+scrounge hunt-35.1 
+seek hunt-35.1 
+jam hurt-40.8.3-1 spray-9.7-1-1 
+chafe hurt-40.8.3-1 touch-20-1 
+overstretch hurt-40.8.3-1 
+rick hurt-40.8.3-1 
+stub hurt-40.8.3-1 
+rupture hurt-40.8.3-1-1 other_cos-45.4 
+sprain hurt-40.8.3-1-1 
+bite hurt-40.8.3-2 swat-18.2 
+contuse hurt-40.8.3-2 
+injure hurt-40.8.3-2 
+prick hurt-40.8.3-2 poke-19 
+skin hurt-40.8.3-2 pit-10.7 
+strain hurt-40.8.3-2 
+sunburn hurt-40.8.3-2 other_cos-45.4 
+wrench remove-10.1 
+address illustrate-25.3 
+autograph illustrate-25.3 
+date marry-36.2 
+illuminate illustrate-25.3 
+illustrate illustrate-25.3 transfer_mesg-37.1.1 
+initial illustrate-25.3 
+letter illustrate-25.3 
+monogram illustrate-25.3 
+annotate image_impression-25.1 
+applique image_impression-25.1 
+emboss image_impression-25.1 
+engrave image_impression-25.1 
+etch image_impression-25.1 
+handpaint image_impression-25.1 
+imprint image_impression-25.1 
+incise image_impression-25.1 
+ingrain image_impression-25.1 
+inscribe image_impression-25.1 
+reinscribe image_impression-25.1 
+scar image_impression-25.1 
+tattoo image_impression-25.1 
+imply indicate-78 
+predict indicate-78 
+denote indicate-78 representation-110.1 
+corroborate indicate-78 transfer_mesg-37.1.1 
+expose indicate-78 reflexive_appearance-48.1.2 
+forebode indicate-78 
+explain indicate-78-1 transfer_mesg-37.1.1 
+indicate indicate-78-1 
+say say-37.7-1-1 
+disclose indicate-78-1-1 say-37.7-1 
+verify indicate-78-1-1 patent-101 transfer_mesg-37.1.1 
+confirm indicate-78-1-1 
+demonstrate indicate-78-1-1 
+suggest reflexive_appearance-48.1.2 say-37.7-1-1-1 
+get_ahold_of initiate_communication-37.4.2 
+get_hold_of initiate_communication-37.4.2 
+ping sound_emission-43.2 
+telephone initiate_communication-37.4.2-1 instr_communication-37.4.1 
+ask inquire-37.1.2 
+enquire inquire-37.1.2 
+inquire inquire-37.1.2 
+pry remove-10.1 split-23.2 
+broadcast instr_communication-37.4.1 
+cable instr_communication-37.4.1 tape-22.4 
+e-mail instr_communication-37.4.1 
+fax instr_communication-37.4.1 
+modem instr_communication-37.4.1 
+netmail instr_communication-37.4.1 
+radio instr_communication-37.4.1 
+relay instr_communication-37.4.1 transfer_mesg-37.1.1 
+satellite instr_communication-37.4.1 
+semaphore instr_communication-37.4.1 
+signal instr_communication-37.4.1 
+telecast instr_communication-37.4.1 
+telegraph instr_communication-37.4.1 
+telex instr_communication-37.4.1 
+wire tape-22.4 
+wireless instr_communication-37.4.1 
+aim intend-61.2 
+mean intend-61.2-1 
+intend intend-61.2-1-1 try-61.1 wish-62 
+plan intend-61.2-1-1 wish-62 
+follow-up interact-36.6 
+follow-through interact-36.6 
+go-steady interact-36.6 
+go-out interact-36.6 
+hook-up interact-36.6 
+split-up interact-36.6 
+cross-examine interrogate-37.1.3 
+question interrogate-37.1.3 
+interview interrogate-37.1.3 
+interrogate interrogate-37.1.3 
+speculate invest-13.5.4 
+canvass investigate-35.4 
+explore investigate-35.4 
+frisk investigate-35.4 
+observe investigate-35.4 sight-30.2 
+picket investigate-35.4 
+quiz investigate-35.4 
+ransack investigate-35.4 
+riffle investigate-35.4 
+tour investigate-35.4 
+involve involve-107.1 
+relate involve-107.1 
+enroll involve-107.1 
+abuse judgment-33.1 
+backbite judgment-33.1 
+badmouth judgment-33.1 
+blame judgment-33.1 
+blaspheme judgment-33.1 
+condone judgment-33.1 
+find_fault_with judgment-33.1 
+gibe judgment-33.1 
+imprecate judgment-33.1 
+slang judgment-33.1 
+belittle judgment-33.1-1 
+berate judgment-33.1-1 
+bless judgment-33.1-1 
+calumniate judgment-33.1-1 
+castigate judgment-33.1-1 
+celebrate judgment-33.1-1 
+censure judgment-33.1-1 
+chasten judgment-33.1-1 
+chastise judgment-33.1-1 
+chide judgment-33.1-1 
+cite judgment-33.1-1 
+commemorate judgment-33.1-1 
+commend judgment-33.1-1 
+compliment judgment-33.1-1 
+condemn judgment-33.1-1 suspect-81 
+congratulate judgment-33.1-1 
+criticize judgment-33.1-1 
+curse judgment-33.1-1 
+damn judgment-33.1-1 
+decry judgment-33.1-1 
+defame judgment-33.1-1 
+denigrate judgment-33.1-1 
+denounce judgment-33.1-1 
+deprecate judgment-33.1-1 
+deride judgment-33.1-1 
+disparage judgment-33.1-1 reject-77.2-1 
+eulogize judgment-33.1-1 
+excuse judgment-33.1-1 
+extol judgment-33.1-1 
+fault judgment-33.1-1 
+felicitate judgment-33.1-1 
+forgive judgment-33.1-1 
+glorify judgment-33.1-1 overstate-37.12 
+greet judgment-33.1-1 
+honor judgment-33.1-1 
+incriminate judgment-33.1-1 
+lambaste judgment-33.1-1 
+lampoon judgment-33.1-1 
+malign judgment-33.1-1 
+mock judgment-33.1-1 
+pardon judgment-33.1-1 
+rebuke judgment-33.1-1 
+recommend judgment-33.1-1 reflexive_appearance-48.1.2 say-37.7-1-1-1 
+reproach judgment-33.1-1 
+reprove judgment-33.1-1 
+repudiate judgment-33.1-1 
+revile judgment-33.1-1 
+ridicule judgment-33.1-1 
+satirize judgment-33.1-1 
+scold judgment-33.1-1 
+scorn judgment-33.1-1 
+slander judgment-33.1-1 
+snub judgment-33.1-1 
+stigmatize judgment-33.1-1 
+thank judgment-33.1-1 
+upbraid judgment-33.1-1 
+vilify judgment-33.1-1 
+write_up transcribe-25.4 
+acclaim judgment-33.1-1-1 
+herald judgment-33.1-1-1 
+laud judgment-33.1-1-1 
+hoard keep-15.2 
+stock keep-15.2 spray-9.7-2 
+stockpile keep-15.2 
+ball knead-26.5 
+compress knead-26.5 other_cos-45.4 
+contort knead-26.5 
+curve knead-26.5 
+distort knead-26.5 
+knead knead-26.5 touch-20-1 
+melt knead-26.5 other_cos-45.4-1 
+wad knead-26.5 
+whip knead-26.5 spank-18.3 
+cram spray-9.7-1-1 
+glean learn-14-2 
+memorize learn-14-2 
+abandon leave-51.2 
+desert leave-51.2-1 
+lecture lecture-37.11-1 
+moralize lecture-37.11-1 
+preach lecture-37.11-1 transfer_mesg-37.1.1 
+rant lecture-37.11-1 manner_speaking-37.3 
+rave lecture-37.11-1 
+remark lecture-37.11-1 say-37.7-1-1 
+rhapsodize lecture-37.11-1 
+speak lecture-37.11-1 talk-37.5 
+speak_out lecture-37.11-1 
+speak_up lecture-37.11-1 
+talk talk-37.5 
+testify lecture-37.11-1 
+theorize lecture-37.11-1 
+pontificate lecture-37.11-1 
+elaborate lecture-37.11-1-1 
+comment lecture-37.11-1-1 
+beam nonverbal_expression-40.2 
+blaze light_emission-43.1 
+flame light_emission-43.1 
+flare light_emission-43.1 
+flicker light_emission-43.1 
+fluoresce light_emission-43.1 
+glare nonverbal_expression-40.2 peer-30.3 
+gleam light_emission-43.1 
+glimmer light_emission-43.1 
+glint light_emission-43.1 
+glisten light_emission-43.1 
+glitter light_emission-43.1 
+glow light_emission-43.1 
+incandesce light_emission-43.1 
+scintillate light_emission-43.1 
+shimmer light_emission-43.1 
+shine light_emission-43.1 
+sparkle light_emission-43.1 
+twinkle light_emission-43.1 
+limit limit-76 
+restrict limit-76 
+constrain limit-76 
+dally linger-53.1 
+dawdle linger-53.1 
+dither linger-53.1 
+equivocate linger-53.1 
+hesitate linger-53.1 
+loaf linger-53.1 
+loiter linger-53.1 
+pause linger-53.1 
+potter linger-53.1 
+procrastinate linger-53.1 
+putter linger-53.1 sound_emission-43.2 
+tarry linger-53.1 
+delay linger-53.1-1 
+scruple linger-53.1-1 
+stall linger-53.1-1 
+barrack lodge-46 pocket-9.10 
+bivouac lodge-46 
+bunk lodge-46 
+camp lodge-46 
+guest lodge-46 
+lodge lodge-46 
+overnight lodge-46 weekend-56 
+room lodge-46 
+settle settle-36.1.2 
+shack_up lodge-46 
+sleep_over lodge-46 
+stay_over lodge-46 
+ache tingle-40.8.2 
+crave long-32.2-1 want-32.1 
+hanker long-32.2-1 long-32.2-2 
+hope long-32.2-1 
+hunger long-32.2-1 marvel-31.3 
+itch pain-40.8.1 
+long long-32.2-1 
+lust long-32.2-1 long-32.2-2 
+pine long-32.2-1 
+pray long-32.2-1 
+thirst long-32.2-1 long-32.2-2 
+wish long-32.2-1 
+yearn long-32.2-1 long-32.2-2 
+allure lure-59.3 
+cajole lure-59.3 
+coax lure-59.3 
+coerce lure-59.3 
+inveigle lure-59.3 
+lure lure-59.3 
+seduce lure-59.3 
+sweet-talk lure-59.3 
+win_over lure-59.3 
+babble manner_speaking-37.3 
+bawl manner_speaking-37.3 
+blubber manner_speaking-37.3 nonverbal_expression-40.2 
+burble manner_speaking-37.3 sound_emission-43.2 
+bluster manner_speaking-37.3 
+carol manner_speaking-37.3 
+chant manner_speaking-37.3 performance-26.7 
+chortle manner_speaking-37.3 nonverbal_expression-40.2 
+chuckle manner_speaking-37.3 nonverbal_expression-40.2 
+croon manner_speaking-37.3 
+drawl manner_speaking-37.3 
+gabble manner_speaking-37.3 
+gasp manner_speaking-37.3 nonverbal_expression-40.2 
+gibber manner_speaking-37.3 
+holler manner_speaking-37.3 
+jabber manner_speaking-37.3 
+keen manner_speaking-37.3 sound_emission-43.2 
+lilt manner_speaking-37.3 sound_emission-43.2 
+lisp manner_speaking-37.3 
+mewl manner_speaking-37.3 sound_emission-43.2 
+mumble manner_speaking-37.3 
+murmur manner_speaking-37.3 sound_emission-43.2 
+mutter manner_speaking-37.3 
+nasal manner_speaking-37.3 
+natter manner_speaking-37.3 
+prattle manner_speaking-37.3 
+quaver manner_speaking-37.3 
+rasp manner_speaking-37.3 sound_emission-43.2 
+scream manner_speaking-37.3 
+shout manner_speaking-37.3 
+shriek manner_speaking-37.3 sound_emission-43.2 
+sibilate manner_speaking-37.3 
+simper manner_speaking-37.3 nonverbal_expression-40.2 
+sigh nonverbal_expression-40.2 
+sing manner_speaking-37.3 performance-26.7-1 
+smatter manner_speaking-37.3 
+smile nonverbal_expression-40.2 
+snivel manner_speaking-37.3 nonverbal_expression-40.2 
+splutter manner_speaking-37.3 sound_emission-43.2 
+squall manner_speaking-37.3 
+stammer manner_speaking-37.3 
+stemmer manner_speaking-37.3 
+stutter manner_speaking-37.3 
+tisk manner_speaking-37.3 
+twang sound_emission-43.2 
+vociferate manner_speaking-37.3 
+whisper manner_speaking-37.3 sound_emission-43.2 
+witter manner_speaking-37.3 
+whoop manner_speaking-37.3 
+yammer manner_speaking-37.3 
+yodel manner_speaking-37.3 
+blare manner_speaking-37.3 sound_emission-43.2 
+gurgle sound_emission-43.2 
+court marry-36.2 
+cuddle marry-36.2 
+divorce marry-36.2 separate-23.1-1 
+embrace marry-36.2 
+kiss marry-36.2 touch-20-1 
+neck marry-36.2 
+nuzzle marry-36.2 
+pet marry-36.2 touch-20-1 
+fume marvel-31.3 
+marvel marvel-31.3 
+fret marvel-31.3 
+moon marvel-31.3 
+sulk marvel-31.3 
+flip_out marvel-31.3 
+freak_out marvel-31.3 
+go_apeshit marvel-31.3 
+go_ballistic marvel-31.3 
+lose_it marvel-31.3 
+bask marvel-31.3 
+exult marvel-31.3 
+glory marvel-31.3 
+luxuriate marvel-31.3 
+rejoice marvel-31.3 
+revel marvel-31.3 
+wallow marvel-31.3 
+beware marvel-31.3 
+despair marvel-31.3 
+disapprove marvel-31.3 
+anguish marvel-31.3 
+gloat marvel-31.3 
+hallucinate marvel-31.3 
+mope marvel-31.3 
+triumph marvel-31.3 
+sorrow marvel-31.3 
+react marvel-31.3 respond-113 
+behave masquerade-29.6 masquerade-29.6-1 
+masquerade masquerade-29.6 
+officiate masquerade-29.6 
+qualify masquerade-29.6 
+pose reflexive_appearance-48.1.2 transfer_mesg-37.1.1 
+matter matter-91 
+angle meander-47.7 
+cascade meander-47.7 
+crawl meander-47.7 run-51.3.2 swarm-47.5.1-1 
+crest meander-47.7 
+straggle meander-47.7 
+wander run-51.3.2-1 
+range meander-47.7 
+veer meander-47.7 
+zag meander-47.7 
+zig meander-47.7 
+meander meander-47.7-1 run-51.3.2 
+plummit meander-47.7-1 
+snake roll-51.3.1 
+undulate meander-47.7-1 modes_of_being_with_motion-47.3 roll-51.3.1 
+swerve meander-47.7-1 run-51.3.2 
+zigzag meander-47.7-1 run-51.3.2 
+play meet-36.3-1 play-114.2-1 use-105.1 
+remonstrate meet-36.3-1 
+reunite meet-36.3-1 
+visit meet-36.3-1 
+quarry mine-10.9 search-35.2 
+admix mix-22.1-1 
+intermix mix-22.1-1 
+scramble run-51.3.2 
+cream mix-22.1-1 
+blend mix-22.1-1-1 preparing-26.3-1 
+combine mix-22.1-1-1 
+compound mix-22.1-1-1 
+commingle mix-22.1-1-1 
+decoct mix-22.1-1-1 
+fuse mix-22.1-1-1 shake-22.3-1-1 
+meld mix-22.1-1-1 
+merge mix-22.1-1-1 
+mingle mix-22.1-1-1 
+mix mix-22.1-1-1 preparing-26.3-1 
+recombine mix-22.1-1-1 
+add mix-22.1-2 say-37.7-1 
+tie mix-22.1-2 tape-22.4 
+connect mix-22.1-2-1 tape-22.4 
+link mix-22.1-2-1 tape-22.4 
+pool mix-22.1-2-1 
+network mix-22.1-2-1 
+rejoin mix-22.1-2-1 
+circulate modes_of_being_with_motion-47.3 
+creep modes_of_being_with_motion-47.3 run-51.3.2 swarm-47.5.1-1 
+dance performance-26.7-1 waltz-51.5 
+drift modes_of_being_with_motion-47.3 roll-51.3.1 run-51.3.2-2 
+eddy modes_of_being_with_motion-47.3 
+falter modes_of_being_with_motion-47.3 
+float modes_of_being_with_motion-47.3 roll-51.3.1 run-51.3.2-2 slide-11.2-1 
+hover modes_of_being_with_motion-47.3 
+joggle modes_of_being_with_motion-47.3 
+oscillate modes_of_being_with_motion-47.3 
+pulsate modes_of_being_with_motion-47.3 
+pulse modes_of_being_with_motion-47.3 
+recirculate modes_of_being_with_motion-47.3 
+revolve modes_of_being_with_motion-47.3 orbit-51.9.2 roll-51.3.1 
+swag spatial_configuration-47.6 
+throb modes_of_being_with_motion-47.3 tingle-40.8.2 
+vacillate modes_of_being_with_motion-47.3 
+vibrate modes_of_being_with_motion-47.3 other_cos-45.4 
+waft modes_of_being_with_motion-47.3 
+waver modes_of_being_with_motion-47.3 
+worm modes_of_being_with_motion-47.3 pit-10.7 run-51.3.2 
+sum multiply-108 
+tally multiply-108 transcribe-25.4 
+divide multiply-108-1 other_cos-45.4 separate-23.1-1 
+factor_out multiply-108-2 
+interpolate multiply-108-2 
+extrapolate multiply-108-2 
+subtract multiply-108-2 remove-10.1 
+average multiply-108-3 
+assassinate murder-42.1 
+bushwhack murder-42.1 
+dispatch send-11.1 
+eliminate murder-42.1 remove-10.1 
+euthanize murder-42.1 
+immolate murder-42.1 
+liquidate murder-42.1 
+lynch murder-42.1 
+massacre murder-42.1 
+murder murder-42.1 
+off murder-42.1 
+slaughter murder-42.1 
+slay murder-42.1 
+kill-off murder-42.1-1 
+disregard neglect-75.1 
+forego neglect-75.1 
+ignore neglect-75.1 
+leave_out neglect-75.1 
+overlook neglect-75.1 
+fail succeed-74-3-1-1 
+neglect neglect-75.1-1 
+oar nonvehicle-51.4.2 
+pedal nonvehicle-51.4.2 
+ride nonvehicle-51.4.2 
+cruise nonvehicle-51.4.2-1 
+navigate nonvehicle-51.4.2-1 
+sail nonvehicle-51.4.2-1 vehicle_path-51.4.3 
+tack tape-22.4 
+voyage nonvehicle-51.4.2-1 
+wing nonvehicle-51.4.2-1 run-51.3.2-1 
+frown nonverbal_expression-40.2 
+gape nonverbal_expression-40.2 peer-30.3 
+gawk nonverbal_expression-40.2 peer-30.3 
+giggle nonverbal_expression-40.2 
+glower nonverbal_expression-40.2 
+goggle nonverbal_expression-40.2 peer-30.3 
+grimace nonverbal_expression-40.2 
+grin nonverbal_expression-40.2 
+guffaw nonverbal_expression-40.2 
+jeer nonverbal_expression-40.2 
+laugh nonverbal_expression-40.2 
+lour nonverbal_expression-40.2 
+pout nonverbal_expression-40.2 
+scoff nonverbal_expression-40.2 
+scowl nonverbal_expression-40.2 
+smirk nonverbal_expression-40.2 
+sneer nonverbal_expression-40.2 
+snicker nonverbal_expression-40.2 
+sniff peer-30.3 sight-30.2 
+snigger nonverbal_expression-40.2 
+sob nonverbal_expression-40.2 
+titter nonverbal_expression-40.2 
+hem nonverbal_expression-40.2 
+accrue obtain-13.5.2 
+appropriate obtain-13.5.2 
+borrow obtain-13.5.2 
+cadge obtain-13.5.2 steal-10.5-1 
+exact obtain-13.5.2 
+inherit obtain-13.5.2 
+recoup obtain-13.5.2 steal-10.5 
+recover obtain-13.5.2 
+regain obtain-13.5.2 
+retrieve obtain-13.5.2 
+snatch obtain-13.5.2 steal-10.5-1 
+source obtain-13.5.2 
+arrogate obtain-13.5.2 
+hijack obtain-13.5.2 
+acquire obtain-13.5.2-1 
+obtain obtain-13.5.2-1 
+purchase obtain-13.5.2-1 
+recur occur-48.3 
+take_place occur-48.3 
+befall occur-48.3-1 
+chance occur-48.3-1 
+ensue occur-48.3-1 
+eventuate occur-48.3-1 
+happen occur-48.3-1 
+occur occur-48.3-1 
+transpire occur-48.3-1 
+come_off occur-48.3-2 
+orbit orbit-51.9.2 
+announce order-58.3 reflexive_appearance-48.1.2 say-37.7-1-1 
+demand order-58.3 
+mandate order-58.3 
+command order-58.3-1 
+require order-58.3-1 require-103-1 
+apprentice orphan-29.7 
+beggar orphan-29.7 
+cripple orphan-29.7 
+cuckold orphan-29.7 
+knight orphan-29.7 
+martyr orphan-29.7 
+orphan orphan-29.7 
+outlaw orphan-29.7 
+pauper orphan-29.7 
+widow orphan-29.7 
+abate other_cos-45.4 
+abbreviate other_cos-45.4 
+abrade other_cos-45.4 
+abridge other_cos-45.4 
+accelerate other_cos-45.4 
+acetify other_cos-45.4 
+acidify other_cos-45.4 
+activate other_cos-45.4 
+age other_cos-45.4 
+agglomerate other_cos-45.4 
+air other_cos-45.4 
+alkalify other_cos-45.4 
+alkalize other_cos-45.4 
+alter turn-26.6.1 
+ameliorate other_cos-45.4 
+americanize other_cos-45.4 
+amplify other_cos-45.4 overstate-37.12 
+anglicize other_cos-45.4 
+atomize other_cos-45.4 
+attenuate other_cos-45.4 
+augment other_cos-45.4 
+balance other_cos-45.4 spatial_configuration-47.6-1 
+blacken other_cos-45.4 
+beautify other_cos-45.4 
+bifurcate other_cos-45.4 
+bisect other_cos-45.4 
+bleach other_cos-45.4 
+blunt other_cos-45.4 
+blur other_cos-45.4 
+bolshevize other_cos-45.4 
+brighten other_cos-45.4 
+broaden other_cos-45.4 
+calcify other_cos-45.4 
+capsize other_cos-45.4 
+caramelize other_cos-45.4 
+carbonize other_cos-45.4 
+centralize other_cos-45.4 
+cheapen other_cos-45.4 
+cheer_up other_cos-45.4 
+civilize other_cos-45.4 
+clarify other_cos-45.4 
+cloud other_cos-45.4 
+coagulate other_cos-45.4 
+coarsen other_cos-45.4 
+collapse other_cos-45.4 
+combust other_cos-45.4 
+compact other_cos-45.4 
+condense other_cos-45.4 
+congeal other_cos-45.4 
+constrict other_cos-45.4 
+cool other_cos-45.4 
+corrugate other_cos-45.4 
+corrupt other_cos-45.4 
+crimson other_cos-45.4 
+crystallize other_cos-45.4 
+curdle other_cos-45.4 
+dampen other_cos-45.4 subjugate-42.3 
+darken other_cos-45.4 
+de-escalate other_cos-45.4 
+decelerate other_cos-45.4 
+decentralize other_cos-45.4 
+decompress other_cos-45.4 
+deepen other_cos-45.4 
+deflate other_cos-45.4 
+deflect other_cos-45.4 
+degenerate other_cos-45.4 
+degrade other_cos-45.4 
+dehydrate other_cos-45.4 
+demagnetize other_cos-45.4 
+democratize other_cos-45.4 
+depressurize other_cos-45.4 
+derail other_cos-45.4 
+desiccate other_cos-45.4 
+destabilize other_cos-45.4 
+detonate other_cos-45.4 
+devalue other_cos-45.4 
+diffuse other_cos-45.4 
+dilate other_cos-45.4 
+dilute other_cos-45.4 
+dim other_cos-45.4 
+disband other_cos-45.4 
+discolor other_cos-45.4 
+disintegrate other_cos-45.4 
+disperse other_cos-45.4 
+dissipate other_cos-45.4 
+diversify other_cos-45.4 
+double other_cos-45.4 
+downshift other_cos-45.4 
+dull other_cos-45.4 
+effeminate other_cos-45.4 
+emaciate other_cos-45.4 
+emulsify other_cos-45.4 
+energize other_cos-45.4 
+enlarge other_cos-45.4 
+equalize other_cos-45.4 
+equilibrate other_cos-45.4 
+escalate other_cos-45.4 
+evaporate other_cos-45.4 
+even other_cos-45.4 
+exfoliate other_cos-45.4 
+expand other_cos-45.4 
+fade other_cos-45.4 
+fatten other_cos-45.4 
+federate other_cos-45.4 
+feminize other_cos-45.4 
+firm other_cos-45.4 
+fluff other_cos-45.4 
+fossilize other_cos-45.4 
+fray other_cos-45.4 
+freckle other_cos-45.4 
+freshen other_cos-45.4 
+fructify other_cos-45.4 
+gasify other_cos-45.4 
+gelatinize other_cos-45.4 
+gentrify other_cos-45.4 
+germanize other_cos-45.4 
+globalize other_cos-45.4 
+glutenize other_cos-45.4 
+granulate other_cos-45.4 
+gray other_cos-45.4 
+halt other_cos-45.4 stop-55.4-1 
+harden other_cos-45.4 
+hasten other_cos-45.4 run-51.3.2-2 rush-53.2 
+heal other_cos-45.4 
+heighten other_cos-45.4 
+hellenize other_cos-45.4 
+hush other_cos-45.4 subjugate-42.3 
+hybridize other_cos-45.4 
+hydrolize other_cos-45.4 
+hydrate other_cos-45.4 
+ignite other_cos-45.4 
+improve other_cos-45.4 
+incubate other_cos-45.4 
+indurate other_cos-45.4 
+industrialize other_cos-45.4 
+inflate other_cos-45.4 
+intensify other_cos-45.4 
+internationalize other_cos-45.4 
+ionize other_cos-45.4 
+laminate other_cos-45.4 
+lengthen other_cos-45.4 
+lessen other_cos-45.4 
+levitate other_cos-45.4 
+liberalize other_cos-45.4 
+lignify other_cos-45.4 
+liquefy other_cos-45.4 
+liquify other_cos-45.4 
+liven other_cos-45.4 
+loose other_cos-45.4 
+loosen other_cos-45.4 
+macerate other_cos-45.4 
+mellow other_cos-45.4 
+metabolize other_cos-45.4 
+mitigate other_cos-45.4 
+mobilize other_cos-45.4 
+moderate other_cos-45.4 
+modernize other_cos-45.4 
+modify other_cos-45.4 
+modulate other_cos-45.4 
+moisten other_cos-45.4 
+mummify other_cos-45.4 remedy-45.7 
+narrow other_cos-45.4 
+nationalize other_cos-45.4 
+naturalize other_cos-45.4 
+neutralize other_cos-45.4 
+normalize other_cos-45.4 
+occlude other_cos-45.4 
+ossify other_cos-45.4 
+overturn other_cos-45.4 
+petrify other_cos-45.4 
+polarize other_cos-45.4 
+polymerize other_cos-45.4 
+pop other_cos-45.4 
+privatize other_cos-45.4 
+proliferate other_cos-45.4 
+puncture other_cos-45.4 
+purple other_cos-45.4 
+quadruple other_cos-45.4 
+quicken other_cos-45.4 
+quiet other_cos-45.4 
+quieten other_cos-45.4 
+rarefy other_cos-45.4 
+redden other_cos-45.4 
+redouble other_cos-45.4 
+refine other_cos-45.4 
+reform other_cos-45.4 
+rekindle other_cos-45.4 
+renew other_cos-45.4 
+reopen other_cos-45.4 
+replicate other_cos-45.4 
+resuscitate other_cos-45.4 
+reverse other_cos-45.4 
+revive other_cos-45.4 
+ripen other_cos-45.4 
+root other_cos-45.4 
+roughen other_cos-45.4 
+saponify other_cos-45.4 
+scorch other_cos-45.4 
+section other_cos-45.4 
+sensitize other_cos-45.4 
+sharpen other_cos-45.4 
+short other_cos-45.4 
+short-circuit other_cos-45.4 
+shorten other_cos-45.4 
+shrivel other_cos-45.4 
+shush other_cos-45.4 
+shut other_cos-45.4 
+silicify other_cos-45.4 
+sink other_cos-45.4 
+slack other_cos-45.4 
+slacken other_cos-45.4 
+slim other_cos-45.4 
+slow other_cos-45.4 
+smarten other_cos-45.4 
+smooth other_cos-45.4 wipe_manner-10.4.1 
+smoothen other_cos-45.4 
+soften other_cos-45.4 
+solidify other_cos-45.4 
+sour other_cos-45.4 
+souse other_cos-45.4 
+stabilize other_cos-45.4 
+standardize other_cos-45.4 
+steady other_cos-45.4 
+steepen other_cos-45.4 
+stiffen other_cos-45.4 
+stratify other_cos-45.4 
+strangulate poison-42.2 
+strengthen other_cos-45.4 support-15.3-1 
+submerge other_cos-45.4 
+sweeten other_cos-45.4 
+tame other_cos-45.4 
+taper other_cos-45.4 
+tatter other_cos-45.4 
+tauten other_cos-45.4 
+tenderize other_cos-45.4 
+tense other_cos-45.4 
+thicken other_cos-45.4 
+thin other_cos-45.4 
+tighten other_cos-45.4 
+tone other_cos-45.4 
+topple other_cos-45.4 
+toughen other_cos-45.4 
+tranquilize other_cos-45.4 
+treble other_cos-45.4 
+trip run-51.3.2-2 
+triple other_cos-45.4 
+turn-on other_cos-45.4 
+turn-off other_cos-45.4 
+ulcerate other_cos-45.4 
+unionize other_cos-45.4 
+upload other_cos-45.4 remedy-45.7-1 
+vitrify other_cos-45.4 
+volatilize other_cos-45.4 
+vulcanize other_cos-45.4 
+wake other_cos-45.4 
+waken other_cos-45.4 
+warm other_cos-45.4 
+weaken other_cos-45.4 
+westernize other_cos-45.4 
+wet other_cos-45.4 
+whiten other_cos-45.4 
+wizen other_cos-45.4 
+widen other_cos-45.4 
+worsen other_cos-45.4 
+yellow other_cos-45.4 
+dry other_cos-45.4-1 
+freeze weather-57 
+thaw other_cos-45.4-1 weather-57 
+overstate overstate-37.12 
+overdraw overstate-37.12 
+hyperbolize overstate-37.12 
+magnify overstate-37.12 remedy-45.7-1 
+overemphasize overstate-37.12 
+overrate overstate-37.12 
+overstress overstate-37.12 
+tout overstate-37.12 
+own own-100.1 
+possess own-100.1 
+ail pain-40.8.1 
+copyright patent-101 
+patent patent-101 
+trademark patent-101 
+license patent-101 
+register patent-101 
+credential patent-101 
+accredit patent-101 
+evidence patent-101 
+imitate patent-101 
+impersonate patent-101 
+pay pay-68-1 
+tithe pay-68-1 
+eavesdrop peer-30.3 
+gaze peer-30.3 
+glance peer-30.3 
+leer peer-30.3 
+listen peer-30.3 rummage-35.5 
+look peer-30.3 rummage-35.5 
+ogle peer-30.3 
+peek peer-30.3 
+peer peer-30.3 
+snoop peer-30.3 rummage-35.5-1 
+squint peer-30.3 wink-40.3.1 
+stare peer-30.3 
+buffet pelt-17.2 
+pelt pelt-17.2 weather-57 
+pepperspray pelt-17.2 
+shell pit-10.7 
+stone pelt-17.2 poison-42.2 
+belt performance-26.7 
+direct performance-26.7 supervision-95.2.2 
+enact performance-26.7 
+intone performance-26.7 
+vocalize say-37.7-1 
+recite performance-26.7-1 transfer_mesg-37.1.1 
+replay performance-26.7-1 
+beard pit-10.7 
+bone pit-10.7 
+burl pit-10.7 
+core pit-10.7 
+gill pit-10.7 
+gut pit-10.7 
+hull pit-10.7 
+husk pit-10.7 
+lint pit-10.7 
+louse pit-10.7 
+peel pit-10.7 
+pinion pit-10.7 
+pip pit-10.7 poison-42.2 
+pit pit-10.7 
+pith pit-10.7 
+pod pit-10.7 
+poll pit-10.7 
+pulp pit-10.7 
+rind pit-10.7 
+scale pit-10.7 
+scalp pit-10.7 
+shuck pit-10.7 
+stalk pit-10.7 stalk-35.3 
+weed pit-10.7 wipe_manner-10.4.1 
+zest pit-10.7 
+frolic play-114.2 run-51.3.2 
+recreate play-114.2 
+archive pocket-9.10 
+bag pocket-9.10 
+bank pocket-9.10 
+beach pocket-9.10 
+bed pocket-9.10 
+bench pocket-9.10 
+billet pocket-9.10 
+bin pocket-9.10 
+bottle pocket-9.10 
+cage pocket-9.10 
+case pocket-9.10 
+cellar pocket-9.10 
+coop pocket-9.10 
+corral pocket-9.10 
+crate pocket-9.10 
+cup pocket-9.10 
+fork pocket-9.10 
+garage pocket-9.10 
+hangar pocket-9.10 
+kennel pocket-9.10 
+pasture pocket-9.10 
+pen pocket-9.10 
+pillory pocket-9.10 
+pocket pocket-9.10 
+pot pocket-9.10 
+sheathe pocket-9.10 
+shelve pocket-9.10 
+shoulder pocket-9.10 
+skewer pocket-9.10 tape-22.4 
+snare pocket-9.10 
+spindle pocket-9.10 
+spool pocket-9.10 
+tin pocket-9.10 
+trap trick-59.2 
+tree pocket-9.10 
+warehouse pocket-9.10 
+berth pocket-9.10-1 
+dock pocket-9.10-1 
+drydock pocket-9.10-1 
+land pocket-9.10-1 
+moor pocket-9.10-1 shake-22.3-2-1 tape-22.4 
+stable pocket-9.10-1 
+asphyxiate poison-42.2 suffocate-40.7 
+behead poison-42.2 
+bullet poison-42.2 
+crucify poison-42.2 
+dart run-51.3.2-2 
+decapitate poison-42.2 
+drown poison-42.2 
+electrocute poison-42.2 
+evicerate poison-42.2 
+garrotte poison-42.2 
+impale poison-42.2 
+knife poison-42.2 spank-18.3 
+shoot poison-42.2 
+stab poison-42.2 poke-19 swat-18.2 
+strangle poison-42.2 subjugate-42.3 
+suffocate poison-42.2 subjugate-42.3 suffocate-40.7 
+throttle poison-42.2 
+pierce poke-19 
+poke poke-19 
+stick put-9.1-2 shake-22.3-2 spray-9.7-1 
+drip pour-9.5 substance_emission-43.4-1 
+pour pour-9.5 preparing-26.3-2 substance_emission-43.4-1 
+slop pour-9.5 substance_emission-43.4-1 
+slosh pour-9.5 
+spew pour-9.5 substance_emission-43.4-1 
+trickle pour-9.5 substance_emission-43.4-1 
+brew preparing-26.3-1 
+cook_up preparing-26.3-1 
+fix shake-22.3-2 
+light remedy-45.7 
+ready preparing-26.3-1 
+cultivate preparing-26.3-1 rear-26.2.2-1 
+iron preparing-26.3-2 wipe_instr-10.4.2 
+weld preparing-26.3-2 shake-22.3-2-1 tape-22.4 
+auction price-54.4 
+calibrate price-54.4 
+meter price-54.4 
+overestimate price-54.4 
+price price-54.4 
+reappraise price-54.4 
+promote promote-102 
+boost promote-102 support-15.3-1 
+further promote-102 
+invite promote-102 
+emphasize promote-102 
+underscore promote-102 scribble-25.2 
+spell pronounce-29.3.1 scribble-25.2 
+bust prosecute-33.2 
+collar prosecute-33.2 
+impeach prosecute-33.2 
+nab steal-10.5-1 
+penalize prosecute-33.2 
+arrest prosecute-33.2-1 
+indict prosecute-33.2-1 
+persecute prosecute-33.2-1 
+prosecute prosecute-33.2-1 
+punish prosecute-33.2-1 
+jerk push-12-1 
+jostle push-12-1-1 
+press push-12-1-1 
+emplace put-9.1 
+immerse put-9.1 
+implant put-9.1 
+position put-9.1 
+situate put-9.1 
+sling put-9.1 throw-17.1-1 
+station put-9.1 
+superimpose put-9.1 
+tack_on put-9.1 
+apply use-105.1 
+bury put-9.1-1 
+build-in put-9.1-1 
+deposit put-9.1-1 
+embed put-9.1-1 
+insert put-9.1-1 
+park put-9.1-1 
+reinstall put-9.1-1 
+stash put-9.1-1 
+stow put-9.1-1 
+place put-9.1-2 
+elevate put_direction-9.4 
+lift put_direction-9.4 
+back put_direction-9.4 run-51.3.2-2 
+prop put_spatial-9.2 
+underlay put_spatial-9.2 
+dangle put_spatial-9.2-1 spatial_configuration-47.6-1 
+rest put_spatial-9.2-1 spatial_configuration-47.6-1 
+nurture rear-26.2.2 
+rear rear-26.2.2 
+farm rear-26.2.2-1 
+answer reciprocate-112-1 
+reciprocate reciprocate-112-1 
+display reflexive_appearance-48.1.2 
+exhibit reflexive_appearance-48.1.2 
+express reflexive_appearance-48.1.2 
+flaunt reflexive_appearance-48.1.2 
+intrude reflexive_appearance-48.1.2 
+manifest reflexive_appearance-48.1.2 
+propose reflexive_appearance-48.1.2 say-37.7-1-1 
+reassert reflexive_appearance-48.1.2 
+refrain refrain-69 
+abstain refrain-69 
+desist refrain-69 
+forbear refrain-69 
+amount register-54.1 
+time register-54.1-1 
+mistime register-54.1-1 
+clock register-54.1-1-1 
+measure register-54.1-1-1 
+weigh register-54.1-1-1 
+walk_through rehearse-26.8 
+repeat rehearse-26.8 say-37.7-1-1 stop-55.4-1 
+practice rehearse-26.8-1 
+rehearse rehearse-26.8-1 
+rebuff reject-77.2 
+refuse reject-77.2 
+turn-down reject-77.2 remedy-45.7 
+disprefer reject-77.2-1 
+pooh_pooh reject-77.2-1 
+reject reject-77.2-1 
+bear_on relate-86.2-1 
+touch_on relate-86.2-1 
+pertain relate-86.2-2 
+rely rely-70 
+depend rely-70 
+gamble rely-70 risk-94 
+take_a_chance rely-70 
+abase remedy-45.7 
+africanize remedy-45.7 
+alcoholize remedy-45.7 
+anesthetize remedy-45.7 
+animate remedy-45.7 
+backfill remedy-45.7 
+bastardize remedy-45.7 
+bedew remedy-45.7 
+blemish remedy-45.7 
+bloody remedy-45.7 
+botch remedy-45.7 
+bowdlerize remedy-45.7 
+bring-out remedy-45.7 
+bring-up remedy-45.7 
+bungle remedy-45.7 
+capacitate remedy-45.7 
+carbonify remedy-45.7 
+castrate remedy-45.7 
+catholicize remedy-45.7 
+cauterize remedy-45.7 
+chamfer remedy-45.7 
+chlorinate remedy-45.7 
+christianize remedy-45.7 
+circumcise remedy-45.7 
+circumscribe remedy-45.7 
+coif remedy-45.7 
+commercialize remedy-45.7 
+configure remedy-45.7 
+constipate remedy-45.7 
+constringe remedy-45.7 
+contextualize remedy-45.7 
+correct remedy-45.7 
+counteract remedy-45.7 
+cremate remedy-45.7 
+deafen remedy-45.7 
+debase remedy-45.7 
+deconstruct remedy-45.7 
+dehumidify remedy-45.7 
+delineate remedy-45.7 
+demean remedy-45.7 
+dement remedy-45.7 
+demobilize remedy-45.7 
+desalinate remedy-45.7 
+desensitize remedy-45.7 
+diffract remedy-45.7 
+disable remedy-45.7 
+dishevel remedy-45.7 
+disinfect remedy-45.7 
+disinter remedy-45.7 
+dispel remedy-45.7 
+dislocate remedy-45.7 
+disorganize remedy-45.7 
+edify remedy-45.7 
+emasculate remedy-45.7 
+embitter remedy-45.7 
+embrocate remedy-45.7 
+enhance remedy-45.7 
+enunciate remedy-45.7 
+eternalize remedy-45.7 
+eternize remedy-45.7 
+europeanize remedy-45.7 
+exacerbate remedy-45.7 
+exhume remedy-45.7 
+expropriate remedy-45.7 
+fanaticize remedy-45.7 
+federalize remedy-45.7 
+fertilize remedy-45.7 
+flouridate remedy-45.7 
+humanize remedy-45.7 
+humidify remedy-45.7 
+hydrogenate remedy-45.7 
+immortalize remedy-45.7 
+inactivate remedy-45.7 
+incinerate remedy-45.7 
+inseminate remedy-45.7 
+inspissate remedy-45.7 
+invert remedy-45.7 
+iodize remedy-45.7 
+manure remedy-45.7 
+marginalize remedy-45.7 
+mechanize remedy-45.7 
+medicate remedy-45.7 
+militarize remedy-45.7 
+mineralize remedy-45.7 
+miniaturize remedy-45.7 
+minimize remedy-45.7 
+mishandle remedy-45.7 
+mismanage remedy-45.7 
+motorize remedy-45.7 
+muddy remedy-45.7 
+mute remedy-45.7 
+nasalize remedy-45.7 
+nitrify remedy-45.7 
+objectify remedy-45.7 
+obscure remedy-45.7 
+obviate remedy-45.7 
+overshadow remedy-45.7 
+oxygenate remedy-45.7 
+paralyze remedy-45.7 
+pasteurize remedy-45.7 
+perfect remedy-45.7 
+perpetuate remedy-45.7 
+pollard remedy-45.7 
+popularize remedy-45.7 
+prejudge remedy-45.7 
+prettify remedy-45.7 
+publicize remedy-45.7 
+reanimate remedy-45.7 
+rectify remedy-45.7 
+redact remedy-45.7 
+refract remedy-45.7 
+regularize remedy-45.7 
+remaster remedy-45.7 
+remedy remedy-45.7 
+repair remedy-45.7 
+revise remedy-45.7 
+secularize remedy-45.7 
+sensationalize remedy-45.7 
+shortchange remedy-45.7 
+silence remedy-45.7 subjugate-42.3 
+singe remedy-45.7 
+sinter remedy-45.7 
+sovietize remedy-45.7 
+sterilize remedy-45.7 
+streamline remedy-45.7 
+subvert remedy-45.7 
+sulfurize remedy-45.7 
+tabulate remedy-45.7 
+taiwanize remedy-45.7 
+tart up remedy-45.7 
+tousle remedy-45.7 
+traumatize remedy-45.7 
+truncate remedy-45.7 
+trivialize remedy-45.7 
+turn-up remedy-45.7 
+underfeed remedy-45.7 
+urbanize remedy-45.7 
+ventilate remedy-45.7 
+vulgarize remedy-45.7 
+domesticate remedy-45.7-1 
+extinguish remove-10.1 
+halve remedy-45.7-1 
+homogenize remedy-45.7-1 
+lighten remedy-45.7-1 
+magnetize remedy-45.7-1 
+transplant remedy-45.7-1 
+abolish remove-10.1 
+abstract remove-10.1 
+cut-off remove-10.1 
+deburr remove-10.1 
+delete remove-10.1 
+depose remove-10.1 
+disgorge remove-10.1 
+dislodge remove-10.1 
+disengage remove-10.1 
+eject remove-10.1 
+eradicate remove-10.1 
+excise remove-10.1 
+excommunicate remove-10.1 
+extract remove-10.1 
+extrude remove-10.1 
+lop remove-10.1 
+lose remove-10.1 succeed-74-3-1 
+ostracize remove-10.1 
+reap remove-10.1 
+retract remove-10.1 
+roust remove-10.1 
+shoo remove-10.1 
+take_away remove-10.1 
+take_out remove-10.1 
+take_off remove-10.1 
+uproot remove-10.1 
+winkle remove-10.1 
+evict remove-10.1 
+sever remove-10.1 separate-23.1 
+prise remove-10.1 
+be representation-110.1 seem-109-1-1 
+signify representation-110.1 
+symbolize representation-110.1 
+necessitate require-103-1 
+need require-103-2 want-32.1-1-1 
+leave_office resign-10.11 
+step_down resign-10.11 
+walk_out resign-10.11 
+retire resign-10.11-1 withdraw-82-3 
+walk run-51.3.2-2-1 
+walk_away resign-10.11-1 
+abdicate resign-10.11-2 
+give_up resign-10.11-2 
+renounce resign-10.11-2 
+walk_off resign-10.11-2 
+reply respond-113 say-37.7-1 
+respond respond-113 say-37.7-1 
+lead_up result-27.2 
+punt throw-17.1-1 
+venture risk-94 say-37.7-1 
+risk risk-94-1 
+hazard risk-94-1 
+bounce roll-51.3.1 run-51.3.2-2 slide-11.2-1 
+glide roll-51.3.1 run-51.3.2-2 
+spiral roll-51.3.1 
+burrow rummage-35.5 
+fumble rummage-35.5 
+leaf rummage-35.5 
+page rummage-35.5 
+scrabble rummage-35.5 
+forage rummage-35.5-1 
+grope rummage-35.5-1 touch-20-1 
+rifle rummage-35.5-1 search-35.2 
+rummage rummage-35.5-1 
+paw rummage-35.5-1 swat-18.2 touch-20-1 
+delve rummage-35.5-1 
+thumb rummage-35.5-1 
+tunnel rummage-35.5-1 
+amble run-51.3.2 
+ambulate run-51.3.2 
+backpack run-51.3.2 
+breeze run-51.3.2 
+bustle run-51.3.2 swarm-47.5.1-1 
+caper run-51.3.2 
+carom run-51.3.2 
+cavort run-51.3.2 
+chunter run-51.3.2 
+clamber run-51.3.2 
+clump sound_emission-43.2 
+dodder run-51.3.2 
+flit run-51.3.2 
+flounce run-51.3.2 
+gallivant run-51.3.2 
+gambol run-51.3.2 
+ghost run-51.3.2 
+globetrot run-51.3.2 
+goose_step run-51.3.2 
+hike run-51.3.2 
+hitchhike run-51.3.2 
+hopscotch run-51.3.2 
+jounce run-51.3.2 
+limp run-51.3.2 
+lollop run-51.3.2 
+lumber run-51.3.2 
+lurch run-51.3.2 
+mosey run-51.3.2 
+nip run-51.3.2 
+pace run-51.3.2 
+pootle run-51.3.2 
+pounce run-51.3.2 
+pussyfoot run-51.3.2 
+romp run-51.3.2 
+sashay run-51.3.2 
+saunter run-51.3.2 
+scamper run-51.3.2 
+scram run-51.3.2 
+scud run-51.3.2 
+scurry run-51.3.2 
+scutter run-51.3.2 
+scuttle run-51.3.2 
+shamble run-51.3.2 
+sidle run-51.3.2 
+skid run-51.3.2 
+skulk run-51.3.2 
+sleepwalk run-51.3.2 
+slink run-51.3.2 
+slither run-51.3.2 
+slog run-51.3.2 
+somersault run-51.3.2 
+sprint run-51.3.2 
+spring run-51.3.2 
+step run-51.3.2 
+stray run-51.3.2 
+streak run-51.3.2 
+stumble run-51.3.2 
+swagger run-51.3.2 
+swan run-51.3.2 
+tiptoe run-51.3.2 
+toddle run-51.3.2 
+toil run-51.3.2 
+tootle run-51.3.2 sound_emission-43.2 
+troop run-51.3.2 
+waddle run-51.3.2 
+wend run-51.3.2 
+whiz run-51.3.2 
+yaw spatial_configuration-47.6 
+zoom run-51.3.2 
+hop run-51.3.2-1 
+journey run-51.3.2-1 
+leap run-51.3.2-1 
+perambulate run-51.3.2-1 
+plod run-51.3.2-1 
+prowl run-51.3.2-1 search-35.2 
+ramble run-51.3.2-1 
+roam run-51.3.2-1 
+rove run-51.3.2-1 
+stride run-51.3.2-1 
+stroll run-51.3.2-1 
+swim run-51.3.2-1 swarm-47.5.1-1 
+traipse run-51.3.2-1 
+tramp run-51.3.2-1 
+travel run-51.3.2-1 
+trek run-51.3.2-1 
+trudge run-51.3.2-1 
+vault run-51.3.2-1 
+wade run-51.3.2-1 
+bowl run-51.3.2-2 
+canter run-51.3.2-2 
+coast run-51.3.2-2 vehicle_path-51.4.3 
+gallop run-51.3.2-2 
+hobble run-51.3.2-2 
+hurry run-51.3.2-2 rush-53.2 
+hurtle run-51.3.2-2 
+inch run-51.3.2-2 
+lope run-51.3.2-2 
+prance run-51.3.2-2 
+race run-51.3.2-2 
+scoot run-51.3.2-2 slide-11.2 
+skip run-51.3.2-2 
+skitter run-51.3.2-2 
+sneak run-51.3.2-2 
+speed run-51.3.2-2 
+strut run-51.3.2-2 
+trot run-51.3.2-2 
+jog run-51.3.2-2-1 
+march run-51.3.2-2-1 
+parade run-51.3.2-2-1 
+promenade run-51.3.2-2-1 
+sate satisfy-55.7 
+satiate satisfy-55.7 
+be_like say-37.7 
+go_like say-37.7 
+allege say-37.7-1 
+blabber say-37.7-1 
+divulge say-37.7-1 
+exclaim say-37.7-1 
+insinuate say-37.7-1 
+insist say-37.7-1 
+intimate say-37.7-1 
+leak say-37.7-1 substance_emission-43.4-1 
+retort say-37.7-1 
+promulgate say-37.7-1 
+utter say-37.7-1 
+voice say-37.7-1 
+articulate say-37.7-1-1 
+blab say-37.7-1-1 
+blurt say-37.7-1-1 
+claim say-37.7-1-1 
+confide say-37.7-1-1 
+convey say-37.7-1-1 
+interject say-37.7-1-1 
+interpose say-37.7-1-1 
+mention say-37.7-1-1 
+recount say-37.7-1-1 
+reiterate say-37.7-1-1 
+state say-37.7-1-1 
+note sight-30.2 
+purpose say-37.7-1-1-1 
+hint say-37.7-1-2 
+copy scribble-25.2 transcribe-25.4 
+jot scribble-25.2 
+jot_down scribble-25.2 
+misspell scribble-25.2 
+take_down scribble-25.2 
+trace scribble-25.2 
+underline scribble-25.2 
+chalk scribble-25.2-1 
+charcoal scribble-25.2-1 
+crayon scribble-25.2-1 
+doodle scribble-25.2-1 
+pencil scribble-25.2-1 
+print scribble-25.2-1 
+record scribble-25.2-1 transcribe-25.4 
+scrawl scribble-25.2-1 
+scribble scribble-25.2-1 
+sketch scribble-25.2-1 
+stencil scribble-25.2-1 
+type scribble-25.2-1 transcribe-25.4 
+print_out scribble-25.2-1 
+print_up scribble-25.2-1 
+advertise search-35.2 
+dredge search-35.2 
+excavate search-35.2 
+patrol search-35.2 
+plumb search-35.2 
+probe search-35.2 
+prospect search-35.2 
+scavenge search-35.2 
+scour wipe_manner-10.4.1-1 
+scout search-35.2 
+search search-35.2 
+shop search-35.2 
+trawl search-35.2 
+troll search-35.2 
+quest search-35.2 
+tell transfer_mesg-37.1.1-1-1 
+smell see-30.1-1 stalk-35.3 
+detect see-30.1-1-1 
+discern see-30.1-1-1 
+sense see-30.1-1-1 
+notice see-30.1-1-1 
+sound seem-109 sound_emission-43.2 stimulus_subject-30.4 
+seem seem-109-1-1-1 
+handdeliver send-11.1 
+pass_on send-11.1 
+port send-11.1 
+post send-11.1 
+shunt send-11.1 
+export send-11.1 
+import send-11.1 
+transship send-11.1 
+airmail send-11.1-1 
+FedEx send-11.1-1 
+forward send-11.1-1 
+hand send-11.1-1 
+mail send-11.1-1 
+ship send-11.1-1 
+smuggle send-11.1-1 steal-10.5-1 
+transmit send-11.1-1 
+UPS send-11.1-1 
+disassociate separate-23.1 
+uncoil separate-23.1 
+decouple separate-23.1-1 
+disentangle separate-23.1-1 
+dissimilate separate-23.1-1 
+dissociate separate-23.1-2 
+haggle settle-36.1.2 
+renegotiate settle-36.1.2 
+resolve settle-36.1.2-1 
+decide settle-36.1.2-1 
+whisk shake-22.3-1-1 spank-18.3 wipe_manner-10.4.1 
+band shake-22.3-2 tape-22.4 
+baste spray-9.7-1 
+collate shake-22.3-2 
+glom shake-22.3-2 
+attach shake-22.3-2-1 
+bond tape-22.4 
+bundle shake-22.3-2-1 
+concatenate shake-22.3-2-1 
+fasten shake-22.3-2-1 tape-22.4 
+graft shake-22.3-2-1 
+jumble shake-22.3-2-1 
+ligate shake-22.3-2-1 
+package shake-22.3-2-1 
+splice shake-22.3-2-1 
+toggle shake-22.3-2-1 
+affix shake-22.3-2-1 tape-22.4 
+agglutinate shake-22.3-2-1 
+behold sight-30.2 
+descry sight-30.2 
+espy sight-30.2 
+experience sight-30.2 
+eye sight-30.2 
+glimpse sight-30.2 
+make_out sight-30.2 
+overhear sight-30.2 
+sight sight-30.2 
+spy sight-30.2 
+don simple_dressing-41.3.1 
+doff simple_dressing-41.3.1 
+wear simple_dressing-41.3.1 
+reek smell_emission-43.3 
+stink smell_emission-43.3 
+catnap snooze-40.4 
+slumber snooze-40.4 
+snooze snooze-40.4 
+nap snooze-40.4-1 
+beep sound_emission-43.2 
+bubble sound_emission-43.2 
+burr sound_emission-43.2 
+chime sound_emission-43.2 
+chink sound_emission-43.2 
+chir sound_emission-43.2 
+chug sound_emission-43.2 
+clack sound_emission-43.2 
+clank sound_emission-43.2 
+clap wink-40.3.1 
+clink sound_emission-43.2 
+clomp sound_emission-43.2 
+clunk sound_emission-43.2 
+crackle sound_emission-43.2 
+creak sound_emission-43.2 
+crepitate sound_emission-43.2 
+ding sound_emission-43.2 
+dong sound_emission-43.2 
+fizzle sound_emission-43.2 
+jangle sound_emission-43.2 
+jingle sound_emission-43.2 
+knell sound_emission-43.2 
+patter sound_emission-43.2 
+peal sound_emission-43.2 
+plash sound_emission-43.2 
+plink sound_emission-43.2 
+plonk sound_emission-43.2 
+plunk sound_emission-43.2 
+rustle sound_emission-43.2 steal-10.5 
+shrill sound_emission-43.2 
+sizzle sound_emission-43.2 
+sough sound_emission-43.2 
+sploosh sound_emission-43.2 
+splash sound_emission-43.2 spray-9.7-1 
+sputter sound_emission-43.2 
+swish sound_emission-43.2 
+swoosh sound_emission-43.2 
+thrum sound_emission-43.2 
+thunk sound_emission-43.2 
+tick sound_emission-43.2 
+ting sound_emission-43.2 
+tinkle sound_emission-43.2 
+toll sound_emission-43.2 
+toot sound_emission-43.2 
+vroom sound_emission-43.2 
+whir sound_emission-43.2 
+whish sound_emission-43.2 
+whoosh sound_emission-43.2 
+whump sound_emission-43.2 
+zing sound_emission-43.2 
+echo sound_existence-47.4 
+resonate sound_existence-47.4 
+resound sound_existence-47.4 
+reverberate sound_existence-47.4 
+biff spank-18.3 
+birch spank-18.3 
+bludgeon spank-18.3 
+bonk spank-18.3 
+brain spank-18.3 
+cane spank-18.3 
+clobber spank-18.3 
+clout spank-18.3 
+club spank-18.3 
+cosh spank-18.3 
+cudgel spank-18.3 
+cuff spank-18.3 
+elbow spank-18.3 
+flagellate spank-18.3 
+flail spank-18.3 
+flog spank-18.3 steal-10.5-1 
+fustigate spank-18.3 
+knee spank-18.3 
+k.o. spank-18.3 
+lam spank-18.3 
+larrup spank-18.3 
+pommel spank-18.3 
+pummel spank-18.3 
+sock spank-18.3 
+spank spank-18.3 
+strap tape-22.4 
+thrash spank-18.3 
+truncheon spank-18.3 
+wallop spank-18.3 
+whomp spank-18.3 
+horsewhip spank-18.3 
+jut spatial_configuration-47.6 
+loll spatial_configuration-47.6 
+lounge spatial_configuration-47.6 
+protrude spatial_configuration-47.6 
+repose spatial_configuration-47.6 
+roost spatial_configuration-47.6 
+sag spatial_configuration-47.6 
+droop spatial_configuration-47.6-1 
+nestle spatial_configuration-47.6-1 
+recline spatial_configuration-47.6-1 
+slope spatial_configuration-47.6-1 
+overload spray-9.7 
+drizzle spray-9.7-1 weather-57 
+pump spray-9.7-1 
+scatter spray-9.7-1 
+smear spray-9.7-1 
+smudge spray-9.7-1 
+sow spray-9.7-1 
+spatter spray-9.7-1 
+splatter spray-9.7-1 
+spray spray-9.7-1 
+sprinkle spray-9.7-1 
+spritz spray-9.7-1 
+squirt spray-9.7-1 substance_emission-43.4-1 
+strew spray-9.7-1 
+swab spray-9.7-1 wipe_manner-10.4.1-1 
+swash spray-9.7-1 
+spurt spray-9.7-1 substance_emission-43.4-1 
+wrap spray-9.7-1 
+crowd spray-9.7-1-1 
+pack spray-9.7-1-1 
+pile spray-9.7-1-1 
+drape spray-9.7-2 
+load spray-9.7-2 
+dab spray-9.7-2 wipe_manner-10.4.1-1 
+daub spray-9.7-2 
+mound spray-9.7-2 
+dust wipe_manner-10.4.1-1 
+heap spray-9.7-2 
+slather spray-9.7-2 
+stack spray-9.7-2 
+stuff spray-9.7-2 
+abduct steal-10.5 
+annex steal-10.5 
+cabbage steal-10.5 
+carjack steal-10.5 
+confiscate steal-10.5 
+embezzle steal-10.5 
+extort steal-10.5 trick-59.2 
+filch steal-10.5 
+highjack steal-10.5 
+kidnap steal-10.5 
+knock_off steal-10.5 
+misappropriate steal-10.5 
+nobble steal-10.5 
+pickpocket steal-10.5 
+pinch touch-20-1 
+plagiarize steal-10.5 
+purloin steal-10.5 
+recapture steal-10.5 
+reclaim steal-10.5 
+redeem steal-10.5 
+repossess steal-10.5 
+rescue steal-10.5 
+snatch_away steal-10.5 
+thieve steal-10.5 
+wrest steal-10.5 
+capture steal-10.5-1 
+cop steal-10.5-1 
+pilfer steal-10.5-1 
+pirate steal-10.5-1 
+salvage steal-10.5-1 
+shoplift steal-10.5-1 
+swipe steal-10.5-1 swat-18.2 
+wangle steal-10.5-1 
+rouse stimulate-59.4 
+spur stimulate-59.4 
+cut_off stop-55.4-1 
+cut_out stop-55.4-1 
+deactivate stop-55.4-1 
+cease stop-55.4-1-1 
+end terminus-47.9 
+finish stop-55.4-1-1 
+disenfranchise subjugate-42.3 
+enslave subjugate-42.3 
+mob subjugate-42.3 
+nourish subjugate-42.3 
+stamp_down subjugate-42.3 
+subdue subjugate-42.3 
+conquer subjugate-42.3 
+curb subjugate-42.3 
+stifle subjugate-42.3 
+still subjugate-42.3 
+shut_up subjugate-42.3 
+hush_up subjugate-42.3 
+calm_down subjugate-42.3 
+quell subjugate-42.3 
+muffle subjugate-42.3 
+quash subjugate-42.3 void-106 
+keep_down subjugate-42.3 
+subjugate subjugate-42.3 
+slake subjugate-42.3 
+walk_over subjugate-42.3 
+give_off substance_emission-43.4 
+give_forth substance_emission-43.4 
+emit substance_emission-43.4 
+exrete substance_emission-43.4-1 
+jet substance_emission-43.4-1 vehicle-51.4.1 
+ooze substance_emission-43.4-1 
+puff substance_emission-43.4-1 
+radiate substance_emission-43.4-1 
+seep substance_emission-43.4-1 
+shed substance_emission-43.4-1 
+spout substance_emission-43.4-1 
+substitute substitute-13.6.2 
+swap substitute-13.6.2 
+swap_out substitute-13.6.2 
+replace substitute-13.6.2-1 
+supplant substitute-13.6.2-1 
+succeed succeed-74-1 
+excel succeed-74-1 
+fall_off succeed-74-3 
+fall_by_the_wayside succeed-74-3 
+flub succeed-74-3-1 
+superintend supervision-95.2.2 
+supervise supervision-95.2.2 
+bolster support-15.3-1 
+buttress support-15.3-1 
+buoy support-15.3-1 
+hold-up support-15.3-1 
+reinforce support-15.3-1 
+accuse suspect-81 
+sustain sustain-55.6 
+prolong sustain-55.6 
+protract sustain-55.6 
+keep_up sustain-55.6 
+carry_on sustain-55.6 
+swarm swarm-47.5.1-1 
+teem swarm-47.5.1-1 weather-57 
+throng swarm-47.5.1-2 
+abound swarm-47.5.1-2-1 
+claw swat-18.2 
+swat swat-18.2 
+anchor tape-22.4 
+buckle tape-22.4 
+button tape-22.4 
+cement tape-22.4 
+chain tape-22.4 
+cinch tape-22.4 
+epoxy tape-22.4 
+fetter tape-22.4 
+glue tape-22.4 
+handcuff tape-22.4 
+hinge tape-22.4 
+hitch tape-22.4 
+knot tape-22.4 
+lace tape-22.4 
+lasso tape-22.4 
+latch tape-22.4 
+lock tape-22.4 
+manacle tape-22.4 
+nail tape-22.4 
+padlock tape-22.4 
+paste tape-22.4 tape-22.4-1 
+pin tape-22.4 
+rivet tape-22.4 
+rope tape-22.4 
+screw tape-22.4 
+shackle tape-22.4 
+solder tape-22.4 
+staple tape-22.4 
+suture tape-22.4 
+tape tape-22.4 
+tether tape-22.4 
+thread tape-22.4 
+thumbtack tape-22.4 
+trammel tape-22.4 
+truss tape-22.4 
+zip tape-22.4 
+clamp tape-22.4-1 
+reeve tape-22.4-1 
+acquaint tell-37.2 
+inform tell-37.2 
+apprise tell-37.2 
+update tell-37.2 
+remind tell-37.2 
+discard throw-17.1 
+bunt throw-17.1-1 
+chuck throw-17.1-1 
+fling throw-17.1-1 
+flip throw-17.1-1 
+hurl throw-17.1-1 
+lob throw-17.1-1 
+loft throw-17.1-1 
+pitch throw-17.1-1 
+catapult throw-17.1-1-1 
+palpitate tingle-40.8.2 
+prickle tingle-40.8.2 
+reel tingle-40.8.2 
+smart tingle-40.8.2 
+tingle tingle-40.8.2 
+twinge tingle-40.8.2 
+caress touch-20-1 
+fondle touch-20-1 
+massage touch-20-1 
+osculate touch-20-1 
+pat touch-20-1 
+prod touch-20-1 
+stroke touch-20-1 
+tweak touch-20-1 
+chart transcribe-25.4 
+chronicle transcribe-25.4 
+document transcribe-25.4 
+duplicate transcribe-25.4 
+film transcribe-25.4 
+microfilm transcribe-25.4 
+photocopy transcribe-25.4 
+photograph transcribe-25.4 
+tally_up transcribe-25.4 
+televise transcribe-25.4 
+transcribe transcribe-25.4 
+videotape transcribe-25.4 
+write_out transcribe-25.4 
+elucidate transfer_mesg-37.1.1 
+explicate transfer_mesg-37.1.1 
+expound transfer_mesg-37.1.1 
+justify transfer_mesg-37.1.1 
+narrate transfer_mesg-37.1.1 
+recap transfer_mesg-37.1.1 
+outline transfer_mesg-37.1.1 
+summarize transfer_mesg-37.1.1 
+sum_up transfer_mesg-37.1.1 
+boil_down transfer_mesg-37.1.1 
+snitch transfer_mesg-37.1.1 
+write_in transfer_mesg-37.1.1 
+dictate transfer_mesg-37.1.1-1 
+quote transfer_mesg-37.1.1-1 
+teach transfer_mesg-37.1.1-1-1 
+bamboozle trick-59.2 
+bullshit trick-59.2 
+bluff trick-59.2 
+blackmail trick-59.2 
+deceive trick-59.2 
+delude trick-59.2 
+dupe trick-59.2 
+ensnare trick-59.2 
+entrap trick-59.2 
+fool trick-59.2 
+hoodwink trick-59.2 
+manipulate trick-59.2 
+mislead trick-59.2 
+diddle trifle-105.3 
+fiddle trifle-105.3 
+toy trifle-105.3 
+trifle trifle-105.3 
+attempt try-61.1 
+deform turn-26.6.1 
+metamorphose turn-26.6.1 
+morph turn-26.6.1 
+mutate turn-26.6.1 
+transform turn-26.6.1 
+translate turn-26.6.1 
+transmute turn-26.6.1 
+call_on urge-58.1-1 
+dare urge-58.1-1 
+egg_on urge-58.1-1 
+force urge-58.1-1 
+lean_on urge-58.1-1 
+summon urge-58.1-1 
+exhort urge-58.1-1-1 
+entreat urge-58.1-1-1 
+implore urge-58.1-1-1 
+lobby urge-58.1-1-1 
+pressure urge-58.1-1-1 
+urge urge-58.1-1-1 
+utilize use-105.1 
+exert use-105.1 
+exploit use-105.1 
+boat vehicle-51.4.1 
+bobsled vehicle-51.4.1 
+cab vehicle-51.4.1 
+caravan vehicle-51.4.1 
+chariot vehicle-51.4.1 
+dogsled vehicle-51.4.1 
+gondola vehicle-51.4.1 
+helicopter vehicle-51.4.1 
+jeep vehicle-51.4.1 
+moped vehicle-51.4.1 
+parachute vehicle-51.4.1 
+rickshaw vehicle-51.4.1 
+sledge vehicle-51.4.1 
+sleigh vehicle-51.4.1 
+taxi vehicle-51.4.1 
+tram vehicle-51.4.1 
+trolley vehicle-51.4.1 
+yacht vehicle-51.4.1 
+bicycle vehicle-51.4.1-1 
+canoe vehicle-51.4.1-1 
+cycle vehicle-51.4.1-1 
+kayak vehicle-51.4.1-1 
+motorbike vehicle-51.4.1-1 
+motorcycle vehicle-51.4.1-1 
+raft vehicle-51.4.1-1 
+skate vehicle-51.4.1-1 
+skateboard vehicle-51.4.1-1 
+ski vehicle-51.4.1-1 
+sled vehicle-51.4.1-1 
+toboggan vehicle-51.4.1-1 
+annul void-106 
+void void-106 
+invalidate void-106 
+nullify void-106 
+boogie waltz-51.5 
+cancan waltz-51.5 
+conga waltz-51.5 
+foxtrot waltz-51.5 
+jig waltz-51.5 
+jitterbug waltz-51.5 
+jive waltz-51.5 
+pirouette waltz-51.5 
+polka waltz-51.5 
+quickstep waltz-51.5 
+rumba waltz-51.5 
+samba waltz-51.5 
+squaredance waltz-51.5 
+tango waltz-51.5 
+tapdance waltz-51.5 
+waltz waltz-51.5 
+covet want-32.1 
+desire want-32.1 want-32.1-1-1 
+bucket weather-57 
+fog weather-57 
+gust weather-57 
+lightning weather-57 
+mist weather-57 
+mizzle weather-57 
+precipitate weather-57 
+rain weather-57 
+sleet weather-57 
+snow weather-57 
+storm weather-57 
+swelter weather-57 
+December weekend-56 
+holiday weekend-56 
+honeymoon weekend-56 
+sojourn weekend-56 
+summer weekend-56 
+vacation weekend-56 
+weekend weekend-56 
+winter weekend-56 
+beckon wink-40.3.1 
+gesture wink-40.3.1 
+nod wink-40.3.1 
+point wink-40.3.1 
+shrug wink-40.3.1 
+wink wink-40.3.1 
+filter wipe_instr-10.4.2 
+hoover wipe_instr-10.4.2 
+plough wipe_instr-10.4.2 
+sandpaper wipe_instr-10.4.2 
+squeegee wipe_instr-10.4.2 
+hose wipe_instr-10.4.2-1 
+mop wipe_instr-10.4.2-1 
+plow wipe_instr-10.4.2-1 
+shear wipe_instr-10.4.2-1 
+vacuum wipe_instr-10.4.2-1 
+buff wipe_manner-10.4.1 
+distill wipe_manner-10.4.1 
+distil wipe_manner-10.4.1 
+exorcise wipe_manner-10.4.1 
+expunge wipe_manner-10.4.1 
+expurgate wipe_manner-10.4.1 
+leach wipe_manner-10.4.1 
+offload wipe_manner-10.4.1 
+skim wipe_manner-10.4.1 
+unload wipe_manner-10.4.1 
+winnow wipe_manner-10.4.1 
+bail wipe_manner-10.4.1-1 
+erase wipe_manner-10.4.1-1 
+scrub wipe_manner-10.4.1-1 
+suction wipe_manner-10.4.1-1 
+dream wish-62 
+yen wish-62 
+back_out withdraw-82-1 
+chicken_out withdraw-82-1 
+get_out withdraw-82-1 
+wriggle_out withdraw-82-1 
+bow_out withdraw-82-1 
+pull_out withdraw-82-1 
+get_away withdraw-82-2 
+back_off withdraw-82-2 
+back_down withdraw-82-2 
+pull_away withdraw-82-3 
+bang_away work-73.2 
+labor work-73.2 
+plug_away work-73.2 
+slog_away work-73.2 
