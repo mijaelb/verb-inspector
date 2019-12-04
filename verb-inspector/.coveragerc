@@ -1,0 +1,7 @@
+[report]
+omit =
+    setup.py
+    verb-inspector/__main__.py
+    verb-inspector/_version.py
+    versioneer.py
+    tests/*
