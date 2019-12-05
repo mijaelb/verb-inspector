@@ -15,10 +15,9 @@ verbnet_json = 'verbnet.json'
 propbank_json = 'propbank.json'
 
 class App(QtWidgets.QWidget):
-    
     def __init__(self):
         super().__init__()
-        self.title = 'Verb Inspector (Plot Points Inspector)'
+        self.title = 'Plot Point Editor (Verb Inspector)'
         self.left = 10
         self.top = 10
         self.width = 320

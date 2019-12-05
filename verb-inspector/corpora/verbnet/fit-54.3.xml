@@ -92,7 +92,7 @@
                 </PRED>
                 <PRED value="cause">
                     <ARGS>
-                        <ARG type="ThemRole" value="e1"/>
+                        <ARG type="Event" value="e1"/>
                         <ARG type="Event" value="e2"/>
                     </ARGS>
                 </PRED>

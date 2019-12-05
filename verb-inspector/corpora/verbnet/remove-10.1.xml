@@ -148,7 +148,7 @@
                         <SELRESTR Value="+" type="src"/>
                     </SELRESTRS>
                 </PREP>
-                <NP value="Source">
+                <NP value="Initial_Location">
                     <SYNRESTRS/>
                 </NP>
             </SYNTAX>
