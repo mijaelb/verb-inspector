@@ -20,7 +20,7 @@
          <wn version="3.0">1,2,3,4,7</wn> 
          <wn lemma="kick_down" version="3.0">1</wn>
          <wn lemma="kick_in" version="3.0">2</wn>
-         <omega/><pb>kick.01></pb>
+         <omega/><pb>kick.01</pb>
          <vn>body_internal_motion-49,swat-18.2,throw-17.1-1-1,carry-11.4-1-1,crane-40.3.2,hit-18.1-1,split-23.2</vn><fn>Cause_harm</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
