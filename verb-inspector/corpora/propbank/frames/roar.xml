@@ -1,4 +1,4 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+﻿<!DOCTYPE frameset SYSTEM "frameset.dtd">
 <frameset>
   <predicate lemma="roar">
     <roleset id="roar.01" name="like a lion">
@@ -24,7 +24,7 @@
         </role>
       </roles>
       <example name="ARG1 and ARG0 and ARG2" src="probably COCA (2018 example fix)" type="">
-        <text>[“Come ahn, deh hull damn gang of yehs, come ahn,”]-1 she roared *trace*-1 at the spectators.</text>
+        <text>["Come ahn, deh hull damn gang of yehs, come ahn,"]-1 she roared *trace*-1 at the spectators.</text>
         <arg f="" n="0">she</arg>
         <rel f="">roared</rel>
         <arg f="" n="1">*trace*-1</arg>

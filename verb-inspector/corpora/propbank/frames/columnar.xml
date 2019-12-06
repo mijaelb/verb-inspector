@@ -1,4 +1,4 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+﻿<!DOCTYPE frameset SYSTEM "frameset.dtd">
 <frameset>
   <predicate lemma="columnar">
     <roleset id="columnar.01" name="column-shaped">
@@ -10,7 +10,7 @@
         <role descr="columnar entity" f="ppt" n="1"/>
       </roles>
       <example name="" src="" type="">
-        <text>Recall that Hayward stated that“normally”the mucosa in this region was columnar, but distinct from gastric fundic mucosa, and was not congenital but acquired.</text>
+        <text>Recall that Hayward stated that "normally" the mucosa in this region was columnar, but distinct from gastric fundic mucosa, and was not congenital but acquired.</text>
       </example>
     </roleset>
   </predicate>

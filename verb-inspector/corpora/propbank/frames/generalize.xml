@@ -1,4 +1,4 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+﻿<!DOCTYPE frameset SYSTEM "frameset.dtd">
 <frameset>
   <predicate lemma="generalize">
     <roleset id="generalize.01" name="to reduce to a general form">
@@ -29,10 +29,10 @@
       </example>
       <example name="generalization-n: all args" src="" type="">
         <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="active"/>
-        <text>Another such instance is his generalization of Kummer's “ideal prime factors” to arbitrary algebraic number fields.</text>
+        <text>Another such instance is his generalization of Kummer's "ideal prime factors" to arbitrary algebraic number fields.</text>
         <arg f="" n="0">his</arg>
         <rel f="">generalization</rel>
-        <arg f="" n="1">of Kummer's “ideal prime factors”</arg>
+        <arg f="" n="1">of Kummer's "ideal prime factors"</arg>
         <arg f="" n="2">to arbitrary algebraic number fields</arg>
       </example>
     </roleset>

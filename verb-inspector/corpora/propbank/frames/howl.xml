@@ -1,4 +1,4 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+﻿<!DOCTYPE frameset SYSTEM "frameset.dtd">
 <frameset>
   <predicate lemma="howl">
     <roleset id="howl.01" name="emit howl, speak   howlingly">
@@ -31,7 +31,7 @@
         <arg f="" n="2">at the moon</arg>
       </example>
       <example name="ARG1 and ARG0" src="probably COCA (2018 example fix)" type="">
-        <text>[“I am Doctor Sax!”]-1 he howled *trace*-1 at the butler.</text>
+        <text>["I am Doctor Sax!"]-1 he howled *trace*-1 at the butler.</text>
         <arg f="" n="0">he</arg>
         <rel f="">howled</rel>
         <arg f="" n="1">*trace*-1</arg>
@@ -76,7 +76,7 @@
       </roles>
       <example name="stormy weather" src="" type="">
         <inflection aspect="progressive" form="participle" person="third" tense="present" voice="active"/>
-        <text>``The wind is really howling outside,'' John said.</text>
+        <text>'' The wind is really howling outside,'' John said.</text>
         <arg f="" n="0">The wind</arg>
         <arg f="dis" n="m">really</arg>
         <rel f="">howling</rel>

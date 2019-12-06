@@ -62,7 +62,7 @@
         <role descr="about what" f="ppt" n="1"/>
       </roles>
       <example name="buck_up-v" src="" type="">
-        <text> In order to help instead, try approaching them from a point of encouragement rather than implying that they “buck up” over something little.</text>
+        <text> In order to help instead, try approaching them from a point of encouragement rather than implying that they "buck up" over something little.</text>
         <arg f="" n="0">they</arg>
         <rel f="">[buck][up]</rel>
         <arg f="" n="1">over something little</arg>

@@ -1,4 +1,4 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+﻿<!DOCTYPE frameset SYSTEM "frameset.dtd">
 <frameset>
   <predicate lemma="disappear">
     <roleset id="disappear.01" name="no longer be there">
@@ -19,9 +19,9 @@
         <rel f="">disappears</rel>
       </example>
       <example name="ARG0" src="probably COCA (2018 example fix)" type="">
-        <text>They took individuals away and “disappeared” them</text>
+        <text>They took individuals away and "disappeared" them</text>
         <arg f="" n="0">They</arg>
-        <rel f="">“disappeared”</rel>
+        <rel f="">"disappeared"</rel>
         <arg f="" n="1">them</arg>
       </example>
 

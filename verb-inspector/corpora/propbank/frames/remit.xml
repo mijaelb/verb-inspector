@@ -1,4 +1,4 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+﻿<!DOCTYPE frameset SYSTEM "frameset.dtd">
 <frameset>
   <predicate lemma="remit">
     <roleset id="remit.01" name="make payment, give (perhaps for consideration)">
@@ -38,7 +38,7 @@
       </example>
       <example name="remission-n" src="" type="">
         <inflection aspect="ns" form="ns" person="ns" tense="ns" voice="ns"/>
-        <text>The earned credit will be posted to my transcript upon remission of payment of $50.00 per credit with a grade of “P” (Pass).</text>
+        <text>The earned credit will be posted to my transcript upon remission of payment of $50.00 per credit with a grade of "P" (Pass).</text>
         <rel f="">remission</rel>
         <arg f="" n="1">of payment of $50.00 per credit with a grade of "P" (Pass)</arg>
       </example>

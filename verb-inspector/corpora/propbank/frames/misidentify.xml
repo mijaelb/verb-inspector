@@ -1,4 +1,4 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+﻿<!DOCTYPE frameset SYSTEM "frameset.dtd">
 <frameset>
   <predicate lemma="misidentify">
     <roleset id="misidentify.01" name="identify incorrectly">
@@ -21,7 +21,7 @@
         <arg f="tmp" n="m">while asserting that those he disagrees with have "irrational" preferences</arg>
       </example>
       <example name="misidentification-n" src="" type="">
-        <text>The pilot stated that he was “fatigued” during the accident flight, which most likely contributed to his misidentification of the landing area.</text>
+        <text>The pilot stated that he was "fatigued" during the accident flight, which most likely contributed to his misidentification of the landing area.</text>
         <arg f="" n="0">his</arg>
         <rel f="">misidentification</rel>
         <arg f="" n="1">of the landing area</arg>

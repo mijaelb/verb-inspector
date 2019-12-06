@@ -1,4 +1,4 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+﻿<!DOCTYPE frameset SYSTEM "frameset.dtd">
 <frameset>
   <predicate lemma="thunder">
     <roleset id="thunder.01" name="make loud noises, speak loudly">
@@ -23,7 +23,7 @@
         </role>
       </roles>
       <example name="ARG0 and ARG1 and ARG2" src="probably COCA (2018 example fix)" type="">
-        <text>[“Don't say that name!”]-1 James thundered *trace*-1 at him.</text>
+        <text>["Don't say that name!"]-1 James thundered *trace*-1 at him.</text>
         <arg f="" n="0">James</arg>
         <rel f="">thundered</rel>
         <arg f="" n="1">*trace*-1</arg>
@@ -32,14 +32,14 @@
 
       <example name="as weather verb" src="" type="">
         <inflection aspect="progressive" form="participle" person="third" tense="present" voice="active"/>
-        <text>``Wow,'' said John, ``it's really thundering outside.''</text>
+        <text>''Wow,'' said John, ''it's really thundering outside.''</text>
         <arg f="adv" n="m">really</arg>
         <rel f="">thundering</rel>
         <arg f="loc" n="m">outside</arg>
       </example>
       <example name="unaccusative, too" src="" type="">
         <inflection aspect="ns" form="full" person="ns" tense="past" voice="active"/>
-        <text>Applause thundered through the auditorium after John's heartfelt rendition of `Twinkle, Twinkle, Little Star.'</text>
+        <text>Applause thundered through the auditorium after John's heartfelt rendition of 'Twinkle, Twinkle, Little Star.'</text>
         <arg f="" n="1">Applause</arg>
         <rel f="">thundered</rel>
         <arg f="loc" n="m">through the auditorium</arg>

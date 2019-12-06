@@ -1,4 +1,4 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+﻿<!DOCTYPE frameset SYSTEM "frameset.dtd">
 <frameset>
   <predicate lemma="subside">
     <roleset id="subside.01" name="to decrease">
@@ -44,7 +44,7 @@
         <arg f="" n="1">the ground under them</arg>
       </example>
       <example name="subsidence-n" src="" type="">
-        <text>Here’s a shocking fact: land subsidence from groundwater pumping in the San Joaquin Valley has been called the “greatest human alteration of the Earth’s surface.” </text>
+        <text>Here’s a shocking fact: land subsidence from groundwater pumping in the San Joaquin Valley has been called the "greatest human alteration of the Earth’s surface." </text>
         <arg f="" n="1">land</arg>
         <rel f="">subsidence</rel>
         <arg f="" n="0">from groundwater pumping in the San Joaquin Valley</arg>

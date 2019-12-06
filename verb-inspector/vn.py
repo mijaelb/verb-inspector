@@ -11,80 +11,9 @@ import os
 import sys
 from itertools import chain
 from collections import Counter
-from vnclass_args import vnclass_dict
-sys.path.append("utils/")
-from gr import *
-from pb import *
-import utils
-
-# Transform every verbnet themrole into a simpler themrole name
-role_mapping = {'cause': 'causer',
-                'patient_i': 'patient',
-                'patient_j': 'co_patient',
-                'agent_i': 'agent',
-                'agent_j': 'co_agent',
-                'topic_i': 'topic',
-                'topic_j': 'co_topic',
-                'theme_i': 'theme',
-                'theme_j': 'co_theme',
-                'location_i': 'location',
-                'location_j': 'co_location',
-                'source_i': 'source',
-                'source_j': 'co_source',
-                'recipient_i': 'recipient',
-                'recipient_j': 'co_recipient',
-                'goal_i': 'goal',
-                'goal_j': 'co_goal',
-                # verbspecific predspecific
-                'v_sound': 'sound',
-                'v_instrument': 'instrument',
-                'v_direction': 'direction',
-                'v_final_state': 'final_state',
-                'v_position': 'position',
-                'v_material': 'material',
-                'v_theme': 'theme',
-                'v_manner': 'manner',
-                'v_configuration': 'configuration',
-                'v_state': 'state',
-                'v_result': 'result',
-                'v_orientation': 'orientation',
-                'v_form': 'form'}
-
-# Remove this punctuations marks
-punctuations = "[]{};:\\\,<>./?@#$%^&*~"
-
-def remove_punctuations(text):
-    for char in punctuations:
-        text = text.replace(char, '')
-
-    return text
-
-def norm_role(role):
-    if role:
-        if isinstance(role, dict):
-            role = {key.lower(): norm_role(them) for key, them in role.items()}
-        elif isinstance(role, list):
-            role = [norm_role(them) for them in role]
-        else:
-            role = role.lstrip().rstrip().replace(' ', '_').replace('-', '_').replace('?', '').lower()
-            role = remove_punctuations(role)
-            role = role_mapping[role] if role in role_mapping else role
-    return role
-
-def norm(text):
-    if text:
-        if isinstance(text, dict):
-            text = {key.lower(): norm(val) for key, val in text.items()}
-        elif isinstance(text, list):
-            text = [norm(val) for val in text]
-        else:
-            text = text.lstrip().rstrip().replace(' ', '_').replace('?', '').lower()
-            text = remove_punctuations(text)
-    return text
-
-def tojson(filename, dict):
-    with open(filename, 'w') as outfile:
-        json.dump(dict, outfile, indent=4)
+from data.vnclass_args import vnclass_dict
+from utils import utils
+from pathlib import Path
 
 class VerbNet(object):
 
@@ -92,62 +21,51 @@ class VerbNet(object):
         self.path = path
         self.files_soup = self.parse()
         self.verb_classes = self.get_verb_classes()
-        self.verbs = self.get_verbs()
 
     def parse(self):
         return utils.parse_xmls(self.path)
-    
+
     def get_verb_classes(self, class_ids=[]):
         verb_classes = getattr(self, 'verb_classes', {})
         if not verb_classes:
             # Extract every VNCLASS and VNSUBCLASS into a VerbClass object
-            for fname, soup in self.files_soup.items():
-                verb_classes[soup.VNCLASS['ID']] = VerbClass(soup.VNCLASS, fname)
+            for filename, soup in self.files_soup.items():
+                verb_classes[soup.VNCLASS['ID']] = VerbNetClass(filename, soup.VNCLASS)
                 for vnsubclass in soup.find_all('VNSUBCLASS'):
-                    verb_classes[vnsubclass['ID']] = VerbClass(vnsubclass, fname)
+                    verb_classes[vnsubclass['ID']] = VerbNetClass(filename, vnsubclass)
 
         if class_ids:
             verb_classes = {class_id: verb_classes[class_id] for class_id in class_ids}
 
         return verb_classes
 
-    def get_verbs(self):
-        verbs = getattr(self, 'verbs', [])
-        # if not verbs:
-        #     for verb_class in self.verb_classes:
-        #         for member in verb_class.members:
-        #             verb = [verb for verb in verbs if verb.lemma == member.name]
-        #             if not verb:
-        #                 verb = Verb(member.name) # Create a new verb object in case it does not exists
+class VerbNetClass(object):
 
-class VerbClass(object):
-
-    def __init__(self, soup=None, fname='', json_dict={}):
+    def __init__(self, filename='', soup=None):
         self.soup = soup
-        self.fname = fname
+        self.filename = filename
         self.id = soup['ID']
         self.frames = self.get_frames()
         self.themroles = self.get_themroles()
-        self.json_dict = json_dict
         self.class_preds = self.get_class_preds()
         self.class_args = self.get_class_args()
-        self.clean_args = self.load_args() if json_dict else self.class_args
-        self.clean_preds = self.load_preds() if json_dict else self.class_preds
         self.members = self.get_members()
-        print(self.fname)
-        print("'" + self.id + "':" + ''.join([' ' for i in range(len("'" + self.id + "':"),40)]) + str(self.class_args) + ",")
+        print(self.filename)
+        print(self.members)
+        #print(self.filename)
+        #print("'" + self.id + "':" + ''.join([' ' for i in range(len("'" + self.id + "':"), 40)]) + str(self.class_args) + ",")
 
     def get_themroles(self):
         themroles = getattr(self, 'themroles', [])
         if not themroles:
             for themrole in self.soup.THEMROLES.find_all('THEMROLE'):
-                role = norm_role(themrole.attrs)
+                role = utils.norm_role(themrole.attrs)
                 selrestrs = themrole.find_all('SELRESTRS')
 
                 selrestrs_dict = selrestrs.attrs if hasattr(selrestrs, 'attrs') else {}
                 selrestrs_dict['selrestrs'] = []
                 for selrestr in themrole.find_all('SELRESTR'):
-                    selrestrs_dict['selrestrs'].append(norm(selrestr.attrs))
+                    selrestrs_dict['selrestrs'].append(utils.norm(selrestr.attrs))
 
                 themroles.append({'type': role['type'], 'selrestrs': selrestrs_dict})
 
@@ -157,7 +75,7 @@ class VerbClass(object):
         frames = getattr(self, 'frames', [])
         if not frames:
             for frame in self.soup.FRAMES.find_all('FRAME'):
-                frames.append(VerbFrame(self.id, frame))
+                frames.append(VerbNetFrame(self.id, self.filename, frame))
 
         return frames
 
@@ -210,17 +128,11 @@ class VerbClass(object):
                     preds.append(pred)
         return preds
 
-    def load_args(self):
-        # TODO: Load args from JSON
-        ...
 
-    def load_args(self):
-        # TODO: Load preds from JSON
-        ...
-
-class VerbFrame(object):
-    def __init__(self, class_id, soup):
+class VerbNetFrame(object):
+    def __init__(self, class_id, filename, soup):
         self.class_id = class_id
+        self.filename = filename
         self.soup = soup
         self.descr = soup.DESCRIPTION.attrs
         self.primary = self.descr['primary']
@@ -237,16 +149,16 @@ class VerbFrame(object):
         syntax = getattr(self, 'syntax', [])
         if not syntax:
             for stx in self.soup.SYNTAX.find_all(['NP', 'VERB', 'PREP']):
-                stx_dict = norm_role(stx.attrs)
+                stx_dict = utils.norm_role(stx.attrs)
                 stx_dict['tag'] = stx.name
                 stx_dict['synrestrs'] = []
                 stx_dict['selrestrs'] = []
 
                 for synrestr in stx.find_all('SYNRESTR'):
-                    stx_dict['synrestrs'].append(norm(synrestr.attrs))
+                    stx_dict['synrestrs'].append(utils.norm(synrestr.attrs))
 
                 for selrestr in stx.find_all('SELRESTR'):
-                    stx_dict['selrestrs'].append(norm(selrestr.attrs))
+                    stx_dict['selrestrs'].append(utils.norm(selrestr.attrs))
 
                 syntax.append(stx_dict)
 
@@ -265,7 +177,7 @@ class VerbFrame(object):
         pred_args = getattr(self, 'pred_args', [])
         if not pred_args:
             for pred in self.preds:
-                pred_args.append(pred.get_vn_role_args())
+                pred_args.append(pred.get_role_args())
 
         return pred_args
 
@@ -273,24 +185,23 @@ class VerbFrame(object):
         preds = getattr(self, 'preds', [])
         if not preds:
             for pred in self.soup.SEMANTICS.find_all('PRED'):
-                bool = '' if 'bool' not in pred.attrs else pred.attrs['bool']
-                name = pred.attrs['value']
-                preds.append(Predicate(name, bool, pred))
+                preds.append(VerbNetPredicate(pred))
 
         return preds
 
-class Predicate(object):
-    def __init__(self, name, bool='', soup=None):
+
+class VerbNetPredicate(object):
+    def __init__(self, soup=None):
         self.soup = soup
-        self.bool = bool
-        self.name = name
-        self.args = self.get_vn_args()
+        self.bool = '' if 'bool' not in soup.attrs else soup.attrs['bool']
+        self.name = soup.attrs['value']
+        self.args = self.get_args()
 
     def add_arg(self, type, value, idx=-1):
         self.args.insert(idx, {'type': type, 'value': value})
 
-    def get_vn_args(self):
-        ''' In case we are loading a predicate from verbnet, this is used for frames predicates '''
+    def get_args(self):
+        ''' '''
         args = getattr(self, 'args', [])
         if self.soup:
             if not args:
@@ -299,11 +210,11 @@ class Predicate(object):
                     # in the predicate. I do not know if they will remove this in the future. The next
                     # piece of code is to be able to generalize to those kind of cases
                     for role in arg.attrs['value'].split(','):
-                        args.append({'type': norm(arg.attrs['type']), 'value': norm_role(role)})
+                        args.append({'type': utils.norm(arg.attrs['type']), 'value': utils.norm_role(role)})
 
         return args
 
-    def get_vn_role_args(self):
+    def get_role_args(self):
         role_args = []
         for arg in self.args:
             if arg['type'] != 'event' and arg['type'] != 'constant':
@@ -313,27 +224,30 @@ class Predicate(object):
     def __str__(self):
         return self.bool + self.name + '(' + ','.join([str(arg['value']) for arg in self.args]) + ')'
 
-class Verb(object):
-    def __init__(self, name):
-        self.name = name
-        self.senses = []
-        ...
-        
-    def add_verb_sense(self, class_id, groupings=[], fnframes=[], wn=[]):
-        ...
-        #sense = VerbSense(self.name, )
-        #self.senses
 
-    def __str__(self):
-        return self.lemma
-
-class VerbSense(Predicate):
-    def __init__(self, name, id):
-        super.__init__(name)
-        self.id = id
-
+# class Verb(object):
+#     def __init__(self, name):
+#         self.name = name
+#         self.senses = []
+#         ...
+#
+#     def add_verb_sense(self, class_id, groupings=[], fnframes=[], wn=[]):
+#         ...
+#         # sense = VerbSense(self.name, )
+#         # self.senses
+#
+#     def __str__(self):
+#         return self.lemma
+#
+#
+# class VerbSense(Predicate):
+#     def __init__(self, name, id):
+#         super.__init__(name)
+#         self.id = id
 
 
 if __name__ == '__main__':
-    vn = VerbNet('corpora/verbnet/')
-    verbs = vn.get_verbs()
+    dirname = os.path.dirname(__file__)
+    filename = os.path.join(dirname, 'corpora/verbnet/')
+    vn = VerbNet(filename)
+    #verbs = vn.get_verbs()

@@ -51,9 +51,9 @@
         </role>
       </roles>
       <example name="ARG1" src="probably COCA (2018 example fix)" type="">
-        <text>The lift bell “clinged” and the door opened with a whisper.</text>
+        <text>The lift bell "clinged" and the door opened with a whisper.</text>
         <arg f="" n="1">The lift bell</arg>
-        <rel f="">“clinged”</rel>
+        <rel f="">"clinged"</rel>
       </example>
 
     </roleset>

@@ -1,4 +1,4 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+﻿<!DOCTYPE frameset SYSTEM "frameset.dtd">
 <frameset>
 	<predicate lemma="oldfashioned">
 		<roleset id="oldfashioned.01" name="Old school, Traditional">
@@ -22,9 +22,9 @@
 				<arg f="tmp" n="m">now</arg>
 			</example>
 			<example name="ARG2" src="probably COCA (2018 example fix)" type="">
-        <text>The sermon is “old-fashioned” in its style.</text>
+        <text>The sermon is "old-fashioned" in its style.</text>
         <arg f="" n="1">The sermon</arg>
-        <rel f="">“old-fashioned”</rel>
+        <rel f="">"old-fashioned"</rel>
         <arg f="" n="2">in its style.</arg>
       </example>
 

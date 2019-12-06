@@ -1,4 +1,4 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+﻿<!DOCTYPE frameset SYSTEM "frameset.dtd">
 <frameset>
   <predicate lemma="premiere">
     <roleset id="premiere.01" name="give/have first performance">
@@ -32,10 +32,10 @@
         <arg f="" n="1">its first prime-time newscast in years, an hourlong show at 6 p.m. Eastern time to air head-to-head against the network newscasts</arg>
       </example>
       <example name="premiere-n" src="" type="">
-        <text> Their premiere of Garrett-Moulton’s “A Show of Hands,” described by the SF Chronicle as “the greatest dance bargain offered in this town since the San Francisco Ballet performed in Stern Grove last summer,” took place in October 2013.</text>
+        <text> Their premiere of Garrett-Moulton’s "A Show of Hands," described by the SF Chronicle as "the greatest dance bargain offered in this town since the San Francisco Ballet performed in Stern Grove last summer," took place in October 2013.</text>
         <arg f="" n="0">their</arg>
         <rel f="">premiere</rel>
-        <arg f="" n="1">of Garrett-Moulton’s “A Show of Hands,” described by the SF Chronicle as “the greatest dance bargain offered in this town since the San Francisco Ballet performed in Stern Grove last summer,”</arg>
+        <arg f="" n="1">of Garrett-Moulton’s "A Show of Hands," described by the SF Chronicle as "the greatest dance bargain offered in this town since the San Francisco Ballet performed in Stern Grove last summer,"</arg>
       </example>
     </roleset>
   </predicate>

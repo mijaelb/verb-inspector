@@ -1,4 +1,4 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+﻿<!DOCTYPE frameset SYSTEM "frameset.dtd">
 <frameset>
   <predicate lemma="rehear">
     <roleset id="rehear.01" name="hear (in court, as a trial) again">
@@ -26,7 +26,7 @@
         <arg f="" n="1">the appeal</arg>
       </example>
       <example name="rehearing-n" src="" type="">
-        <text>the warden sent Maus a memorandum stating that his rehearing on the conduct report would be held “as soon as possible,”</text>
+        <text>the warden sent Maus a memorandum stating that his rehearing on the conduct report would be held "as soon as possible,"</text>
         <arg f="" n="2">his</arg>
         <rel f="">rehearing</rel>
         <arg f="" n="1">on the conduct report</arg>

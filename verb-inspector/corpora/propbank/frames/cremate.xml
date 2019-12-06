@@ -1,4 +1,4 @@
-<!DOCTYPE frameset SYSTEM "frameset.dtd">
+﻿<!DOCTYPE frameset SYSTEM "frameset.dtd">
 <frameset>
   <predicate lemma="cremate">
     <roleset id="cremate.01" name="to burn (a dead body) to ashes">
@@ -26,10 +26,10 @@
         <arg f="TMP" n="M">at one time</arg>
       </example>
       <example name="ARG0" src="probably COCA (2018 example fix)" type="">
-        <text>We're going to have to have a closed casket because they cremated the wrong body,” he told them.</text>
+        <text>We're going to have to have a closed casket because they cremated the wrong body," he told them.</text>
         <arg f="" n="0">they</arg>
         <rel f="">cremated</rel>
-        <arg f="" n="1">the wrong body,”</arg>
+        <arg f="" n="1">the wrong body,"</arg>
       </example>
 
     </roleset>
