@@ -77,6 +77,9 @@ def tojson(filename, dict):
     with open(filename, 'w') as outfile:
         json.dump(dict, outfile, indent=4)
 
+def fromjson(filename):
+    with open(filename) as json_file:
+        data = json.load(json_file)
 
 def parse_xmls(path, markup='lxml'):
     file_names = [f for f in os.listdir(path) if f.endswith(".xml")]
@@ -85,3 +88,8 @@ def parse_xmls(path, markup='lxml'):
         files_soup[fname] = bs4.BeautifulSoup(open(path / fname), markup)
 
     return files_soup
+
+
+def enum(*args):
+    enums = dict(zip(args, range(len(args))))
+    return type('Enum', (), enums)

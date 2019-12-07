@@ -20,6 +20,7 @@ class VerbNet(object):
         self.path = Path(path)
         self.files_soup = self.parse()
         self.verb_classes = self.get_verb_classes()
+        self.lemmas = self.get_lemmas()
 
     def parse(self):
         return utils.parse_xmls(self.path, 'lxml-xml')
@@ -38,6 +39,14 @@ class VerbNet(object):
 
         return verb_classes
 
+    def get_lemmas(self):
+        lemmas = getattr(self, 'lemmas', [])
+        if not lemmas:
+            for verb_class in self.verb_classes:
+                for member in verb_class.members:
+                    lemmas.append(member.name
+
+
     def __str__(self):
         return str(self.verb_classes.keys())
 
@@ -47,7 +56,6 @@ class VerbNetClass(object):
         self.soup = soup
         self.filename = filename
         self.id = soup.attrs['ID']
-        # print(self.id)
         self.frames = self.get_frames()
         self.themroles = self.get_themroles()
         self.all_preds = self.get_all_preds()

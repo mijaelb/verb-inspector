@@ -32,7 +32,7 @@ class Groupings(object):
                     inventories[soup.inventory.attrs['lemma']] = GroupingInventory(filename, soup.inventory)
 
         if type:
-            inventories = [filter(lambda x: x.type == type, inventories)]
+            inventories = list(filter(lambda x: x.type == type, inventories))
 
         return inventories
 
