@@ -9,51 +9,51 @@ import re
 import json
 import os
 import sys
+from pathlib import Path
 from itertools import chain
 from collections import Counter
-from data.vnclass_args import vnclass_dict
 from utils import utils
-from pathlib import Path
+
 
 class VerbNet(object):
-
     def __init__(self, path=''):
-        self.path = path
+        self.path = Path(path)
         self.files_soup = self.parse()
         self.verb_classes = self.get_verb_classes()
 
     def parse(self):
-        return utils.parse_xmls(self.path)
+        return utils.parse_xmls(self.path, 'lxml-xml')
 
     def get_verb_classes(self, class_ids=[]):
         verb_classes = getattr(self, 'verb_classes', {})
         if not verb_classes:
             # Extract every VNCLASS and VNSUBCLASS into a VerbClass object
             for filename, soup in self.files_soup.items():
-                verb_classes[soup.VNCLASS['ID']] = VerbNetClass(filename, soup.VNCLASS)
+                verb_classes[soup.VNCLASS.attrs['ID']] = VerbNetClass(filename, soup.VNCLASS)
                 for vnsubclass in soup.find_all('VNSUBCLASS'):
-                    verb_classes[vnsubclass['ID']] = VerbNetClass(filename, vnsubclass)
+                    verb_classes[vnsubclass.attrs['ID']] = VerbNetClass(filename, vnsubclass)
 
         if class_ids:
             verb_classes = {class_id: verb_classes[class_id] for class_id in class_ids}
 
         return verb_classes
 
-class VerbNetClass(object):
+    def __str__(self):
+        return str(self.verb_classes.keys())
 
+
+class VerbNetClass(object):
     def __init__(self, filename='', soup=None):
         self.soup = soup
         self.filename = filename
-        self.id = soup['ID']
+        self.id = soup.attrs['ID']
+        # print(self.id)
         self.frames = self.get_frames()
         self.themroles = self.get_themroles()
-        self.class_preds = self.get_class_preds()
-        self.class_args = self.get_class_args()
+        self.all_preds = self.get_all_preds()
+        self.all_args = self.get_all_args()
         self.members = self.get_members()
-        print(self.filename)
-        print(self.members)
-        #print(self.filename)
-        #print("'" + self.id + "':" + ''.join([' ' for i in range(len("'" + self.id + "':"), 40)]) + str(self.class_args) + ",")
+        # print("'" + self.id + "':" + ''.join([' ' for i in range(len("'" + self.id + "':"), 40)]) + str(self.class_args) + ",")
 
     def get_themroles(self):
         themroles = getattr(self, 'themroles', [])
@@ -83,10 +83,12 @@ class VerbNetClass(object):
         members = getattr(self, 'members', [])
         if not members:
             for member in self.soup.MEMBERS.find_all('MEMBER'):
+                for key in member.attrs:
+                    member.attrs[key] = member.attrs[key].split()
                 members.append(member.attrs)
         return members
 
-    def get_class_args(self):
+    def get_all_args(self):
         pred_args = []
         syntax_args = []
         themrole_args = [role['type'] for role in self.themroles]
@@ -120,7 +122,7 @@ class VerbNetClass(object):
 
         return class_args
 
-    def get_class_preds(self):
+    def get_all_preds(self):
         preds = []
         for frame in self.frames:
             for pred in frame.preds:
@@ -149,10 +151,10 @@ class VerbNetFrame(object):
         syntax = getattr(self, 'syntax', [])
         if not syntax:
             for stx in self.soup.SYNTAX.find_all(['NP', 'VERB', 'PREP']):
-                stx_dict = utils.norm_role(stx.attrs)
-                stx_dict['tag'] = stx.name
-                stx_dict['synrestrs'] = []
-                stx_dict['selrestrs'] = []
+                stx_dict = {'tag': stx.name,
+                            'value': utils.norm_role(stx.attrs.get('value', '').replace('|', ' ').split()),
+                            'synrestrs': [],
+                            'selrestrs': []}
 
                 for synrestr in stx.find_all('SYNRESTR'):
                     stx_dict['synrestrs'].append(utils.norm(synrestr.attrs))
@@ -169,7 +171,7 @@ class VerbNetFrame(object):
         if not syntax_args:
             for stx in self.syntax:
                 if stx['tag'] == 'NP':
-                    syntax_args.append(stx['value'])
+                    syntax_args.append(stx['value'][0])
 
         return syntax_args
 
@@ -250,4 +252,4 @@ if __name__ == '__main__':
     dirname = os.path.dirname(__file__)
     filename = os.path.join(dirname, 'corpora/verbnet/')
     vn = VerbNet(filename)
-    #verbs = vn.get_verbs()
+    # verbs = vn.get_verbs()

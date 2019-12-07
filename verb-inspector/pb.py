@@ -13,30 +13,23 @@ from pathlib import Path
 from itertools import chain
 from collections import Counter
 from utils import utils
-
-
 class PropBank(object):
     def __init__(self, path):
         self.path = Path(path)
         self.files_soup = self.parse()
         self.predicates = self.get_predicates()
 
-        #for predicate in self.predicates:
-            #if len(predicate.dict['rolesets']) > 1:
-                #print(predicate)
-
     def parse(self):
         return utils.parse_xmls(self.path)
 
     def get_predicates(self):
-        predicates = getattr(self, 'predicates', [])
+        predicates = getattr(self, 'predicates', {})
         if not predicates:
             for filename, soup in self.files_soup.items():
                 for pred in soup.find_all('predicate'):
-                    predicates.append(PropBankPredicate(filename, pred))
+                    predicates[pred.attrs['lemma']] = PropBankPredicate(filename, pred)
 
         return predicates
-
 
 class PropBankPredicate(object):
     def __init__(self, filename, soup):
@@ -110,7 +103,6 @@ class PropBankRoleset(object):
 
     def __str__(self):
         return self.id
-
 
 if __name__ == '__main__':
     dirname = os.path.dirname(__file__)

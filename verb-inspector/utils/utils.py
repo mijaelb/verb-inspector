@@ -78,10 +78,10 @@ def tojson(filename, dict):
         json.dump(dict, outfile, indent=4)
 
 
-def parse_xmls(path):
+def parse_xmls(path, markup='lxml'):
     file_names = [f for f in os.listdir(path) if f.endswith(".xml")]
     files_soup = {}
     for fname in file_names:
-        files_soup[fname] = bs4.BeautifulSoup(open(path / fname), "lxml")
+        files_soup[fname] = bs4.BeautifulSoup(open(path / fname), markup)
 
     return files_soup
