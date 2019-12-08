@@ -77,9 +77,11 @@ def tojson(filename, dict):
     with open(filename, 'w') as outfile:
         json.dump(dict, outfile, indent=4)
 
+
 def fromjson(filename):
     with open(filename) as json_file:
         data = json.load(json_file)
+
 
 def parse_xmls(path, markup='lxml'):
     file_names = [f for f in os.listdir(path) if f.endswith(".xml")]
@@ -93,3 +95,15 @@ def parse_xmls(path, markup='lxml'):
 def enum(*args):
     enums = dict(zip(args, range(len(args))))
     return type('Enum', (), enums)
+
+
+def deep_update(x, y):
+    for key in y.keys():
+        if key not in x:
+            x.update({key: y[key]})
+        elif x[key] != y[key]:
+            if isinstance(x[key], dict):
+                x.update({key: deep_update(x[key], y[key])})
+            else:
+                x.update({key: list(set(x[key] + y[key]))})
+    return x

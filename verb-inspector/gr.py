@@ -30,19 +30,25 @@ class Groupings(object):
             for filename, soup in self.files_soup.items():
                 if soup.inventory:
                     inventories[soup.inventory.attrs['lemma']] = GroupingInventory(filename, soup.inventory)
-
         if type:
-            inventories = list(filter(lambda x: x.type == type, inventories))
+            inventories = {key: inventories[key] for key in inventories if inventories[key].type == type}
 
         return inventories
 
     def get_inventory(self, lemma, type='v'):
-        return self.inventories[lemma+'-'+type]
+        return self.inventories[lemma + '-' + type]
 
     def get_sense(self, sense_id, type='v'):
         lemma = sense_id.split('.')[0]
         inventory = self.get_inventory(lemma, type)
         return inventory.get_sense(sense_id)
+
+    def get_lemmas(self, type='v'):
+        return [d.lemma for key, d in self.get_inventories(type).items()]
+
+    def get_senses(self, lemma, type='v'):
+        return self.inventories[lemma + '-' + type].senses
+
 
 class GroupingInventory(object):
     def __init__(self, filename, soup):
@@ -123,6 +129,7 @@ class GroupingSense(object):
 
     def __str__(self):
         return self.id
+
 
 if __name__ == '__main__':
     dirname = os.path.dirname(__file__)

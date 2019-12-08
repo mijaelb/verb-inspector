@@ -42,10 +42,10 @@ class VerbNet(object):
     def get_lemmas(self):
         lemmas = getattr(self, 'lemmas', [])
         if not lemmas:
-            for verb_class in self.verb_classes:
+            for class_id, verb_class in self.verb_classes.items():
                 for member in verb_class.members:
-                    lemmas.append(member.name
-
+                    lemmas.append(member['name'][0])
+        return list(dict.fromkeys(lemmas))
 
     def __str__(self):
         return str(self.verb_classes.keys())
@@ -112,7 +112,7 @@ class VerbNetClass(object):
         # Consider the predicate equals to group arguments
         # for example equals(recipient, stimulus) means [recipient, stimulus]
         # inside the general argument structure of the class
-        for pred in self.class_preds:
+        for pred in self.all_preds:
             if pred.name == 'equals':
                 group = []
                 for arg in pred.args:

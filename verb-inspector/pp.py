@@ -9,7 +9,7 @@ from collections import Counter
 from utils import utils
 import gr, pb, vn
 
-Dataset = utils.enum('GR', 'PB', 'FN', 'EMPTY')
+Dataset = utils.enum('VN', 'PB', 'GR', 'FN', 'EMPTY')
 PlotPointType = utils.enum('VERB', 'PREP', 'EMPTY')
 
 dirname = os.path.dirname(__file__)
@@ -17,13 +17,14 @@ groupings_path = os.path.join(dirname, 'corpora/ontonotes/sense-inventories/')
 propbank_path = os.path.join(dirname, 'corpora/propbank/frames/')
 verbnet_path = os.path.join(dirname, 'corpora/verbnet/')
 
-class PlotPointsContainer(object):
+
+class PlotPointContainer(object):
     def __init__(self, json_path=''):
         self.json_path = json_path
-        self.plotpoints = self.get_plotpoints()
         self.verbnet = vn.VerbNet(verbnet_path)
         self.propbank = pb.PropBank(propbank_path)
         self.groupings = gr.Groupings(groupings_path)
+        self.plotpoints = self.get_plotpoints()
 
     def get_plotpoints(self):
         plotpoints = getattr(self, 'plotpoints', [])
@@ -32,16 +33,42 @@ class PlotPointsContainer(object):
                 pps_dict = utils.fromjson(self.json_path)
             else:
                 pps_dict = self.create_plotpoints_dict()
-                for lemma, pp_dict in pps_dict.items():
-                    plotpoints.append(PlotPoint(lemma,
-                                                pp_dict))
+            # for lemma, pp_dict in pps_dict.items():
+            #     plotpoints.append(PlotPoint(lemma,
+            #                                 pp_dict))
+        return plotpoints
 
     def create_plotpoints_dict(self, priority=[Dataset.GR, Dataset.PB]):
-        lemmas = self.verbnet.get_lemmas()
+        self.propbank.get_roles('abduct.02')
+       #lemmas = {lemma: [Dataset.VN] for lemma in self.verbnet.get_lemmas()}
+        #lemmas = utils.deep_update(lemmas, {lemma: [Dataset.PB] for lemma in self.propbank.get_lemmas()})
+        #lemmas = utils.deep_update(lemmas, {lemma: [Dataset.GR] for lemma in self.groupings.get_lemmas()})
+
+
+        # pps_dict = {}
+        # for lemma, datasets in lemmas.items():
+        #     pps_dict[lemma] = []
+        #     if Dataset.GR in datasets:
+        #         gr_senses = self.groupings.get_senses(lemma)
+        #         for sense in gr_senses:
+        #             sense_dict = {}
+        #             sense_dict['id'] = sense.id
+        #             sense_dict['dataset'] = 'gr'
+        #             sense_dict['verbnet'] = sense.get_verbnet_mappings()
+        #             sense_dict['propbank'] = sense.get_propbank_mappings()
+        #             sense_dict['args'] = []
+        #
+        #             # Get argument structure proposal from propbank
+        #             if sense_dict['propbank']:
+        #                 for pb_sense in sense_dict['propbank']:
+        #                     def
+        #
+        #             pps_dict[lemma].append(sense_dict)
+        #
+
+        #print(len(lemmas))
+        #print(lemmas)
         ...
-
-
-
 
 
 class PlotPoint(object):
@@ -56,11 +83,12 @@ class PlotPoint(object):
         if not predicates:
             for sense, sense_dict in self.pp_dict:
                 predicates.append(PlotPointPredicate(self.lemma,
-                                                          sense,
-                                                          sense_dict['args'],
-                                                          sense_dict['vnclasses'],
-                                                          sense_dict['dataset'],
-                                                          sense_dict['type']))
+                                                     sense,
+                                                     sense_dict['args'],
+                                                     sense_dict['vnclasses'],
+                                                     sense_dict['dataset'],
+                                                     sense_dict['type']))
+        return predicates
 
 
 class PlotPointPredicate(object):
@@ -103,5 +131,5 @@ class PlotPointPredicate(object):
 
 
 if __name__ == '__main__':
-    # vn = PlotPointPredicate('verb', 'verb.01', Dataset.PB, PlotPointType.VERB)
+    vn = PlotPointContainer()
     # verbs = vn.get_verbs()

@@ -33,6 +33,24 @@ class PropBank(object):
 
         return predicates
 
+    def get_lemmas(self):
+        return self.predicates.keys()
+
+    def get_roleset(self, roleset):
+        tupl = re.match(r'(.+)\.(\d+)', roleset)
+        lemma, num = (tupl[1], tupl[2])
+        print(lemma)
+        predicate = self.predicates[lemma]
+        for roleset_ in predicate.get_rolesets():
+            if roleset_.id == roleset:
+                return roleset_
+        return None
+
+    def get_roles(self, roleset):
+        roleset_ = self.get_roleset(roleset)
+        roles = roleset_.get_roles()
+        print(roles)
+
 
 class PropBankPredicate(object):
     def __init__(self, filename, soup):
