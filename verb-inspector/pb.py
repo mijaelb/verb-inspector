@@ -36,10 +36,12 @@ class PropBank(object):
     def get_lemmas(self):
         return self.predicates.keys()
 
+    def get_rolesets(self, lemma):
+        return self.predicates[lemma]
+
     def get_roleset(self, roleset):
         tupl = re.match(r'(.+)\.(\d+)', roleset)
         lemma, num = (tupl[1], tupl[2])
-        print(lemma)
         predicate = self.predicates[lemma]
         for roleset_ in predicate.get_rolesets():
             if roleset_.id == roleset:
@@ -49,7 +51,12 @@ class PropBank(object):
     def get_roles(self, roleset):
         roleset_ = self.get_roleset(roleset)
         roles = roleset_.get_roles()
-        print(roles)
+        return roles
+
+    def get_vnclasses(self, roleset):
+        roleset_ = self.get_roleset(roleset)
+        classes = roleset_.get_vnclasses()
+        return classes
 
 
 class PropBankPredicate(object):
@@ -75,13 +82,19 @@ class PropBankPredicate(object):
 
 class PropBankRoleset(object):
     def __init__(self, filename, soup):
+        self.filename = filename
+        self.soup = soup
         self.id = soup.attrs['id']
         self.name = soup.attrs['name']
-        self.soup = soup
-        self.filename = filename
         self.aliases = self.get_aliases()
         self.roles = self.get_roles()
         self.examples = self.get_examples()
+        self.dict = {'roleset': self.id,
+                     'name': self.name,
+                     'filename': self.filename,
+                     'aliases': self.aliases,
+                     'roles': self.roles,
+                     'examples': self.examples}
 
     def get_aliases(self):
         aliases = getattr(self, 'aliases', [])
@@ -99,7 +112,7 @@ class PropBankRoleset(object):
             for role in self.soup.roles.find_all('role'):
                 role_dict = utils.norm(role.attrs)
                 role_dict['vnroles'] = []
-                for vnrole in self.soup.roles.find_all('vnrole'):
+                for vnrole in role.find_all('vnrole'):
                     vnrole.attrs['vntheta'] = utils.norm_role(vnrole.attrs['vntheta'])
                     role_dict['vnroles'].append(vnrole.attrs)
                 roles.append(role_dict)
@@ -122,8 +135,16 @@ class PropBankRoleset(object):
                 examples.append(exa)
         return examples
 
+    def get_vnclasses(self):
+        classes = []
+        for role in self.roles:
+            for vnrole in role['vnroles']:
+                classes.append(vnrole['vncls'])
+
+        return list(dict.fromkeys(classes))
+
     def __str__(self):
-        return self.id
+        return str(self.id)  # str(self.dict)
 
 
 if __name__ == '__main__':

@@ -44,8 +44,16 @@ class VerbNet(object):
         if not lemmas:
             for class_id, verb_class in self.verb_classes.items():
                 for member in verb_class.members:
-                    lemmas.append(member['name'][0])
+                    lemmas.append(member.name)
         return list(dict.fromkeys(lemmas))
+
+    def get_classes(self, lemma):
+        classes = []
+        for class_id, verb_class in self.verb_classes.items():
+            for member in verb_class.members:
+                if member.name == lemma:
+                    classes.append(class_id)
+        return classes
 
     def __str__(self):
         return str(self.verb_classes.keys())
@@ -93,7 +101,7 @@ class VerbNetClass(object):
             for member in self.soup.MEMBERS.find_all('MEMBER'):
                 for key in member.attrs:
                     member.attrs[key] = member.attrs[key].split()
-                members.append(member.attrs)
+                members.append(VerbNetMember(self.id, member.attrs, self.filename))
         return members
 
     def get_all_args(self):
@@ -234,6 +242,19 @@ class VerbNetPredicate(object):
     def __str__(self):
         return self.bool + self.name + '(' + ','.join([str(arg['value']) for arg in self.args]) + ')'
 
+
+class VerbNetMember(object):
+    def __init__(self, vnclass, attrs, filename):
+        self.attrs = attrs
+        self.filename = filename
+        self.vnclass = vnclass
+        self.fnframe = attrs['fnframe']
+        self.grouping = attrs['grouping']
+        self.name = attrs['name'][0]
+        self.wn = attrs['wn']
+
+    def __str__(self):
+        return str(self.attrs)
 
 # class Verb(object):
 #     def __init__(self, name):

@@ -7,7 +7,9 @@ from pathlib import Path
 from itertools import chain
 from collections import Counter
 from utils import utils
-import gr, pb, vn
+import gr
+import pb
+import vn
 
 Dataset = utils.enum('VN', 'PB', 'GR', 'FN', 'EMPTY')
 PlotPointType = utils.enum('VERB', 'PREP', 'EMPTY')
@@ -39,12 +41,25 @@ class PlotPointContainer(object):
         return plotpoints
 
     def create_plotpoints_dict(self, priority=[Dataset.GR, Dataset.PB]):
-        self.propbank.get_roles('abduct.02')
-       #lemmas = {lemma: [Dataset.VN] for lemma in self.verbnet.get_lemmas()}
-        #lemmas = utils.deep_update(lemmas, {lemma: [Dataset.PB] for lemma in self.propbank.get_lemmas()})
-        #lemmas = utils.deep_update(lemmas, {lemma: [Dataset.GR] for lemma in self.groupings.get_lemmas()})
-
-
+        #roles = self.format_roles(self.propbank.get_roles('abduct.01'), Dataset.PB)
+        #classes = self.propbank.get_vnclasses('abduct.01')
+        vnclasses = self.verbnet.get_classes('move')
+        rolesets = self.propbank.get_rolesets('move')
+        roleset = self.propbank.get_roleset('move.01')
+        classes = self.propbank.get_vnclasses('move.01')
+        print(classes)
+        print(roleset.name)
+        #classes = self.
+        print(vnclasses)
+        print(str(rolesets))
+        print(str(roleset))
+        #print(classes)
+        #print(roles)
+        lemmas = {utils.norm(lemma): [Dataset.VN] for lemma in self.verbnet.get_lemmas()}
+        lemmas = utils.deep_update(lemmas, {utils.norm(lemma): [Dataset.PB] for lemma in self.propbank.get_lemmas()})
+        lemmas = utils.deep_update(lemmas, {utils.norm(lemma): [Dataset.GR] for lemma in self.groupings.get_lemmas()})
+        print(len(lemmas))
+        print(lemmas)
         # pps_dict = {}
         # for lemma, datasets in lemmas.items():
         #     pps_dict[lemma] = []
@@ -66,17 +81,41 @@ class PlotPointContainer(object):
         #             pps_dict[lemma].append(sense_dict)
         #
 
-        #print(len(lemmas))
-        #print(lemmas)
+        # print(len(lemmas))
+        # print(lemmas)
         ...
+
+    def format_roles(self, roles, dataset):
+        args = []
+        if dataset == Dataset.PB:
+            for role in roles:
+                arg = {'descr': role['descr'], 'n': role['n'], 'roles': []}
+                if role['vnroles']:
+                    for vnrole in role['vnroles']:
+                        arg['roles'].append({'role': role['f'], 'themrole': vnrole['vntheta'], 'vnclass': vnrole['vncls']})
+                else:
+                    arg['roles'].append({'role': role['f'], 'themrole': '', 'vnclass': ''})
+                args.append(arg)
+        elif dataset == Dataset.VN:
+            ...
+
+        return args
 
 
 class PlotPoint(object):
+    ''' A class that stores the senses of plot points and select'''
+
     def __init__(self, lemma, pp_dict):
+        '''
+
+        Args:
+            lemma:
+            pp_dict:
+        '''
         self.lemma = lemma
         self.pp_dict = pp_dict
         self.predicates = self.get_predicates()
-        self.selected_sense = 1
+        self.selected_sense = self.get_selected_sense()
 
     def get_predicates(self):
         predicates = getattr(self, 'predicates', [])
@@ -90,18 +129,25 @@ class PlotPoint(object):
                                                      sense_dict['type']))
         return predicates
 
+    def get_selected_sense(self):
+        selected_sense = getattr(self, 'selected_sense', None)
+        if not selected_sense:
+            selected_sense = self.pp_dict['selected']
+
+        return selected_sense
+
 
 class PlotPointPredicate(object):
     """ A class that contains the general argument structure and the sense of a predicate for a certain plot point """
 
     def __init__(self, lemma, sense, args, vnclasses, from_dataset=Dataset.EMPTY, type=PlotPointType.VERB):
         """
-            Argument structure of the plot point predicate is defined as a list of lists of dictionaries
+            Argument structure of the plot point predicate is defined as a list of PlotPointArg objects
             [ [ { vnrole: 'agent', vncls: 'class-1.1' }, ... ], [ { ... , ... } ], [ { ... , ... , ... } ] ]
             [ ARG0, ARG1, ARG2, ARG3, ..., ARGN ]
 
             Each index of the outer list corresponds to the argument position in the predicate
-            In case of verbs this corresponds to subject, direct object, indirect object and additional arguments.
+            In case of verbs: subject, direct object, indirect object and additional arguments.
             The arguments are thematic roles from to classes of verbnet, they correspond to the arguments as
             required in the frame predicates.
 
@@ -128,6 +174,31 @@ class PlotPointPredicate(object):
         self.from_dataset = from_dataset
         self.type = type
         self.args = args
+
+
+class PlotPointArg(object):
+    def __init__(self, descr, n):
+        self.descr = descr
+        self.n = n
+        self.roles = []
+
+    def add_role(self, role, themrole, vnclass, dataset):
+        """
+        This adds possible roles in
+
+        Arg:
+            role:
+            themrole:
+            vnclass:
+            dataset:
+        """
+        self.roles.append({'role': role,
+                           'themrole': themrole,
+                           'vnclass': vnclass,
+                           'dataset': dataset})
+
+class PlotPointRole(object):
+    ...
 
 
 if __name__ == '__main__':
