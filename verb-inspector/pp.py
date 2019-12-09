@@ -1,3 +1,5 @@
+from enum import Enum
+
 import bs4
 import re
 import json
@@ -7,12 +9,25 @@ from pathlib import Path
 from itertools import chain
 from collections import Counter
 from utils import utils
+from dataclasses import field, dataclass
+from typing import List
 import gr
 import pb
 import vn
 
-Dataset = utils.enum('VN', 'PB', 'GR', 'FN', 'EMPTY')
-PlotPointType = utils.enum('VERB', 'PREP', 'EMPTY')
+class Dataset(Enum):
+    VN = 'vn'
+    PB = 'pb'
+    GR = 'gr'
+    FN = 'fn'
+    EMPTY = ''
+
+class PlotPointType(Enum):
+    VERB = 'verb'
+    PREP = 'prep'
+    EMPTY = ''
+#Dataset = utils.enum('VN', 'PB', 'GR', 'FN', 'EMPTY')
+#PlotPointType = utils.enum('VERB', 'PREP', 'EMPTY')
 
 dirname = os.path.dirname(__file__)
 groupings_path = os.path.join(dirname, 'corpora/ontonotes/sense-inventories/')
@@ -32,27 +47,66 @@ class PlotPointContainer(object):
         plotpoints = getattr(self, 'plotpoints', [])
         if not plotpoints:
             if self.json_path:
-                pps_dict = utils.fromjson(self.json_path)
+                ...
             else:
-                pps_dict = self.create_plotpoints_dict()
+                self.init_plotpoints()
+            #pps_dict = utils.fromjson(self.json_path)
             # for lemma, pp_dict in pps_dict.items():
             #     plotpoints.append(PlotPoint(lemma,
             #                                 pp_dict))
         return plotpoints
 
+    def init_plotpoints(self):
+        # Load all lemmas from every dataset
+        lemmas = {utils.norm(lemma): [Dataset.VN] for lemma in self.verbnet.get_lemmas()}
+        lemmas = utils.deep_update(lemmas, {utils.norm(lemma): [Dataset.PB] for lemma in self.propbank.get_lemmas()})
+        lemmas = utils.deep_update(lemmas, {utils.norm(lemma): [Dataset.GR] for lemma in self.groupings.get_lemmas()})
+        pps_dict = {}
+        for lemma, datasets in lemmas.items():
+            pps_dict['lemma'] = lemma
+            pps_dict['senses'] = []
+            if Dataset.GR in datasets:
+                senses = self.groupings.get_senses(lemma)
+                pps_sense = {}
+                for sense in senses.values():
+                    pps_sense['id'] = sense.id
+                    pps_sense['vn'] = sense.mappings.vn
+                    pps_sense['pb'] = sense.mappings.pb
+                    pps_sense['fn'] = sense.mappings.fn
+                    pps_sense['dataset'] = Dataset.GR
+
+                    if pps_sense['pb']:
+                        for roleset in pps_sense['pb']:
+                            try:
+                                roles = self.propbank.get_roles(roleset)
+                                if roles:
+                                    roles = self.transform_roles(roles, Dataset.PB)
+                            except:
+                                print(lemma)
+                                print(roleset)
+                                print("Unexpected error:", sys.exc_info()[0])
+         #
+
     def create_plotpoints_dict(self, priority=[Dataset.GR, Dataset.PB]):
-        #roles = self.format_roles(self.propbank.get_roles('abduct.01'), Dataset.PB)
+        senses = self.groupings.get_pb_ids('move')
+        classes = self.groupings.get_vn_classes('move')
+        print(senses)
+        print(classes)
+        roles = self.get_roles(self.propbank.get_roles('abduct.01'), Dataset.PB)
         #classes = self.propbank.get_vnclasses('abduct.01')
+        mappings = self.groupings.get_senses('move')
+        #print(mappings)
         vnclasses = self.verbnet.get_classes('move')
         rolesets = self.propbank.get_rolesets('move')
         roleset = self.propbank.get_roleset('move.01')
         classes = self.propbank.get_vnclasses('move.01')
-        print(classes)
-        print(roleset.name)
+        #print(roles)
+        #print(classes)
+        #print(roleset.name)
         #classes = self.
-        print(vnclasses)
-        print(str(rolesets))
-        print(str(roleset))
+        #print(vnclasses)
+        #print(str(rolesets))
+        #print(str(roleset))
         #print(classes)
         #print(roles)
         lemmas = {utils.norm(lemma): [Dataset.VN] for lemma in self.verbnet.get_lemmas()}
@@ -85,16 +139,17 @@ class PlotPointContainer(object):
         # print(lemmas)
         ...
 
-    def format_roles(self, roles, dataset):
+    def transform_roles(self, roles, dataset):
         args = []
         if dataset == Dataset.PB:
             for role in roles:
-                arg = {'descr': role['descr'], 'n': role['n'], 'roles': []}
-                if role['vnroles']:
-                    for vnrole in role['vnroles']:
-                        arg['roles'].append({'role': role['f'], 'themrole': vnrole['vntheta'], 'vnclass': vnrole['vncls']})
+                arg = PlotPointArg(role.descr, role.n)
+                if role.vnroles:
+                    for vnrole in role.vnroles:
+                        arg.add_role(role.f, vnrole.vntheta, vnrole.vncls, dataset)
                 else:
-                    arg['roles'].append({'role': role['f'], 'themrole': '', 'vnclass': ''})
+                    arg.add_role(role.f, '', '', dataset)
+
                 args.append(arg)
         elif dataset == Dataset.VN:
             ...
@@ -175,31 +230,21 @@ class PlotPointPredicate(object):
         self.type = type
         self.args = args
 
+@dataclass
+class PlotPointRole:
+    role: str
+    themrole: str
+    vnclass: str
+    dataset: str
 
-class PlotPointArg(object):
-    def __init__(self, descr, n):
-        self.descr = descr
-        self.n = n
-        self.roles = []
+@dataclass
+class PlotPointArg:
+    descr: str
+    arg: str
+    roles: List[PlotPointRole] = field(default_factory=list)
 
     def add_role(self, role, themrole, vnclass, dataset):
-        """
-        This adds possible roles in
-
-        Arg:
-            role:
-            themrole:
-            vnclass:
-            dataset:
-        """
-        self.roles.append({'role': role,
-                           'themrole': themrole,
-                           'vnclass': vnclass,
-                           'dataset': dataset})
-
-class PlotPointRole(object):
-    ...
-
+        self.roles.append(PlotPointRole(role, themrole, vnclass, dataset))
 
 if __name__ == '__main__':
     vn = PlotPointContainer()

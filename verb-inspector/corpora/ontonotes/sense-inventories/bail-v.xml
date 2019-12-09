@@ -17,7 +17,7 @@
          <gr_sense></gr_sense>
          <wn version=""></wn>
          <wn lemma="" version=""></wn>
-         <omega></omega><pb>bail.01</pb>
+         <omega></omega><pb>bail_out.01</pb>
          <vn>NM</vn><fn>NP</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
@@ -35,7 +35,7 @@
          <gr_sense></gr_sense>
          <wn version="3.0">1,3</wn>
          <wn lemma="bail_out" version="3.0">1</wn>
-         <omega></omega><pb>bail.02</pb>
+         <omega></omega><pb>bail_out.02</pb>
          <vn>NM</vn><fn>NP</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>

@@ -13,6 +13,8 @@ from pathlib import Path
 from itertools import chain
 from collections import Counter
 from utils import utils
+from dataclasses import field, dataclass
+from typing import List
 
 
 class PropBank(object):
@@ -41,17 +43,20 @@ class PropBank(object):
 
     def get_roleset(self, roleset):
         tupl = re.match(r'(.+)\.(\d+)', roleset)
-        lemma, num = (tupl[1], tupl[2])
-        predicate = self.predicates[lemma]
-        for roleset_ in predicate.get_rolesets():
-            if roleset_.id == roleset:
-                return roleset_
+        if tupl:
+            lemma, num = (tupl[1], tupl[2])
+            predicate = self.predicates[lemma]
+            for roleset_ in predicate.get_rolesets():
+                if roleset_.id == roleset:
+                    return roleset_
         return None
 
     def get_roles(self, roleset):
         roleset_ = self.get_roleset(roleset)
-        roles = roleset_.get_roles()
-        return roles
+        if roleset_:
+            roles = roleset_.get_roles()
+            return roles
+        return None
 
     def get_vnclasses(self, roleset):
         roleset_ = self.get_roleset(roleset)
@@ -65,9 +70,6 @@ class PropBankPredicate(object):
         self.soup = soup
         self.filename = filename
         self.rolesets = self.get_rolesets()
-        self.dict = {'lemma': self.lemma,
-                     'rolesets': [str(roleset) for roleset in self.rolesets],
-                     'filename': self.filename}
 
     def get_rolesets(self):
         rolesets = getattr(self, 'rolesets', [])
@@ -76,8 +78,9 @@ class PropBankPredicate(object):
                 rolesets.append(PropBankRoleset(self.filename, roleset))
         return rolesets
 
-    def __str__(self):
-        return str(self.dict)
+    def __repr__(self):
+        return (f'{self.__class__.__name__}'
+                f'(lemma={self.lemma!r}, filename={self.filename!r}, rolesets={self.rolesets!r}')
 
 
 class PropBankRoleset(object):
@@ -89,20 +92,14 @@ class PropBankRoleset(object):
         self.aliases = self.get_aliases()
         self.roles = self.get_roles()
         self.examples = self.get_examples()
-        self.dict = {'roleset': self.id,
-                     'name': self.name,
-                     'filename': self.filename,
-                     'aliases': self.aliases,
-                     'roles': self.roles,
-                     'examples': self.examples}
 
     def get_aliases(self):
         aliases = getattr(self, 'aliases', [])
         if not aliases:
             for alias in self.soup.aliases.find_all('alias'):
-                al = alias.attrs
-                al['text'] = alias.text
-                aliases.append(al)
+                pb_alias = PropBankAlias()
+                pb_alias.fill(alias.attrs, alias.text)
+                aliases.append(pb_alias)
 
         return aliases
 
@@ -110,41 +107,122 @@ class PropBankRoleset(object):
         roles = getattr(self, 'roles', [])
         if not roles:
             for role in self.soup.roles.find_all('role'):
-                role_dict = utils.norm(role.attrs)
-                role_dict['vnroles'] = []
+                pb_role = PropBankRole()
+                pb_role.fill(utils.norm(role.attrs))
                 for vnrole in role.find_all('vnrole'):
-                    vnrole.attrs['vntheta'] = utils.norm_role(vnrole.attrs['vntheta'])
-                    role_dict['vnroles'].append(vnrole.attrs)
-                roles.append(role_dict)
+                    pb_role.add_vnrole(vnrole['vncls'], utils.norm_role(vnrole.attrs['vntheta']))
+                roles.append(pb_role)
         return roles
 
     def get_examples(self):
         examples = getattr(self, 'examples', [])
         if not examples:
             for example in self.soup.find_all('example'):
-                exa = example.attrs
-                exa['inflection'] = example.inflection.attrs if example.inflection else {}
-                exa['text'] = example.find_all('text')[0].text if example.find_all('text') else ''
-                exa['args'] = []
+                pb_example = PropBankExample()
+                text = example.find_all('text')[0].text if example.find_all('text') else ''
+                pb_example.fill(example.attrs, text)
+
+                if example.inflection:
+                    pb_example.inflection.fill(example.inflection.attrs)
+
                 for arg in example.find_all(['arg', 'rel']):
-                    arg_ = {}
-                    arg_['tag'] = arg.name
-                    arg_.update(arg.attrs)
-                    arg_['text'] = arg.text
-                    exa['args'].append(arg_)
-                examples.append(exa)
+                    pb_example.add_arg(arg.name, arg.get('f', ''), arg.get('n', ''), arg.text)
+                examples.append(pb_example)
         return examples
 
     def get_vnclasses(self):
         classes = []
         for role in self.roles:
-            for vnrole in role['vnroles']:
-                classes.append(vnrole['vncls'])
+            for vnrole in role.vnroles:
+                classes.append(vnrole.vncls)
 
         return list(dict.fromkeys(classes))
 
+    def __repr__(self):
+        return (f'{self.__class__.__name__}'
+                f'(id={self.id!r}, name={self.name!r}, filename={self.filename!r}, aliases={self.aliases!r}, roles={self.roles!r}, examples={self.examples!r})')
+
     def __str__(self):
         return str(self.id)  # str(self.dict)
+
+
+@dataclass
+class PropBankInflection:
+    aspect: str = ''
+    form: str = ''
+    person: str = ''
+    tense: str = ''
+    voice: str = ''
+
+    def fill(self, attrs):
+        self.aspect = attrs.get('aspect', '')
+        self.form = attrs.get('form', '')
+        self.person = attrs.get('person', '')
+        self.tense = attrs.get('tense', '')
+        self.voice = attrs.get('voice', '')
+
+
+@dataclass
+class PropBankExampleArg:
+    type: str
+    f: str
+    n: str
+    text: str
+
+
+@dataclass
+class PropBankExample:
+    name: str = ''
+    src: str = ''
+    type: str = ''
+    text: str = ''
+    inflection: PropBankInflection = PropBankInflection()
+    args: List[PropBankExampleArg] = field(default_factory=list)
+
+    def add_arg(self, type, f, n, text):
+        self.args.append(PropBankExampleArg(type, f, n, text))
+
+    def fill(self, attrs, text):
+        self.name = attrs.get('name', '')
+        self.src = attrs.get('src', '')
+        self.type = attrs.get('type', '')
+        self.text = text
+
+
+@dataclass
+class PropBankAlias:
+    framenet: str = ''
+    pos: str = ''
+    verbnet: str = ''
+    word: str = ''
+
+    def fill(self, attrs, word):
+        self.framenet = attrs.get('framenet', '')
+        self.pos = attrs.get('pos', '')
+        self.verbnet = attrs.get('verbnet', '')
+        self.word = word
+
+
+@dataclass
+class PropBankVNRole:
+    vntheta: str
+    vncls: str
+
+
+@dataclass
+class PropBankRole:
+    descr: str = ''
+    f: str = ''
+    n: str = ''
+    vnroles: List[PropBankVNRole] = field(default_factory=list)
+
+    def add_vnrole(self, vncls, vntheta):
+        self.vnroles.append(PropBankVNRole(vncls, vntheta))
+
+    def fill(self, attrs):
+        self.descr = attrs.get('descr', '')
+        self.f = attrs.get('f', '')
+        self.n = attrs.get('n', '')
 
 
 if __name__ == '__main__':

@@ -13,7 +13,8 @@ from pathlib import Path
 from itertools import chain
 from collections import Counter
 from utils import utils
-
+from dataclasses import field, dataclass
+from typing import List
 
 class VerbNet(object):
     def __init__(self, path=''):
@@ -78,12 +79,17 @@ class VerbNetClass(object):
                 role = utils.norm_role(themrole.attrs)
                 selrestrs = themrole.find_all('SELRESTRS')
 
-                selrestrs_dict = selrestrs.attrs if hasattr(selrestrs, 'attrs') else {}
-                selrestrs_dict['selrestrs'] = []
-                for selrestr in themrole.find_all('SELRESTR'):
-                    selrestrs_dict['selrestrs'].append(utils.norm(selrestr.attrs))
+                themrole_ = VerbNetThemRole(role['type'], [])
+                for selrestrs_ in selrestrs:
+                    selres = VerbNetSelSynRestrs('sel', selrestrs_.attrs.get('logic', ''), [])
+                    for selrestr in selrestrs_.find_all('SELRESTR'):
+                        attrs = utils.norm(selrestr.attrs)
+                        selres.restrs.append(VerbNetSelSynRestr('sel', attrs['type'], attrs['value']))
 
-                themroles.append({'type': role['type'], 'selrestrs': selrestrs_dict})
+                    themrole_.restrs.append(selres)
+
+                themroles.append(themrole_)
+
 
         return themroles
 
@@ -101,13 +107,19 @@ class VerbNetClass(object):
             for member in self.soup.MEMBERS.find_all('MEMBER'):
                 for key in member.attrs:
                     member.attrs[key] = member.attrs[key].split()
-                members.append(VerbNetMember(self.id, member.attrs, self.filename))
+                members.append(VerbNetMember(member.attrs['name'][0],       # name
+                                             self.id,                       # vnclass
+                                             self.filename,                 # filename
+                                             member.attrs['fnframe'],       # fnframe
+                                             member.attrs['grouping'],      # grouping
+                                             member.attrs['wn']))           # wn
         return members
 
     def get_all_args(self):
         pred_args = []
         syntax_args = []
-        themrole_args = [role['type'] for role in self.themroles]
+        themrole_args = [role.type for role in self.themroles]
+
 
         for frame in self.frames:
             pred_args.extend(frame.get_pred_args())
@@ -124,8 +136,8 @@ class VerbNetClass(object):
             if pred.name == 'equals':
                 group = []
                 for arg in pred.args:
-                    if arg != 'event' and arg != 'constant':
-                        group.append(arg['value'])
+                    if arg.type != 'event' and arg.type != 'constant':
+                        group.append(arg.value)
 
                 remove = False
                 for i, arg in enumerate(class_args):
@@ -167,18 +179,18 @@ class VerbNetFrame(object):
         syntax = getattr(self, 'syntax', [])
         if not syntax:
             for stx in self.soup.SYNTAX.find_all(['NP', 'VERB', 'PREP']):
-                stx_dict = {'tag': stx.name,
-                            'value': utils.norm_role(stx.attrs.get('value', '').replace('|', ' ').split()),
-                            'synrestrs': [],
-                            'selrestrs': []}
+                stx_tag = VerbNetSyntaxTag(stx.name,
+                                           utils.norm_role(stx.attrs.get('value', '').replace('|', ' ').split()), [])
 
                 for synrestr in stx.find_all('SYNRESTR'):
-                    stx_dict['synrestrs'].append(utils.norm(synrestr.attrs))
+                    restr = utils.norm(synrestr.attrs)
+                    stx_tag.restrs.append(VerbNetSelSynRestr('syn', restr['type'], restr['value']))
 
                 for selrestr in stx.find_all('SELRESTR'):
-                    stx_dict['selrestrs'].append(utils.norm(selrestr.attrs))
+                    restr = utils.norm(selrestr.attrs)
+                    stx_tag.restrs.append(VerbNetSelSynRestr('sel', restr['type'], restr['value']))
 
-                syntax.append(stx_dict)
+                syntax.append(stx_tag)
 
         return syntax
 
@@ -186,8 +198,8 @@ class VerbNetFrame(object):
         syntax_args = getattr(self, 'syntax_args', [])
         if not syntax_args:
             for stx in self.syntax:
-                if stx['tag'] == 'NP':
-                    syntax_args.append(stx['value'][0])
+                if stx.type == 'NP':
+                    syntax_args.append(stx.value[0])
 
         return syntax_args
 
@@ -216,10 +228,9 @@ class VerbNetPredicate(object):
         self.args = self.get_args()
 
     def add_arg(self, type, value, idx=-1):
-        self.args.insert(idx, {'type': type, 'value': value})
+        self.args.insert(idx, VerbNetArg(type, value))
 
     def get_args(self):
-        ''' '''
         args = getattr(self, 'args', [])
         if self.soup:
             if not args:
@@ -228,54 +239,56 @@ class VerbNetPredicate(object):
                     # in the predicate. I do not know if they will remove this in the future. The next
                     # piece of code is to be able to generalize to those kind of cases
                     for role in arg.attrs['value'].split(','):
-                        args.append({'type': utils.norm(arg.attrs['type']), 'value': utils.norm_role(role)})
+                        args.append(VerbNetArg(utils.norm(arg.attrs['type']), utils.norm_role(role)))
 
         return args
 
     def get_role_args(self):
         role_args = []
         for arg in self.args:
-            if arg['type'] != 'event' and arg['type'] != 'constant':
-                role_args.append(arg['value'])
+            if arg.type != 'event' and arg.type != 'constant':
+                role_args.append(arg.value)
         return role_args
 
     def __str__(self):
-        return self.bool + self.name + '(' + ','.join([str(arg['value']) for arg in self.args]) + ')'
+        return self.bool + self.name + '(' + ','.join([str(arg.value) for arg in self.args]) + ')'
 
+@dataclass
+class VerbNetSelSynRestr:
+    name: str
+    type: str
+    value: str
 
-class VerbNetMember(object):
-    def __init__(self, vnclass, attrs, filename):
-        self.attrs = attrs
-        self.filename = filename
-        self.vnclass = vnclass
-        self.fnframe = attrs['fnframe']
-        self.grouping = attrs['grouping']
-        self.name = attrs['name'][0]
-        self.wn = attrs['wn']
+@dataclass
+class VerbNetSelSynRestrs:
+    type: str
+    logic: str
+    restrs: List[VerbNetSelSynRestr] = field(default_factory=[])
 
-    def __str__(self):
-        return str(self.attrs)
+@dataclass
+class VerbNetSyntaxTag:
+    type: str
+    value: list
+    restrs: List[VerbNetSelSynRestr] = field(default_factory=[])
 
-# class Verb(object):
-#     def __init__(self, name):
-#         self.name = name
-#         self.senses = []
-#         ...
-#
-#     def add_verb_sense(self, class_id, groupings=[], fnframes=[], wn=[]):
-#         ...
-#         # sense = VerbSense(self.name, )
-#         # self.senses
-#
-#     def __str__(self):
-#         return self.lemma
-#
-#
-# class VerbSense(Predicate):
-#     def __init__(self, name, id):
-#         super.__init__(name)
-#         self.id = id
+@dataclass
+class VerbNetThemRole:
+    type: str
+    restrs: List[VerbNetSelSynRestr] = field(default_factory=[])
 
+@dataclass
+class VerbNetArg:
+    type: str
+    value: str
+
+@dataclass
+class VerbNetMember:
+    name: str
+    vnclass: str
+    filename: str
+    fnframe: list = field(default_factory=[])
+    grouping: list = field(default_factory=[])
+    wn: list = field(default_factory=[])
 
 if __name__ == '__main__':
     dirname = os.path.dirname(__file__)

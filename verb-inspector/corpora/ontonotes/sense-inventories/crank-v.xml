@@ -49,7 +49,7 @@
          <gr_sense></gr_sense>
          <wn version="3.0"></wn>
          <wn lemma="crank_out" version="3.0">1</wn>
-         <omega></omega><pb>crank.02</pb>
+         <omega></omega><pb>crank_out.02</pb>
          <vn>NP</vn><fn>NP</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
@@ -70,7 +70,7 @@
          <gr_sense></gr_sense>
          <wn version="3.0"></wn>
          <wn lemma="" version="3.0"></wn>
-         <omega></omega><pb>crank.01</pb>
+         <omega></omega><pb>crank_up.01</pb>
          <vn>NP</vn><fn>NP</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>

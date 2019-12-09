@@ -15,7 +15,8 @@
       <mappings>
          <wn version="3.0">1</wn>
          <omega/>
-         <pb>introduce.01,amalgamate-22.2-3-1</pb>
+         <pb>introduce.01</pb>
+	 <vn>amalgamate-22.2-3-1</vn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="2" name="put something into use, action, or circulation" type="">
@@ -35,7 +36,8 @@
       <mappings>
          <wn version="3.0">2,4,5,7,8</wn>
          <omega/>
-         <pb>introduce.01,introduce.02,amalgamate-22.2-3-1</pb>
+         <pb>introduce.01,introduce.02</pb>
+	 <vn>amalgamate-22.2-3-1</vn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="3" name="insert a physical object into some place" type="">

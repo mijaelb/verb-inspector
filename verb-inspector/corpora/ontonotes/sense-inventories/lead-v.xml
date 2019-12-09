@@ -18,7 +18,7 @@
       <mappings>
          <wn version="3.0">2,3,9</wn>
          <wn lemma="lead_up" version="3.0">1</wn>  
-         <omega/><pb>lead.03lead.05</pb>
+         <omega/><pb>lead.03,lead.05</pb>
          <vn>result-27.2</vn><fn>Causation</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>

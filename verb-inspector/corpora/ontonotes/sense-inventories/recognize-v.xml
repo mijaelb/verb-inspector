@@ -23,8 +23,8 @@
       <mappings>
          <wn version="3.0">2,3,4,6,8</wn>   
          <wn lemma="" version="3.0"/>
-         <omega/><pb>recognize.01,sight-30.2</pb>
-         <vn>Conjecture-29.5-1,sight-30.2</vn>
+         <omega/><pb>recognize.01</pb>
+         <vn>conjecture-29.5-1,sight-30.2</vn>
          <fn>Becoming_aware</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
@@ -51,7 +51,8 @@
       <mappings>
          <wn version="3.0">2,7,9</wn>
          <wn lemma="" version="3.0"/>
-         <omega/><pb>recognize.02,conjecture-29.5-1,consider-29.9-1</pb>
+         <omega/><pb>recognize.02</pb>
+	 <vn>conjecture-29.5-1,consider-29.9-1</vn>
          <fn>NM</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>

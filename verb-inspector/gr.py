@@ -13,6 +13,8 @@ from pathlib import Path
 from itertools import chain
 from collections import Counter
 from utils import utils
+from dataclasses import field, dataclass
+from typing import List
 
 
 class Groupings(object):
@@ -49,6 +51,21 @@ class Groupings(object):
     def get_senses(self, lemma, type='v'):
         return self.inventories[lemma + '-' + type].senses
 
+    def get_pb_ids(self, lemma, type='v'):
+        senses = self.get_senses(lemma, type)
+        pb_ids = []
+        for sense in senses.values():
+            pb_ids += sense.mappings.pb
+
+        return list(dict.fromkeys(pb_ids))
+
+    def get_vn_classes(self, lemma, type='v'):
+        senses = self.get_senses(lemma, type)
+        vn_classes = []
+        for sense in senses.values():
+            vn_classes += sense.mappings.vn
+        return list(dict.fromkeys(vn_classes))
+
 
 class GroupingInventory(object):
     def __init__(self, filename, soup):
@@ -76,22 +93,28 @@ class GroupingInventory(object):
 
         return None
 
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'lemma={self.lemma!r}, '
+                f'filename={self.filename!r}, '
+                f'senses={self.senses!r}) ')
+
     def __str__(self):
         return self.lemma
 
 
 class GroupingSense(object):
     def __init__(self, lemma, filename, soup):
-        self.filename = filename
-        self.lemma = lemma
         self.soup = soup
-        self.group = soup.attrs.get('group', '')
         self.n = soup.attrs.get('n', '')
-        self.name = soup.attrs.get('name', '')
-        self.type = soup.attrs.get('type', '')
+        self.lemma = lemma
         self.id = self.lemma + '.' + ('0' + self.n if len(self.n) < 2 else self.n)
-        self.examples = self.get_examples()
+        self.name = soup.attrs.get('name', '')
+        self.filename = filename
         self.mappings = self.get_mappings()
+        self.group = soup.attrs.get('group', '')
+        self.type = soup.attrs.get('type', '')
+        self.examples = self.get_examples()
 
     def get_examples(self):
         examples = getattr(self, 'examples', [])
@@ -100,35 +123,66 @@ class GroupingSense(object):
         return examples
 
     def get_mappings(self):
-        mappings = getattr(self, 'mappings', {})
+        mappings = getattr(self, 'mappings', None)
         if not mappings:
-            mappings = {'wn': [], 'vn': [], 'pb': [], 'fn': [], 'gr_sense': []}
-            for mapping in self.soup.mappings.find_all(list(mappings.keys())):
+            mappings = GroupingMappings()
+            for mapping in self.soup.mappings.find_all(['wn', 'vn', 'pb', 'fn', 'gr_sense']):
                 values = ' '.join(mapping.text.strip().split(',')).split()
                 if values and values[0].lower() not in ['nm', 'np']:
                     if mapping.name == 'wn':
-                        lemma = mapping.attrs.get('lemma', '')
-                        version = mapping.attrs.get('version', '')
-                        mappings['wn'].append({'lemma': lemma, 'version': version, 'values': values})
+                        mappings.add_wn(mapping.attrs.get('lemma', ''),
+                                        mapping.attrs.get('version', ''),
+                                        values)
                     else:
-                        mappings[mapping.name] = values
+                        mappings.fill(mapping.name, values)
 
         return mappings
 
-    def get_wordnet_mappings(self):
-        return self.mappings['wn']
-
-    def get_verbnet_mappings(self):
-        return self.mappings['vn']
-
-    def get_propbank_mappings(self):
-        return self.mappings['pb']
-
-    def get_framenet_mappings(self):
-        return self.mappings['fn']
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'lemma={self.lemma!r}, '
+                f'id={self.id!r}, '
+                f'name={self.name!r}, '
+                f'filename={self.filename!r}, '
+                f'mappings={self.mappings!r}, '
+                f'group={self.group!r},'
+                f'type={self.type!r}, '
+                f'n={self.n!r}, '
+                f'examples={self.examples!r})')
 
     def __str__(self):
         return self.id
+
+
+@dataclass
+class WordNetRef:
+    lemma: str
+    version: str
+    values: list
+
+
+@dataclass
+class GroupingMappings:
+    gr_sense: list = field(default_factory=list)
+    wn: List[WordNetRef] = field(default_factory=list)
+    pb: list = field(default_factory=list)
+    vn: list = field(default_factory=list)
+    fn: list = field(default_factory=list)
+
+    def add_wn(self, lemma, version, values):
+        values = [value.lower() for value in values]
+        self.wn.append(WordNetRef(lemma.lower(), version, values))
+
+    def fill(self, mapping_name, values):
+        values = [value.lower() for value in values]
+        if mapping_name == 'pb':
+            self.pb = values
+        elif mapping_name == 'vn':
+            self.vn = values
+        elif mapping_name == 'fn':
+            self.fn = values
+        elif mapping_name == 'gr_sense':
+            self.gr_sense = values
 
 
 if __name__ == '__main__':

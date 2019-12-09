@@ -49,7 +49,7 @@
          <gr_sense></gr_sense>
          <wn version="3.0">4,5</wn>
          <wn lemma="slack_up" version="3.0">1</wn>
-         <omega></omega><pb>slack.01</pb>
+         <omega></omega><pb>slack_off.01</pb>
          <vn>NM</vn><fn>NP</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
@@ -66,7 +66,7 @@
          <gr_sense></gr_sense>
          <wn version="3.0">6,7</wn>
          <wn lemma="slack_off" version="3.0">1</wn>
-         <omega></omega><pb>slack.01</pb>
+         <omega></omega><pb>slack_off.01</pb>
          <vn>NM</vn><fn>NP</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>

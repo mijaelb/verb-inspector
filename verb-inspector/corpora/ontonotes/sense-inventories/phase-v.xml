@@ -42,7 +42,7 @@
          <gr_sense/>
          <wn version=""/>
          <wn lemma="phase_in" version="3.0">1</wn>
-         <omega/><pb>phase.02</pb>
+         <omega/><pb>phase_in.02</pb>
          <vn>NP</vn><fn>NP</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
@@ -58,7 +58,7 @@
          <gr_sense/>
          <wn version=""/>
          <wn lemma="phase_out" version="3.0">1</wn>
-         <omega/><pb>phase.01</pb>
+         <omega/><pb>phase_out.01</pb>
          <vn>NP</vn><fn>NP</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
