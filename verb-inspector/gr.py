@@ -38,7 +38,9 @@ class Groupings(object):
         return inventories
 
     def get_inventory(self, lemma, type='v'):
-        return self.inventories[lemma + '-' + type]
+        if lemma in self.inventories:
+            return self.inventories[lemma + '-' + type]
+        return None
 
     def get_sense(self, sense_id, type='v'):
         lemma = sense_id.split('.')[0]
@@ -58,6 +60,15 @@ class Groupings(object):
             pb_ids += sense.mappings.pb
 
         return list(dict.fromkeys(pb_ids))
+
+    def get_senses_from_pb(self, lemma, roleset, type='v'):
+        gr = []
+        inv = self.get_inventory(lemma)
+        if inv:
+            for sense in inv.senses:
+                if roleset in sense.mappings.pb:
+                    gr.append(sense)
+        return gr
 
     def get_vn_classes(self, lemma, type='v'):
         senses = self.get_senses(lemma, type)

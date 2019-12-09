@@ -39,7 +39,10 @@ class PropBank(object):
         return self.predicates.keys()
 
     def get_rolesets(self, lemma):
-        return self.predicates[lemma]
+        if lemma in self.predicates:
+            return self.predicates[lemma].rolesets
+        else:
+            return None
 
     def get_roleset(self, roleset):
         tupl = re.match(r'(.+)\.(\d+)', roleset)
@@ -130,7 +133,7 @@ class PropBankRoleset(object):
                 examples.append(pb_example)
         return examples
 
-    def get_vnclasses(self):
+    def get_classes(self):
         classes = []
         for role in self.roles:
             for vnrole in role.vnroles:
@@ -216,8 +219,8 @@ class PropBankRole:
     n: str = ''
     vnroles: List[PropBankVNRole] = field(default_factory=list)
 
-    def add_vnrole(self, vncls, vntheta):
-        self.vnroles.append(PropBankVNRole(vncls, vntheta))
+    def add_vnrole(self, vntheta, vncls):
+        self.vnroles.append(PropBankVNRole(vntheta, vncls))
 
     def fill(self, attrs):
         self.descr = attrs.get('descr', '')

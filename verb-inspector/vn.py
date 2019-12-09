@@ -20,44 +20,62 @@ class VerbNet(object):
     def __init__(self, path=''):
         self.path = Path(path)
         self.files_soup = self.parse()
-        self.verb_classes = self.get_verb_classes()
+        self.classes = self.get_classes()
         self.lemmas = self.get_lemmas()
 
     def parse(self):
         return utils.parse_xmls(self.path, 'lxml-xml')
 
-    def get_verb_classes(self, class_ids=[]):
-        verb_classes = getattr(self, 'verb_classes', {})
-        if not verb_classes:
+    def get_classes(self, lemma='', class_ids=[]):
+        classes = getattr(self, 'classes', {})
+        if not classes:
             # Extract every VNCLASS and VNSUBCLASS into a VerbClass object
             for filename, soup in self.files_soup.items():
-                verb_classes[soup.VNCLASS.attrs['ID']] = VerbNetClass(filename, soup.VNCLASS)
+                classes[soup.VNCLASS.attrs['ID']] = VerbNetClass(filename, soup.VNCLASS)
                 for vnsubclass in soup.find_all('VNSUBCLASS'):
-                    verb_classes[vnsubclass.attrs['ID']] = VerbNetClass(filename, vnsubclass)
+                    classes[vnsubclass.attrs['ID']] = VerbNetClass(filename, vnsubclass)
 
         if class_ids:
-            verb_classes = {class_id: verb_classes[class_id] for class_id in class_ids}
+            classes = {class_id: classes[class_id] for class_id in class_ids}
 
-        return verb_classes
+        if lemma:
+            lemma_classes = []
+            for cls, obj in classes.items():
+                for member in obj.members:
+                    if member.name == lemma:
+                        lemma_classes.append(obj)
+            classes = lemma_classes
+
+        return classes
 
     def get_lemmas(self):
         lemmas = getattr(self, 'lemmas', [])
         if not lemmas:
-            for class_id, verb_class in self.verb_classes.items():
+            for class_id, verb_class in self.classes.items():
                 for member in verb_class.members:
                     lemmas.append(member.name)
         return list(dict.fromkeys(lemmas))
 
-    def get_classes(self, lemma):
+    def get_classes_name(self, lemma):
         classes = []
-        for class_id, verb_class in self.verb_classes.items():
+        for class_id, verb_class in self.classes.items():
             for member in verb_class.members:
                 if member.name == lemma:
                     classes.append(class_id)
         return classes
 
+    def get_class(self, class_id):
+        if class_id in self.classes:
+            return self.classes[class_id]
+        else:
+            return None
+
+    def get_args(self, class_id):
+        cls = self.get_class(class_id)
+        return cls.get_all_args()
+
     def __str__(self):
-        return str(self.verb_classes.keys())
+        return str(self.classes.keys())
 
 
 class VerbNetClass(object):
