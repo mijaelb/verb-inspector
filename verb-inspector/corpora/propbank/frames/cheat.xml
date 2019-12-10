@@ -10,13 +10,13 @@
       
       <roles>
         <role descr="entity removing" f="pag" n="0">
-          <vnrole vncls="10.6" vntheta="agent"/>
+          <vnrole vncls="10.6.1" vntheta="agent"/>
         </role>
         <role descr="thing being removed" f="ppt" n="1">
-          <vnrole vncls="10.6" vntheta="theme"/>
+          <vnrole vncls="10.6.1" vntheta="theme"/>
         </role>
         <role descr="removed from" f="dir" n="2">
-          <vnrole vncls="10.6" vntheta="source"/>
+          <vnrole vncls="10.6.1" vntheta="source"/>
         </role>
       </roles>
       <example name="all args" src="" type="">

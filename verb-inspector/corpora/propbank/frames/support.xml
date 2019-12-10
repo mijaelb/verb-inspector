@@ -15,12 +15,12 @@
         <role descr="helper" f="PAG" n="0">
           <vnrole vncls="31.2" vntheta="experiencer"/>
           <vnrole vncls="47.8" vntheta="theme"/>
-          <vnrole vncls="72" vntheta="agent"/>
+          <vnrole vncls="72.1-1" vntheta="agent"/>
         </role>
         <role descr="person, thing or project being supported" f="ppt" n="1">
           <vnrole vncls="31.2" vntheta="stimulus"/>
           <vnrole vncls="47.8" vntheta="co-theme"/>
-          <vnrole vncls="72" vntheta="beneficiary"/>
+          <vnrole vncls="72.1-1" vntheta="beneficiary"/>
         </role>
       </roles>
       <example name="benefactive" src="" type="">

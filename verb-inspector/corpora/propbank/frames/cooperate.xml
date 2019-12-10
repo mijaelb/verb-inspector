@@ -12,16 +12,16 @@
       <note>COOPERATIVE-J NOTES: Based on Thyme and Sharp data. Comparison to cooperate.01. Cooperate.01 is a member of Vn classes cooperate-73-1 andcorrespond-36.1. Framed by Katie. (from cooperative.01-j)</note>
       <roles>
         <role descr="one cooperator" f="PAG" n="0">
-          <vnrole vncls="36.1" vntheta="Agent"/>
-          <vnrole vncls="73-1" vntheta="Agent"/>
+          <vnrole vncls="36.1.1" vntheta="Agent"/>
+          <vnrole vncls="73.1-1" vntheta="Agent"/>
         </role>
         <role descr="other cooperator(s)" f="COM" n="1">
-          <vnrole vncls="36.1" vntheta="co-agent"/>
-          <vnrole vncls="73-1" vntheta="co-agent"/>
+          <vnrole vncls="36.1.1" vntheta="co-agent"/>
+          <vnrole vncls="73.1-1" vntheta="co-agent"/>
         </role>
         <role descr="shared task" f="PPT" n="2">
-          <vnrole vncls="36.1" vntheta="Theme"/>
-          <vnrole vncls="73-1" vntheta="Theme"/>
+          <vnrole vncls="36.1.1" vntheta="Theme"/>
+          <vnrole vncls="73.1-1" vntheta="Theme"/>
         </role>
       </roles>
       <example name="no task" src="" type="">

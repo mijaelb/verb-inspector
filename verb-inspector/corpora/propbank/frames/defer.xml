@@ -36,10 +36,10 @@
       <note>DEFER-V NOTES: Member of VNcls acquiesce-95. (from defer.02-v)</note>
       <roles>
         <role descr="inferior thing" f="pag" n="0">
-          <vnrole vncls="95" vntheta="agent"/>
+          <vnrole vncls="95.1" vntheta="agent"/>
         </role>
         <role descr="superior thing" f="com" n="1">
-          <vnrole vncls="95" vntheta="co-agent"/>
+          <vnrole vncls="95.1" vntheta="co-agent"/>
         </role>
       </roles>
       <example name="deference" src="" type="">

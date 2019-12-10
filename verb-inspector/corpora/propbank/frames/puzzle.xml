@@ -12,11 +12,11 @@
       <note>PUZZLING-J NOTES: Automatically created by Julia as an alias file for unification. (from puzzling.01-j)</note>
       <roles>
         <role descr="cause, agent" f="pag" n="0">
-          <vnrole vncls="31.3-8" vntheta="stimulus"/>
+          <vnrole vncls="31.3" vntheta="stimulus"/>
           <vnrole vncls="31.1" vntheta="stimulus"/>
         </role>
         <role descr="entity experiencing confusion" f="ppt" n="1">
-          <vnrole vncls="31.3-8" vntheta="experiencer"/>
+          <vnrole vncls="31.3" vntheta="experiencer"/>
           <vnrole vncls="31.1" vntheta="experiencer"/>
         </role>
         <role descr="confused about or over what?" f="cau" n="2"/>

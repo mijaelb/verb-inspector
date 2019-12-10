@@ -71,13 +71,13 @@
       <note>TALK-V NOTES: Member of Vncls force-59-1. VN, FN Updated by Julia (from talk.02-v)</note>
       <roles>
         <role descr="talker" f="pag" n="0">
-          <vnrole vncls="59-1" vntheta="agent"/>
+          <vnrole vncls="59.3" vntheta="agent"/>
         </role>
         <role descr="talked to" f="ppt" n="1">
-          <vnrole vncls="59-1" vntheta="patient"/>
+          <vnrole vncls="59.3" vntheta="patient"/>
         </role>
         <role descr="secondary action" f="prd" n="2">
-          <vnrole vncls="59-1" vntheta="result"/>
+          <vnrole vncls="59.3" vntheta="result"/>
         </role>
       </roles>
       <example name="dissuade" src="" type="">

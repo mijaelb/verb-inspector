@@ -12,10 +12,10 @@
       <note>PALLIATE-V NOTES: Automatically added alias.</note>
       <roles>
         <role descr="Cause of improvement, Agent" f="cau" n="0">
-          <vnrole vncls="80" vntheta="cause"/>
+          <vnrole vncls="10.6.3-1-1" vntheta="cause"/>
         </role>
         <role descr="Entity becoming better" f="ppt" n="1">
-          <vnrole vncls="80" vntheta="theme"/>
+          <vnrole vncls="10.6.3-1-1" vntheta="theme"/>
         </role>
         <role descr="Instrument, if separate from Agent" f="mnr" n="2"/>
       </roles>

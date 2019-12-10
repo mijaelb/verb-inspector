@@ -29,7 +29,7 @@
       <roles>
         <role descr="agent, causer" f="pag" n="0"/>
         <role descr="entity increased" f="ppt" n="1">
-          <vnrole vncls="45.6-1" vntheta="patient"/>
+          <vnrole vncls="45.6.2-1" vntheta="patient"/>
         </role>
         <role descr="endstate" f="prd" n="2"/>
       </roles>

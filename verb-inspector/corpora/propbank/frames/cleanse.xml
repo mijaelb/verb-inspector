@@ -10,13 +10,13 @@
       <note>CLEANSING-N NOTES: Based on Thyme and Sharp data. Comparison to cleanse.01. Cleanse.01 is a member of VN class cheat-10.6. Framed by Katie. (from cleansing.01-n)</note>
       <roles>
         <role descr="agent, cleaner" f="PAG" n="0">
-          <vnrole vncls="10.6" vntheta="Agent"/>
+          <vnrole vncls="10.6.3" vntheta="Agent"/>
         </role>
         <role descr="dirt" f="PPT" n="1">
-          <vnrole vncls="10.6" vntheta="Theme"/>
+          <vnrole vncls="10.6.3" vntheta="Theme"/>
         </role>
         <role descr="dirty thing, now clean" f="DIR" n="2">
-          <vnrole vncls="10.6" vntheta="Source"/>
+          <vnrole vncls="10.6.3" vntheta="Source"/>
         </role>
       </roles>
       <example name="all args" src="" type="">

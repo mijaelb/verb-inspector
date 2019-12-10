@@ -8,10 +8,10 @@
       <note>OUTWEIGH-V NOTES: Frames file for 'outweigh' based on survey of sentences in the WSJ corpus. (from outweigh.01-v predicate notes)</note>
       <roles>
         <role descr="entity weighed" f="PPT" n="0">
-          <vnrole vncls="90-1" vntheta="Theme"/>
+          <vnrole vncls="90" vntheta="Theme"/>
         </role>
         <role descr="entity compared to" f="PPT" n="1">
-          <vnrole vncls="90-1" vntheta="co-theme"/>
+          <vnrole vncls="90" vntheta="co-theme"/>
         </role>
       </roles>
       <example name="transitive" src="" type="">

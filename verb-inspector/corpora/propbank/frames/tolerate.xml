@@ -15,11 +15,11 @@
       <roles>
         <role descr="tolerater" f="pag" n="0">
           <vnrole vncls="31.2" vntheta="experiencer"/>
-          <vnrole vncls="64" vntheta="agent"/>
+          <vnrole vncls="64.1" vntheta="agent"/>
         </role>
         <role descr="thing tolerated" f="ppt" n="1">
           <vnrole vncls="31.2" vntheta="stimulus"/>
-          <vnrole vncls="64" vntheta="theme"/>
+          <vnrole vncls="64.1" vntheta="theme"/>
         </role>
       </roles>
       <example name="they pretty much all look like this" src="" type="">

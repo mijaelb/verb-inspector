@@ -50,17 +50,17 @@
       <note>ARGUMENT-N NOTES: Based on verb entry argue.02; corresponds to Vncls correspond-36.1-1-1, battle-36.4-1, chit_chat-37.6. (from argument.02-n)</note>
       <roles>
         <role descr="first arguer" f="pag" n="0">
-          <vnrole vncls="36.1-1-1" vntheta="agent"/>
+          <vnrole vncls="36.1.1-1" vntheta="agent"/>
           <vnrole vncls="36.4-1" vntheta="agent"/>
           <vnrole vncls="37.6" vntheta="agent"/>
         </role>
         <role descr="second arguer" f="com" n="1">
-          <vnrole vncls="36.1-1-1" vntheta="co-agent"/>
+          <vnrole vncls="36.1.1-1" vntheta="co-agent"/>
           <vnrole vncls="36.4-1" vntheta="co-agent"/>
           <vnrole vncls="37.6" vntheta="co-agent"/>
         </role>
         <role descr="topic" f="ppt" n="2">
-          <vnrole vncls="36.1-1-1" vntheta="theme"/>
+          <vnrole vncls="36.1.1-1" vntheta="theme"/>
           <vnrole vncls="36.4-1" vntheta="topic"/>
           <vnrole vncls="37.6" vntheta="topic"/>
         </role>

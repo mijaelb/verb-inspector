@@ -8,10 +8,10 @@
       <note>RAVE-V NOTES: Frames file for 'rave' based on survey of sentences in the WSJ corpus. (from rave.01-v predicate notes)</note>
       <roles>
         <role descr="speaker" f="PPT" n="0">
-          <vnrole vncls="31.3-8" vntheta="Experiencer"/>
+          <vnrole vncls="31.3" vntheta="Experiencer"/>
         </role>
         <role descr="utterance" f="PAG" n="1">
-          <vnrole vncls="31.3-8" vntheta="Stimulus"/>
+          <vnrole vncls="31.3" vntheta="Stimulus"/>
         </role>
       </roles>
       <example name="transitive" src="" type="">

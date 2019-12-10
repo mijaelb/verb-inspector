@@ -10,10 +10,10 @@
       <note>MEDITATION-N NOTES: meditate.01 (from meditation.01-n)</note>
       <roles>
         <role descr="thinker" f="PPT" n="0">
-          <vnrole vncls="31.3-8" vntheta="Experiencer"/>
+          <vnrole vncls="31.3" vntheta="Experiencer"/>
         </role>
         <role descr="thought about" f="PAG" n="1">
-          <vnrole vncls="31.3-8" vntheta="Stimulus"/>
+          <vnrole vncls="31.3" vntheta="Stimulus"/>
         </role>
       </roles>
       <example name="intransitive" src="" type="">

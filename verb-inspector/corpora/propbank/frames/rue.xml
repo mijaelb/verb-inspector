@@ -9,11 +9,11 @@
       <roles>
         <role descr="griever, agent" f="pag" n="0">
           <vnrole vncls="31.2" vntheta="Experiencer"/>
-          <vnrole vncls="77" vntheta="Agent"/>
+          <vnrole vncls="31.2" vntheta="Agent"/>
         </role>
         <role descr="entity mourning for" f="cau" n="1">
           <vnrole vncls="31.2" vntheta="Stimulus"/>
-          <vnrole vncls="77" vntheta="Theme"/>
+          <vnrole vncls="31.2" vntheta="Theme"/>
         </role>
       </roles>
       <example name="" src="" type="">

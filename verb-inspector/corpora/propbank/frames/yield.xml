@@ -25,14 +25,14 @@
       <note>YIELD-V NOTES: VN updated by Julia. Member of VNcls acquiesce-95, future_having-13.3. (from yield.02-v)</note>
       <roles>
         <role descr="Thing giving way" f="pag" n="0">
-          <vnrole vncls="95" vntheta="agent"/>
+          <vnrole vncls="95.1" vntheta="agent"/>
           <vnrole vncls="13.3" vntheta="agent"/>
         </role>
         <role descr="what's lost" f="ppt" n="1">
           <vnrole vncls="13.3" vntheta="theme"/>
         </role>
         <role descr="recipient" f="gol" n="2">
-          <vnrole vncls="95" vntheta="co-agent"/>
+          <vnrole vncls="95.1" vntheta="co-agent"/>
           <vnrole vncls="13.3" vntheta="goal"/>
         </role>
       </roles>

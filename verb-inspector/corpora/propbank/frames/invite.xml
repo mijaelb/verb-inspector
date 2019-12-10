@@ -12,15 +12,15 @@
       <note>INVITED-J NOTES: Automatically created by Julia as an alias file for unification. (from invited.01-j)</note>
       <roles>
         <role descr="inviter" f="pag" n="0">
-          <vnrole vncls="60" vntheta="agent"/>
+          <vnrole vncls="58.1-1" vntheta="agent"/>
           <vnrole vncls="102" vntheta="agent"/>
         </role>
         <role descr="invited" f="ppt" n="1">
-          <vnrole vncls="60" vntheta="recipient"/>
+          <vnrole vncls="58.1-1" vntheta="recipient"/>
           <vnrole vncls="102" vntheta="theme"/>
         </role>
         <role descr="invited-to" f="ppt" n="2">
-          <vnrole vncls="60" vntheta="topic"/>
+          <vnrole vncls="58.1-1" vntheta="topic"/>
         </role>
       </roles>
       <example name="typical usage" src="" type="">

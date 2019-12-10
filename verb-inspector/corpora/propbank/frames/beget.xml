@@ -8,10 +8,10 @@
       <note>BEGET-V NOTES: Actually, I believe the past tense of 'beget' is 'begat.' OED doesn'tagree with me, though, calling 'begat' archaic. Pfah, what do they know? (from beget.01-v)</note>
       <roles>
         <role descr="begetter" f="CAU" n="0">
-          <vnrole vncls="27" vntheta="Cause"/>
+          <vnrole vncls="27.1" vntheta="Cause"/>
         </role>
         <role descr="begotten?" f="PPT" n="1">
-          <vnrole vncls="27" vntheta="Theme"/>
+          <vnrole vncls="27.1" vntheta="Theme"/>
         </role>
       </roles>
       <example name="I love strong verbs" src="" type="">

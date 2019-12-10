@@ -8,13 +8,13 @@
       <note>DENUDE-V NOTES: Frames file for 'denude' based on sentences in wsj. Verbnet entry 10.6, Framenet entry Emptying. (from denude.01-v predicate notes)</note>
       <roles>
         <role descr="uncoverer, agent" f="PAG" n="0">
-          <vnrole vncls="10.6" vntheta="Agent"/>
+          <vnrole vncls="10.6.2" vntheta="Agent"/>
         </role>
         <role descr="thing now uncovered" f="DIR" n="1">
-          <vnrole vncls="10.6" vntheta="Source"/>
+          <vnrole vncls="10.6.2" vntheta="Source"/>
         </role>
         <role descr="covering" f="PPT" n="2">
-          <vnrole vncls="10.6" vntheta="Theme"/>
+          <vnrole vncls="10.6.2" vntheta="Theme"/>
         </role>
       </roles>
       <example name="just transitive" src="" type="">

@@ -11,10 +11,10 @@
       <roles>
         <note>Mentions of actual utilization "for ..." should be tagged as argM-PRP. (from utilization.01-n)</note>
         <role descr="user, agent" f="PAG" n="0">
-          <vnrole vncls="105" vntheta="Agent"/>
+          <vnrole vncls="105.1" vntheta="Agent"/>
         </role>
         <role descr="entity utilized" f="PPT" n="1">
-          <vnrole vncls="105" vntheta="Theme"/>
+          <vnrole vncls="105.1" vntheta="Theme"/>
         </role>
       </roles>
       <example name="utilize-v: transitive" src="" type="">

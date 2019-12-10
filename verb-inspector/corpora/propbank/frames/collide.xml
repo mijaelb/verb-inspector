@@ -12,14 +12,14 @@
         <note>Verb entry does not have arg2, and it seems fairly rare, but it is predicted by VN.  Hopefully an outside causer with two colliders doesn't come up...I could've just jinxed it. (from collision.01-n)</note>
         <role descr="theme, thing in motion, 1st colliders or all colliders in one constituent" f="ppt" n="0">
           <vnrole vncls="18.4-1" vntheta="Theme"/>
-          <vnrole vncls="36.1" vntheta="Agent"/>
+          <vnrole vncls="36.1.1" vntheta="Agent"/>
         </role>
         <role descr="thing hit, 2nd collider where separate mention" f="ppt" n="1">
           <vnrole vncls="18.4" vntheta="Location"/>
-          <vnrole vncls="36.1" vntheta="co-agent"/>
+          <vnrole vncls="36.1.1" vntheta="co-agent"/>
         </role>
         <role descr="Topic collided over in metaphorical case, cause of disagreement" f="PPT" n="2">
-          <vnrole vncls="36.1" vntheta="Theme"/>
+          <vnrole vncls="36.1.1" vntheta="Theme"/>
         </role>
       </roles>
       <example name="transitive" src="" type="">

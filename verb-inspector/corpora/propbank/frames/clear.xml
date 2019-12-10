@@ -15,16 +15,16 @@
           <vnrole vncls="26.3-1" vntheta="agent"/>
           <vnrole vncls="10.3-1" vntheta="agent"/>
           <vnrole vncls="45.4" vntheta="agent"/>
-          <vnrole vncls="80-1" vntheta="cause"/>
+          <vnrole vncls="10.6.3-1" vntheta="cause"/>
         </role>
         <role descr="thing made clean" f="gol" n="1">
           <vnrole vncls="10.3-1" vntheta="location"/>
           <vnrole vncls="45.4" vntheta="patient"/>
-          <vnrole vncls="80-1" vntheta="source"/>
+          <vnrole vncls="10.6.3-1" vntheta="source"/>
         </role>
         <role descr="dirt" f="ppt" n="2">
           <vnrole vncls="10.3-1" vntheta="theme"/>
-          <vnrole vncls="80-1" vntheta="theme"/>
+          <vnrole vncls="10.6.3-1" vntheta="theme"/>
         </role>
       </roles>
       <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1059" type="">
@@ -215,11 +215,11 @@
         <role descr="thing that is clear, open" f="dir" n="1">
           <vnrole vncls="10.3-1" vntheta="location"/>
           <vnrole vncls="45.4" vntheta="patient"/>
-          <vnrole vncls="80-1" vntheta="source"/>
+          <vnrole vncls="10.6.3-1" vntheta="source"/>
         </role>
         <role descr="dirt, obstructions" f="ppt" n="2">
           <vnrole vncls="10.3-1" vntheta="theme"/>
-          <vnrole vncls="80-1" vntheta="theme"/>
+          <vnrole vncls="10.6.3-1" vntheta="theme"/>
         </role>
       </roles>
       <example name="All args" src="" type="">

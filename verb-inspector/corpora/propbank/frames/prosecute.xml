@@ -10,10 +10,10 @@
       <note>PROSECUTION-N NOTES: Based on sentences in nouns-00040. Comparison to prosecute.01. VN class judgement-33. Updated by Julia. (from prosecution.01-n)</note>
       <roles>
         <role descr="prosecutor" f="PAG" n="0">
-          <vnrole vncls="33" vntheta="Agent"/>
+          <vnrole vncls="33.2-1" vntheta="Agent"/>
         </role>
         <role descr="entity being prosecuted (defendant or case)" f="PPT" n="1">
-          <vnrole vncls="33" vntheta="Theme"/>
+          <vnrole vncls="33.2-1" vntheta="Theme"/>
         </role>
         <role descr="for what crime" f="prd" n="2"/>
         <role descr="law against the crime" f="mnr" n="3"/>

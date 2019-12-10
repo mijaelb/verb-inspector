@@ -11,7 +11,7 @@
       <roles>
         <role descr="weeper" f="pag" n="0">
           <vnrole vncls="40.1.2" vntheta="agent"/>
-          <vnrole vncls="31.3-3" vntheta="experiencer"/>
+          <vnrole vncls="31.3" vntheta="experiencer"/>
           <vnrole vncls="40.2" vntheta="agent"/>
         </role>
         <role descr="tears" f="PPT" n="1">

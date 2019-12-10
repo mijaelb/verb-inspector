@@ -10,10 +10,10 @@
       <note>GAIN-N NOTES: Based on verb entry gain.01; corresponds to VN class calibratable_cos-45.6-1. (from gain.01-n)</note>
       <roles>
         <role descr="Logical subject, patient, thing rising" f="ppt" n="1">
-          <vnrole vncls="45.6-1" vntheta="patient"/>
+          <vnrole vncls="45.6.1-1" vntheta="patient"/>
         </role>
         <role descr="EXT, amount risen" f="ext" n="2">
-          <vnrole vncls="45.6-1" vntheta="extent"/>
+          <vnrole vncls="45.6.1-1" vntheta="extent"/>
         </role>
         <role descr="start point" f="dir" n="3"/>
         <role descr="end point" f="gol" n="4"/>

@@ -9,15 +9,15 @@
       <roles>
         <role descr="sender" f="PAG" n="0">
           <vnrole vncls="11.1-1" vntheta="Agent"/>
-          <vnrole vncls="37.4" vntheta="Agent"/>
+          <vnrole vncls="37.4.1" vntheta="Agent"/>
         </role>
         <role descr="sent, message" f="PPT" n="1">
           <vnrole vncls="11.1-1" vntheta="Theme"/>
-          <vnrole vncls="37.4" vntheta="Topic"/>
+          <vnrole vncls="37.4.1" vntheta="Topic"/>
         </role>
         <role descr="recipient" f="GOL" n="2">
           <vnrole vncls="11.1-1" vntheta="Destination"/>
-          <vnrole vncls="37.4" vntheta="Recipient"/>
+          <vnrole vncls="37.4.1" vntheta="Recipient"/>
         </role>
       </roles>
       <example name="ARG0 and ARG1 and ARG2" src="ontonotes wb/eng/00/eng_0009" type="">

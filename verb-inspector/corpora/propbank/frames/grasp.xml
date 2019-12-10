@@ -10,12 +10,12 @@
       <note>GRASP-N NOTES: Based on sentences in nouns-00040. Comparison to grasp.01-v. VN classes hold-15.1-1 and comprehend-87.2-1. FN class grasp. Framed by Katie. (from grasp.01-n)</note>
       <roles>
         <role descr="grasper" f="pag" n="0">
-          <vnrole vncls="15.1-1" vntheta="agent"/>
+          <vnrole vncls="15.1" vntheta="agent"/>
           <vnrole vncls="87.2-1" vntheta="experiencer"/>
           <vnrole vncls="20-1" vntheta="agent"/>
         </role>
         <role descr="thing grasped" f="ppt" n="1">
-          <vnrole vncls="15.1-1" vntheta="theme"/>
+          <vnrole vncls="15.1" vntheta="theme"/>
           <vnrole vncls="87.2-1" vntheta="stimulus"/>
           <vnrole vncls="20-1" vntheta="experiencer"/>
         </role>

@@ -11,10 +11,10 @@
       <roles>
         <note>arg3-instrument omitted. Use MNR if it comes up. Arg2-secondary predication not expected to occur in nominalizations, so also omitted. If you see an instance that requires both arg1 and arg2, send it in. (from impediment.01-n)</note>
         <role descr="entity attempting to stop something" f="pag" n="0">
-          <vnrole vncls="67" vntheta="agent"/>
+          <vnrole vncls="64.4-1" vntheta="agent"/>
         </role>
         <role descr="Theme (action or object being prevented)" f="ppt" n="1">
-          <vnrole vncls="67" vntheta="theme"/>
+          <vnrole vncls="64.4-1" vntheta="theme"/>
         </role>
         <role descr="secondary predication or action" f="prd" n="2"/>
         <role descr="instrument" f="mnr" n="3"/>

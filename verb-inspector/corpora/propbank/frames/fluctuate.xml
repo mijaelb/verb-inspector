@@ -12,10 +12,10 @@
       <note>FLUCTUANT-J NOTES: Added by Julia based on SHARP. (from fluctuant.01-j)</note>
       <roles>
         <role descr="thing moving" f="ppt" n="1">
-          <vnrole vncls="45.6-1" vntheta="patient"/>
+          <vnrole vncls="45.6.1-1" vntheta="patient"/>
         </role>
         <role descr="EXT or MNR" f="ext" n="2">
-          <vnrole vncls="45.6-1" vntheta="extent"/>
+          <vnrole vncls="45.6.1-1" vntheta="extent"/>
         </role>
         <role descr="start point" f="dir" n="3"/>
         <role descr="end point" f="gol" n="4"/>

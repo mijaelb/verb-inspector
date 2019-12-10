@@ -17,7 +17,7 @@
       <roles>  
         <note>This is a comparison to intend-v. In that frame, there is an arg 2 'extracted theme due to passivization'. This was deleted in the nominal case. (from intention.01-n)</note>
         <role descr="planner" f="PAG" n="0">
-          <vnrole vncls="61" vntheta="Agent"/>
+          <vnrole vncls="61.1" vntheta="Agent"/>
           <vnrole vncls="62" vntheta="experiencer"/>
         </role>
         <role descr="intent, thing planned" f="ppt" n="1">

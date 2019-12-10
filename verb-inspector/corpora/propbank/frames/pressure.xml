@@ -8,13 +8,13 @@
       <note>PRESSURE-V NOTES: Verbnet entry (from pressure.01-v)</note>
       <roles>
         <role descr="presser" f="PAG" n="0">
-          <vnrole vncls="59" vntheta="Agent"/>
+          <vnrole vncls="58.1-1-1" vntheta="Agent"/>
         </role>
         <role descr="pressed (on)" f="PPT" n="1">
-          <vnrole vncls="59" vntheta="Patient"/>
+          <vnrole vncls="58.1-1-1" vntheta="Patient"/>
         </role>
         <role descr="goal, pressed-for" f="PRD" n="2">
-          <vnrole vncls="59" vntheta="Result"/>
+          <vnrole vncls="58.1-1-1" vntheta="Result"/>
         </role>
       </roles>
       <example name="with goal" src="" type="">

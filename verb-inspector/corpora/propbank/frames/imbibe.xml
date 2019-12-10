@@ -8,10 +8,10 @@
       <note>IMBIBE-V NOTES: Edited by hwangd (from imbibe.01-v)</note>
       <roles>
         <role descr="drinker" f="pag" n="0">
-          <vnrole vncls="39.4-2" vntheta="agent"/>
+          <vnrole vncls="39.4" vntheta="agent"/>
         </role>
         <role descr="thing drunk" f="ppt" n="1">
-          <vnrole vncls="39.4-2" vntheta="patient"/>
+          <vnrole vncls="39.4" vntheta="patient"/>
         </role>
         <role descr="source" f="dir" n="2"/>
       </roles>

@@ -46,10 +46,10 @@
       <note>GROOVE-V NOTES: Hand-corrected by Claire. (from groove.02-v)</note>
       <roles>
         <role descr="entity experiencing groovy feelings" f="PPT" n="0">
-          <vnrole vncls="31.3-7" vntheta="Experiencer"/>
+          <vnrole vncls="31.3" vntheta="Experiencer"/>
         </role>
         <role descr="cause of groovy feeling, what arg0 is &quot;grooving on&quot;" f="PAG" n="1">
-          <vnrole vncls="31.3-7" vntheta="Stimulus"/>
+          <vnrole vncls="31.3" vntheta="Stimulus"/>
         </role>
       </roles>
       <example name="typical usage" src="web usage" type="">

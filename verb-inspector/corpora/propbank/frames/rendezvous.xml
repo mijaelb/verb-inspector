@@ -8,10 +8,10 @@
       <note>RENDEZVOUS-V NOTES: Member of VNcls correspond-36.1. Updated by Julia, 10/2010. (from rendezvous.01-v)</note>
       <roles>
         <role descr="first or all entities meeting" f="PAG" n="0">
-          <vnrole vncls="36.1" vntheta="Agent"/>
+          <vnrole vncls="36.1.1" vntheta="Agent"/>
         </role>
         <role descr="second entity, if separate" f="COM" n="1">
-          <vnrole vncls="36.1" vntheta="co-agent"/>
+          <vnrole vncls="36.1.1" vntheta="co-agent"/>
         </role>
       </roles>
       <example name="transitive aggressive ballooning" src="WSJ" type="-">

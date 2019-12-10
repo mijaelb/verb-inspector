@@ -8,13 +8,13 @@
       <note>SAP-V NOTES: Frames file for 'sap' based on sentences in wsj. Verbnet entry 10.6. (from sap.01-v predicate notes)</note>
       <roles>
         <role descr="remover" f="PAG" n="0">
-          <vnrole vncls="10.6" vntheta="Agent"/>
+          <vnrole vncls="10.6.2" vntheta="Agent"/>
         </role>
         <role descr="resources" f="PPT" n="1">
-          <vnrole vncls="10.6" vntheta="Theme"/>
+          <vnrole vncls="10.6.2" vntheta="Theme"/>
         </role>
         <role descr="source" f="DIR" n="2">
-          <vnrole vncls="10.6" vntheta="Source"/>
+          <vnrole vncls="10.6.2" vntheta="Source"/>
         </role>
       </roles>
       <example name="resources as DO" src="" type="">

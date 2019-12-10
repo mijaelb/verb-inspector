@@ -8,13 +8,13 @@
       <note>BRIBE-V NOTES: Roleset corresponds to VN class force-59-1. (from bribe.01-v)</note>
       <roles>
         <role descr="briber, agent" f="pag" n="0">
-          <vnrole vncls="59-1" vntheta="agent"/>
+          <vnrole vncls="59.1" vntheta="agent"/>
         </role>
         <role descr="person  bribed" f="ppt" n="1">
-          <vnrole vncls="59-1" vntheta="patient"/>
+          <vnrole vncls="59.1" vntheta="patient"/>
         </role>
         <role descr="favor" f="prd" n="2">
-          <vnrole vncls="59-1" vntheta="result"/>
+          <vnrole vncls="59.1" vntheta="result"/>
         </role>
         <role descr="amount exchanged" f="vsp" n="3"/>
       </roles>

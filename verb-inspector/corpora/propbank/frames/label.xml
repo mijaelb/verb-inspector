@@ -10,17 +10,17 @@
       <note>LABELING-N NOTES: ~label.01 (from labeling.01-n)</note>
       <roles>
         <role descr="caller" f="pag" n="0">
-          <vnrole vncls="29.3" vntheta="agent"/>
+          <vnrole vncls="29.3.2" vntheta="agent"/>
           <vnrole vncls="9.9" vntheta="agent"/>
           <vnrole vncls="25.3" vntheta="agent"/>
         </role>
         <role descr="item being labelled" f="ppt" n="1">
-          <vnrole vncls="29.3" vntheta="theme"/>
+          <vnrole vncls="29.3.2" vntheta="theme"/>
           <vnrole vncls="9.9" vntheta="destination"/>
           <vnrole vncls="25.3" vntheta="destination"/>
         </role>
         <role descr="attribute, label itself" f="prd" n="2">
-          <vnrole vncls="29.3" vntheta="result"/>
+          <vnrole vncls="29.3.2" vntheta="result"/>
           <vnrole vncls="9.9" vntheta="theme"/>
         </role>
       </roles>

@@ -10,10 +10,10 @@
       <note>BELITTLING-N NOTES: Roleset based on instances in BOLT P01. Comparison to verb entry belittle.01, which maps to VN class 33. FrameNet Judgment_communication. (from belittling.01-n)</note>
       <roles>
         <role descr="causer of apparent insignificance, agent" f="PAG" n="0">
-          <vnrole vncls="33" vntheta="Agent"/>
+          <vnrole vncls="33.1-1" vntheta="Agent"/>
         </role>
         <role descr="apparently insignificant thing" f="PPT" n="1">
-          <vnrole vncls="33" vntheta="Theme"/>
+          <vnrole vncls="33.1-1" vntheta="Theme"/>
         </role>
       </roles>
       <example name="ha ha" src="" type="">

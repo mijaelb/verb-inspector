@@ -8,13 +8,13 @@
       <note>VICTIMIZE-V NOTES: Member of Vncls judgement-33. (from victimize.01-v)</note>
       <roles>
         <role descr="victimizer" f="PAG" n="0">
-          <vnrole vncls="33" vntheta="Agent"/>
+          <vnrole vncls="33.1" vntheta="Agent"/>
         </role>
         <role descr="victim" f="PPT" n="1">
-          <vnrole vncls="33" vntheta="Theme"/>
+          <vnrole vncls="33.1" vntheta="Theme"/>
         </role>
         <role descr="grounds" f="CAU" n="2">
-          <vnrole vncls="33" vntheta="Attribute"/>
+          <vnrole vncls="33.1" vntheta="Attribute"/>
         </role>
       </roles>
       <example name="passive" src="" type="">

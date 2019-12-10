@@ -8,11 +8,11 @@
       <note>WHEEDLE-V NOTES: VN updated by Julia, 10, 2010. Member of Vncls force-59-1. (from wheedle.01-v)</note>
       <roles>
         <role descr="coaxer" f="pag" n="0">
-          <vnrole vncls="59-1" vntheta="agent"/>
+          <vnrole vncls="59.1" vntheta="agent"/>
         </role>
         <role descr="request" f="ppt" n="1">
-          <vnrole vncls="59-1" vntheta="patient"/>
-          <vnrole vncls="59-1" vntheta="result"/>
+          <vnrole vncls="59.1" vntheta="patient"/>
+          <vnrole vncls="59.1" vntheta="result"/>
         </role>
         <role descr="source of requested object/action" f="dir" n="2"/>
       </roles>

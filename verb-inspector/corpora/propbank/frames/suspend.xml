@@ -66,13 +66,13 @@
       <note>SUSPENSION-N NOTES: Added by Julia based on suspend-v.02. Corresponds to VNcls put_spatial-9.2-1. (from suspension.02-n)</note>
       <roles>
         <role descr="agent, entity causing something to be suspended" f="PAG" n="0">
-          <vnrole vncls="9.2-1" vntheta="Agent"/>
+          <vnrole vncls="9.2" vntheta="Agent"/>
         </role>
         <role descr="thing suspended" f="PPT" n="1">
-          <vnrole vncls="9.2-1" vntheta="Theme"/>
+          <vnrole vncls="9.2" vntheta="Theme"/>
         </role>
         <role descr="suspended from" f="GOL" n="2">
-          <vnrole vncls="9.2-1" vntheta="Destination"/>
+          <vnrole vncls="9.2" vntheta="Destination"/>
         </role>
       </roles>
       <example name="ARG0 and ARG1 and ARG2" src="ontonotes wb/eng/00/eng_0015" type="">

@@ -9,11 +9,11 @@
       <roles>
         <role descr="unifier" f="PAG" n="0"/>
         <role descr="(first) thing(s) being unified" f="ppt" n="1">
-          <vnrole vncls="36.1" vntheta="Agent"/>
+          <vnrole vncls="36.3-1" vntheta="Agent"/>
           <vnrole vncls="36.3-1" vntheta="Agent"/>
         </role>
         <role descr="other things, if separate from arg1" f="ppt" n="2">
-          <vnrole vncls="36.1" vntheta="co-agent"/>
+          <vnrole vncls="36.3-1" vntheta="co-agent"/>
           <vnrole vncls="36.3-1" vntheta="co-agent"/>
         </role>
         <role descr="unified whole" f="prd" n="3"/>

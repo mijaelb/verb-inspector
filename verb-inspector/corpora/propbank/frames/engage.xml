@@ -15,17 +15,17 @@
           <vnrole vncls="31.1" vntheta="stimulus"/>
           <vnrole vncls="22.2-3-2" vntheta="agent"/>
           <vnrole vncls="13.5.3" vntheta="agent"/>
-          <vnrole vncls="107" vntheta="agent"/>
+          <vnrole vncls="107.1" vntheta="agent"/>
         </role>
         <role descr="entity sucked in" f="ppt" n="1">
           <vnrole vncls="31.1" vntheta="experiencer"/>
           <vnrole vncls="22.2-3-2" vntheta="patient"/>
           <vnrole vncls="13.5.3" vntheta="theme"/>
-          <vnrole vncls="107" vntheta="theme"/>
+          <vnrole vncls="107.1" vntheta="theme"/>
         </role>
         <role descr="thing involved in" f="gol" n="2">
           <vnrole vncls="22.2-3-2" vntheta="co-patient"/>
-          <vnrole vncls="107" vntheta="goal"/>
+          <vnrole vncls="107.1" vntheta="goal"/>
         </role>
       </roles>
       <example name="engage-v: typical usage in financial corpus" src="" type="">

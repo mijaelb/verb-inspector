@@ -9,7 +9,7 @@
       <roles>
         <role descr="Moper" f="pag" n="0"/>
         <role descr="About what?" f="ppt" n="1">
-          <vnrole vncls="31.3-2" vntheta="stimulus"/>
+          <vnrole vncls="31.3" vntheta="stimulus"/>
         </role>
       </roles>
       <example name="Arg0, 1" src="" type="">

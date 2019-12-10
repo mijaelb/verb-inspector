@@ -11,11 +11,11 @@
       <roles>
         <role descr="looker" f="pag" n="0">
           <vnrole vncls="30.3" vntheta="Experiencer"/>
-          <vnrole vncls="40.3.1-1" vntheta="Agent"/>
+          <vnrole vncls="40.3.1" vntheta="Agent"/>
         </role>
         <role descr="looked at" f="ppt" n="1">
           <vnrole vncls="30.3" vntheta="Stimulus"/>
-          <vnrole vncls="40.3.1-1" vntheta="Recipient"/>
+          <vnrole vncls="40.3.1" vntheta="Recipient"/>
         </role>
       </roles>
       <example name="both arguments" src="" type="">

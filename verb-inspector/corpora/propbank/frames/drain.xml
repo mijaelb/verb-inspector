@@ -13,17 +13,17 @@
       <roles>
         <role descr="causative agent" f="pag" n="0">
           <vnrole vncls="10.3-1" vntheta="agent"/>
-          <vnrole vncls="10.6-1" vntheta="agent"/>
+          <vnrole vncls="10.6.2" vntheta="agent"/>
           <vnrole vncls="45.4" vntheta="agent"/>
         </role>
         <role descr="container" f="dir" n="1">
           <vnrole vncls="10.3-1" vntheta="location"/>
-          <vnrole vncls="10.6-1" vntheta="source"/>
+          <vnrole vncls="10.6.2" vntheta="source"/>
           <vnrole vncls="45.4" vntheta="patient"/>
         </role>
         <role descr="substance" f="ppt" n="2">
           <vnrole vncls="10.3-1" vntheta="theme"/>
-          <vnrole vncls="10.6-1" vntheta="theme"/>
+          <vnrole vncls="10.6.2" vntheta="theme"/>
         </role>
       </roles>
       <example name="all args, arg1 as PP" src="" type="">

@@ -8,13 +8,13 @@
       <note>DEFRAUD-V NOTES: Frames file for 'defraud' based on survey of sentences in the WSJ corpus. (from defraud.01-v predicate notes)</note>
       <roles>
         <role descr="thief, fraud, agent" f="pag" n="0">
-          <vnrole vncls="10.6" vntheta="agent"/>
+          <vnrole vncls="10.6.1-1" vntheta="agent"/>
         </role>
         <role descr="entity defrauded" f="ppt" n="1">
-          <vnrole vncls="10.6" vntheta="theme"/>
+          <vnrole vncls="10.6.1-1" vntheta="theme"/>
         </role>
         <role descr="contract" f="dir" n="2">
-          <vnrole vncls="10.6" vntheta="source"/>
+          <vnrole vncls="10.6.1-1" vntheta="source"/>
         </role>
         <role descr="amount" f="ext" n="3"/>
       </roles>

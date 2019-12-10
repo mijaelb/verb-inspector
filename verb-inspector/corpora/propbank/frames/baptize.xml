@@ -27,10 +27,10 @@
       <note>BAPTIZE-V NOTES: Framed by Neville. (from baptize.02-v)</note>
       <roles>
         <role descr="baptizer" f="pag" n="0">
-          <vnrole vncls="29.3" vntheta="agent"/>
+          <vnrole vncls="29.3.1" vntheta="agent"/>
         </role>
         <role descr="baptizee" f="ppt" n="1">
-          <vnrole vncls="29.3" vntheta="theme"/>
+          <vnrole vncls="29.3.1" vntheta="theme"/>
         </role>
       </roles>
       <example name="passive" src="" type="">

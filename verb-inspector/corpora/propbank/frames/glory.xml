@@ -10,10 +10,10 @@
       <note>GLORIOUS-J NOTES: Added by Julia based on BOLT. (from glorious.01-j)</note>
       <roles>
         <role descr="entity experiencing awe, glory" f="ppt" n="0">
-          <vnrole vncls="31.3-5" vntheta="experiencer"/>
+          <vnrole vncls="31.3" vntheta="experiencer"/>
         </role>
         <role descr="glorious thing, thing gloried in" f="pag" n="1">
-          <vnrole vncls="31.3-5" vntheta="stimulus"/>
+          <vnrole vncls="31.3" vntheta="stimulus"/>
         </role>
       </roles>
       <example name="All args" src="web usage" type="">

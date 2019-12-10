@@ -10,10 +10,10 @@
       <note>PERSECUTION-N NOTES: Based on ontonotes nouns. Comparison to persecute.01. Persecute.01 is a member of VN class judgement-33. Framed by Katie. (from persecution.01-n)</note>
       <roles>
         <role descr="persecutor" f="PAG" n="0">
-          <vnrole vncls="33" vntheta="Agent"/>
+          <vnrole vncls="33.2-1" vntheta="Agent"/>
         </role>
         <role descr="persecutee" f="PPT" n="1">
-          <vnrole vncls="33" vntheta="Theme"/>
+          <vnrole vncls="33.2-1" vntheta="Theme"/>
         </role>
       </roles>
       <example name="passive" src="" type="">

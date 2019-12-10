@@ -38,10 +38,10 @@
       <note>WEARY-V NOTES: Member of Vncls marvel-31.3-6. (from weary.02-v)</note>
       <roles>
         <role descr="tired entity" f="ppt" n="0">
-          <vnrole vncls="31.3-6" vntheta="experiencer"/>
+          <vnrole vncls="31.3" vntheta="experiencer"/>
         </role>
         <role descr="cause of weariness" f="pag" n="1">
-          <vnrole vncls="31.3-6" vntheta="stimulus"/>
+          <vnrole vncls="31.3" vntheta="stimulus"/>
         </role>
       </roles>
       <example name="Long Drive" src="" type="">

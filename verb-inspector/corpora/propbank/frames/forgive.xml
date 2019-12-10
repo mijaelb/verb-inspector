@@ -10,13 +10,13 @@
       <note>FORGIVING-N NOTES: Added by Julia based on BOLT, forgive.01. Corresponds to VNcls judgment-33. (from forgiving.01-n)</note>
       <roles>
         <role descr="forgiver" f="PAG" n="0">
-          <vnrole vncls="33" vntheta="agent"/>
+          <vnrole vncls="33.1-1" vntheta="agent"/>
         </role>
         <role descr="entity forgiven" f="ppt" n="1">
-          <vnrole vncls="33" vntheta="theme"/>
+          <vnrole vncls="33.1-1" vntheta="theme"/>
         </role>
         <role descr="for what" f="cau" n="2">
-          <vnrole vncls="33" vntheta="attribute"/>
+          <vnrole vncls="33.1-1" vntheta="attribute"/>
         </role>
       </roles>
       <example name="all args" src="" type="">

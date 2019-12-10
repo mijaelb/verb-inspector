@@ -8,10 +8,10 @@
       <note>MUSHROOM-V NOTES: The temporal describes not the process of mushrooming, but the time atwhich the start state existed. (from mushroom.01-v)</note>
       <roles>
         <role descr="thing growing" f="ppt" n="1">
-          <vnrole vncls="45.6-1" vntheta="patient"/>
+          <vnrole vncls="45.6.1-1" vntheta="patient"/>
         </role>
         <role descr="EXT" f="ext" n="2">
-          <vnrole vncls="45.6-1" vntheta="extent"/>
+          <vnrole vncls="45.6.1-1" vntheta="extent"/>
         </role>
         <role descr="start point" f="dir" n="3"/>
         <role descr="end point" f="gol" n="4"/>

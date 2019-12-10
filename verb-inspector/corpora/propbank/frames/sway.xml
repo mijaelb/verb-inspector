@@ -9,11 +9,11 @@
       <roles>
         <role descr="causer" f="PAG" n="0">
           <vnrole vncls="47.3" vntheta="agent"/>
-          <vnrole vncls="49" vntheta="agent"/>
+          <vnrole vncls="49.1" vntheta="agent"/>
         </role>
         <role descr="thing swaying" f="ppt" n="1">
           <vnrole vncls="47.3" vntheta="theme"/>
-          <vnrole vncls="49" vntheta="patient"/>
+          <vnrole vncls="49.1" vntheta="patient"/>
         </role>
         <role descr="degree of motion" f="ext" n="2"/>
       </roles>

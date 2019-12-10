@@ -11,13 +11,13 @@
       <roles>
         <note>Adjectival 'daring' not grammatical with arg1 (from daring.01-j)</note>
         <role descr="urger" f="pag" n="0">
-          <vnrole vncls="59" vntheta="agent"/>
+          <vnrole vncls="58.1-1" vntheta="agent"/>
         </role>
         <role descr="impelled agent" f="ppt" n="1">
-          <vnrole vncls="59" vntheta="patient"/>
+          <vnrole vncls="58.1-1" vntheta="patient"/>
         </role>
         <role descr="impelled action" f="prd" n="2">
-          <vnrole vncls="59" vntheta="result"/>
+          <vnrole vncls="58.1-1" vntheta="result"/>
         </role>
       </roles>
       <example name="linked impelled agent" src="" type="">

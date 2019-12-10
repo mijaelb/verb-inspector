@@ -71,7 +71,7 @@
         <role descr="cryer" f="pag" n="0">
           <vnrole vncls="40.1.2-1" vntheta="agent"/>
           <vnrole vncls="40.2" vntheta="agent"/>
-          <vnrole vncls="31.3-3" vntheta="experiencer"/>
+          <vnrole vncls="31.3" vntheta="experiencer"/>
           <vnrole vncls="43.2" vntheta="theme"/>
         </role>
         <role descr="cognate object" f="ppt" n="1">

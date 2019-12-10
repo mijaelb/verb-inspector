@@ -11,11 +11,11 @@
       <roles>
         <role descr="cause of anger" f="PAG" n="0">
           <vnrole vncls="31.1" vntheta="Stimulus"/>
-          <vnrole vncls="31.3-8" vntheta="Stimulus"/>
+          <vnrole vncls="31.3" vntheta="Stimulus"/>
         </role>
         <role descr="experiencer" f="PPT" n="1">
           <vnrole vncls="31.1" vntheta="Experiencer"/>
-          <vnrole vncls="31.3-8" vntheta="Experiencer"/>
+          <vnrole vncls="31.3" vntheta="Experiencer"/>
         </role>
       </roles>
       <example name="inanimate causer" src="" type="">

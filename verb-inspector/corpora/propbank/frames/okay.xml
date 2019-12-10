@@ -12,13 +12,13 @@
       <note>OKAY-J NOTES: Added by Julia based on SHARP. (from okay.01-j)</note>
       <roles>
         <role descr="okay-er, entity giving permission" f="pag" n="0">
-          <vnrole vncls="60" vntheta="agent"/>
+          <vnrole vncls="64.1" vntheta="agent"/>
         </role>
         <role descr="ok thing," f="ppt" n="1">
-          <vnrole vncls="60" vntheta="topic"/>
+          <vnrole vncls="64.1" vntheta="topic"/>
         </role>
         <role descr="entity FOR whom arg1 is ok, having permission to undergo arg1" f="gol" n="2">
-          <vnrole vncls="60" vntheta="recipient"/>
+          <vnrole vncls="64.1" vntheta="recipient"/>
         </role>
       </roles>
       <example name="okay-v: Usual usage" src="web usage" type="">

@@ -8,10 +8,10 @@
       <note>REPUDIATE-V NOTES: Frames file for 'repudiate' based on sentences in wsj. VN class judgment-33. (from repudiate.01-v)</note>
       <roles>
         <role descr="rejector, agent" f="pag" n="0">
-          <vnrole vncls="33" vntheta="agent"/>
+          <vnrole vncls="33.1-1" vntheta="agent"/>
         </role>
         <role descr="thing rejected or refused as untrue" f="ppt" n="1">
-          <vnrole vncls="33" vntheta="theme"/>
+          <vnrole vncls="33.1-1" vntheta="theme"/>
         </role>
       </roles>
       <example name="I think that's right" src="" type="">

@@ -52,13 +52,13 @@
       <note>JOLT-V NOTES: Frames file for 'jolt' based on sentences in financial subcorpus andautomatic expansion via verbnet. (from jolt.02-v predicate notes)</note>
       <roles>
         <role descr="jolter" f="PAG" n="0">
-          <vnrole vncls="59" vntheta="Agent"/>
+          <vnrole vncls="59.4" vntheta="Agent"/>
         </role>
         <role descr="impelled agent" f="PPT" n="1">
-          <vnrole vncls="59" vntheta="Patient"/>
+          <vnrole vncls="59.4" vntheta="Patient"/>
         </role>
         <role descr="impelled action" f="PRD" n="2">
-          <vnrole vncls="59" vntheta="Result"/>
+          <vnrole vncls="59.4" vntheta="Result"/>
         </role>
       </roles>
       <example name="action as PP" src="" type="">

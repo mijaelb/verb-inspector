@@ -14,10 +14,10 @@
       <note>ENTRANCE-N NOTES: Based on sentences in nouns-9998. Comparison to enter.01-v. See VN class escape-51.1. FN class arriving. Framed by Katie. (from entrance.01-n)</note>
       <roles>
         <role descr="entity entering" f="ppt" n="0">
-          <vnrole vncls="51.1-2" vntheta="theme"/>
+          <vnrole vncls="51.1-1-2" vntheta="theme"/>
         </role>
         <role descr="place or thing entered" f="loc" n="1">
-          <vnrole vncls="51.1-2" vntheta="destination"/>
+          <vnrole vncls="51.1-1-2" vntheta="destination"/>
         </role>
       </roles>
       <example name="enter-v: place entered as NP" src="" type="">

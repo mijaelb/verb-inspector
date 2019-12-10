@@ -9,18 +9,18 @@
       <roles>
         <note>Args 1&amp;  2 map to what is treated as a single argument in VN.  Wonder who's right? Only the TreeBankers know...or it's inconsistent. (from discourage.01-v)</note>
         <role descr="entity removing confidence, agent" f="PAG" n="0">
-          <vnrole vncls="67" vntheta="Agent"/>
-          <vnrole vncls="77" vntheta="Agent"/>
+          <vnrole vncls="64.4-1" vntheta="Agent"/>
+          <vnrole vncls="77.2-1" vntheta="Agent"/>
           <vnrole vncls="31.1" vntheta="Stimulus"/>
         </role>
         <role descr="entity discouraged" f="PPT" n="1">
-          <vnrole vncls="67" vntheta="Theme"/>
-          <vnrole vncls="77" vntheta="Theme"/>
+          <vnrole vncls="64.4-1" vntheta="Theme"/>
+          <vnrole vncls="77.2-1" vntheta="Theme"/>
           <vnrole vncls="31.1" vntheta="Experiencer"/>
         </role>
         <role descr="discouraged from" f="PPT" n="2">
-          <vnrole vncls="77" vntheta="Theme"/>
-          <vnrole vncls="67" vntheta="Theme"/>
+          <vnrole vncls="77.2-1" vntheta="Theme"/>
+          <vnrole vncls="64.4-1" vntheta="Theme"/>
         </role>
       </roles>
       <example name="passive" src="" type="">

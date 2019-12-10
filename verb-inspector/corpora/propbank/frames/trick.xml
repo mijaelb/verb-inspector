@@ -10,13 +10,13 @@
       <note>TRICK-N NOTES: Based on Bolt data. Comparison to trick.01-v. Trick.01 is a member of VN class force-59.1. Verbal trick is a member of FN classIntentional_deception. Framed by Katie. (from trick.01-n)</note>
       <roles>
         <role descr="deceiver, agent" f="pag" n="0">
-          <vnrole vncls="59" vntheta="agent"/>
+          <vnrole vncls="59.2" vntheta="agent"/>
         </role>
         <role descr="entity tricked" f="ppt" n="1">
-          <vnrole vncls="59" vntheta="patient"/>
+          <vnrole vncls="59.2" vntheta="patient"/>
         </role>
         <role descr="tricked into doing what?" f="prd" n="2">
-          <vnrole vncls="59" vntheta="result"/>
+          <vnrole vncls="59.2" vntheta="result"/>
         </role>
       </roles>
       <example name="transitive" src="" type="">

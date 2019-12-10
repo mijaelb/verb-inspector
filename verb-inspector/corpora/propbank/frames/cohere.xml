@@ -12,10 +12,10 @@
       <note>COHERENT-J NOTES: Added by Julia based on SMS. Relation to 'cohere' (from coherent.01-j)</note>
       <roles>
         <role descr="agent, causer of coherence" f="pag" n="0">
-          <vnrole vncls="89" vntheta="agent"/>
+          <vnrole vncls="36.1.2" vntheta="agent"/>
         </role>
         <role descr="coherent bits" f="gol" n="1">
-          <vnrole vncls="89" vntheta="goal"/>
+          <vnrole vncls="36.1.2" vntheta="goal"/>
         </role>
       </roles>
       <example name="unaccusative" src="" type="">

@@ -8,13 +8,13 @@
       <note>TELEPHONE-V NOTES: Member of Vncls instr_communication-37.4. Comparison to 'call'. (from telephone.01-v)</note>
       <roles>
         <role descr="caller" f="PAG" n="0">
-          <vnrole vncls="37.4" vntheta="Agent"/>
+          <vnrole vncls="37.4.1" vntheta="Agent"/>
         </role>
         <role descr="called" f="GOL" n="1">
-          <vnrole vncls="37.4" vntheta="Recipient"/>
+          <vnrole vncls="37.4.1" vntheta="Recipient"/>
         </role>
         <role descr="message" f="PPT" n="2">
-          <vnrole vncls="37.4" vntheta="Topic"/>
+          <vnrole vncls="37.4.1" vntheta="Topic"/>
         </role>
       </roles>
       <example name="transitive" src="" type="">

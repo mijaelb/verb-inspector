@@ -15,10 +15,10 @@
           <vnrole vncls="51.1" vntheta="theme"/>
           <vnrole vncls="48.1.1" vntheta="theme"/>
           <vnrole vncls="50" vntheta="agent"/>
-          <vnrole vncls="45.6-1" vntheta="patient"/>
+          <vnrole vncls="45.6.1-1" vntheta="patient"/>
         </role>
         <role descr="EXT, amount risen" f="ext" n="2">
-          <vnrole vncls="45.6-1" vntheta="extent"/>
+          <vnrole vncls="45.6.1-1" vntheta="extent"/>
         </role>
         <role descr="start point" f="dir" n="3">
           <vnrole vncls="51.1" vntheta="initial_location"/>

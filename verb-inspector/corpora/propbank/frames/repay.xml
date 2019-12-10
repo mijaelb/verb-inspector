@@ -9,13 +9,12 @@
       <roles>
         <role descr="payer or buyer" f="PAG" n="0">
           <vnrole vncls="68-1" vntheta="Agent"/>
-          <vnrole vncls="33" vntheta="Agent"/>
         </role>
         <role descr="thing bought or paid for" f="PPT" n="1">
           <vnrole vncls="68-1" vntheta="Theme"/>
         </role>
         <role descr="seller or person being paid" f="PPT" n="2">
-          <vnrole vncls="33" vntheta="Theme"/>
+          <vnrole vncls="68-1" vntheta="Recipient"/>
         </role>
         <role descr="price paid" f="VSP" n="3">
           <vnrole vncls="68-1" vntheta="Asset"/>

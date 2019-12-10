@@ -8,13 +8,13 @@
       <note>ROB-V NOTES: Frames file for 'rob' based on survey of sentences in the WSJ corpus. (from rob.01-v predicate notes)</note>
       <roles>
         <role descr="robber, thief" f="PAG" n="0">
-          <vnrole vncls="10.6" vntheta="Agent"/>
+          <vnrole vncls="10.6.4" vntheta="Agent"/>
         </role>
         <role descr="person robbed" f="DIR" n="1">
-          <vnrole vncls="10.6" vntheta="Source"/>
+          <vnrole vncls="10.6.4" vntheta="Source"/>
         </role>
         <role descr="money or valuables, thing taken" f="PPT" n="2">
-          <vnrole vncls="10.6" vntheta="Theme"/>
+          <vnrole vncls="10.6.4" vntheta="Theme"/>
         </role>
       </roles>
       <example name="passive" src="" type="">

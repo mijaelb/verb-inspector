@@ -8,13 +8,13 @@
       <note>MODEM-V NOTES: hand checked by Katie (from modem.01-v)</note>
       <roles>
         <role descr="sender, agent" f="PAG" n="0">
-          <vnrole vncls="37.4" vntheta="Agent"/>
+          <vnrole vncls="37.4.1" vntheta="Agent"/>
         </role>
         <role descr="entity sent, faxed" f="PPT" n="1">
-          <vnrole vncls="37.4" vntheta="Topic"/>
+          <vnrole vncls="37.4.1" vntheta="Topic"/>
         </role>
         <role descr="sent to, recipient" f="GOL" n="2">
-          <vnrole vncls="37.4" vntheta="Recipient"/>
+          <vnrole vncls="37.4.1" vntheta="Recipient"/>
         </role>
       </roles>
       <example name="fax via modem" src="web usage" type="">

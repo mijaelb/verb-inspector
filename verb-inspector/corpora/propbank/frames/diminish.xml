@@ -15,10 +15,10 @@
         </role>
         <role descr="thing becoming smaller" f="ppt" n="1">
           <vnrole vncls="45.4" vntheta="patient"/>
-          <vnrole vncls="45.6-1" vntheta="patient"/>
+          <vnrole vncls="45.6.2-1" vntheta="patient"/>
         </role>
         <role descr="EXT" f="ext" n="2">
-          <vnrole vncls="45.6-1" vntheta="extent"/>
+          <vnrole vncls="45.6.2-1" vntheta="extent"/>
         </role>
         <role descr="start point" f="vsp" n="3"/>
         <role descr="end point" f="prd" n="4"/>

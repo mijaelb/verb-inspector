@@ -9,10 +9,10 @@
       <roles>
         <note>only use Arg2 when it's separate fromthe Arg0. (from spark.01-v)</note>
         <role descr="cause of starting, agent" f="CAU" n="0">
-          <vnrole vncls="27" vntheta="Cause"/>
+          <vnrole vncls="27.1-1" vntheta="Cause"/>
         </role>
         <role descr="thing beginning" f="PPT" n="1">
-          <vnrole vncls="27" vntheta="Theme"/>
+          <vnrole vncls="27.1-1" vntheta="Theme"/>
         </role>
         <role descr="instrument, if agent is also present" f="mnr" n="2"/>
       </roles>

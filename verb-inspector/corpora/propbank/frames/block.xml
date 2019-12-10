@@ -18,12 +18,12 @@ Roleset based on verb entry block.01, OntoNotes grouping block-n sense 10; VN cl
         <role descr="blocker, Agent" f="pag" n="0">
           <vnrole vncls="16" vntheta="agent"/>
           <vnrole vncls="9.8" vntheta="agent"/>
-          <vnrole vncls="67" vntheta="agent"/>
+          <vnrole vncls="64.4-1" vntheta="agent"/>
         </role>
         <role descr="Theme (action or object being stopped)" f="ppt" n="1">
           <vnrole vncls="16" vntheta="patient"/>
           <vnrole vncls="9.8" vntheta="destination"/>
-          <vnrole vncls="67" vntheta="theme"/>
+          <vnrole vncls="64.4-1" vntheta="theme"/>
         </role>
         <role descr="secondary predication, arg1 stopped from what, where relevant" f="gol" n="2">
           <vnrole vncls="16" vntheta="beneficiary"/>

@@ -9,16 +9,16 @@
       <roles>
         <role descr="causer of leaning" f="PAG" n="0">
           <vnrole vncls="47.6" vntheta="Agent"/>
-          <vnrole vncls="9.2-1" vntheta="Agent"/>
+          <vnrole vncls="9.2" vntheta="Agent"/>
         </role>
         <role descr="entity leaning, if non-volitional" f="ppt" n="1">
           <vnrole vncls="47.6" vntheta="Theme"/>
           <vnrole vncls="50" vntheta="Agent"/>
-          <vnrole vncls="9.2-1" vntheta="Agent"/>
+          <vnrole vncls="9.2" vntheta="Agent"/>
         </role>
         <role descr="direction, location, destination" f="loc" n="2">
           <vnrole vncls="47.6" vntheta="Location"/>
-          <vnrole vncls="9.2-1" vntheta="Destination"/>
+          <vnrole vncls="9.2" vntheta="Destination"/>
           <vnrole vncls="50" vntheta="Location"/>
         </role>
       </roles>

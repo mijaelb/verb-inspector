@@ -8,10 +8,10 @@
       <note>PLUMMET-V NOTES: Frames file for 'plummet' based on sentences in financial subcorpus. Verbnet entry 45.6, other framed members include decrease and increase, among many others. Framenet entries Scalar Position 2, Path Shape. Comparison with 'plunge'. (from plummet.01-v predicate notes)</note>
       <roles>
         <role descr="Logical subject, patient, thing falling" f="PPT" n="1">
-          <vnrole vncls="45.6-1" vntheta="Patient"/>
+          <vnrole vncls="45.6.1-1" vntheta="Patient"/>
         </role>
         <role descr="EXT, amount fallen" f="EXT" n="2">
-          <vnrole vncls="45.6-1" vntheta="Extent"/>
+          <vnrole vncls="45.6.1-1" vntheta="Extent"/>
         </role>
         <role descr="start point" f="dir" n="3"/>
         <role descr="end point, end state of arg1" f="gol" n="4"/>

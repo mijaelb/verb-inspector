@@ -11,14 +11,14 @@
       <roles>
         <role descr="bully" f="pag" n="0">
           <vnrole vncls="29.8-1" vntheta="agent"/>
-          <vnrole vncls="59-1" vntheta="agent"/>
+          <vnrole vncls="59.5" vntheta="agent"/>
         </role>
         <role descr="victim, impelled agent" f="gol" n="1">
           <vnrole vncls="29.8-1" vntheta="beneficiary"/>
-          <vnrole vncls="59-1" vntheta="patient"/>
+          <vnrole vncls="59.5" vntheta="patient"/>
         </role>
         <role descr="impelled action (often unstated)" f="prd" n="2">
-          <vnrole vncls="59-1" vntheta="result"/>
+          <vnrole vncls="59.5" vntheta="result"/>
         </role>
       </roles>
       <example name="bully-v: unstated action" src="" type="">

@@ -8,11 +8,11 @@
       <note>MIND-V NOTES: Frames file for 'mind' based on sentences in corpus and automaticexpansion via verbnet. (from mind.01-v predicate notes)</note>
       <roles>
         <role descr="entity being bothered" f="ppt" n="0">
-          <vnrole vncls="31.3-2" vntheta="experiencer"/>
+          <vnrole vncls="31.3" vntheta="experiencer"/>
           <vnrole vncls="88.1" vntheta="experiencer"/>
         </role>
         <role descr="bothered by" f="cau" n="1">
-          <vnrole vncls="31.3-2" vntheta="stimulus"/>
+          <vnrole vncls="31.3" vntheta="stimulus"/>
           <vnrole vncls="88.1" vntheta="stimulus"/>
         </role>
       </roles>

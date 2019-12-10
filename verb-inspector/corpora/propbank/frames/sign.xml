@@ -217,13 +217,13 @@
       <roles>
         <note>arg3 added based on presence in corpus. (from signal.01-n)</note>
         <role descr="shower" f="PAG" n="0">
-          <vnrole vncls="37.4" vntheta="Agent"/>
+          <vnrole vncls="37.4.1" vntheta="Agent"/>
         </role>
         <role descr="thing seen/shown" f="PPT" n="1">
-          <vnrole vncls="37.4" vntheta="Topic"/>
+          <vnrole vncls="37.4.1" vntheta="Topic"/>
         </role>
         <role descr="seer" f="GOL" n="2">
-          <vnrole vncls="37.4" vntheta="Recipient"/>
+          <vnrole vncls="37.4.1" vntheta="Recipient"/>
         </role>
         <role descr="subject-matter of the signals (what they relate to)" f="vsp" n="3"/>
       </roles>

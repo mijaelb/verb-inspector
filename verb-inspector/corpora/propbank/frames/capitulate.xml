@@ -10,11 +10,11 @@
       <note>CAPITULATION-N NOTES: Added by Julia based on BOLT, capitulate-v.01. Corresponds to VNcls acquiesce-95. (from capitulation.01-n)</note>
       <roles>
         <role descr="entity giving in" f="PAG" n="0">
-          <vnrole vncls="95" vntheta="agent"/>
+          <vnrole vncls="95.1" vntheta="agent"/>
         </role>
         <role descr="to whom/what" f="ppt" n="1">
-          <vnrole vncls="95" vntheta="co-agent"/>
-          <vnrole vncls="95" vntheta="theme"/>
+          <vnrole vncls="95.1" vntheta="co-agent"/>
+          <vnrole vncls="95.1" vntheta="theme"/>
         </role>
       </roles>
       <example name="intransitive" src="" type="">

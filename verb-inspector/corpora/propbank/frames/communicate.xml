@@ -12,17 +12,17 @@
       <note>COMMUNICATION-N NOTES: Roleset based on verb entry communicate.01, OntoNotes grouping communication-n sense 1; maps to VN classes battle-36.4-1, correspond-36.1, transfer_mesg-37.1.1. Framed by Claire. (from communication.01-n)</note>
       <roles>
         <role descr="first (or all) communicator(s)" f="pag" n="0">
-          <vnrole vncls="36.1" vntheta="agent"/>
+          <vnrole vncls="36.1.1" vntheta="agent"/>
           <vnrole vncls="37.1.1" vntheta="agent"/>
           <vnrole vncls="36.4-1" vntheta="agent"/>
         </role>
         <role descr="utterance" f="ppt" n="1">
-          <vnrole vncls="36.1" vntheta="theme"/>
+          <vnrole vncls="36.1.1" vntheta="theme"/>
           <vnrole vncls="37.1.1" vntheta="topic"/>
           <vnrole vncls="36.4-1" vntheta="topic"/>
         </role>
         <role descr="other communicator(s), communicated with or to" f="com" n="2">
-          <vnrole vncls="36.1" vntheta="co-agent"/>
+          <vnrole vncls="36.1.1" vntheta="co-agent"/>
           <vnrole vncls="37.1.1" vntheta="recipient"/>
           <vnrole vncls="36.4-1" vntheta="co-agent"/>
         </role>

@@ -8,10 +8,10 @@
       <note>FELICITATE-V NOTES: Frames file for 'felicitate' based on dictionary.com. Verbnet entry 33. (from felicitate.01-v predicate notes)</note>
       <roles>
         <role descr="expresser, agent" f="pag" n="0">
-          <vnrole vncls="33" vntheta="agent"/>
+          <vnrole vncls="33.1-1" vntheta="agent"/>
         </role>
         <role descr="person congratulated" f="ppt" n="1">
-          <vnrole vncls="33" vntheta="theme"/>
+          <vnrole vncls="33.1-1" vntheta="theme"/>
         </role>
         <role descr="achievement" f="prd" n="2"/>
       </roles>

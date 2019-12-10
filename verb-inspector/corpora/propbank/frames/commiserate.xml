@@ -8,14 +8,14 @@
       <note>COMMISERATE-V NOTES: Frames file for 'commiserate' based on sentences in ULA Brown. VerbNet classes 36.1, 88.2. Comparison with 'sympathize,' and 'collaborate.' (from commiserate.01-v predicate notes)</note>
       <roles>
         <role descr="focussed party, agent" f="pag" n="0">
-          <vnrole vncls="36.1" vntheta="agent"/>
+          <vnrole vncls="36.1.1" vntheta="agent"/>
           <vnrole vncls="88.2" vntheta="experiencer"/>
         </role>
         <role descr="second party" f="com" n="1">
-          <vnrole vncls="36.1" vntheta="co-agent"/>
+          <vnrole vncls="36.1.1" vntheta="co-agent"/>
         </role>
         <role descr="shared subject of misery" f="ppt" n="2">
-          <vnrole vncls="36.1" vntheta="theme"/>
+          <vnrole vncls="36.1.1" vntheta="theme"/>
           <vnrole vncls="88.2" vntheta="stimulus"/>
         </role>
       </roles>

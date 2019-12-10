@@ -66,10 +66,10 @@
       <roles>
         <note>Use this sense when the worrier is the subject of an active construction. (from worry.02-v)</note>
         <role descr="worrier" f="ppt" n="0">
-          <vnrole vncls="31.3-2" vntheta="experiencer"/>
+          <vnrole vncls="31.3" vntheta="experiencer"/>
         </role>
         <role descr="topic of worry" f="pag" n="1">
-          <vnrole vncls="31.3-2" vntheta="stimulus"/>
+          <vnrole vncls="31.3" vntheta="stimulus"/>
         </role>
       </roles>
       <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1020" type="">

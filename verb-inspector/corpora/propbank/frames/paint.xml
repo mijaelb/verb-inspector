@@ -59,15 +59,15 @@
       <note>PAINTING-N NOTES: Roleset based on verb entry paint.02. Corresponds to VN classes 25.2 and 26.7-2 (from painting.02-n)</note>
       <roles>
         <role descr="artist" f="pag" n="0">
-          <vnrole vncls="26.7-2-1" vntheta="Agent"/>
+          <vnrole vncls="26.4-1-1" vntheta="Agent"/>
           <vnrole vncls="24" vntheta="Agent"/>
         </role>
         <role descr="art" f="ppt" n="1">
-          <vnrole vncls="26.7-2-1" vntheta="Theme"/>
+          <vnrole vncls="26.4-1-1" vntheta="Theme"/>
           <vnrole vncls="24" vntheta="Patient"/>
         </role>
         <role descr="benefactive" f="GOL" n="2">
-          <vnrole vncls="26.7-2-1" vntheta="Beneficiary"/>
+          <vnrole vncls="26.4-1-1" vntheta="Beneficiary"/>
         </role>
       </roles>
       <example name="intransitive verse" src="" type="">

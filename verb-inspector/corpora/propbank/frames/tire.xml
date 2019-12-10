@@ -43,10 +43,10 @@
       <note>TIRED-J NOTES: Added by Julia. (from tired.03-j)</note>
       <roles>
         <role descr="tired entity" f="pag" n="0">
-          <vnrole vncls="31.3-6" vntheta="experiencer"/>
+          <vnrole vncls="31.3" vntheta="experiencer"/>
         </role>
         <role descr="what arg0 doesn't want to put up with anymore" f="ppt" n="1">
-          <vnrole vncls="31.3-6" vntheta="stimulus"/>
+          <vnrole vncls="31.3" vntheta="stimulus"/>
         </role>
       </roles>
       <example name="adjectival rel: tired" src="" type="">

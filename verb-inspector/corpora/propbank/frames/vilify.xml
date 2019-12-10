@@ -8,10 +8,10 @@
       <note>VILIFY-V NOTES: Member of Vncls judgement-33. frame by Perryn. (from vilify.01-v)</note>
       <roles>
         <role descr="vilifier, agent" f="PAG" n="0">
-          <vnrole vncls="33" vntheta="Agent"/>
+          <vnrole vncls="33.1-1" vntheta="Agent"/>
         </role>
         <role descr="entity vilified" f="PPT" n="1">
-          <vnrole vncls="33" vntheta="Theme"/>
+          <vnrole vncls="33.1-1" vntheta="Theme"/>
         </role>
       </roles>
       <example name="defame" src="" type="">

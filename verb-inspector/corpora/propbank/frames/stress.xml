@@ -46,10 +46,10 @@
       <note>STRESSED-J NOTES: Added by Julia based on BOLT. (from stressed.02-j)</note>
       <roles>
         <role descr="agent/cause of stress" f="pag" n="0">
-          <vnrole vncls="31.3-2" vntheta="stimulus"/>
+          <vnrole vncls="31.3" vntheta="stimulus"/>
         </role>
         <role descr="entity experiencing stress" f="ppt" n="1">
-          <vnrole vncls="31.3-2" vntheta="experiencer"/>
+          <vnrole vncls="31.3" vntheta="experiencer"/>
         </role>
         <role descr="instrument (if separate from arg0)" f="mnr" n="2"/>
         <role descr="subject matter of stress (stressed about/over __)" f="vsp" n="3"/>

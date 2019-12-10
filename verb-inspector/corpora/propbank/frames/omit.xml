@@ -11,11 +11,11 @@
       <roles>
         <role descr="omitter" f="PAG" n="0">
           <vnrole vncls="10.1" vntheta="Agent"/>
-          <vnrole vncls="75-1" vntheta="Agent"/>
+          <vnrole vncls="75.1-1" vntheta="Agent"/>
         </role>
         <role descr="thing left out" f="ppt" n="1">
           <vnrole vncls="10.1" vntheta="Theme"/>
-          <vnrole vncls="75-1" vntheta="Theme"/>
+          <vnrole vncls="75.1-1" vntheta="Theme"/>
         </role>
         <role descr="left out of what" f="DIR" n="2">
           <vnrole vncls="10.1" vntheta="Source"/>

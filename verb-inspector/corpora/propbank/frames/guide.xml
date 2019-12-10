@@ -11,15 +11,15 @@
       <roles>
         <role descr="guide, agent" f="pag" n="0">
           <vnrole vncls="51.7" vntheta="agent"/>
-          <vnrole vncls="59-1" vntheta="agent"/>
+          <vnrole vncls="51.7" vntheta="agent"/>
         </role>
         <role descr="entity guided" f="ppt" n="1">
           <vnrole vncls="51.7" vntheta="theme"/>
-          <vnrole vncls="59-1" vntheta="patient"/>
+          <vnrole vncls="51.7" vntheta="patient"/>
         </role>
         <role descr="guided in/through" f="gol" n="2">
           <vnrole vncls="51.7" vntheta="destination"/>
-          <vnrole vncls="59-1" vntheta="result"/>
+          <vnrole vncls="51.7" vntheta="result"/>
         </role>
         <role descr="signposts along the way" f="prd" n="3"/>
       </roles>

@@ -8,10 +8,10 @@
       <note>SIRE-V NOTES: Member of VNcls engender-27. Updated by Julia, 11/2010. (from sire.01-v)</note>
       <roles>
         <role descr="sire" f="CAU" n="0">
-          <vnrole vncls="27" vntheta="Cause"/>
+          <vnrole vncls="27.1" vntheta="Cause"/>
         </role>
         <role descr="children" f="PPT" n="1">
-          <vnrole vncls="27" vntheta="Theme"/>
+          <vnrole vncls="27.1" vntheta="Theme"/>
         </role>
       </roles>
       <example name="transitive" src="" type="">

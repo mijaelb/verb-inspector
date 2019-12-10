@@ -12,10 +12,10 @@
       <note>OWNED-J NOTES: Automatically created by Julia as an alias file for unification. (from owned.01-j)</note>
       <roles>
         <role descr="owner" f="PAG" n="0">
-          <vnrole vncls="100" vntheta="Pivot"/>
+          <vnrole vncls="100.1" vntheta="Pivot"/>
         </role>
         <role descr="possession" f="PPT" n="1">
-          <vnrole vncls="100" vntheta="Theme"/>
+          <vnrole vncls="100.1" vntheta="Theme"/>
         </role>
       </roles>
       <example name="straight transitive" src="" type="">

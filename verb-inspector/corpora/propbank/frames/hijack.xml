@@ -12,10 +12,10 @@
       <note>HIGHJACK-V NOTES: Frames file for 'highjack' based on dictionary.com. Verbnet entry 10.5.Variant of 'hijack' (59-1).frame by Perryn (from highjack.01-v predicate notes)</note>
       <roles>
         <role descr="hijacker, agent" f="pag" n="0">
-          <vnrole vncls="59-1" vntheta="agent"/>
+          <vnrole vncls="13.5.2" vntheta="agent"/>
         </role>
         <role descr="airplane, entity hijacked" f="ppt" n="1">
-          <vnrole vncls="59-1" vntheta="patient"/>
+          <vnrole vncls="13.5.2" vntheta="patient"/>
         </role>
         <role descr="pilot, hijacked from" f="dir" n="2"/>
       </roles>

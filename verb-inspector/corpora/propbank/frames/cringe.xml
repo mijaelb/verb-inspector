@@ -8,7 +8,7 @@
       <note>CRINGE-V NOTES: Frames file for 'cringe' based on survey of sentences in the WSJ corpus. (from cringe.01-v predicate notes)</note>
       <roles>
         <role descr="fearful entity" f="PPT" n="0">
-          <vnrole vncls="31.3-1" vntheta="Experiencer"/>
+          <vnrole vncls="31.3" vntheta="Experiencer"/>
           <vnrole vncls="40.5" vntheta="Experiencer"/>
         </role>
       </roles>

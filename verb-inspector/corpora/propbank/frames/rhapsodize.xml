@@ -8,10 +8,10 @@
       <note>RHAPSODIZE-V NOTES: hand-checked by Kevin (from rhapsodize.01-v)</note>
       <roles>
         <role descr="experiencer of rhapsody" f="PPT" n="0">
-          <vnrole vncls="31.3-2" vntheta="Experiencer"/>
+          <vnrole vncls="31.3" vntheta="Experiencer"/>
         </role>
         <role descr="cause of rhapsody" f="PAG" n="1">
-          <vnrole vncls="31.3-2" vntheta="Stimulus"/>
+          <vnrole vncls="31.3" vntheta="Stimulus"/>
         </role>
       </roles>
       <example name="regular usage" src="web usage" type="">

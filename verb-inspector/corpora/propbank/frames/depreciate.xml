@@ -10,7 +10,7 @@
       <note>DEPRECIATION-N NOTES: Based on Ontonotes nouns. Comparison to depreciate.01-v. Depreciate.01 is a member of VN class calibratable_cos-45.6-1.Framed by Katie. (from depreciation.01-n)</note>
       <roles>
         <role descr="thing losing value" f="PPT" n="1">
-          <vnrole vncls="45.6-1" vntheta="Patient"/>
+          <vnrole vncls="45.6.1-1" vntheta="Patient"/>
         </role>
       </roles>
       <example name="the one example" src="" type="">

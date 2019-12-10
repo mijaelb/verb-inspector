@@ -10,10 +10,10 @@
       <note>ALLEVIATION-N NOTES: (from alleviation.01-n)</note>
       <roles>
         <role descr="agent, causer" f="CAU" n="0">
-          <vnrole vncls="80" vntheta="Cause"/>
+          <vnrole vncls="10.6.3" vntheta="Cause"/>
         </role>
         <role descr="problems" f="PPT" n="1">
-          <vnrole vncls="80" vntheta="Theme"/>
+          <vnrole vncls="10.6.3" vntheta="Theme"/>
         </role>
       </roles>
       <example name="inanimate causer" src="" type="">

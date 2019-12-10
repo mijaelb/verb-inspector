@@ -8,11 +8,11 @@
       <note>SKYROCKET-V NOTES: Bite my butt, it is in verbnet: calibratable_cos-45.6-1. Comparison to 'rise'. (from skyrocket.01-v)</note>
       <roles>
         <role descr="Logical subject, patient, thing rising" f="PPT" n="1">
-          <vnrole vncls="45.6-1" vntheta="Patient"/>
-          <vnrole vncls="45.6-1" vntheta="Attribute"/>
+          <vnrole vncls="45.6.1-1" vntheta="Patient"/>
+          <vnrole vncls="45.6.1-1" vntheta="Attribute"/>
         </role>
         <role descr="EXT, amount risen" f="EXT" n="2">
-          <vnrole vncls="45.6-1" vntheta="Extent"/>
+          <vnrole vncls="45.6.1-1" vntheta="Extent"/>
         </role>
         <role descr="start point" f="dir" n="3"/>
         <role descr="end point" f="gol" n="4"/>

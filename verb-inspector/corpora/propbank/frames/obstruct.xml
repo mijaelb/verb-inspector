@@ -16,10 +16,10 @@
       <note>OBSTRUCTING-J NOTES: Automatically created by Julia as an alias file for unification. (from obstructing.01-j)</note>
       <roles>
         <role descr="blocker, obstruction" f="PAG" n="0">
-          <vnrole vncls="67" vntheta="Agent"/>
+          <vnrole vncls="64.4-1" vntheta="Agent"/>
         </role>
         <role descr="thing obstructed" f="PPT" n="1">
-          <vnrole vncls="67" vntheta="Theme"/>
+          <vnrole vncls="64.4-1" vntheta="Theme"/>
         </role>
       </roles>
       <example name="transitive" src="" type="">

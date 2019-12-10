@@ -12,13 +12,13 @@
       <roles>
         <note>Arg0 of the verb frame not expected, but should be added if it ever occurs. (from free.01-j)</note>
         <role descr="entity providing freedom, agent" f="pag" n="0">
-          <vnrole vncls="80-1" vntheta="cause"/>
+          <vnrole vncls="10.6.3-1" vntheta="cause"/>
         </role>
         <role descr="entity made free" f="dir" n="1">
-          <vnrole vncls="80-1" vntheta="source"/>
+          <vnrole vncls="10.6.3-1" vntheta="source"/>
         </role>
         <role descr="freed from" f="ppt" n="2">
-          <vnrole vncls="80-1" vntheta="theme"/>
+          <vnrole vncls="10.6.3-1" vntheta="theme"/>
         </role>
         <role descr="beneficiary/purpose" f="prp" n="3"/>
       </roles>
@@ -74,10 +74,10 @@
       <note>FREE-J NOTES: Added by Julia based on WSJ, free-v.01. Corresponds to VNcls free-80-1. (from free.01-j)</note>
       <roles>
         <role descr="free entity" f="pag" n="1">
-          <vnrole vncls="80-1" vntheta="source"/>
+          <vnrole vncls="10.6.3-1" vntheta="source"/>
         </role>
         <role descr="free from (former chains/burden)" f="dir" n="2">
-          <vnrole vncls="80-1" vntheta="theme"/>
+          <vnrole vncls="10.6.3-1" vntheta="theme"/>
         </role>
         <role descr="resulting freedom (to do what)" f="prd" n="3"/>
       </roles>

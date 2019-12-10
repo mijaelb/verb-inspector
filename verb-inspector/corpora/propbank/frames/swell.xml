@@ -15,11 +15,11 @@
         <role descr="causal agent" f="pag" n="0"/>
         <role descr="thing swelling" f="ppt" n="1">
           <vnrole vncls="45.5" vntheta="patient"/>
-          <vnrole vncls="45.6-1" vntheta="patient"/>
-          <vnrole vncls="45.6-1" vntheta="attribute"/>
+          <vnrole vncls="45.5" vntheta="patient"/>
+          <vnrole vncls="45.5" vntheta="attribute"/>
         </role>
         <role descr="EXT" f="ext" n="2">
-          <vnrole vncls="45.6-1" vntheta="extent"/>
+          <vnrole vncls="45.5" vntheta="extent"/>
         </role>
         <role descr="start point" f="dir" n="3"/>
         <role descr="end point" f="gol" n="4"/>

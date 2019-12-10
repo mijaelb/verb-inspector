@@ -220,11 +220,11 @@
       <note>BRING-V NOTES: VerbNet classes engender-27, establish-55.5-1. (from bring-v.05)</note>
       <roles>
         <role descr="causer" f="pag" n="0">
-          <vnrole vncls="27" vntheta="cause"/>
+          <vnrole vncls="27.1" vntheta="cause"/>
           <vnrole vncls="55.5-1" vntheta="agent"/>
         </role>
         <role descr="thing coming to be" f="ppt" n="1">
-          <vnrole vncls="27" vntheta="theme"/>
+          <vnrole vncls="27.1" vntheta="theme"/>
           <vnrole vncls="55.5-1" vntheta="theme"/>
         </role>
       </roles>

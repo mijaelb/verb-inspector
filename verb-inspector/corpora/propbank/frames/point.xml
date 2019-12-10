@@ -8,13 +8,13 @@
       <note>POINT-V NOTES: Frames file for 'point' based on sentences in financial subcorpus. No access to verbnet. No comparison. (from point.01-v predicate notes)</note>
       <roles>
         <role descr="pointer" f="PAG" n="0">
-          <vnrole vncls="40.3.1-1" vntheta="Agent"/>
+          <vnrole vncls="40.3.1" vntheta="Agent"/>
         </role>
         <role descr="thing pointed (defaults to finger)" f="PPT" n="1">
-          <vnrole vncls="40.3.1-1" vntheta="Patient"/>
+          <vnrole vncls="40.3.1" vntheta="Patient"/>
         </role>
         <role descr="pointed at (a variety of prepositions)" f="GOL" n="2">
-          <vnrole vncls="40.3.1-1" vntheta="Recipient"/>
+          <vnrole vncls="40.3.1" vntheta="Recipient"/>
         </role>
       </roles>
       <example name="toward" src="" type="">

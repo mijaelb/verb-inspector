@@ -9,11 +9,11 @@
       <roles>
         <role descr="causer of sadness" f="pag" n="0">
           <vnrole vncls="31.1" vntheta="stimulus"/>
-          <vnrole vncls="31.3-1" vntheta="stimulus"/>
+          <vnrole vncls="31.1" vntheta="stimulus"/>
         </role>
         <role descr="saddened entity" f="ppt" n="1">
           <vnrole vncls="31.1" vntheta="experiencer"/>
-          <vnrole vncls="31.3-1" vntheta="experiencer"/>
+          <vnrole vncls="31.1" vntheta="experiencer"/>
         </role>
         <role descr="instrument" f="mnr" n="2"/>
       </roles>

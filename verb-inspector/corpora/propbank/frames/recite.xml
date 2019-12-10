@@ -11,15 +11,15 @@
       <roles>
         <note>This is not limited to voicing of memorized passages, but includes any memorized performance, such as insturmental recitals (from recital.01-n)</note>
         <role descr="speaker" f="PAG" n="0">
-          <vnrole vncls="26.7-1-1" vntheta="agent"/>
+          <vnrole vncls="26.7-1" vntheta="agent"/>
           <vnrole vncls="37.1.1" vntheta="agent"/>
         </role>
         <role descr="utterance" f="ppt" n="1">
-          <vnrole vncls="26.7-1-1" vntheta="theme"/>
+          <vnrole vncls="26.7-1" vntheta="theme"/>
           <vnrole vncls="37.1.1" vntheta="topic"/>
         </role>
         <role descr="audience or listener" f="gol" n="2">
-          <vnrole vncls="26.7-1-1" vntheta="beneficiary"/>
+          <vnrole vncls="26.7-1" vntheta="beneficiary"/>
           <vnrole vncls="37.1.1" vntheta="recipient"/>
         </role>
       </roles>

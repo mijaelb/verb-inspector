@@ -11,13 +11,13 @@
       <roles>
         <note>Literally 'to remove the skin,' and thus equivalent to 'flay'. (from excoriate.01-v)</note>
         <role descr="speaker" f="pag" n="0">
-          <vnrole vncls="33" vntheta="agent"/>
+          <vnrole vncls="31.1" vntheta="agent"/>
         </role>
         <role descr="subject" f="ppt" n="1">
-          <vnrole vncls="33" vntheta="theme"/>
+          <vnrole vncls="31.1" vntheta="theme"/>
         </role>
         <role descr="grounds, reason" f="prd" n="2">
-          <vnrole vncls="33" vntheta="attribute"/>
+          <vnrole vncls="31.1" vntheta="attribute"/>
         </role>
       </roles>
       <example name="passive" src="" type="">

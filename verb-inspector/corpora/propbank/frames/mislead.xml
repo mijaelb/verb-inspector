@@ -27,13 +27,13 @@
       <note>MISLEAD-V NOTES: Frames file for 'mislead' based on sentences in financial subcorpus. No Verbnet entry. (from mislead.02-v predicate notes)</note>
       <roles>
         <role descr="causal agent, misleader" f="pag" n="0">
-          <vnrole vncls="59" vntheta="agent"/>
+          <vnrole vncls="59.2" vntheta="agent"/>
         </role>
         <role descr="impelled agent" f="ppt" n="1">
-          <vnrole vncls="59" vntheta="patient"/>
+          <vnrole vncls="59.2" vntheta="patient"/>
         </role>
         <role descr="impelled action" f="prd" n="2">
-          <vnrole vncls="59" vntheta="result"/>
+          <vnrole vncls="59.2" vntheta="result"/>
         </role>
       </roles>
       <example name="lead me not into tempation" src="" type="">

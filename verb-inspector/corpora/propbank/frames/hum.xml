@@ -9,11 +9,11 @@
       <roles>
         <role descr="entity humming" f="pag" n="0">
           <vnrole vncls="43.2" vntheta="theme"/>
-          <vnrole vncls="26.7-1-1" vntheta="agent"/>
+          <vnrole vncls="26.7-1" vntheta="agent"/>
           <vnrole vncls="37.3" vntheta="agent"/>
         </role>
         <role descr="song or sound" f="ppt" n="1">
-          <vnrole vncls="26.7-1-1" vntheta="theme"/>
+          <vnrole vncls="26.7-1" vntheta="theme"/>
         </role>
       </roles>
       <example name="ARG0 and ARG1" src="probably COCA (2018 example fix)" type="">

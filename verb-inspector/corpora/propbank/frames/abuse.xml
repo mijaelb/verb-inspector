@@ -12,10 +12,10 @@
       <note>ABUSIVE-J NOTES: Added by Julia based on medi-tmprl1to8. (from abusive.01-j)</note>
       <roles>
         <role descr="abuser, agent" f="PAG" n="0">
-          <vnrole vncls="33" vntheta="Agent"/>
+          <vnrole vncls="33.1" vntheta="agent"/>
         </role>
         <role descr="entity abused" f="PPT" n="1">
-          <vnrole vncls="33" vntheta="Theme"/>
+          <vnrole vncls="33.1" vntheta="theme"/>
         </role>
       </roles>
       <example name="transitive" src="" type="">
@@ -98,10 +98,10 @@
       </aliases>
       <roles>
         <role descr="abuser, agent" f="pag" n="0">
-          <vnrole vncls="33" vntheta="agent"/>
+          <vnrole vncls="33.1" vntheta="agent"/>
         </role>
         <role descr="entity insulted" f="ppt" n="1">
-          <vnrole vncls="33" vntheta="theme"/>
+          <vnrole vncls="33.1" vntheta="theme"/>
         </role>
         <role descr="explicit mention of utterance or insult" f="mnr" n="2">
         </role>

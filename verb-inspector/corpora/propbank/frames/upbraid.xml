@@ -8,10 +8,10 @@
       <note>UPBRAID-V NOTES: Verbnet entry 33.frame by Perryn (from upbraid.01-v)</note>
       <roles>
         <role descr="upbraider" f="pag" n="0">
-          <vnrole vncls="33" vntheta="agent"/>
+          <vnrole vncls="33.1-1" vntheta="agent"/>
         </role>
         <role descr="guilty party" f="ppt" n="1">
-          <vnrole vncls="33" vntheta="theme"/>
+          <vnrole vncls="33.1-1" vntheta="theme"/>
         </role>
         <role descr="crime, fault" f="cau" n="2"/>
       </roles>

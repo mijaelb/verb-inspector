@@ -43,13 +43,13 @@
       <note>WHITEWASH-N NOTES: (from whitewash.01-n)</note>
       <roles>
         <role descr="Agent or organization doing the whitewashing" f="PAG" n="0">
-          <vnrole vncls="10.6" vntheta="Agent"/>
+          <vnrole vncls="10.6.4" vntheta="Agent"/>
         </role>
         <role descr="entity being exonerated" f="DIR" n="1">
-          <vnrole vncls="10.6" vntheta="Source"/>
+          <vnrole vncls="10.6.4" vntheta="Source"/>
         </role>
         <role descr="crimes" f="PPT" n="2">
-          <vnrole vncls="10.6" vntheta="Theme"/>
+          <vnrole vncls="10.6.4" vntheta="Theme"/>
         </role>
       </roles>
       <example name="whitewash-v: Transitive" src="Transitive" type="Transitive">

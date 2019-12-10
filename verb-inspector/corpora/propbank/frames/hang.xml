@@ -11,20 +11,20 @@
       <roles>
         <role descr="agent, entity causing something to be suspended" f="pag" n="0">
           <vnrole vncls="9.7-1" vntheta="agent"/>
-          <vnrole vncls="9.2-1" vntheta="agent"/>
+          <vnrole vncls="9.2" vntheta="agent"/>
           <vnrole vncls="42.2" vntheta="agent"/>
           <vnrole vncls="40.3.2" vntheta="agent"/>
         </role>
         <role descr="thing suspended" f="ppt" n="1">
           <vnrole vncls="9.7-1" vntheta="theme"/>
-          <vnrole vncls="9.2-1" vntheta="theme"/>
+          <vnrole vncls="9.2" vntheta="theme"/>
           <vnrole vncls="42.2" vntheta="patient"/>
           <vnrole vncls="47.6" vntheta="theme"/>
           <vnrole vncls="40.3.2" vntheta="patient"/>
         </role>
         <role descr="suspended from" f="gol" n="2">
           <vnrole vncls="9.7-1" vntheta="destination"/>
-          <vnrole vncls="9.2-1" vntheta="destination"/>
+          <vnrole vncls="9.2" vntheta="destination"/>
           <vnrole vncls="47.6" vntheta="location"/>
         </role>
       </roles>

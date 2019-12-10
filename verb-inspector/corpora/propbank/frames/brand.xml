@@ -8,15 +8,15 @@
       <note>BRAND-V NOTES: Frames file for 'brand' based on sentences in financial subcorpus andautomatic expansion via verbnet. (from brand.01-v predicate notes)</note>
       <roles>
         <role descr="caller" f="PAG" n="0">
-          <vnrole vncls="29.3" vntheta="Agent"/>
+          <vnrole vncls="29.3.2" vntheta="Agent"/>
           <vnrole vncls="25.3" vntheta="Agent"/>
         </role>
         <role descr="item being labelled" f="ppt" n="1">
-          <vnrole vncls="29.3" vntheta="Theme"/>
+          <vnrole vncls="29.3.2" vntheta="Theme"/>
           <vnrole vncls="25.3" vntheta="Destination"/>
         </role>
         <role descr="attribute" f="PRD" n="2">
-          <vnrole vncls="29.3" vntheta="Result"/>
+          <vnrole vncls="29.3.2" vntheta="Result"/>
         </role>
       </roles>
       <example name="funky word order" src="" type="">

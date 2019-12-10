@@ -11,16 +11,16 @@
       <roles>
         <role descr="remover" f="PAG" n="0">
           <vnrole vncls="10.4.1-1" vntheta="Agent"/>
-          <vnrole vncls="10.6" vntheta="Agent"/>
+          <vnrole vncls="10.6.4" vntheta="Agent"/>
           <vnrole vncls="41.1.1" vntheta="Agent"/>
         </role>
         <role descr="thing removed" f="PPT" n="1">
           <vnrole vncls="10.4.1-1" vntheta="Theme"/>
-          <vnrole vncls="10.6" vntheta="Theme"/>
+          <vnrole vncls="10.6.4" vntheta="Theme"/>
         </role>
         <role descr="source" f="dir" n="2">
           <vnrole vncls="10.4.1-1" vntheta="Source"/>
-          <vnrole vncls="10.6" vntheta="Source"/>
+          <vnrole vncls="10.6.4" vntheta="Source"/>
           <vnrole vncls="41.1.1" vntheta="Patient"/>
         </role>
       </roles>
@@ -90,11 +90,11 @@
       <roles>
         <role descr="remover" f="PAG" n="0">
           <vnrole vncls="10.4.1-1" vntheta="Agent"/>
-          <vnrole vncls="10.6" vntheta="Agent"/>
+          <vnrole vncls="10.6.4" vntheta="Agent"/>
         </role>
         <role descr="thing removed" f="PPT" n="1">
           <vnrole vncls="10.4.1-1" vntheta="Theme"/>
-          <vnrole vncls="10.6" vntheta="Theme"/>
+          <vnrole vncls="10.6.4" vntheta="Theme"/>
         </role>
       </roles>
       <example name="active" src="" type="">

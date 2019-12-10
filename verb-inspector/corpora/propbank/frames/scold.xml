@@ -10,10 +10,10 @@
       <note>SCOLDING-N NOTES: Automatically created by Julia as an alias file for unification. (from scolding.01-n)</note>
       <roles>
         <role descr="criticizer" f="pag" n="0">
-          <vnrole vncls="33" vntheta="agent"/>
+          <vnrole vncls="33.1-1" vntheta="agent"/>
         </role>
         <role descr="entity scolded" f="ppt" n="1">
-          <vnrole vncls="33" vntheta="theme"/>
+          <vnrole vncls="33.1-1" vntheta="theme"/>
         </role>
         <role descr="entity scolded on/for" f="cau" n="2"/>
       </roles>

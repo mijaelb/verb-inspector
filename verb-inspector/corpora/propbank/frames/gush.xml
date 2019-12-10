@@ -9,10 +9,10 @@
       <note>GUSH-V NOTES: Frames file for 'gush' based on survey of sentences in the WSJ corpus. (from gush.01-v predicate notes)</note>
       <roles>
         <role descr="agent" f="PPT" n="0">
-          <vnrole vncls="31.3-8" vntheta="Experiencer"/>
+          <vnrole vncls="31.3" vntheta="Experiencer"/>
         </role>
         <role descr="topic, utterance" f="PAG" n="1">
-          <vnrole vncls="31.3-8" vntheta="Stimulus"/>
+          <vnrole vncls="31.3" vntheta="Stimulus"/>
         </role>
       </roles>
       <example name="gush-v: gush about" src="" type="">

@@ -10,10 +10,10 @@
       <note>BLEEDING-N NOTES: Roleset based on verb entry bleed.01. Framed by Anwen Feb 2011. (from bleeding.01-n)</note>
       <roles>
         <role descr="causer of bloodshed, agent" f="dir" n="0">
-          <vnrole vncls="43.4-1" vntheta="agent"/>
+          <vnrole vncls="43.4-1-1" vntheta="agent"/>
         </role>
         <role descr="entity bleeding" f="ppt" n="1">
-          <vnrole vncls="43.4-1" vntheta="agent"/>
+          <vnrole vncls="43.4-1-1" vntheta="source"/>
           <vnrole vncls="40.1.2" vntheta="agent"/>
         </role>
       </roles>
@@ -47,10 +47,10 @@
       <note>BLEED-V NOTES: Based on WSJ. Member of VNcls cheat-10.6 (from bleed.02-v)</note>
       <roles>
         <role descr="causer of bleeding, agent" f="pag" n="0">
-          <vnrole vncls="10.6" vntheta="agent"/>
+          <vnrole vncls="10.6.4" vntheta="agent"/>
         </role>
         <role descr="entity losing money" f="dir" n="1">
-          <vnrole vncls="10.6" vntheta="source"/>
+          <vnrole vncls="10.6.4" vntheta="source"/>
         </role>
       </roles>
       <example name="with predication" src="" type="">
@@ -69,10 +69,10 @@
       <note>BLEED-V NOTES: Based on WSJ. Member of VNcls marvel-31.3-3 (from bleed.03-v)</note>
       <roles>
         <role descr="experiencer" f="ppt" n="0">
-          <vnrole vncls="31.3-3" vntheta="experiencer"/>
+          <vnrole vncls="31.3" vntheta="experiencer"/>
         </role>
         <role descr="thing bleeding for" f="pag" n="1">
-          <vnrole vncls="31.3-3" vntheta="stimulus"/>
+          <vnrole vncls="31.3" vntheta="stimulus"/>
         </role>
       </roles>
       <example name="automatically generated" src="" type="">
@@ -92,10 +92,10 @@
       <note>BLEED_OFF-V NOTES: Based on WSJ. See VNcls cheat-10.6. (from bleed.04-v)</note>
       <roles>
         <role descr="decreaser, agent" f="pag" n="0">
-          <vnrole vncls="10.6" vntheta="agent"/>
+          <vnrole vncls="10.6.4" vntheta="agent"/>
         </role>
         <role descr="stuff being removed" f="dir" n="1">
-          <vnrole vncls="10.6" vntheta="source"/>
+          <vnrole vncls="10.6.4" vntheta="source"/>
         </role>
       </roles>
       <example name="automatically generated" src="" type="">

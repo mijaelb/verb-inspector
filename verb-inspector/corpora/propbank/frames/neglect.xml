@@ -10,10 +10,10 @@
       <note>NEGLECT-N NOTES: Added by Julia based on BOLT, WordNet, neglect-v.01. Corresponds to VNcls neglect-75-1-1. (from neglect.01-n)</note>
       <roles>
         <role descr="ignorer" f="PAG" n="0">
-          <vnrole vncls="75-1-1" vntheta="agent"/>
+          <vnrole vncls="75.1-1" vntheta="agent"/>
         </role>
         <role descr="thing ignored" f="ppt" n="1">
-          <vnrole vncls="75-1-1" vntheta="theme"/>
+          <vnrole vncls="75.1-1" vntheta="theme"/>
         </role>
         <role descr="specific aspect of arg1 ignored" f="vsp" n="2"/>
       </roles>

@@ -78,10 +78,10 @@
       <note>THRILL-V NOTES: Member of VNcls marvel-31.3-1 (from thrill.02-v)</note>
       <roles>
         <role descr="excited entity" f="ppt" n="0">
-          <vnrole vncls="31.3-1" vntheta="experiencer"/>
+          <vnrole vncls="31.3" vntheta="experiencer"/>
         </role>
         <role descr="cause of excitement" f="pag" n="1">
-          <vnrole vncls="31.3-1" vntheta="stimulus"/>
+          <vnrole vncls="31.3" vntheta="stimulus"/>
         </role>
       </roles>
       <example name="prepositional" src="" type="">

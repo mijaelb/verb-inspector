@@ -11,13 +11,13 @@
       <note>AGREEMENT-N NOTES: Based on sentences in nouns-00040. Comparison to agree.01. VN class correspond-36.1-1. FN classes make_agreement_on_action, be_in_agreement_on_action, and be_in_agreement_on_assessment. Framed by Katie. (from agreement.01-n)</note>
       <roles>
         <role descr="agreer" f="PAG" n="0">
-          <vnrole vncls="36.1-1" vntheta="Agent"/>
+          <vnrole vncls="36.1.1-1" vntheta="Agent"/>
         </role>
         <role descr="proposition" f="PPT" n="1">
-          <vnrole vncls="36.1-1" vntheta="Theme"/>
+          <vnrole vncls="36.1.1-1" vntheta="Theme"/>
         </role>
         <role descr="other entity agreeing" f="COM" n="2">
-          <vnrole vncls="36.1-1" vntheta="co-agent"/>
+          <vnrole vncls="36.1.1-1" vntheta="co-agent"/>
         </role>
       </roles>
       <example name="infinitival proposition" src="" type="">

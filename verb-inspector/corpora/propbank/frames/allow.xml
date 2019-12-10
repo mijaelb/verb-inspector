@@ -70,14 +70,14 @@ ALLOWANCE-N NOTES: Roleset based on instances in nouns-lv. Framed by Claire. Bas
       
       <roles>
         <role descr="allocator" f="pag" n="0">
-<vnrole vncls="13.3-1" vntheta="agent"/>
+<vnrole vncls="13.3" vntheta="agent"/>
 </role>
         <role descr="thing allocated (us. time)" f="ppt" n="1">
-<vnrole vncls="13.3-1" vntheta="theme"/>
+<vnrole vncls="13.3" vntheta="theme"/>
 </role>
         <role descr="to some task" f="gol" n="2">
-<vnrole vncls="13.3-1" vntheta="goal"/>
-<vnrole vncls="13.3-1" vntheta="beneficiary"/>
+<vnrole vncls="13.3" vntheta="goal"/>
+<vnrole vncls="13.3" vntheta="beneficiary"/>
 </role>
       </roles>
       <example name="thrash out, man" src="" type="">

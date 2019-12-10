@@ -14,15 +14,15 @@
         <note>Avoid adjectives meaning 'complicated': The plot of the novel was veryinvolved. (from involve.01-v)
 Arg0-agent could be added to match the verb frame if it comes up.It isn't expected, however. (from involved.01-j)</note>
         <role descr="causer of inclusion" f="PAG" n="0">
-          <vnrole vncls="107" vntheta="Agent"/>
+          <vnrole vncls="107.1" vntheta="Agent"/>
         </role>
         <role descr="theme, thing being included into a group" f="ppt" n="1">
-          <vnrole vncls="107" vntheta="Theme"/>
+          <vnrole vncls="107.1" vntheta="Theme"/>
           <vnrole vncls="86.2-1" vntheta="co-theme"/>
           <vnrole vncls="103" vntheta="Theme"/>
         </role>
         <role descr="group" f="ppt" n="2">
-          <vnrole vncls="107" vntheta="Goal"/>
+          <vnrole vncls="107.1" vntheta="Goal"/>
           <vnrole vncls="86.2-1" vntheta="Theme"/>
           <vnrole vncls="103" vntheta="Pivot"/>
         </role>

@@ -8,13 +8,13 @@
       <note>CHOREOGRAPH-V NOTES: Frame created by Arrick (from choreograph.01-v)</note>
       <roles>
         <role descr="creator" f="PAG" n="0">
-          <vnrole vncls="26.7-2" vntheta="Agent"/>
+          <vnrole vncls="26.4-1" vntheta="agent"/>
         </role>
         <role descr="dance" f="PPT" n="1">
-          <vnrole vncls="26.7-2" vntheta="Theme"/>
+          <vnrole vncls="26.4-1" vntheta="result"/>
         </role>
         <role descr="created for, beneficiary" f="GOL" n="2">
-          <vnrole vncls="26.7-2" vntheta="Beneficiary"/>
+          <vnrole vncls="26.4-1" vntheta="beneficiary"/>
         </role>
       </roles>
       <example name="adjective" src="" type="">

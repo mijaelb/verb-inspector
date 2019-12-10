@@ -8,12 +8,12 @@
       <note>FUME-V NOTES: Based on sentences in wsj. Member of VNcls marvel-31.3-1, marvel-31.3-8. Why in VN twice? (from fume.01-v)</note>
       <roles>
         <role descr="angry entity" f="PPT" n="0">
-          <vnrole vncls="31.3-1" vntheta="Experiencer"/>
-          <vnrole vncls="31.3-8" vntheta="Experiencer"/>
+          <vnrole vncls="31.3" vntheta="Experiencer"/>
+          <vnrole vncls="31.3" vntheta="Experiencer"/>
         </role>
         <role descr="source of anger" f="cau" n="1">
-          <vnrole vncls="31.3-1" vntheta="Stimulus"/>
-          <vnrole vncls="31.3-8" vntheta="Stimulus"/>
+          <vnrole vncls="31.3" vntheta="Stimulus"/>
+          <vnrole vncls="31.3" vntheta="Stimulus"/>
         </role>
       </roles>
       <example name="unaccusative" src="" type="">

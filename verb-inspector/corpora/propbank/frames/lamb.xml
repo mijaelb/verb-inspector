@@ -8,10 +8,10 @@
       <note>LAMB-V NOTES: Edited by hwangd (from lamb.01-v)</note>
       <roles>
         <role descr="mother" f="PAG" n="0">
-          <vnrole vncls="28" vntheta="Agent"/>
+          <vnrole vncls="28.1" vntheta="Agent"/>
         </role>
         <role descr="lamb" f="PPT" n="1">
-          <vnrole vncls="28" vntheta="Patient"/>
+          <vnrole vncls="28.1" vntheta="Patient"/>
         </role>
       </roles>
       <example name="Regular usage" src="web usage" type="">

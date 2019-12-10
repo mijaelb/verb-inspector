@@ -55,12 +55,12 @@
       <roles>
         <role descr="manager" f="pag" n="0">
           <vnrole vncls="74-1-1" vntheta="agent"/>
-          <vnrole vncls="75-2" vntheta="agent"/>
+          <vnrole vncls="75.2-1" vntheta="agent"/>
           <vnrole vncls="83-1-1" vntheta="agent"/>
         </role>
         <role descr="deed accomplished" f="ppt" n="1">
           <vnrole vncls="74-1-1" vntheta="theme"/>
-          <vnrole vncls="75-2" vntheta="theme"/>
+          <vnrole vncls="75.2-1" vntheta="theme"/>
           <vnrole vncls="83-1-1" vntheta="theme"/>
         </role>
       </roles>

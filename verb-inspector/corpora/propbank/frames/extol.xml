@@ -8,10 +8,10 @@
       <note>EXTOL-V NOTES: Frame by Claire (from extol.01-v)</note>
       <roles>
         <role descr="agent, honorer" f="pag" n="0">
-          <vnrole vncls="33" vntheta="agent"/>
+          <vnrole vncls="33.1-1" vntheta="agent"/>
         </role>
         <role descr="entity extolled" f="ppt" n="1">
-          <vnrole vncls="33" vntheta="theme"/>
+          <vnrole vncls="33.1-1" vntheta="theme"/>
         </role>
         <role descr="for what,as what" f="prd" n="2"/>
       </roles>

@@ -8,13 +8,13 @@
       <note>RERELEASE-V NOTES: Added by Julia based on Call Home, release-v.01. Added to 80-1 (from rerelease.01-v)</note>
       <roles>
         <role descr="re-releaser" f="pag" n="0">
-          <vnrole vncls="80-1" vntheta="cause"/>
+          <vnrole vncls="10.6.3-1" vntheta="cause"/>
         </role>
         <role descr="entity released again" f="ppt" n="1">
-          <vnrole vncls="80-1" vntheta="theme"/>
+          <vnrole vncls="10.6.3-1" vntheta="theme"/>
         </role>
         <role descr="re-release from" f="dir" n="2">
-          <vnrole vncls="80-1" vntheta="source"/>
+          <vnrole vncls="10.6.3-1" vntheta="source"/>
         </role>
       </roles>
       <example name="args 0 and 1" src="Call Home" type="-">

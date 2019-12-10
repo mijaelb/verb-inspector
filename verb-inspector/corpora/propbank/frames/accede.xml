@@ -8,10 +8,10 @@
       <note>ACCEDE-V NOTES: Member of VNcls acquiesce-95. (from accede.01-v)</note>
       <roles>
         <role descr="acceder, agent" f="PAG" n="0">
-          <vnrole vncls="95" vntheta="Agent"/>
+          <vnrole vncls="95.1" vntheta="Agent"/>
         </role>
         <role descr="entity acceded to" f="COM" n="1">
-          <vnrole vncls="95" vntheta="co-agent"/>
+          <vnrole vncls="95.1" vntheta="co-agent"/>
         </role>
       </roles>
       <example name="transitive" src="" type="">

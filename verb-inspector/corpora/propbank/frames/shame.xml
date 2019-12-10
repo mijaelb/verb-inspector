@@ -10,15 +10,15 @@
       <note>SHAMING-N NOTES: Added by Julia based on BOLT-5, shame-v.01.Corresponds to Vncls force-59-1, judgement-33. (from shaming.01-n)</note>
       <roles>
         <role descr="entity assigning shame/impelling through shame" f="pag" n="0">
-          <vnrole vncls="59-1" vntheta="agent"/>
-          <vnrole vncls="33" vntheta="agent"/>
+          <vnrole vncls="59.5" vntheta="agent"/>
+          <vnrole vncls="59.5" vntheta="agent"/>
         </role>
         <role descr="shamed/impelled agent" f="ppt" n="1">
-          <vnrole vncls="59-1" vntheta="patient"/>
-          <vnrole vncls="33" vntheta="theme"/>
+          <vnrole vncls="59.5" vntheta="patient"/>
+          <vnrole vncls="59.5" vntheta="theme"/>
         </role>
         <role descr="action impelled through shame" f="prd" n="2">
-          <vnrole vncls="59-1" vntheta="result"/>
+          <vnrole vncls="59.5" vntheta="result"/>
         </role>
       </roles>
       <example name="shame-v: All Arguments" src="" type="">

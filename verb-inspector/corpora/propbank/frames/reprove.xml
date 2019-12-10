@@ -8,10 +8,10 @@
       <note>REPROVE-V NOTES: Member of Vncls judgement-33. Updated by Julia, 10/2010. (from reprove.01-v)</note>
       <roles>
         <role descr="blamer" f="pag" n="0">
-          <vnrole vncls="33" vntheta="agent"/>
+          <vnrole vncls="33.1-1" vntheta="agent"/>
         </role>
         <role descr="blamed" f="ppt" n="1">
-          <vnrole vncls="33" vntheta="theme"/>
+          <vnrole vncls="33.1-1" vntheta="theme"/>
         </role>
         <role descr="cause" f="cau" n="2"/>
       </roles>

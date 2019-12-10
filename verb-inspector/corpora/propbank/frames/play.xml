@@ -12,10 +12,10 @@
       <note>PLAYING-N NOTES: Added by Julia based on play-n.01. Corresponds to Vncls meet-36.3-1. (from playing.01-n)</note>
       <roles>
         <role descr="player" f="pag" n="0">
-          <vnrole vncls="26.7-1-1" vntheta="agent"/>
+          <vnrole vncls="26.7-1" vntheta="agent"/>
         </role>
         <role descr="game" f="ppt" n="1">
-          <vnrole vncls="26.7-1-1" vntheta="theme"/>
+          <vnrole vncls="26.7-1" vntheta="theme"/>
         </role>
         <role descr="instrument/equipment used to play game" f="mnr" n="2"/>
         <role descr="opponent, play against whom" f="com" n="3"/>
@@ -182,10 +182,10 @@
       <note>PLAYING-N NOTES: Added by Julia based on BOLT, play-n.02. Corresponds to VNcls performance-26.7-1-1 (from playing.02-n)</note>
       <roles>
         <role descr="performer" f="pag" n="0">
-          <vnrole vncls="26.7-1-1" vntheta="agent"/>
+          <vnrole vncls="26.7-1" vntheta="agent"/>
         </role>
         <role descr="thing performed (song, play, etc)" f="ppt" n="1">
-          <vnrole vncls="26.7-1-1" vntheta="theme"/>
+          <vnrole vncls="26.7-1" vntheta="theme"/>
         </role>
         <role descr="musical instrument/style" f="mnr" n="2"/>
       </roles>

@@ -8,13 +8,13 @@
       <note>CELEBRATE-V NOTES: A marginal usage, to be sure. (from celebrate.01-v)</note>
       <roles>
         <role descr="honorer" f="PAG" n="0">
-          <vnrole vncls="33" vntheta="Agent"/>
+          <vnrole vncls="33.1-1" vntheta="Agent"/>
         </role>
         <role descr="honored" f="PPT" n="1">
-          <vnrole vncls="33" vntheta="Theme"/>
+          <vnrole vncls="33.1-1" vntheta="Theme"/>
         </role>
         <role descr="for what reason" f="PRD" n="2">
-          <vnrole vncls="33" vntheta="Attribute"/>
+          <vnrole vncls="33.1-1" vntheta="Attribute"/>
         </role>
       </roles>
       <example name="well, ok, maybe once" src="" type="">
@@ -42,10 +42,10 @@
       <note>CELEBRATION-N NOTES: Added due to expansion of Nombank. Comparison to 'celebrate'. VN class judgement-33. Framed by Katie. (from celebration.01-n)</note>
       <roles>
         <role descr="celebrator(s)" f="PAG" n="0">
-          <vnrole vncls="33" vntheta="Agent"/>
+          <vnrole vncls="33.1-1" vntheta="Agent"/>
         </role>
         <role descr="party, occasion" f="PPT" n="1">
-          <vnrole vncls="33" vntheta="Theme"/>
+          <vnrole vncls="33.1-1" vntheta="Theme"/>
         </role>
       </roles>
       <example name="party hearty" src="" type="">

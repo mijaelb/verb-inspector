@@ -10,13 +10,13 @@
       <note>ACQUITTAL-N NOTES: Automatically created by Julia as an alias file for unification. (from acquittal.01-n)</note>
       <roles>
         <role descr="remover of guilt" f="CAU" n="0">
-          <vnrole vncls="80-1" vntheta="cause"/>
+          <vnrole vncls="10.6.3-1" vntheta="cause"/>
         </role>
         <role descr="(un)guilty party" f="dir" n="1">
-          <vnrole vncls="80-1" vntheta="source"/>
+          <vnrole vncls="10.6.3-1" vntheta="source"/>
         </role>
         <role descr="explicit mention of guilt" f="ppt" n="2">
-          <vnrole vncls="80-1" vntheta="theme"/>
+          <vnrole vncls="10.6.3-1" vntheta="theme"/>
         </role>
       </roles>
       <example name="intransitive" src="" type="">

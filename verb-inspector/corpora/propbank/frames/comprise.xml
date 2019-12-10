@@ -8,12 +8,12 @@
       <note>COMPRISE-V NOTES: Frames file for 'comprise' based on survey of sentences in the WSJ corpus. Comparison with 'contain'. (from comprise.01-v predicate notes)</note>
       <roles>
         <role descr="group" f="ppt" n="1">
-           <vnrole vncls="107.1" vntheta="theme"/>
-           <vnrole vncls="107.1-2" vntheta="theme"/>
+           <vnrole vncls="107.2" vntheta="theme"/>
+           <vnrole vncls="107.2-1" vntheta="theme"/>
         </role>
         <role descr="parts or members" f="VSP" n="2">
-           <vnrole vncls="107.1" vntheta="attribute"/>
-           <vnrole vncls="107.1-2" vntheta="attribute"/>
+           <vnrole vncls="107.2" vntheta="attribute"/>
+           <vnrole vncls="107.2-1" vntheta="attribute"/>
         </role>
       </roles>
       <example name="transitive" src="" type="">

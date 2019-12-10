@@ -194,10 +194,10 @@ APPLICATION-N NOTES: Updated by Julia. Based on PB entry apply.03, which is a me
       
       <roles>
         <role descr="driver" f="pag" n="0">
-          <vnrole vncls="105" vntheta="agent"/>
+          <vnrole vncls="105.1" vntheta="agent"/>
         </role>
         <role descr="brakes" f="ppt" n="1">
-          <vnrole vncls="105" vntheta="theme"/>
+          <vnrole vncls="105.1" vntheta="theme"/>
         </role>
       </roles>
       <example name="vroom vroom" src="" type="">

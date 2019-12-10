@@ -11,13 +11,13 @@
       <roles>
         <note>Lots of times Arg 0 and Arg 1 are in a VOC node. If this happens, DO NOT MARK as arg0/1. Mark as arg m-dis. (from thanks.01-n)</note>
         <role descr="thanker" f="pag" n="0">
-          <vnrole vncls="33" vntheta="agent"/>
+          <vnrole vncls="33.1-1" vntheta="agent"/>
         </role>
         <role descr="thanked" f="ppt" n="1">
-          <vnrole vncls="33" vntheta="theme"/>
+          <vnrole vncls="33.1-1" vntheta="theme"/>
         </role>
         <role descr="for what?" f="cau" n="2">
-          <vnrole vncls="33" vntheta="attribute"/>
+          <vnrole vncls="33.1-1" vntheta="attribute"/>
         </role>
       </roles>
       <example name="thank-v: nice easy transitive" src="" type="">

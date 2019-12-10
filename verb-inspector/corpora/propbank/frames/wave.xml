@@ -10,15 +10,15 @@
       <note>WAVE-N NOTES: Framed by Katie, reframed by Claire, comparison to verb-agitate.01. Roleset based on usages in 00060. (from wave.02-n)</note>
       <roles>
         <role descr="agent, causer" f="pag" n="0">
-          <vnrole vncls="40.3.1-1" vntheta="agent"/>
+          <vnrole vncls="40.3.1" vntheta="agent"/>
           <vnrole vncls="47.3" vntheta="agent"/>
         </role>
         <role descr="entity moving" f="ppt" n="1">
-          <vnrole vncls="40.3.1-1" vntheta="patient"/>
+          <vnrole vncls="40.3.1" vntheta="patient"/>
           <vnrole vncls="47.3" vntheta="theme"/>
         </role>
         <role descr="person waved at" f="gol" n="2">
-          <vnrole vncls="40.3.1-1" vntheta="recipient"/>
+          <vnrole vncls="40.3.1" vntheta="recipient"/>
         </role>
       </roles>
       <example name="wave-v: transitive" src="" type="">

@@ -12,13 +12,13 @@
       <note>MOTIVATED-J NOTES: Automatically created by Julia as an alias file for unification. (from motivated.01-j)</note>
       <roles>
         <role descr="motivation" f="pag" n="0">
-          <vnrole vncls="59" vntheta="agent"/>
+          <vnrole vncls="59.1" vntheta="agent"/>
         </role>
         <role descr="impelled agent" f="ppt" n="1">
-          <vnrole vncls="59" vntheta="patient"/>
+          <vnrole vncls="59.1" vntheta="patient"/>
         </role>
         <role descr="impelled action" f="prd" n="2">
-          <vnrole vncls="59" vntheta="result"/>
+          <vnrole vncls="59.1" vntheta="result"/>
         </role>
       </roles>
       <example name="all args" src="" type="">

@@ -10,10 +10,10 @@
       <note>ASSAULT-N NOTES: Roleset based on verb assault.01, OntoNotes grouping assault-n senses 1, 2, 3, 4; maps to VN class judgement-33. Framed by Claire. (from assault.01-n)</note>
       <roles>
         <role descr="assaulter" f="PAG" n="0">
-          <vnrole vncls="33" vntheta="Agent"/>
+          <vnrole vncls="33.1" vntheta="Agent"/>
         </role>
         <role descr="entity assaulted" f="PPT" n="1">
-          <vnrole vncls="33" vntheta="Theme"/>
+          <vnrole vncls="33.1" vntheta="Theme"/>
         </role>
       </roles>
       <example name="transitive" src="" type="">

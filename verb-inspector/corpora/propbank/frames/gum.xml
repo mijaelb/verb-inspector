@@ -8,16 +8,16 @@
       <note>GUM-V NOTES: Roleset based on parallel additions to VN, PB and sense groupings. VN class 22.4-1. Framed by Claire. (from gum.01-v)</note>
       <roles>
         <role descr="Fixer" f="pag" n="0">
-          <vnrole vncls="22.4-1" vntheta="agent"/>
+          <vnrole vncls="22.4" vntheta="agent"/>
         </role>
         <role descr="First (or all in one constituent) thing gummed" f="ppt" n="1">
-          <vnrole vncls="22.4-1" vntheta="patient"/>
+          <vnrole vncls="22.4" vntheta="patient"/>
         </role>
         <role descr="Thing arg1 is attached to with gum (when separate constituent)" f="ppt" n="2">
-          <vnrole vncls="22.4-1" vntheta="co-patient"/>
+          <vnrole vncls="22.4" vntheta="co-patient"/>
         </role>
         <role descr="Gum itself, type of gum used, instrument" f="mnr" n="3">
-          <vnrole vncls="22.4-1" vntheta="instrument"/>
+          <vnrole vncls="22.4" vntheta="instrument"/>
         </role>
       </roles>
       <example name="No instrument, type of gum mentioned" src="web" type="">

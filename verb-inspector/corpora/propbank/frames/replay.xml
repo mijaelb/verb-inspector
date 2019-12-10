@@ -10,10 +10,10 @@
       <note>REPLAY-N NOTES: Based on Bolt data. Comparison to replay.01-v. No VN class. Framed by Katie. (from replay.01-n)</note>
       <roles>
         <role descr="player" f="pag" n="0">
-          <vnrole vncls="26.7-2-1" vntheta="agent"/>
+          <vnrole vncls="26.7-1" vntheta="agent"/>
         </role>
         <role descr="music/video" f="ppt" n="1">
-          <vnrole vncls="26.7-2-1" vntheta="theme"/>
+          <vnrole vncls="26.7-1" vntheta="theme"/>
         </role>
         <role descr="instrument" f="mnr" n="2"/>
       </roles>

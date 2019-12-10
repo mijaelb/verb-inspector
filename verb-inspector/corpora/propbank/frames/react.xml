@@ -14,10 +14,10 @@
       <roles>
         <note>ArgM-MNR and Arg2 can be hard to distinguish.  Use the following ruleof thumb--if something is an adverb (X-ly) or can be easily restated --&gt;   --as an adverb ("with caution --   &gt;   cautiously") call it ArgM-MNR.Otherwise use Arg2. (from react.01-v)</note>
         <role descr="reactor" f="ppt" n="0">
-          <vnrole vncls="31.3-9" vntheta="experiencer"/>
+          <vnrole vncls="31.3" vntheta="experiencer"/>
         </role>
         <role descr="reacted-to" f="pag" n="1">
-          <vnrole vncls="31.3-9" vntheta="stimulus"/>
+          <vnrole vncls="31.3" vntheta="stimulus"/>
         </role>
         <role descr="reaction" f="prd" n="2"/>
       </roles>

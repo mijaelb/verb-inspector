@@ -8,10 +8,10 @@
       <note>SATIRIZE-V NOTES: Frame created by Jena. (from satirize.01-v)</note>
       <roles>
         <role descr="satirizer" f="pag" n="0">
-          <vnrole vncls="33" vntheta="agent"/>
+          <vnrole vncls="33.1-1" vntheta="agent"/>
         </role>
         <role descr="satirized" f="ppt" n="1">
-          <vnrole vncls="33" vntheta="theme"/>
+          <vnrole vncls="33.1-1" vntheta="theme"/>
         </role>
         <role descr="satire" f="prd" n="2"/>
       </roles>

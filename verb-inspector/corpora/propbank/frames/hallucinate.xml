@@ -10,10 +10,10 @@
       <note>HALLUCINATION-N NOTES: hallucinate.01 (from hallucination.01-n)</note>
       <roles>
         <role descr="hallucinator" f="PPT" n="0">
-          <vnrole vncls="31.3-8" vntheta="Experiencer"/>
+          <vnrole vncls="31.3" vntheta="Experiencer"/>
         </role>
         <role descr="hallucination" f="PAG" n="1">
-          <vnrole vncls="31.3-8" vntheta="Stimulus"/>
+          <vnrole vncls="31.3" vntheta="Stimulus"/>
         </role>
       </roles>
       <example name="hallucinate" src="" type="">

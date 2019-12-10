@@ -8,10 +8,10 @@
       <note>MOON-V NOTES: Edited by hwangd (from moon.01-v)</note>
       <roles>
         <role descr="dreamer" f="PPT" n="0">
-          <vnrole vncls="31.3-2" vntheta="Experiencer"/>
+          <vnrole vncls="31.3" vntheta="Experiencer"/>
         </role>
         <role descr="dream" f="PAG" n="1">
-          <vnrole vncls="31.3-2" vntheta="Stimulus"/>
+          <vnrole vncls="31.3" vntheta="Stimulus"/>
         </role>
       </roles>
       <example name="All args" src="web usage" type="">

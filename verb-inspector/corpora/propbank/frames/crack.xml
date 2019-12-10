@@ -161,10 +161,10 @@
       <note>CRACK-N NOTES: Added due to expansion of Nombank. Comparison to 'attempt' VN class try-61. No Fn class. Framed by Katie. (from crack.01-n)</note>
       <roles>
         <role descr="entity trying" f="pag" n="0">
-          <vnrole vncls="61" vntheta="agent"/>
+          <vnrole vncls="61.1" vntheta="agent"/>
         </role>
         <role descr="thing tried" f="ppt" n="1">
-          <vnrole vncls="61" vntheta="theme"/>
+          <vnrole vncls="61.1" vntheta="theme"/>
         </role>
       </roles>
       <example name="LVC-have" src="" type="">

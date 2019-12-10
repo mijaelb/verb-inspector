@@ -10,7 +10,7 @@
       <note>SURVIVAL-N NOTES: Roleset based on survive.01. No corresponding VN class. Framed by Katie. (from survival.01-n)</note>
       <roles>
         <role descr="survivor" f="pag" n="0">
-          <vnrole vncls="47.1-1-1" vntheta="theme"/>
+          <vnrole vncls="47.1-1" vntheta="theme"/>
           <vnrole vncls="39.6" vntheta="agent"/>
         </role>
         <role descr="adverse circumstances" f="ppt" n="1"/>

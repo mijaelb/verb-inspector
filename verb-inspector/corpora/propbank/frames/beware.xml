@@ -8,10 +8,10 @@
       <note>BEWARE-V NOTES: Frames file for 'beware' based on sentences in wsj. Verbnet entry 31.3. (from beware.01-v predicate notes)</note>
       <roles>
         <role descr="wary entity" f="PPT" n="0">
-          <vnrole vncls="31.3-6" vntheta="Experiencer"/>
+          <vnrole vncls="31.3" vntheta="Experiencer"/>
         </role>
         <role descr="thing wary of" f="PAG" n="1">
-          <vnrole vncls="31.3-6" vntheta="Stimulus"/>
+          <vnrole vncls="31.3" vntheta="Stimulus"/>
         </role>
       </roles>
       <example name="prepositional arg1" src="" type="">

@@ -8,10 +8,10 @@
       <note>WIELD-V NOTES: Verbnet class hold-15.1, other members include 'hold'. (from wield.01-v)</note>
       <roles>
         <role descr="holder" f="pag" n="0">
-          <vnrole vncls="15.1-1" vntheta="agent"/>
+          <vnrole vncls="15.1" vntheta="agent"/>
         </role>
         <role descr="thing held" f="ppt" n="1">
-          <vnrole vncls="15.1-1" vntheta="theme"/>
+          <vnrole vncls="15.1" vntheta="theme"/>
         </role>
         <role descr="benefactive" f="gol" n="2"/>
         <role descr="secondary attribute of thing held" f="prd" n="3"/>

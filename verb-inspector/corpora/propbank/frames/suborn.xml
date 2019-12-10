@@ -8,13 +8,13 @@
       <note>SUBORN-V NOTES: Roleset based on internet search. Added due to parallel expansion of verbnet, propbank, and sense groupings. Verbnet class force-59. No framenet mapping. Framed by Katie. (from suborn.01-v)</note>
       <roles>
         <role descr="inciter" f="pag" n="0">
-          <vnrole vncls="59" vntheta="agent"/>
+          <vnrole vncls="59.1" vntheta="agent"/>
         </role>
         <role descr="crime" f="prd" n="1">
-          <vnrole vncls="59" vntheta="result"/>
+          <vnrole vncls="59.1" vntheta="result"/>
         </role>
         <role descr="committer of crime" f="ppt" n="2">
-          <vnrole vncls="59" vntheta="patient"/>
+          <vnrole vncls="59.1" vntheta="patient"/>
         </role>
       </roles>
       <example name="example without crime" src="" type="">

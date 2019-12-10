@@ -73,10 +73,10 @@
       <note>REFLECTION-N NOTES: Added by Julia based on reflect-v.02. Corresponds to VNcls marvel-31.3-8. (from reflection.02-n)</note>
       <roles>
         <role descr="thinker" f="ppt" n="0">
-          <vnrole vncls="31.3-8" vntheta="Experiencer"/>
+          <vnrole vncls="31.3" vntheta="Experiencer"/>
         </role>
         <role descr="thoughts, reflected on/over" f="pag" n="1">
-          <vnrole vncls="31.3-8" vntheta="Stimulus"/>
+          <vnrole vncls="31.3" vntheta="Stimulus"/>
         </role>
       </roles>
       <example name="think about" src="" type="">

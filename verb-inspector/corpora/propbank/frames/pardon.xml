@@ -9,13 +9,13 @@
       <note>PARDON-V NOTES: Frames file for 'pardon' based on sentences in wsj. Verbnet entry 10.6, which doesn't seem quite right. (from pardon.01-v predicate notes)</note>
       <roles>
         <role descr="pardoner" f="pag" n="0">
-          <vnrole vncls="33" vntheta="agent"/>
+          <vnrole vncls="33.1-1" vntheta="agent"/>
         </role>
         <role descr="guilty party" f="ppt" n="1">
-          <vnrole vncls="33" vntheta="theme"/>
+          <vnrole vncls="33.1-1" vntheta="theme"/>
         </role>
         <role descr="for what" f="prd" n="2">
-          <vnrole vncls="33" vntheta="attribute"/>
+          <vnrole vncls="33.1-1" vntheta="attribute"/>
         </role>
       </roles>
       <example name="transitive" src="" type="">
@@ -36,13 +36,13 @@
       <note>PARDON-V NOTES: Frames file for 'pardon' based on sentences in wsj. Verbnet entry 10.6, which doesn't seem quite right. (from pardon.02-v predicate notes)</note>
       <roles>
         <role descr="person forgiving the faux pas" f="pag" n="0">
-          <vnrole vncls="33" vntheta="agent"/>
+          <vnrole vncls="33.1-1" vntheta="agent"/>
         </role>
         <role descr="guilty party, misstepper" f="ppt" n="1">
-          <vnrole vncls="33" vntheta="theme"/>
+          <vnrole vncls="33.1-1" vntheta="theme"/>
         </role>
         <role descr="crime, sin or faux pas" f="cau" n="2">
-          <vnrole vncls="33" vntheta="attribute"/>
+          <vnrole vncls="33.1-1" vntheta="attribute"/>
         </role>
 
       </roles>

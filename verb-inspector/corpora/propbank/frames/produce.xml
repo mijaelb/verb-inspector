@@ -12,18 +12,18 @@
       <note>PRODUCING-N NOTES: Roleset based on verb entry produce.01. (from producing.01-n)</note>
       <roles>
         <role descr="creator" f="pag" n="0">
-          <vnrole vncls="26.7-2" vntheta="agent"/>
+          <vnrole vncls="26.4" vntheta="agent"/>
           <vnrole vncls="26.4" vntheta="agent"/>
         </role>
         <role descr="creation" f="ppt" n="1">
-          <vnrole vncls="26.7-2" vntheta="theme"/>
+          <vnrole vncls="26.4" vntheta="theme"/>
           <vnrole vncls="26.4" vntheta="result"/>
         </role>
         <role descr="created-from, thing changed" f="vsp" n="2">
           <vnrole vncls="26.4" vntheta="material"/>
         </role>
         <role descr="benefactive" f="gol" n="3">
-          <vnrole vncls="26.7-2" vntheta="beneficiary"/>
+          <vnrole vncls="26.4" vntheta="beneficiary"/>
           <vnrole vncls="26.4" vntheta="beneficiary"/>
         </role>
       </roles>

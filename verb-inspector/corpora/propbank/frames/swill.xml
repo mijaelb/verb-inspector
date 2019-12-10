@@ -8,10 +8,10 @@
       <note>SWILL-V NOTES: hand-checked by Kevin (from swill.01-v)</note>
       <roles>
         <role descr="drinker, swiller, agent" f="PAG" n="0">
-          <vnrole vncls="39.4-2" vntheta="Agent"/>
+          <vnrole vncls="39.4" vntheta="Agent"/>
         </role>
         <role descr="thing swilled, patient" f="PPT" n="1">
-          <vnrole vncls="39.4-2" vntheta="Patient"/>
+          <vnrole vncls="39.4" vntheta="Patient"/>
         </role>
       </roles>
       <example name="from Google" src="web usage" type="">

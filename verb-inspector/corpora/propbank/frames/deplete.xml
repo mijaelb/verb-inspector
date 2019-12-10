@@ -10,13 +10,13 @@
       <note>DEPLETION-N NOTES: (from depletion.01-n)</note>
       <roles>
         <role descr="user, emptier, agent" f="pag" n="0">
-          <vnrole vncls="10.6" vntheta="agent"/>
+          <vnrole vncls="10.6.2" vntheta="agent"/>
         </role>
         <role descr="source depleted" f="ppt" n="1">
-          <vnrole vncls="10.6" vntheta="theme"/>
+          <vnrole vncls="10.6.2" vntheta="theme"/>
         </role>
         <role descr="depleted of, thing removed" f="dir" n="2">
-          <vnrole vncls="10.6" vntheta="source"/>
+          <vnrole vncls="10.6.2" vntheta="source"/>
         </role>
       </roles>
       <example name="all arguments" src="" type="">

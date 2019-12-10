@@ -14,11 +14,11 @@
       <roles>
         <role descr="agent, causer" f="pag" n="0">
           <vnrole vncls="47.6" vntheta="agent"/>
-          <vnrole vncls="9.2-1" vntheta="agent"/>
+          <vnrole vncls="9.2" vntheta="agent"/>
         </role>
         <role descr="entity resting" f="ppt" n="1">
           <vnrole vncls="47.6" vntheta="theme"/>
-          <vnrole vncls="9.2-1" vntheta="theme"/>
+          <vnrole vncls="9.2" vntheta="theme"/>
         </role>
       </roles>
       <example name="intransitive" src="" type="">

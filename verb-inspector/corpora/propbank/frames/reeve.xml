@@ -8,16 +8,16 @@
       <note>REEVE-V NOTES: Roleset by Julia based on internet search and wordnet. Vncls tape-22.4-1. Comparison to 'fasten'. (from reeve.01-v)</note>
       <roles>
         <role descr="Agent" f="PAG" n="0">
-          <vnrole vncls="22.4-1" vntheta="Agent"/>
+          <vnrole vncls="22.4" vntheta="Agent"/>
         </role>
         <role descr="first or all things being threaded" f="ppt" n="1">
-          <vnrole vncls="22.4-1" vntheta="Patient"/>
+          <vnrole vncls="22.4" vntheta="Patient"/>
         </role>
         <role descr="threaded to, through or around" f="ppt" n="2">
-          <vnrole vncls="22.4-1" vntheta="co-patient"/>
+          <vnrole vncls="22.4" vntheta="co-patient"/>
         </role>
         <role descr="instrument" f="MNR" n="3">
-          <vnrole vncls="22.4-1" vntheta="Instrument"/>
+          <vnrole vncls="22.4" vntheta="Instrument"/>
         </role>
       </roles>
       <example name="Args 0-3" src="Args 0-3" type="Args 0-3">

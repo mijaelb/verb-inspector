@@ -8,13 +8,13 @@
       <note>OVERSTEP-V NOTES: Frames file for 'overstep' based on ebn instances. (from overstep.01-v predicate notes)</note>
       <roles>
         <role descr="thing that's more" f="PPT" n="0">
-          <vnrole vncls="90-1" vntheta="Theme"/>
+          <vnrole vncls="90" vntheta="Theme"/>
         </role>
         <role descr="thing that's less" f="PPT" n="1">
-          <vnrole vncls="90-1" vntheta="co-theme"/>
+          <vnrole vncls="90" vntheta="co-theme"/>
         </role>
         <role descr="margin, difference" f="PRD" n="2">
-          <vnrole vncls="90-1" vntheta="Attribute"/>
+          <vnrole vncls="90" vntheta="Attribute"/>
         </role>
       </roles>
       <example name="court" src="" type="">

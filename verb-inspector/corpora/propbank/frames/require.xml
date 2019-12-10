@@ -10,15 +10,15 @@
       <note>REQUIREMENT-N NOTES: based on verb require.01 (from requirement.01-n)</note>
       <roles>
         <role descr="requirer" f="pag" n="0">
-          <vnrole vncls="60-1" vntheta="agent"/>
+          <vnrole vncls="58.3-1" vntheta="agent"/>
           <vnrole vncls="103" vntheta="pivot"/>
         </role>
         <role descr="thing required" f="ppt" n="1">
-          <vnrole vncls="60-1" vntheta="topic"/>
+          <vnrole vncls="58.3-1" vntheta="topic"/>
           <vnrole vncls="103" vntheta="theme"/>
         </role>
         <role descr="required-of, required-from ('ablative')" f="dir" n="2">
-          <vnrole vncls="60-1" vntheta="recipient"/>
+          <vnrole vncls="58.3-1" vntheta="recipient"/>
           <vnrole vncls="103" vntheta="source"/>
         </role>
       </roles>

@@ -9,13 +9,13 @@
       <roles>
         <note>Use argM-GOL for the recipient of the shrug. (from shrug.01-v)</note>
         <role descr="shrugger" f="PAG" n="0">
-          <vnrole vncls="40.3.1-1" vntheta="Agent"/>
+          <vnrole vncls="40.3.1" vntheta="Agent"/>
         </role>
         <role descr="thing shrugged (defaults to shoulders)" f="PPT" n="1">
-          <vnrole vncls="40.3.1-1" vntheta="Patient"/>
+          <vnrole vncls="40.3.1" vntheta="Patient"/>
         </role>
         <role descr="shrugged because of" f="CAU" n="2">
-          <vnrole vncls="40.3.1-1" vntheta="Cause"/>
+          <vnrole vncls="40.3.1" vntheta="Cause"/>
         </role>
       </roles>
       
@@ -45,13 +45,13 @@
       <note>SHRUG-V NOTES: Member of Vncls wink-40.3.1. (from shrug.03-v)</note>
       <roles>
         <role descr="speaker" f="PAG" n="0">
-          <vnrole vncls="40.3.1-1" vntheta="Agent"/>
+          <vnrole vncls="40.3.1" vntheta="Agent"/>
         </role>
         <role descr="utterance" f="PPT" n="1">
-          <vnrole vncls="40.3.1-1" vntheta="Theme"/>
+          <vnrole vncls="40.3.1" vntheta="Theme"/>
         </role>
         <role descr="listener" f="GOL" n="2">
-          <vnrole vncls="40.3.1-1" vntheta="Recipient"/>
+          <vnrole vncls="40.3.1" vntheta="Recipient"/>
         </role>
       </roles>
       <example name="but maybe that's just me.  ::shrug::" src="" type="">

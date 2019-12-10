@@ -8,10 +8,10 @@
       <note>SCORN-V NOTES: Frames file for 'scorn' based on sentences in wsj. Verbnet entry 33, Framenet entry Judgement. (from scorn.01-v predicate notes)</note>
       <roles>
         <role descr="scorner" f="PAG" n="0">
-          <vnrole vncls="33" vntheta="Agent"/>
+          <vnrole vncls="33.1-1" vntheta="Agent"/>
         </role>
         <role descr="thing scorned" f="PPT" n="1">
-          <vnrole vncls="33" vntheta="Theme"/>
+          <vnrole vncls="33.1-1" vntheta="Theme"/>
         </role>
       </roles>
       <example name="remember the yuppies?" src="" type="">

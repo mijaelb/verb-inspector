@@ -8,13 +8,13 @@
       <note>INVEIGLE-V NOTES: Frames file for 'inveigle' based on dictionary.com. Verbnet entry 59. (from inveigle.01-v predicate notes)</note>
       <roles>
         <role descr="enticer" f="PAG" n="0">
-          <vnrole vncls="59" vntheta="Agent"/>
+          <vnrole vncls="59.3" vntheta="Agent"/>
         </role>
         <role descr="enticed thing(s) or person(s)" f="PPT" n="1">
-          <vnrole vncls="59" vntheta="Patient"/>
+          <vnrole vncls="59.3" vntheta="Patient"/>
         </role>
         <role descr="enticed into what" f="PRD" n="2">
-          <vnrole vncls="59" vntheta="Result"/>
+          <vnrole vncls="59.3" vntheta="Result"/>
         </role>
       </roles>
       <example name="ARG0 and ARG1 and ARG2" src="probably COCA (2018 example fix)" type="">

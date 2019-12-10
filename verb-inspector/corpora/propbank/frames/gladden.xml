@@ -10,12 +10,12 @@
         <note>Discourse usage might also show traces in subject/object position,depending on which of the treebankers looked at that particularsentence.  You may include them as targetless traces if they arepresent. (from gladden.01-v)</note>
         <role descr="agent, pleaser" f="PAG" n="0">
           <vnrole vncls="31.1" vntheta="Stimulus"/>
-          <vnrole vncls="31.3-1" vntheta="Stimulus"/>
+          <vnrole vncls="31.3" vntheta="Stimulus"/>
           <vnrole vncls="45.4" vntheta="Agent"/>
         </role>
         <role descr="patient, entity pleased" f="ppt" n="1">
           <vnrole vncls="31.1" vntheta="Experiencer"/>
-          <vnrole vncls="31.3-1" vntheta="Experiencer"/>
+          <vnrole vncls="31.3" vntheta="Experiencer"/>
           <vnrole vncls="45.4" vntheta="Patient"/>
         </role>
         <role descr="instrumental" f="MNR" n="2">
@@ -52,12 +52,12 @@
       <roles>
         <role descr="stimulus, pleaser (about what)" f="pag" n="0">
           <vnrole vncls="31.1" vntheta="stimulus"/>
-          <vnrole vncls="31.3-1" vntheta="stimulus"/>
+          <vnrole vncls="31.3" vntheta="stimulus"/>
           <vnrole vncls="45.4" vntheta="agent"/>
         </role>
         <role descr="glad one" f="ppt" n="1">
           <vnrole vncls="31.1" vntheta="experiencer"/>
-          <vnrole vncls="31.3-1" vntheta="experiencer"/>
+          <vnrole vncls="31.3" vntheta="experiencer"/>
           <vnrole vncls="45.4" vntheta="patient"/>
         </role>
       </roles>

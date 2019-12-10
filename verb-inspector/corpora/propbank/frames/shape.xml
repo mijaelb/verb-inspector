@@ -15,16 +15,16 @@
         <role descr="shaper" f="pag" n="0">
           <vnrole vncls="26.1-1" vntheta="agent"/>
           <vnrole vncls="48.1.2" vntheta="agent"/>
-          <vnrole vncls="27" vntheta="cause"/>
+          <vnrole vncls="27.1" vntheta="cause"/>
         </role>
         <role descr="thing worked on" f="ppt" n="1">
           <vnrole vncls="26.1-1" vntheta="material"/>
-          <vnrole vncls="27" vntheta="theme"/>
+          <vnrole vncls="27.1" vntheta="theme"/>
           <vnrole vncls="48.1.2" vntheta="theme"/>
         </role>
         <role descr="end state, if different from arg1" f="prd" n="2">
           <vnrole vncls="26.1-1" vntheta="product"/>
-          <vnrole vncls="27" vntheta="predicate"/>
+          <vnrole vncls="27.1" vntheta="predicate"/>
         </role>
       </roles>
       <example name="transitive" src="" type="">

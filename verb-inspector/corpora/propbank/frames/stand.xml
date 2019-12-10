@@ -9,16 +9,16 @@
       <roles>
         <role descr="causal agent" f="pag" n="0">
           <vnrole vncls="47.6" vntheta="agent"/>
-          <vnrole vncls="9.2-1" vntheta="agent"/>
+          <vnrole vncls="9.2" vntheta="agent"/>
         </role>
         <role descr="thing standing" f="ppt" n="1">
           <vnrole vncls="47.6" vntheta="theme"/>
-          <vnrole vncls="9.2-1" vntheta="theme"/>
+          <vnrole vncls="9.2" vntheta="theme"/>
           <vnrole vncls="50" vntheta="agent"/>
         </role>
         <role descr="location" f="loc" n="2">
           <vnrole vncls="47.6" vntheta="location"/>
-          <vnrole vncls="9.2-1" vntheta="destination"/>
+          <vnrole vncls="9.2" vntheta="destination"/>
           <vnrole vncls="50" vntheta="location"/>
         </role>
       </roles>

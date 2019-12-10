@@ -12,13 +12,13 @@
       <note>ENROLLMENT-N NOTES: Added by Julia based on BOLT, enroll.01. Corresponds to VNcls involve-107. (from enrollment.01-n)</note>
       <roles>
         <role descr="causer of enrollment, agent" f="PAG" n="0">
-          <vnrole vncls="107" vntheta="Agent"/>
+          <vnrole vncls="107.1" vntheta="Agent"/>
         </role>
         <role descr="entity enrolled" f="PPT" n="1">
-          <vnrole vncls="107" vntheta="Theme"/>
+          <vnrole vncls="107.1" vntheta="Theme"/>
         </role>
         <role descr="enrolled in what" f="GOL" n="2">
-          <vnrole vncls="107" vntheta="Goal"/>
+          <vnrole vncls="107.1" vntheta="Goal"/>
         </role>
       </roles>
       <example name="enroll-v: intransitive?" src="" type="">

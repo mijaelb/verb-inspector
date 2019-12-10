@@ -36,11 +36,11 @@
       <roles>
         <role descr="agent, teaser" f="pag" n="0">
           <vnrole vncls="31.1" vntheta="stimulus"/>
-          <vnrole vncls="59-1" vntheta="agent"/>
+          <vnrole vncls="59.5" vntheta="agent"/>
         </role>
         <role descr="patient, teased" f="ppt" n="1">
           <vnrole vncls="31.1" vntheta="experiencer"/>
-          <vnrole vncls="59-1" vntheta="patient"/>
+          <vnrole vncls="59.5" vntheta="patient"/>
         </role>
         <role descr="about what" f="cau" n="2"/>
       </roles>

@@ -10,10 +10,10 @@
       <note>JUMP-N NOTES: Based on sentences in nouns-00040. Comparison to jump.01. VN class calibratable_cos-45.6-1. Framed by Katie. (from jump.01-n)</note>
       <roles>
         <role descr="thing jumping" f="ppt" n="1">
-          <vnrole vncls="45.6-1" vntheta="patient"/>
+          <vnrole vncls="45.6.1-1" vntheta="patient"/>
         </role>
         <role descr="EXT, amount jumped by" f="ext" n="2">
-          <vnrole vncls="45.6-1" vntheta="extent"/>
+          <vnrole vncls="45.6.1-1" vntheta="extent"/>
         </role>
         <role descr="start point" f="dir" n="3"/>
         <role descr="end point or end state of arg1" f="gol" n="4"/>

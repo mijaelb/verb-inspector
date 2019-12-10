@@ -8,13 +8,13 @@
       <note>OUTBID-V NOTES: Frames file for 'outbid' based on sentences in financial subcorpus. No access to verbnet. Minimal comparison with 'bid'. (from outbid.01-v predicate notes)</note>
       <roles>
         <role descr="bidder" f="PPT" n="0">
-          <vnrole vncls="90-1" vntheta="Theme"/>
+          <vnrole vncls="90" vntheta="Theme"/>
         </role>
         <role descr="other, lesser bidder" f="PPT" n="1">
-          <vnrole vncls="90-1" vntheta="co-theme"/>
+          <vnrole vncls="90" vntheta="co-theme"/>
         </role>
         <role descr="goods" f="PRD" n="2">
-          <vnrole vncls="90-1" vntheta="Attribute"/>
+          <vnrole vncls="90" vntheta="Attribute"/>
         </role>
       </roles>
       <example name="from corpus" src="" type="">

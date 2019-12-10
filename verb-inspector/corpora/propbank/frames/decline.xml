@@ -10,10 +10,10 @@
       <note>DECLINE-N NOTES: (from decline.01-n)</note>
       <roles>
         <role descr="Logical subject, patient, thing declining" f="ppt" n="1">
-          <vnrole vncls="45.6-1" vntheta="patient"/>
+          <vnrole vncls="45.6.1-1" vntheta="patient"/>
         </role>
         <role descr="EXT, amount declined by" f="ext" n="2">
-          <vnrole vncls="45.6-1" vntheta="extent"/>
+          <vnrole vncls="45.6.1-1" vntheta="extent"/>
         </role>
         <role descr="start point" f="dir" n="3"/>
         <role descr="end point, end state of arg1" f="gol" n="4"/>

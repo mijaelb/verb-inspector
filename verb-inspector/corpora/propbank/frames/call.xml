@@ -11,13 +11,13 @@
       <roles>
         
         <role descr="caller" f="pag" n="0">
-          <vnrole vncls="29.3" vntheta="agent"/>
+          <vnrole vncls="29.3.2" vntheta="agent"/>
         </role>
         <role descr="item being labelled" f="ppt" n="1">
-          <vnrole vncls="29.3" vntheta="theme"/>
+          <vnrole vncls="29.3.2" vntheta="theme"/>
         </role>
         <role descr="name itself, attribute of arg1" f="prd" n="2">
-          <vnrole vncls="29.3" vntheta="result"/>
+          <vnrole vncls="29.3.2" vntheta="result"/>
         </role>
       <note>Some of the trees only include arg1 and arg2 under a single S node. Contrary to regular rules, it is ok in these cases to dig into the syntax and label arg1 and arg2 separately. Don't try to cram them into a single argument.</note>
 </roles>
@@ -126,13 +126,13 @@ CALLING-N NOTES: Based on Comparison to verb entry call.02, which maps to 13.5.1
       
       <roles>
         <role descr="demander" f="pag" n="0">
-          <vnrole vncls="60" vntheta="agent"/>
+          <vnrole vncls="58.1-1" vntheta="agent"/>
         </role>
         <role descr="thing being demanded" f="ppt" n="1">
-          <vnrole vncls="60" vntheta="topic"/>
+          <vnrole vncls="58.1-1" vntheta="topic"/>
         </role>
         <role descr="demandee, of whom is arg1 being demanded?" f="gol" n="2">
-          <vnrole vncls="60" vntheta="recipient"/>
+          <vnrole vncls="58.1-1" vntheta="recipient"/>
         </role>
       </roles>
       <example name="call-v: reelection woes" src="" type="">

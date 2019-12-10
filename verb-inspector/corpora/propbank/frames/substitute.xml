@@ -10,13 +10,13 @@
       <note>SUBSTITUTION-N NOTES: (from substitution.01-n)</note>
       <roles>
         <role descr="agent, entity trading" f="pag" n="0">
-          <vnrole vncls="13.6-1-1" vntheta="agent"/>
+          <vnrole vncls="13.6.2" vntheta="agent"/>
         </role>
         <role descr="thing being preferred, new thing" f="ppt" n="1">
-          <vnrole vncls="13.6-1-1" vntheta="co-theme"/>
+          <vnrole vncls="13.6.2" vntheta="co-theme"/>
         </role>
         <role descr="other item in exchange, old thing" f="ppt" n="2">
-          <vnrole vncls="13.6-1-1" vntheta="theme"/>
+          <vnrole vncls="13.6.2" vntheta="theme"/>
         </role>
         <role descr="benefactive" f="gol" n="3"/>
       </roles>

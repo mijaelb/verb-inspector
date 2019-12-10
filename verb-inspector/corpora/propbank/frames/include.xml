@@ -12,16 +12,16 @@
       <note>INCLUSIVE-J NOTES: Automatically created by Julia as an alias file for unification. (from inclusive.01-j)</note>
       <roles>
         <role descr="agent, entity causing some grouping" f="pag" n="0">
-          <vnrole vncls="107" vntheta="agent"/>
-          <vnrole vncls="65" vntheta="agent"/>
+          <vnrole vncls="107.1" vntheta="agent"/>
+          <vnrole vncls="107.1" vntheta="agent"/>
         </role>
         <role descr="theme, thing being included in some group" f="ppt" n="1">
-          <vnrole vncls="107" vntheta="theme"/>
-          <vnrole vncls="65" vntheta="theme"/>
+          <vnrole vncls="107.1" vntheta="theme"/>
+          <vnrole vncls="107.1" vntheta="theme"/>
         </role>
         <role descr="group" f="gol" n="2">
-          <vnrole vncls="107" vntheta="goal"/>
-          <vnrole vncls="65" vntheta="location"/>
+          <vnrole vncls="107.1" vntheta="goal"/>
+          <vnrole vncls="107.1" vntheta="location"/>
         </role>
       </roles>
       <example name="include-v: group as PP" src="" type="">

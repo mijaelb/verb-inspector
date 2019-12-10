@@ -10,21 +10,21 @@
       <roles>
         <note>Other variations on this construction should be handled as in theother verbs-of-communication like "say".The 'beneficiary' might be included within the 'thing written'; "Johnwrote a letter to Mary" can be parsed either as [a letter] [to Mary]or [a letter to Mary].  Follow whatever Treebank says.</note>
         <role descr="writer" f="pag" n="0">
-          <vnrole vncls="26.7-2-1" vntheta="agent"/>
+          <vnrole vncls="26.7" vntheta="agent"/>
           <vnrole vncls="25.2" vntheta="agent"/>
           <vnrole vncls="37.11-1" vntheta="agent"/>
           <vnrole vncls="37.7" vntheta="agent"/>
           <vnrole vncls="37.1.1-1-1" vntheta="agent"/>
         </role>
         <role descr="thing written" f="ppt" n="1">
-          <vnrole vncls="26.7-2-1" vntheta="theme"/>
+          <vnrole vncls="26.7" vntheta="theme"/>
           <vnrole vncls="25.2" vntheta="theme"/>
           <vnrole vncls="37.11-1" vntheta="topic"/>
           <vnrole vncls="37.7" vntheta="topic"/>
           <vnrole vncls="37.1.1-1-1" vntheta="topic"/>
         </role>
         <role descr="benefactive" f="gol" n="2">
-          <vnrole vncls="26.7-2-1" vntheta="beneficiary"/>
+          <vnrole vncls="26.7" vntheta="beneficiary"/>
           <vnrole vncls="37.11-1" vntheta="recipient"/>
           <vnrole vncls="37.7" vntheta="recipient"/>
           <vnrole vncls="37.1.1-1-1" vntheta="recipient"/>

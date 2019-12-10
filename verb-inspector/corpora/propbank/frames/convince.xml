@@ -13,14 +13,14 @@
       <roles>
         <role descr="convincer" f="pag" n="0">
           <vnrole vncls="31.1" vntheta="stimulus"/>
-          <vnrole vncls="59" vntheta="agent"/>
+          <vnrole vncls="59.1" vntheta="agent"/>
         </role>
         <role descr="impelled agent" f="ppt" n="1">
           <vnrole vncls="31.1" vntheta="experiencer"/>
-          <vnrole vncls="59" vntheta="patient"/>
+          <vnrole vncls="59.1" vntheta="patient"/>
         </role>
         <role descr="impelled action/belief" f="prd" n="2">
-          <vnrole vncls="59" vntheta="result"/>
+          <vnrole vncls="59.1" vntheta="result"/>
         </role>
       </roles>
       <example name="clearly an action" src="" type="">

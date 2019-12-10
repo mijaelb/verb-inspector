@@ -8,10 +8,10 @@
       <note>PUP-V NOTES: hand-checked by Kevin (from pup.01-v)</note>
       <roles>
         <role descr="pupper, birther, agent" f="PAG" n="0">
-          <vnrole vncls="28" vntheta="Agent"/>
+          <vnrole vncls="28.1" vntheta="Agent"/>
         </role>
         <role descr="thing(s) pupped, puppies, patient" f="PPT" n="1">
-          <vnrole vncls="28" vntheta="Patient"/>
+          <vnrole vncls="28.1" vntheta="Patient"/>
         </role>
       </roles>
       <example name="regular usage" src="web usage" type="">

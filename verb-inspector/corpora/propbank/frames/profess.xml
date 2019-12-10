@@ -17,7 +17,7 @@
         </role>
         <role descr="hearer" f="gol" n="2"/>
         <role descr="attributive" f="prd" n="3">
-          <vnrole vncls="" vntheta="result"/>
+          <vnrole vncls="29.4-1-1-3" vntheta="result"/>
         </role>
       </roles>
       <example name="profess-v: basic transitive" src="" type="">

@@ -9,10 +9,10 @@
       <note>CALVE-V NOTES: Automatically created based on framefiles: fawn (28) (from calve.01-v predicate notes)</note>
       <roles>
         <role descr="Mother cow" f="pag" n="0">
-          <vnrole vncls="28" vntheta="agent"/>
+          <vnrole vncls="28.1" vntheta="agent"/>
         </role>
         <role descr="Baby calf" f="ppt" n="1">
-          <vnrole vncls="28" vntheta="patient"/>
+          <vnrole vncls="28.1" vntheta="patient"/>
         </role>
       </roles>
       <example name="calve-v: All arguments" src="web usage" type="">

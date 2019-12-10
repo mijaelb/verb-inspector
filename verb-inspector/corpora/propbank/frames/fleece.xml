@@ -8,13 +8,13 @@
       <note>FLEECE-V NOTES: I actually have my doubts about the other args (esp arg1) appearing. (from fleece.01-v)</note>
       <roles>
         <role descr="entity removing" f="PAG" n="0">
-          <vnrole vncls="10.6" vntheta="Agent"/>
+          <vnrole vncls="10.6.1-1" vntheta="Agent"/>
         </role>
         <role descr="thing being removed" f="PPT" n="1">
-          <vnrole vncls="10.6" vntheta="Theme"/>
+          <vnrole vncls="10.6.1-1" vntheta="Theme"/>
         </role>
         <role descr="removed from" f="DIR" n="2">
-          <vnrole vncls="10.6" vntheta="Source"/>
+          <vnrole vncls="10.6.1-1" vntheta="Source"/>
         </role>
       </roles>
       <example name="the one example" src="" type="">

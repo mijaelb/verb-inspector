@@ -96,18 +96,18 @@ PERMISSION-N NOTES: Updated by Julia.  (from permission.01-n)</note>
       
       <roles>
         <role descr="allower" f="pag" n="0">
-          <vnrole vncls="65" vntheta="agent"/>
+          <vnrole vncls="64.3-1" vntheta="agent"/>
           <vnrole vncls="64" vntheta="agent"/>
           <vnrole vncls="60" vntheta="agent"/>
         </role>
         <role descr="action, thing allowed" f="ppt" n="1">
-          <vnrole vncls="65" vntheta="theme"/>
+          <vnrole vncls="64.3-1" vntheta="theme"/>
           <vnrole vncls="64" vntheta="location"/>
           <vnrole vncls="60" vntheta="recipient"/>
           <vnrole vncls="60" vntheta="topic"/>
         </role>
         <role descr="extracted allowed-agent" f="gol" n="2">
-          <vnrole vncls="65" vntheta="theme"/>
+          <vnrole vncls="64.3-1" vntheta="theme"/>
           <vnrole vncls="64" vntheta="theme"/>
           <vnrole vncls="60" vntheta="recipient"/>
         </role>
@@ -139,18 +139,18 @@ PERMISSION-N NOTES: Updated by Julia.  (from permission.01-n)</note>
       
       <roles>
         <role descr="allower" f="pag" n="0">
-          <vnrole vncls="65" vntheta="agent"/>
+          <vnrole vncls="64.3-1" vntheta="agent"/>
           <vnrole vncls="64" vntheta="agent"/>
           <vnrole vncls="60" vntheta="agent"/>
         </role>
         <role descr="action, thing allowed" f="ppt" n="1">
-          <vnrole vncls="65" vntheta="location"/>
+          <vnrole vncls="64.3-1" vntheta="location"/>
           <vnrole vncls="64" vntheta="theme"/>
           <vnrole vncls="60" vntheta="recipient"/>
           <vnrole vncls="60" vntheta="topic"/>
         </role>
         <role descr="extracted allowed-agent" f="gol" n="2">
-          <vnrole vncls="65" vntheta="theme"/>
+          <vnrole vncls="64.3-1" vntheta="theme"/>
           <vnrole vncls="64" vntheta="theme"/>
           <vnrole vncls="60" vntheta="recipient"/>
         </role>

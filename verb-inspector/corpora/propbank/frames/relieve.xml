@@ -12,10 +12,10 @@
       <note>RELIEVING-J NOTES: Automatically created by Julia as an alias file for unification. (from relieving.01-j)</note>
       <roles>
         <role descr="thing relieving" f="PAG" n="0">
-          <vnrole vncls="10.6" vntheta="Agent"/>
+          <vnrole vncls="10.6.3-1-1" vntheta="Agent"/>
         </role>
         <role descr="thing being helped, eased, gotten rid of" f="DIR" n="1">
-          <vnrole vncls="10.6" vntheta="Source"/>
+          <vnrole vncls="10.6.3-1-1" vntheta="Source"/>
         </role>
         <role descr="benefactive" f="gol" n="2"/>
       </roles>

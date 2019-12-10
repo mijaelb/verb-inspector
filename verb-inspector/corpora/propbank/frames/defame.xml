@@ -10,13 +10,13 @@
       <note>DEFAMATION-N NOTES: Based on Bolt data. Comparison to defame.01. Defame.01 is a member of VN class judgement-33. No FN class. Framed by Katie. (from defamation.01-n)</note>
       <roles>
         <role descr="speaker" f="PAG" n="0">
-          <vnrole vncls="33" vntheta="agent"/>
+          <vnrole vncls="33.1-1" vntheta="agent"/>
         </role>
         <role descr="subject" f="PPT" n="1">
-          <vnrole vncls="33" vntheta="theme"/>
+          <vnrole vncls="33.1-1" vntheta="theme"/>
         </role>
         <role descr="reason" f="PRD" n="2">
-          <vnrole vncls="33" vntheta="attribute"/>
+          <vnrole vncls="33.1-1" vntheta="attribute"/>
         </role>
       </roles>
       <example name="ARG0 and ARG1" src="ontonotes wb/a2e/00/a2e_0004" type="">

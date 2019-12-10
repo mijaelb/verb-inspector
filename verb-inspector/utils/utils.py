@@ -118,6 +118,17 @@ def vnpb_mappings_check_vn(mappings, vn):
                 if not clss:
                     print(f' {lemma["lemma"]} Not found {map["vncls"]}')
 
+def get_classes_from_vnpb_mappings(mappings, lemma, roleset):
+    vncls = []
+    for mps in mappings:
+        if mps['lemma'] == lemma:
+            for mapping in mps['mappings']:
+                if mapping['id'] == roleset:
+                    for map in mapping['mappings']:
+                        vncls.append(map['vncls'])
+                    break
+    return vncls
+
 
 def replace(str_, forstr_, filename):
     with open(filename, "rt") as f:
@@ -126,4 +137,4 @@ def replace(str_, forstr_, filename):
     with open(filename, "w") as f:
         f.write(newText)
 
-def vnpb_mappings_check_pb(mappings, vn):
+#def vnpb_mappings_check_pb(mappings, vn):

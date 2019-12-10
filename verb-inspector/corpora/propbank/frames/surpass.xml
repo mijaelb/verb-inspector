@@ -8,10 +8,10 @@
       <note>SURPASS-V NOTES: Frames file for 'surpass' based on sentences in financial subcorpus. No comparison. VN class exceed-90. (from surpass.01-v)</note>
       <roles>
         <role descr="thing going beyond" f="PPT" n="0">
-          <vnrole vncls="90-1" vntheta="Theme"/>
+          <vnrole vncls="90" vntheta="Theme"/>
         </role>
         <role descr="thing left in the dust" f="PPT" n="1">
-          <vnrole vncls="90-1" vntheta="co-theme"/>
+          <vnrole vncls="90" vntheta="co-theme"/>
         </role>
       </roles>
       <example name="straight transitive" src="" type="">

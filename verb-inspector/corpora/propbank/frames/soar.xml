@@ -8,15 +8,15 @@
       <note>SOAR-V NOTES: Based on sentences in financial subcorpus. Comparison to 'rise'. Member of VNcls calibratable_cos-45.6-1. (from soar.01-v)</note>
       <roles>
         <role descr="Logical subject, patient, thing rising" f="PPT" n="1">
-          <vnrole vncls="45.6-1" vntheta="Patient"/>
+          <vnrole vncls="45.6.1-1" vntheta="Patient"/>
         </role>
         <role descr="EXT, amount risen" f="EXT" n="2">
-          <vnrole vncls="45.6-1" vntheta="Extent"/>
+          <vnrole vncls="45.6.1-1" vntheta="Extent"/>
         </role>
         <role descr="start point" f="dir" n="3"/>
         <role descr="end point" f="gol" n="4"/>
         <role descr="medium" f="PRD" n="5">
-          <vnrole vncls="45.6-1" vntheta="Attribute"/>
+          <vnrole vncls="45.6.1-1" vntheta="Attribute"/>
         </role>
       </roles>
       <example name="token example, all args" src="" type="">

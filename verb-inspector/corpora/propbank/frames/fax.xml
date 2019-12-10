@@ -10,13 +10,13 @@
       <note>FAX-N NOTES: Automatically created by Julia as an alias file for unification. (from fax.01-n)</note>
       <roles>
         <role descr="sender, agent" f="PAG" n="0">
-          <vnrole vncls="37.4" vntheta="agent"/>
+          <vnrole vncls="37.4.1" vntheta="agent"/>
         </role>
         <role descr="entity sent, faxed" f="PPT" n="1">
-          <vnrole vncls="37.4" vntheta="topic"/>
+          <vnrole vncls="37.4.1" vntheta="topic"/>
         </role>
         <role descr="sent to, recipient" f="GOL" n="2">
-          <vnrole vncls="37.4" vntheta="recipient"/>
+          <vnrole vncls="37.4.1" vntheta="recipient"/>
         </role>
       </roles>
       <example name="transitive" src="" type="">

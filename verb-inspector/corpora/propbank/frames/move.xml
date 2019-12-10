@@ -20,8 +20,8 @@
         <role descr="moved" f="ppt" n="1">
           <vnrole vncls="11.2" vntheta="theme"/>
           <vnrole vncls="51.3.1" vntheta="theme"/>
-          <vnrole vncls="45.6" vntheta="patient"/>
-          <vnrole vncls="45.6" vntheta="attribute"/>
+          <vnrole vncls="45.6.2-1" vntheta="patient"/>
+          <vnrole vncls="45.6.2-1" vntheta="attribute"/>
         </role>
         <role descr="destination" f="gol" n="2">
           <vnrole vncls="11.2" vntheta="destination"/>

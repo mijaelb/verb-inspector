@@ -13,11 +13,11 @@
       <roles>
         <role descr="disbeliever" f="pag" n="0">
           <vnrole vncls="29.5-1" vntheta="agent"/>
-          <vnrole vncls="33" vntheta="agent"/>
+          <vnrole vncls="33.1-1" vntheta="agent"/>
         </role>
         <role descr="disbelief" f="ppt" n="1">
           <vnrole vncls="29.5-1" vntheta="theme"/>
-          <vnrole vncls="33" vntheta="theme"/>
+          <vnrole vncls="33.1-1" vntheta="theme"/>
         </role>
       </roles>
       <example name="doubt-v: sentential disbelief" src="" type="">

@@ -8,13 +8,13 @@
       <note>CABLE-V NOTES: Automatically created based on framefiles: fax (37.4); Edited by hwangd (from cable.01-v predicate notes)</note>
       <roles>
         <role descr="sender, agent" f="pag" n="0">
-          <vnrole vncls="37.4" vntheta="agent"/>
+          <vnrole vncls="37.4.1" vntheta="agent"/>
         </role>
         <role descr="message" f="ppt" n="1">
-          <vnrole vncls="37.4" vntheta="topic"/>
+          <vnrole vncls="37.4.1" vntheta="topic"/>
         </role>
         <role descr="sent to, recipient" f="gol" n="2">
-          <vnrole vncls="37.4" vntheta="recipient"/>
+          <vnrole vncls="37.4.1" vntheta="recipient"/>
         </role>
       </roles>
       <example name="usual use" src="web usage" type="">

@@ -8,10 +8,10 @@
       <note>LUXURIATE-V NOTES: Roleset by Katie based on internet search, parallel expansion of verbnet, propbank, and sense groupings. Verbnet class marvel-31.3-5. (from luxuriate.01-v)</note>
       <roles>
         <role descr="Enjoyer or big spender" f="PPT" n="0">
-          <vnrole vncls="31.3-5" vntheta="Experiencer"/>
+          <vnrole vncls="31.3" vntheta="Experiencer"/>
         </role>
         <role descr="luxury" f="PAG" n="1">
-          <vnrole vncls="31.3-5" vntheta="Stimulus"/>
+          <vnrole vncls="31.3" vntheta="Stimulus"/>
         </role>
       </roles>
       <example name="Enjoyer example" src="Enjoyer example" type="Enjoyer example">

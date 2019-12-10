@@ -8,13 +8,13 @@
       <note>REDEVELOP-V NOTES: these are also -PRPs, but the tag -PRD can be changed to -PRD-PRPduring postprocessing The above structure should be used in all cases, even when it feelslike the Arg1 and the purpose clause (secondary predicate) are veryclosely linked and feel like they should be a single argument.Treebank is inconsistent in it treatment of these; sometimes it'ssplit into two nodes, sometimes there's a single node holding both.If we are consistent in dividing these arguments, it's relatively easyfor someone else to merge them. The reverse is not true.Plus the usual assortment of TMPs, LOCs (easily confusable with MNRs, nota bene), ADVs, etc. (from redevelop.01-v)</note>
       <roles>
         <role descr="creator" f="pag" n="0">
-          <vnrole vncls="26.2" vntheta="agent"/>
+          <vnrole vncls="26.2.1" vntheta="agent"/>
         </role>
         <role descr="thing created" f="prd" n="1">
-          <vnrole vncls="26.2" vntheta="product"/>
+          <vnrole vncls="26.2.1" vntheta="product"/>
         </role>
         <role descr="source" f="vsp" n="2">
-          <vnrole vncls="26.2" vntheta="material"/>
+          <vnrole vncls="26.2.1" vntheta="material"/>
         </role>
         <role descr="benefactive" f="gol" n="3"/>
         <role descr="attribute of arg1" f="prd" n="4"/>

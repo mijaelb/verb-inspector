@@ -8,10 +8,10 @@
       <note>HATCH-V NOTES: Frames file for 'hatch' based on sentences in wsj. Verbnet entries 26.2 and 26.1, Framenet entry Invention. (from hatch.01-v predicate notes)</note>
       <roles>
         <role descr="causal agent" f="PAG" n="0">
-          <vnrole vncls="26.2" vntheta="agent"/>
+          <vnrole vncls="26.2.1" vntheta="agent"/>
         </role>
         <role descr="thing hatching: plan, egg, etc" f="PRD" n="1">
-          <vnrole vncls="26.2" vntheta="product"/>
+          <vnrole vncls="26.2.1" vntheta="product"/>
         </role>
       </roles>
       <example name="passive agentive" src="" type="">

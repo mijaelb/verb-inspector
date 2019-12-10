@@ -8,10 +8,10 @@
       <note>WRIGGLE-V NOTES: Member of Vncls body_internal_motion-49. (from wriggle.01-v)</note>
       <roles>
         <role descr="cause of motion, agent" f="PAG" n="0">
-          <vnrole vncls="49" vntheta="Agent"/>
+          <vnrole vncls="49.1" vntheta="Agent"/>
         </role>
         <role descr="body part" f="PPT" n="1">
-          <vnrole vncls="49" vntheta="Patient"/>
+          <vnrole vncls="49.1" vntheta="Patient"/>
         </role>
       </roles>
       <example name="good trick for a corpse" src="" type="">

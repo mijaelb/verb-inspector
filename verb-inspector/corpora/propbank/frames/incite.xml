@@ -10,10 +10,10 @@
       <note>INCITEMENT-N NOTES: Automatically created by Julia as an alias file for unification. (from incitement.01-n)</note>
       <roles>
         <role descr="causer of action, agent" f="PAG" n="0">
-          <vnrole vncls="59" vntheta="Agent"/>
+          <vnrole vncls="59.1" vntheta="Agent"/>
         </role>
         <role descr="action incited " f="PRD" n="1">
-          <vnrole vncls="59" vntheta="Result"/>
+          <vnrole vncls="59.1" vntheta="Result"/>
         </role>
       </roles>
       <example name="transitive" src="" type="">

@@ -11,10 +11,10 @@
       <roles>
         <note>Usually the cause and the acclaimed party are merged, as in the first example. (from acclaim.01-v)</note>
         <role descr="acclaimer" f="pag" n="0">
-          <vnrole vncls="33" vntheta="agent"/>
+          <vnrole vncls="33.1-1-1" vntheta="agent"/>
         </role>
         <role descr="acclaimed" f="ppt" n="1">
-          <vnrole vncls="33" vntheta="theme"/>
+          <vnrole vncls="33.1-1-1" vntheta="theme"/>
         </role>
         <role descr="cause, acclaimed for what?" f="cau" n="2"/>
       </roles>

@@ -30,10 +30,10 @@
       <note>SWOON-V NOTES: Frames file for 'swoon' based on ebn instances. (from swoon.02-v predicate notes)</note>
       <roles>
         <role descr="Stimulus of swooning" f="PAG" n="0">
-          <vnrole vncls="31.3-1" vntheta="Stimulus"/>
+          <vnrole vncls="31.3" vntheta="Stimulus"/>
         </role>
         <role descr="Experiencer, swooner" f="PPT" n="1">
-          <vnrole vncls="31.3-1" vntheta="Experiencer"/>
+          <vnrole vncls="31.3" vntheta="Experiencer"/>
         </role>
       </roles>
       <example name="Sting" src="" type="">

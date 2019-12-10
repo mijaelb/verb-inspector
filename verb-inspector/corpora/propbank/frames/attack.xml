@@ -13,10 +13,10 @@
       <roles>
         <note>Noun roleset has both "instrument" and "attribute," where verb frame has only attribute because of gaming usages where game piece is "attacker." (from attack.01-n)</note>
         <role descr="attacker" f="pag" n="0">
-          <vnrole vncls="33" vntheta="agent"/>
+          <vnrole vncls="33.1-1" vntheta="agent"/>
         </role>
         <role descr="entity attacked" f="ppt" n="1">
-          <vnrole vncls="33" vntheta="theme"/>
+          <vnrole vncls="33.1-1" vntheta="theme"/>
         </role>
         <role descr="attribute" f="prd" n="2"/>
       </roles>

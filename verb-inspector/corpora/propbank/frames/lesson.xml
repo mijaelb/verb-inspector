@@ -11,13 +11,13 @@
       <note>LESSON-V NOTES: Automatically added alias.</note>
       <roles>
         <role descr="teacher" f="pag" n="0">
-          <vnrole vncls="37.1" vntheta="agent"/>
+          <vnrole vncls="37.1.1" vntheta="agent"/>
         </role>
         <role descr="subject" f="ppt" n="1">
-          <vnrole vncls="37.1" vntheta="topic"/>
+          <vnrole vncls="37.1.1" vntheta="topic"/>
         </role>
         <role descr="student(s" f="gol" n="2">
-          <vnrole vncls="37.1" vntheta="recipient"/>
+          <vnrole vncls="37.1.1" vntheta="recipient"/>
         </role>
       </roles>
       <example name="Arg 1 only" src="" type="">

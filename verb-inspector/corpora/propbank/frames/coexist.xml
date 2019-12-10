@@ -12,10 +12,10 @@
       <roles>
         <role descr="first entity co-existing" f="ppt" n="1">
           <vnrole vncls="47.1-1" vntheta="Theme"/>
-          <vnrole vncls="36.1" vntheta="Agent"/>
+          <vnrole vncls="47.1" vntheta="Agent"/>
         </role>
         <role descr="second entity co-existing" f="COM" n="2">
-          <vnrole vncls="36.1" vntheta="co-agent"/>
+          <vnrole vncls="47.1" vntheta="co-agent"/>
         </role>
       </roles>
       <example name="both args" src="web usage" type="">

@@ -8,10 +8,10 @@
       <note>FIDGET-V NOTES: Frames file for 'fidget' based on survey of sentences in the WSJ corpus. (from fidget.01-v predicate notes)</note>
       <roles>
         <role descr="restless entity, agent" f="PAG" n="0">
-          <vnrole vncls="49" vntheta="Agent"/>
+          <vnrole vncls="49.1" vntheta="Agent"/>
         </role>
         <role descr="thing fidgeting with" f="PPT" n="1">
-          <vnrole vncls="49" vntheta="Patient"/>
+          <vnrole vncls="49.1" vntheta="Patient"/>
         </role>
       </roles>
       <example name="transitive" src="" type="">

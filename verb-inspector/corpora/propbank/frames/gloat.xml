@@ -8,10 +8,10 @@
       <note>GLOAT-V NOTES: Frames file for 'gloat' based on survey of sentences in the WSJ corpus. (from gloat.01-v predicate notes)</note>
       <roles>
         <role descr="person gloating" f="PPT" n="0">
-          <vnrole vncls="31.3-8" vntheta="Experiencer"/>
+          <vnrole vncls="31.3" vntheta="Experiencer"/>
         </role>
         <role descr="topic/cause of gloating" f="PAG" n="1">
-          <vnrole vncls="31.3-8" vntheta="Stimulus"/>
+          <vnrole vncls="31.3" vntheta="Stimulus"/>
         </role>
       </roles>
       <example name="Arg1 as a proposition" src="" type="">

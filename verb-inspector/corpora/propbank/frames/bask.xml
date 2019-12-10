@@ -9,10 +9,10 @@
       <note>BASK-V NOTES: Frame created by Arrick (from bask.01-v)</note>
       <roles>
         <role descr="basker" f="PPT" n="0">
-          <vnrole vncls="31.3-5" vntheta="Experiencer"/>
+          <vnrole vncls="31.3" vntheta="Experiencer"/>
         </role>
         <role descr="basking in, cause of pleasure" f="PAG" n="1">
-          <vnrole vncls="31.3-5" vntheta="Stimulus"/>
+          <vnrole vncls="31.3" vntheta="Stimulus"/>
         </role>
       </roles>
       <example name="bask" src="" type="">

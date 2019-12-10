@@ -8,13 +8,13 @@
       <note>FORCE-V NOTES: Member of VNcls force-59 (from force.01-v)</note>
       <roles>
         <role descr="forcer" f="pag" n="0">
-          <vnrole vncls="59" vntheta="agent"/>
+          <vnrole vncls="58.1-1" vntheta="agent"/>
         </role>
         <role descr="impelled agent" f="ppt" n="1">
-          <vnrole vncls="59" vntheta="patient"/>
+          <vnrole vncls="58.1-1" vntheta="patient"/>
         </role>
         <role descr="impelled action" f="prd" n="2">
-          <vnrole vncls="59" vntheta="result"/>
+          <vnrole vncls="58.1-1" vntheta="result"/>
         </role>
       </roles>
       <example name="sentential predicate" src="" type="">

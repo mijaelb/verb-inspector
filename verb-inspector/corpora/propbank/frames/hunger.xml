@@ -11,11 +11,11 @@
       <roles>
         <role descr="hungry entity" f="ppt" n="0">
           <vnrole vncls="32.2-1" vntheta="pivot"/>
-          <vnrole vncls="31.3-8" vntheta="experiencer"/>
+          <vnrole vncls="31.3" vntheta="experiencer"/>
         </role>
         <role descr="hungry for" f="ppt" n="1">
           <vnrole vncls="32.2-1" vntheta="theme"/>
-          <vnrole vncls="31.3-8" vntheta="stimulus"/>
+          <vnrole vncls="31.3" vntheta="stimulus"/>
         </role>
       </roles>
       <example name="intransitive without theme" src="intransitive without theme" type="intransitive without theme">

@@ -12,19 +12,19 @@
       <note>COLLABORATING-N NOTES: Based on temprel sentences. No VN class. Comparison to collaborate-v. Framed by Katie (from collaborating.01-n)</note>
       <roles>
         <role descr="focussed party, agent" f="pag" n="0">
-          <vnrole vncls="36.1" vntheta="agent"/>
+          <vnrole vncls="36.1.1" vntheta="agent"/>
           <vnrole vncls="71" vntheta="agent"/>
-          <vnrole vncls="73-1" vntheta="agent"/>
+          <vnrole vncls="73.1-1" vntheta="agent"/>
         </role>
         <role descr="second party" f="com" n="1">
-          <vnrole vncls="36.1" vntheta="co-agent"/>
+          <vnrole vncls="36.1.1" vntheta="co-agent"/>
           <vnrole vncls="71" vntheta="co-agent"/>
-          <vnrole vncls="73-1" vntheta="co-agent"/>
+          <vnrole vncls="73.1-1" vntheta="co-agent"/>
         </role>
         <role descr="shared task" f="ppt" n="2">
-          <vnrole vncls="36.1" vntheta="theme"/>
+          <vnrole vncls="36.1.1" vntheta="theme"/>
           <vnrole vncls="71" vntheta="theme"/>
-          <vnrole vncls="73-1" vntheta="theme"/>
+          <vnrole vncls="73.1-1" vntheta="theme"/>
         </role>
       </roles>
       <example name="collaborate-v: two arguments" src="" type="">

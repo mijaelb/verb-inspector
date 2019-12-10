@@ -8,13 +8,13 @@
       <note>OUTNUMBER-V NOTES: All three args are obligatory, apparently. (from outnumber.01-v)</note>
       <roles>
         <role descr="thing that's more" f="PPT" n="1">
-          <vnrole vncls="90-1" vntheta="Theme"/>
+          <vnrole vncls="90" vntheta="Theme"/>
         </role>
         <role descr="thing that's less" f="PPT" n="2">
-          <vnrole vncls="90-1" vntheta="co-theme"/>
+          <vnrole vncls="90" vntheta="co-theme"/>
         </role>
         <role descr="margin, EXT" f="PRD" n="3">
-          <vnrole vncls="90-1" vntheta="Attribute"/>
+          <vnrole vncls="90" vntheta="Attribute"/>
         </role>
       </roles>
       <example name="typical usage" src="" type="">

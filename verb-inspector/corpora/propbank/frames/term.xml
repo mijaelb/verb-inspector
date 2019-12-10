@@ -8,13 +8,13 @@
       <note>TERM-V NOTES: VN, FN updated by Julia. Member of Vncls dub-29.3. (from term.01-v)</note>
       <roles>
         <role descr="caller" f="PAG" n="0">
-          <vnrole vncls="29.3" vntheta="Agent"/>
+          <vnrole vncls="29.3.2" vntheta="Agent"/>
         </role>
         <role descr="item being labelled" f="PPT" n="1">
-          <vnrole vncls="29.3" vntheta="Theme"/>
+          <vnrole vncls="29.3.2" vntheta="Theme"/>
         </role>
         <role descr="attribute" f="PRD" n="3">
-          <vnrole vncls="29.3" vntheta="Result"/>
+          <vnrole vncls="29.3.2" vntheta="Result"/>
         </role>
       </roles>
       <example name="passivized" src="" type="">

@@ -8,10 +8,10 @@
       <note>GYRATE-V NOTES: Frames file for 'gyrate' based on sentences in financial subcorpus andautomatic expansion via verbnet. (from gyrate.01-v predicate notes)</note>
       <roles>
         <role descr="causer of gyration" f="PAG" n="0">
-          <vnrole vncls="49" vntheta="Agent"/>
+          <vnrole vncls="49.1" vntheta="Agent"/>
         </role>
         <role descr="thing gyrating" f="PPT" n="1">
-          <vnrole vncls="49" vntheta="Patient"/>
+          <vnrole vncls="49.1" vntheta="Patient"/>
         </role>
       </roles>
       <example name="ergative" src="" type="">

@@ -8,10 +8,10 @@
       <note>DEPRECATE-V NOTES: Frames file for 'deprecate' based on dictionary.com. Verbnet entry 33. (from deprecate.01-v predicate notes)</note>
       <roles>
         <role descr="causer of apparent disapproval, agent" f="PAG" n="0">
-          <vnrole vncls="33" vntheta="Agent"/>
+          <vnrole vncls="33.1-1" vntheta="Agent"/>
         </role>
         <role descr="disaproved thing" f="PPT" n="1">
-          <vnrole vncls="33" vntheta="Theme"/>
+          <vnrole vncls="33.1-1" vntheta="Theme"/>
         </role>
       </roles>
       <example name="ARG0 and ARG1" src="probably COCA (2018 example fix)" type="">

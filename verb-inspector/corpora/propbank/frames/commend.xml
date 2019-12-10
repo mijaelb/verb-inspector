@@ -10,10 +10,10 @@
       <note>COMMENDATION-N NOTES: Automatically created by Julia as an alias file for unification. (from commendation.01-n)</note>
       <roles>
         <role descr="entity giving praise" f="pag" n="0">
-          <vnrole vncls="33" vntheta="agent"/>
+          <vnrole vncls="33.1-1" vntheta="agent"/>
         </role>
         <role descr="entity being praised" f="ppt" n="1">
-          <vnrole vncls="33" vntheta="theme"/>
+          <vnrole vncls="33.1-1" vntheta="theme"/>
         </role>
         <role descr="praised for what (if in addition to arg1)" f="cau" n="2"/>
       </roles>
@@ -56,10 +56,10 @@
       <note>COMMENDABLE-J NOTES: Automatically created by Julia for unification as an alias file. (from commendable.01-j)</note>
       <roles>
         <role descr="entity giving praise" f="pag" n="0">
-          <vnrole vncls="33" vntheta="agent"/>
+          <vnrole vncls="33.1-1" vntheta="agent"/>
         </role>
         <role descr="entity being praised" f="ppt" n="1">
-          <vnrole vncls="33" vntheta="theme"/>
+          <vnrole vncls="33.1-1" vntheta="theme"/>
         </role>
         <role descr="praised for what (if in addition to arg1)" f="cau" n="2"/>
       </roles>

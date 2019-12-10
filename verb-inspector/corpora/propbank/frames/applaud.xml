@@ -16,7 +16,7 @@
           <vnrole vncls="31.2" vntheta="stimulus"/>
         </role>
         <role descr="grounds, reason for approval" f="prd" n="2">
-          <vnrole vncls="33" vntheta="attribute"/>
+          <vnrole vncls="33.1-1" vntheta="attribute"/>
         </role>
       </roles>
       <example name="intransitive" src="" type="">

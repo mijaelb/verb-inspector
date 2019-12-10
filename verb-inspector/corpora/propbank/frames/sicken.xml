@@ -12,13 +12,13 @@
         <role descr="illness, stimulus" f="pag" n="0">
           <vnrole vncls="31.1" vntheta="stimulus"/>
           <vnrole vncls="40.8.4" vntheta="stimulus"/>
-          <vnrole vncls="31.3-1" vntheta="stimulus"/>
+          <vnrole vncls="31.3" vntheta="stimulus"/>
           <vnrole vncls="45.4" vntheta="agent"/>
         </role>
         <role descr="experiencer, entity feeling sick" f="ppt" n="1">
           <vnrole vncls="31.1" vntheta="experiencer"/>
           <vnrole vncls="40.8.4" vntheta="experiencer"/>
-          <vnrole vncls="31.3-1" vntheta="experiencer"/>
+          <vnrole vncls="31.3" vntheta="experiencer"/>
           <vnrole vncls="45.4" vntheta="patient"/>
         </role>
       </roles>

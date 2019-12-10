@@ -8,10 +8,10 @@
       <note>BUCK-V NOTES: Frames file for 'buck' based on sentences in financial subcorpus. Verbnet entry 49, no other framed members. No Framenet entry. No comparison. (from buck.01-v predicate notes)</note>
       <roles>
         <role descr="bucker" f="PAG" n="0">
-          <vnrole vncls="49" vntheta="Agent"/>
+          <vnrole vncls="49.1" vntheta="Agent"/>
         </role>
         <role descr="trend" f="PPT" n="1">
-          <vnrole vncls="49" vntheta="Patient"/>
+          <vnrole vncls="49.1" vntheta="Patient"/>
         </role>
       </roles>
       <example name="straight transitive" src="" type="">

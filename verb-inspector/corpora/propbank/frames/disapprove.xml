@@ -8,10 +8,10 @@
       <note>DISAPPROVE-V NOTES: Frames file for 'disapprove' based on transformation of 'approve'frames. No actual usage examined. Verbnet entry 31.3, Framenet entryJudgement. (from disapprove.01-v predicate notes)</note>
       <roles>
         <role descr="disapprover" f="PPT" n="0">
-          <vnrole vncls="31.3-6" vntheta="Experiencer"/>
+          <vnrole vncls="31.3" vntheta="Experiencer"/>
         </role>
         <role descr="thing disapproved" f="PAG" n="1">
-          <vnrole vncls="31.3-6" vntheta="Stimulus"/>
+          <vnrole vncls="31.3" vntheta="Stimulus"/>
         </role>
       </roles>
       <example name="NP disapproval" src="" type="">

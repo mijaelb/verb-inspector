@@ -12,10 +12,10 @@
       <note>STIGMATIZATION-N NOTES: Added by Julia for Lorelei.</note>
       <roles>
         <role descr="stigmatizer (agent only- not CAU)" f="pag" n="0">
-          <vnrole vncls="33" vntheta="agent"/>
+          <vnrole vncls="33.1-1" vntheta="agent"/>
         </role>
         <role descr="stigmatized" f="ppt" n="1">
-          <vnrole vncls="33" vntheta="theme"/>
+          <vnrole vncls="33.1-1" vntheta="theme"/>
         </role>
         <role descr="grounds, reason" f="cau" n="2"/>
       </roles>

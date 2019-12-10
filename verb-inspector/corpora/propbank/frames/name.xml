@@ -11,13 +11,13 @@
       <roles>
         <note>Essentially equivalent to 'call-v.02', but 'name' Arg2 is 'call' Arg3. (from name.01-v)</note>
         <role descr="namer" f="pag" n="0">
-          <vnrole vncls="29.3" vntheta="agent"/>
+          <vnrole vncls="29.3.2" vntheta="agent"/>
         </role>
         <role descr="named" f="ppt" n="1">
-          <vnrole vncls="29.3" vntheta="theme"/>
+          <vnrole vncls="29.3.2" vntheta="theme"/>
         </role>
         <role descr="name of arg1" f="prd" n="2">
-          <vnrole vncls="29.3" vntheta="result"/>
+          <vnrole vncls="29.3.2" vntheta="result"/>
         </role>
       </roles>
       <example name="passivized" src="passivized" type="passivized">
@@ -93,13 +93,13 @@
       <note>NAME-V NOTES: Very similar to name.01, and only to be used when there is an 'after' present. Member of VNcls dub-29.3. (from name.02-v)</note>
       <roles>
         <role descr="namer" f="pag" n="0">
-          <vnrole vncls="29.3" vntheta="agent"/>
+          <vnrole vncls="29.3.1" vntheta="agent"/>
         </role>
         <role descr="named" f="ppt" n="1">
-          <vnrole vncls="29.3" vntheta="theme"/>
+          <vnrole vncls="29.3.1" vntheta="theme"/>
         </role>
         <role descr="named after, namesake" f="prd" n="2">
-          <vnrole vncls="29.3" vntheta="result"/>
+          <vnrole vncls="29.3.1" vntheta="result"/>
         </role>
       </roles>
       <example name="ozone hole" src="ozone hole" type="ozone hole">

@@ -8,11 +8,11 @@
       <note>AGONIZE-V NOTES: Member of Vncls amuse-31.1, marvel-31.3-8. (from agonize.01-v)</note>
       <roles>
         <role descr="agonized entity" f="PPT" n="1">
-          <vnrole vncls="31.3-8" vntheta="Experiencer"/>
+          <vnrole vncls="31.3" vntheta="Experiencer"/>
           <vnrole vncls="31.1" vntheta="Experiencer"/>
         </role>
         <role descr="cause of agony" f="PAG" n="2">
-          <vnrole vncls="31.3-8" vntheta="Stimulus"/>
+          <vnrole vncls="31.3" vntheta="Stimulus"/>
           <vnrole vncls="31.1" vntheta="Stimulus"/>
         </role>
       </roles>

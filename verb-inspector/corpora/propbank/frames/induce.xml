@@ -11,13 +11,13 @@
       <note>INDUCTION-N NOTES: induce.02 (from induction.02-n)</note>
       <roles>
         <role descr="Causal agent" f="cau" n="0">
-          <vnrole vncls="27" vntheta="cause"/>
+          <vnrole vncls="59.1" vntheta="cause"/>
         </role>
         <role descr="Impelled person" f="ppt" n="1">
-          <vnrole vncls="27" vntheta="theme"/>
+          <vnrole vncls="59.1" vntheta="theme"/>
         </role>
         <role descr="Action or Proposition (ex. labor)" f="prd" n="2">
-          <vnrole vncls="27" vntheta="predicate"/>
+          <vnrole vncls="59.1" vntheta="predicate"/>
         </role>
       </roles>
       <example name="induce-v: transitive" src="" type="">

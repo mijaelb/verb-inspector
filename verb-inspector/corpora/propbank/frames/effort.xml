@@ -9,11 +9,11 @@
       <note>EFFORT-N NOTES: Based on verb entry try.01; semantically corresponds to VN class try-61. (from effort.01-n)</note>
       <roles>
         <role descr="Agent/Entity Trying" f="pag" n="0">
-          <vnrole vncls="try-61" vntheta="agent"/>
+          <vnrole vncls="61.1" vntheta="agent"/>
         </role>
         <role descr="thing tried" f="ppt" n="1">
-          <vnrole vncls="try-61" vntheta="theme"/>
-          <vnrole vncls="try-61" vntheta="theme"/>
+          <vnrole vncls="61.1" vntheta="theme"/>
+          <vnrole vncls="61.1" vntheta="theme"/>
         </role>
       </roles>
       <example name="make_effort-l: Within LVC, all arguments" src="nouns-lv" type="">

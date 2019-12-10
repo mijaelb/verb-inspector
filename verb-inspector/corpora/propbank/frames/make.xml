@@ -79,11 +79,11 @@
       <note>MAKE-V NOTES: (from make.02-v)</note>
       <roles>
         <role descr="impeller to action" f="pag" n="0">
-          <vnrole vncls="29.3" vntheta="agent"/>
+          <vnrole vncls="29.3.1" vntheta="agent"/>
         </role>
         <role descr="impelled action/ predication" f="prd" n="1">
-          <vnrole vncls="29.3" vntheta="theme"/>
-          <vnrole vncls="29.3" vntheta="result"/>
+          <vnrole vncls="29.3.1" vntheta="theme"/>
+          <vnrole vncls="29.3.1" vntheta="result"/>
         </role>
       </roles>
       <example name="ARG0 and ARG1" src="ontonotes mz/sinorama/10/ectb_1057" type="">

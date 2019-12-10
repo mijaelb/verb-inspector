@@ -10,10 +10,10 @@
       <note>CONSENSUAL-J NOTES: Added by Julia based on BOLT-1, consent-v.01. Corresponds to VNcls settle-89. (from consensual.01-j)</note>
       <roles>
         <role descr="agreer, consenter" f="PAG" n="0">
-          <vnrole vncls="89" vntheta="Agent"/>
+          <vnrole vncls="95.1-1" vntheta="Agent"/>
         </role>
         <role descr="thing consented to" f="GOL" n="1">
-          <vnrole vncls="89" vntheta="Goal"/>
+          <vnrole vncls="95.1-1" vntheta="Goal"/>
         </role>
       </roles>
       <example name="typical usage" src="" type="">

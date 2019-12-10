@@ -11,13 +11,13 @@
       <note>NEGOTIATION-N NOTES: Updated by Julia. Corresponds to VNcls negotiate-36.1. (from negotiation.01-n)</note>
       <roles>
         <role descr="negotiator" f="PAG" n="0">
-          <vnrole vncls="36.1" vntheta="Agent"/>
+          <vnrole vncls="36.1.1" vntheta="Agent"/>
         </role>
         <role descr="explicit other party" f="COM" n="1">
-          <vnrole vncls="36.1" vntheta="co-agent"/>
+          <vnrole vncls="36.1.1" vntheta="co-agent"/>
         </role>
         <role descr="agreement" f="PPT" n="2">
-          <vnrole vncls="36.1" vntheta="Theme"/>
+          <vnrole vncls="36.1.1" vntheta="Theme"/>
         </role>
       </roles>
       <example name="NP/PP" src="" type="">

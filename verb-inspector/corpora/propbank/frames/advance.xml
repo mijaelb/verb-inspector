@@ -16,17 +16,17 @@
         </role>
         <role descr="thing advancing" f="ppt" n="1">
           <vnrole vncls="45.4" vntheta="patient"/>
-          <vnrole vncls="45.6-1" vntheta="patient"/>
-          <vnrole vncls="51.1-2" vntheta="theme"/>
+          <vnrole vncls="45.6.2" vntheta="patient"/>
+          <vnrole vncls="51.1-1" vntheta="theme"/>
           <vnrole vncls="102" vntheta="theme"/>
         </role>
         <role descr="extent of advancement" f="ext" n="2">
-          <vnrole vncls="45.6-1" vntheta="extent"/>
+          <vnrole vncls="45.6.2" vntheta="extent"/>
         </role>
         <role descr="start point" f="dir" n="3"/>
         <role descr="end point" f="gol" n="4"/>
         <role descr="attribute of arg1, where this is advancing rather than whole" f="prd" n="5">
-          <vnrole vncls="45.6-1" vntheta="attribute"/>
+          <vnrole vncls="45.6.2" vntheta="attribute"/>
         </role>
       </roles>
       <example name="bellringing!" src="" type="">

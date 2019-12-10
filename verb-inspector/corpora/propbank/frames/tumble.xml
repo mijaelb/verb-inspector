@@ -12,13 +12,13 @@
         </role>
         <role descr="Logical subject, patient, thing falling" f="ppt" n="1">
           <vnrole vncls="47.7" vntheta="Theme"/>
-          <vnrole vncls="45.6-1" vntheta="Patient"/>
-          <vnrole vncls="45.6-1" vntheta="Attribute"/>
+          <vnrole vncls="45.6.1-1" vntheta="Patient"/>
+          <vnrole vncls="45.6.1-1" vntheta="Attribute"/>
           <vnrole vncls="51.1" vntheta="Theme"/>
           <vnrole vncls="22.1-1" vntheta="Patient"/>
         </role>
         <role descr="EXT, amount fallen" f="EXT" n="2">
-          <vnrole vncls="45.6-1" vntheta="Extent"/>
+          <vnrole vncls="45.6.1-1" vntheta="Extent"/>
         </role>
         <role descr="start point" f="dir" n="3"/>
         <role descr="end point, end state" f="gol" n="4"/>

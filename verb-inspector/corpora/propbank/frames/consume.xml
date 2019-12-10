@@ -14,11 +14,11 @@
       <note>CONSUMING-N NOTES: Automatically created by Julia as an alias file for unification. (from consuming.01-n)</note>
       <roles>
         <role descr="consumer" f="pag" n="0">
-          <vnrole vncls="39.4-1" vntheta="agent"/>
+          <vnrole vncls="39.4" vntheta="agent"/>
           <vnrole vncls="66" vntheta="agent"/>
         </role>
         <role descr="consumed" f="ppt" n="1">
-          <vnrole vncls="39.4-1" vntheta="patient"/>
+          <vnrole vncls="39.4" vntheta="patient"/>
           <vnrole vncls="66" vntheta="asset"/>
         </role>
       </roles>

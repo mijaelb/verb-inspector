@@ -8,15 +8,15 @@
       <note>PROD-V NOTES: VN classes force-59, touch-20-1. (from prod.01-v)</note>
       <roles>
         <role descr="causer" f="PAG" n="0">
-          <vnrole vncls="59" vntheta="Agent"/>
+          <vnrole vncls="58.1-1-1" vntheta="Agent"/>
           <vnrole vncls="20-1" vntheta="Agent"/>
         </role>
         <role descr="entity urged" f="PPT" n="1">
-          <vnrole vncls="59" vntheta="Patient"/>
+          <vnrole vncls="58.1-1-1" vntheta="Patient"/>
           <vnrole vncls="20-1" vntheta="Experiencer"/>
         </role>
         <role descr="action" f="PRD" n="2">
-          <vnrole vncls="59" vntheta="Result"/>
+          <vnrole vncls="58.1-1-1" vntheta="Result"/>
         </role>
       </roles>
       <example name="all arguments" src="" type="">

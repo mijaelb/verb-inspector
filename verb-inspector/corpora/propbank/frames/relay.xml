@@ -10,15 +10,15 @@
       <note>RELAY-N NOTES: Based on ontonotes nouns. Comparison to relay.01-v. VN classes instr_communication-37.4 and transer_mesg-37.1.1. No FN class. Framed by Katie. (from relay.02-n)</note>
       <roles>
         <role descr="sender, agent" f="PAG" n="0">
-          <vnrole vncls="37.4" vntheta="Agent"/>
+          <vnrole vncls="37.4.1" vntheta="Agent"/>
           <vnrole vncls="37.1.1" vntheta="Agent"/>
         </role>
         <role descr="thing sent" f="PPT" n="1">
-          <vnrole vncls="37.4" vntheta="Topic"/>
+          <vnrole vncls="37.4.1" vntheta="Topic"/>
           <vnrole vncls="37.1.1" vntheta="Topic"/>
         </role>
         <role descr="sent to" f="GOL" n="2">
-          <vnrole vncls="37.4" vntheta="Recipient"/>
+          <vnrole vncls="37.4.1" vntheta="Recipient"/>
           <vnrole vncls="37.1.1" vntheta="Recipient"/>
         </role>
       </roles>

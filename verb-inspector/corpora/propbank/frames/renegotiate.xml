@@ -9,13 +9,13 @@
       <note>RENEGOTIATE-V NOTES: Treebank sometimes puts the co-negotiator in with the agreement, whichis certainly plausible (ie, "negotiating a pact with GM" is it a pactwith GM or a negotiation with GM? (Both, really.) Follow Treebank'sparsing. (from renegotiate.01-v)</note>
       <roles>
         <role descr="negotiator" f="PAG" n="0">
-          <vnrole vncls="36.1" vntheta="Agent"/>
+          <vnrole vncls="36.1.2" vntheta="Agent"/>
         </role>
         <role descr="agreement" f="PPT" n="1">
-          <vnrole vncls="36.1" vntheta="Theme"/>
+          <vnrole vncls="36.1.2" vntheta="Theme"/>
         </role>
         <role descr="explicit other party" f="COM" n="2">
-          <vnrole vncls="36.1" vntheta="co-agent"/>
+          <vnrole vncls="36.1.2" vntheta="co-agent"/>
         </role>
       </roles>
       <example name="NP/PP" src="" type="">

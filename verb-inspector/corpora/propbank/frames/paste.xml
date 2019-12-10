@@ -8,16 +8,16 @@
       <note>PASTE-V NOTES: Frames file for 'paste' based on sentences in wsj. Verbnet entry 22.4. (from paste.01-v predicate notes)</note>
       <roles>
         <role descr="agent, entity doing the tying" f="PAG" n="0">
-          <vnrole vncls="22.4-1" vntheta="Agent"/>
+          <vnrole vncls="22.4" vntheta="Agent"/>
         </role>
         <role descr="patient, thing(s) being tied" f="PPT" n="1">
-          <vnrole vncls="22.4-1" vntheta="Patient"/>
+          <vnrole vncls="22.4" vntheta="Patient"/>
         </role>
         <role descr="instrument, string" f="PPT" n="2">
-          <vnrole vncls="22.4-1" vntheta="co-patient"/>
+          <vnrole vncls="22.4" vntheta="co-patient"/>
         </role>
         <role descr="attribute of arg1" f="PRD" n="3">
-          <vnrole vncls="22.4-1" vntheta="Result"/>
+          <vnrole vncls="22.4" vntheta="Result"/>
         </role>
       </roles>
       <example name="with separate patients" src="" type="">

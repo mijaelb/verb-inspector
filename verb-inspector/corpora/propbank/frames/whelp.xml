@@ -8,10 +8,10 @@
       <note>WHELP-V NOTES: hand-checked by Kevin (from whelp.01-v)</note>
       <roles>
         <role descr="whelper" f="PAG" n="0">
-          <vnrole vncls="28" vntheta="Agent"/>
+          <vnrole vncls="28.1" vntheta="Agent"/>
         </role>
         <role descr="thing whelped (cry, litter, etc.)" f="PPT" n="1">
-          <vnrole vncls="28" vntheta="Patient"/>
+          <vnrole vncls="28.1" vntheta="Patient"/>
         </role>
       </roles>
       <example name="Regular usage" src="web usage" type="">

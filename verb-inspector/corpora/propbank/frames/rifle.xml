@@ -8,17 +8,17 @@
       <note>RIFLE-V NOTES: Automatically created based on framefiles: fleece (10.6), fumble (35.5), excavate (35.2), hand-checked by Kevin. Member of VNcls cheat-10.6, rummage-35.5, search-35.2. (from rifle.01-v)</note>
       <roles>
         <role descr="agent, thief, rifler" f="PAG" n="0">
-          <vnrole vncls="10.6" vntheta="Agent"/>
+          <vnrole vncls="10.6.4" vntheta="Agent"/>
           <vnrole vncls="35.5-1" vntheta="Agent"/>
           <vnrole vncls="35.2" vntheta="Agent"/>
         </role>
         <role descr="where/through what/source" f="loc" n="1">
-          <vnrole vncls="10.6" vntheta="Source"/>
+          <vnrole vncls="10.6.4" vntheta="Source"/>
           <vnrole vncls="35.5-1" vntheta="Location"/>
           <vnrole vncls="35.2" vntheta="Location"/>
         </role>
         <role descr="in search of" f="ppt" n="2">
-          <vnrole vncls="10.6" vntheta="Theme"/>
+          <vnrole vncls="10.6.4" vntheta="Theme"/>
           <vnrole vncls="35.5-1" vntheta="Theme"/>
         </role>
       </roles>

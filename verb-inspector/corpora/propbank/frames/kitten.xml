@@ -8,10 +8,10 @@
       <note>KITTEN-V NOTES: Edited by hwangd (from kitten.01-v)</note>
       <roles>
         <role descr="mother" f="PAG" n="0">
-          <vnrole vncls="28" vntheta="Agent"/>
+          <vnrole vncls="28.1" vntheta="Agent"/>
         </role>
         <role descr="kitten" f="PPT" n="1">
-          <vnrole vncls="28" vntheta="Patient"/>
+          <vnrole vncls="28.1" vntheta="Patient"/>
         </role>
       </roles>
       <example name="All args" src="web usage" type="">

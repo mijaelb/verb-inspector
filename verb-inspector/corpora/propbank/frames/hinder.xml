@@ -8,10 +8,10 @@
       <note>HINDER-V NOTES: Member of VNcls forbid-67. (from hinder.01-v)</note>
       <roles>
         <role descr="stopper, preventer" f="pag" n="0">
-          <vnrole vncls="67" vntheta="agent"/>
+          <vnrole vncls="64.4-1" vntheta="agent"/>
         </role>
         <role descr="Theme (action or object being prevented)" f="ppt" n="1">
-          <vnrole vncls="67" vntheta="theme"/>
+          <vnrole vncls="64.4-1" vntheta="theme"/>
         </role>
         <role descr="secondary predication on arg1 or action" f="prd" n="2"/>
         <role descr="instrument, if separate from arg0" f="mnr" n="3"/>

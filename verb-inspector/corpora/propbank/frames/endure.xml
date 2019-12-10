@@ -8,7 +8,7 @@
       <note>ENDURE-V NOTES: Frames file for 'endure' based on survey of sentences in the WSJ corpus. (from endure.01-v predicate notes)</note>
       <roles>
         <role descr="experiencer" f="ppt" n="1">
-          <vnrole vncls="47.1-1-1" vntheta="theme"/>
+          <vnrole vncls="47.1-1" vntheta="theme"/>
         </role>
         <role descr="thing endured or period of time" f="vsp" n="2"/>
       </roles>

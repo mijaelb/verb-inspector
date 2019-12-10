@@ -90,10 +90,10 @@
       <note>CHANGE-V NOTES: Frames file for 'change' based on survey of initial sentences of big corpus and comparison with 'develop' and 'replace' and 'turn' (from change.02-v predicate notes)</note>
       <roles>
         <role descr="commodity being exchanged" f="PPT" n="1">
-          <vnrole vncls="13.6-1" vntheta="Theme"/>
+          <vnrole vncls="13.6.1" vntheta="Theme"/>
         </role>
         <role descr="hands" f="PPT" n="2">
-          <vnrole vncls="13.6-1" vntheta="co-theme"/>
+          <vnrole vncls="13.6.1" vntheta="co-theme"/>
         </role>
       </roles>
       <example name="change hands" src="" type="">

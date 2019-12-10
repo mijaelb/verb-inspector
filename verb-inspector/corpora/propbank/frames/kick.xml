@@ -14,7 +14,7 @@
         <role descr="kicker" f="pag" n="0">
           <vnrole vncls="23.2" vntheta="agent"/>
           <vnrole vncls="17.1-1-1" vntheta="agent"/>
-          <vnrole vncls="49" vntheta="agent"/>
+          <vnrole vncls="49.1" vntheta="agent"/>
           <vnrole vncls="18.1-1" vntheta="agent"/>
           <vnrole vncls="40.3.2" vntheta="agent"/>
           <vnrole vncls="11.4-1-1" vntheta="agent"/>
@@ -23,7 +23,7 @@
         <role descr="thing kicked" f="ppt" n="1">
           <vnrole vncls="23.2" vntheta="patient"/>
           <vnrole vncls="17.1-1-1" vntheta="theme"/>
-          <vnrole vncls="49" vntheta="patient"/>
+          <vnrole vncls="49.1" vntheta="patient"/>
           <vnrole vncls="18.1-1" vntheta="patient"/>
           <vnrole vncls="40.3.2" vntheta="patient"/>
           <vnrole vncls="11.4-1-1" vntheta="theme"/>

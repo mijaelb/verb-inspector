@@ -11,10 +11,10 @@
       <roles>
         <note>arg2 given here, not included in the verb (from damning.01-j)</note>
         <role descr="damner, God" f="PAG" n="0">
-          <vnrole vncls="33" vntheta="Agent"/>
+          <vnrole vncls="33.1-1" vntheta="Agent"/>
         </role>
         <role descr="damned, sinner" f="PPT" n="1">
-          <vnrole vncls="33" vntheta="Theme"/>
+          <vnrole vncls="33.1-1" vntheta="Theme"/>
         </role>
       </roles>
       <example name="more or less purely verbal" src="" type="">

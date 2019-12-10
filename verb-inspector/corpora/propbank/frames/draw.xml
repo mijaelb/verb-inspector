@@ -11,15 +11,15 @@
       <note>DRAWING-N NOTES: Corresponds to VNcls performance-26.7-2-1, scribble-25.2. (from drawing.02-n)</note>
       <roles>
         <role descr="artist" f="pag" n="0">
-          <vnrole vncls="26.7-2-1" vntheta="agent"/>
+          <vnrole vncls="26.4-1-1" vntheta="agent"/>
           <vnrole vncls="25.2" vntheta="agent"/>
         </role>
         <role descr="art" f="ppt" n="1">
-          <vnrole vncls="26.7-2-1" vntheta="theme"/>
+          <vnrole vncls="26.4-1-1" vntheta="theme"/>
           <vnrole vncls="25.2" vntheta="theme"/>
         </role>
         <role descr="benefactive" f="gol" n="2">
-          <vnrole vncls="26.7-2-1" vntheta="beneficiary"/>
+          <vnrole vncls="26.4-1-1" vntheta="beneficiary"/>
         </role>
       </roles>
       <example name="draw-v: transitive" src="" type="">

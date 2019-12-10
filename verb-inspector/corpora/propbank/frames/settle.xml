@@ -8,10 +8,10 @@
       <note>SETTLE-V NOTES: Frames file for 'settle' based on survey of initial sentences of big corpus and comparison with 'decide'. (from settle.01-v)</note>
       <roles>
         <role descr="decider" f="pag" n="0">
-          <vnrole vncls="89" vntheta="agent"/>
+          <vnrole vncls="36.1.2" vntheta="agent"/>
         </role>
         <role descr="decision" f="gol" n="1">
-          <vnrole vncls="89" vntheta="goal"/>
+          <vnrole vncls="36.1.2" vntheta="goal"/>
         </role>
         <role descr="benefactive" f="gol" n="2"/>
         <role descr="instrument" f="mnr" n="3"/>
@@ -33,10 +33,10 @@
       <note>SETTLEMENT-N NOTES: Added by Julia based on settle-v.02. Corresponds to Vncls settle-89. (from settlement.01-n)</note>
       <roles>
         <role descr="entity making resolution" f="pag" n="0">
-          <vnrole vncls="89" vntheta="agent"/>
+          <vnrole vncls="36.1.2" vntheta="agent"/>
         </role>
         <role descr="thing being resolved" f="gol" n="1">
-          <vnrole vncls="89" vntheta="goal"/>
+          <vnrole vncls="36.1.2" vntheta="goal"/>
         </role>
         <role descr="comitative, resolved with" f="com" n="2"/>
         <role descr="what the settlement is (value or decision)" f="prd" n="3"/>

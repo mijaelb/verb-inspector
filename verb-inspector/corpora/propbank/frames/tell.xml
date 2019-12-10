@@ -10,15 +10,15 @@
       <roles>
         <role descr="Speaker" f="PAG" n="0">
           <vnrole vncls="37.1.1-1-1" vntheta="agent"/>
-          <vnrole vncls="37.2-1" vntheta="agent"/>
+          <vnrole vncls="37.1.1-1-1" vntheta="agent"/>
         </role>
         <role descr="Utterance" f="PPT" n="1">
           <vnrole vncls="37.1.1-1-1" vntheta="topic"/>
-          <vnrole vncls="37.2-1" vntheta="topic"/>
+          <vnrole vncls="37.1.1-1-1" vntheta="topic"/>
         </role>
         <role descr="Hearer" f="GOL" n="2">
           <vnrole vncls="37.1.1-1-1" vntheta="recipient"/>
-          <vnrole vncls="37.2-1" vntheta="recipient"/>
+          <vnrole vncls="37.1.1-1-1" vntheta="recipient"/>
         </role>
       </roles>
       <example name="ditransitive" src="" type="">

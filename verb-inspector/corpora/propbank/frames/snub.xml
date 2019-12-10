@@ -8,10 +8,10 @@
       <note>SNUB-V NOTES: Member of VNcls judgement-33. (from snub.01-v)</note>
       <roles>
         <role descr="rude entity" f="PAG" n="0">
-          <vnrole vncls="33" vntheta="Agent"/>
+          <vnrole vncls="33.1-1" vntheta="Agent"/>
         </role>
         <role descr="entity snubbed" f="PPT" n="1">
-          <vnrole vncls="33" vntheta="Theme"/>
+          <vnrole vncls="33.1-1" vntheta="Theme"/>
         </role>
       </roles>
       <example name="transitive" src="" type="">

@@ -8,11 +8,11 @@
       <note>DIP-V NOTES: Corresponds best to VN class Calibratable_COS-45.6-1, but some instances could map to Meander-47.7. (from dip.01-v)</note>
       <roles>
         <role descr="thing falling" f="ppt" n="1">
-          <vnrole vncls="45.6-1" vntheta="patient"/>
+          <vnrole vncls="45.6.1-1" vntheta="patient"/>
           <vnrole vncls="47.7" vntheta="theme"/>
         </role>
         <role descr="EXT" f="ext" n="2">
-          <vnrole vncls="45.6-1" vntheta="extent"/>
+          <vnrole vncls="45.6.1-1" vntheta="extent"/>
         </role>
         <role descr="start point" f="dir" n="3"/>
         <role descr="end point" f="gol" n="4"/>

@@ -11,13 +11,13 @@
       <note>COMPROMISE-N NOTES: Verb sense compromise.02 not found thus far in noun form. Roleset based on verb entry compromise.01. Corresponds to VN class correspond-36.1. (from compromise.01-n)</note>
       <roles>
         <role descr="agreer" f="pag" n="0">
-          <vnrole vncls="36.1" vntheta="agent"/>
+          <vnrole vncls="36.1.1" vntheta="agent"/>
         </role>
         <role descr="proposition" f="ppt" n="1">
-          <vnrole vncls="36.1" vntheta="theme"/>
+          <vnrole vncls="36.1.1" vntheta="theme"/>
         </role>
         <role descr="other entity agreeing" f="com" n="2">
-          <vnrole vncls="36.1" vntheta="co-agent"/>
+          <vnrole vncls="36.1.1" vntheta="co-agent"/>
         </role>
       </roles>
       <example name="generally unhelpful example" src="" type="">
@@ -63,10 +63,10 @@
       <note>COMPROMISE-N NOTES: Based on sentences in medical data. No VN or FN classes. Framed by Katie. (from compromise.02-n)</note>
       <roles>
         <role descr="causer of loss" f="pag" n="0">
-          <vnrole vncls="36.1" vntheta="agent"/>
+          <vnrole vncls="36.1.1" vntheta="agent"/>
         </role>
         <role descr="thing losing security" f="ppt" n="1">
-          <vnrole vncls="36.1" vntheta="theme"/>
+          <vnrole vncls="36.1.1" vntheta="theme"/>
         </role>
       </roles>
       <example name="ARG0 and ARG1" src="ontonotes bn/cnn/02/cnn_0260" type="">

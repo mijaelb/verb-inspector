@@ -98,15 +98,15 @@
 This frame differs from develop.02 in that arg4 is no longer "attribute/secondary predicatation" (the args that appeared to cover may be coverd by argms such as PRP, it turns out, and will probably not occur here in their own nodes anyway), but is now a final product, as final products separate from arg1 showed up in several examples. (from development.02-n)</note>
         <role descr="creator" f="pag" n="0">
           <vnrole vncls="26.1" vntheta="agent"/>
-          <vnrole vncls="26.2" vntheta="agent"/>
+          <vnrole vncls="26.2.1" vntheta="agent"/>
         </role>
         <role descr="thing created" f="prd" n="1">
           <vnrole vncls="26.1" vntheta="product"/>
-          <vnrole vncls="26.2" vntheta="product"/>
+          <vnrole vncls="26.2.1" vntheta="product"/>
         </role>
         <role descr="source" f="vsp" n="2">
           <vnrole vncls="26.1" vntheta="material"/>
-          <vnrole vncls="26.2" vntheta="material"/>
+          <vnrole vncls="26.2.1" vntheta="material"/>
         </role>
         <role descr="benefactive" f="gol" n="3">
           <vnrole vncls="26.1" vntheta="beneficiary"/>

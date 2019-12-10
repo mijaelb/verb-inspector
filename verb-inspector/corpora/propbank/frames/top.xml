@@ -42,10 +42,10 @@
       <note>TOP-V NOTES: Member of Vncls exceed-90. VN updated by Julia (from top.02-v)</note>
       <roles>
         <role descr="surpasser" f="ppt" n="0">
-          <vnrole vncls="90-1" vntheta="theme"/>
+          <vnrole vncls="90" vntheta="theme"/>
         </role>
         <role descr="thing surpassed" f="ppt" n="1">
-          <vnrole vncls="90-1" vntheta="co-theme"/>
+          <vnrole vncls="90" vntheta="co-theme"/>
         </role>
       </roles>
       <example name="relatively simple" src="" type="">

@@ -8,13 +8,13 @@
       <note>REPROACH-V NOTES: Frames file for 'reproach' based on dictionary.com. Verbnet entry 33. (from reproach.01-v predicate notes)</note>
       <roles>
         <role descr="assigner of blame" f="PAG" n="0">
-          <vnrole vncls="33-1" vntheta="Agent"/>
+          <vnrole vncls="33.1-1" vntheta="Agent"/>
         </role>
         <role descr="guilty party" f="PPT" n="1">
-          <vnrole vncls="33-1" vntheta="Theme"/>
+          <vnrole vncls="33.1-1" vntheta="Theme"/>
         </role>
         <role descr="bad behavior reproached" f="CAU" n="2">
-          <vnrole vncls="33-1" vntheta="Attribute"/>
+          <vnrole vncls="33.1-1" vntheta="Attribute"/>
         </role>
       </roles>
       <example name="Tell what for" src="" type="">

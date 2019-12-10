@@ -10,11 +10,11 @@
         <note>Arg1 will take the entire SBAR, not just the S. (from
 					wonder.01-v)</note>
         <role descr="thinker" f="ppt" n="0">
-          <vnrole vncls="31.3-1" vntheta="experiencer"/>
+          <vnrole vncls="31.3" vntheta="experiencer"/>
           <vnrole vncls="88.1-1" vntheta="experiencer"/>
         </role>
         <role descr="thought" f="pag" n="1">
-          <vnrole vncls="31.3-1" vntheta="stimulus"/>
+          <vnrole vncls="31.3" vntheta="stimulus"/>
           <vnrole vncls="88.1-1" vntheta="stimulus"/>
         </role>
       </roles>
@@ -44,10 +44,10 @@
         <note>Note that instances of "No wonder that __" or "small wonder
 					that __" are not considered eventive. They are reductions of "it isno wonder that __", in which the wonder is a thing, not an event.Use .ER. (from wonder.01-n)</note>
         <role descr="experiencer" f="ppt" n="0">
-          <vnrole vncls="31.3-1" vntheta="experiencer"/>
+          <vnrole vncls="31.3" vntheta="experiencer"/>
         </role>
         <role descr="wonderful, awe-inspiring thing" f="pag" n="1">
-          <vnrole vncls="31.3-1" vntheta="stimulus"/>
+          <vnrole vncls="31.3" vntheta="stimulus"/>
         </role>
       </roles>
       <example name="poor John" src="" type="">

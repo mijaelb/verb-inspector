@@ -8,10 +8,10 @@
       <note>LURE-V NOTES: Based on financial subcorpus, comparison with 'attract'. Member of Vncls force-59-1. (from lure.01-v)</note>
       <roles>
         <role descr="attractor" f="PAG" n="0">
-          <vnrole vncls="59-1" vntheta="Agent"/>
+          <vnrole vncls="59.3" vntheta="Agent"/>
         </role>
         <role descr="thing attracted" f="PPT" n="1">
-          <vnrole vncls="59-1" vntheta="Patient"/>
+          <vnrole vncls="59.3" vntheta="Patient"/>
         </role>
         <role descr="thing attracted to, if separate from attractor,   or lured from" f="dir" n="2"/>
         <role descr="instrument, if separate from attractor" f="mnr" n="3"/>

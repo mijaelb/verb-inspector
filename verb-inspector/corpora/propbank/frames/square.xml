@@ -8,10 +8,10 @@
       <note>SQUARE-V NOTES: Frames file for 'square' based on sentences in financial subcorpus. No Verbnet entry. VN class settle-89. (from square.01-v)</note>
       <roles>
         <role descr="cause of rightness, agent" f="pag" n="0">
-          <vnrole vncls="89" vntheta="agent"/>
+          <vnrole vncls="22.6" vntheta="agent"/>
         </role>
         <role descr="thing being set to rights" f="gol" n="1">
-          <vnrole vncls="89" vntheta="goal"/>
+          <vnrole vncls="22.6" vntheta="goal"/>
         </role>
       </roles>
       <example name="deplorable grammar" src="" type="">

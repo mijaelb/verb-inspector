@@ -8,13 +8,13 @@
       <note>IMPEACH-V NOTES: Frames file for 'impeach' based on sentences in wsj and automaticexpansion via verbnet. (from impeach.01-v predicate notes)</note>
       <roles>
         <role descr="impeacher" f="PAG" n="0">
-          <vnrole vncls="33" vntheta="Agent"/>
+          <vnrole vncls="33.2" vntheta="Agent"/>
         </role>
         <role descr="impeached" f="PPT" n="1">
-          <vnrole vncls="33" vntheta="Theme"/>
+          <vnrole vncls="33.2" vntheta="Theme"/>
         </role>
         <role descr="crime" f="PRD" n="2">
-          <vnrole vncls="33" vntheta="Attribute"/>
+          <vnrole vncls="33.2" vntheta="Attribute"/>
         </role>
       </roles>
       <example name="passive" src="" type="">

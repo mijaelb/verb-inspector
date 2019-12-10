@@ -8,13 +8,13 @@
       <note>MOCK-V NOTES: Frames file for 'mock' based on sentences in wsj. Verbnet entry 33, Framenet entry Judgement and Judgement communication. (from mock.01-v predicate notes)</note>
       <roles>
         <role descr="mocker" f="PAG" n="0">
-          <vnrole vncls="33" vntheta="Agent"/>
+          <vnrole vncls="33.1-1" vntheta="Agent"/>
         </role>
         <role descr="mocked" f="PPT" n="1">
-          <vnrole vncls="33" vntheta="Theme"/>
+          <vnrole vncls="33.1-1" vntheta="Theme"/>
         </role>
         <role descr="reason, what's so funny" f="PRD" n="2">
-          <vnrole vncls="33" vntheta="Attribute"/>
+          <vnrole vncls="33.1-1" vntheta="Attribute"/>
         </role>
       </roles>
       <example name="just transitive" src="" type="">

@@ -113,13 +113,13 @@
       <note>STOP-V NOTES: Member of Vncls forbid-67. (from stop.03-v)</note>
       <roles>
         <role descr="preventer, stopper" f="pag" n="0">
-          <vnrole vncls="67" vntheta="agent"/>
+          <vnrole vncls="64.4-1" vntheta="agent"/>
         </role>
         <role descr="stopped agent" f="ppt" n="1">
-          <vnrole vncls="67" vntheta="theme"/>
+          <vnrole vncls="64.4-1" vntheta="theme"/>
         </role>
         <role descr="stopped action" f="ppt" n="2">
-          <vnrole vncls="67" vntheta="theme"/>
+          <vnrole vncls="64.4-1" vntheta="theme"/>
         </role>
       </roles>
       <example name="stop-v: stopped event" src="" type="">

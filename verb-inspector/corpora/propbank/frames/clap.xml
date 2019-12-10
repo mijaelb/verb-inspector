@@ -11,11 +11,11 @@
       <roles>
         <role descr="clapper" f="PAG" n="0">
           <vnrole vncls="43.2" vntheta="Agent"/>
-          <vnrole vncls="40.3.1-1" vntheta="Agent"/>
+          <vnrole vncls="40.3.1" vntheta="Agent"/>
         </role>
         <role descr="thing(s) struck" f="PPT" n="1">
           <vnrole vncls="43.2" vntheta="Theme"/>
-          <vnrole vncls="40.3.1-1" vntheta="Patient"/>
+          <vnrole vncls="40.3.1" vntheta="Patient"/>
         </role>
         <role descr="other thing struck, location" f="LOC" n="2">
           <vnrole vncls="43.2" vntheta="Location"/>

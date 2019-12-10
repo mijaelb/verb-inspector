@@ -8,10 +8,10 @@
       <note>OUTRACE-V NOTES: Edited by hwangd (from outrace.01-v)</note>
       <roles>
         <role descr="thing outdoing" f="PPT" n="0">
-          <vnrole vncls="90-1" vntheta="Theme"/>
+          <vnrole vncls="90" vntheta="Theme"/>
         </role>
         <role descr="thing outdone" f="PPT" n="1">
-          <vnrole vncls="90-1" vntheta="co-theme"/>
+          <vnrole vncls="90" vntheta="co-theme"/>
         </role>
       </roles>
       <example name="Usual use" src="web usage" type="">

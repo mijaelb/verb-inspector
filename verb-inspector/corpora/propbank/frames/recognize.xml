@@ -11,10 +11,10 @@
       <roles>
         <note>predication and cause each given their own arg here. (from recognition.01-n)</note>
         <role descr="applauder" f="PAG" n="0">
-          <vnrole vncls="33" vntheta="Agent"/>
+          <vnrole vncls="33.1" vntheta="Agent"/>
         </role>
         <role descr="entity applauded" f="PPT" n="1">
-          <vnrole vncls="33" vntheta="Theme"/>
+          <vnrole vncls="33.1" vntheta="Theme"/>
         </role>
         <role descr="recognized for/ because of" f="cau" n="2"/>
         <role descr="recognized as" f="prd" n="3"/>

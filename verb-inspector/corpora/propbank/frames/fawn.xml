@@ -8,10 +8,10 @@
       <note>FAWN-V NOTES: Frames file for 'fawn' based on sentences in wsj. Verbnet entry 28, which has nothing to do with usage in wsj or anywhere else for that matter. (from fawn.01-v predicate notes)</note>
       <roles>
         <role descr="seeker" f="PAG" n="0">
-          <vnrole vncls="28" vntheta="Agent"/>
+          <vnrole vncls="28.1" vntheta="Agent"/>
         </role>
         <role descr="with whom, fawned-over" f="PPT" n="1">
-          <vnrole vncls="28" vntheta="Patient"/>
+          <vnrole vncls="28.1" vntheta="Patient"/>
         </role>
       </roles>
       <example name="the one example" src="" type="">

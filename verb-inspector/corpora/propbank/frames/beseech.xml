@@ -8,13 +8,13 @@
       <note>BESEECH-V NOTES: Frames file for 'beseech' based on instances in Webtext 2.5-2. VerbNet entry 60. Comparison to 'invite.' (from beseech.01-v predicate notes)</note>
       <roles>
         <role descr="begger, person beseeching" f="pag" n="0">
-          <vnrole vncls="60" vntheta="agent"/>
+          <vnrole vncls="58.1-1" vntheta="agent"/>
         </role>
         <role descr="person arg 0 is imploring" f="gol" n="1">
-          <vnrole vncls="60" vntheta="recipient"/>
+          <vnrole vncls="58.1-1" vntheta="patient"/>
         </role>
         <role descr="arg 1 is besought to do what?" f="prd" n="2">
-          <vnrole vncls="60" vntheta="Topic"/>
+          <vnrole vncls="58.1-1" vntheta="result"/>
         </role>
       </roles>
       <example name="No Action, Arg 2 specified" src="No Action, Arg 2 specified" type="No Action, Arg 2 specified">

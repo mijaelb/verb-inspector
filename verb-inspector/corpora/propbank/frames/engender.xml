@@ -8,10 +8,10 @@
       <note>ENGENDER-V NOTES: Frames file for 'engender' based on sentences in brown. (from engender.01-v predicate notes)</note>
       <roles>
         <role descr="creator, cause" f="CAU" n="0">
-          <vnrole vncls="27" vntheta="Cause"/>
+          <vnrole vncls="27.1" vntheta="Cause"/>
         </role>
         <role descr="creation, effect" f="PPT" n="1">
-          <vnrole vncls="27" vntheta="Theme"/>
+          <vnrole vncls="27.1" vntheta="Theme"/>
         </role>
       </roles>
       <example name="always passive, apparently" src="" type="">

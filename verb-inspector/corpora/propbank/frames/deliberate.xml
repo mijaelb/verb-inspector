@@ -11,10 +11,10 @@
       <roles>
         <role descr="thinker" f="pag" n="0">
           <vnrole vncls="36.3-1" vntheta="agent"/>
-          <vnrole vncls="36.1" vntheta="agent"/>
+          <vnrole vncls="36.1.1" vntheta="agent"/>
         </role>
         <role descr="thought, thing deliberated on; usually: on/upon/about" f="ppt" n="1">
-          <vnrole vncls="36.1" vntheta="theme"/>
+          <vnrole vncls="36.1.1" vntheta="theme"/>
         </role>
       </roles>
       <example name="only intransitive" src="" type="">

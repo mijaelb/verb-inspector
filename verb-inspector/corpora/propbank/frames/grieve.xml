@@ -9,11 +9,11 @@
       <roles>
         <role descr="causer of grief" f="PAG" n="0">
           <vnrole vncls="31.1" vntheta="Stimulus"/>
-          <vnrole vncls="31.3-3" vntheta="Stimulus"/>
+          <vnrole vncls="31.3" vntheta="Stimulus"/>
         </role>
         <role descr="saddened entity" f="ppt" n="1">
           <vnrole vncls="31.1" vntheta="Experiencer"/>
-          <vnrole vncls="31.3-3" vntheta="Experiencer"/>
+          <vnrole vncls="31.3" vntheta="Experiencer"/>
         </role>
         <role descr="instrument or manner if separate from arg 0" f="mnr" n="2"/>
       </roles>

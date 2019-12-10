@@ -10,13 +10,13 @@
       <note>COMMISSIONING-N NOTES: Added by Julia based on BOLT, commision-n.01. Corresponds to VNcls force-59. (from commissioning.01-n)</note>
       <roles>
         <role descr="granter, agent" f="PAG" n="0">
-          <vnrole vncls="59" vntheta="Agent"/>
+          <vnrole vncls="58.3-1" vntheta="Agent"/>
         </role>
         <role descr="task" f="PRD" n="1">
-          <vnrole vncls="59" vntheta="Result"/>
+          <vnrole vncls="58.3-1" vntheta="Result"/>
         </role>
         <role descr="recepient" f="PPT" n="2">
-          <vnrole vncls="59" vntheta="Patient"/>
+          <vnrole vncls="58.3-1" vntheta="Patient"/>
         </role>
       </roles>
       <example name="transitive" src="" type="">

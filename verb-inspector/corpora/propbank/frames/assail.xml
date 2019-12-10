@@ -8,10 +8,10 @@
       <note>ASSAIL-V NOTES: Frames file for 'assail' based on survey of sentences in the WSJ corpus. (from assail.01-v predicate notes)</note>
       <roles>
         <role descr="assailant, agent" f="pag" n="0">
-          <vnrole vncls="33" vntheta="agent"/>
+          <vnrole vncls="33.1-1" vntheta="agent"/>
         </role>
         <role descr="entity assailed" f="ppt" n="1">
-          <vnrole vncls="33" vntheta="theme"/>
+          <vnrole vncls="33.1-1" vntheta="theme"/>
         </role>
         <role descr="assailed for" f="cau" n="2"/>
       </roles>

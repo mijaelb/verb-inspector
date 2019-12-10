@@ -8,10 +8,10 @@
       <note>FOAL-V NOTES: Corrected by Claire. (from foal.01-v)</note>
       <roles>
         <role descr="Mother" f="PAG" n="0">
-          <vnrole vncls="28" vntheta="Agent"/>
+          <vnrole vncls="28.1" vntheta="Agent"/>
         </role>
         <role descr="Baby" f="PPT" n="1">
-          <vnrole vncls="28" vntheta="Patient"/>
+          <vnrole vncls="28.1" vntheta="Patient"/>
         </role>
       </roles>
       <example name="All arguments" src="web usage" type="">

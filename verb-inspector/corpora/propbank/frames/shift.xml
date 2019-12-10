@@ -17,7 +17,7 @@
         </role>
         <role descr="thing moving" f="ppt" n="1">
           <vnrole vncls="11.1" vntheta="Theme"/>
-          <vnrole vncls="45.6" vntheta="Patient"/>
+          <vnrole vncls="45.6.2-1" vntheta="Patient"/>
           <vnrole vncls="26.6.2" vntheta="Patient"/>
         </role>
         <role descr="destination" f="gol" n="2">
@@ -29,7 +29,7 @@
           <vnrole vncls="26.6.2" vntheta="Initial_Location"/>
         </role>
         <role descr="attribute of arg1 actually shifting (if in addition to arg1)" f="PRD" n="4">
-          <vnrole vncls="45.6" vntheta="Attribute"/>
+          <vnrole vncls="45.6.2-1" vntheta="Attribute"/>
         </role>
       </roles>
       <example name="all args" src="" type="">

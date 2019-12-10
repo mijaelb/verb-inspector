@@ -8,11 +8,11 @@
       <note>WAGGLE-V NOTES: Member of VNcls body_internal_motion-49, crane-40.3.2. (from waggle.01-v)</note>
       <roles>
         <role descr="waggler, agent" f="PAG" n="0">
-          <vnrole vncls="49" vntheta="Agent"/>
+          <vnrole vncls="49.1" vntheta="Agent"/>
           <vnrole vncls="40.3.2" vntheta="Agent"/>
         </role>
         <role descr="thing waggled" f="PPT" n="1">
-          <vnrole vncls="49" vntheta="Patient"/>
+          <vnrole vncls="49.1" vntheta="Patient"/>
           <vnrole vncls="40.3.2" vntheta="Patient"/>
         </role>
       </roles>

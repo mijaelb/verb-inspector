@@ -8,10 +8,10 @@
       <note>EULOGIZE-V NOTES: Frames file for 'eulogize' based on dictionary.com. VerbNet entry 33. (from eulogize.01-v predicate notes)</note>
       <roles>
         <role descr="agent, honorer" f="pag" n="0">
-          <vnrole vncls="33" vntheta="agent"/>
+          <vnrole vncls="33.1-1" vntheta="agent"/>
         </role>
         <role descr="entity eulogized" f="ppt" n="1">
-          <vnrole vncls="33" vntheta="theme"/>
+          <vnrole vncls="33.1-1" vntheta="theme"/>
         </role>
         <role descr="for what,as what" f="cau" n="2"/>
       </roles>

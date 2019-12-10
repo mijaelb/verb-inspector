@@ -8,10 +8,10 @@
       <note>REPROBATE-V NOTES: Roleset by Katie based on internet search, parallel expansion of verbnet, propbank, and sense groupings. Verbnet class judgement-33. (from reprobate.01-v)</note>
       <roles>
         <role descr="condemner" f="PAG" n="0">
-          <vnrole vncls="33" vntheta="Agent"/>
+          <vnrole vncls="33.1" vntheta="Agent"/>
         </role>
         <role descr="condemned" f="PPT" n="1">
-          <vnrole vncls="33" vntheta="Theme"/>
+          <vnrole vncls="33.1" vntheta="Theme"/>
         </role>
       </roles>
       <example name="disapprove of" src="" type="">

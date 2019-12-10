@@ -11,10 +11,10 @@
       <roles>
         <note>Arg 3 does not exist in verb roleset.  This argument seems to be more core to the noun. (from punishment.01-n)</note>
         <role descr="punisher, agent" f="pag" n="0">
-          <vnrole vncls="33" vntheta="agent"/>
+          <vnrole vncls="33.2-1" vntheta="agent"/>
         </role>
         <role descr="punished" f="ppt" n="1">
-          <vnrole vncls="33" vntheta="theme"/>
+          <vnrole vncls="33.2-1" vntheta="theme"/>
         </role>
         <role descr="punished-for" f="cau" n="2"/>
         <role descr="mention of punishment itself" f="mnr" n="3"/>

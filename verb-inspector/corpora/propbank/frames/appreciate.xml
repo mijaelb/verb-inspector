@@ -8,10 +8,10 @@
       <note>APPRECIATE-V NOTES: Frames file for 'appreciate' based on sentences in financial subcorpus. Member of Vncls calibratable_cos-45.6-1. (from appreciate.01-v)</note>
       <roles>
         <role descr="thing increasing" f="ppt" n="1">
-          <vnrole vncls="45.6-1" vntheta="patient"/>
+          <vnrole vncls="45.6.1" vntheta="patient"/>
         </role>
         <role descr="EXT" f="ext" n="2">
-          <vnrole vncls="45.6-1" vntheta="extent"/>
+          <vnrole vncls="45.6.1" vntheta="extent"/>
         </role>
         <role descr="start point" f="dir" n="3"/>
         <role descr="end point" f="prd" n="4"/>

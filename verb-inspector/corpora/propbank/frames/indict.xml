@@ -10,10 +10,10 @@
       <note>INDICTMENT-N NOTES: Based on sentences in nouns-00040. Comparison to indict.01. Vn class judgement-33. FN class notification_of_charges. Framed by Katie. (from indictment.01-n)</note>
       <roles>
         <role descr="accuser" f="pag" n="0">
-          <vnrole vncls="33" vntheta="agent"/>
+          <vnrole vncls="33.2-1" vntheta="agent"/>
         </role>
         <role descr="accused" f="ppt" n="1">
-          <vnrole vncls="33" vntheta="theme"/>
+          <vnrole vncls="33.2-1" vntheta="theme"/>
         </role>
         <role descr="crime" f="cau" n="2"/>
       </roles>

@@ -15,17 +15,17 @@
       <roles>
         <role descr="agent, tempter" f="pag" n="0">
           <vnrole vncls="31.1" vntheta="stimulus"/>
-          <vnrole vncls="59" vntheta="agent"/>
+          <vnrole vncls="58.1-1" vntheta="agent"/>
         </role>
         <role descr="patient, tempted" f="ppt" n="1">
           <vnrole vncls="31.1" vntheta="experiencer"/>
-          <vnrole vncls="59" vntheta="patient"/>
+          <vnrole vncls="58.1-1" vntheta="patient"/>
         </role>
         <role descr="instrument, tempted with or by" f="mnr" n="2">
           <vnrole vncls="31.1" vntheta="stimulus"/>
         </role>
         <role descr="induced action of arg1" f="prd" n="3">
-          <vnrole vncls="59" vntheta="result"/>
+          <vnrole vncls="58.1-1" vntheta="result"/>
         </role>
       </roles>
       <example name="induced action" src="" type="">

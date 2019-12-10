@@ -10,13 +10,13 @@
       <note>HINT-N NOTES: Added by Julia based on BOLT, hint-v.01. Corresponds to VNcls say-37.7-2. (from hint.01-n)</note>
       <roles>
         <role descr="Sayer" f="PAG" n="0">
-          <vnrole vncls="37.7-2" vntheta="Agent"/>
+          <vnrole vncls="37.7-1-2" vntheta="Agent"/>
         </role>
         <role descr="Utterance (hint)" f="PPT" n="1">
-          <vnrole vncls="37.7-2" vntheta="Topic"/>
+          <vnrole vncls="37.7-1-2" vntheta="Topic"/>
         </role>
         <role descr="Hearer" f="GOL" n="2">
-          <vnrole vncls="37.7-2" vntheta="Recipient"/>
+          <vnrole vncls="37.7-1-2" vntheta="Recipient"/>
         </role>
       </roles>
       <example name="sentential hint" src="" type="">

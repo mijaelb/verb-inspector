@@ -10,13 +10,13 @@
       <note>OBLIGATE-V NOTES: The only difference between 'oblige' and 'obligate' is that the lattercan only occur in the passive. The former also prefers the passive,though. (from obligate.01-v)</note>
       <roles>
         <role descr="causal agent" f="PAG" n="0">
-          <vnrole vncls="59" vntheta="Agent"/>
+          <vnrole vncls="59.1" vntheta="Agent"/>
         </role>
         <role descr="obligated, impelled agent" f="PPT" n="1">
-          <vnrole vncls="59" vntheta="Patient"/>
+          <vnrole vncls="59.1" vntheta="Patient"/>
         </role>
         <role descr="obligation, impelled action" f="PRD" n="2">
-          <vnrole vncls="59" vntheta="Result"/>
+          <vnrole vncls="59.1" vntheta="Result"/>
         </role>
       </roles>
       <example name="always passive" src="" type="">

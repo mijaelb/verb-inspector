@@ -8,10 +8,10 @@
       <note>FRET-V NOTES: Frames file for 'fret' based on sentences in wsj and automaticexpansion via verbnet. (from fret.01-v predicate notes)</note>
       <roles>
         <role descr="fretter, worrier" f="PPT" n="0">
-          <vnrole vncls="31.3-2" vntheta="Experiencer"/>
+          <vnrole vncls="31.3" vntheta="Experiencer"/>
         </role>
         <role descr="cause" f="PAG" n="1">
-          <vnrole vncls="31.3-2" vntheta="Stimulus"/>
+          <vnrole vncls="31.3" vntheta="Stimulus"/>
         </role>
       </roles>
       <example name="fret about an NP" src="" type="">

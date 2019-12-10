@@ -8,13 +8,13 @@
       <note>HOBNOB-V NOTES: Corrected by Claire. (from hobnob.01-v)</note>
       <roles>
         <role descr="First (or all if in one constituent) talker" f="pag" n="0">
-          <vnrole vncls="36.1" vntheta="Agent"/>
+          <vnrole vncls="36.1.1" vntheta="Agent"/>
         </role>
         <role descr="Other hobnobber (when separate constituent)" f="com" n="1">
-          <vnrole vncls="36.1" vntheta="co-agent"/>
+          <vnrole vncls="36.1.1" vntheta="co-agent"/>
         </role>
         <role descr="Topic, hobnobbed-about" f="ppt" n="2">
-          <vnrole vncls="36.1" vntheta="Theme"/>
+          <vnrole vncls="36.1.1" vntheta="Theme"/>
         </role>
       </roles>
       <example name="All arguments...casual conversation?" src="web usage" type="">

@@ -63,6 +63,30 @@ class PlotPointContainer(object):
         self.verbnet = vn.VerbNet(verbnet_path)
         self.vnpb = utils.fromjson(vnpb_path)
         self.propbank = pb.PropBank(propbank_path)
+
+        vnclasses = list(self.verbnet.classes.keys())
+        for predicate in self.propbank.predicates.values():
+            for roleset in predicate.get_rolesets():
+                classes = roleset.get_classes()
+                for cls in classes:
+                    res = ''
+                    for vncls in vnclasses:
+                        tupl = re.match(r'(\w+)-(.*)', vncls)
+                        if tupl[2] == cls:
+                            res = cls
+
+                    if not res:
+                        vnpb_classes = utils.get_classes_from_vnpb_mappings(self.vnpb, predicate.lemma, roleset.id)
+                        print(f'{predicate.lemma} {roleset.id} Not found {cls}, but found {str(vnpb_classes)}')
+                        sys.stdout.write('Select:')
+                        choice = input().lower()
+                        if choice:
+                            self.propbank.replace(f'vncls="{cls}"', f'vncls="{choice}"', predicate.lemma)
+                        #if len(vnpb_classes) == 1:
+                            #if self.query_yes_no('Edit?', default="yes"):
+                                #self.propbank.replace(f'vncls="{cls}"', f'vncls="{vnpb_classes[0]}"', predicate.lemma)
+
+
         self.groupings = gr.Groupings(groupings_path)
 
         self.plotpoints = self.get_plotpoints()
@@ -278,7 +302,6 @@ class PlotPointContainer(object):
             else:
                 sys.stdout.write("Please respond with 'yes' or 'no' "
                                  "(or 'y' or 'n').\n")
-
     def create_plotpoints_dict(self, priority=[Dataset.GR, Dataset.PB]):
         senses = self.groupings.get_pb_ids('move')
         classes = self.groupings.get_vn_classes('move')

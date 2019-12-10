@@ -8,10 +8,10 @@
       <note>OUTSTRIP-V NOTES: Frames file for 'outstrip' based on sentences in financial subcorpus. No Verbnet entry, no framenet entry. Comparison with 'exceed'. (from outstrip.01-v predicate notes)</note>
       <roles>
         <role descr="thing that's more" f="ppt" n="0">
-          <vnrole vncls="90-1" vntheta="theme"/>
+          <vnrole vncls="90" vntheta="theme"/>
         </role>
         <role descr="thing that's less" f="ppt" n="1">
-          <vnrole vncls="90-1" vntheta="co-theme"/>
+          <vnrole vncls="90" vntheta="co-theme"/>
         </role>
         <role descr="margin, difference" f="ext" n="2"/>
       </roles>

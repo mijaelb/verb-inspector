@@ -10,13 +10,13 @@
       <note>PERSUASION-N NOTES: Added by Julia based on BOLT-6. (from persuasion.01-n)</note>
       <roles>
         <role descr="convincer" f="pag" n="0">
-          <vnrole vncls="59" vntheta="agent"/>
+          <vnrole vncls="59.1" vntheta="agent"/>
         </role>
         <role descr="impelled agent" f="ppt" n="1">
-          <vnrole vncls="59" vntheta="patient"/>
+          <vnrole vncls="59.1" vntheta="patient"/>
         </role>
         <role descr="impelled action, proposition" f="prd" n="2">
-          <vnrole vncls="59" vntheta="result"/>
+          <vnrole vncls="59.1" vntheta="result"/>
         </role>
       </roles>
       <example name="impelled action" src="" type="">
@@ -52,13 +52,13 @@
       <note>PERSUASIVE-J NOTES: Added by Julia based on WSJ data, persuade-v.01. Corresponds to VNcls force-59. (from persuasive.01-j)</note>
       <roles>
         <role descr="persuasive entity" f="pag" n="0">
-          <vnrole vncls="59" vntheta="agent"/>
+          <vnrole vncls="59.1" vntheta="agent"/>
         </role>
         <role descr="entity persuaded" f="ppt" n="1">
-          <vnrole vncls="59" vntheta="patient"/>
+          <vnrole vncls="59.1" vntheta="patient"/>
         </role>
         <role descr="idea/action arg1 is persuaded into" f="prd" n="2">
-          <vnrole vncls="59" vntheta="result"/>
+          <vnrole vncls="59.1" vntheta="result"/>
         </role>
       </roles>
       <example name="args 0, 2" src="internet" type="">

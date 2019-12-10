@@ -9,17 +9,17 @@
       <roles>
         <note>The crown itself (physical artifact) is symbolic of the role or attribute, hence the ability to merge the two into one arg. (from crown.01-v)</note>
         <role descr="putter of crown" f="PAG" n="0">
-          <vnrole vncls="29.3" vntheta="agent"/>
+          <vnrole vncls="29.3.2" vntheta="agent"/>
           <vnrole vncls="29.1" vntheta="agent"/>
           <vnrole vncls="9.9" vntheta="agent"/>
         </role>
         <role descr="receiver of crown" f="ppt" n="1">
-          <vnrole vncls="29.3" vntheta="theme"/>
+          <vnrole vncls="29.3.2" vntheta="theme"/>
           <vnrole vncls="29.1" vntheta="theme"/>
           <vnrole vncls="9.9" vntheta="destination"/>
         </role>
         <role descr="crown, or attribute of arg1" f="prd" n="2">
-          <vnrole vncls="29.3" vntheta="result"/>
+          <vnrole vncls="29.3.2" vntheta="result"/>
           <vnrole vncls="29.1" vntheta="result"/>
           <vnrole vncls="9.9" vntheta="theme"/>
         </role>

@@ -253,11 +253,11 @@ GO-V NOTES: This is an incorrect parse from Treebank; "be gone" is clearly notpa
       
       <roles>
         <role descr="object" f="ppt" n="1">
-          <vnrole vncls="31.3-2" vntheta="experiencer"/>
+          <vnrole vncls="31.3" vntheta="experiencer"/>
         </role>
         <role descr="attribute of arg1" f="prd" n="2"/>
         <role descr="with reference to what" f="pag" n="3">
-          <vnrole vncls="31.3-2" vntheta="stimulus"/>
+          <vnrole vncls="31.3" vntheta="stimulus"/>
         </role>
       <note>Use this sense for inceptive uses of go, such as become at war - to start war.</note>
 </roles>

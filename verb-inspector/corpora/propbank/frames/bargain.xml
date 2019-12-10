@@ -12,15 +12,15 @@
       <note>BARGAIN-N NOTES: Added due to expansion of Nombank. Comparison to bargain-v. Vn classes correspond-36.1, battel-36.4, and settle-89. No Fn class. Framed by Katie. (from bargain.01-n)</note>
       <roles>
         <role descr="negotiator, agent" f="PAG" n="0">
-          <vnrole vncls="36.1" vntheta="Agent"/>
-          <vnrole vncls="89" vntheta="Agent"/>
+          <vnrole vncls="36.1.1" vntheta="Agent"/>
+          <vnrole vncls="36.1.2" vntheta="Agent"/>
         </role>
         <role descr="thing bargained (for)" f="ppt" n="1">
-          <vnrole vncls="36.1" vntheta="Theme"/>
-          <vnrole vncls="89" vntheta="Goal"/>
+          <vnrole vncls="36.1.1" vntheta="Theme"/>
+          <vnrole vncls="36.1.2" vntheta="Goal"/>
         </role>
         <role descr="co-negotiator, bargained with" f="COM" n="2">
-          <vnrole vncls="36.1" vntheta="co-agent"/>
+          <vnrole vncls="36.1.1" vntheta="co-agent"/>
         </role>
       </roles>
       <example name="transitive" src="" type="">

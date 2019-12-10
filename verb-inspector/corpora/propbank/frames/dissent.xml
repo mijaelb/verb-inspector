@@ -12,10 +12,10 @@
       <note>DISSENTION-N NOTES: Automatically created by Julia as an alias file for unification. (from dissention.01-n)</note>
       <roles>
         <role descr="disagreer, agent" f="pag" n="0">
-          <vnrole vncls="36.1" vntheta="agent"/>
+          <vnrole vncls="36.1.1" vntheta="agent"/>
         </role>
         <role descr="disagreement, dissent from" f="ppt" n="1">
-          <vnrole vncls="36.1" vntheta="theme"/>
+          <vnrole vncls="36.1.1" vntheta="theme"/>
         </role>
       </roles>
       <example name="ARG0 and ARG1" src="ontonotes nw/wsj/02/wsj_0240" type="">

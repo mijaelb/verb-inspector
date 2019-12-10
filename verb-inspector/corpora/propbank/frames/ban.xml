@@ -10,10 +10,10 @@
       <note>BANNING-N NOTES: Roleset based on instances in BOLT-P01, nouns parts 1&amp; 2. Based on verb entry ban.01, which maps to forbid-67. No framenet entry for the noun banning. (from banning.01-n)</note>
       <roles>
         <role descr="lawgiver, usually" f="PAG" n="0">
-          <vnrole vncls="67" vntheta="agent"/>
+          <vnrole vncls="64.4-1" vntheta="agent"/>
         </role>
         <role descr="activity/place/item not allowed; banned from" f="ppt" n="1">
-          <vnrole vncls="67" vntheta="theme"/>
+          <vnrole vncls="64.4-1" vntheta="theme"/>
         </role>
         <role descr="secondary agent; entity banned from engaging in/entering arg1" f="gol" n="2"/>
       </roles>

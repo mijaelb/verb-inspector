@@ -9,11 +9,11 @@
       <roles>
         <role descr="agent, pleaser, pleasing thing" f="pag" n="0">
           <vnrole vncls="31.1" vntheta="stimulus"/>
-          <vnrole vncls="31.3-5" vntheta="stimulus"/>
+          <vnrole vncls="31.3" vntheta="stimulus"/>
         </role>
         <role descr="patient, entity pleased" f="ppt" n="1">
           <vnrole vncls="31.1" vntheta="experiencer"/>
-          <vnrole vncls="31.3-5" vntheta="experiencer"/>
+          <vnrole vncls="31.3" vntheta="experiencer"/>
         </role>
         <role descr="instrumental (if in addition to arg0)" f="mnr" n="2"/>
       </roles>
@@ -40,10 +40,10 @@
       <note>DELIGHT-V NOTES: (from delight.03-v)</note>
       <roles>
         <role descr="happy entity" f="ppt" n="0">
-          <vnrole vncls="31.3-5" vntheta="experiencer"/>
+          <vnrole vncls="31.3" vntheta="experiencer"/>
         </role>
         <role descr="prepositional object" f="pag" n="1">
-          <vnrole vncls="31.3-5" vntheta="stimulus"/>
+          <vnrole vncls="31.3" vntheta="stimulus"/>
         </role>
       </roles>
       <example name="prepositional" src="" type="">

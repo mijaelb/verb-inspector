@@ -10,13 +10,13 @@
       <note>DELUSION-N NOTES: delude.01 (from delusion.01-n)</note>
       <roles>
         <role descr="misleader" f="PAG" n="0">
-          <vnrole vncls="59-1" vntheta="Agent"/>
+          <vnrole vncls="59.2" vntheta="Agent"/>
         </role>
         <role descr="misled to" f="PPT" n="1">
-          <vnrole vncls="59-1" vntheta="Patient"/>
+          <vnrole vncls="59.2" vntheta="Patient"/>
         </role>
         <role descr="misled about" f="PRD" n="2">
-          <vnrole vncls="59-1" vntheta="Result"/>
+          <vnrole vncls="59.2" vntheta="Result"/>
         </role>
       </roles>
       <example name="untrustworthy" src="" type="">

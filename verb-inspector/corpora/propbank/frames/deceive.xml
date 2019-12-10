@@ -12,13 +12,13 @@
       <note>DECEPTIVE-J NOTES: Automatically created by Julia as an alias file for unification. (from deceptive.01-j)</note>
       <roles>
         <role descr="liar" f="pag" n="0">
-          <vnrole vncls="59-1" vntheta="agent"/>
+          <vnrole vncls="59.2" vntheta="agent"/>
         </role>
         <role descr="lied to" f="ppt" n="1">
-          <vnrole vncls="59-1" vntheta="patient"/>
+          <vnrole vncls="59.2" vntheta="patient"/>
         </role>
         <role descr="lied about" f="prd" n="2">
-          <vnrole vncls="59-1" vntheta="result"/>
+          <vnrole vncls="59.2" vntheta="result"/>
         </role>
       </roles>
       <example name="intransitive" src="" type="">

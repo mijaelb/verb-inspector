@@ -10,12 +10,12 @@
       <note>MARVELING-J NOTES: Automatically created by Julia as an alias file for unification. (from marveling.01-j)</note>
       <roles>
         <role descr="experiencer of marvelation :)" f="ppt" n="0">
-          <vnrole vncls="31.3-1" vntheta="experiencer"/>
-          <vnrole vncls="31.3-8" vntheta="experiencer"/>
+          <vnrole vncls="31.3" vntheta="experiencer"/>
+          <vnrole vncls="31.3" vntheta="experiencer"/>
         </role>
         <role descr="marvellous thing" f="pag" n="1">
-          <vnrole vncls="31.3-1" vntheta="stimulus"/>
-          <vnrole vncls="31.3-8" vntheta="stimulus"/>
+          <vnrole vncls="31.3" vntheta="stimulus"/>
+          <vnrole vncls="31.3" vntheta="stimulus"/>
         </role>
       </roles>
       <example name="doggerel verse" src="" type="">

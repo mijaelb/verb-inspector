@@ -9,7 +9,7 @@
       <roles>
         <role descr="thing tottering" f="PPT" n="1">
           <vnrole vncls="47.3" vntheta="Theme"/>
-          <vnrole vncls="49" vntheta="Patient"/>
+          <vnrole vncls="49.1" vntheta="Patient"/>
           <vnrole vncls="51.3.2" vntheta="Theme"/>
         </role>
       </roles>

@@ -10,10 +10,10 @@
       <note>REMUNERATION-N NOTES: Based on Bolt data. Comparison to remunerate.01. Remunerate.01 is a member of Vn class judgement-33. Framed by Katie (from remuneration.01-n)</note>
       <roles>
         <role descr="payer, agent" f="pag" n="0">
-          <vnrole vncls="33" vntheta="agent"/>
+          <vnrole vncls="13.4.2-1" vntheta="agent"/>
         </role>
         <role descr="entity remunerated" f="ppt" n="1">
-          <vnrole vncls="33" vntheta="theme"/>
+          <vnrole vncls="13.4.2-1" vntheta="theme"/>
         </role>
         <role descr="compensation" f="mnr" n="2"/>
       </roles>

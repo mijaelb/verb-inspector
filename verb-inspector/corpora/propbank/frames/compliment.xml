@@ -8,13 +8,13 @@
       <note>COMPLIMENT-V NOTES: Frames file for 'compliment' based on sentences in wsj. Verbnet entry 33, Framenet entry Judgement. (from compliment.01-v predicate notes)</note>
       <roles>
         <role descr="giver of compliment" f="PAG" n="0">
-          <vnrole vncls="33" vntheta="Agent"/>
+          <vnrole vncls="33.1-1" vntheta="Agent"/>
         </role>
         <role descr="recipient" f="PPT" n="1">
-          <vnrole vncls="33" vntheta="Theme"/>
+          <vnrole vncls="33.1-1" vntheta="Theme"/>
         </role>
         <role descr="reason" f="PRD" n="2">
-          <vnrole vncls="33" vntheta="Attribute"/>
+          <vnrole vncls="33.1-1" vntheta="Attribute"/>
         </role>
       </roles>
       <example name="all args" src="" type="">

@@ -8,13 +8,13 @@
       <note>GULL-V NOTES: Edited by hwangd (from gull.01-v)</note>
       <roles>
         <role descr="trickster" f="PAG" n="0">
-          <vnrole vncls="10.6" vntheta="Agent"/>
+          <vnrole vncls="10.6.1" vntheta="Agent"/>
         </role>
         <role descr="tricked entity" f="PPT" n="1">
-          <vnrole vncls="10.6" vntheta="Theme"/>
+          <vnrole vncls="10.6.1" vntheta="Theme"/>
         </role>
         <role descr="trick" f="DIR" n="2">
-          <vnrole vncls="10.6" vntheta="Source"/>
+          <vnrole vncls="10.6.1" vntheta="Source"/>
         </role>
       </roles>
       <example name="All args" src="web usage" type="">

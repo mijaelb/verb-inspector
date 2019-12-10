@@ -8,13 +8,13 @@
       <note>BAMBOOZLE-V NOTES: Based on dictionary.com. Member of VNcls force-59. (from bamboozle.01-v)</note>
       <roles>
         <role descr="bamboozler, agent" f="PAG" n="0">
-          <vnrole vncls="59" vntheta="Agent"/>
+          <vnrole vncls="59.2" vntheta="Agent"/>
         </role>
         <role descr="bamboozled" f="PPT" n="1">
-          <vnrole vncls="59" vntheta="Patient"/>
+          <vnrole vncls="59.2" vntheta="Patient"/>
         </role>
         <role descr="into what" f="PRD" n="2">
-          <vnrole vncls="59" vntheta="Result"/>
+          <vnrole vncls="59.2" vntheta="Result"/>
         </role>
       </roles>
       <example name="watch out for bamboozlers" src="" type="">

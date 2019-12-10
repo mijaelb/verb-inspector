@@ -8,13 +8,13 @@
       <note>DISENCUMBER-V NOTES: Edited by hwangd (from disencumber.01-v)</note>
       <roles>
         <role descr="entity freeing" f="PAG" n="0">
-          <vnrole vncls="10.6" vntheta="Agent"/>
+          <vnrole vncls="10.6.3" vntheta="Agent"/>
         </role>
         <role descr="thing being freed" f="PPT" n="1">
-          <vnrole vncls="10.6" vntheta="Theme"/>
+          <vnrole vncls="10.6.3" vntheta="Theme"/>
         </role>
         <role descr="freed from" f="DIR" n="2">
-          <vnrole vncls="10.6" vntheta="Source"/>
+          <vnrole vncls="10.6.3" vntheta="Source"/>
         </role>
       </roles>
       <example name="All args" src="web usage" type="">

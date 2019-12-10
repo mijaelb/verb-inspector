@@ -30,10 +30,10 @@
       <note>WIGGLE-V NOTES: Rolesets could be merged? VN updated by Julia, 10/2010. Member of Vncls body_internal_motion-49, crane-40.3.2. (from wiggle.02-v)</note>
       <roles>
         <role descr="causer" f="PAG" n="0">
-          <vnrole vncls="49" vntheta="agent"/>
+          <vnrole vncls="49.1" vntheta="agent"/>
         </role>
         <role descr="thing wiggling" f="PPT" n="1">
-          <vnrole vncls="49" vntheta="patient"/>
+          <vnrole vncls="49.1" vntheta="patient"/>
         </role>
       </roles>
       <example name="wiggling fanny" src="" type="">

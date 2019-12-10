@@ -8,10 +8,10 @@
       <note>CALUMNIATE-V NOTES: Frames file for 'calumniate' based on dictionary.com. Verbnet entry 33. (from calumniate.01-v predicate notes)</note>
       <roles>
         <role descr="false statement maker, agent" f="PAG" n="0">
-          <vnrole vncls="33" vntheta="Agent"/>
+          <vnrole vncls="33.1-1" vntheta="Agent"/>
         </role>
         <role descr="entity calumniated" f="PPT" n="1">
-          <vnrole vncls="33" vntheta="Theme"/>
+          <vnrole vncls="33.1-1" vntheta="Theme"/>
         </role>
       </roles>
       

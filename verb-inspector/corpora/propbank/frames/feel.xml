@@ -52,15 +52,15 @@ FEELING-N NOTES: Corresponds with feel.01 (from feeling.01-n)</note>
       
       <roles>
         <role descr="believer" f="pag" n="0">
-          <vnrole vncls="29.5-1-2" vntheta="agent"/>
+          <vnrole vncls="29.5-2" vntheta="agent"/>
           <vnrole vncls="29.9-2" vntheta="agent"/>
         </role>
         <role descr="belief" f="ppt" n="1">
-          <vnrole vncls="29.5-1-2" vntheta="theme"/>
+          <vnrole vncls="29.5-2" vntheta="theme"/>
           <vnrole vncls="29.9-2" vntheta="theme"/>
         </role>
         <role descr="attributive (whom/what the feeling is about)" f="prd" n="2">
-          <vnrole vncls="29.5-1-2" vntheta="predicate"/>
+          <vnrole vncls="29.5-2" vntheta="predicate"/>
           <vnrole vncls="29.9-2" vntheta="attribute"/>
         </role>
       </roles>

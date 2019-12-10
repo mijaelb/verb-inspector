@@ -75,13 +75,13 @@
       <note>SUBMIT-V NOTES: Corresponds to VNcls acquiesce-95. Split off original .01 roleset by Julia for unification.SUBMISSION-N NOTES: Split off original .01 roleset by Julia forunification.SUBMISSIVE-J NOTES: Automatically created by Julia as an aliasfile for unification. (from submissive.01-j)</note>
       <roles>
         <role descr="submissive entity" f="pag" n="0">
-          <vnrole vncls="95" vntheta="agent"/>
+          <vnrole vncls="95.1-1" vntheta="agent"/>
         </role>
         <role descr="given: explicit mention of will, or similar" f="ppt" n="1">
-          <vnrole vncls="95" vntheta="theme"/>
+          <vnrole vncls="95.1-1" vntheta="theme"/>
         </role>
         <role descr="dominant entity submitted to" f="gol" n="2">
-          <vnrole vncls="95" vntheta="co-agent"/>
+          <vnrole vncls="95.1-1" vntheta="co-agent"/>
         </role>
       </roles>
       <example name="submit-v, all args" src="" type="">

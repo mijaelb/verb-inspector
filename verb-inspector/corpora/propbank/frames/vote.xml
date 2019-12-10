@@ -12,13 +12,13 @@
       <note>VOTING-N NOTES: Added by Julia based on BOLT, vote-v.01, vote-n.01. Corresponds to VNcls dub-29.3. (from voting.01-n)</note>
       <roles>
         <role descr="voter" f="pag" n="0">
-          <vnrole vncls="29.3" vntheta="agent"/>
+          <vnrole vncls="29.3.2" vntheta="agent"/>
         </role>
         <role descr="candidate or ballot issue" f="ppt" n="1">
-          <vnrole vncls="29.3" vntheta="theme"/>
+          <vnrole vncls="29.3.2" vntheta="theme"/>
         </role>
         <role descr="numerical count of vote, margin, down/up" f="prd" n="2">
-          <vnrole vncls="29.3" vntheta="result"/>
+          <vnrole vncls="29.3.2" vntheta="result"/>
         </role>
         <role descr="electorate for whom arg0 is a proxy voter" f="gol" n="3"/>
       </roles>

@@ -10,17 +10,17 @@
       <note>SINGING-N NOTES: ~sing.01 (from singing.01-n)</note>
       <roles>
         <role descr="singer" f="PAG" n="0">
-          <vnrole vncls="26.7-1-1" vntheta="Agent"/>
+          <vnrole vncls="26.7-1" vntheta="Agent"/>
           <vnrole vncls="43.2" vntheta="Agent"/>
           <vnrole vncls="37.3" vntheta="Agent"/>
         </role>
         <role descr="song" f="ppt" n="1">
-          <vnrole vncls="26.7-1-1" vntheta="Theme"/>
+          <vnrole vncls="26.7-1" vntheta="Theme"/>
           <vnrole vncls="43.2" vntheta="Theme"/>
           <vnrole vncls="37.3" vntheta="Topic"/>
         </role>
         <role descr="audience" f="gol" n="2">
-          <vnrole vncls="26.7-1-1" vntheta="Beneficiary"/>
+          <vnrole vncls="26.7-1" vntheta="Beneficiary"/>
           <vnrole vncls="37.3" vntheta="Recipient"/>
         </role>
       </roles>

@@ -8,10 +8,10 @@
       <note>LAMPOON-V NOTES: Frames file for 'lampoon' based on dictionary.com. Verbnet entry 33, Framenet entry Judgement and Judgement communication. (from lampoon.01-v predicate notes)</note>
       <roles>
         <role descr="lampooner" f="PAG" n="0">
-          <vnrole vncls="33" vntheta="Agent"/>
+          <vnrole vncls="33.1-1" vntheta="Agent"/>
         </role>
         <role descr="lampooned" f="PPT" n="1">
-          <vnrole vncls="33" vntheta="Theme"/>
+          <vnrole vncls="33.1-1" vntheta="Theme"/>
         </role>
       </roles>
       <example name="satirize" src="" type="">

@@ -8,11 +8,11 @@
       <roles>
         <role descr="causer of trembling motion" f="pag" n="0">
           <vnrole vncls="47.3" vntheta="agent"/>
-          <vnrole vncls="49" vntheta="agent"/>
+          <vnrole vncls="49.1" vntheta="agent"/>
         </role>
         <role descr="thing trembling" f="ppt" n="1">
           <vnrole vncls="47.3" vntheta="theme"/>
-          <vnrole vncls="49" vntheta="patient"/>
+          <vnrole vncls="49.1" vntheta="patient"/>
         </role>
       </roles>
       <example name="ergative" src="" type="">

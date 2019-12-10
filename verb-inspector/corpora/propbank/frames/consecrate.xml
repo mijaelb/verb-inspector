@@ -8,13 +8,13 @@
       <note>CONSECRATE-V NOTES: Roleset based on parallel additions to VN, PB, and sense groupings. VerbNet class dub-29.3-1. Framed by Claire. (from consecrate.01-v)</note>
       <roles>
         <role descr="Agent, appointer" f="pag" n="0">
-          <vnrole vncls="29.3-1" vntheta="agent"/>
+          <vnrole vncls="29.3.2" vntheta="agent"/>
         </role>
         <role descr="Person being ordained, appointed" f="ppt" n="1">
-          <vnrole vncls="29.3-1" vntheta="theme"/>
+          <vnrole vncls="29.3.2" vntheta="theme"/>
         </role>
         <role descr="Position, clerical post appointed to" f="prd" n="2">
-          <vnrole vncls="29.3-1" vntheta="result"/>
+          <vnrole vncls="29.3.2" vntheta="result"/>
         </role>
       </roles>
       <example name="Passive with arg2" src="google search" type="">

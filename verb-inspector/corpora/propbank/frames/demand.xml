@@ -10,15 +10,15 @@
       <note>DEMAND-N NOTES: Roleset based on demand.01. Verbnet class beg 58.2. Framenet class request. Framed by Katie. (from demand.01-n)</note>
       <roles>
         <role descr="asker" f="pag" n="0">
-          <vnrole vncls="60-1" vntheta="agent"/>
+          <vnrole vncls="58.3" vntheta="agent"/>
           <vnrole vncls="103" vntheta="pivot"/>
         </role>
         <role descr="favor" f="ppt" n="1">
-          <vnrole vncls="60-1" vntheta="topic"/>
+          <vnrole vncls="58.3" vntheta="topic"/>
           <vnrole vncls="103" vntheta="theme"/>
         </role>
         <role descr="hearer" f="gol" n="2">
-          <vnrole vncls="60-1" vntheta="recipient"/>
+          <vnrole vncls="58.3" vntheta="recipient"/>
           <vnrole vncls="103" vntheta="source"/>
         </role>
       </roles>

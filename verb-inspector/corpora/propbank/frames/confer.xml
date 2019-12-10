@@ -12,11 +12,11 @@
       <roles>
         <role descr="one party" f="pag" n="0">
           <vnrole vncls="37.6" vntheta="agent"/>
-          <vnrole vncls="36.1" vntheta="agent"/>
+          <vnrole vncls="36.1.1" vntheta="agent"/>
         </role>
         <role descr="other party" f="com" n="1">
           <vnrole vncls="37.6" vntheta="co-agent"/>
-          <vnrole vncls="36.1" vntheta="co-agent"/>
+          <vnrole vncls="36.1.1" vntheta="co-agent"/>
         </role>
       </roles>
       <example name="high-level summit" src="" type="">

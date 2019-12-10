@@ -8,10 +8,10 @@
       <note>REJOICE-V NOTES: Framed by Neville. (from rejoice.01-v)</note>
       <roles>
         <role descr="agent, causer" f="PAG" n="0">
-          <vnrole vncls="31.3-1" vntheta="Stimulus"/>
+          <vnrole vncls="31.3" vntheta="Stimulus"/>
         </role>
         <role descr="experiencer, rejoicer" f="PPT" n="1">
-          <vnrole vncls="31.3-1" vntheta="Experiencer"/>
+          <vnrole vncls="31.3" vntheta="Experiencer"/>
         </role>
       </roles>
       <example name="intransitive" src="" type="">

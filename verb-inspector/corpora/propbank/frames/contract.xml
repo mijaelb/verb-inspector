@@ -54,11 +54,11 @@
       <roles>
         <role descr="causer of contract" f="pag" n="0">
           <vnrole vncls="13.5.3" vntheta="agent"/>
-          <vnrole vncls="89" vntheta="agent"/>
+          <vnrole vncls="13.5.3" vntheta="agent"/>
         </role>
         <role descr="reason, purpose" f="prp" n="1">
           <vnrole vncls="13.5.3" vntheta="attribute"/>
-          <vnrole vncls="89" vntheta="goal"/>
+          <vnrole vncls="13.5.3" vntheta="goal"/>
         </role>
         <role descr="contracted with" f="ppt" n="2">
           <vnrole vncls="13.5.3" vntheta="theme"/>

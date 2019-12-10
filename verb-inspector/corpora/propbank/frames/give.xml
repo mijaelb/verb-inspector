@@ -348,10 +348,10 @@
       <note>GIVE_IN-V NOTES: Member of VNcls acquiesce-95. (from give.09-v)</note>
       <roles>
         <role descr="entity giving way" f="pag" n="0">
-          <vnrole vncls="95" vntheta="agent"/>
+          <vnrole vncls="95.1" vntheta="agent"/>
         </role>
         <role descr="entity winning" f="gol" n="1">
-          <vnrole vncls="95" vntheta="co-agent"/>
+          <vnrole vncls="95.1" vntheta="co-agent"/>
         </role>
       </roles>
       <example name="wimps" src="" type="">

@@ -8,10 +8,10 @@
       <note>HERALD-V NOTES: Member of Vncls judgement-33. VN, FN updated by Julia, 10/2010. (from herald.01-v)</note>
       <roles>
         <role descr="announcer" f="pag" n="0">
-          <vnrole vncls="33" vntheta="agent"/>
+          <vnrole vncls="33.1-1-1" vntheta="agent"/>
         </role>
         <role descr="thing announced" f="ppt" n="1">
-          <vnrole vncls="33" vntheta="theme"/>
+          <vnrole vncls="33.1-1-1" vntheta="theme"/>
         </role>
         <role descr="attribute, announced as" f="prd" n="2"/>
       </roles>

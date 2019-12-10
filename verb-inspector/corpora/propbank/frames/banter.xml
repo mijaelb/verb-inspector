@@ -8,10 +8,10 @@
       <note>BANTER-V NOTES: Hand-corrected by Claire (from banter.01-v)</note>
       <roles>
         <role descr="first speaker (or all speakers if in one mention" f="pag" n="0">
-          <vnrole vncls="36.1" vntheta="agent"/>
+          <vnrole vncls="36.1.1" vntheta="agent"/>
         </role>
         <role descr="second speaker (when separate mention)" f="com" n="1">
-          <vnrole vncls="36.1" vntheta="co-agent"/>
+          <vnrole vncls="36.1.1" vntheta="co-agent"/>
         </role>
         <role descr="topic, bantered about what?" f="ppt" n="2"/>
       </roles>

@@ -8,10 +8,10 @@
       <note>TOAST-V NOTES: Member of Vncls judgement-33. Checked by Julia, 10/2010. (from toast.01-v)</note>
       <roles>
         <role descr="toaster, agent" f="PAG" n="0">
-          <vnrole vncls="33" vntheta="Agent"/>
+          <vnrole vncls="33.1-1" vntheta="Agent"/>
         </role>
         <role descr="entity honored" f="PPT" n="1">
-          <vnrole vncls="33" vntheta="Theme"/>
+          <vnrole vncls="33.1-1" vntheta="Theme"/>
         </role>
       </roles>
       <example name="transitive" src="" type="">

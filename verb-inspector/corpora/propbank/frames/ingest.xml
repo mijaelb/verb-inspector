@@ -10,10 +10,10 @@
       <note>INGESTION-N NOTES: ~ingest.01 (from ingestion.01-n)</note>
       <roles>
         <role descr="eater" f="PAG" n="0">
-          <vnrole vncls="39.4-1" vntheta="Agent"/>
+          <vnrole vncls="39.4" vntheta="Agent"/>
         </role>
         <role descr="entity ingested" f="PPT" n="1">
-          <vnrole vncls="39.4-1" vntheta="Patient"/>
+          <vnrole vncls="39.4" vntheta="Patient"/>
         </role>
       </roles>
       <example name="automatically generated" src="" type="">

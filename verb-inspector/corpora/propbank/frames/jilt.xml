@@ -8,13 +8,13 @@
       <note>JILT-V NOTES: Frame created by Jena based on sentences in ectb2, comparison with 'reject' (verbnet 29.2) and 'switch' (verbnet 13.6). See VNcls exchange-13.6 (from jilt.01-v)</note>
       <roles>
         <role descr="rejecter" f="PAG" n="0">
-          <vnrole vncls="13.6" vntheta="Agent"/>
+          <vnrole vncls="13.6.1" vntheta="Agent"/>
         </role>
         <role descr="rejected lover" f="PPT" n="1">
-          <vnrole vncls="13.6" vntheta="Theme"/>
+          <vnrole vncls="13.6.1" vntheta="Theme"/>
         </role>
         <role descr="new lover" f="PPT" n="3">
-          <vnrole vncls="13.6" vntheta="co-theme"/>
+          <vnrole vncls="13.6.1" vntheta="co-theme"/>
         </role>
       </roles>
       <example name="just transitive" src="" type="">

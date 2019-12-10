@@ -14,15 +14,15 @@
       <note>PRESSING-J NOTES: Automatically created by Julia as an alias file for unification. (from pressing.01-j)</note>
       <roles>
         <role descr="presser" f="pag" n="0">
-          <vnrole vncls="59" vntheta="agent"/>
+          <vnrole vncls="58.1-1-1" vntheta="agent"/>
           <vnrole vncls="12-1-1" vntheta="agent"/>
         </role>
         <role descr="pressed (on)" f="ppt" n="1">
-          <vnrole vncls="59" vntheta="patient"/>
+          <vnrole vncls="58.1-1-1" vntheta="patient"/>
           <vnrole vncls="12-1-1" vntheta="theme"/>
         </role>
         <role descr="goal, pressed-for, arg1 is pressed to do what?" f="prd" n="2">
-          <vnrole vncls="59" vntheta="result"/>
+          <vnrole vncls="58.1-1-1" vntheta="result"/>
         </role>
       </roles>
       <example name="press-v: all args present" src="" type="">

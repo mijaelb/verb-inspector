@@ -8,10 +8,10 @@
       <note>CLUTCH-V NOTES: Frames file for 'clutch' based on survey of sentences in the WSJ corpus. (from clutch.01-v predicate notes)</note>
       <roles>
         <role descr="grasper, agent" f="PAG" n="0">
-          <vnrole vncls="15.1-1" vntheta="Agent"/>
+          <vnrole vncls="15.1" vntheta="Agent"/>
         </role>
         <role descr="entity clutched" f="PPT" n="1">
-          <vnrole vncls="15.1-1" vntheta="Theme"/>
+          <vnrole vncls="15.1" vntheta="Theme"/>
         </role>
       </roles>
       <example name="participle" src="" type="">
@@ -38,10 +38,10 @@
       <note>CLUTCH_ON-V NOTES: (from clutch.02-v)</note>
       <roles>
         <role descr="grasper, agent" f="PAG" n="0">
-          <vnrole vncls="15.1-1" vntheta="Agent"/>
+          <vnrole vncls="15.1" vntheta="Agent"/>
         </role>
         <role descr="entity clutched" f="PPT" n="1">
-          <vnrole vncls="15.1-1" vntheta="Theme"/>
+          <vnrole vncls="15.1" vntheta="Theme"/>
         </role>
       </roles>
       <example name="intransitive" src="" type="">

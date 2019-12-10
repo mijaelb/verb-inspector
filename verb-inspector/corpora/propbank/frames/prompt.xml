@@ -27,13 +27,13 @@
       <note>PROMPT-V NOTES: VN class force-59. (from prompt.02-v)</note>
       <roles>
         <role descr="causer, prompter" f="PAG" n="0">
-          <vnrole vncls="59" vntheta="Agent"/>
+          <vnrole vncls="59.4" vntheta="Agent"/>
         </role>
         <role descr="impelled agent" f="PPT" n="1">
-          <vnrole vncls="59" vntheta="Patient"/>
+          <vnrole vncls="59.4" vntheta="Patient"/>
         </role>
         <role descr="impelled action" f="PRD" n="2">
-          <vnrole vncls="59" vntheta="Result"/>
+          <vnrole vncls="59.4" vntheta="Result"/>
         </role>
       </roles>
       <example name="prompt-v: impelled action as PP" src="" type="">

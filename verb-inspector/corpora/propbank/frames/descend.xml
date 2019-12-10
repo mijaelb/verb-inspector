@@ -12,11 +12,11 @@
       <note>DESCENDED-J NOTES: Based on Thyme data. Comparison to descend.01-v. (from descended.01-j)</note>
       <roles>
         <role descr="entity descending" f="PPT" n="0">
-          <vnrole vncls="51.1-3" vntheta="Theme"/>
+          <vnrole vncls="51.1-1-3" vntheta="Theme"/>
           <vnrole vncls="47.7" vntheta="Theme"/>
         </role>
         <role descr="location/goal, descend on or to" f="dir" n="1">
-          <vnrole vncls="51.1-3" vntheta="Trajectory"/>
+          <vnrole vncls="51.1-1-3" vntheta="Trajectory"/>
           <vnrole vncls="47.7" vntheta="Location"/>
         </role>
       </roles>

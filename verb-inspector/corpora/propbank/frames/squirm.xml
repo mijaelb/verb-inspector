@@ -8,8 +8,8 @@
       <note>SQUIRM-V NOTES: Frames file for 'squirm' based on sentences in wsj. Verbnet entry 49. (from squirm.01-v predicate notes)</note>
       <roles>
         <role descr="squirmer" f="pag" n="0">
-          <vnrole vncls="49" vntheta="Agent"/>
-          <vnrole vncls="49" vntheta="Patient"/>
+          <vnrole vncls="49.1" vntheta="Agent"/>
+          <vnrole vncls="49.1" vntheta="Patient"/>
         </role>
         <role descr="path" f="PPT" n="1"/>
       </roles>

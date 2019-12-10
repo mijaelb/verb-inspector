@@ -8,10 +8,10 @@
       <note>REVEL-V NOTES: Frames file for 'revel' based on survey of sentences in the WSJ corpus. (from revel.01-v predicate notes)</note>
       <roles>
         <role descr="experiencer of delight" f="PPT" n="0">
-          <vnrole vncls="31.3-5" vntheta="Experiencer"/>
+          <vnrole vncls="31.3" vntheta="Experiencer"/>
         </role>
         <role descr="entity reveling in" f="PAG" n="1">
-          <vnrole vncls="31.3-5" vntheta="Stimulus"/>
+          <vnrole vncls="31.3" vntheta="Stimulus"/>
         </role>
       </roles>
       <example name="transitive" src="" type="">

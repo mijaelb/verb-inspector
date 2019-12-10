@@ -8,10 +8,10 @@
       <note>HARRY-V NOTES: Oddly enough, both harry and sally are verbs. (from harry.01-v)</note>
       <roles>
         <role descr="botherer" f="PAG" n="0">
-          <vnrole vncls="59-1" vntheta="Agent"/>
+          <vnrole vncls="59.5" vntheta="Agent"/>
         </role>
         <role descr="bothered" f="PPT" n="1">
-          <vnrole vncls="59-1" vntheta="Patient"/>
+          <vnrole vncls="59.5" vntheta="Patient"/>
         </role>
       </roles>
       <example name="when harry met sally?" src="" type="">

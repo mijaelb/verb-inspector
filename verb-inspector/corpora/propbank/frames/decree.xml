@@ -8,10 +8,10 @@
       <note>DECREE-V NOTES: Frames file for 'decree' based on survey of sentences in the WSJ corpus. (from decree.01-v predicate notes)</note>
       <roles>
         <role descr="ruler, issuer of decree" f="pag" n="0">
-          <vnrole vncls="29.3" vntheta="agent"/>
+          <vnrole vncls="29.3.2" vntheta="agent"/>
         </role>
         <role descr="entity decreed" f="ppt" n="1">
-          <vnrole vncls="29.3" vntheta="theme"/>
+          <vnrole vncls="29.3.2" vntheta="theme"/>
         </role>
         <role descr="listener" f="gol" n="2"/>
       </roles>

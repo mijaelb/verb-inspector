@@ -10,13 +10,13 @@
       <note>DERISION-N NOTES: Added by Julia based on BOLT, deride.01. Corresponds to VNcls 33. (from derision.01-n)</note>
       <roles>
         <role descr="treater, speaker, agent" f="PAG" n="0">
-          <vnrole vncls="33" vntheta="Agent"/>
+          <vnrole vncls="33.1-1" vntheta="Agent"/>
         </role>
         <role descr="entity derided" f="PPT" n="1">
-          <vnrole vncls="33" vntheta="Theme"/>
+          <vnrole vncls="33.1-1" vntheta="Theme"/>
         </role>
         <role descr="derided for what" f="CAU" n="2">
-          <vnrole vncls="33" vntheta="Attribute"/>
+          <vnrole vncls="33.1-1" vntheta="Attribute"/>
         </role>
       </roles>
       <example name="passive" src="" type="">

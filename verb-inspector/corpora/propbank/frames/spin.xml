@@ -58,10 +58,10 @@
       <note>SPIN-N NOTES: Added by Julia based (loosely) on spin-v.03. Corresponds to VNcls performance-26.7-2-1. (from spin.02-n)</note>
       <roles>
         <role descr="storyteller" f="pag" n="0">
-          <vnrole vncls="26.7-2-1" vntheta="agent"/>
+          <vnrole vncls="26.1" vntheta="agent"/>
         </role>
         <role descr="story" f="ppt" n="1">
-          <vnrole vncls="26.7-2-1" vntheta="theme"/>
+          <vnrole vncls="26.1" vntheta="theme"/>
         </role>
       </roles>
       <example name="always spin a tale or a yarn" src="" type="">

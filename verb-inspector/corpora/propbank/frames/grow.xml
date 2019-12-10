@@ -17,10 +17,10 @@
         </role>
         <role descr="thing grown" f="ppt" n="1">
           <vnrole vncls="45.4" vntheta="patient"/>
-          <vnrole vncls="45.6-1-1" vntheta="patient"/>
+          <vnrole vncls="45.6.1-1" vntheta="patient"/>
         </role>
         <role descr="amount increased by, EXT or MNR" f="ext" n="2">
-          <vnrole vncls="45.6-1-1" vntheta="extent"/>
+          <vnrole vncls="45.6.1-1" vntheta="extent"/>
         </role>
         <role descr="start point" f="dir" n="3"/>
         <role descr="end point, end state of arg1" f="prd" n="4"/>
@@ -168,7 +168,7 @@ GROWING-N NOTES: grow.03 (from growing.03-n)</note>
       
       <roles>
         <role descr="person aging" f="pag" n="1">
-          <vnrole vncls="26.2" vntheta="agent"/>
+          <vnrole vncls="26.2.1" vntheta="agent"/>
         </role>
       </roles>
       <example name="aging" src="" type="">

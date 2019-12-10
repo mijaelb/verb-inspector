@@ -10,10 +10,10 @@
       <note>SORROWFUL-J NOTES: Automatically created by Julia as an alias file for unification. (from sorrowful.01-j)</note>
       <roles>
         <role descr="entity experiencing sorrow" f="PPT" n="0">
-          <vnrole vncls="31.3-8" vntheta="Experiencer"/>
+          <vnrole vncls="31.3" vntheta="Experiencer"/>
         </role>
         <role descr="cause of sorrow" f="PAG" n="1">
-          <vnrole vncls="31.3-8" vntheta="Stimulus"/>
+          <vnrole vncls="31.3" vntheta="Stimulus"/>
         </role>
       </roles>
       <example name="from Google" src="web usage" type="">

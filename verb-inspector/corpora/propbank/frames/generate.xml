@@ -11,15 +11,15 @@
       <note>GENERATION-N NOTES: Based on sentences in nouns-00040. Comparison to 'generate.01'. Vn class engender-27 and grow-26.2. Fn class intentionally_create. Framed by Katie. (from generation.01-n)</note>
       <roles>
         <role descr="creator" f="pag" n="0">
-          <vnrole vncls="26.2" vntheta="agent"/>
+          <vnrole vncls="26.2.1" vntheta="agent"/>
         </role>
         <role descr="thing created" f="ppt" n="1">
-          <vnrole vncls="27" vntheta="theme"/>
-          <vnrole vncls="26.2" vntheta="product"/>
+          <vnrole vncls="27.1" vntheta="theme"/>
+          <vnrole vncls="26.2.1" vntheta="product"/>
         </role>
         <role descr="source" f="dir" n="2">
-          <vnrole vncls="27" vntheta="cause"/>
-          <vnrole vncls="26.2" vntheta="material"/>
+          <vnrole vncls="27.1" vntheta="cause"/>
+          <vnrole vncls="26.2.1" vntheta="material"/>
         </role>
         <role descr="benefactive" f="gol" n="3"/>
         <role descr="attribute, secondary predication" f="prd" n="4"/>

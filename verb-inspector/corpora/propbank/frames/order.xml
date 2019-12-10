@@ -14,13 +14,13 @@
       
       <roles>
         <role descr="forcer" f="pag" n="0">
-          <vnrole vncls="60-1" vntheta="agent"/>
+          <vnrole vncls="58.3-1" vntheta="agent"/>
         </role>
         <role descr="impelled agent" f="gol" n="1">
-          <vnrole vncls="60-1" vntheta="recipient"/>
+          <vnrole vncls="58.3-1" vntheta="recipient"/>
         </role>
         <role descr="impelled action" f="ppt" n="2">
-          <vnrole vncls="60-1" vntheta="topic"/>
+          <vnrole vncls="58.3-1" vntheta="topic"/>
         </role>
       </roles>
       <example name="order-v: passivized" src="" type="">

@@ -16,12 +16,12 @@
         <role descr="organizer, entity with good organizational skills" f="pag" n="0">
           <vnrole vncls="26.4" vntheta="agent"/>
           <vnrole vncls="55.5-1" vntheta="agent"/>
-          <vnrole vncls="59-1" vntheta="agent"/>
+          <vnrole vncls="59.1" vntheta="agent"/>
         </role>
         <role descr="thing organized, domain in which arg0 has good skills" f="ppt" n="1">
           <vnrole vncls="26.4" vntheta="result"/>
           <vnrole vncls="55.5-1" vntheta="theme"/>
-          <vnrole vncls="59-1" vntheta="patient"/>
+          <vnrole vncls="59.1" vntheta="patient"/>
         </role>
         <role descr="previous state" f="vsp" n="2">
           <vnrole vncls="26.4" vntheta="material"/>
@@ -30,7 +30,7 @@
           <vnrole vncls="26.4" vntheta="beneficiary"/>
         </role>
         <role descr="end state" f="prd" n="4">
-          <vnrole vncls="59-1" vntheta="result"/>
+          <vnrole vncls="59.1" vntheta="result"/>
         </role>
       </roles>
       <example name="intransitive" src="" type="">

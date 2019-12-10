@@ -8,13 +8,13 @@
       <note>BULLOCK-V NOTES: Hand-corrected by Claire (from bullock.01-v)</note>
       <roles>
         <role descr="trickster, agent" f="PAG" n="0">
-          <vnrole vncls="59" vntheta="Agent"/>
+          <vnrole vncls="59.5" vntheta="Agent"/>
         </role>
         <role descr="entity deceived" f="PPT" n="1">
-          <vnrole vncls="59" vntheta="Patient"/>
+          <vnrole vncls="59.5" vntheta="Patient"/>
         </role>
         <role descr="proposition, deceived into believing/doing what?" f="PRD" n="2">
-          <vnrole vncls="59" vntheta="Result"/>
+          <vnrole vncls="59.5" vntheta="Result"/>
         </role>
       </roles>
       <example name="ARGmprd and ARG0 and ARG1 and ARG2" src="probably COCA (2018 example fix)" type="">

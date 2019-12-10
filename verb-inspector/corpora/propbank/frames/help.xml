@@ -10,13 +10,13 @@
       <note>HELP-N NOTES: Updated by Julia. Member of Vncls help-72-1. (from help.01-n)</note>
       <roles>
         <role descr="helper" f="pag" n="0">
-          <vnrole vncls="72-1" vntheta="agent"/>
+          <vnrole vncls="72.1-1-1" vntheta="agent"/>
         </role>
         <role descr="project" f="ppt" n="1">
-          <vnrole vncls="72-1" vntheta="theme"/>
+          <vnrole vncls="72.1-1-1" vntheta="theme"/>
         </role>
         <role descr="benefactive, secondary agent  (when separate from arg1)" f="gol" n="2">
-          <vnrole vncls="72-1" vntheta="beneficiary"/>
+          <vnrole vncls="72.1-1-1" vntheta="beneficiary"/>
         </role>
       </roles>
       <example name="sentential argument" src="" type="">
@@ -138,13 +138,13 @@
       <note>HELPFUL-J NOTES: Added by Julia based on WSJ. Corresponds to VNcls help-72-1. (from helpful.01-j)</note>
       <roles>
         <role descr="helpful entity" f="pag" n="0">
-          <vnrole vncls="72-1" vntheta="agent"/>
+          <vnrole vncls="72.1-1-1" vntheta="agent"/>
         </role>
         <role descr="project helped" f="ppt" n="1">
-          <vnrole vncls="72-1" vntheta="theme"/>
+          <vnrole vncls="72.1-1-1" vntheta="theme"/>
         </role>
         <role descr="beneficiary" f="gol" n="2">
-          <vnrole vncls="72-1" vntheta="beneficiary"/>
+          <vnrole vncls="72.1-1-1" vntheta="beneficiary"/>
         </role>
       </roles>
       <example name="all args" src="internet" type="">

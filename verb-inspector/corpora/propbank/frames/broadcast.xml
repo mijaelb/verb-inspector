@@ -10,13 +10,13 @@
       <note>BROADCAST-N NOTES: Roleset based on verb entry broadcast.01, OntoNotes sense groupings broadcast.01, broadcast.02, maps to VN entry instr_communication-37.4. Framed by Claire. (from broadcast.01-n)</note>
       <roles>
         <role descr="transmitter, agent" f="pag" n="0">
-          <vnrole vncls="37.4" vntheta="agent"/>
+          <vnrole vncls="37.4.1" vntheta="agent"/>
         </role>
         <role descr="message" f="ppt" n="1">
-          <vnrole vncls="37.4" vntheta="topic"/>
+          <vnrole vncls="37.4.1" vntheta="topic"/>
         </role>
         <role descr="audience" f="gol" n="2">
-          <vnrole vncls="37.4" vntheta="recipient"/>
+          <vnrole vncls="37.4.1" vntheta="recipient"/>
         </role>
         <role descr="source" f="dir" n="3"/>
       </roles>
