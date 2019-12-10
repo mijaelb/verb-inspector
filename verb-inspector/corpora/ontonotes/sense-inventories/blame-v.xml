@@ -22,7 +22,7 @@
          <wn version="3.0">1,3</wn>   
          <wn lemma="" version="3.0"/>
          <omega/><pb>blame.01</pb>
-         <vn>judgement-33</vn><fn>Judgement_communication</fn>
+         <vn>judgment-33.1</vn><fn>Judgement_communication</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="2" name="find fault with; criticize a particular feature or action" type="">
@@ -44,7 +44,7 @@
          <wn version="3.0">2</wn>
          <wn lemma="" version="3.0"/>
          <omega/><pb>blame.01</pb>
-         <vn>judgement-33</vn><fn>Judgment</fn>
+         <vn>judgment-33.1</vn><fn>Judgment</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <WORD_META authors="ahouston,hwangd,duffielc" sample_score="-"/>  

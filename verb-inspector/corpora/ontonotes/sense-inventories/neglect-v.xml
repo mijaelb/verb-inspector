@@ -17,7 +17,7 @@
          <wn version="3.0">1,2</wn>
          <wn lemma="" version="3.0"></wn>
          <omega></omega><pb>NM</pb>
-         <vn>neglect-75-1-1</vn><fn>NP</fn>
+         <vn>neglect-75.1-1</vn><fn>NP</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="2" name="disregard, fail to attend to" type="">
@@ -34,7 +34,7 @@
          <gr_sense></gr_sense>
          <wn version="3.0">3,4</wn>
          <omega></omega><pb>neglect.01</pb>
-         <vn>neglect-75-1-1</vn><fn>NP</fn>
+         <vn>neglect-75.1-1</vn><fn>NP</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <WORD_META authors="brownsw" sample_score="-"/>

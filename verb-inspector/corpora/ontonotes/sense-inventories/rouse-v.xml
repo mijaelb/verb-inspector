@@ -18,7 +18,7 @@
          <wn version="3.0">1,2,3</wn>   
          <wn lemma="" version="3.0"></wn>
          <omega></omega><pb>rouse.01</pb>
-         <vn>force-59</vn><fn>NM</fn>
+         <vn>stimulate-59.4</vn><fn>NM</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="2" name="(Cause to) become awake or conscious." type="">
@@ -34,7 +34,7 @@
          <wn version="3.0">2,4</wn>
          <wn lemma="" version="3.0"></wn>
          <omega></omega><pb>rouse.01</pb>
-         <vn>force-59</vn><fn>Cause_to_wake</fn>
+         <vn>stimulate-59.4</vn><fn>Cause_to_wake</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <WORD_META authors="corvey" sample_score="-"/>  

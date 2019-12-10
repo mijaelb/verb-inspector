@@ -19,7 +19,7 @@
       <mappings>
          <wn version="3.0">1,2,6,7</wn>
          <omega/><pb>hurt.02</pb>
-         <vn>hurt-40.8.3-2,marvel-31.3-4,pain-40.8.1</vn><fn>Perception_body,Cause_harm,Experience_bodily_harm</fn>
+         <vn>hurt-40.8.3-2,marvel-31.3,pain-40.8.1</vn><fn>Perception_body,Cause_harm,Experience_bodily_harm</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="2" name="(cause to) have a negative affect on

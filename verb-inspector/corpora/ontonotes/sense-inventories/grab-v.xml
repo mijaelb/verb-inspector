@@ -26,7 +26,7 @@
          <wn version="3.0">2,3,4,5</wn>
          <wn lemma="" version=""/>
          <omega/><pb>grab.01</pb>
-         <vn>hold-15.1-1,obtain-13.5.2,steal-10.5-1</vn><fn>Manipulation,Taking</fn>
+         <vn>hold-15.1,obtain-13.5.2,steal-10.5-1</vn><fn>Manipulation,Taking</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="2" name="catch to stop motion" type="">
@@ -49,7 +49,7 @@
          <wn version="3.0">1</wn>
          <wn lemma="" version=""/>
          <omega/><pb>grab.01</pb>
-         <vn>hold-15.1-1,obtain-13.5.2</vn><fn>Manipulation</fn>
+         <vn>hold-15.1,obtain-13.5.2</vn><fn>Manipulation</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="3" name="capture the attention or imagination of" type="">

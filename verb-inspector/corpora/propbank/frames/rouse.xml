@@ -5,13 +5,14 @@
       <aliases>
         <alias framenet="Cause_to_wake" pos="v" verbnet="">rouse</alias>
       </aliases>
+      <note>ROUSE-V NOTES: Framed by Mijael. Member of VNcls stimulate-59.4. (from rouse.01-v)</note>
       <note>ROUSE-V NOTES: Framed by Neville based on BROWN.. Member of VNcls force-59. (from rouse.01-v)</note>
       <roles>
         <role descr="agent, causer" f="PAG" n="0">
-          <vnrole vncls="59" vntheta="Agent"/>
+          <vnrole vncls="59.4" vntheta="Agent"/>
         </role>
         <role descr="patient" f="PPT" n="1">
-          <vnrole vncls="59" vntheta="Patient"/>
+          <vnrole vncls="59.4" vntheta="Patient"/>
         </role>
       </roles>
       <example name="transitive" src="" type="">

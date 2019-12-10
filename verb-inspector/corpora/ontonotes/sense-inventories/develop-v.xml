@@ -21,7 +21,7 @@
       <mappings>
          <wn version="3.0">4,10,12</wn>
          <omega/><pb>develop.01,develop.02</pb>
-         <vn>grow-26.2</vn><fn>Coming_to_be, Progress</fn>
+         <vn>grow-26.2.1</vn><fn>Coming_to_be, Progress</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="2" name="(cause to) grow, progress, expand, evolve" type="">
@@ -47,7 +47,7 @@
       <mappings>
          <wn version="3.0">3,7,9,10,13,15,20,21</wn>
          <omega/><pb>develop.01,develop.02</pb>
-         <vn>grow-26.2,occurrence-48.3.1</vn><fn>Cause_to_make_progress,Progress</fn>
+         <vn>grow-26.2.1,occur-48.3-1</vn><fn>Cause_to_make_progress,Progress</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="3" name="(cause to) experience, grow personally" type="">
@@ -62,7 +62,7 @@
       <mappings>
          <wn version="3.0">8,14</wn>
          <omega/><pb>develop.02</pb>
-         <vn>grow-26.2</vn><fn></fn>
+         <vn>grow-26.2.1</vn><fn></fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="4" name="(cause to) come into existence" type="">

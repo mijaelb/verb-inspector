@@ -14,7 +14,7 @@
          <wn version="3.0">2</wn>
          <wn lemma="" version="3.0"></wn>
          <omega/><pb>lose.03</pb>
-         <vn>succeed-74.3</vn><fn>Finish_competition</fn>
+         <vn>succeed-74-3-1</vn><fn>Finish_competition</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="2" name="fail to keep or misplace" type="">
@@ -33,7 +33,7 @@
          <wn version="3.0">1,4,5</wn>
          <wn lemma="" version="3.0"/>
          <omega/><pb>lose.02</pb>
-         <vn>misplace-100.2</vn><fn>NM</fn>
+         <vn>remove-10.1</vn><fn>NM</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="3" name="get rid of (idiomatic)" type="">
@@ -75,7 +75,7 @@
          <wn lemma="lose_one's_temper" version="3.0">1</wn>
          <wn lemma="lose_it" version="3.0">1</wn>
          <omega/><pb>lose.02</pb>
-         <vn>misplace-100.2,marvel-31.3-1,marvel-31.3-2,marvel-31.3-8,remove-10.1</vn><fn>Emotion_active,Losing_it</fn>
+         <vn>marvel-31.3,remove-10.1</vn><fn>Emotion_active,Losing_it</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="5" name="suffer or experience the loss of (through death)" type="">
@@ -89,7 +89,7 @@
       <mappings>
          <wn version="3.0">3</wn>
          <omega/><pb>lose.03</pb>
-         <vn>misplace-100.2</vn><fn>NM</fn>
+         <vn>marvel-31.3,disappearance-48.2</vn><fn>NM</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="6" name="fail to get or profit" type="">

@@ -26,6 +26,7 @@ class VerbNet(object):
     def parse(self):
         return utils.parse_xmls(self.path, 'lxml-xml')
 
+    #.def change(self):
     def get_classes(self, lemma='', class_ids=[]):
         classes = getattr(self, 'classes', {})
         if not classes:
@@ -39,11 +40,11 @@ class VerbNet(object):
             classes = {class_id: classes[class_id] for class_id in class_ids}
 
         if lemma:
-            lemma_classes = []
+            lemma_classes = {}
             for cls, obj in classes.items():
                 for member in obj.members:
                     if member.name == lemma:
-                        lemma_classes.append(obj)
+                        lemma_classes[cls] = obj
             classes = lemma_classes
 
         return classes
@@ -66,17 +67,12 @@ class VerbNet(object):
 
     def get_class(self, class_id):
         if class_id in self.classes:
-            return (self.classes[class_id], class_id)
+            return self.classes[class_id]
         else:
-            tupl = re.match(r'(\w+)-(.*)', class_id)
-            if tupl:
-                cls, id = (tupl[1], tupl[2])
-                for cls_id in self.classes:
-                    if cls in cls_id:
-                        return (self.classes[cls_id], cls_id)
-            else:
-                print(class_id)
-        return (None, class_id)
+            for cls in self.classes:
+                if '-'+class_id in cls:
+                    return self.classes[cls]
+        return None
 
     def get_args(self, class_id):
         cls = self.get_class(class_id)

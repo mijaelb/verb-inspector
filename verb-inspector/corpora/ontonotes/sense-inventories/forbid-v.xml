@@ -22,7 +22,7 @@
          <wn version="3.0">1</wn>   
          <wn lemma="" version="3.0"></wn>
          <omega></omega><pb>forbid.01</pb>
-         <vn>forbid-67-1</vn><fn>Prohibiting,Deny_permission</fn>
+         <vn>forbid-64.4-1</vn><fn>Prohibiting,Deny_permission</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="2" name="hinder or make impossible" type="">
@@ -41,7 +41,7 @@
          <wn version="3.0">2</wn>
          <wn lemma="" version="3.0"></wn>
          <omega></omega><pb>NM</pb>
-         <vn>forbid-67-1</vn><fn>Prohibiting</fn>
+         <vn>forbid-64.4-1</vn><fn>Prohibiting</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <WORD_META authors="clarklm" sample_score="-"/>  

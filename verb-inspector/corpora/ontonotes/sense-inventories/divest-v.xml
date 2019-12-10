@@ -15,7 +15,7 @@
          <wn version="3.0">1,2,4</wn>
          <wn lemma="" version=""/>
          <omega/><pb>divest.01</pb>
-         <vn>cheat-10.6</vn><fn>Emptying</fn>
+         <vn>cheat-10.6.1</vn><fn>Emptying</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="2" name="cease to hold (an investment, business, product); sell off" type="">
@@ -36,7 +36,7 @@
          <wn version="3.0">3</wn>
          <wn lemma="" version=""/>
          <omega/><pb>divest.01</pb>
-         <vn>cheat-10.6</vn><fn>NM</fn>
+         <vn>cheat-10.6.1</vn><fn>NM</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <WORD_META authors="duffielc,brownsw,corvey" sample_score="-"/>

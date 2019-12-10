@@ -14,7 +14,7 @@
       <mappings>
          <wn version="3.0">1,5</wn>
          <omega/><pb>manage.02</pb>
-         <vn>neglect-75-2,succeed-74-1-1</vn><fn>Success_or_failure,Successful_action</fn>
+         <vn>neglect-75.1,succeed-74-1-1</vn><fn>Success_or_failure,Successful_action</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="2" name="handle, control" type="">
@@ -28,7 +28,7 @@
       <mappings>
          <wn version="3.0">2,4</wn>
          <omega/><pb>manage.01</pb>
-         <vn>neglect-75-2</vn><fn>Operating_a_system</fn>
+         <vn>neglect-75.1</vn><fn>Operating_a_system</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="3" name="cope, make out" type="">

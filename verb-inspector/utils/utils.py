@@ -82,6 +82,8 @@ def fromjson(filename):
     with open(filename) as json_file:
         data = json.load(json_file)
 
+    return data
+
 
 def parse_xmls(path, markup='lxml'):
     file_names = [f for f in os.listdir(path) if f.endswith(".xml")]
@@ -107,3 +109,21 @@ def deep_update(x, y):
             else:
                 x.update({key: list(set(x[key] + y[key]))})
     return x
+
+def vnpb_mappings_check_vn(mappings, vn):
+    for lemma in mappings:
+        for mapping in lemma['mappings']:
+            for map in mapping['mappings']:
+                clss = vn.get_class(map['vncls'])
+                if not clss:
+                    print(f' {lemma["lemma"]} Not found {map["vncls"]}')
+
+
+def replace(str_, forstr_, filename):
+    with open(filename, "rt") as f:
+        newText = f.read().replace(str_,  forstr_)
+
+    with open(filename, "w") as f:
+        f.write(newText)
+
+def vnpb_mappings_check_pb(mappings, vn):

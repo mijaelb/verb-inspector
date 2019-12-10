@@ -14,7 +14,7 @@
          <wn version="3.0">1,6</wn>
          <wn lemma="seize_with_teeth" version="3.0">1</wn>
          <omega/><pb>seize.01</pb>
-         <vn>hold-15.1-1,obtain-13.5.2</vn><fn>Manipulation</fn>
+         <vn>hold-15.1,obtain-13.5.2</vn><fn>Manipulation</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="2" name="take hold and exploit something eagerly and immediately" type="">
@@ -50,7 +50,7 @@
       <mappings>
          <wn version="3.0">2,3,4,5</wn>
          <omega/><pb>seize.01</pb>
-         <vn>hold-15.1-1,obtain-13.5.2,steal-10.5</vn><fn>Taking</fn>
+         <vn>hold-15.1,obtain-13.5.2,steal-10.5</vn><fn>Taking</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="4" name="affect overwhelmingly and completely" type="">

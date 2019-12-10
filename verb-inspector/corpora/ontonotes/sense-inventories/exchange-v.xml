@@ -14,7 +14,7 @@
       <mappings>
 	 <wn version="3.0">1,4</wn>
 	 <omega/><pb>exchange.01</pb>
-         <vn>exchange-13.6-1</vn><fn>Exchange</fn>
+         <vn>exchange-13.6.1</vn><fn>Exchange</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>  
    <sense group="1" n="2" name="alter,convert" type="">
@@ -29,7 +29,7 @@
       <mappings>
 	 <wn version="3.0">2,6</wn>
 	 <omega/><pb>exchange.01</pb>
-         <vn>exchange-13.6-1</vn><fn>Replacing,Exchange_currency</fn>
+         <vn>exchange-13.6.1</vn><fn>Replacing,Exchange_currency</fn>
       </mappings><SENSE_META clarity=""/>
    </sense> 
    <sense group="1" n="3" name="reorder,switch" type="">

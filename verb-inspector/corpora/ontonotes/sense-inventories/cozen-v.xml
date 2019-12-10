@@ -19,7 +19,7 @@ They were cozened out of their money.
          <wn version="3.0">3</wn>   
          <wn lemma="" version="3.0"></wn>
          <omega></omega><pb>cozen.01</pb>
-         <vn>cheat-10.6-1</vn><fn>NP</fn>
+         <vn>cheat-10.6.1-1</vn><fn>NP</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
  <sense group="1" n="2" name="deceive" type="">  
@@ -38,7 +38,7 @@ They say they were cozened by the priest.
          <wn version="3.0">1,2</wn>   
          <wn lemma="" version="3.0"></wn>
          <omega></omega><pb>cozen.02</pb>
-         <vn>force-59</vn><fn>NP</fn>
+         <vn>urge-58.1-1-1</vn><fn>NP</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
      <WORD_META authors="bonial" sample_score="-"/>  

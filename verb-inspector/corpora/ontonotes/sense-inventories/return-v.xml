@@ -42,7 +42,7 @@
       <mappings>
          <wn version="3.0">6,8</wn>
          <omega/><pb>return.02</pb>
-         <vn>reciprocate-110.1</vn><fn>Response</fn>
+         <vn>reciprocate-112</vn><fn>Response</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="4" name="render" type="">
@@ -57,7 +57,7 @@
       <mappings>
          <wn version="3.0">11</wn>
          <omega/><pb>NM</pb>
-         <vn>engender-27</vn><fn>NM</fn>
+         <vn>engender-27.1</vn><fn>NM</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="5" name="sports: return pass" type="">

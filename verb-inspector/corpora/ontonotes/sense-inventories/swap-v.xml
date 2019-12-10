@@ -19,7 +19,7 @@
          <wn version="3.0">1</wn>   
          <wn lemma="" version=""/>
          <omega/><pb>swap.01</pb>
-         <vn>exchange-13.6-1-1</vn><fn>Exchange,Replacing</fn>
+         <vn>exchange-13.6.1</vn><fn>Exchange,Replacing</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="2" name="COMPUTER SCIENCE: move a piece of program into memory" type="">

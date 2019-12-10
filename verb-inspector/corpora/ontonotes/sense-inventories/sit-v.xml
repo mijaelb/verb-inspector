@@ -28,7 +28,7 @@
          <wn lemma="sit_up" version="3.0">1</wn>
          <wn lemma="sit_around" version="3.0">1</wn>
          <omega></omega><pb>sit.01,sit.02,sit.03</pb>
-         <vn>assuming_position-50,put_spatial-9.2-1,spatial_configuration-47.6</vn><fn>Change_posture,Placing,Posture</fn>
+         <vn>assuming_position-50,put_spatial-9.2,spatial_configuration-47.6</vn><fn>Change_posture,Placing,Posture</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="2" name="be located; occupy a particular location" type="">
@@ -45,7 +45,7 @@
          <wn version="3.0">2,7</wn>
          <wn lemma="" version="3.0"></wn>
          <omega></omega><pb>sit.01</pb>
-        <vn>put_spatial-9.2-1,spatial_configuration-47.6</vn><fn>NM</fn>
+        <vn>put_spatial-9.2,spatial_configuration-47.6</vn><fn>NM</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="3" name="be inactive or indifferent; wait out" type="">

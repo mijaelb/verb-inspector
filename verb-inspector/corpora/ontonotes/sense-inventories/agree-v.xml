@@ -14,7 +14,7 @@
       <mappings>
          <wn version="3.0">1,7</wn>
          <omega/><pb>agree.01</pb>
-         <vn>correspond-36.1-1</vn><fn>Be_in_agreement_on_assessment</fn>
+         <vn>correspond-36.1.1-1</vn><fn>Be_in_agreement_on_assessment</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="2" name="match, correspond, be compatible" type="">
@@ -28,7 +28,7 @@
       <mappings>
          <wn version="3.0">3,4,5</wn>
          <omega/><pb>agree.01</pb>
-         <vn>correspond-36.1-1</vn><fn>Compatibility</fn>
+         <vn>correspond-36.1.1-1</vn><fn>Compatibility</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="3" name="consent, accept" type="">
@@ -41,7 +41,7 @@
       <mappings>
          <wn version="3.0">2</wn>
          <omega/><pb>agree.01</pb>
-         <vn>correspond-36.1-1</vn><fn>Make_agreement_on_action,Agree_or_refuse_to_act</fn>
+         <vn>correspond-36.1.1-1</vn><fn>Make_agreement_on_action,Agree_or_refuse_to_act</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="4" name="please, suit" type="">

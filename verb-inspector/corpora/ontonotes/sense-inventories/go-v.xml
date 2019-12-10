@@ -182,7 +182,7 @@
          <wn lemma="go_on" version="3.0">2</wn>
          <wn lemma="go_over" version="3.0">2</wn>
          <omega/><pb>go.15,go.30</pb>
-         <vn>occurrence-48.3.1-2</vn><fn>NM</fn>
+         <vn>occur-48.3-2</vn><fn>NM</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="6" name="say or have the (sound) sequence of" type="">
@@ -248,7 +248,7 @@
          <wn version="3.0"/>
          <wn lemma="go_to" version="3.0">1</wn>
          <omega/><pb>NM</pb>
-         <vn>attend-107.3-2</vn><fn>NM</fn>
+         <vn>attend-107.4-2</vn><fn>NM</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="10" name="function, operate" type="">
@@ -264,7 +264,7 @@
          <wn version="3.0">12</wn>
          <wn lemma="go_on" version="3.0">5</wn>
          <omega/><pb>go.09</pb>
-         <vn>function-105.2</vn><fn>NM</fn>
+         <vn>function-105.2.1</vn><fn>NM</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="11" name="rifle, search through" type="">
@@ -295,7 +295,7 @@
          <wn lemma="go_for" version="3.0">2</wn>
          <wn lemma="go_with" version="3.0">1</wn>
          <omega/><pb>go.21</pb>
-         <vn>help-72-2</vn><fn>NM</fn>
+         <vn>help-72.1-2</vn><fn>NM</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="13" name="choose, desire to have" type="">
@@ -405,7 +405,7 @@
          <wn lemma="go_through_the_motions" version="3.0">1</wn>
          <wn lemma="go_up" version="3.0">4</wn>
          <omega/><pb>go.11,go.16,go.20,go.27</pb>
-         <vn>confront-98,marvel-31.3-1,marvel-31.3-2,marvel-31.3-8</vn><fn>Losing_it</fn>
+         <vn>confront-98,marvel-31.3,marvel-31.3,marvel-31.3</vn><fn>Losing_it</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <WORD_META authors="ahouston,brownsw" sample_score="-"/>

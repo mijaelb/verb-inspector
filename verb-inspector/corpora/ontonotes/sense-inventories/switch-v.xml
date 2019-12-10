@@ -17,7 +17,7 @@
          <wn version="3.0">1,3,7</wn>
          <wn lemma="switch_over" version="3.0">1</wn>
          <omega/><pb>switch.01,switch.02</pb>
-         <vn>convert-26.6.2-1,exchange-13.6-1</vn><fn>Change_tool,Replacing</fn>
+         <vn>convert-26.6.2-1,exchange-13.6.1</vn><fn>Change_tool,Replacing</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="2" name="swap, exchange" type="">
@@ -36,7 +36,7 @@
          <wn version="3.0">2,4</wn>
          <wn lemma="" version=""/>
          <omega/><pb>switch.01</pb>
-         <vn>exchange-13.6-1</vn><fn>Exchange</fn>
+         <vn>exchange-13.6.1</vn><fn>Exchange</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="3" name="activate, set in operation" type="">

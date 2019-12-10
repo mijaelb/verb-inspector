@@ -126,7 +126,7 @@
          <wn lemma="take_place" version="3.1">1</wn>
          <wn lemma="take_stage" version="3.1">1</wn>
          <omega/><pb>take.14</pb>
-         <vn>occurrence-48.3</vn>
+         <vn>occur-48.3</vn>
          <fn>Event</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
@@ -144,7 +144,7 @@
          <gr_sense></gr_sense>
          <wn version="3.1"></wn>
          <omega/><pb>take.12</pb>
-         <vn>adopt-98</vn>
+         <vn>adopt-93</vn>
          <fn>Change_of_Leadership</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>

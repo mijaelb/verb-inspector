@@ -41,7 +41,7 @@
          <wn version="3.0">4,5,6</wn>
          <wn lemma="" version=""/>
          <omega/><pb>spin.03,spin.04</pb>
-         <vn>build-26.1,performance-26.7-2-1</vn><fn>Processing_materials</fn>
+         <vn>build-26.1,performance-26.7</vn><fn>Processing_materials</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
 
@@ -57,7 +57,7 @@
          <wn version="3.0">7</wn>
          <wn lemma="" version=""/>
          <omega/><pb>NM</pb>
-         <vn>performance-26.7-2-1</vn><fn>NM</fn>
+         <vn>performance-26.7</vn><fn>NM</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
 

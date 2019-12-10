@@ -33,7 +33,7 @@
       <mappings>
          <wn version="3.0">1,15,31,32,33,34</wn>
          <omega/><pb>play.01</pb>
-         <vn>meet-36.3-1,performance-26.7-1-1</vn><fn>Competition</fn>
+         <vn>meet-36.3-1,performance-26.7-1</vn><fn>Competition</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="3" name="have a specific effect or outcome; behave" type="">
@@ -73,7 +73,7 @@
          <wn version="3.0">3,6,7,13,18</wn>
          <wn lemma="play_along" version="3.0">2</wn>
          <omega/><pb>play.01</pb>
-         <vn>performance-26.7-1-1</vn><fn>Cause_to_make_noise,Performers_and_roles</fn>
+         <vn>performance-26.7-1</vn><fn>Cause_to_make_noise,Performers_and_roles</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="5" name="perform/act a role" type="">
@@ -89,7 +89,7 @@
       <mappings>
          <wn version="3.0">2,4,8,14,25</wn>
          <omega/><pb>play.02</pb>
-         <vn>performance-26.7-1-1</vn><fn>Performers_and_roles</fn>
+         <vn>performance-26.7-1</vn><fn>Performers_and_roles</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="6" name="wager, bet" type="">
@@ -143,7 +143,7 @@
       <mappings>
          <wn version="3.0">22,26,28</wn>
          <omega/><pb>NM</pb>
-         <vn>function-105.2</vn><fn>NM</fn>
+         <vn>function-105.2.1</vn><fn>NM</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="9" name="move freely (usually within a bounded space)" type="">

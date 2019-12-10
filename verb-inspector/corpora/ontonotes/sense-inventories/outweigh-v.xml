@@ -15,7 +15,7 @@
          <wn version="3.0">1</wn>   
          <wn lemma="" version="3.0"></wn>
          <omega></omega><pb>NM</pb>
-         <vn>exceed-90-1</vn><fn>NP</fn>
+         <vn>exceed-90</vn><fn>NP</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="2" name="Weigh more heavily, as in deciding a matter." type="">
@@ -33,7 +33,7 @@
          <wn version="3.0">2</wn>
          <wn lemma="" version="3.0"></wn>
          <omega></omega><pb>outweigh.01</pb>
-         <vn>exceed-90-1</vn><fn>NP</fn>
+         <vn>exceed-90</vn><fn>NP</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <WORD_META authors="corvey" sample_score="-"/>  

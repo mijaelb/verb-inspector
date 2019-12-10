@@ -17,7 +17,7 @@
          <wn version="3.0">1</wn>   
          <wn lemma="" version="3.0"></wn>
          <omega></omega><pb>straddle.01</pb>
-         <vn>assuming_position-50, spacial_configuration-47.6, contiguous_location-47.8</vn><fn>NP</fn>
+         <vn>assuming_position-50, spatial_configuration-47.6-1, contiguous_location-47.8</vn><fn>NP</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="2" name="Extend over an area" type="">

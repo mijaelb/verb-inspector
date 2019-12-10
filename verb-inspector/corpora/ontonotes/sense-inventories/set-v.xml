@@ -97,7 +97,7 @@
          <wn lemma="set_up" version="3.0">1,2,3,4,5,6,9,12,13,14,15,18</wn>
          <omega/>
          <pb>set.03,set.08</pb>
-         <vn>braid-41.1.2,preparing-26.3-2</vn><fn>Arranging,Intentionally_create</fn>
+         <vn>braid-41.2.2,preparing-26.3-2</vn><fn>Arranging,Intentionally_create</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="5" name="(cause to) assume a condition or state" type="">
@@ -141,7 +141,7 @@
          <wn lemma="set_in" version="3.0">1,3</wn>
          <omega/>
          <pb>set.05</pb>
-         <vn>begin-51.5,confront-98,engender-27</vn><fn>Cause_to_start,Departing</fn>
+         <vn>begin-55.1,confront-98,engender-27.1</vn><fn>Cause_to_start,Departing</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="7" name="leave" type="">

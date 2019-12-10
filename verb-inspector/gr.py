@@ -26,6 +26,9 @@ class Groupings(object):
     def parse(self):
         return utils.parse_xmls(self.path)
 
+    def replace(self, str_, forstr_, lemma, type='v'):
+        utils.replace(str_, forstr_, self.path / self.inventories[lemma+'-'+type].filename)
+
     def get_inventories(self, type=''):
         inventories = getattr(self, 'inventories', {})
         if not inventories:

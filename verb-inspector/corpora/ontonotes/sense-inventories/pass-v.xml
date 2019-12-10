@@ -54,7 +54,7 @@
       <mappings>
          <wn version="3.0">4,8,10,13,17</wn>
          <omega/><pb>pass.03,pass.04</pb>
-         <vn>consume-66,occurrence-48.3.1,spend_time-104</vn><fn>Process_end</fn>
+         <vn>consume-66,occur-48.3-1,spend_time-104</vn><fn>Process_end</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="4" name="give, transfer" type="">
@@ -167,7 +167,7 @@
       <mappings>
          <wn version="3.0"/>
          <omega/><pb>NM</pb>
-         <vn>change_bodily_stat-40.8.4,contribute-13.2</vn><fn>Death,Giving,Passing_off</fn>
+         <vn>change_bodily_state-40.8.4,contribute-13.2</vn><fn>Death,Giving,Passing_off</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <WORD_META authors="ahouston,greenlm" sample_score="-"/>

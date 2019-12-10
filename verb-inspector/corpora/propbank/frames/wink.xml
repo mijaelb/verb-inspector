@@ -8,13 +8,13 @@
       <note>WINK-V NOTES: Frames file for 'wink' based on sentences in wsj. Verbnet entry 40.3.1, Framenet entry Body movement. (from wink.01-v predicate notes)</note>
       <roles>
         <role descr="winker" f="PAG" n="0">
-          <vnrole vncls="40.3.1-1" vntheta="Agent"/>
+          <vnrole vncls="40.3.1" vntheta="Agent"/>
         </role>
         <role descr="eye" f="PPT" n="1">
-          <vnrole vncls="40.3.1-1" vntheta="Patient"/>
+          <vnrole vncls="40.3.1" vntheta="Patient"/>
         </role>
         <role descr="winked at" f="GOL" n="2">
-          <vnrole vncls="40.3.1-1" vntheta="Recipient"/>
+          <vnrole vncls="40.3.1" vntheta="Recipient"/>
         </role>
       </roles>
       <example name="no eye" src="" type="">

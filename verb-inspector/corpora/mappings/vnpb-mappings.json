@@ -309,7 +309,7 @@
         "id": "absolve.01",
         "mappings": [
           {
-            "vncls": "80-1",
+            "vncls": "10.6.3-1",
             "roles": [
               {
                 "number": "A0",
@@ -948,7 +948,7 @@
         "id": "acquit.01",
         "mappings": [
           {
-            "vncls": "80-1",
+            "vncls": "10.6.3-1",
             "roles": [
               {
                 "number": "A0",
@@ -2307,7 +2307,7 @@
         "id": "alleviate.01",
         "mappings": [
           {
-            "vncls": "80",
+            "vncls": "10.6.3",
             "roles": [
               {
                 "number": "A0",
@@ -2415,7 +2415,7 @@
         "id": "allow.02",
         "mappings": [
           {
-            "vncls": "13.3-1",
+            "vncls": "13.3",
             "roles": [
               {
                 "number": "A0",
@@ -16934,7 +16934,7 @@
         "id": "clamp.01",
         "mappings": [
           {
-            "vncls": "22.4-1",
+            "vncls": "22.4",
             "roles": [
               {
                 "number": "A0",
@@ -17518,7 +17518,7 @@
             ]
           },
           {
-            "vncls": "80-1",
+            "vncls": "10.6.3-1",
             "roles": [
               {
                 "number": "A0",
@@ -25351,7 +25351,7 @@
             ]
           },
           {
-            "vncls": "80-1",
+            "vncls": "10.6.3-1-1",
             "roles": [
               {
                 "number": "A0",
@@ -25928,7 +25928,7 @@
             ]
           },
           {
-            "vncls": "9.2-1",
+            "vncls": "9.2",
             "roles": [
               {
                 "number": "A0",
@@ -39242,7 +39242,7 @@
         "id": "exonerate.01",
         "mappings": [
           {
-            "vncls": "80",
+            "vncls": "10.6.3",
             "roles": [
               {
                 "number": "A0",
@@ -44584,7 +44584,7 @@
         "id": "free.01",
         "mappings": [
           {
-            "vncls": "80-1",
+            "vncls": "10.6.3-1",
             "roles": [
               {
                 "number": "A0",
@@ -47738,19 +47738,6 @@
         "id": "grant.01",
         "mappings": [
           {
-            "vncls": "13.3-1",
-            "roles": [
-              {
-                "number": "A0",
-                "vntheta": "Agent"
-              },
-              {
-                "number": "A2",
-                "vntheta": "Theme"
-              }
-            ]
-          },
-          {
             "vncls": "13.3",
             "roles": [
               {
@@ -49168,7 +49155,7 @@
         "id": "gum.01",
         "mappings": [
           {
-            "vncls": "22.4-1",
+            "vncls": "22.4",
             "roles": [
               {
                 "number": "A0",
@@ -49940,7 +49927,7 @@
             ]
           },
           {
-            "vncls": "9.2-1",
+            "vncls": "9.2",
             "roles": [
               {
                 "number": "A0",
@@ -59492,7 +59479,7 @@
             ]
           },
           {
-            "vncls": "9.2-1",
+            "vncls": "9.2",
             "roles": [
               {
                 "number": "A0",
@@ -60001,7 +59988,7 @@
             ]
           },
           {
-            "vncls": "80",
+            "vncls": "10.6.3",
             "roles": [
               {
                 "number": "A0",
@@ -69940,7 +69927,7 @@
         "id": "paste.01",
         "mappings": [
           {
-            "vncls": "22.4-1",
+            "vncls": "22.4",
             "roles": [
               {
                 "number": "A0",
@@ -70815,7 +70802,7 @@
             ]
           },
           {
-            "vncls": "9.2-1",
+            "vncls": "9.2",
             "roles": [
               {
                 "number": "A0",
@@ -79564,7 +79551,7 @@
         "id": "reeve.01",
         "mappings": [
           {
-            "vncls": "22.4-1",
+            "vncls": "22.4",
             "roles": [
               {
                 "number": "A0",
@@ -80343,7 +80330,7 @@
         "id": "release.01",
         "mappings": [
           {
-            "vncls": "80-1",
+            "vncls": "10.6.3-1",
             "roles": [
               {
                 "number": "A0",
@@ -81485,7 +81472,7 @@
         "id": "rerelease.01",
         "mappings": [
           {
-            "vncls": "80-1",
+            "vncls": "10.6.3-1",
             "roles": [
               {
                 "number": "A0",
@@ -81759,7 +81746,7 @@
             ]
           },
           {
-            "vncls": "9.2-1",
+            "vncls": "9.2",
             "roles": [
               {
                 "number": "A0",
@@ -91534,7 +91521,7 @@
             ]
           },
           {
-            "vncls": "9.2-1",
+            "vncls": "9.2",
             "roles": [
               {
                 "number": "A1",
@@ -97972,7 +97959,7 @@
             ]
           },
           {
-            "vncls": "9.2-1",
+            "vncls": "9.2",
             "roles": [
               {
                 "number": "A0",
@@ -101751,7 +101738,7 @@
         "id": "suspend.02",
         "mappings": [
           {
-            "vncls": "9.2-1",
+            "vncls": "9.2",
             "roles": [
               {
                 "number": "A0",

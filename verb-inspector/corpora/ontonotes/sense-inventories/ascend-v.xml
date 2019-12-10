@@ -20,7 +20,7 @@
       <mappings>
          <wn version="3.0">1,4,7</wn>
          <omega/><pb>ascend.01</pb>
-         <vn>escape-51.1-3</vn><fn>Intentional_traversing,Traversing</fn>
+         <vn>escape-51.1-1-3</vn><fn>Intentional_traversing,Traversing</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="2" name="go back in time geneologically" type="">
@@ -67,7 +67,7 @@
       <mappings>
          <wn version="3.0">6</wn>
          <omega/><pb>ascend.01</pb>
-         <vn>escape-51.1-3,meander-47.7</vn><fn>Path_shape</fn>
+         <vn>escape-51.1-1-3,meander-47.7</vn><fn>Path_shape</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="5" name="go toward a river's (or similar) source." type="">
@@ -79,7 +79,7 @@
       <mappings>
          <wn version="3.0">5</wn>
          <omega/><pb>ascend.01</pb>
-         <vn>escape-51.1-3</vn><fn>Path_shape</fn>
+         <vn>escape-51.1-1-3</vn><fn>Path_shape</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <WORD_META authors="ahouston,clarklm,greenlm" sample_score="-"/>

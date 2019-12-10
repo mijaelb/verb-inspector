@@ -15,7 +15,7 @@
          <wn version="3.0">1</wn>   
          <wn lemma="" version="3.0"></wn>
          <omega></omega><pb>blink.01</pb>
-         <vn>hiccup-40.1.1,wink-40.3.1-1</vn><fn>Body_movement</fn>
+         <vn>hiccup-40.1.1,wink-40.3.1</vn><fn>Body_movement</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="2" name="cause to go away by blinking" type="">
@@ -32,7 +32,7 @@
          <wn version="3.0">2</wn>
          <wn lemma="blink_away" version="3.0">1</wn>
          <omega></omega><pb>NM</pb>
-         <vn>wink-40.3.1-1</vn><fn>Body_movement</fn>
+         <vn>wink-40.3.1</vn><fn>Body_movement</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="3" name="gleam or glow intermittently" type="">

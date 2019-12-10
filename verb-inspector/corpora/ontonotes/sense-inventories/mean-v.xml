@@ -45,7 +45,7 @@
       <mappings>
          <wn version="3.0">1,2,3,5</wn>
          <omega/><pb>mean.01</pb>
-         <vn>representation-110</vn><fn>Causation,Evidence,Linguistic_meaning</fn>
+         <vn>representation-110.1</vn><fn>Causation,Evidence,Linguistic_meaning</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="3" name="discourse function, parenthetical" type="">

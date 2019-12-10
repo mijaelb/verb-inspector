@@ -12,7 +12,7 @@
       <mappings>
          <wn version="3.0">1,2</wn>
          <omega/><pb>decrease.01</pb>
-         <vn>calibratable_cos-45.6-1,other_cos-45.4</vn>
+         <vn>caused_calibratable_cos-45.6.2-1,other_cos-45.4</vn>
          <fn>Change_position_on_a_scale,Cause_change_of_position_on_a_scale</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>

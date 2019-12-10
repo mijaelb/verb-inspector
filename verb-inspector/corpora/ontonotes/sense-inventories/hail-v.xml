@@ -17,7 +17,7 @@
          <wn version="3.0">1</wn>
          <wn lemma="" version=""></wn>
          <omega></omega><pb>hail.02</pb>
-         <vn>characterize-29.2,judgment-33-1-1</vn><fn>Communicate_categorization</fn>
+         <vn>characterize-29.2,judgment-33.1-1-1</vn><fn>Communicate_categorization</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="2" name="greet enthusiastically" type="">
@@ -49,7 +49,7 @@
          <wn version="3.0">3</wn>
          <wn lemma="" version=""></wn>
          <omega></omega><pb>NM</pb>
-         <vn>order-60</vn><fn>NM</fn>
+         <vn>order-58.3</vn><fn>NM</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="4" name="come from" type="">

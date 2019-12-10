@@ -18,7 +18,7 @@
          <wn version="3.0">2</wn>   
          <wn lemma="" version=""/>
          <omega/><pb>balloon.02</pb>
-         <vn>calibratable_cos-45.6-1</vn><fn>NM</fn>
+         <vn>caused_calibratable_cos-45.6.2-1</vn><fn>NM</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="2" name="expand, grow, become inflated" type="">  
@@ -38,7 +38,7 @@
          <wn version="3.0">2</wn>   
          <wn lemma="" version=""/>
          <omega/><pb>balloon.02</pb>
-         <vn>calibratable_cos-45.6-1</vn><fn>Change_position_on_a_scale</fn>
+         <vn>caused_calibratable_cos-45.6.2-1</vn><fn>Change_position_on_a_scale</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="3" name="ride in a hot-air balloon" type="">

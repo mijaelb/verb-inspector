@@ -17,7 +17,7 @@
          <wn version="3.0">1,5,10</wn>
          <wn lemma="" version=""/>
          <omega/><pb>push.01,push.02</pb>
-         <vn>carry-11.4-1-1,force-59,funnel-9.3-1-1,hold-15.1-1,push-12-1-1,split-23.2</vn>
+         <vn>carry-11.4-1-1,urge-58.1-1,funnel-9.3-1-1,hold-15.1,push-12-1-1,split-23.2</vn>
          <fn>Cause_change_of_position_on_a_scale,Cause_motion,Manipulation</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
@@ -38,7 +38,7 @@
          <wn version="3.0">2,4,7,9</wn>
          <wn lemma="" version=""/>
          <omega/><pb>push.02</pb>
-         <vn>hold-15.1-1</vn><fn>NM</fn>
+         <vn>hold-15.1</vn><fn>NM</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
 

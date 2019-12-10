@@ -46,7 +46,7 @@
          <wn version="3.0">2</wn>
          <wn lemma="" version="3.0"></wn>
          <omega></omega><pb>wire.01</pb>
-         <vn>instr_communication-37.4,send-11.1-1</vn><fn>Communication_means,Sending</fn>
+         <vn>instr_communication-37.4.1,send-11.1-1</vn><fn>Communication_means,Sending</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <WORD_META authors="clarklm" sample_score="-"/>  

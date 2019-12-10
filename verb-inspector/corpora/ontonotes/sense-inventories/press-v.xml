@@ -49,7 +49,7 @@
          <wn version="3.0">2,9,14</wn>
          <wn lemma="press_home" version="3.0">1</wn>
          <omega/><pb>press.01</pb>
-         <vn>force-59,urge-58.1</vn><fn>Attempt_suasion</fn>
+         <vn>urge-58.1-1-1,urge-58.1</vn><fn>Attempt_suasion</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="3" name="continue or move on; persevere on" type="">

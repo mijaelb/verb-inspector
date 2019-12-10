@@ -132,7 +132,7 @@
          <wn version="3.0">1,10,11</wn>
          <wn lemma="stand_up" version="3.0">1,3,4,7</wn>
          <omega></omega><pb>stand.07</pb>
-         <vn>assuming_position-50,put_spatial-9.2-1,spatial_configuration-47.6</vn><fn>Posture,Change_posture</fn>
+         <vn>assuming_position-50,put_spatial-9.2,spatial_configuration-47.6</vn><fn>Posture,Change_posture</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="9" name="Refuse to back down, resist, hold water" type="">

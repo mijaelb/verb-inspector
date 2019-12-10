@@ -149,7 +149,7 @@
          <wn lemma="give_in" version="3.0">1,2</wn>
          <wn lemma="give_way" version="3.0">1,4</wn>
          <omega/><pb>give.07,give.08,give.09</pb>
-         <vn>acquiesce-95</vn><fn>Giving_in,Surrendering</fn>
+         <vn>acquiesce-95.1</vn><fn>Giving_in,Surrendering</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="6" name="fail" type="">

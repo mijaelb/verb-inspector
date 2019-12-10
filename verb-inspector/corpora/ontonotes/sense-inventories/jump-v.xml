@@ -30,7 +30,7 @@
          <wn lemma="jump_off" version="3.0">1,2</wn>
          <wn lemma="jump_on" version="3.0">1</wn>
          <omega/><pb>jump.01,jump.02,jump.03,jump.04</pb>
-         <vn>calibratable_cos-45.6-1,run-51.3.2-2-1</vn><fn>Change_position_on_a_scale,Self_motion,Traversing</fn>
+         <vn>calibratable_cos-45.6.1-1,run-51.3.2-2-1</vn><fn>Change_position_on_a_scale,Self_motion,Traversing</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
 

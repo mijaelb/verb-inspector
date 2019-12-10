@@ -32,7 +32,7 @@ a location" type="">
          <wn lemma="stand_up" version="3.0">1,3,4,7</wn>
          <wn lemma="stand_still" version="3.0">1</wn>
          <omega></omega><pb>stand.01,stand.04,stand.07</pb>
-         <vn>put_spatial-9.2-1,spatial_configuration-47.6,assuming_position-50</vn><fn>Being_located,Placing,Posture,Change_posture</fn>
+         <vn>put_spatial-9.2,spatial_configuration-47.6,assuming_position-50</vn><fn>Being_located,Placing,Posture,Change_posture</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="2" name="maintain a value" type="">

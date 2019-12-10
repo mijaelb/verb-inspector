@@ -23,7 +23,7 @@
          <wn version="3.0">2,3,4</wn>
          <wn lemma="" version="3.0"/>
          <omega/><pb>defend.01</pb>
-         <vn>defend-72.2</vn><fn>NM</fn>
+         <vn>defend-72.3</vn><fn>NM</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="2" name="protect or speak up against criticism or opposition" type="">  
@@ -48,7 +48,7 @@
          <wn version="3.0">1,5,6,7</wn>   
          <wn lemma="" version="3.0"/>
          <omega/><pb>defend.01</pb>
-         <vn>defend-72.2</vn><fn>Justifying</fn>
+         <vn>defend-72.3</vn><fn>Justifying</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="3" name="compete to retain a title" type="">
@@ -65,7 +65,7 @@
          <wn version=""/>
          <wn lemma="" version="3.0"/>
          <omega/><pb>defend.01</pb>
-         <vn>defend-72.2</vn><fn>NM</fn>
+         <vn>defend-72.3</vn><fn>NM</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
      <WORD_META authors="ahouston,hwangd" sample_score="-"/>  

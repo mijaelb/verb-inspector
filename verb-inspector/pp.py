@@ -37,14 +37,34 @@ dirname = os.path.dirname(__file__)
 groupings_path = os.path.join(dirname, 'corpora/ontonotes/sense-inventories/')
 propbank_path = os.path.join(dirname, 'corpora/propbank/frames/')
 verbnet_path = os.path.join(dirname, 'corpora/verbnet/')
+vnpb_path = os.path.join(dirname, 'corpora/mappings/vnpb-mappings.json')
 
+class_name_typos = { 'judgement': 'judgment',
+                     'occurrence': 'occur',
+                     'crave': 'carve',
+                     'spacial_configuration': 'spatial_configuration',
+                     'clasify': 'classify',
+                     'contguous_location': 'contiguous_location',
+                     'modes_of_being_with_mothion': 'modes_of_being_with_motion',
+                     'noverbal_expression': 'nonverbal_expression',
+                     'skid': 'run',
+                     'temporal_configuration': 'occur',
+                     'approve': 'accept',
+                     'sastify': 'satisfy'}
+
+class_name = { 'settle-89':  ['harmonize-22.6', 'acquiesce-95.1-1', 'hire-13.5.3'],
+               'force-59':   ['urge-58.1-1-1', 'compel-59.1', 'stimulate-59.4', 'trick-59.2', 'urge-58.1-1'],
+               'force-59.1': ['compel-59.1'],
+               'force-59-1': ['compel-59.1', 'trick-59.2']}
 
 class PlotPointContainer(object):
     def __init__(self, json_path=''):
         self.json_path = json_path
         self.verbnet = vn.VerbNet(verbnet_path)
+        self.vnpb = utils.fromjson(vnpb_path)
         self.propbank = pb.PropBank(propbank_path)
         self.groupings = gr.Groupings(groupings_path)
+
         self.plotpoints = self.get_plotpoints()
 
     def get_plotpoints(self):
@@ -122,6 +142,8 @@ class PlotPointContainer(object):
             arg_struct = self.get_args_verbnet(class_id, lemma, sense.id)
             if arg_struct:
                 pp_sense.add_args(arg_struct)
+            else:
+                self.clean_groupings(class_id, lemma, sense.id)
 
         return pp_sense
 
@@ -133,13 +155,11 @@ class PlotPointContainer(object):
         return None
 
     def get_args_verbnet(self, class_id, lemma='', roleset=''):
-        cls, cls_id = self.verbnet.get_class(class_id)
+        cls = self.verbnet.get_class(class_id)
         if cls:
             args = cls.get_all_args()
             arg_struct = self.transform_roles(args, class_id, Dataset.VN)
             return arg_struct
-        else:
-            print(roleset + ' ' + lemma + ' Not found: ' + class_id)
         return None
 
     def transform_roles(self, roles, id, dataset):
@@ -166,6 +186,98 @@ class PlotPointContainer(object):
                 arg_struct.add_arg(arg)
 
         return arg_struct
+
+    def clean_groupings(self, class_id, lemma, sense):
+        classes = list(self.verbnet.get_classes(lemma).keys())
+        print(sense + ' ' + lemma + ' Not found: ' + class_id)
+        print(classes)
+        tupl = re.match(r'(\w+)-(.*)', class_id)
+        if tupl:
+            cls, id = (tupl[1], tupl[2])
+            id_ = re.sub(r'-\d', '', id)
+            res = ''
+            print(cls + ' ' + id)
+            if class_id in class_name:
+                for cls_id in class_name[class_id]:
+                    if cls_id in classes:
+                        res = cls_id
+                        print(f'{class_id} is {res}')
+                        break
+
+            if not res:
+                for cls_id in classes:
+                    if cls in class_name_typos:
+                        cls = class_name_typos[cls]
+
+                    if cls in cls_id:
+                        res = cls_id
+                        print(f'{class_id} is {res}')
+                        break
+
+            if not res:
+                if class_id in class_name:
+                    for cls_id in class_name[class_id]:
+                        if cls_id in self.verbnet.classes:
+                            res = cls_id
+                            print(f'{class_id} is {res}')
+                            break
+
+            if not res:
+                for cls_id in self.verbnet.classes:
+                    if cls in class_name_typos:
+                        cls = class_name_typos[cls]
+
+                    tupl = re.match(r'(\w+)-(.*)', cls_id)
+                    if cls == tupl[1]:
+                        res = cls_id
+                        print(f'{class_id} is {res}')
+                        break
+
+            if not res:
+                for cls_id in classes:
+                    if id in cls_id or id_ in cls_id:
+                        res = cls_id
+                        print(f'{class_id} is {res}')
+                        break
+
+            if not res:
+                for cls_id in self.verbnet.classes:
+                    if '-'+id in cls_id or '-'+id_ in cls_id:
+                        res = cls_id
+                        print(f'{class_id} is {res}')
+                        break
+
+            if not res and len(classes) == 1:
+                res = classes[0]
+                print(f'{class_id} is {res}')
+
+        if res:
+            if self.query_yes_no('Edit?'):
+                self.groupings.replace(class_id, res, lemma)
+
+
+    def query_yes_no(self, question, default="yes"):
+        valid = {"yes": True, "y": True, "ye": True,
+                 "no": False, "n": False}
+        if default is None:
+            prompt = " [y/n] "
+        elif default == "yes":
+            prompt = " [Y/n] "
+        elif default == "no":
+            prompt = " [y/N] "
+        else:
+            raise ValueError("invalid default answer: '%s'" % default)
+
+        while True:
+            sys.stdout.write(question + prompt)
+            choice = input().lower()
+            if default is not None and choice == '':
+                return valid[default]
+            elif choice in valid:
+                return valid[choice]
+            else:
+                sys.stdout.write("Please respond with 'yes' or 'no' "
+                                 "(or 'y' or 'n').\n")
 
     def create_plotpoints_dict(self, priority=[Dataset.GR, Dataset.PB]):
         senses = self.groupings.get_pb_ids('move')

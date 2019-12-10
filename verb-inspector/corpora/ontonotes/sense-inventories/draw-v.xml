@@ -43,7 +43,7 @@
          <wn lemma="draw_off" version="3.0">1,2</wn>
          <wn lemma="draw_up" version="3.0">3</wn>
          <omega/><pb>draw.02, draw.05</pb>
-         <vn>carry-11.4,force-59,remove-10.1,split-23.2</vn><fn>Cause_motion</fn>
+         <vn>carry-11.4,remove-10.1,split-23.2</vn><fn>Cause_motion</fn>
       </mappings><SENSE_META clarity=""/>
     </sense>
    <sense group="1" n="2" name="attract; cause to move through a force or attraction" type="">
@@ -76,7 +76,7 @@
          <wn lemma="draw_in" version="3.0">2</wn>
          <wn lemma="draw_together" version="3.0">1</wn>
          <omega/><pb>draw.02</pb>
-         <vn>force-59-1</vn><fn>Cause_motion</fn>
+         <vn>lure-59.3</vn><fn>Cause_motion</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
   <sense group="1" n="3" name="move oneself, usually steadily" type="">
@@ -145,7 +145,7 @@
          <wn lemma="draw_up" version="3.0">4</wn>
          <wn lemma="" version="3.0"/>
          <omega/><pb>draw.01,draw.03</pb>
-         <vn>performance-26.7-2-1,scribble-25.2</vn><fn>Create_physical_artwork,Create_representation</fn>
+         <vn>performance-26.7,scribble-25.2</vn><fn>Create_physical_artwork,Create_representation</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="6" name="formulate in the mind" type="">

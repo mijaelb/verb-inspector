@@ -15,7 +15,7 @@
          <wn version="3.0">1</wn>   
          <wn lemma="" version="3.0"></wn>
          <omega></omega><pb>purify.01</pb>
-         <vn>cheat-10.6,other_cos-45.4</vn><fn>NP</fn>
+         <vn>cheat-10.6.1,other_cos-45.4</vn><fn>NP</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="2" name="make pure or free from sin" type="">
@@ -31,7 +31,7 @@
          <wn version="3.0">2,3</wn>
          <wn lemma="" version="3.0"></wn>
          <omega></omega><pb>purify.01</pb>
-         <vn>cheat-10.6</vn><fn>NP</fn>
+         <vn>cheat-10.6.1</vn><fn>NP</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <WORD_META authors="greenlm" sample_score="-"/>  

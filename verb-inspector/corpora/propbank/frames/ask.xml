@@ -45,22 +45,22 @@
       <aliases>
         <alias framenet="Request" pos="v" verbnet="">ask</alias>
       </aliases>
-      <note>ASK-V NOTES: VN updated by Julia. Member of Vncls order-60-1, beg-58.2, urge-58.1. (from ask.02-v)</note>
+      <note>ASK-V NOTES: VN updated by Julia. Member of Vncls order-58.3-1, beg-58.2, urge-58.1. (from ask.02-v)</note>
       <roles>
         <role descr="asker" f="pag" n="0">
           <vnrole vncls="58.2" vntheta="agent"/>
           <vnrole vncls="58.1" vntheta="agent"/>
-          <vnrole vncls="60-1" vntheta="agent"/>
+          <vnrole vncls="58.3-1" vntheta="agent"/>
         </role>
         <role descr="favor" f="ppt" n="1">
           <vnrole vncls="58.2" vntheta="topic"/>
           <vnrole vncls="58.1" vntheta="topic"/>
-          <vnrole vncls="60-1" vntheta="topic"/>
+          <vnrole vncls="58.3-1" vntheta="result"/>
         </role>
         <role descr="hearer" f="gol" n="2">
           <vnrole vncls="58.2" vntheta="recipient"/>
           <vnrole vncls="58.1" vntheta="recipient"/>
-          <vnrole vncls="60-1" vntheta="recipient"/>
+          <vnrole vncls="58.3-1" vntheta="patient"/>
         </role>
       </roles>
       <example name="say please" src="" type="">

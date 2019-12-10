@@ -14,7 +14,7 @@
          <wn version="3.0">1</wn>   
          <wn lemma="" version="3.0"></wn>
          <omega></omega><pb>mate.02</pb>
-         <vn>amalgamate-22.2-2-1,correspond-36.1</vn><fn>NP</fn>
+         <vn>amalgamate-22.2-2-1,correspond-36.1.1</vn><fn>NP</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="2" name="bring two things together, couple" type="">
@@ -28,7 +28,7 @@
          <wn version="3.0">2</wn>
          <wn lemma="" version="3.0"></wn>
          <omega></omega><pb>mate.01</pb>
-         <vn>amalgamate-22.2-2-1,correspond-36.1</vn><fn>NP</fn>
+         <vn>amalgamate-22.2-2-1,correspond-36.1.1</vn><fn>NP</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="3" name="checkmate" type="">

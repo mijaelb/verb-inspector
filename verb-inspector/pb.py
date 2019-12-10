@@ -26,6 +26,9 @@ class PropBank(object):
     def parse(self):
         return utils.parse_xmls(self.path)
 
+    def replace(self, str_, forstr_, lemma):
+        utils.replace(str_, forstr_, self.path / self.predicates[lemma].filename)
+
     def get_predicates(self):
         predicates = getattr(self, 'predicates', {})
         if not predicates:

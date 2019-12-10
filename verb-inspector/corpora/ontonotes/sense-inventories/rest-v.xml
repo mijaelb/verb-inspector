@@ -17,7 +17,7 @@
          <wn version="3.0">2,5,6,9,11</wn>
          <wn lemma="" version="3.0"/>
          <omega/><pb>rest.01</pb>
-         <vn>put_spatial-9.2-1,spatial_configuration-47.6</vn>
+         <vn>put_spatial-9.2,spatial_configuration-47.6</vn>
          <fn>State_continue</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
@@ -40,7 +40,7 @@
          <wn version="3.0">1,8</wn>
          <wn lemma="rest_on" version="3.0">1</wn>
          <omega/><pb>rest.01</pb>
-         <vn>put_spatial-9.2-1,spatial_configuration-47.6</vn>
+         <vn>put_spatial-9.2,spatial_configuration-47.6</vn>
          <fn>Placing</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
@@ -56,7 +56,7 @@
          <gr_sense/>
          <wn version="3.0">3,10</wn>
          <omega/><pb>rest.01</pb>
-         <vn>put_spatial-9.2-1</vn>
+         <vn>put_spatial-9.2</vn>
          <fn>NM</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>

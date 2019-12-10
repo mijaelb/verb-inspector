@@ -41,7 +41,7 @@
          <wn version="3.0">2,6,8,10,14,17,22</wn>
          <wn lemma="follow_up" version="3.0">2</wn>
          <omega/><pb>follow.01</pb>
-         <vn>temporal_configuration-48.3.2-1</vn><fn>Relative_time</fn>
+         <vn>occur-48.3-1</vn><fn>Relative_time</fn>
       </mappings><SENSE_META clarity=""/>
    </sense>
    <sense group="1" n="3" name="comply, abide by, adopt" type="">
