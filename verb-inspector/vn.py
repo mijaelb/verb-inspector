@@ -66,9 +66,17 @@ class VerbNet(object):
 
     def get_class(self, class_id):
         if class_id in self.classes:
-            return self.classes[class_id]
+            return (self.classes[class_id], class_id)
         else:
-            return None
+            tupl = re.match(r'(\w+)-(.*)', class_id)
+            if tupl:
+                cls, id = (tupl[1], tupl[2])
+                for cls_id in self.classes:
+                    if cls in cls_id:
+                        return (self.classes[cls_id], cls_id)
+            else:
+                print(class_id)
+        return (None, class_id)
 
     def get_args(self, class_id):
         cls = self.get_class(class_id)

@@ -139,7 +139,7 @@ class GroupingSense(object):
             mappings = GroupingMappings()
             for mapping in self.soup.mappings.find_all(['wn', 'vn', 'pb', 'fn', 'gr_sense']):
                 values = ' '.join(mapping.text.strip().split(',')).split()
-                if values and values[0].lower() not in ['nm', 'np']:
+                if values and values[0].lower() not in ['nm', 'np', 'nn']:
                     if mapping.name == 'wn':
                         mappings.add_wn(mapping.attrs.get('lemma', ''),
                                         mapping.attrs.get('version', ''),

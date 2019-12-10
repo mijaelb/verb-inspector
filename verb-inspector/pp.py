@@ -66,20 +66,20 @@ class PlotPointContainer(object):
                     if Dataset.GR in datasets:
                         senses = self.groupings.get_senses(lemma)
                         for sense in senses.values():
-                            pp_sense = self.get_sense_grouping(sense)
+                            pp_sense = self.get_sense_grouping(lemma, sense)
                             #print('--------------------------------------------------------------------------------')
                             #print(pp_sense.pprint())
                             #print('--------------------------------------------------------------------------------')
                             pps[lemma].add_sense(pp_sense)
 
-                    if Dataset.PB in datasets:
-                        rolesets = self.propbank.get_rolesets(lemma)
-                        for roleset in rolesets:
-                            pp_sense = self.get_sense_propbank(lemma, roleset)
-                            print('--------------------------------------------------------------------------------')
-                            print(pp_sense.pprint())
-                            print('--------------------------------------------------------------------------------')
-                            pps[lemma].add_sense(pp_sense)
+                    #if Dataset.PB in datasets:
+                        #rolesets = self.propbank.get_rolesets(lemma)
+                        #for roleset in rolesets:
+                           #pp_sense = self.get_sense_propbank(lemma, roleset)
+                            #print('--------------------------------------------------------------------------------')
+                            #print(pp_sense.pprint())
+                            #print('--------------------------------------------------------------------------------')
+                            #pps[lemma].add_sense(pp_sense)
 
         return plotpoints
 
@@ -98,13 +98,13 @@ class PlotPointContainer(object):
             pp_sense.add_args(arg_struct)
 
         for class_id in pp_sense.mappings.vn:
-            arg_struct = self.get_args_verbnet(class_id)
+            arg_struct = self.get_args_verbnet(class_id, lemma, roleset.id)
             if arg_struct:
                 pp_sense.add_args(arg_struct)
 
         return pp_sense
 
-    def get_sense_grouping(self, sense):
+    def get_sense_grouping(self, lemma, sense):
         pp_sense = PlotPointSense(sense.id, Dataset.GR, sense.name)
         pp_sense.mappings.wn = sense.mappings.wn
         pp_sense.mappings.vn = sense.mappings.vn
@@ -119,7 +119,7 @@ class PlotPointContainer(object):
                 pp_sense.add_args(arg_struct)
 
         for class_id in sense.mappings.vn:
-            arg_struct = self.get_args_verbnet(class_id)
+            arg_struct = self.get_args_verbnet(class_id, lemma, sense.id)
             if arg_struct:
                 pp_sense.add_args(arg_struct)
 
@@ -132,12 +132,14 @@ class PlotPointContainer(object):
             return arg_struct
         return None
 
-    def get_args_verbnet(self, class_id):
-        cls = self.verbnet.get_class(class_id)
+    def get_args_verbnet(self, class_id, lemma='', roleset=''):
+        cls, cls_id = self.verbnet.get_class(class_id)
         if cls:
             args = cls.get_all_args()
             arg_struct = self.transform_roles(args, class_id, Dataset.VN)
             return arg_struct
+        else:
+            print(roleset + ' ' + lemma + ' Not found: ' + class_id)
         return None
 
     def transform_roles(self, roles, id, dataset):

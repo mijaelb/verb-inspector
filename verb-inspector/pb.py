@@ -113,7 +113,7 @@ class PropBankRoleset(object):
                 pb_role = PropBankRole()
                 pb_role.fill(utils.norm(role.attrs))
                 for vnrole in role.find_all('vnrole'):
-                    pb_role.add_vnrole(vnrole['vncls'], utils.norm_role(vnrole.attrs['vntheta']))
+                    pb_role.add_vnrole(utils.norm_role(vnrole.attrs['vntheta']), (vnrole['vncls']))
                 roles.append(pb_role)
         return roles
 
