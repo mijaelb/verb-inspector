@@ -61,6 +61,9 @@ class VerbNet(object):
 
         return classes
 
+    def get_classes_ids(self):
+        return list(self.classes.keys())
+
     def get_classes_name(self, lemma):
         classes = []
         for cls, obj in self.classes.items():
@@ -86,7 +89,6 @@ class VerbNet(object):
                     lemmas.append(member.name)
         return list(dict.fromkeys(lemmas))
 
-
     def get_args(self, class_id):
         cls = self.get_class(class_id)
         return cls.get_all_args()
@@ -111,8 +113,8 @@ class VerbNetClass(object):
         self.frames = self.get_frames()
         self.themroles = self.get_themroles()
         self.members = self.get_members()
-        self.all_preds = self.get_all_preds()
-        self.all_args = self.get_all_args()
+        self.predicates = self.get_predicates()
+        self.args = self.get_args()
         # print("'" + self.id + "':" + ''.join([' ' for i in range(len("'" + self.id + "':"), 40)]) + str(self.class_args) + ",")
 
     def get_themroles(self):
@@ -163,6 +165,9 @@ class VerbNetClass(object):
                 return member
         return None
 
+    def add_member(self, name, fnframe=[], grouping=[], wn=[]):
+        self.members.append(VerbNetMember(name,self.id, self.filename,  fnframe, grouping, wn))
+
     def get_examples(self):
         examples = []
         for frame in self.frames:
@@ -170,7 +175,7 @@ class VerbNetClass(object):
 
         return examples
 
-    def get_all_args(self):
+    def get_args(self):
         pred_args = []
         syntax_args = []
         themrole_args = [role.type for role in self.themroles]
@@ -186,7 +191,7 @@ class VerbNetClass(object):
         # Consider the predicate equals to group arguments
         # for example equals(recipient, stimulus) means [recipient, stimulus]
         # inside the general argument structure of the class
-        for pred in self.all_preds:
+        for pred in self.predicates:
             if pred.name == 'equals':
                 group = []
                 for arg in pred.args:
@@ -204,7 +209,7 @@ class VerbNetClass(object):
 
         return class_args
 
-    def get_all_preds(self):
+    def get_predicates(self):
         preds = []
         for frame in self.frames:
             for pred in frame.predicates:
@@ -218,6 +223,9 @@ class VerbNetClass(object):
         return f'{indent_in}{self.__class__.__name__}{end}' \
                f'{indent_}id={self.id!r}{end}' \
                f'{indent_}filename={self.filename!r}{end}' \
+               f'{indent_}args={self.args!r}{end}' \
+               f'{indent_}predicates={end}' \
+               f'{"".join([pred.pprint(indent + 2, end) for pred in self.predicates])}' \
                f'{indent_}frames={end}' \
                f'{"".join([frame.pprint(indent + 2, end) for frame in self.frames])}' \
                f'{indent_}themroles={end}' \

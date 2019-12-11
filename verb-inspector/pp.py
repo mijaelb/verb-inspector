@@ -42,11 +42,11 @@ class PlotPointContainer(object):
     def __init__(self, json_path=''):
         self.json_path = json_path
         self.verbnet = vn.VerbNet(verbnet_path)
-        self.vnpb = utils.fromjson(vnpb_path)
-        self.propbank = pb.PropBank(propbank_path)
-        self.groupings = gr.Groupings(groupings_path)
+        #self.vnpb = utils.fromjson(vnpb_path)
+        #self.propbank = pb.PropBank(propbank_path)
+        #self.groupings = gr.Groupings(groupings_path)
         self.bso = ''
-        self.plotpoints = self.get_plotpoints()
+        #self.plotpoints = self.get_plotpoints()
 
     def get_plotpoints(self):
         plotpoints = getattr(self, 'plotpoints', [])
@@ -152,7 +152,7 @@ class PlotPointContainer(object):
     def get_args_verbnet(self, class_id):
         cls = self.verbnet.get_class(class_id)
         if cls:
-            args = cls.get_all_args()
+            args = cls.get_args()
             arg_struct = self.transform_roles(args, class_id, Dataset.VN)
             return arg_struct
         return None

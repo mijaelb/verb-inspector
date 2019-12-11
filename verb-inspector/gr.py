@@ -28,6 +28,7 @@ class Groupings(object):
         return utils.parse_xmls(self.path)
 
     def parse_json(self):
+        ...
 
     def replace(self, str_, forstr_, lemma, type='v'):
         utils.replace(str_, forstr_, self.path / self.inventories[lemma + '-' + type].filename)
