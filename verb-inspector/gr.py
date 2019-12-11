@@ -18,16 +18,19 @@ from typing import List
 
 
 class Groupings(object):
-    def __init__(self, path):
+    def __init__(self, path='', path_json=''):
         self.path = Path(path)
+        self.path_json = Path(path)
         self.files_soup = self.parse()
         self.inventories = self.get_inventories()
 
     def parse(self):
         return utils.parse_xmls(self.path)
 
+    def parse_json(self):
+
     def replace(self, str_, forstr_, lemma, type='v'):
-        utils.replace(str_, forstr_, self.path / self.inventories[lemma+'-'+type].filename)
+        utils.replace(str_, forstr_, self.path / self.inventories[lemma + '-' + type].filename)
 
     def get_inventories(self, type=''):
         inventories = getattr(self, 'inventories', {})
@@ -41,24 +44,31 @@ class Groupings(object):
         return inventories
 
     def get_inventory(self, lemma, type='v'):
-        if lemma in self.inventories:
+        if lemma + '-' + type in self.inventories:
             return self.inventories[lemma + '-' + type]
+
         return None
 
     def get_sense(self, sense_id, type='v'):
         lemma = sense_id.split('.')[0]
         inventory = self.get_inventory(lemma, type)
-        return inventory.get_sense(sense_id)
+        if inventory:
+            return inventory.get_sense(sense_id)
+
+        return None
 
     def get_lemmas(self, type='v'):
         return [d.lemma for key, d in self.get_inventories(type).items()]
 
     def get_senses(self, lemma, type='v'):
-        return self.inventories[lemma + '-' + type].senses
+        if lemma + '-' + type in self.inventories:
+            return self.inventories[lemma + '-' + type].senses
+
+        return None
 
     def get_pb_ids(self, lemma, type='v'):
-        senses = self.get_senses(lemma, type)
         pb_ids = []
+        senses = self.get_senses(lemma, type)
         for sense in senses.values():
             pb_ids += sense.mappings.pb
 
@@ -68,12 +78,12 @@ class Groupings(object):
         gr = []
         inv = self.get_inventory(lemma)
         if inv:
-            for sense in inv.senses:
+            for sense in inv.senses.values():
                 if roleset in sense.mappings.pb:
                     gr.append(sense)
         return gr
 
-    def get_vn_classes(self, lemma, type='v'):
+    def get_classes(self, lemma, type='v'):
         senses = self.get_senses(lemma, type)
         vn_classes = []
         for sense in senses.values():
@@ -177,7 +187,7 @@ class WordNetRef:
 
 @dataclass
 class GroupingMappings:
-    gr_sense: list = field(default_factory=list)
+    gr: list = field(default_factory=list)
     wn: List[WordNetRef] = field(default_factory=list)
     pb: list = field(default_factory=list)
     vn: list = field(default_factory=list)
@@ -196,7 +206,7 @@ class GroupingMappings:
         elif mapping_name == 'fn':
             self.fn = values
         elif mapping_name == 'gr_sense':
-            self.gr_sense = values
+            self.gr = values
 
 
 if __name__ == '__main__':

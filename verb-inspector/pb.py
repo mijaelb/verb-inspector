@@ -69,11 +69,28 @@ class PropBank(object):
         classes = roleset_.get_vnclasses()
         return classes
 
+    def get_rolesets_from_class(self, cls, lemma):
+        rolesets = self.get_rolesets(lemma)
+        rls_ = []
+        if rolesets:
+            for roleset in rolesets:
+                if any([class_ in cls for class_ in roleset.get_classes()]):
+                    rls_.append(roleset)
+        return rls_
+
+    def pprint(self, indent=0, end='\n'):
+        indent_in = utils.indent(indent)
+        indent_ = utils.indent(indent + 1)
+        return f'{indent_in}{self.__class__.__name__}{end}' \
+               f'{indent_}path={str(self.path)!r}{end}' \
+               f'{indent_}predicates={end}' \
+               f'{"".join([predicate.pprint(indent+2, end) for predicate in self.predicates.values()])}'
+
 
 class PropBankPredicate(object):
     def __init__(self, filename, soup):
-        self.lemma = soup.attrs['lemma']
         self.soup = soup
+        self.lemma = soup.attrs['lemma']
         self.filename = filename
         self.rolesets = self.get_rolesets()
 
@@ -84,6 +101,15 @@ class PropBankPredicate(object):
                 rolesets.append(PropBankRoleset(self.filename, roleset))
         return rolesets
 
+    def pprint(self, indent=0, end='\n'):
+        indent_in = utils.indent(indent)
+        indent_ = utils.indent(indent + 1)
+        return f'{indent_in}{self.__class__.__name__}{end}' \
+               f'{indent_}lemma={self.lemma!r}{end}' \
+               f'{indent_}filename={self.filename!r}{end}' \
+               f'{indent_}rolesets={end}' \
+               f'{"".join([roleset.pprint(indent+2, end) for roleset in self.rolesets])}'
+
     def __repr__(self):
         return (f'{self.__class__.__name__}'
                 f'(lemma={self.lemma!r}, filename={self.filename!r}, rolesets={self.rolesets!r}')
@@ -91,8 +117,8 @@ class PropBankPredicate(object):
 
 class PropBankRoleset(object):
     def __init__(self, filename, soup):
-        self.filename = filename
         self.soup = soup
+        self.filename = filename
         self.id = soup.attrs['id']
         self.name = soup.attrs['name']
         self.aliases = self.get_aliases()
@@ -144,12 +170,26 @@ class PropBankRoleset(object):
 
         return list(dict.fromkeys(classes))
 
+    def pprint(self, indent=0, end='\n'):
+        indent_in = utils.indent(indent)
+        indent_ = utils.indent(indent+1)
+        return f'{indent_in}{self.__class__.__name__}{end}' \
+               f'{indent_}id={self.id!r}{end}' \
+               f'{indent_}name={self.name!r}{end}' \
+               f'{indent_}filename={self.filename!r}{end}' \
+               f'{indent_}aliases={end}' \
+               f'{"".join([alias.pprint(indent+2, end) for alias in self.aliases])}' \
+               f'{indent_}roles={end}' \
+               f'{"".join([roles.pprint(indent+2 , end) for roles in self.roles])}' \
+               f'{indent_}examples={end}' \
+               f'{"".join([exampl.pprint(indent+2, end) for exampl in self.examples])}'
+
     def __repr__(self):
         return (f'{self.__class__.__name__}'
                 f'(id={self.id!r}, name={self.name!r}, filename={self.filename!r}, aliases={self.aliases!r}, roles={self.roles!r}, examples={self.examples!r})')
 
     def __str__(self):
-        return str(self.id)  # str(self.dict)
+        return str(self.id)
 
 
 @dataclass
@@ -167,6 +207,16 @@ class PropBankInflection:
         self.tense = attrs.get('tense', '')
         self.voice = attrs.get('voice', '')
 
+    def pprint(self, indent=0, end='\n'):
+        indent_in = utils.indent(indent)
+        indent_ = utils.indent(indent + 1)
+        return f'{indent_in}{self.__class__.__name__}{end}' \
+               f'{indent_}aspect={self.aspect!r}{end}' \
+               f'{indent_}form={self.form!r}{end}' \
+               f'{indent_}person={self.person!r}{end}' \
+               f'{indent_}tense={self.tense!r}{end}' \
+               f'{indent_}voice={self.voice!r}{end}'
+
 
 @dataclass
 class PropBankExampleArg:
@@ -175,6 +225,14 @@ class PropBankExampleArg:
     n: str
     text: str
 
+    def pprint(self, indent=0, end='\n'):
+        indent_in = utils.indent(indent)
+        indent_ = utils.indent(indent + 1)
+        return f'{indent_in}{self.__class__.__name__}{end}' \
+               f'{indent_}type={self.type!r}{end}' \
+               f'{indent_}f={self.f!r}{end}' \
+               f'{indent_}n={self.n!r}{end}' \
+               f'{indent_}text={self.text!r}{end}'
 
 @dataclass
 class PropBankExample:
@@ -194,6 +252,19 @@ class PropBankExample:
         self.type = attrs.get('type', '')
         self.text = text
 
+    def pprint(self, indent=0, end='\n'):
+        indent_in = utils.indent(indent)
+        indent_ = utils.indent(indent + 1)
+        return f'{indent_in}{self.__class__.__name__}{end}' \
+               f'{indent_}name={self.name!r}{end}' \
+               f'{indent_}src={self.src!r}{end}' \
+               f'{indent_}type={self.type!r}{end}' \
+               f'{indent_}text={self.text!r}{end}' \
+               f'{indent_}inflection={end}' \
+               f'{self.inflection.pprint(indent+1, end)}' \
+               f'{indent_}args={end}' \
+               f'{"".join([arg.pprint(indent+2, end) for arg in self.args])}'
+
 
 @dataclass
 class PropBankAlias:
@@ -208,11 +279,27 @@ class PropBankAlias:
         self.verbnet = attrs.get('verbnet', '')
         self.word = word
 
+    def pprint(self, indent=0, end='\n'):
+        indent_in = utils.indent(indent)
+        indent_ = utils.indent(indent + 1)
+        return f'{indent_in}{self.__class__.__name__}{end}' \
+               f'{indent_}framenet={self.framenet!r}{end}' \
+               f'{indent_}pos={self.pos!r}{end}' \
+               f'{indent_}verbnet={self.verbnet!r}{end}' \
+               f'{indent_}word={self.word!r}{end}'
+
 
 @dataclass
 class PropBankVNRole:
     vntheta: str
     vncls: str
+
+    def pprint(self, indent=0, end='\n'):
+        indent_in = utils.indent(indent)
+        indent_ = utils.indent(indent + 1)
+        return f'{indent_in}{self.__class__.__name__}{end}' \
+               f'{indent_}vntheta={self.vntheta!r}{end}' \
+               f'{indent_}vncls={self.vncls!r}{end}'
 
 
 @dataclass
@@ -229,6 +316,15 @@ class PropBankRole:
         self.descr = attrs.get('descr', '')
         self.f = attrs.get('f', '')
         self.n = attrs.get('n', '')
+
+    def pprint(self, indent=0, end='\n'):
+        indent_in = utils.indent(indent)
+        indent_ = utils.indent(indent + 1)
+        return f'{indent_in}{self.__class__.__name__}{end}' \
+               f'{indent_}descr={self.descr!r}{end}' \
+               f'{indent_}f={self.f!r}{end}' \
+               f'{indent_}n={self.n!r}{end}' \
+               f'{"".join([vnrole.pprint(indent + 1, end) for vnrole in self.vnroles])}'
 
 
 if __name__ == '__main__':

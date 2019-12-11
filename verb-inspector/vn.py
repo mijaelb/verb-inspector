@@ -16,6 +16,7 @@ from utils import utils
 from dataclasses import field, dataclass
 from typing import List
 
+
 class VerbNet(object):
     def __init__(self, path=''):
         self.path = Path(path)
@@ -26,7 +27,9 @@ class VerbNet(object):
     def parse(self):
         return utils.parse_xmls(self.path, 'lxml-xml')
 
-    #.def change(self):
+    def replace(self, str_, forstr_, class_id):
+        utils.replace(str_, forstr_, self.path / self.classes[class_id].filename)
+
     def get_classes(self, lemma='', class_ids=[]):
         classes = getattr(self, 'classes', {})
         if not classes:
@@ -49,20 +52,21 @@ class VerbNet(object):
 
         return classes
 
-    def get_lemmas(self):
-        lemmas = getattr(self, 'lemmas', [])
-        if not lemmas:
-            for class_id, verb_class in self.classes.items():
-                for member in verb_class.members:
-                    lemmas.append(member.name)
-        return list(dict.fromkeys(lemmas))
+    def get_classes_from_gr(self, lemma, sense_id):
+        classes = {}
+        for cls, obj in self.classes.items():
+            for member in obj.members:
+                if sense_id in member.grouping:
+                    classes[cls] = obj
+
+        return classes
 
     def get_classes_name(self, lemma):
         classes = []
-        for class_id, verb_class in self.classes.items():
-            for member in verb_class.members:
+        for cls, obj in self.classes.items():
+            for member in obj.members:
                 if member.name == lemma:
-                    classes.append(class_id)
+                    classes.append(cls)
         return classes
 
     def get_class(self, class_id):
@@ -70,13 +74,30 @@ class VerbNet(object):
             return self.classes[class_id]
         else:
             for cls in self.classes:
-                if '-'+class_id in cls:
+                if '-' + class_id in cls:
                     return self.classes[cls]
         return None
+
+    def get_lemmas(self):
+        lemmas = getattr(self, 'lemmas', [])
+        if not lemmas:
+            for cls, obj in self.classes.items():
+                for member in obj.members:
+                    lemmas.append(member.name)
+        return list(dict.fromkeys(lemmas))
+
 
     def get_args(self, class_id):
         cls = self.get_class(class_id)
         return cls.get_all_args()
+
+    def pprint(self, indent=0, end='\n'):
+        indent_in = utils.indent(indent)
+        indent_ = utils.indent(indent + 1)
+        return f'{indent_in}{self.__class__.__name__}{end}' \
+               f'{indent_}path={self.path!r}{end}' \
+               f'{indent_}classes={end}' \
+               f'{"".join([cls.pprint(indent + 2, end) for cls in self.classes.values()])}'
 
     def __str__(self):
         return str(self.classes.keys())
@@ -85,13 +106,13 @@ class VerbNet(object):
 class VerbNetClass(object):
     def __init__(self, filename='', soup=None):
         self.soup = soup
-        self.filename = filename
         self.id = soup.attrs['ID']
+        self.filename = filename
         self.frames = self.get_frames()
         self.themroles = self.get_themroles()
+        self.members = self.get_members()
         self.all_preds = self.get_all_preds()
         self.all_args = self.get_all_args()
-        self.members = self.get_members()
         # print("'" + self.id + "':" + ''.join([' ' for i in range(len("'" + self.id + "':"), 40)]) + str(self.class_args) + ",")
 
     def get_themroles(self):
@@ -112,7 +133,6 @@ class VerbNetClass(object):
 
                 themroles.append(themrole_)
 
-
         return themroles
 
     def get_frames(self):
@@ -129,19 +149,31 @@ class VerbNetClass(object):
             for member in self.soup.MEMBERS.find_all('MEMBER'):
                 for key in member.attrs:
                     member.attrs[key] = member.attrs[key].split()
-                members.append(VerbNetMember(member.attrs['name'][0],       # name
-                                             self.id,                       # vnclass
-                                             self.filename,                 # filename
-                                             member.attrs['fnframe'],       # fnframe
-                                             member.attrs['grouping'],      # grouping
-                                             member.attrs['wn']))           # wn
+                members.append(VerbNetMember(member.attrs['name'][0],  # name
+                                             self.id,  # vnclass
+                                             self.filename,  # filename
+                                             member.attrs['fnframe'],  # fnframe
+                                             member.attrs['grouping'],  # grouping
+                                             member.attrs['wn']))  # wn
         return members
+
+    def get_member(self, lemma):
+        for member in self.members:
+            if member.name == lemma:
+                return member
+        return None
+
+    def get_examples(self):
+        examples = []
+        for frame in self.frames:
+            examples.append(frame.example)
+
+        return examples
 
     def get_all_args(self):
         pred_args = []
         syntax_args = []
         themrole_args = [role.type for role in self.themroles]
-
 
         for frame in self.frames:
             pred_args.extend(frame.get_pred_args())
@@ -175,10 +207,23 @@ class VerbNetClass(object):
     def get_all_preds(self):
         preds = []
         for frame in self.frames:
-            for pred in frame.preds:
+            for pred in frame.predicates:
                 if not any([str(pred) == str(pr) for pr in preds]):
                     preds.append(pred)
         return preds
+
+    def pprint(self, indent=0, end='\n'):
+        indent_in = utils.indent(indent)
+        indent_ = utils.indent(indent + 1)
+        return f'{indent_in}{self.__class__.__name__}{end}' \
+               f'{indent_}id={self.id!r}{end}' \
+               f'{indent_}filename={self.filename!r}{end}' \
+               f'{indent_}frames={end}' \
+               f'{"".join([frame.pprint(indent + 2, end) for frame in self.frames])}' \
+               f'{indent_}themroles={end}' \
+               f'{"".join([role.pprint(indent + 2, end) for role in self.themroles])}' \
+               f'{indent_}members={end}' \
+               f'{"".join([member.pprint(indent + 2, end) for member in self.members])}'
 
 
 class VerbNetFrame(object):
@@ -193,7 +238,7 @@ class VerbNetFrame(object):
         self.descr_num = self.descr['descriptionNumber']
         self.example = ' '.join(soup.find_all('EXAMPLE')[0].text.split())
         self.syntax = self.get_syntax()
-        self.preds = self.get_preds()
+        self.predicates = self.get_predicates()
         self.syntax_args = self.get_syntax_args()
         self.pred_args = self.get_pred_args()
 
@@ -228,18 +273,34 @@ class VerbNetFrame(object):
     def get_pred_args(self):
         pred_args = getattr(self, 'pred_args', [])
         if not pred_args:
-            for pred in self.preds:
+            for pred in self.predicates:
                 pred_args.append(pred.get_role_args())
 
         return pred_args
 
-    def get_preds(self):
+    def get_predicates(self):
         preds = getattr(self, 'preds', [])
         if not preds:
             for pred in self.soup.SEMANTICS.find_all('PRED'):
                 preds.append(VerbNetPredicate(pred))
 
         return preds
+
+    def pprint(self, indent=0, end='\n'):
+        indent_in = utils.indent(indent)
+        indent_ = utils.indent(indent + 1)
+        return f'{indent_in}{self.__class__.__name__}{end}' \
+               f'{indent_}class_id={self.class_id!r}{end}' \
+               f'{indent_}filename={self.filename!r}{end}' \
+               f'{indent_}primary={self.primary!r}{end}' \
+               f'{indent_}secondary={self.secondary!r}{end}' \
+               f'{indent_}xtag={self.xtag!r}{end}' \
+               f'{indent_}descr_num={self.descr_num!r}{end}' \
+               f'{indent_}example={self.example!r}{end}' \
+               f'{indent_}syntax={end}' \
+               f'{"".join([stx.pprint(indent + 2, end) for stx in self.syntax])}' \
+               f'{indent_}predicates={end}' \
+               f'{"".join([pred.pprint(indent + 2, end) for pred in self.predicates])}'
 
 
 class VerbNetPredicate(object):
@@ -272,8 +333,18 @@ class VerbNetPredicate(object):
                 role_args.append(arg.value)
         return role_args
 
+    def pprint(self, indent=0, end='\n'):
+        indent_in = utils.indent(indent)
+        indent_ = utils.indent(indent + 1)
+        return f'{indent_in}{self.__class__.__name__}{end}' \
+               f'{indent_}bool={self.bool!r}{end}' \
+               f'{indent_}name={self.name!r}{end}' \
+               f'{indent_}args={end}' \
+               f'{"".join([arg.pprint(indent + 2, end) for arg in self.args])}'
+
     def __str__(self):
         return self.bool + self.name + '(' + ','.join([str(arg.value) for arg in self.args]) + ')'
+
 
 @dataclass
 class VerbNetSelSynRestr:
@@ -281,36 +352,94 @@ class VerbNetSelSynRestr:
     type: str
     value: str
 
+    def pprint(self, indent=0, end='\n'):
+        indent_in = utils.indent(indent)
+        indent_ = utils.indent(indent + 1)
+        return f'{indent_in}{self.__class__.__name__}{end}' \
+               f'{indent_}name={self.name!r}{end}' \
+               f'{indent_}type={self.type!r}{end}' \
+               f'{indent_}value={self.value!r}{end}'
+
+
 @dataclass
 class VerbNetSelSynRestrs:
     type: str
     logic: str
-    restrs: List[VerbNetSelSynRestr] = field(default_factory=[])
+    restrs: List[VerbNetSelSynRestr] = field(default_factory=list)
+
+    def pprint(self, indent=0, end='\n'):
+        indent_in = utils.indent(indent)
+        indent_ = utils.indent(indent + 1)
+        return f'{indent_in}{self.__class__.__name__}{end}' \
+               f'{indent_}type={self.type!r}{end}' \
+               f'{indent_}logic={self.logic!r}{end}' \
+               f'{indent_}restrs={end}' \
+               f'{"".join([restr.pprint(indent + 2, end) for restr in self.restrs])}'
+
 
 @dataclass
 class VerbNetSyntaxTag:
     type: str
     value: list
-    restrs: List[VerbNetSelSynRestr] = field(default_factory=[])
+    restrs: List[VerbNetSelSynRestr] = field(default_factory=list)
+
+    def pprint(self, indent=0, end='\n'):
+        indent_in = utils.indent(indent)
+        indent_ = utils.indent(indent + 1)
+        return f'{indent_in}{self.__class__.__name__}{end}' \
+               f'{indent_}type={self.type!r}{end}' \
+               f'{indent_}value={self.type!r}{end}' \
+               f'{indent_}restrs={end}' \
+               f'{"".join([restr.pprint(indent + 2, end) for restr in self.restrs])}'
+
 
 @dataclass
 class VerbNetThemRole:
     type: str
-    restrs: List[VerbNetSelSynRestr] = field(default_factory=[])
+    restrs: List[VerbNetSelSynRestr] = field(default_factory=list)
+
+    def pprint(self, indent=0, end='\n'):
+        indent_in = utils.indent(indent)
+        indent_ = utils.indent(indent + 1)
+        return f'{indent_in}{self.__class__.__name__}{end}' \
+               f'{indent_}type={self.type!r}{end}' \
+               f'{indent_}restrs={end}' \
+               f'{"".join([restr.pprint(indent + 2, end) for restr in self.restrs])}'
+
 
 @dataclass
 class VerbNetArg:
     type: str
     value: str
 
+    def pprint(self, indent=0, end='\n'):
+        indent_in = utils.indent(indent)
+        indent_ = utils.indent(indent + 1)
+        return f'{indent_in}{self.__class__.__name__}{end}' \
+               f'{indent_}type={self.type!r}{end}' \
+               f'{indent_}value={self.value!r}{end}'
+
+
 @dataclass
 class VerbNetMember:
     name: str
     vnclass: str
     filename: str
-    fnframe: list = field(default_factory=[])
-    grouping: list = field(default_factory=[])
-    wn: list = field(default_factory=[])
+    fnframe: list = field(default_factory=list)
+    grouping: list = field(default_factory=list)
+    wn: list = field(default_factory=list)
+
+    def pprint(self, indent=0, end='\n'):
+        indent_in = utils.indent(indent)
+        indent_ = utils.indent(indent + 1)
+        return f'{indent_in}{self.__class__.__name__}{end}' \
+               f'{indent_}name={self.name!r}{end}' \
+               f'{indent_}vnclass={self.vnclass!r}{end}' \
+               f'{indent_}filename={self.filename!r}{end}' \
+               f'{indent_}fnframe={self.fnframe!r}{end}' \
+               f'{indent_}grouping={self.grouping!r}{end}' \
+               f'{indent_}wn={self.wn!r}{end}'
+
 
 if __name__ == '__main__':
     dirname = os.path.dirname(__file__)
