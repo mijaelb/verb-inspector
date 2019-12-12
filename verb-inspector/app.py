@@ -30,33 +30,42 @@ class App(QtWidgets.QWidget):
         self.classes_list = self.__create_vn_classes_list()
 
         self.args_class_table = QtWidgets.QTableWidget()
-        self.edit_class_layout = QtWidgets.QHBoxLayout()
+        self.edit_class_layout = QtWidgets.QVBoxLayout()
+        self.class_select_layout = QtWidgets.QVBoxLayout()
         self.layout = QtWidgets.QHBoxLayout()
 
-        self.edit_class_layout.addWidget(self.args_class_table)
-        self.layout.addWidget(self.classes_list)
+        #self.edit_class_layout.addWidget(self.args_class_table)
+        self.class_select_layout.addWidget(self.classes_list)
+        self.class_select_layout.addWidget(self.args_class_table)
+        self.layout.addLayout(self.class_select_layout)
         self.layout.addLayout(self.edit_class_layout)
 
         self.init_ui()
 
     def init_ui(self):
         self.setWindowTitle(self.title)
-        self.setMinimumSize(600, 400)
+        self.setFixedSize(600, 400)
         self.setGeometry(self.left, self.top, self.width, self.height)
         self.init_palette()
         self.setLayout(self.layout)
 
+        self.args_class_table.setMaximumHeight(32)
+        hheader = self.args_class_table.horizontalHeader()
+        vheader = self.args_class_table.verticalHeader()
+        hheader.hide()
+        vheader.hide()
+        vheader.setStretchLastSection(True)
+        #hheader.setSectionResizeMode(QtWidgets.QHeaderView.ResizeToContents)
+        vheader.setSectionResizeMode(QtWidgets.QHeaderView.ResizeToContents)
+        hheader.setDefaultAlignment(Qt.AlignCenter)
+        self.args_class_table.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
+        # tableview.setSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum) # ---
+        self.args_class_table.setSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        #hheader.setSectionResizeMode(0, QtWidgets.QHeaderView.Stretch)
+
         self.app_icon = QIcon()
         self.app_icon.addFile(f'{self.path}/gui/icons/32x32.png', QSize(32, 32))
         self.setWindowIcon(self.app_icon)
-
-
-        self.reloadClassesButton = QtWidgets.QPushButton('Reload vn classes')
-        self.reloadClassesButton.setToolTip('Reload verbnet corpora classes into a json file')
-        self.reloadClassesButton.move(100, 70)
-        self.reloadClassesButton.clicked.connect(self.reload_classes)
-
-        self.layout.addWidget(self.reloadClassesButton)
         self.show()
 
     def init_palette(self):
@@ -93,15 +102,14 @@ class App(QtWidgets.QWidget):
         vn_class = current.data(Qt.UserRole)
 
         self.clear_table(self.args_class_table)
-        self.args_class_table.insertColumn(self.args_class_table.columnCount())
+        self.args_class_table.insertRow(self.args_class_table.rowCount())
         for group in vn_class.args:
             if isinstance(group, list):
                 text = ' '.join([arg for arg in group])
             else:
                 text = group
 
-            self.args_class_table.insertRow(self.args_class_table.rowCount())
-            print(text)
+            self.args_class_table.insertColumn(self.args_class_table.columnCount())
             self.args_class_table.setItem(self.args_class_table.rowCount()-1, self.args_class_table.columnCount()-1, QtWidgets.QTableWidgetItem(text))
 
         print(vn_class.pprint())
