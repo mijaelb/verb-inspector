@@ -15,80 +15,53 @@ from PyQt5.QtCore import pyqtSlot, Qt, QSize
 from PyQt5.QtGui import QPalette, QColor, QIcon
 from pathlib import Path
 import pp
+from qt.ArgDragWidget import ArgDragWidget
+import qt.QtUtils as QtUtils
 
+CLASS_LIST_WIDTH = 225
 
 class App(QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
         self.title = 'Plot Point Editor (Verb Inspector)'
+        self.path = os.path.dirname(__file__)
         self.pp_container = pp.PlotPointContainer()
         self.left = 10
         self.top = 10
-        self.width = 320
-        self.height = 200
-        self.path = os.path.dirname(__file__)
-        self.classes_list = self.__create_vn_classes_list()
+        self.width = 800
+        self.height = 800
+        self.classes_list = self.__create_classes_list()
+        # self.args_class_table = QtWidgets.QTableWidget()
 
-        self.args_class_table = QtWidgets.QTableWidget()
+        self.args_class_layout = QtWidgets.QHBoxLayout()
         self.edit_class_layout = QtWidgets.QVBoxLayout()
+
         self.class_select_layout = QtWidgets.QVBoxLayout()
         self.layout = QtWidgets.QHBoxLayout()
 
-        #self.edit_class_layout.addWidget(self.args_class_table)
+
+        self.initUI()
+
+    def initUI(self):
+        self.setWindowTitle(self.title)
+        self.setFixedSize(self.width, self.height)
+        self.setGeometry(self.left, self.top, self.width, self.height)
+        self.setLayout(self.layout)
         self.class_select_layout.addWidget(self.classes_list)
-        self.class_select_layout.addWidget(self.args_class_table)
+        self.edit_class_layout.addLayout(self.args_class_layout)
         self.layout.addLayout(self.class_select_layout)
         self.layout.addLayout(self.edit_class_layout)
-
-        self.init_ui()
-
-    def init_ui(self):
-        self.setWindowTitle(self.title)
-        self.setFixedSize(600, 400)
-        self.setGeometry(self.left, self.top, self.width, self.height)
-        self.init_palette()
-        self.setLayout(self.layout)
-
-        self.args_class_table.setMaximumHeight(32)
-        hheader = self.args_class_table.horizontalHeader()
-        vheader = self.args_class_table.verticalHeader()
-        hheader.hide()
-        vheader.hide()
-        vheader.setStretchLastSection(True)
-        #hheader.setSectionResizeMode(QtWidgets.QHeaderView.ResizeToContents)
-        vheader.setSectionResizeMode(QtWidgets.QHeaderView.ResizeToContents)
-        hheader.setDefaultAlignment(Qt.AlignCenter)
-        self.args_class_table.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
-        # tableview.setSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum) # ---
-        self.args_class_table.setSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        #hheader.setSectionResizeMode(0, QtWidgets.QHeaderView.Stretch)
-
+        self.classes_list.setFixedWidth(CLASS_LIST_WIDTH)
+        self.setStyleSheet("QToolTip { color: #ffffff; background-color: #2a82da; border: 1px solid white; }")
+        self.setPalette(QtUtils.DarkPalette())
         self.app_icon = QIcon()
         self.app_icon.addFile(f'{self.path}/gui/icons/32x32.png', QSize(32, 32))
         self.setWindowIcon(self.app_icon)
         self.show()
 
-    def init_palette(self):
-        dark_palette = QPalette()
-        dark_palette.setColor(QPalette.Window, QColor(53, 53, 53))
-        dark_palette.setColor(QPalette.WindowText, Qt.white)
-        dark_palette.setColor(QPalette.Base, QColor(25, 25, 25))
-        dark_palette.setColor(QPalette.AlternateBase, QColor(53, 53, 53))
-        dark_palette.setColor(QPalette.ToolTipBase, Qt.white)
-        dark_palette.setColor(QPalette.ToolTipText, Qt.white)
-        dark_palette.setColor(QPalette.Text, Qt.white)
-        dark_palette.setColor(QPalette.Button, QColor(53, 53, 53))
-        dark_palette.setColor(QPalette.ButtonText, Qt.white)
-        dark_palette.setColor(QPalette.BrightText, Qt.red)
-        dark_palette.setColor(QPalette.Link, QColor(42, 130, 218))
-        dark_palette.setColor(QPalette.Highlight, QColor(42, 130, 218))
-        dark_palette.setColor(QPalette.HighlightedText, Qt.black)
-        self.setStyleSheet("QToolTip { color: #ffffff; background-color: #2a82da; border: 1px solid white; }")
-        self.setPalette(dark_palette)
-
-    def __create_vn_classes_list(self):
+    def __create_classes_list(self):
         vn_classes_list = QtWidgets.QListWidget()
-        vn_classes = self.pp_container.verbnet.get_classes()
+        vn_classes = self.pp_container.verbnet_simplified.get_classes()
         for cls_id, cls in vn_classes.items():
             vn_class_item = QtWidgets.QListWidgetItem(cls_id)
             vn_class_item.setData(Qt.UserRole, cls)
@@ -97,26 +70,31 @@ class App(QtWidgets.QWidget):
         vn_classes_list.currentItemChanged.connect(self.change_vn_class)
         return vn_classes_list
 
+    def __create_class_args(self, vnclass):
+        self.clear_layout(self.args_class_layout)
+        widget = ArgDragWidget(vnclass.args, self)
+        self.args_class_layout.addWidget(widget)
+        return widget
+
     @pyqtSlot(QtWidgets.QListWidgetItem, QtWidgets.QListWidgetItem)
     def change_vn_class(self, current: QtWidgets.QListWidgetItem, previous: QtWidgets.QListWidgetItem):
-        vn_class = current.data(Qt.UserRole)
-
-        self.clear_table(self.args_class_table)
-        self.args_class_table.insertRow(self.args_class_table.rowCount())
-        for group in vn_class.args:
-            if isinstance(group, list):
-                text = ' '.join([arg for arg in group])
-            else:
-                text = group
-
-            self.args_class_table.insertColumn(self.args_class_table.columnCount())
-            self.args_class_table.setItem(self.args_class_table.rowCount()-1, self.args_class_table.columnCount()-1, QtWidgets.QTableWidgetItem(text))
-
-        print(vn_class.pprint())
+        vnclass = current.data(Qt.UserRole)
+        self.__create_class_args(vnclass)
+        # self.clear_table(self.args_class_table)
+        # self.args_class_table.insertRow(self.args_class_table.rowCount())
+        # for group in vnclass.args:
+        #     if isinstance(group, list):
+        #         text = ' '.join([arg for arg in group])
+        #     else:
+        #         text = group
+        #
+        #     self.args_class_table.insertColumn(self.args_class_table.columnCount())
+        #     self.args_class_table.setItem(self.args_class_table.rowCount()-1, self.args_class_table.columnCount()-1, QtWidgets.QTableWidgetItem(text))
+        #
+        # print(vn_class.pprint())
 
     def clear_layout(self, layout):
         for i in reversed(range(layout.count())):
-
             widget = layout.takeAt(i).widget()
             if widget:
                 widget.setParent(None)
@@ -129,26 +107,6 @@ class App(QtWidgets.QWidget):
     def reload_classes(self):
         # TODO: Reload every class into the json file if it exists
         print('Reload Classes')
-
-
-class DragArgButton(QtWidgets.QPushButton):
-    def __init__(self, *args, **kwargs):
-        super(DragArgButton, self).__init__(*args, **kwargs)
-        self.setAcceptDrops(True)
-
-    def dragEnterEvent(self, e):
-        if e.mimeData().hasUrls():
-            e.accept()
-        else:
-            e.ignore()
-
-    def dropEvent(self, e):
-        if e.mimeData().hasUrls():
-            e.accept()
-            for url in e.mimeData().urls():
-                self.openFile(url.toLocalFile())
-        else:
-            e.ignore()
 
 
 

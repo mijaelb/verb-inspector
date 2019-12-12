@@ -178,16 +178,26 @@ def norm(text):
 
 
 def tojson(filename, dict):
-    with open(filename, 'w') as outfile:
-        json.dump(dict, outfile, indent=4)
-
+    if filename:
+        with open(filename, 'w') as outfile:
+            json.dump(dict, outfile, indent=4)
 
 def fromjson(filename):
-    with open(filename) as json_file:
-        data = json.load(json_file)
+    if filename:
+        with open(filename) as json_file:
+            data = json.load(json_file)
+        return data
 
-    return data
+    return {}
 
+def flatten(data):
+    newlist = []
+    if isinstance(data, list):
+        for dt in data:
+            newlist = newlist + flatten(dt)
+    else:
+        return [data]
+    return newlist
 
 def parse_xmls(path, markup='lxml'):
     file_names = [f for f in os.listdir(path) if f.endswith(".xml")]

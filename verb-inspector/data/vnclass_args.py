@@ -43,7 +43,7 @@ vnclass_dict = {
 'appear-48.1.1':                        ['theme', 'location'],
 'appoint-29.1':                         ['agent', 'theme', 'result'],
 'assessment-34.1':                      ['agent', 'theme', 'attribute'],
-'assuming_position-50':                 ['agent', 'location', 'position'],
+'assuming_position-50':                 ['agent', 'position', 'location'],
 'attack-60.1':                          ['agent', 'patient'],
 'attack-60.1-1':                        ['agent', 'patient'],
 'attend-107.4':                         ['theme', 'goal'],

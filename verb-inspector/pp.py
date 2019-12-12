@@ -36,17 +36,19 @@ groupings_path = os.path.join(dirname, 'corpora/ontonotes/sense-inventories/')
 propbank_path = os.path.join(dirname, 'corpora/propbank/frames/')
 verbnet_path = os.path.join(dirname, 'corpora/verbnet/')
 vnpb_path = os.path.join(dirname, 'corpora/mappings/vnpb-mappings.json')
+verbnet_simplified_path = os.path.join(dirname, 'data/verbnet_simplified.json')
 
 
 class PlotPointContainer(object):
     def __init__(self, json_path=''):
         self.json_path = json_path
         self.verbnet = vn.VerbNet(verbnet_path)
-        #self.vnpb = utils.fromjson(vnpb_path)
-        #self.propbank = pb.PropBank(propbank_path)
-        #self.groupings = gr.Groupings(groupings_path)
+        self.verbnet_simplified = vn.VerbNetSimplified(self.verbnet, '')
+        # self.vnpb = utils.fromjson(vnpb_path)
+        # self.propbank = pb.PropBank(propbank_path)
+        # self.groupings = gr.Groupings(groupings_path)
         self.bso = ''
-        #self.plotpoints = self.get_plotpoints()
+        # self.plotpoints = self.get_plotpoints()
 
     def get_plotpoints(self):
         plotpoints = getattr(self, 'plotpoints', [])
@@ -57,8 +59,10 @@ class PlotPointContainer(object):
             else:
                 # Load all lemmas from every dataset
                 lemmas = {utils.norm(lemma): [Dataset.VN] for lemma in self.verbnet.get_lemmas()}
-                lemmas = utils.deep_update(lemmas, {utils.norm(lemma): [Dataset.PB] for lemma in self.propbank.get_lemmas()})
-                lemmas = utils.deep_update(lemmas, {utils.norm(lemma): [Dataset.GR] for lemma in self.groupings.get_lemmas()})
+                lemmas = utils.deep_update(lemmas,
+                                           {utils.norm(lemma): [Dataset.PB] for lemma in self.propbank.get_lemmas()})
+                lemmas = utils.deep_update(lemmas,
+                                           {utils.norm(lemma): [Dataset.GR] for lemma in self.groupings.get_lemmas()})
                 pps = {}
                 for lemma, datasets in lemmas.items():
                     pps[lemma] = PlotPoint(lemma, PlotPointType.VERB)
@@ -81,7 +85,7 @@ class PlotPointContainer(object):
                             pps[lemma].add_sense(pp_class)
 
                     utils.write('pps.log', pps[lemma].pprint(), 'a+')
-                #utils.tojson('pps', pps)
+                # utils.tojson('pps', pps)
         return plotpoints
 
     def get_class_verbnet(self, cls, lemma):
@@ -195,6 +199,7 @@ class PlotPointPredicateArg:
                f'{indent_}type={self.type!r}{end}' \
                f'{indent_}value={self.value!r}{end}'
 
+
 @dataclass
 class PlotPointPredicate:
     bool: str
@@ -209,6 +214,7 @@ class PlotPointPredicate:
                f'{indent_}name={self.name!r}{end}' \
                f'{indent_}args={end}' \
                f'{"".join([arg.pprint(indent + 2, end) for arg in self.args])}'
+
 
 @dataclass
 class PlotPointRole:
