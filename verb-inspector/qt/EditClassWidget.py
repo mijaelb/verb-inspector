@@ -101,6 +101,7 @@ class EditClassWidget(QtWidgets.QWidget):
 
     @pyqtSlot(str)
     def changeArgText(self, text):
-        self.currentArg.arg.edit(text)
-        self.editArgsWidget = self.createClassArgs(self.currentClass)
-        print(self.currentClass.args)
+        if self.currentArg:
+            self.currentArg.arg.edit(text)
+            self.editArgsWidget = self.createClassArgs(self.currentClass)
+            print(self.currentClass.args)
