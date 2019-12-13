@@ -1,0 +1,162 @@
+import PyQt5.QtWidgets as QtWidgets
+import PyQt5.QtGui as QtGui
+import PyQt5.QtCore as QtCore
+import qt.QtUtils as QtUtils
+from PyQt5.QtCore import pyqtSlot
+
+
+class EditPredWidget(QtWidgets.QWidget):
+    def __init__(self, vnclass=None, parent=None):
+        super().__init__(parent)
+        self.setObjectName('EditPredWidget')
+        self.vnclass = vnclass
+        self.argsLabel = QtWidgets.QLabel('Arguments ▾   (Double click to edit)')
+        self.predsLabel = QtWidgets.QLabel('Predicates ▾')
+        self.predsList = QtWidgets.QListWidget()
+        self.predsList.currentItemChanged.connect(self.changePred)
+        self.argsList = QtWidgets.QListWidget()
+        self.argsList.currentItemChanged.connect(self.changeArg)
+        self.argsList.itemChanged.connect(self.updateArg)
+
+        self.argsLayout = QtWidgets.QVBoxLayout()
+        self.predsLayout = QtWidgets.QVBoxLayout()
+
+        self.argsButtonLayout = QtWidgets.QHBoxLayout()
+
+        self.addArgButton = QtWidgets.QPushButton('Add')
+        self.addArgButton.released.connect(self.addArg)
+        self.removeArgButton = QtWidgets.QPushButton('Remove')
+        self.removeArgButton.released.connect(self.removeArg)
+        self.upArgButton = QtWidgets.QToolButton()
+        self.upArgButton.setArrowType(QtCore.Qt.UpArrow)
+        self.upArgButton.released.connect(self.moveUpArg)
+        self.downArgButton = QtWidgets.QToolButton()
+        self.downArgButton.setArrowType(QtCore.Qt.DownArrow)
+        self.downArgButton.released.connect(self.moveDownArg)
+
+        self.argsButtonLayout.addWidget(self.addArgButton)
+        self.argsButtonLayout.addWidget(self.removeArgButton)
+        self.argsButtonLayout.addWidget(self.upArgButton)
+        self.argsButtonLayout.addWidget(self.downArgButton)
+
+        self.argsLayout.addWidget(self.argsLabel)
+        self.argsLayout.addWidget(self.argsList)
+        self.argsLayout.addLayout(self.argsButtonLayout)
+
+        self.predsLayout.addWidget(self.predsLabel)
+        self.predsLayout.addWidget(self.predsList)
+
+        self.layout = QtWidgets.QHBoxLayout()
+        self.layout.addLayout(self.predsLayout)
+        self.layout.addLayout(self.argsLayout)
+        self.initUI()
+
+    def initUI(self):
+        self.predsList.setMaximumHeight(self.predsList.sizeHint().height())
+        self.argsList.setMaximumHeight(100)
+        self.argsLayout.setAlignment(self.argsList, QtCore.Qt.AlignTop)
+        self.predsLayout.setAlignment(self.predsList, QtCore.Qt.AlignTop)
+        self.predsLayout.setAlignment(QtCore.Qt.AlignTop)
+        self.layout.setAlignment(self.argsLayout, QtCore.Qt.AlignTop)
+        self.layout.setAlignment(self.predsLayout, QtCore.Qt.AlignTop)
+        self.setLayout(self.layout)
+
+    def reset(self, keep=False):
+        predRow = self.predsList.currentRow()
+        argRow = self.argsList.currentRow()
+        self.resetPredsList()
+        self.resetArgsList()
+
+        if keep:
+            self.predsList.setCurrentRow(predRow)
+            self.argsList.setCurrentRow(argRow)
+
+
+    def resetArgsList(self):
+        self.argsList.clear()
+        currentItem = self.predsList.currentItem()
+        if currentItem:
+            pred = currentItem.data(QtCore.Qt.UserRole)
+            for arg in pred.args:
+                argItem = QtWidgets.QListWidgetItem(str(arg))
+                argItem.setData(QtCore.Qt.UserRole, arg)
+                argItem.setFlags(argItem.flags() | QtCore.Qt.ItemIsEditable)
+                self.argsList.addItem(argItem)
+
+    def resetPredsList(self):
+        self.predsList.clear()
+        if self.vnclass:
+            for pred in self.vnclass.predicates:
+                predItem = QtWidgets.QListWidgetItem(str(pred))
+                predItem.setData(QtCore.Qt.UserRole, pred)
+                self.predsList.addItem(predItem)
+
+    def updateClass(self, vnclass):
+        self.vnclass = vnclass
+        self.reset()
+
+    @pyqtSlot(QtWidgets.QListWidgetItem, QtWidgets.QListWidgetItem)
+    def changePred(self, current: QtWidgets.QListWidgetItem, previous: QtWidgets.QListWidgetItem):
+        if current:
+            self.resetArgsList()
+
+    @pyqtSlot(QtWidgets.QListWidgetItem, QtWidgets.QListWidgetItem)
+    def changeArg(self, current: QtWidgets.QListWidgetItem, previous: QtWidgets.QListWidgetItem):
+        if current:
+            ...
+
+    @pyqtSlot(QtWidgets.QListWidgetItem)
+    def updateArg(self, current):
+        if current:
+            try:
+                type_, value_ = tuple(current.text().split(': '))
+                self.editedArg = current.data(QtCore.Qt.UserRole)
+                self.editedArg.type = type_
+                self.editedArg.value = value_
+                print(self.editedArg.__repr__())
+                self.reset(True)
+            except:
+                self.reset(True)
+
+    def removeArg(self):
+        if self.argsList.currentItem():
+            row = self.argsList.currentRow()
+            pred = self.predsList.currentItem().data(QtCore.Qt.UserRole)
+            del pred.args[row]
+            self.reset(True)
+            self.argsList.setCurrentRow(row-1)
+
+    def addArg(self):
+        if self.predsList.currentItem():
+            pred = self.predsList.currentItem().data(QtCore.Qt.UserRole)
+            pred.add_arg('type', 'value')
+            predItem = QtWidgets.QListWidgetItem(str(pred))
+            predItem.setData(QtCore.Qt.UserRole, pred)
+            self.predsList.addItem(predItem)
+            self.reset(True)
+
+    def moveUpArg(self):
+        if self.argsList.currentItem():
+            row = self.argsList.currentRow()
+            pred = self.predsList.currentItem().data(QtCore.Qt.UserRole)
+
+            if row > 0:
+                pred.args[row], pred.args[row-1] = pred.args[row-1], pred.args[row]
+
+                pred_row = self.predsList.currentRow()
+                self.reset()
+                self.predsList.setCurrentRow(pred_row)
+                self.argsList.setCurrentRow(row-1)
+
+    def moveDownArg(self):
+        if self.argsList.currentItem():
+            row = self.argsList.currentRow()
+            pred = self.predsList.currentItem().data(QtCore.Qt.UserRole)
+
+            if row <= self.predsList.count():
+                pred.args[row], pred.args[row + 1] = pred.args[row + 1], pred.args[row]
+
+                pred_row = self.predsList.currentRow()
+                self.reset()
+                self.predsList.setCurrentRow(pred_row)
+                self.argsList.setCurrentRow(row+1)

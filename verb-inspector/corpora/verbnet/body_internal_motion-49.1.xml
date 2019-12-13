@@ -41,7 +41,7 @@
             <SEMANTICS>
                 <PRED value="body_motion">
                     <ARGS>
-                        <ARG type="Event" value="Ë"/>
+                        <ARG type="Event" value="e"/>
                         <ARG type="ThemRole" value="Agent"/>
                     </ARGS>
                 </PRED>

@@ -105,6 +105,10 @@ class VerbNet(object):
     def __str__(self):
         return str(self.classes.keys())
 
+    def __iter__(self):
+        for cls_id, cls in self.classes.items():
+            yield cls_id, dict(cls)
+
 
 class VerbNetClass(object):
     def __init__(self, filename='', soup=None):
@@ -248,6 +252,15 @@ class VerbNetClass(object):
                f'{indent_}members={end}' \
                f'{"".join([member.pprint(indent + 2, end) for member in self.members])}'
 
+    def __iter__(self):
+        yield 'id', self.id
+        yield 'filename', self.filename
+        yield 'args', [dict(arg) for arg in self.args]
+        yield 'predicates', [dict(pred) for pred in self.predicates]
+        yield 'frame', [dict(frame) for frame in self.frames]
+        yield 'role', [dict(role) for role in self.themroles]
+        yield 'member', [dict(member) for member in self.members]
+
 
 class VerbNetFrame(object):
     def __init__(self, class_id, filename, soup):
@@ -302,12 +315,14 @@ class VerbNetFrame(object):
         return pred_args
 
     def get_predicates(self):
-        preds = getattr(self, 'preds', [])
-        if not preds:
+        predicates = getattr(self, 'preds', [])
+        if not predicates:
             for pred in self.soup.SEMANTICS.find_all('PRED'):
-                preds.append(VerbNetPredicate(pred))
+                predicate = VerbNetPredicate()
+                predicate.fill_soup(pred)
+                predicates.append(predicate)
 
-        return preds
+        return predicates
 
     def pprint(self, indent=0, end='\n'):
         indent_in = utils.indent(indent)
@@ -325,29 +340,63 @@ class VerbNetFrame(object):
                f'{indent_}predicates={end}' \
                f'{"".join([pred.pprint(indent + 2, end) for pred in self.predicates])}'
 
+    def __iter__(self):
+        yield 'class_id', self.class_id
+        yield 'filename', self.filename
+        yield 'primary', self.primary
+        yield 'secondary', self.secondary
+        yield 'xtag', self.xtag
+        yield 'descr_num', self.descr_num
+        yield 'example', self.example
+        yield 'syntax', [dict(stx) for stx in self.syntax]
+        yield 'predicates', [dict(pred) for pred in self.predicates]
 
+@dataclass
+class VerbNetArg:
+    type: str = ''
+    value: str = ''
+
+    def pprint(self, indent=0, end='\n'):
+        indent_in = utils.indent(indent)
+        indent_ = utils.indent(indent + 1)
+        return f'{indent_in}{self.__class__.__name__}{end}' \
+               f'{indent_}type={self.type!r}{end}' \
+               f'{indent_}value={self.value!r}{end}'
+
+    def __iter__(self):
+        yield 'type', self.type
+        yield 'value', self.value
+
+    def __str__(self):
+        return f'{self.type}: {self.value}'
+
+
+@dataclass
 class VerbNetPredicate(object):
-    def __init__(self, soup=None):
-        self.soup = soup
+    bool: str = ''
+    name: str = ''
+    args: List[VerbNetArg] = field(default_factory=list)
+
+    def add_arg(self, type, value):
+        self.args.append(VerbNetArg(type, value))
+
+    def fill_soup(self, soup):
         self.bool = '' if 'bool' not in soup.attrs else soup.attrs['bool']
         self.name = soup.attrs['value']
-        self.args = self.get_args()
+        self.args = []
+        for arg in soup.ARGS.find_all('ARG'):
+            # ** There is one case in admire-31.2.xml that a value appears as 'Stimulus, Attribute'
+            # in the predicate. I do not know if they will remove this in the future. The next
+            # piece of code is to be able to generalize to those kind of cases
+            for role in arg.attrs['value'].split(','):
+                self.args.append(VerbNetArg(utils.norm(arg.attrs['type']), utils.norm_role(role)))
 
-    def add_arg(self, type, value, idx=-1):
-        self.args.insert(idx, VerbNetArg(type, value))
-
-    def get_args(self):
-        args = getattr(self, 'args', [])
-        if self.soup:
-            if not args:
-                for arg in self.soup.ARGS.find_all('ARG'):
-                    # ** There is one case in admire-31.2.xml that a value appears as 'Stimulus, Attribute'
-                    # in the predicate. I do not know if they will remove this in the future. The next
-                    # piece of code is to be able to generalize to those kind of cases
-                    for role in arg.attrs['value'].split(','):
-                        args.append(VerbNetArg(utils.norm(arg.attrs['type']), utils.norm_role(role)))
-
-        return args
+    def fill_dict(self, dict):
+        self.bool = dict.get('bool', '')
+        self.name = dict.get('name', '')
+        self.args = []
+        for arg in dict.get('args', []):
+            self.args.append(VerbNetArg(utils.norm(arg['type']), utils.norm_role(arg['value'])))
 
     def get_role_args(self):
         role_args = []
@@ -366,21 +415,39 @@ class VerbNetPredicate(object):
                f'{"".join([arg.pprint(indent + 2, end) for arg in self.args])}'
 
     def __str__(self):
-        return f'{self.bool}{self.name}({",".join([str(arg.value) for arg in self.args])})'
+        return f'{self.bool}{self.name}({", ".join([str(arg.value) for arg in self.args])})'
+
+    def __iter__(self):
+        yield 'bool', self.bool
+        yield 'name', self.name
+        yield 'args', [dict(arg) for arg in self.args]
 
 
 class VerbNetSimplified(object):
     def __init__(self, vn, json_path=''):
         self.vn = vn
         self.json_path = json_path
-        self.json = utils.fromjson(json_path)
+        self.json = self.load(json_path)
         self.classes = self.get_classes()
+
+    def load(self, filename=''):
+        if filename:
+            return utils.fromjson(filename)
+        elif self.json_path:
+            return utils.fromjson(self.json_path)
+
+    def save(self, filename=''):
+        if filename:
+            utils.tojson(filename, dict(self))
+        elif self.json_path:
+            utils.tojson(self.json_path, dict(self))
 
     def get_classes(self):
         classes = getattr(self, 'classes', {})
         if not classes:
             if self.json:
-                ...
+                for cls_id, cls in self.json.items():
+                    classes[cls_id] = VerbNetSimplifiedClass(self.vn.classes[cls_id], cls)
             else:
                 for cls_id, cls in self.vn.get_classes().items():
                     classes[cls_id] = VerbNetSimplifiedClass(cls)
@@ -395,12 +462,16 @@ class VerbNetSimplified(object):
                f'{indent_}classes={end}' \
                f'{"".join([cls.pprint(indent + 2, end) for cls in self.classes.values()])}'
 
+    def __iter__(self):
+        for cls_id, cls in self.classes.items():
+            yield cls_id, dict(cls)
+
 
 class VerbNetSimplifiedClass(object):
     def __init__(self, vnclass: VerbNetClass = None, json_class={}):
         self.json = json_class
         self.vnclass = vnclass
-        self.id = vnclass.id
+        self.id = self.json['id'] if self.json else self.vnclass.id
         self.args = self.get_args()
         self.predicates = self.get_predicates()
         self.members = self.get_members()
@@ -410,7 +481,10 @@ class VerbNetSimplifiedClass(object):
         args = getattr(self, 'args', [])
         if not args:
             if self.json:
-                ...
+                for arg_dict in self.json['args']:
+                    arg_slot = VerbNetArgSlot()
+                    arg_slot.fill_dict(arg_dict)
+                    args.append(arg_slot)
             elif self.vnclass:
                 args = self.vnclass.get_args(vnclass_args.vnclass_dict[self.id])
         return args
@@ -419,7 +493,10 @@ class VerbNetSimplifiedClass(object):
         predicates = getattr(self, 'predicates', [])
         if not predicates:
             if self.json:
-                ...
+                for pred_dict in self.json['predicates']:
+                    predicate = VerbNetPredicate()
+                    predicate.fill_dict(pred_dict)
+                    predicates.append(predicate)
             elif self.vnclass:
                 predicates = self.vnclass.get_predicates()
         return predicates
@@ -428,7 +505,10 @@ class VerbNetSimplifiedClass(object):
         members = getattr(self, 'examples', [])
         if not members:
             if self.json:
-                ...
+                for mem in self.json['members']:
+                    member = VerbNetMember()
+                    member.fill_dict(mem)
+                    members.append(member)
             elif self.vnclass:
                 members = self.vnclass.get_members()
         return members
@@ -437,7 +517,8 @@ class VerbNetSimplifiedClass(object):
         examples = getattr(self, 'examples', [])
         if not examples:
             if self.json:
-                ...
+                for exampl in self.json['examples']:
+                    examples.append(exampl)
             elif self.vnclass:
                 examples = self.vnclass.get_examples()
         return examples
@@ -456,6 +537,13 @@ class VerbNetSimplifiedClass(object):
                f'{indent_}examples={end}' \
                f'{"".join([indent_ + example + end for example in self.examples])}'
 
+    def __iter__(self):
+        yield 'id', self.id
+        yield 'args', [dict(arg) for arg in self.args]
+        yield 'predicates', [dict(pred) for pred in self.predicates]
+        yield 'members', [dict(member) for member in self.members]
+        yield 'examples', self.examples
+
 
 @dataclass
 class VerbNetSelSynRestr:
@@ -470,6 +558,11 @@ class VerbNetSelSynRestr:
                f'{indent_}name={self.name!r}{end}' \
                f'{indent_}type={self.type!r}{end}' \
                f'{indent_}value={self.value!r}{end}'
+
+    def __iter__(self):
+        yield 'name', self.name
+        yield 'type', self.type
+        yield 'value', self.value
 
 
 @dataclass
@@ -487,6 +580,11 @@ class VerbNetSelSynRestrs:
                f'{indent_}restrs={end}' \
                f'{"".join([restr.pprint(indent + 2, end) for restr in self.restrs])}'
 
+    def __iter__(self):
+        yield 'type', self.type
+        yield 'logic', self.logic
+        yield 'restrs', [dict(restr) for restr in self.restrs]
+
 
 @dataclass
 class VerbNetSyntaxTag:
@@ -503,6 +601,11 @@ class VerbNetSyntaxTag:
                f'{indent_}restrs={end}' \
                f'{"".join([restr.pprint(indent + 2, end) for restr in self.restrs])}'
 
+    def __iter__(self):
+        yield 'type', self.type
+        yield 'value', self.value
+        yield 'restrs', [dict(restr) for restr in self.restrs]
+
 
 @dataclass
 class VerbNetThemRole:
@@ -517,18 +620,9 @@ class VerbNetThemRole:
                f'{indent_}restrs={end}' \
                f'{"".join([restr.pprint(indent + 2, end) for restr in self.restrs])}'
 
-
-@dataclass
-class VerbNetArg:
-    type: str
-    value: str
-
-    def pprint(self, indent=0, end='\n'):
-        indent_in = utils.indent(indent)
-        indent_ = utils.indent(indent + 1)
-        return f'{indent_in}{self.__class__.__name__}{end}' \
-               f'{indent_}type={self.type!r}{end}' \
-               f'{indent_}value={self.value!r}{end}'
+    def __iter__(self):
+        yield 'type', self.type
+        yield 'restrs', [dict(restr) for restr in self.restrs]
 
 
 @dataclass
@@ -536,8 +630,15 @@ class VerbNetArgSlot:
     value: list = field(default_factory=list)
     implicit: bool = False
 
+    def edit(self, spaced_value):
+        self.value = spaced_value.split()
+
     def add_arg(self, value):
         self.value.append(value)
+
+    def fill_dict(self, dict):
+        self.value = dict.get('value', '')
+        self.implicit = bool(dict.get('implicit', 'false'))
 
     def pprint(self, indent=0, end='\n'):
         indent_in = utils.indent(indent)
@@ -546,15 +647,27 @@ class VerbNetArgSlot:
                f'{indent_}value={self.value!r}{end}' \
                f'{indent_}implicit={self.implicit!r}{end}'
 
+    def __iter__(self):
+        yield 'value', self.value
+        yield 'implicit', self.implicit
+
 
 @dataclass
 class VerbNetMember:
-    name: str
-    vnclass: str
-    filename: str
+    name: str = ''
+    vnclass: str = ''
+    filename: str = ''
     fnframe: list = field(default_factory=list)
     grouping: list = field(default_factory=list)
     wn: list = field(default_factory=list)
+
+    def fill_dict(self, dict):
+        self.name = dict.get('name', '')
+        self.vnclass = dict.get('vnclass', '')
+        self.filename = dict.get('filename', '')
+        self.fnframe = dict.get('fnframe', '')
+        self.grouping = dict.get('grouping', '')
+        self.wn = dict.get('wn', '')
 
     def pprint(self, indent=0, end='\n'):
         indent_in = utils.indent(indent)
@@ -567,12 +680,23 @@ class VerbNetMember:
                f'{indent_}grouping={self.grouping!r}{end}' \
                f'{indent_}wn={self.wn!r}{end}'
 
+    def __iter__(self):
+        yield 'name', self.name
+        yield 'fnframe', self.fnframe
+        yield 'grouping', self.grouping
+        yield 'wn', self.wn
+
 
 if __name__ == '__main__':
     dirname = os.path.dirname(__file__)
     filename = os.path.join(dirname, 'corpora/verbnet/')
+    json = os.path.join(dirname, 'data/verbnet_simplified.json')
     vn = VerbNet(filename)
-    vn_s = VerbNetSimplified(vn)
+    vn_s = VerbNetSimplified(vn, json)
     print(vn_s.pprint())
+    print(dict(vn)['work-73.2'])
+    print(dict(vn_s)['work-73.2'])
+
+    vn_s.save(json)
 
     # verbs = vn.get_verbs()

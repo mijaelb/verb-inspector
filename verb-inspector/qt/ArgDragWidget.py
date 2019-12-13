@@ -6,6 +6,7 @@ import PyQt5.QtCore as QtCore
 
 from qt.ArgEditorDialog import ArgEditorDialog
 
+
 class ArgDragLabel(QtWidgets.QLabel):
     def __init__(self, arg, parent=None):
         super(ArgDragLabel, self).__init__(parent)
@@ -19,8 +20,7 @@ class ArgDragLabel(QtWidgets.QLabel):
         metric = QtGui.QFontMetrics(self.font())
         size = metric.size(QtCore.Qt.TextSingleLine, self.label_text)
 
-        image = QtGui.QImage(size.width() + 12, size.height() + 12,
-                QtGui.QImage.Format_ARGB32_Premultiplied)
+        image = QtGui.QImage(size.width() + 12, size.height() + 12, QtGui.QImage.Format_ARGB32_Premultiplied)
         image.fill(QtGui.qRgba(0, 0, 0, 0))
 
         font = QtGui.QFont()
@@ -35,9 +35,8 @@ class ArgDragLabel(QtWidgets.QLabel):
         else:
             painter.setBrush(QtCore.Qt.white)
 
-        painter.drawRoundedRect(
-                QtCore.QRectF(0.5, 0.5, image.width()-1, image.height()-1),
-                25, 25, QtCore.Qt.RelativeSize)
+        painter.drawRoundedRect(QtCore.QRectF(0.5, 0.5, image.width() - 1, image.height() - 1), 25, 25,
+                                QtCore.Qt.RelativeSize)
 
         painter.setFont(font)
         painter.setBrush(QtCore.Qt.black)
@@ -49,7 +48,8 @@ class ArgDragLabel(QtWidgets.QLabel):
         self.last = "Click"
         itemData = QtCore.QByteArray()
         dataStream = QtCore.QDataStream(itemData, QtCore.QIODevice.WriteOnly)
-        dataStream << QtCore.QByteArray().append(self.label_text) << QtCore.QPoint(event.pos() - self.rect().topLeft()) << QtCore.QRect(self.rect())
+        dataStream << QtCore.QByteArray().append(self.label_text) << QtCore.QPoint(
+            event.pos() - self.rect().topLeft()) << QtCore.QRect(self.rect())
 
         mimeData = QtCore.QMimeData()
         mimeData.setData('application/x-fridgemagnet', itemData)
@@ -67,16 +67,20 @@ class ArgDragLabel(QtWidgets.QLabel):
         else:
             self.show()
 
+        self.parent().setSelection(self)
+
     def mouseReleaseEvent(self, event):
         if self.last == "Double Click":
             self.dialog = ArgEditorDialog(self.arg, self)
             self.dialog.show()
 
-
     def mouseDoubleClickEvent(self, a0: QtGui.QMouseEvent):
         self.last = "Double Click"
 
+
 class ArgDragWidget(QtWidgets.QWidget):
+    selected = QtCore.pyqtSignal(ArgDragLabel)
+
     def __init__(self, args, parent=None):
         super(ArgDragWidget, self).__init__(parent)
         self.args = args
@@ -88,6 +92,14 @@ class ArgDragWidget(QtWidgets.QWidget):
         #self.setAutoFillBackground(True)
         self.setWindowTitle("Fridge Magnets")
         self.setAcceptDrops(True)
+        self.currentSelection = None
+
+    def setSelection(self, selection):
+        self.selected.emit(selection)
+        self.currentSelection = selection
+
+    def selection(self):
+        return self.currentSelection
 
     def dragEnterEvent(self, event):
         if event.mimeData().hasFormat('application/x-fridgemagnet'):
@@ -143,18 +155,17 @@ class ArgDragWidget(QtWidgets.QWidget):
 
     def resetWidget(self):
         self.clearWidget()
-        x, y = (5, 5)
+        x, y = (2, 2)
 
         for arg in self.args:
-            print(arg.pprint())
             label = ArgDragLabel(arg, self)
             label.move(x, y)
             label.show()
             x += label.width() + 2
             self.labels.append(label)
 
-        self.setMinimumSize(x + 5, 35)
-        self.setMaximumHeight(35)
+        self.setMinimumSize(x, 29)
+        self.setMaximumHeight(29)
 
     def clearWidget(self):
         for i, label in enumerate(self.labels):

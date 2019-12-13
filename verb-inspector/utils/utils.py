@@ -64,17 +64,17 @@ pb_argm = {'com': 'Comitative',
            'lvb': 'Light Verb',
            'tmp': 'Temporal'}
 
-pbvn_themrole_mappings = { 'pag': ['agent', 'causer', 'pivot', 'stimulus'],
-                           'mnr': ['asset', 'instrument', 'manner'],
-                           'prd': ['attribute', 'predicate', 'product'],
-                           'gol': ['beneficiary', 'goal', 'destination', 'direction', 'goal', 'recipient', 'trajectory'],
-                           'com': ['co_agent', 'beneficiary'],
-                           'ppt': ['co_theme', 'patient', 'theme', 'experiencer', 'reflexive', 'topic'],
-                           'dir': ['destination', 'direction', 'initial_location', 'source', 'trajectory'],
-                           'tmp': ['duration', 'time', 'final_time'],
-                           'ext': ['extent'],
-                           'loc': ['initial_location', 'location'],
-                           'dis': ['agent']}
+pbvn_themrole_mappings = {'pag': ['agent', 'causer', 'pivot', 'stimulus'],
+                          'mnr': ['asset', 'instrument', 'manner'],
+                          'prd': ['attribute', 'predicate', 'product'],
+                          'gol': ['beneficiary', 'goal', 'destination', 'direction', 'goal', 'recipient', 'trajectory'],
+                          'com': ['co_agent', 'beneficiary'],
+                          'ppt': ['co_theme', 'patient', 'theme', 'experiencer', 'reflexive', 'topic'],
+                          'dir': ['destination', 'direction', 'initial_location', 'source', 'trajectory'],
+                          'tmp': ['duration', 'time', 'final_time'],
+                          'ext': ['extent'],
+                          'loc': ['initial_location', 'location'],
+                          'dis': ['agent']}
 
 # Possible fillers for thematic roles
 starting_point = ['source', 'initial_state', 'initial_location']
@@ -88,7 +88,7 @@ agentive = ['agent', 'causer']
 prep_type = ['about', 'above', 'after', 'against', 'among', 'as', 'at', 'back', 'beside',
              'before', 'below', 'between', 'by', 'concerning', 'for', 'from', 'if', 'in',
              'in between', 'into', 'like', 'of', 'off', 'on', 'onto', 'out', 'out of',
-             'over', 'regarding', 'respecting', 'though', 'through','to', 'towards',
+             'over', 'regarding', 'respecting', 'though', 'through', 'to', 'towards',
              'under', 'until', 'upon', 'with']
 
 # Possible location thematic role when using these prepositions
@@ -182,13 +182,19 @@ def tojson(filename, dict):
         with open(filename, 'w') as outfile:
             json.dump(dict, outfile, indent=4)
 
+
 def fromjson(filename):
     if filename:
-        with open(filename) as json_file:
-            data = json.load(json_file)
-        return data
+        try:
+            with open(filename) as json_file:
+                data = json.load(json_file)
+
+            return data
+        except FileNotFoundError:
+            return {}
 
     return {}
+
 
 def flatten(data):
     newlist = []
@@ -198,6 +204,7 @@ def flatten(data):
     else:
         return [data]
     return newlist
+
 
 def parse_xmls(path, markup='lxml'):
     file_names = [f for f in os.listdir(path) if f.endswith(".xml")]
@@ -376,7 +383,6 @@ def write(file, string, mode):
     with open(file, mode) as f:
         f.write(string)
 
-
 # def pprint(obj, indent=0, end='\n'):
 #     indent_in = indent(indent)
 #     indent_ = indent(indent + 1)
@@ -391,7 +397,6 @@ def write(file, string, mode):
 #                 else:
 #                     str_ +
 #         elif isinstance(value, dict):
-
 
 
 # def vnpb_mappings_check_pb(mappings, vn):
