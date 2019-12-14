@@ -30,7 +30,7 @@ class App(QtWidgets.QWidget):
         self.pp_container = pp.PlotPointContainer()
         self.left = 10
         self.top = 10
-        self.width = 800
+        self.width = 1000
         self.height = 800
         self.hLine = QtUtils.QHLine()
         self.editClassWidget = EditClassWidget(self.pp_container.verbnet_simplified)

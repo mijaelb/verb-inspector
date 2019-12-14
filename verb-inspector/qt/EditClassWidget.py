@@ -29,6 +29,8 @@ class EditClassWidget(QtWidgets.QWidget):
         self.hLine = QtUtils.QHLine()
 
         self.classesList = self.createClassesList()
+        self.classesList.setMaximumWidth(self.classesList.sizeHint().width()-50)
+        self.classesList.itemChanged.connect(self.updateClassList)
         self.classSelectLayout = QtWidgets.QVBoxLayout()
         self.classSelectLayout.addWidget(self.classesLabel)
         self.classSelectLayout.addWidget(self.classesList)
@@ -68,7 +70,9 @@ class EditClassWidget(QtWidgets.QWidget):
         for id, cls in self.verbnet.get_classes().items():
             classItem = QtWidgets.QListWidgetItem(id)
             classItem.setData(QtCore.Qt.UserRole, cls)
+            classItem.setFlags(classItem.flags() | QtCore.Qt.ItemIsEditable)
             classesList.addItem(classItem)
+
 
         classesList.currentItemChanged.connect(self.changeClass)
         return classesList
@@ -92,6 +96,13 @@ class EditClassWidget(QtWidgets.QWidget):
         self.editArgsLine.setText('')
         self.createClassArgs(cls)
         self.editPredWidget.updateClass(cls)
+
+    @pyqtSlot(QtWidgets.QListWidgetItem)
+    def updateClassList(self, current):
+        if current:
+            cls = current.data(QtCore.Qt.UserRole)
+            cls.id = current.text()
+            print(cls.pprint())
 
     @pyqtSlot(ArgDragLabel)
     def selectArg(self, current: ArgDragLabel):

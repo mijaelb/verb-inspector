@@ -380,6 +380,20 @@ class VerbNetPredicate(object):
     def add_arg(self, type, value):
         self.args.append(VerbNetArg(type, value))
 
+    def edit_args_name(self, arr):
+        if len(arr) < len(self.args):
+            for i in range(len(arr)-1, len(self.args)-1):
+                del self.args[i]
+
+        if arr:
+            for i, arg in enumerate(arr):
+                if arg != '':
+                    arg = arg.split()[0]
+                if i > len(self.args) - 1:
+                    self.add_arg('themrole', arg)
+                else:
+                    self.args[i].value = arg
+
     def fill_soup(self, soup):
         self.bool = '' if 'bool' not in soup.attrs else soup.attrs['bool']
         self.name = soup.attrs['value']
@@ -476,6 +490,9 @@ class VerbNetSimplifiedClass(object):
         self.predicates = self.get_predicates()
         self.members = self.get_members()
         self.examples = self.get_examples()
+
+    def add_pred(self, bool='', name='', args=[]):
+        self.predicates.append(VerbNetPredicate(bool, name, args))
 
     def get_args(self):
         args = getattr(self, 'args', [])

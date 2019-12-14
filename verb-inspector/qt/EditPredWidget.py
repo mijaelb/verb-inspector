@@ -10,18 +10,19 @@ class EditPredWidget(QtWidgets.QWidget):
         super().__init__(parent)
         self.setObjectName('EditPredWidget')
         self.vnclass = vnclass
-        self.argsLabel = QtWidgets.QLabel('Arguments ▾   (Double click to edit)')
+        self.argsLabel = QtWidgets.QLabel('Arguments ▾ (Double click to edit)')
         self.predsLabel = QtWidgets.QLabel('Predicates ▾')
         self.predsList = QtWidgets.QListWidget()
-        self.predsList.currentItemChanged.connect(self.changePred)
         self.argsList = QtWidgets.QListWidget()
+        self.predsList.currentItemChanged.connect(self.changePred)
         self.argsList.currentItemChanged.connect(self.changeArg)
         self.argsList.itemChanged.connect(self.updateArg)
-
+        self.predsList.itemChanged.connect(self.updatePred)
         self.argsLayout = QtWidgets.QVBoxLayout()
         self.predsLayout = QtWidgets.QVBoxLayout()
 
         self.argsButtonLayout = QtWidgets.QHBoxLayout()
+        self.predsButtonLayout = QtWidgets.QHBoxLayout()
 
         self.addArgButton = QtWidgets.QPushButton('Add')
         self.addArgButton.released.connect(self.addArg)
@@ -34,10 +35,26 @@ class EditPredWidget(QtWidgets.QWidget):
         self.downArgButton.setArrowType(QtCore.Qt.DownArrow)
         self.downArgButton.released.connect(self.moveDownArg)
 
+        self.addPredButton = QtWidgets.QPushButton('Add')
+        self.addPredButton.released.connect(self.addPred)
+        self.removePredButton = QtWidgets.QPushButton('Remove')
+        self.removePredButton.released.connect(self.removePred)
+        self.upPredButton = QtWidgets.QToolButton()
+        self.upPredButton.setArrowType(QtCore.Qt.UpArrow)
+        self.upPredButton.released.connect(self.moveUpPred)
+        self.downPredButton = QtWidgets.QToolButton()
+        self.downPredButton.setArrowType(QtCore.Qt.DownArrow)
+        self.downPredButton.released.connect(self.moveDownPred)
+
         self.argsButtonLayout.addWidget(self.addArgButton)
         self.argsButtonLayout.addWidget(self.removeArgButton)
         self.argsButtonLayout.addWidget(self.upArgButton)
         self.argsButtonLayout.addWidget(self.downArgButton)
+
+        self.predsButtonLayout.addWidget(self.addPredButton)
+        self.predsButtonLayout.addWidget(self.removePredButton)
+        self.predsButtonLayout.addWidget(self.upPredButton)
+        self.predsButtonLayout.addWidget(self.downPredButton)
 
         self.argsLayout.addWidget(self.argsLabel)
         self.argsLayout.addWidget(self.argsList)
@@ -45,6 +62,7 @@ class EditPredWidget(QtWidgets.QWidget):
 
         self.predsLayout.addWidget(self.predsLabel)
         self.predsLayout.addWidget(self.predsList)
+        self.predsLayout.addLayout(self.predsButtonLayout)
 
         self.layout = QtWidgets.QHBoxLayout()
         self.layout.addLayout(self.predsLayout)
@@ -89,7 +107,9 @@ class EditPredWidget(QtWidgets.QWidget):
             for pred in self.vnclass.predicates:
                 predItem = QtWidgets.QListWidgetItem(str(pred))
                 predItem.setData(QtCore.Qt.UserRole, pred)
+                predItem.setFlags(predItem.flags() | QtCore.Qt.ItemIsEditable)
                 self.predsList.addItem(predItem)
+
 
     def updateClass(self, vnclass):
         self.vnclass = vnclass
@@ -118,6 +138,23 @@ class EditPredWidget(QtWidgets.QWidget):
             except:
                 self.reset(True)
 
+    @pyqtSlot(QtWidgets.QListWidgetItem)
+    def updatePred(self, current):
+        if current:
+            pred = current.data(QtCore.Qt.UserRole)
+            text = current.text()
+            str_arr = text.split('(')
+            if len(str_arr) == 2:
+                pred.name = str_arr[0][1:] if str_arr[0][0] == '!' else str_arr[0]
+                pred.bool = str_arr[0][0] if str_arr[0][0] == '!' else ''
+                str_arr[1] = str_arr[1].replace(')', '')
+                print(str_arr)
+                arg_arr = str_arr[1].split(',')
+                if arg_arr[0] != '':
+                    pred.edit_args_name(arg_arr)
+
+            self.reset(True)
+
     def removeArg(self):
         if self.argsList.currentItem():
             row = self.argsList.currentRow()
@@ -130,9 +167,6 @@ class EditPredWidget(QtWidgets.QWidget):
         if self.predsList.currentItem():
             pred = self.predsList.currentItem().data(QtCore.Qt.UserRole)
             pred.add_arg('type', 'value')
-            predItem = QtWidgets.QListWidgetItem(str(pred))
-            predItem.setData(QtCore.Qt.UserRole, pred)
-            self.predsList.addItem(predItem)
             self.reset(True)
 
     def moveUpArg(self):
@@ -142,10 +176,7 @@ class EditPredWidget(QtWidgets.QWidget):
 
             if row > 0:
                 pred.args[row], pred.args[row-1] = pred.args[row-1], pred.args[row]
-
-                pred_row = self.predsList.currentRow()
-                self.reset()
-                self.predsList.setCurrentRow(pred_row)
+                self.reset(True)
                 self.argsList.setCurrentRow(row-1)
 
     def moveDownArg(self):
@@ -153,10 +184,37 @@ class EditPredWidget(QtWidgets.QWidget):
             row = self.argsList.currentRow()
             pred = self.predsList.currentItem().data(QtCore.Qt.UserRole)
 
-            if row <= self.predsList.count():
+            if row < self.argsList.count() - 1:
                 pred.args[row], pred.args[row + 1] = pred.args[row + 1], pred.args[row]
-
-                pred_row = self.predsList.currentRow()
-                self.reset()
-                self.predsList.setCurrentRow(pred_row)
+                self.reset(True)
                 self.argsList.setCurrentRow(row+1)
+
+    def removePred(self):
+        if self.predsList.currentItem():
+            row = self.predsList.currentRow()
+            del self.vnclass.predicates[row]
+            self.reset(True)
+            self.predsList.setCurrentRow(row-1)
+
+    def addPred(self):
+        self.vnclass.add_pred('', 'name')
+        self.reset(True)
+
+    def moveUpPred(self):
+        if self.predsList.currentItem():
+            row = self.predsList.currentRow()
+            preds = self.vnclass.predicates
+            if row > 0:
+                preds[row], preds[row-1] = preds[row-1], preds[row]
+                self.reset(True)
+                self.predsList.setCurrentRow(row-1)
+
+    def moveDownPred(self):
+        if self.predsList.currentItem():
+            row = self.predsList.currentRow()
+            preds = self.vnclass.predicates
+
+            if row < self.predsList.count() - 1:
+                preds[row], preds[row + 1] = preds[row + 1], preds[row]
+                self.reset(True)
+                self.predsList.setCurrentRow(row+1)
