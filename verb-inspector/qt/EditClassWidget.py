@@ -17,8 +17,11 @@ class EditClassWidget(QtWidgets.QWidget):
         self.filename = None
         self.currentArg = None
         self.currentClass = None
+        self.currentPred = None
+        self.currentClasses = None
 
         self.argsLabel = QtWidgets.QLabel('Argument structure: ')
+        self.argsLabel.setStyleSheet('QLabel { color: palette(midlight); }')
         self.slotLabel = QtWidgets.QLabel('Slot: ')
         self.nameLabel = QtWidgets.QLabel('Name: ')
         self.classesLabel = QtWidgets.QLabel('Classes ▾')
@@ -31,13 +34,11 @@ class EditClassWidget(QtWidgets.QWidget):
 
         self.argsLine = QtWidgets.QLineEdit()
         self.argsLine.textChanged.connect(self.changeArgText)
-
         self.argsSlot = QtWidgets.QSpinBox()
         self.argsSlot.valueChanged.connect(self.changeArgSlot)
 
         self.hLine = QtUtils.QHLine()
         self.vLine = QtUtils.QVLine()
-
         self.saveButton = QtWidgets.QPushButton('Save')
         self.saveButton.released.connect(self.save)
         self.saveAsButton = QtWidgets.QPushButton('Save As')
@@ -50,20 +51,30 @@ class EditClassWidget(QtWidgets.QWidget):
         self.classButtons.addWidget(self.saveAsButton)
         self.classButtons.addWidget(self.openButton)
 
-        self.predsListLabel = QtWidgets.QLabel('All predicates ▾')
-        self.predsList = self.createPredsList()
-        self.predsList.itemChanged.connect(self.updatePredsList)
-        self.predsSelectLayout = QtWidgets.QVBoxLayout()
-        self.predsSelectLayout.addWidget(self.predsListLabel)
-        self.predsSelectLayout.addWidget(self.predsList)
+        self.filterByPredicateButton = QtWidgets.QPushButton('Class by predicate')
+        self.removeFilterButton = QtWidgets.QPushButton('Unfilter')
+        self.filterByPredicateButton.released.connect(self.filterByPredicate)
+        self.removeFilterButton.released.connect(self.removeFilter)
+        self.filterButtons = QtWidgets.QHBoxLayout()
+        self.filterButtons.addWidget(self.filterByPredicateButton)
+        self.filterButtons.addWidget(self.removeFilterButton)
 
-        self.classesList = self.createClassesList()
+        self.predsListLabel = QtWidgets.QLabel('All predicates ▾')
+        self.predsList = QtWidgets.QListWidget()
+        self.createPredsList()
+        self.predsList.itemChanged.connect(self.updatePredsList)
+
+        self.classesList = QtWidgets.QListWidget()
+        self.createClassesList()
         self.classesList.itemChanged.connect(self.updateClassList)
+
         self.classSelectLayout = QtWidgets.QVBoxLayout()
         self.classSelectLayout.addWidget(self.classesLabel)
         self.classSelectLayout.addWidget(self.classesList)
+        self.classSelectLayout.addWidget(self.predsListLabel)
+        self.classSelectLayout.addWidget(self.predsList)
+        self.classSelectLayout.addLayout(self.filterButtons)
         self.classSelectLayout.addLayout(self.classButtons)
-        self.classSelectLayout.addLayout(self.predsSelectLayout)
 
         self.editPredWidget = EditPredWidget()
 
@@ -92,51 +103,48 @@ class EditClassWidget(QtWidgets.QWidget):
         self.editClassLayout.addWidget(self.hLine)
         self.editClassLayout.addWidget(self.editPredWidget)
 
-
         self.layout = QtWidgets.QHBoxLayout()
         self.layout.addLayout(self.classSelectLayout)
         self.layout.addLayout(self.editClassLayout)
 
+        self.setLayout(self.layout)
         self.initUI()
 
     def initUI(self):
-        self.addArgButton.setMaximumWidth(self.addArgButton.sizeHint().width() - 30)
-        self.removeArgButton.setMaximumWidth(self.removeArgButton.sizeHint().width() - 20)
-        self.argsSlot.setMaximumWidth(self.argsSlot.sizeHint().width())
-        self.argsLine.setMaximumWidth(self.argsLine.sizeHint().width()-50)
-        self.classesList.setMaximumWidth(self.classesList.sizeHint().width())
-        self.argsLabel.setStyleSheet('QLabel { color: palette(midlight); }')
         self.hLine.setStyleSheet('QFrame { color: palette(midlight) }')
         self.vLine.setStyleSheet('QFrame { color: palette(midlight) }')
-        self.predsList.setMaximumWidth(self.predsList.sizeHint().width())
-        self.layout.setAlignment(self.predsList, QtCore.Qt.AlignLeft)
         self.predsListLabel.setStyleSheet('QLabel { color: palette(midlight); }')
-        self.argsEditLayout.setAlignment(QtCore.Qt.AlignLeft)
+        self.argsSlot.setMaximumWidth(self.argsSlot.sizeHint().width())
+        self.argsLine.setMaximumWidth(self.argsLine.sizeHint().width() - 50)
+        self.classesList.setMaximumWidth(self.classesList.sizeHint().width())
+        self.predsList.setMaximumWidth(self.predsList.sizeHint().width())
+        self.predsList.setMaximumHeight(150)
+        self.addArgButton.setMaximumWidth(self.addArgButton.sizeHint().width() - 30)
+        self.removeArgButton.setMaximumWidth(self.removeArgButton.sizeHint().width() - 20)
+
+        self.argsLayout.setAlignment(QtCore.Qt.AlignLeft)
+        self.classSelectLayout.setAlignment(QtCore.Qt.AlignTop)
         self.argsLayout.setAlignment(self.argsEditLayout, QtCore.Qt.AlignLeft)
         self.argsLayout.setAlignment(self.argsDragLayout, QtCore.Qt.AlignLeft)
-        self.argsLayout.setAlignment(QtCore.Qt.AlignLeft)
-        self.setLayout(self.layout)
+        self.layout.setAlignment(self.classSelectLayout, QtCore.Qt.AlignTop)
 
     def createClassesList(self):
-        classesList = QtWidgets.QListWidget()
-        for id, cls in self.verbnet.get_classes().items():
-            classItem = QtWidgets.QListWidgetItem(id)
+        self.classesList.clear()
+        self.classesList.currentItemChanged.connect(self.changeClass)
+        classes = self.verbnet.get_classes() if not self.currentClasses else self.currentClasses
+        for cls in classes.values():
+            classItem = QtWidgets.QListWidgetItem(cls.id)
             classItem.setData(QtCore.Qt.UserRole, cls)
             classItem.setFlags(classItem.flags() | QtCore.Qt.ItemIsEditable)
-            classesList.addItem(classItem)
-
-        classesList.currentItemChanged.connect(self.changeClass)
-        return classesList
+            self.classesList.addItem(classItem)
 
     def createPredsList(self):
-        predsList = QtWidgets.QListWidget()
+        self.predsList.currentItemChanged.connect(self.changePredicate)
         for pred in self.verbnet.get_all_predicates_name():
             predItem = QtWidgets.QListWidgetItem(pred)
             predItem.setData(QtCore.Qt.UserRole, pred)
             predItem.setFlags(predItem.flags() | QtCore.Qt.ItemIsEditable)
-            predsList.addItem(predItem)
-
-        return predsList
+            self.predsList.addItem(predItem)
 
     def createClassArgs(self, vnclass, selected=None):
         if vnclass:
@@ -157,12 +165,22 @@ class EditClassWidget(QtWidgets.QWidget):
 
     @pyqtSlot(QtWidgets.QListWidgetItem, QtWidgets.QListWidgetItem)
     def changeClass(self, current: QtWidgets.QListWidgetItem, previous: QtWidgets.QListWidgetItem):
-        cls = current.data(QtCore.Qt.UserRole)
-        self.currentClass = cls
-        self.currentArg = None
-        self.argsLine.setText('')
-        self.createClassArgs(cls)
-        self.editPredWidget.updateClass(cls)
+        if current:
+            cls = current.data(QtCore.Qt.UserRole)
+            self.currentClass = cls
+            self.currentArg = None
+            self.argsLine.setText('')
+            self.createClassArgs(cls)
+            self.editPredWidget.updateClass(cls)
+        else:
+            self.currentClass = None
+
+    @pyqtSlot(QtWidgets.QListWidgetItem, QtWidgets.QListWidgetItem)
+    def changePredicate(self, current: QtWidgets.QListWidgetItem, previous: QtWidgets.QListWidgetItem):
+        if current:
+            self.currentPred = current.data(QtCore.Qt.UserRole)
+        else:
+            self.currentPred = None
 
     @pyqtSlot(QtWidgets.QListWidgetItem)
     def updateClassList(self, current):
@@ -238,3 +256,14 @@ class EditClassWidget(QtWidgets.QWidget):
                 predItem.setData(QtCore.Qt.UserRole, pred)
                 predItem.setFlags(predItem.flags() | QtCore.Qt.ItemIsEditable)
                 self.predsList.addItem(predItem)
+
+    @pyqtSlot()
+    def filterByPredicate(self):
+        if self.currentPred:
+            self.currentClasses = self.verbnet.get_classes_by_predicate(self.currentPred)
+            self.createClassesList()
+
+    @pyqtSlot()
+    def removeFilter(self):
+        self.currentClasses = None
+        self.createClassesList()

@@ -39,7 +39,6 @@ verbnet_path = os.path.join(dirname, 'corpora/verbnet/')
 vnpb_path = os.path.join(dirname, 'corpora/mappings/vnpb-mappings.json')
 verbnet_simplified_path = os.path.join(dirname, 'data/verbnet_simplified.json')
 
-
 class PlotPointContainer(object):
     def __init__(self, json_path=''):
         self.json_path = json_path

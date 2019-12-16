@@ -8,7 +8,6 @@ import qt.QtUtils as QtUtils
 
 VERB_LIST_WIDTH = 225
 
-
 class EditPlotPointsWidget(QtWidgets.QWidget):
     def __init__(self, pp, parent=None):
         super().__init__(parent)

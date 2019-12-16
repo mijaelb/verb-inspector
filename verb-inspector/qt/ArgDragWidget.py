@@ -29,7 +29,7 @@ class ArgDragLabel(QtWidgets.QLabel):
         image = QtGui.QImage(size.width() + offset, size.height() + offset, QtGui.QImage.Format_ARGB32_Premultiplied)
         image.fill(QtGui.qRgba(0, 0, 0, 0))
 
-        font = QtGui.QFont()
+        font = QtGui.QFont('Helvetica', 6)
         font.setStyleStrategy(QtGui.QFont.ForceOutline)
 
         painter = QtGui.QPainter()

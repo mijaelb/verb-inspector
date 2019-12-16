@@ -519,6 +519,15 @@ class VerbNetSimplified(object):
                 if pred.name == current:
                     pred.name = new
 
+    def get_classes_by_predicate(self, pred_name):
+        classes = {}
+        for cls in self.classes.values():
+            for pred in cls.predicates:
+                if pred.name == pred_name and cls.id not in classes:
+                    classes[cls.id] = cls
+
+        return classes
+
     def pprint(self, indent=0, end='\n'):
         indent_in = utils.indent(indent)
         indent_ = utils.indent(indent + 1)
@@ -591,6 +600,18 @@ class VerbNetSimplifiedClass(object):
                 examples = self.vnclass.get_examples()
         return examples
 
+    def updateSlots(self):
+        i = -1
+        j = 0
+        while j < len(self.args):
+            if i != -1:
+                if self.args[i].slot > self.args[j].slot:
+                    self.args[i], self.args[j] = self.args[j], self.args[i]
+                    self.updateSlots()
+
+            i = j
+            j += 1
+
     def pprint(self, indent=0, end='\n'):
         indent_in = utils.indent(indent)
         indent_ = utils.indent(indent + 1)
@@ -604,20 +625,6 @@ class VerbNetSimplifiedClass(object):
                f'{"".join([member.pprint(indent + 2, end) for member in self.members])}' \
                f'{indent_}examples={end}' \
                f'{"".join([indent_ + example + end for example in self.examples])}'
-
-    def updateSlots(self):
-        i = -1
-        j = 0
-        while j < len(self.args):
-            if i != -1:
-                if self.args[i].slot > self.args[j].slot:
-                    self.args[i], self.args[j] = self.args[j], self.args[i]
-                    self.updateSlots()
-
-            i = j
-            j += 1
-
-
 
     def __iter__(self):
         yield 'id', self.id
