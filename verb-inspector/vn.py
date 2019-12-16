@@ -425,7 +425,7 @@ class VerbNetPredicate(object):
 
     def fill_soup(self, soup):
         self.bool = '' if 'bool' not in soup.attrs else soup.attrs['bool']
-        self.name = soup.attrs['value']
+        self.name = ''.join(soup.attrs['value'].split()).lower()
         self.args = []
         for arg in soup.ARGS.find_all('ARG'):
             # ** There is one case in admire-31.2.xml that a value appears as 'Stimulus, Attribute'
@@ -436,7 +436,7 @@ class VerbNetPredicate(object):
 
     def fill_dict(self, dict):
         self.bool = dict.get('bool', '')
-        self.name = dict.get('name', '')
+        self.name = ''.join(dict.get('name', '').split()).lower()
         self.args = []
         for arg in dict.get('args', []):
             self.args.append(VerbNetArg(utils.norm(arg['type']), utils.norm_role(arg['value'])))
@@ -507,14 +507,17 @@ class VerbNetSimplified(object):
 
     def get_all_predicates_name(self):
         predicates = []
-        for id, cls in self.classes.items():
+        for cls in self.classes.values():
             for pred in cls.predicates:
-                if not any([str(pred.name) == str(pr.name) for pr in predicates]):
+                if not any([str(pred.name) == str(pr) for pr in predicates]):
                     predicates.append(pred.name)
         return predicates
 
     def replace_predicate_name(self, current, new):
-        ...
+        for cls in self.classes.values():
+            for pred in cls.predicates:
+                if pred.name == current:
+                    pred.name = new
 
     def pprint(self, indent=0, end='\n'):
         indent_in = utils.indent(indent)

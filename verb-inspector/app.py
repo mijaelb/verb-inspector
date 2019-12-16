@@ -35,14 +35,16 @@ class App(QtWidgets.QWidget):
         self.hLine = QtUtils.QHLine()
         self.editClassWidget = EditClassWidget(self.pp_container.verbnet_simplified)
         self.editClassWidget.setMaximumHeight(400)
+
         self.layout = QtWidgets.QVBoxLayout()
         self.layout.addWidget(self.hLine)
         self.layout.addWidget(self.editClassWidget)
+
         self.initUI()
 
     def initUI(self):
         self.setWindowTitle(self.title)
-        self.setFixedSize(self.width, self.height)
+        #self.setFixedSize(self.width, self.height)
         self.setGeometry(self.left, self.top, self.width, self.height)
         self.setLayout(self.layout)
         self.layout.setAlignment(QtCore.Qt.AlignTop)

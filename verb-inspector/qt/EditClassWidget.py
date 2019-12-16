@@ -50,12 +50,20 @@ class EditClassWidget(QtWidgets.QWidget):
         self.classButtons.addWidget(self.saveAsButton)
         self.classButtons.addWidget(self.openButton)
 
+        self.predsListLabel = QtWidgets.QLabel('All predicates ▾')
+        self.predsList = self.createPredsList()
+        self.predsList.itemChanged.connect(self.updatePredsList)
+        self.predsSelectLayout = QtWidgets.QVBoxLayout()
+        self.predsSelectLayout.addWidget(self.predsListLabel)
+        self.predsSelectLayout.addWidget(self.predsList)
+
         self.classesList = self.createClassesList()
         self.classesList.itemChanged.connect(self.updateClassList)
         self.classSelectLayout = QtWidgets.QVBoxLayout()
         self.classSelectLayout.addWidget(self.classesLabel)
         self.classSelectLayout.addWidget(self.classesList)
         self.classSelectLayout.addLayout(self.classButtons)
+        self.classSelectLayout.addLayout(self.predsSelectLayout)
 
         self.editPredWidget = EditPredWidget()
 
@@ -84,6 +92,7 @@ class EditClassWidget(QtWidgets.QWidget):
         self.editClassLayout.addWidget(self.hLine)
         self.editClassLayout.addWidget(self.editPredWidget)
 
+
         self.layout = QtWidgets.QHBoxLayout()
         self.layout.addLayout(self.classSelectLayout)
         self.layout.addLayout(self.editClassLayout)
@@ -99,6 +108,9 @@ class EditClassWidget(QtWidgets.QWidget):
         self.argsLabel.setStyleSheet('QLabel { color: palette(midlight); }')
         self.hLine.setStyleSheet('QFrame { color: palette(midlight) }')
         self.vLine.setStyleSheet('QFrame { color: palette(midlight) }')
+        self.predsList.setMaximumWidth(self.predsList.sizeHint().width())
+        self.layout.setAlignment(self.predsList, QtCore.Qt.AlignLeft)
+        self.predsListLabel.setStyleSheet('QLabel { color: palette(midlight); }')
         self.argsEditLayout.setAlignment(QtCore.Qt.AlignLeft)
         self.argsLayout.setAlignment(self.argsEditLayout, QtCore.Qt.AlignLeft)
         self.argsLayout.setAlignment(self.argsDragLayout, QtCore.Qt.AlignLeft)
@@ -115,6 +127,16 @@ class EditClassWidget(QtWidgets.QWidget):
 
         classesList.currentItemChanged.connect(self.changeClass)
         return classesList
+
+    def createPredsList(self):
+        predsList = QtWidgets.QListWidget()
+        for pred in self.verbnet.get_all_predicates_name():
+            predItem = QtWidgets.QListWidgetItem(pred)
+            predItem.setData(QtCore.Qt.UserRole, pred)
+            predItem.setFlags(predItem.flags() | QtCore.Qt.ItemIsEditable)
+            predsList.addItem(predItem)
+
+        return predsList
 
     def createClassArgs(self, vnclass, selected=None):
         if vnclass:
@@ -203,3 +225,16 @@ class EditClassWidget(QtWidgets.QWidget):
         name = QtWidgets.QFileDialog.getOpenFileName(self, 'Open File')
         if name:
             self.verbnet.load(name[0])
+
+    @pyqtSlot(QtWidgets.QListWidgetItem)
+    def updatePredsList(self, current):
+        if current:
+            pred = current.data(QtCore.Qt.UserRole)
+            self.verbnet.replace_predicate_name(pred, current.text())
+            self.editPredWidget.updateClass(self.currentClass)
+            self.predsList.clear()
+            for pred in self.verbnet.get_all_predicates_name():
+                predItem = QtWidgets.QListWidgetItem(pred)
+                predItem.setData(QtCore.Qt.UserRole, pred)
+                predItem.setFlags(predItem.flags() | QtCore.Qt.ItemIsEditable)
+                self.predsList.addItem(predItem)

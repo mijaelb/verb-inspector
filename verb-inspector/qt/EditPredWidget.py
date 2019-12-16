@@ -10,8 +10,8 @@ class EditPredWidget(QtWidgets.QWidget):
         super().__init__(parent)
         self.setObjectName('EditPredWidget')
         self.vnclass = vnclass
-        self.argsLabel = QtWidgets.QLabel('Arguments ▾ (Double click to edit)')
-        self.predsLabel = QtWidgets.QLabel('Predicates ▾')
+        self.argsLabel = QtWidgets.QLabel('Predicate arguments ▾ (Double click to edit)')
+        self.predsLabel = QtWidgets.QLabel('Class predicates ▾')
         self.predsList = QtWidgets.QListWidget()
         self.argsList = QtWidgets.QListWidget()
         self.predsList.currentItemChanged.connect(self.changePred)
