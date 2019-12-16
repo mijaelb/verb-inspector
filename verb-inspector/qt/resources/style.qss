@@ -10,6 +10,9 @@ EditClassWidget > QLabel {
     color: palette(midlight);
 }
 
+QCheckBox {
+    color: palette(midlight);
+}
 
 QGroupBox {
   background-color: palette(alternate-base);

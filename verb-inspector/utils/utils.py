@@ -180,7 +180,7 @@ def norm(text):
 def tojson(filename, dict):
     if filename:
         with open(filename, 'w') as outfile:
-            json.dump(dict, outfile, indent=4)
+            json.dump(dict, outfile, indent=3)
 
 
 def fromjson(filename):

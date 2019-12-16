@@ -14,6 +14,7 @@ from typing import List
 import gr
 import pb
 import vn
+#import spacy
 
 
 class Dataset(Enum):
@@ -44,6 +45,7 @@ class PlotPointContainer(object):
         self.json_path = json_path
         self.verbnet = vn.VerbNet(verbnet_path)
         self.verbnet_simplified = vn.VerbNetSimplified(self.verbnet, '')
+
         # self.vnpb = utils.fromjson(vnpb_path)
         # self.propbank = pb.PropBank(propbank_path)
         # self.groupings = gr.Groupings(groupings_path)
@@ -85,7 +87,7 @@ class PlotPointContainer(object):
                             pps[lemma].add_sense(pp_class)
 
                     utils.write('pps.log', pps[lemma].pprint(), 'a+')
-                # utils.tojson('pps', pps)
+
         return plotpoints
 
     def get_class_verbnet(self, cls, lemma):
@@ -187,6 +189,10 @@ class PlotPointContainer(object):
         return arg_struct
 
 
+class CompiledPlotPoint(object):
+    ...
+
+
 @dataclass
 class PlotPointPredicateArg:
     type: str
@@ -198,6 +204,10 @@ class PlotPointPredicateArg:
         return f'{indent_in}{self.__class__.__name__}{end}' \
                f'{indent_}type={self.type!r}{end}' \
                f'{indent_}value={self.value!r}{end}'
+
+    def __iter__(self):
+        yield 'type', self.type
+        yield 'value', self.value
 
 
 @dataclass
@@ -215,6 +225,11 @@ class PlotPointPredicate:
                f'{indent_}args={end}' \
                f'{"".join([arg.pprint(indent + 2, end) for arg in self.args])}'
 
+    def __iter__(self):
+        yield 'bool', self.bool
+        yield 'name', self.name
+        yield 'args', [dict(arg) for arg in self.args]
+
 
 @dataclass
 class PlotPointRole:
@@ -231,6 +246,12 @@ class PlotPointRole:
                f'{indent_}themrole={self.themrole}{end}' \
                f'{indent_}vnclass={self.vnclass}{end}' \
                f'{indent_}dataset={self.dataset}{end}'
+
+    def __iter__(self):
+        yield 'role', self.role
+        yield 'themrole', self.themrole
+        yield 'vnclass', self.vnclass
+        yield 'dataset', self.dataset
 
 
 @dataclass
@@ -251,6 +272,11 @@ class PlotPointArg:
                f'{indent_}roles={end}' \
                f'{"".join([role.pprint(indent + 2) for role in self.roles])}'
 
+    def __iter__(self):
+        yield 'descr', self.descr
+        yield 'arg', self.arg
+        yield 'roles', [dict(role) for role in self.role]
+
 
 @dataclass
 class PlotPointArgStruct:
@@ -269,6 +295,11 @@ class PlotPointArgStruct:
                f'{indent_}dataset={self.dataset}{end}' \
                f'{indent_}args={end}' \
                f'{"".join([arg.pprint(indent + 2) for arg in self.args])}'
+
+    def __iter__(self):
+        yield 'id', self.descr
+        yield 'dataset', self.arg
+        yield 'args', [dict(role) for role in self.role]
 
 
 @dataclass
@@ -289,6 +320,13 @@ class PlotPointMapping:
                f'{indent_}gr={self.gr!r}{end}' \
                f'{indent_}pb={self.pb!r}{end}'
 
+    def __iter__(self):
+        yield 'wn', self.wn
+        yield 'vn', self.vn
+        yield 'fn', self.fn
+        yield 'gr', self.gr
+        yield 'pb', self.pb
+
 
 @dataclass
 class PlotPointExample:
@@ -307,6 +345,13 @@ class PlotPointExample:
                f'{indent_}fn={self.fn!r}{end}' \
                f'{indent_}gr={self.gr!r}{end}' \
                f'{indent_}pb={self.pb!r}{end}'
+
+    def __iter__(self):
+        yield 'wn', self.wn
+        yield 'vn', self.vn
+        yield 'fn', self.fn
+        yield 'gr', self.gr
+        yield 'pb', self.pb
 
 
 @dataclass
@@ -335,6 +380,14 @@ class PlotPointSense:
                f'{indent_}examples={end}' \
                f'{self.examples.pprint(indent + 2)}'
 
+    def __iter__(self):
+        yield 'id', self.id
+        yield 'dataset', self.dataset
+        yield 'descr', self.descr
+        yield 'mappings', dict(self.mappings)
+        yield 'examples', dict(self.examples)
+        yield 'args', dict(self.args)
+
 
 @dataclass
 class PlotPoint:
@@ -360,6 +413,14 @@ class PlotPoint:
                f'{indent_}aligned={str(self.aligned)!r}{end}' \
                f'{indent_}senses={end}' \
                f'{"".join([sense.pprint(indent + 1) for sense in self.senses])}'
+
+    def __iter__(self):
+        yield 'lemma', self.lemma
+        yield 'type', self.type
+        yield 'selected', self.selected
+        yield 'dataset', self.dataset
+        yield 'aligned', self.aligned
+        yield 'senses', [dict(sense) for sense in self.senses]
 
 
 if __name__ == '__main__':

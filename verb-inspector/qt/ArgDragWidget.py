@@ -8,19 +8,25 @@ from qt.ArgEditorDialog import ArgEditorDialog
 
 
 class ArgDragLabel(QtWidgets.QLabel):
-    def __init__(self, arg, parent=None):
+    def __init__(self, arg, parent=None, select=False):
         super(ArgDragLabel, self).__init__(parent)
-        self.label_text = ' '.join(arg.value)
-        self.implicit = arg.implicit
         self.arg = arg
         self.dialog = None
+        self.isSelected = select
+        self.label_text = f'{self.arg.slot}: {self.arg.value}'
         self.reset()
 
     def reset(self):
         metric = QtGui.QFontMetrics(self.font())
-        size = metric.size(QtCore.Qt.TextSingleLine, self.label_text)
 
-        image = QtGui.QImage(size.width() + 12, size.height() + 12, QtGui.QImage.Format_ARGB32_Premultiplied)
+        if self.isSelected:
+            size = metric.size(QtCore.Qt.TextSelectableByMouse, self.label_text)
+            offset = 16
+        else:
+            size = metric.size(QtCore.Qt.TextSingleLine, self.label_text)
+            offset = 12
+
+        image = QtGui.QImage(size.width() + offset, size.height() + offset, QtGui.QImage.Format_ARGB32_Premultiplied)
         image.fill(QtGui.qRgba(0, 0, 0, 0))
 
         font = QtGui.QFont()
@@ -39,8 +45,11 @@ class ArgDragLabel(QtWidgets.QLabel):
                                 QtCore.Qt.RelativeSize)
 
         painter.setFont(font)
+
         painter.setBrush(QtCore.Qt.black)
-        painter.drawText(QtCore.QRect(QtCore.QPoint(6, 6), size), QtCore.Qt.AlignCenter, self.label_text)
+
+        painter.drawText(QtCore.QRect(QtCore.QPoint(offset / 2, offset / 2), size), QtCore.Qt.AlignCenter,
+                         self.label_text)
         painter.end()
         self.setPixmap(QtGui.QPixmap.fromImage(image))
 
@@ -48,12 +57,12 @@ class ArgDragLabel(QtWidgets.QLabel):
         self.last = "Click"
         itemData = QtCore.QByteArray()
         dataStream = QtCore.QDataStream(itemData, QtCore.QIODevice.WriteOnly)
-        dataStream << QtCore.QByteArray().append(self.label_text) << QtCore.QPoint(
+        dataStream << QtCore.QByteArray().append(str(dict(self.arg))) << QtCore.QPoint(
             event.pos() - self.rect().topLeft()) << QtCore.QRect(self.rect())
 
         mimeData = QtCore.QMimeData()
         mimeData.setData('application/x-fridgemagnet', itemData)
-        mimeData.setText(self.label_text)
+        mimeData.setText(self.arg.value)
 
         drag = QtGui.QDrag(self)
         drag.setMimeData(mimeData)
@@ -74,25 +83,21 @@ class ArgDragLabel(QtWidgets.QLabel):
             self.dialog = ArgEditorDialog(self.arg, self)
             self.dialog.show()
 
-    def mouseDoubleClickEvent(self, a0: QtGui.QMouseEvent):
-        self.last = "Double Click"
-
 
 class ArgDragWidget(QtWidgets.QWidget):
     selected = QtCore.pyqtSignal(ArgDragLabel)
 
-    def __init__(self, args, parent=None):
+    def __init__(self, args, parent=None, selected=None):
         super(ArgDragWidget, self).__init__(parent)
         self.args = args
         self.labels = list()
-        self.resetWidget()
         new_palette = self.palette()
         new_palette.setColor(QtGui.QPalette.Window, QtCore.Qt.white)
         self.setPalette(new_palette)
-        #self.setAutoFillBackground(True)
         self.setWindowTitle("Fridge Magnets")
         self.setAcceptDrops(True)
-        self.currentSelection = None
+        self.currentSelection = selected
+        self.resetWidget()
 
     def setSelection(self, selection):
         self.selected.emit(selection)
@@ -121,21 +126,28 @@ class ArgDragWidget(QtWidgets.QWidget):
             itemData = mime.data('application/x-fridgemagnet')
             dataStream = QtCore.QDataStream(itemData, QtCore.QIODevice.ReadOnly)
 
-            text = QtCore.QByteArray()
+            arg = QtCore.QByteArray()
             offset = QtCore.QPoint()
             rect = QtCore.QRect()
-            dataStream >> text >> offset >> rect
-            text = str(text, encoding='latin1')
+            dataStream >> arg >> offset >> rect
 
             point = event.pos()
-            i = self.getItemIndex(text)
-            if i != -1:
-                for j, label in enumerate(self.labels):
-                    if label.label_text != text:
-                        if point.x() > label.x() and j > i:
-                            self.args[i], self.args[j] = self.args[j], self.args[i]
-                        elif point.x() < label.x() + label.width() and j < i:
-                            self.args[i], self.args[j] = self.args[j], self.args[i]
+            i = self.getItemIndex(arg)
+            j = self.getDropIndex(point)
+            print(f'{i} {j}')
+
+            if i != j:
+                stor = self.args[i]
+                del self.args[i]
+                if j == len(self.args):
+                    self.args.append(stor)
+                else:
+                    self.args.insert(j, stor)
+
+                self.moveItems(i, j)
+
+                i = self.getItemIndex(arg)
+                self.args[i].slot = self.args[i - 1].slot + 1 if i > 0 else 0
 
             self.resetWidget()
 
@@ -147,22 +159,54 @@ class ArgDragWidget(QtWidgets.QWidget):
         else:
             event.ignore()
 
-    def getItemIndex(self, text):
-        for i, arg in enumerate(self.args):
-            if ' '.join(arg.value) == text:
+    def moveItems(self, src, dest):
+        n = 1 if dest > src else -1
+        if dest > src:
+            ran = list(range(src, dest))
+        else:
+            ran = list(reversed(range(dest + 1, src + 1)))
+
+        if dest != src:
+            print(ran)
+            for i in ran:
+                print(i)
+                self.args[i].slot = self.args[i].slot - n
+
+    def getItemIndex(self, arg_str):
+        for i, a in enumerate(self.args):
+            if str(dict(a)) == arg_str:
                 return i
         return -1
 
+    def getDropIndex(self, point):
+        if self.labels[0].x() + self.labels[0].width() > point.x():
+            return 0
+
+        for j, label in enumerate(self.labels):
+            if j + 1 < len(self.labels):
+                if self.labels[j + 1].x() + self.labels[j + 1].width() > point.x() >= self.labels[j].x():
+                    return j + 1
+            else:
+                return j + 1
+
     def resetWidget(self):
         self.clearWidget()
-        x, y = (2, 2)
+        x, y = (0, 2)
 
+        slot = -1
         for arg in self.args:
-            label = ArgDragLabel(arg, self)
-            label.move(x, y)
+            select = True if self.currentSelection and self.currentSelection.arg == arg else False
+            label = ArgDragLabel(arg, self, select)
+            if slot != arg.slot:
+                x += 4
+                label.move(x, y)
+            else:
+                x -= 1
+                label.move(x, y)
             label.show()
-            x += label.width() + 2
+            x += label.width()
             self.labels.append(label)
+            slot = arg.slot
 
         self.setMinimumSize(x, 29)
         self.setMaximumHeight(29)
