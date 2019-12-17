@@ -62,12 +62,14 @@ class PropBank(object):
         if roleset_:
             roles = roleset_.get_roles()
             return roles
-        return None
+        return []
 
-    def get_vnclasses(self, roleset):
+    def get_classes(self, roleset):
         roleset_ = self.get_roleset(roleset)
-        classes = roleset_.get_vnclasses()
-        return classes
+        if roleset_:
+            classes = roleset_.get_classes()
+            return classes
+        return []
 
     def get_rolesets_from_class(self, cls, lemma):
         rolesets = self.get_rolesets(lemma)

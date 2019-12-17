@@ -75,9 +75,9 @@ class Groupings(object):
 
         return list(dict.fromkeys(pb_ids))
 
-    def get_senses_from_pb(self, lemma, roleset, type='v'):
+    def get_senses_from_propbank(self, lemma, roleset, type='v'):
         gr = []
-        inv = self.get_inventory(lemma)
+        inv = self.get_inventory(lemma, type)
         if inv:
             for sense in inv.senses.values():
                 if roleset in sense.mappings.pb:

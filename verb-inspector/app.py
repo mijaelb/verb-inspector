@@ -16,7 +16,7 @@ from PyQt5.QtGui import QPalette, QColor, QIcon
 from pathlib import Path
 import pp
 from qt.EditClassWidget import EditClassWidget
-
+from qt.EditPlotPointWidget import EditPlotPointWidget
 import qt.QtUtils as QtUtils
 from qt.QtUtils import QT_VERSION
 
@@ -32,11 +32,16 @@ class App(QtWidgets.QWidget):
         self.top = 10
         self.width = 1000
         self.height = 800
+
+        self.editPlotPointWidget = EditPlotPointWidget(self.pp_container)
+
         self.hLine = QtUtils.QHLine()
-        self.editClassWidget = EditClassWidget(self.pp_container.verbnet_simplified)
+
+        self.editClassWidget = EditClassWidget(self.pp_container.verbnet)
         self.editClassWidget.setMaximumHeight(600)
 
         self.layout = QtWidgets.QVBoxLayout()
+        self.layout.addWidget(self.editPlotPointWidget)
         self.layout.addWidget(self.hLine)
         self.layout.addWidget(self.editClassWidget)
 
@@ -46,7 +51,7 @@ class App(QtWidgets.QWidget):
         self.setWindowTitle(self.title)
         self.setGeometry(self.left, self.top, self.width, self.height)
         self.setLayout(self.layout)
-        self.layout.setAlignment(QtCore.Qt.AlignTop)
+        self.layout.setAlignment(QtCore.Qt.AlignTop | QtCore.Qt.AlignLeft)
         self.hLine.setStyleSheet('QFrame { color: palette(midlight) }')
 
         with open(_FL_STYLESHEET) as stylesheet:

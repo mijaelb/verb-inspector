@@ -14,7 +14,9 @@ from typing import List
 import gr
 import pb
 import vn
-#import spacy
+
+
+# import spacy
 
 
 class Dataset(Enum):
@@ -39,20 +41,24 @@ verbnet_path = os.path.join(dirname, 'corpora/verbnet/')
 vnpb_path = os.path.join(dirname, 'corpora/mappings/vnpb-mappings.json')
 verbnet_simplified_path = os.path.join(dirname, 'data/verbnet_simplified.json')
 
+
 class PlotPointContainer(object):
     def __init__(self, json_path=''):
         self.json_path = json_path
-        self.verbnet = vn.VerbNet(verbnet_path)
-        self.verbnet_simplified = vn.VerbNetSimplified(self.verbnet, '')
+        self.verbnet = vn.VerbNetSimplified(verbnet_path, '')
 
         # self.vnpb = utils.fromjson(vnpb_path)
-        # self.propbank = pb.PropBank(propbank_path)
-        # self.groupings = gr.Groupings(groupings_path)
+        self.propbank = pb.PropBank(propbank_path)
+        self.groupings = gr.Groupings(groupings_path)
+
         self.bso = ''
-        # self.plotpoints = self.get_plotpoints()
+        self.plotpoints = self.load_plotpoints()
 
     def get_plotpoints(self):
-        plotpoints = getattr(self, 'plotpoints', [])
+        return getattr(self, 'plotpoints', {})
+
+    def load_plotpoints(self):
+        plotpoints = getattr(self, 'plotpoints', {})
         if not plotpoints:
             if self.json_path:
                 ...
@@ -64,29 +70,28 @@ class PlotPointContainer(object):
                                            {utils.norm(lemma): [Dataset.PB] for lemma in self.propbank.get_lemmas()})
                 lemmas = utils.deep_update(lemmas,
                                            {utils.norm(lemma): [Dataset.GR] for lemma in self.groupings.get_lemmas()})
-                pps = {}
+                lemmas = dict(sorted(lemmas.items(), key=lambda x: x[0].lower()))
                 for lemma, datasets in lemmas.items():
-                    pps[lemma] = PlotPoint(lemma, PlotPointType.VERB)
+                    plotpoints[lemma] = PlotPoint(lemma, PlotPointType.VERB)
                     if Dataset.GR in datasets:
                         senses = self.groupings.get_senses(lemma)
                         for sense in senses.values():
                             pp_sense = self.get_sense_grouping(lemma, sense)
-                            pps[lemma].add_sense(pp_sense)
+                            plotpoints[lemma].add_sense(pp_sense)
 
                     if Dataset.PB in datasets:
                         rolesets = self.propbank.get_rolesets(lemma)
                         for roleset in rolesets:
                             pp_sense = self.get_sense_propbank(lemma, roleset)
-                            pps[lemma].add_sense(pp_sense)
+                            plotpoints[lemma].add_sense(pp_sense)
 
                     if Dataset.VN in datasets:
                         classes = self.verbnet.get_classes(lemma)
                         for cls in classes.values():
                             pp_class = self.get_class_verbnet(cls, lemma)
-                            pps[lemma].add_sense(pp_class)
+                            plotpoints[lemma].add_sense(pp_class)
 
-                    utils.write('pps.log', pps[lemma].pprint(), 'a+')
-
+                    # utils.write('pps.log', plotpoints[lemma].pprint(), 'a+')
         return plotpoints
 
     def get_class_verbnet(self, cls, lemma):
@@ -100,35 +105,39 @@ class PlotPointContainer(object):
 
         arg_struct = self.get_args_verbnet(cls.id)
         if arg_struct:
-            pp_sense.add_args(arg_struct)
+            pp_sense.add_arg_struct(arg_struct)
 
+        pp_sense.squeeze()
         return pp_sense
 
     def get_sense_propbank(self, lemma, roleset):
         pp_sense = PlotPointSense(roleset.id, Dataset.PB, roleset.name)
         pp_sense.mappings.wn = []
-        pp_sense.mappings.vn = roleset.get_classes()
+        pp_sense.mappings.vn = [self.verbnet.get_complete_class_name(cls) for cls in roleset.get_classes()]
         pp_sense.mappings.pb = [roleset.id]
-        gr_senses = self.groupings.get_senses_from_pb(lemma, roleset)
+        gr_senses = self.groupings.get_senses_from_propbank(lemma, roleset.id)
         pp_sense.mappings.gr = [sense.id for sense in gr_senses]
         pp_sense.mappings.fn = []
         pp_sense.examples.pb = [example.text for example in roleset.examples]
 
         arg_struct = self.get_args_propbank(roleset.id)
         if arg_struct:
-            pp_sense.add_args(arg_struct)
+            pp_sense.add_arg_struct(arg_struct)
 
         for class_id in pp_sense.mappings.vn:
             arg_struct = self.get_args_verbnet(class_id)
             if arg_struct:
-                pp_sense.add_args(arg_struct)
+                pp_sense.add_arg_struct(arg_struct)
 
+        pp_sense.squeeze()
         return pp_sense
 
     def get_sense_grouping(self, lemma, sense):
         pp_sense = PlotPointSense(sense.id, Dataset.GR, sense.name)
         pp_sense.mappings.wn = sense.mappings.wn
-        gr_vn = [cls.id for cls in self.verbnet.get_classes_from_gr(lemma, sense.id).values()]
+        gr_vn = [cls.id for cls in self.verbnet.get_classes_from_grouping(lemma, sense.id).values()]
+        for roleset in sense.mappings.pb:
+            gr_vn.extend([self.verbnet.get_complete_class_name(cls) for cls in self.propbank.get_classes(roleset)])
         pp_sense.mappings.vn = list(dict.fromkeys(sense.mappings.vn + gr_vn))
         pp_sense.mappings.pb = sense.mappings.pb
         pp_sense.mappings.gr = [sense.id]
@@ -138,13 +147,14 @@ class PlotPointContainer(object):
         for roleset in pp_sense.mappings.pb:
             arg_struct = self.get_args_propbank(roleset)
             if arg_struct:
-                pp_sense.add_args(arg_struct)
+                pp_sense.add_arg_struct(arg_struct)
 
         for class_id in pp_sense.mappings.vn:
             arg_struct = self.get_args_verbnet(class_id)
             if arg_struct:
-                pp_sense.add_args(arg_struct)
+                pp_sense.add_arg_struct(arg_struct)
 
+        pp_sense.squeeze()
         return pp_sense
 
     def get_args_propbank(self, roleset):
@@ -163,26 +173,23 @@ class PlotPointContainer(object):
         return None
 
     def transform_roles(self, roles, id, dataset):
-        arg_struct = PlotPointArgStruct(id, dataset)
         if dataset == Dataset.PB:
+            arg_struct = PlotPointArgStruct(id, dataset)
             for role in roles:
-                arg = PlotPointArg(role.descr, role.n)
+                slot = int(role.n) if role.n.isdigit() else len(arg_struct.args) - 1
                 if role.vnroles:
                     for vnrole in role.vnroles:
-                        arg.add_role(role.f, vnrole.vntheta, vnrole.vncls, dataset)
+                        arg = PlotPointArg(role.descr, role.f, vnrole.vntheta,
+                                           self.verbnet.get_complete_class_name(vnrole.vncls), slot, False, dataset)
+                        arg_struct.add_arg(arg)
                 else:
-                    arg.add_role(role.f, '', '', dataset)
-
-                arg_struct.add_arg(arg)
+                    arg = PlotPointArg(role.descr, role.f, '', '', slot, False, dataset)
+                    arg_struct.add_arg(arg)
         elif dataset == Dataset.VN:
+            id = self.verbnet.get_complete_class_name(id)
+            arg_struct = PlotPointArgStruct(id, dataset)
             for i, role in enumerate(roles):
-                arg = PlotPointArg('', i)
-                if isinstance(role, list):
-                    for theta in role:
-                        arg.add_role(theta, theta, id, dataset)
-                else:
-                    arg.add_role(role, role, id, dataset)
-
+                arg = PlotPointArg('', '', role.value, id, int(role.slot), role.implicit, dataset)
                 arg_struct.add_arg(arg)
 
         return arg_struct
@@ -210,10 +217,79 @@ class PlotPointPredicateArg:
 
 
 @dataclass
+class PlotPointArg:
+    descr: str = ''
+    type: str = ''
+    value: str = ''
+    cls: str = ''
+    slot: int = -1
+    implicit: bool = False
+    dataset: str = Dataset.EMPTY
+
+    def fill_dict(self, dict):
+        self.descr = dict.get('descr', '')
+        self.type = dict.get('type', '')
+        self.value = dict.get('value', '')
+        self.cls = dict.get('cls', '')
+        self.slot = dict.get('slot', -1)
+        self.implicit = bool(dict.get('implicit', 'false'))
+        self.dataset = dict.get('dataset', Dataset.EMPTY)
+
+    def pred_dict(self):
+        return {'type': self.type, 'value': self.value}
+
+    def combine(self, arg):
+        if self.descr == '':
+            self.descr = arg.descr
+        if self.type == '':
+            self.type = arg.type
+        if self.value == '':
+            self.value = arg.value
+        if self.cls == '':
+            self.cls = arg.cls
+        if self.slot == -1:
+            self.slot = arg.type
+        if not self.implicit:
+            self.implicit = arg.implicit
+        self.dataset = Dataset.PP
+
+    def pprint(self, indent=0, end='\n'):
+        indent_in = ''.join(['\t' for i in range(0, indent)])
+        indent_ = ''.join(['\t' for i in range(0, indent + 1)])
+        return f'{indent_in}{self.__class__.__name__}{end}' \
+               f'{indent_}descr={self.descr}{end}' \
+               f'{indent_}type={self.type}{end}' \
+               f'{indent_}value={self.value}{end}' \
+               f'{indent_}cls={self.cls}{end}' \
+               f'{indent_}slot={self.slot}{end}' \
+               f'{indent_}implicit={self.implicit}{end}' \
+               f'{indent_}dataset={self.dataset}{end}'
+
+    def pprint_pred(self, indent=0, end='\n'):
+        indent_in = ''.join(['\t' for i in range(0, indent)])
+        indent_ = ''.join(['\t' for i in range(0, indent + 1)])
+        return f'{indent_in}{self.__class__.__name__}{end}' \
+               f'{indent_}type={self.type}{end}' \
+               f'{indent_}value={self.cls}{end}'
+
+    def __iter__(self):
+        yield 'descr', self.descr
+        yield 'type', self.type
+        yield 'value', self.value
+        yield 'cls', self.cls
+        yield 'slot', self.slot
+        yield 'implicit', self.implicit
+        yield 'dataset', self.dataset
+
+    def __str__(self):
+        return f'{self.type}: {self.value}'
+
+
+@dataclass
 class PlotPointPredicate:
     bool: str
     name: str
-    args: List[PlotPointPredicateArg] = field(default_factory=list)
+    args: List[PlotPointArg] = field(default_factory=list)
 
     def pprint(self, indent=0, end='\n'):
         indent_in = utils.indent(indent)
@@ -222,59 +298,12 @@ class PlotPointPredicate:
                f'{indent_}bool={self.bool!r}{end}' \
                f'{indent_}name={self.name!r}{end}' \
                f'{indent_}args={end}' \
-               f'{"".join([arg.pprint(indent + 2, end) for arg in self.args])}'
+               f'{"".join([arg.pprint_pred(indent + 2, end) for arg in self.args])}'
 
     def __iter__(self):
         yield 'bool', self.bool
         yield 'name', self.name
-        yield 'args', [dict(arg) for arg in self.args]
-
-
-@dataclass
-class PlotPointRole:
-    role: str
-    themrole: str
-    vnclass: str
-    dataset: str
-
-    def pprint(self, indent=0, end='\n'):
-        indent_in = ''.join(['\t' for i in range(0, indent)])
-        indent_ = ''.join(['\t' for i in range(0, indent + 1)])
-        return f'{indent_in}{self.__class__.__name__}{end}' \
-               f'{indent_}role={self.role}{end}' \
-               f'{indent_}themrole={self.themrole}{end}' \
-               f'{indent_}vnclass={self.vnclass}{end}' \
-               f'{indent_}dataset={self.dataset}{end}'
-
-    def __iter__(self):
-        yield 'role', self.role
-        yield 'themrole', self.themrole
-        yield 'vnclass', self.vnclass
-        yield 'dataset', self.dataset
-
-
-@dataclass
-class PlotPointArg:
-    descr: str
-    arg: str
-    roles: List[PlotPointRole] = field(default_factory=list)
-
-    def add_role(self, role, themrole, vnclass, dataset):
-        self.roles.append(PlotPointRole(role, themrole, vnclass, dataset))
-
-    def pprint(self, indent=0, end='\n'):
-        indent_in = ''.join(['\t' for i in range(0, indent)])
-        indent_ = ''.join(['\t' for i in range(0, indent + 1)])
-        return f'{indent_in}{self.__class__.__name__}{end}' \
-               f'{indent_}descr={self.descr}{end}' \
-               f'{indent_}arg={self.arg}{end}' \
-               f'{indent_}roles={end}' \
-               f'{"".join([role.pprint(indent + 2) for role in self.roles])}'
-
-    def __iter__(self):
-        yield 'descr', self.descr
-        yield 'arg', self.arg
-        yield 'roles', [dict(role) for role in self.role]
+        yield 'args', [arg.pred_dict() for arg in self.args]
 
 
 @dataclass
@@ -296,9 +325,9 @@ class PlotPointArgStruct:
                f'{"".join([arg.pprint(indent + 2) for arg in self.args])}'
 
     def __iter__(self):
-        yield 'id', self.descr
-        yield 'dataset', self.arg
-        yield 'args', [dict(role) for role in self.role]
+        yield 'id', self.id
+        yield 'dataset', self.dataset
+        yield 'args', [dict(arg) for arg in self.args]
 
 
 @dataclass
@@ -360,10 +389,33 @@ class PlotPointSense:
     descr: str
     mappings: PlotPointMapping = field(default_factory=PlotPointMapping)
     examples: PlotPointExample = field(default_factory=PlotPointExample)
-    args: List[PlotPointArgStruct] = field(default_factory=list)
+    arg_structs: List[PlotPointArgStruct] = field(default_factory=list)
+    args: List[PlotPointArg] = field(default_factory=list)
 
-    def add_args(self, pp_args):
-        self.args.append(pp_args)
+    def add_arg_struct(self, pp_args):
+        self.arg_structs.append(pp_args)
+
+    def squeeze(self):
+        args = []
+        for arg_struct in self.arg_structs:
+            for arg_x in arg_struct.args:
+                args.append(arg_x)
+
+        args.sort(key=lambda x: str(x.slot), reverse=False)
+
+        while len(args) != 0:
+            arg_x = args[0]
+            lst = args
+            for i, arg_y in enumerate(lst):
+                if arg_y != arg_x:
+                    if (arg_y.type == '' or arg_x.type == '') and arg_y.value == arg_x.value and arg_y.cls == arg_x.cls:
+                        arg_x.combine(arg_y)
+                        args.pop(i)
+
+            self.args.append(arg_x)
+            args.pop(0)
+
+        self.args.sort(key=lambda x: str(x.slot), reverse=False)
 
     def pprint(self, indent=0, end='\n'):
         indent_in = ''.join(['\t' for i in range(0, indent)])
@@ -374,6 +426,8 @@ class PlotPointSense:
                f'{indent_}descr={self.descr!r}{end}' \
                f'{indent_}args={end}' \
                f'{"".join([arg.pprint(indent + 2) for arg in self.args])}' \
+               f'{indent_}arg_structs={end}' \
+               f'{"".join([arg.pprint(indent + 2) for arg in self.arg_structs])}' \
                f'{indent_}mappings={end}' \
                f'{self.mappings.pprint(indent + 2)}' \
                f'{indent_}examples={end}' \
@@ -385,7 +439,8 @@ class PlotPointSense:
         yield 'descr', self.descr
         yield 'mappings', dict(self.mappings)
         yield 'examples', dict(self.examples)
-        yield 'args', dict(self.args)
+        yield 'arg_structs', [dict(arg) for arg in self.arg_structs]
+        yield 'args', [dict(arg) for arg in self.args]
 
 
 @dataclass

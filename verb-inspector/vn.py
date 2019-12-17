@@ -18,42 +18,34 @@ from typing import List
 from data import vnclass_args
 
 
-class VerbNet(object):
-    def __init__(self, path=''):
-        self.path = Path(path)
-        self.files_soup = self.parse()
-        self.classes = self.get_classes()
-        self.lemmas = self.get_lemmas()
-
-    def parse(self):
-        return utils.parse_xmls(self.path, 'lxml-xml')
-
-    def replace(self, str_, forstr_, class_id):
-        utils.replace(str_, forstr_, self.path / self.classes[class_id].filename)
+class VerbNetBase(object):
+    def __init__(self):
+        self.classes = {}
 
     def get_classes(self, lemma='', class_ids=[]):
         classes = getattr(self, 'classes', {})
-        if not classes:
-            # Extract every VNCLASS and VNSUBCLASS into a VerbClass object
-            for filename, soup in self.files_soup.items():
-                classes[soup.VNCLASS.attrs['ID']] = VerbNetClass(filename, soup.VNCLASS)
-                for vnsubclass in soup.find_all('VNSUBCLASS'):
-                    classes[vnsubclass.attrs['ID']] = VerbNetClass(filename, vnsubclass)
+        if classes:
+            if class_ids:
+                classes = {class_id: classes[class_id] for class_id in class_ids}
 
-        if class_ids:
-            classes = {class_id: classes[class_id] for class_id in class_ids}
-
-        if lemma:
-            lemma_classes = {}
-            for cls, obj in classes.items():
-                for member in obj.members:
-                    if member.name == lemma:
-                        lemma_classes[cls] = obj
-            classes = lemma_classes
-
+            if lemma:
+                lemma_classes = {}
+                for cls, obj in classes.items():
+                    for member in obj.members:
+                        if member.name == lemma:
+                            lemma_classes[cls] = obj
+                classes = lemma_classes
         return classes
 
-    def get_classes_from_gr(self, lemma, sense_id):
+    def get_complete_class_name(self, id):
+        for cls_id in self.classes:
+            tupl = re.match(r'(\w+)-(.*)', cls_id)
+            if tupl:
+                if tupl[2] == id:
+                    return cls_id
+        return id
+
+    def get_classes_from_grouping(self, lemma, sense_id):
         classes = {}
         for cls, obj in self.classes.items():
             for member in obj.members:
@@ -94,13 +86,28 @@ class VerbNet(object):
         cls = self.get_class(class_id)
         return cls.get_all_args()
 
-    def pprint(self, indent=0, end='\n'):
-        indent_in = utils.indent(indent)
-        indent_ = utils.indent(indent + 1)
-        return f'{indent_in}{self.__class__.__name__}{end}' \
-               f'{indent_}path={self.path!r}{end}' \
-               f'{indent_}classes={end}' \
-               f'{"".join([cls.pprint(indent + 2, end) for cls in self.classes.values()])}'
+    def get_all_predicates_name(self):
+        predicates = []
+        for cls in self.classes.values():
+            for pred in cls.predicates:
+                if not any([str(pred.name) == str(pr) for pr in predicates]):
+                    predicates.append(pred.name)
+        return predicates
+
+    def replace_predicate_name(self, current, new):
+        for cls in self.classes.values():
+            for pred in cls.predicates:
+                if pred.name == current:
+                    pred.name = new
+
+    def get_classes_by_predicate(self, pred_name):
+        classes = {}
+        for cls in self.classes.values():
+            for pred in cls.predicates:
+                if pred.name == pred_name and cls.id not in classes:
+                    classes[cls.id] = cls
+
+        return classes
 
     def __str__(self):
         return str(self.classes.keys())
@@ -108,6 +115,37 @@ class VerbNet(object):
     def __iter__(self):
         for cls_id, cls in self.classes.items():
             yield cls_id, dict(cls)
+
+class VerbNet(VerbNetBase):
+    def __init__(self, path=''):
+        self.path = Path(path)
+        self.files_soup = self.parse()
+        self.classes = self.load_classes()
+        self.lemmas = self.get_lemmas()
+
+    def parse(self):
+        return utils.parse_xmls(self.path, 'lxml-xml')
+
+    def replace(self, str_, forstr_, class_id):
+        utils.replace(str_, forstr_, self.path / self.classes[class_id].filename)
+
+    def load_classes(self):
+        classes = getattr(self, 'classes', {})
+        if not classes:
+            # Extract every VNCLASS and VNSUBCLASS into a VerbClass object
+            for filename, soup in self.files_soup.items():
+                classes[soup.VNCLASS.attrs['ID']] = VerbNetClass(filename, soup.VNCLASS)
+                for vnsubclass in soup.find_all('VNSUBCLASS'):
+                    classes[vnsubclass.attrs['ID']] = VerbNetClass(filename, vnsubclass)
+        return classes
+
+    def pprint(self, indent=0, end='\n'):
+        indent_in = utils.indent(indent)
+        indent_ = utils.indent(indent + 1)
+        return f'{indent_in}{self.__class__.__name__}{end}' \
+               f'{indent_}path={self.path!r}{end}' \
+               f'{indent_}classes={end}' \
+               f'{"".join([cls.pprint(indent + 2, end) for cls in self.classes.values()])}'
 
 
 class VerbNetClass(object):
@@ -349,6 +387,7 @@ class VerbNetFrame(object):
         yield 'syntax', [dict(stx) for stx in self.syntax]
         yield 'predicates', [dict(pred) for pred in self.predicates]
 
+
 @dataclass
 class VerbNetArg:
     type: str = ''
@@ -405,7 +444,7 @@ class VerbNetPredicate(object):
 
     def edit_args_name(self, arr):
         if len(arr) < len(self.args):
-            for i in range(len(arr)-1, len(self.args)-1):
+            for i in range(len(arr) - 1, len(self.args) - 1):
                 del self.args[i]
 
         if arr:
@@ -466,12 +505,13 @@ class VerbNetPredicate(object):
         yield 'args', [arg.pred_dict() for arg in self.args]
 
 
-class VerbNetSimplified(object):
-    def __init__(self, vn, json_path=''):
-        self.vn = vn
+class VerbNetSimplified(VerbNetBase):
+    def __init__(self, corpus_path='', json_path=''):
+        self.vn = VerbNet(corpus_path)
         self.json_path = json_path
         self.json = utils.fromjson(self.json_path)
-        self.classes = self.get_classes()
+        self.classes = self.load_classes()
+        self.lemmas = self.get_lemmas()
 
     def load(self, filename=''):
         if filename:
@@ -493,7 +533,7 @@ class VerbNetSimplified(object):
         elif self.json_path:
             utils.tojson(self.json_path, dict(self))
 
-    def get_classes(self):
+    def load_classes(self):
         classes = getattr(self, 'classes', {})
         if not classes:
             if self.json:
@@ -502,29 +542,6 @@ class VerbNetSimplified(object):
             else:
                 for cls_id, cls in self.vn.get_classes().items():
                     classes[cls_id] = VerbNetSimplifiedClass(cls)
-
-        return classes
-
-    def get_all_predicates_name(self):
-        predicates = []
-        for cls in self.classes.values():
-            for pred in cls.predicates:
-                if not any([str(pred.name) == str(pr) for pr in predicates]):
-                    predicates.append(pred.name)
-        return predicates
-
-    def replace_predicate_name(self, current, new):
-        for cls in self.classes.values():
-            for pred in cls.predicates:
-                if pred.name == current:
-                    pred.name = new
-
-    def get_classes_by_predicate(self, pred_name):
-        classes = {}
-        for cls in self.classes.values():
-            for pred in cls.predicates:
-                if pred.name == pred_name and cls.id not in classes:
-                    classes[cls.id] = cls
 
         return classes
 
@@ -590,6 +607,12 @@ class VerbNetSimplifiedClass(object):
                 members = self.vnclass.get_members()
         return members
 
+    def get_member(self, lemma):
+        for member in self.members:
+            if member.name == lemma:
+                return member
+        return None
+
     def get_examples(self):
         examples = getattr(self, 'examples', [])
         if not examples:
@@ -599,6 +622,11 @@ class VerbNetSimplifiedClass(object):
             elif self.vnclass:
                 examples = self.vnclass.get_examples()
         return examples
+
+    def remove_arg(self, arg):
+        for i, arg_ in enumerate(self.args):
+            if arg == arg_:
+                del self.args[i]
 
     def updateSlots(self):
         i = -1
@@ -753,10 +781,8 @@ if __name__ == '__main__':
     dirname = os.path.dirname(__file__)
     filename = os.path.join(dirname, 'corpora/verbnet/')
     json = os.path.join(dirname, 'data/verbnet_simplified.json')
-    vn = VerbNet(filename)
-    vn_s = VerbNetSimplified(vn, json)
+    vn_s = VerbNetSimplified(filename, json)
     print(vn_s.pprint())
-    print(dict(vn)['work-73.2'])
     print(dict(vn_s)['work-73.2'])
 
     vn_s.save(json)

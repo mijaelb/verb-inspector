@@ -13,7 +13,10 @@ class ArgDragLabel(QtWidgets.QLabel):
         self.arg = arg
         self.dialog = None
         self.isSelected = select
-        self.label_text = f'{self.arg.slot}: {self.arg.value}'
+        if self.arg.value:
+            self.label_text = f'{self.arg.slot}: {self.arg.value}'
+        else:
+            self.label_text = f'{self.arg.slot}: {self.arg.type}'
         self.reset()
 
     def reset(self):
@@ -29,7 +32,7 @@ class ArgDragLabel(QtWidgets.QLabel):
         image = QtGui.QImage(size.width() + offset, size.height() + offset, QtGui.QImage.Format_ARGB32_Premultiplied)
         image.fill(QtGui.qRgba(0, 0, 0, 0))
 
-        font = QtGui.QFont('Helvetica', 6)
+        font = QtGui.QFont('Helvetica', 7)
         font.setStyleStrategy(QtGui.QFont.ForceOutline)
 
         painter = QtGui.QPainter()
@@ -169,7 +172,6 @@ class ArgDragWidget(QtWidgets.QWidget):
         if dest != src:
             print(ran)
             for i in ran:
-                print(i)
                 self.args[i].slot = self.args[i].slot - n
 
     def getItemIndex(self, arg_str):
@@ -189,27 +191,33 @@ class ArgDragWidget(QtWidgets.QWidget):
             else:
                 return j + 1
 
-    def resetWidget(self):
-        self.clearWidget()
-        x, y = (0, 2)
+    def resetWidget(self, args=None, selected=None):
+        if args:
+            self.args = args
 
-        slot = -1
-        for arg in self.args:
-            select = True if self.currentSelection and self.currentSelection.arg == arg else False
-            label = ArgDragLabel(arg, self, select)
-            if slot != arg.slot:
-                x += 4
-                label.move(x, y)
-            else:
-                x -= 1
-                label.move(x, y)
-            label.show()
-            x += label.width()
-            self.labels.append(label)
-            slot = arg.slot
+        self.currentSelection = selected
 
-        self.setMinimumSize(x, 29)
-        self.setMaximumHeight(29)
+        if self.args:
+            self.clearWidget()
+            x, y = (0, 2)
+
+            slot = -1
+            for arg in self.args:
+                select = True if self.currentSelection and self.currentSelection.arg == arg else False
+                label = ArgDragLabel(arg, self, select)
+                if slot != arg.slot:
+                    x += 4
+                    label.move(x, y)
+                else:
+                    x -= 1
+                    label.move(x, y)
+                label.show()
+                x += label.width()
+                self.labels.append(label)
+                slot = arg.slot
+
+            self.setMinimumSize(x, 32)
+            self.setMaximumHeight(32)
 
     def clearWidget(self):
         for i, label in enumerate(self.labels):

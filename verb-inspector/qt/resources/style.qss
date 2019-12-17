@@ -2,11 +2,7 @@
  * QGroupBox
  */
 
-EditPredWidget > QLabel {
-    color: palette(midlight);
-}
-
-EditClassWidget > QLabel {
+QLabel {
     color: palette(midlight);
 }
 
@@ -15,13 +11,15 @@ QCheckBox {
 }
 
 QGroupBox {
-  background-color: palette(alternate-base);
+  /*background-color: palette(base);*/
   border: 1px solid palette(midlight);
-  margin-top: 25px;
+  margin-top: 20px;
+  margin-bottom: 3px
 }
 
 QGroupBox::title {
     background-color: transparent;
+    color: palette(midlight)
 }
 
 /*
