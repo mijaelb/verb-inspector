@@ -37,13 +37,20 @@ class VerbNetBase(object):
                 classes = lemma_classes
         return classes
 
-    def get_complete_class_name(self, id):
+    def get_complete_class_id(self, id):
         for cls_id in self.classes:
             tupl = re.match(r'(\w+)-(.*)', cls_id)
             if tupl:
                 if tupl[2] == id:
                     return cls_id
         return id
+
+    def get_complete_classes_ids(self, classes_ids):
+        cls_ids = []
+        for cls in classes_ids:
+            cls_ids.append(self.get_complete_class_id(cls))
+
+        return cls_ids
 
     def get_classes_from_grouping(self, lemma, sense_id):
         classes = {}
@@ -53,6 +60,23 @@ class VerbNetBase(object):
                     classes[cls] = obj
 
         return classes
+
+    def get_classes_ids_from_grouping(self, lemma, sense_id):
+        return [cls for cls in self.get_classes_from_grouping(lemma, sense_id)]
+
+    def get_fn_from_classes(self, lemma, classes):
+        fn = []
+        if classes:
+            for cls_id in classes:
+                cls = self.get_class(cls_id)
+                try:
+                    member = cls.get_member(lemma)
+                    if member:
+                        fn.extend(member.fnframe)
+                except:
+                    print(f'get_fn_from_class({lemma},{cls_id}) not found!')
+
+        return list(dict.fromkeys(fn))
 
     def get_classes_ids(self):
         return list(self.classes.keys())
@@ -116,6 +140,7 @@ class VerbNetBase(object):
         for cls_id, cls in self.classes.items():
             yield cls_id, dict(cls)
 
+
 class VerbNet(VerbNetBase):
     def __init__(self, path=''):
         self.path = Path(path)
@@ -130,9 +155,9 @@ class VerbNet(VerbNetBase):
         utils.replace(str_, forstr_, self.path / self.classes[class_id].filename)
 
     def load_classes(self):
+        ''' Extract every VNCLASS and VNSUBCLASS into a VerbClass object '''
         classes = getattr(self, 'classes', {})
         if not classes:
-            # Extract every VNCLASS and VNSUBCLASS into a VerbClass object
             for filename, soup in self.files_soup.items():
                 classes[soup.VNCLASS.attrs['ID']] = VerbNetClass(filename, soup.VNCLASS)
                 for vnsubclass in soup.find_all('VNSUBCLASS'):
@@ -147,7 +172,6 @@ class VerbNet(VerbNetBase):
                f'{indent_}classes={end}' \
                f'{"".join([cls.pprint(indent + 2, end) for cls in self.classes.values()])}'
 
-
 class VerbNetClass(object):
     def __init__(self, filename='', soup=None):
         self.soup = soup
@@ -159,7 +183,6 @@ class VerbNetClass(object):
         self.predicates = self.get_predicates()
         self.args = self.get_args()
         self.examples = self.get_examples()
-        # print("'" + self.id + "':" + ''.join([' ' for i in range(len("'" + self.id + "':"), 40)]) + str(self.class_args) + ",")
 
     def get_themroles(self):
         themroles = getattr(self, 'themroles', [])
@@ -195,12 +218,12 @@ class VerbNetClass(object):
             for member in self.soup.MEMBERS.find_all('MEMBER'):
                 for key in member.attrs:
                     member.attrs[key] = member.attrs[key].split()
-                members.append(VerbNetMember(member.attrs['name'][0],  # name
-                                             self.id,  # vnclass
-                                             self.filename,  # filename
-                                             member.attrs['fnframe'],  # fnframe
-                                             member.attrs['grouping'],  # grouping
-                                             member.attrs['wn']))  # wn
+                members.append(VerbNetMember(member.attrs['name'][0],
+                                             self.id,
+                                             self.filename,
+                                             member.attrs['fnframe'],
+                                             member.attrs['grouping'],
+                                             member.attrs['wn']))
         return members
 
     def get_member(self, lemma):
@@ -209,7 +232,10 @@ class VerbNetClass(object):
                 return member
         return None
 
-    def add_member(self, name, fnframe=[], grouping=[], wn=[]):
+    def add_member(self, name, fnframe=None, grouping=None, wn=None):
+        fnframe = [] if not fnframe else fnframe
+        grouping = [] if not grouping else grouping
+        wn = [] if not wn else wn
         self.members.append(VerbNetMember(name, self.id, self.filename, fnframe, grouping, wn))
 
     def get_examples(self):
@@ -220,7 +246,7 @@ class VerbNetClass(object):
 
         return examples
 
-    def get_args(self, vnclass_args=[]):
+    def get_args(self, vnclass_args=None):
         pred_args = []
         syntax_args = []
         themrole_args = [role.type for role in self.themroles]
@@ -496,13 +522,13 @@ class VerbNetPredicate(object):
                f'{indent_}args={end}' \
                f'{"".join([arg.pprint(indent + 2, end) for arg in self.args])}'
 
-    def __str__(self):
-        return f'{self.bool}{self.name}({", ".join([str(arg.value) for arg in self.args])})'
-
     def __iter__(self):
         yield 'bool', self.bool
         yield 'name', self.name
         yield 'args', [arg.pred_dict() for arg in self.args]
+
+    def __str__(self):
+        return f'{self.bool}{self.name}({", ".join([str(arg.value) for arg in self.args])})'
 
 
 class VerbNetSimplified(VerbNetBase):
@@ -568,7 +594,9 @@ class VerbNetSimplifiedClass(object):
         self.members = self.get_members()
         self.examples = self.get_examples()
 
-    def add_pred(self, bool='', name='', args=[]):
+    def add_pred(self, bool='', name='', args=None):
+        if args is None:
+            args = []
         self.predicates.append(VerbNetPredicate(bool, name, args))
 
     def get_args(self):
@@ -626,19 +654,26 @@ class VerbNetSimplifiedClass(object):
     def remove_arg(self, arg):
         for i, arg_ in enumerate(self.args):
             if arg == arg_:
-                del self.args[i]
+                self.args.pop(i)
+
+    def add_arg(self, value, implicit, slot):
+        i = 0
+        for i, arg in enumerate(self.args):
+            if arg.slot > slot:
+                break
+
+        arg = VerbNetArg('', value, self.id, slot, implicit)
+        self.args.insert(i, arg)
 
     def updateSlots(self):
-        i = -1
-        j = 0
+        i, j = (-1, 0)
         while j < len(self.args):
             if i != -1:
                 if self.args[i].slot > self.args[j].slot:
                     self.args[i], self.args[j] = self.args[j], self.args[i]
                     self.updateSlots()
 
-            i = j
-            j += 1
+            i, j = (j, j + 1)
 
     def pprint(self, indent=0, end='\n'):
         indent_in = utils.indent(indent)
@@ -758,6 +793,12 @@ class VerbNetMember:
         self.fnframe = dict.get('fnframe', '')
         self.grouping = dict.get('grouping', '')
         self.wn = dict.get('wn', '')
+
+    def get_fn(self):
+        return self.fnframe
+
+    def get_gr(self):
+        return self.grouping
 
     def pprint(self, indent=0, end='\n'):
         indent_in = utils.indent(indent)

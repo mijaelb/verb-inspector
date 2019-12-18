@@ -71,14 +71,17 @@ class PropBank(object):
             return classes
         return []
 
-    def get_rolesets_from_class(self, cls, lemma):
+    def get_rolesets_from_class(self, lemma, cls_id):
         rolesets = self.get_rolesets(lemma)
         rls_ = []
         if rolesets:
             for roleset in rolesets:
-                if any([class_ in cls for class_ in roleset.get_classes()]):
+                if any([class_ in cls_id for class_ in roleset.get_classes()]):
                     rls_.append(roleset)
         return rls_
+
+    def get_rolesets_ids_from_class(self, lemma, cls_id):
+        return [roleset.id for roleset in self.get_rolesets_from_class(lemma, cls_id)]
 
     def pprint(self, indent=0, end='\n'):
         indent_in = utils.indent(indent)
@@ -171,6 +174,16 @@ class PropBankRoleset(object):
                 classes.append(vnrole.vncls)
 
         return list(dict.fromkeys(classes))
+
+    def get_fn(self, pos='v'):
+        fn = []
+        for alias in self.aliases:
+            if alias.pos == pos:
+                fn.extend(alias.framenet)
+        return fn
+
+    def get_examples_text(self):
+        return [example.text for example in self.examples]
 
     def pprint(self, indent=0, end='\n'):
         indent_in = utils.indent(indent)
@@ -270,16 +283,16 @@ class PropBankExample:
 
 @dataclass
 class PropBankAlias:
-    framenet: str = ''
+    framenet: str = field(default_factory=list)
     pos: str = ''
-    verbnet: str = ''
-    word: str = ''
+    verbnet: str = field(default_factory=list)
+    word: str = field(default_factory=list)
 
     def fill(self, attrs, word):
-        self.framenet = attrs.get('framenet', '')
+        self.framenet = attrs.get('framenet', '').split()
         self.pos = attrs.get('pos', '')
-        self.verbnet = attrs.get('verbnet', '')
-        self.word = word
+        self.verbnet = attrs.get('verbnet', '').split()
+        self.word = word.split()
 
     def pprint(self, indent=0, end='\n'):
         indent_in = utils.indent(indent)

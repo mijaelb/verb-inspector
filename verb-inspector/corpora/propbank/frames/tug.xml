@@ -34,12 +34,12 @@
       <roles>
         <role descr="puller" f="PAG" n="0">
           <vnrole vncls="12-1" vntheta="Agent"/>
-          <vnrole vncls="15.1-1" vntheta="Agent"/>
+          <vnrole vncls="15.1" vntheta="Agent"/>
           <vnrole vncls="20-1" vntheta="Agent"/>
         </role>
         <role descr="thing pulled" f="PPT" n="1">
           <vnrole vncls="12-1" vntheta="Theme"/>
-          <vnrole vncls="15.1-1" vntheta="Theme"/>
+          <vnrole vncls="15.1" vntheta="Theme"/>
           <vnrole vncls="20-1" vntheta="Experiencer"/>
         </role>
       </roles>

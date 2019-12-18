@@ -22,6 +22,7 @@ from qt.QtUtils import QT_VERSION
 
 _FL_STYLESHEET = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'qt/resources/frameless.qss')
 
+
 class App(QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
@@ -70,7 +71,6 @@ class App(QtWidgets.QWidget):
     def reload_classes(self):
         # TODO: Reload every class into the json file if it exists
         print('Reload Classes')
-
 
 
 if __name__ == '__main__':

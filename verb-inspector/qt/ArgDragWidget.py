@@ -24,10 +24,10 @@ class ArgDragLabel(QtWidgets.QLabel):
 
         if self.isSelected:
             size = metric.size(QtCore.Qt.TextSelectableByMouse, self.label_text)
-            offset = 16
+            offset = 14
         else:
             size = metric.size(QtCore.Qt.TextSingleLine, self.label_text)
-            offset = 12
+            offset = 10
 
         image = QtGui.QImage(size.width() + offset, size.height() + offset, QtGui.QImage.Format_ARGB32_Premultiplied)
         image.fill(QtGui.qRgba(0, 0, 0, 0))
@@ -53,6 +53,14 @@ class ArgDragLabel(QtWidgets.QLabel):
 
         painter.drawText(QtCore.QRect(QtCore.QPoint(offset / 2, offset / 2), size), QtCore.Qt.AlignCenter,
                          self.label_text)
+
+        if hasattr(self.arg, 'cls'):
+            font = QtGui.QFont('Helvetica', 5)
+            font.setStyleStrategy(QtGui.QFont.ForceOutline)
+            painter.setFont(font)
+            painter.setBrush(QtCore.Qt.white)
+            painter.drawText(QtCore.QRect(QtCore.QPoint(offset / 2, offset / 2+6), size), QtCore.Qt.AlignCenter, self.arg.cls)
+
         painter.end()
         self.setPixmap(QtGui.QPixmap.fromImage(image))
 
@@ -196,9 +204,8 @@ class ArgDragWidget(QtWidgets.QWidget):
             self.args = args
 
         self.currentSelection = selected
-
+        self.clearWidget()
         if self.args:
-            self.clearWidget()
             x, y = (0, 2)
 
             slot = -1
@@ -217,7 +224,7 @@ class ArgDragWidget(QtWidgets.QWidget):
                 slot = arg.slot
 
             self.setMinimumSize(x, 32)
-            self.setMaximumHeight(32)
+            self.setMaximumHeight(48)
 
     def clearWidget(self):
         for i, label in enumerate(self.labels):

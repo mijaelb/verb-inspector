@@ -21,7 +21,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "take_in_2",
+            "name": "take_in",
             "args": [
                {
                   "type": "event",
@@ -30,6 +30,20 @@
                {
                   "type": "themrole",
                   "value": "goal"
+               },
+               {
+                  "type": "themrole",
+                  "value": "theme"
+               }
+            ]
+         },
+         {
+            "bool": "!",
+            "name": "exist",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e2"
                },
                {
                   "type": "themrole",
@@ -26078,7 +26092,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "take_in_2",
+            "name": "take_in",
             "args": [
                {
                   "type": "event",
@@ -26234,7 +26248,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "take_in_2",
+            "name": "take_in",
             "args": [
                {
                   "type": "event",
@@ -41024,7 +41038,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "take_in_2",
+            "name": "take_in",
             "args": [
                {
                   "type": "event",
@@ -41449,7 +41463,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "take_in_2",
+            "name": "take_in",
             "args": [
                {
                   "type": "event",
@@ -44467,7 +44481,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "take_in_2",
+            "name": "take_in",
             "args": [
                {
                   "type": "event",
@@ -44551,7 +44565,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "take_in_2",
+            "name": "take_in",
             "args": [
                {
                   "type": "event",
@@ -44626,7 +44640,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "take_in_2",
+            "name": "take_in",
             "args": [
                {
                   "type": "event",
@@ -49350,7 +49364,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "take_in_2",
+            "name": "take_in",
             "args": [
                {
                   "type": "event",
@@ -49887,7 +49901,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "take_in_2",
+            "name": "take_in",
             "args": [
                {
                   "type": "event",
@@ -56879,7 +56893,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "take_in_2",
+            "name": "take_in",
             "args": [
                {
                   "type": "event",
@@ -56950,7 +56964,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "take_in_2",
+            "name": "take_in",
             "args": [
                {
                   "type": "event",
@@ -57047,7 +57061,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "take_in_2",
+            "name": "take_in",
             "args": [
                {
                   "type": "event",

@@ -15,7 +15,7 @@ class EditClassWidget(QtWidgets.QWidget):
     def __init__(self, vn, parent=None):
         super().__init__(parent)
         self.verbnet = vn
-        self.filename = None
+        self.filename = self.verbnet.json_path
         self.currentArg = None
         self.currentClass = None
         self.currentPred = None
@@ -159,15 +159,23 @@ class EditClassWidget(QtWidgets.QWidget):
             predItem.setFlags(predItem.flags() | QtCore.Qt.ItemIsEditable)
             self.predsList.addItem(predItem)
 
-    def updateClassArgs(self, vnclass, selected=None):
-        if vnclass:
-            self.editArgsWidget.resetWidget(vnclass.args, selected)
-            isSelected = True if selected else False
-            self.argsLine.setEnabled(isSelected)
-            self.argsImplicitCheckBox.setEnabled(isSelected)
-            self.argsSlot.setEnabled(isSelected)
-            self.argsSlot.setMinimum(0)
-            self.argsSlot.setMaximum(len(self.currentClass.args) - 1)
+    def updateClassArgs(self):
+        if self.currentClass:
+            self.editArgsWidget.resetWidget(self.currentClass.args, self.currentArg)
+            if self.currentClass.args:
+                self.argsSlot.setMinimum(0)
+                self.argsSlot.setMaximum(len(self.currentClass.args) + 1)
+
+    def resetArg(self):
+        self.argsLine.setText('')
+        self.argsImplicitCheckBox.setChecked(False)
+        self.argsSlot.setValue(0)
+
+    def resetClass(self):
+        self.resetArg()
+        self.currentClass = None
+        self.currentPred = None
+        self.currentArg = None
 
     @pyqtSlot(QtWidgets.QListWidgetItem, QtWidgets.QListWidgetItem)
     def changeClass(self, current: QtWidgets.QListWidgetItem, previous: QtWidgets.QListWidgetItem):
@@ -175,14 +183,11 @@ class EditClassWidget(QtWidgets.QWidget):
             cls = current.data(QtCore.Qt.UserRole)
             self.currentClass = cls
             self.currentArg = None
+            self.updateClassArgs()
+            self.editPredWidget.updateClass(self.currentClass)
             self.argsLine.setText('')
-            self.updateClassArgs(cls)
-            self.editPredWidget.updateClass(cls)
         else:
-            self.argsLine.setEnabled(False)
-            self.argsImplicitCheckBox.setEnabled(False)
-            self.argsSlot.setEnabled(False)
-            self.currentClass = None
+            self.resetClass()
 
     @pyqtSlot(QtWidgets.QListWidgetItem, QtWidgets.QListWidgetItem)
     def changePred(self, current: QtWidgets.QListWidgetItem, previous: QtWidgets.QListWidgetItem):
@@ -207,16 +212,20 @@ class EditClassWidget(QtWidgets.QWidget):
 
     @pyqtSlot(ArgDragLabel)
     def selectArg(self, current: ArgDragLabel):
-        self.currentArg = current
-        self.argsLine.setText(current.arg.value)
-        self.argsImplicitCheckBox.setChecked(current.arg.implicit)
-        self.argsSlot.setValue(current.arg.slot)
+        if current:
+            self.currentArg = current
+            self.argsLine.setText(current.arg.value)
+            self.argsImplicitCheckBox.setChecked(current.arg.implicit)
+            self.argsSlot.setValue(current.arg.slot)
+        else:
+            self.currentArg = None
+            self.resetArg()
 
     @pyqtSlot(str)
     def changeArgText(self, text):
         if self.currentArg:
             self.currentArg.arg.value = text
-            self.updateClassArgs(self.currentClass, self.currentArg)
+            self.updateClassArgs()
 
     @pyqtSlot(int)
     def changeArgSlot(self, num):
@@ -224,24 +233,28 @@ class EditClassWidget(QtWidgets.QWidget):
             if len(self.currentClass.args) > num:
                 self.currentArg.arg.slot = num
             self.currentClass.updateSlots()
-            self.updateClassArgs(self.currentClass, self.currentArg)
+            self.updateClassArgs()
 
     @pyqtSlot()
     def removeArg(self):
         if self.currentArg:
             self.currentClass.remove_arg(self.currentArg.arg)
             self.currentClass.updateSlots()
-            self.updateClassArgs(self.currentClass)
+            self.currentArg = None
+            self.resetArg()
+            self.updateClassArgs()
+
 
     @pyqtSlot()
     def addArg(self):
-        ...
+        self.currentClass.add_arg(self.argsLine.text(), self.argsImplicitCheckBox.isChecked(), self.argsSlot.value())
+        self.updateClassArgs()
 
     @pyqtSlot()
     def implicitUpdate(self):
         if self.currentArg:
             self.currentArg.arg.implicit = self.argsImplicitCheckBox.isChecked()
-            self.updateClassArgs(self.currentClass, self.currentArg)
+            self.updateClassArgs()
 
     @pyqtSlot()
     def save(self):

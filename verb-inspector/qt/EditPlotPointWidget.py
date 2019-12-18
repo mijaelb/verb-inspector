@@ -16,6 +16,7 @@ class EditPlotPointWidget(QtWidgets.QWidget):
         self.currentPlotPoint = None
         self.currentPlotPoints = None
         self.currentSense = None
+        self.currentClass = None
 
         self.plotpointsLabel = QtWidgets.QLabel('PlotPoints ▾')
 
@@ -28,10 +29,26 @@ class EditPlotPointWidget(QtWidgets.QWidget):
         self.editArgsLayout.addWidget(self.editArgsWidget)
         # self.editArgsWidget.selected.connect(self.selectArg)
 
+        self.classesList = QtWidgets.QListWidget()
+
+        self.editClassButton = QtWidgets.QPushButton('Edit Class')
+        self.selectSenseButton = QtWidgets.QPushButton('Select Sense')
+        self.selectSenseButton.released.connect(self.selectSense)
+
+        self.classesListLayout = QtWidgets.QVBoxLayout()
+        self.classesListLayout.addWidget(self.classesList)
+        self.classesListLayout.addWidget(self.editClassButton)
+
         self.senseList = QtWidgets.QListWidget()
         self.senseList.currentItemChanged.connect(self.updateSense)
+
+        self.senseListLayout = QtWidgets.QVBoxLayout()
+        self.senseListLayout.addWidget(self.senseList)
+        self.senseListLayout.addWidget(self.selectSenseButton)
+
         self.editSenseLayout = QtWidgets.QHBoxLayout()
-        self.editSenseLayout.addWidget(self.senseList)
+        self.editSenseLayout.addLayout(self.senseListLayout)
+        self.editSenseLayout.addLayout(self.classesListLayout)
 
         self.plotpointsEditLayout = QtWidgets.QVBoxLayout()
         self.plotpointsEditLayout.addLayout(self.editArgsLayout)
@@ -72,25 +89,60 @@ class EditPlotPointWidget(QtWidgets.QWidget):
         if self.currentPlotPoint:
             self.senseList.clear()
             for sense in self.currentPlotPoint.senses:
-                senseItem = QtWidgets.QListWidgetItem(sense.id + ": " + str(sense.dataset) + ": " + str(sense.descr))
+                senseItem = QtWidgets.QListWidgetItem(str(sense))
                 senseItem.setData(QtCore.Qt.UserRole, sense)
                 # senseItem.setFlags(senseItem.flags() | QtCore.Qt.ItemIsEditable)
                 self.senseList.addItem(senseItem)
+
+    def updateClassesList(self):
+        if self.currentSense:
+            self.classesList.clear()
+            for cls_id in self.currentSense.mappings.vn:
+                classItem = QtWidgets.QListWidgetItem(cls_id)
+                classItem.setData(QtCore.Qt.UserRole, classItem)
+                self.classesList.addItem(classItem)
+
+    def clearPlotPoint(self):
+        self.currentSense = None
+        self.currentClass = None
+        self.senseList.clear()
+        self.classesList.clear()
+        self.editArgsWidget.clearWidget()
+
+    def setSelectedSense(self, sense):
+        if sense:
+            for i in range(self.senseList.count()):
+                if self.senseList.item(i).text() == str(sense):
+                    self.senseList.setCurrentItem(self.senseList.item(i))
+                    break
 
     @pyqtSlot(QtWidgets.QListWidgetItem, QtWidgets.QListWidgetItem)
     def updatePlotPoint(self, current: QtWidgets.QListWidgetItem, previous: QtWidgets.QListWidgetItem):
         if current:
             self.currentPlotPoint = current.data(QtCore.Qt.UserRole)
-            self.currentSense = None
-
+            self.clearPlotPoint()
             self.updateSenseList()
+            self.setSelectedSense(self.currentPlotPoint.selected)
         else:
-            self.currentPlotPoint = None
+            self.clearPlotPoint()
 
     @pyqtSlot(QtWidgets.QListWidgetItem, QtWidgets.QListWidgetItem)
     def updateSense(self, current: QtWidgets.QListWidgetItem, previous: QtWidgets.QListWidgetItem):
         if current:
             self.currentSense = current.data(QtCore.Qt.UserRole)
             self.updatePlotPointArgs()
+            self.updateClassesList()
         else:
-            self.currentSense = None
+            self.clearPlotPoint()
+
+    @pyqtSlot(QtWidgets.QListWidgetItem, QtWidgets.QListWidgetItem)
+    def updateClass(self, current: QtWidgets.QListWidgetItem, previous: QtWidgets.QListWidgetItem):
+        if current:
+            self.currentClass = current.data(QtCore.Qt.UserRole)
+        else:
+            self.currentClass = None
+
+    @pyqtSlot()
+    def selectSense(self):
+        if self.currentSense:
+            self.currentPlotPoint.selected = self.currentSense

@@ -16,7 +16,7 @@
           <vnrole vncls="11.4" vntheta="agent"/>
           <vnrole vncls="40.8.3-1-1" vntheta="experiencer"/>
           <vnrole vncls="13.5.1" vntheta="agent"/>
-          <vnrole vncls="15.1-1" vntheta="agent"/>
+          <vnrole vncls="15.1" vntheta="agent"/>
           <vnrole vncls="12-1" vntheta="agent"/>
           <vnrole vncls="23.2" vntheta="agent"/>
         </role>
@@ -24,7 +24,7 @@
           <vnrole vncls="11.4" vntheta="theme"/>
           <vnrole vncls="40.8.3-1-1" vntheta="patient"/>
           <vnrole vncls="13.5.1" vntheta="theme"/>
-          <vnrole vncls="15.1-1" vntheta="theme"/>
+          <vnrole vncls="15.1" vntheta="theme"/>
           <vnrole vncls="12-1" vntheta="theme"/>
           <vnrole vncls="23.2" vntheta="patient"/>
           <vnrole vncls="23.2" vntheta="patient"/>

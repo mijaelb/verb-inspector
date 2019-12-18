@@ -39,20 +39,20 @@ groupings_path = os.path.join(dirname, 'corpora/ontonotes/sense-inventories/')
 propbank_path = os.path.join(dirname, 'corpora/propbank/frames/')
 verbnet_path = os.path.join(dirname, 'corpora/verbnet/')
 vnpb_path = os.path.join(dirname, 'corpora/mappings/vnpb-mappings.json')
-verbnet_simplified_path = os.path.join(dirname, 'data/verbnet_simplified.json')
+verbnet_simplified_path = os.path.join(dirname, 'data/verbnet.json')
 
 
 class PlotPointContainer(object):
     def __init__(self, json_path=''):
         self.json_path = json_path
-        self.verbnet = vn.VerbNetSimplified(verbnet_path, '')
+        self.verbnet = vn.VerbNetSimplified(verbnet_path, verbnet_simplified_path)
 
         # self.vnpb = utils.fromjson(vnpb_path)
-        self.propbank = pb.PropBank(propbank_path)
-        self.groupings = gr.Groupings(groupings_path)
+        # self.propbank = pb.PropBank(propbank_path)
+        # self.groupings = gr.Groupings(groupings_path)
 
         self.bso = ''
-        self.plotpoints = self.load_plotpoints()
+        # self.plotpoints = self.load_plotpoints()
 
     def get_plotpoints(self):
         return getattr(self, 'plotpoints', {})
@@ -70,6 +70,7 @@ class PlotPointContainer(object):
                                            {utils.norm(lemma): [Dataset.PB] for lemma in self.propbank.get_lemmas()})
                 lemmas = utils.deep_update(lemmas,
                                            {utils.norm(lemma): [Dataset.GR] for lemma in self.groupings.get_lemmas()})
+                # lemmas = utils.deep_update(lemmas, {utils.norm(lemma): [Dataset.FN] for lemma in self.groupings.get_lemmas()})
                 lemmas = dict(sorted(lemmas.items(), key=lambda x: x[0].lower()))
                 for lemma, datasets in lemmas.items():
                     plotpoints[lemma] = PlotPoint(lemma, PlotPointType.VERB)
@@ -91,6 +92,11 @@ class PlotPointContainer(object):
                             pp_class = self.get_class_verbnet(cls, lemma)
                             plotpoints[lemma].add_sense(pp_class)
 
+                    # Set selected sense by default the first in the list
+                    if len(plotpoints[lemma].senses) > 0:
+                        plotpoints[lemma].selected = plotpoints[lemma].senses[0]
+
+                    # Write a log about it
                     # utils.write('pps.log', plotpoints[lemma].pprint(), 'a+')
         return plotpoints
 
@@ -98,9 +104,9 @@ class PlotPointContainer(object):
         pp_sense = PlotPointSense(cls.id, Dataset.VN, '')
         pp_sense.mappings.wn = cls.get_member(lemma).wn
         pp_sense.mappings.vn = [cls.id]
-        pp_sense.mappings.pb = [roleset.id for roleset in self.propbank.get_rolesets_from_class(cls.id, lemma)]
-        pp_sense.mappings.gr = cls.get_member(lemma).grouping
-        pp_sense.mappings.fn = cls.get_member(lemma).fnframe
+        pp_sense.mappings.pb = self.propbank.get_rolesets_ids_from_class(lemma, cls.id)
+        pp_sense.mappings.gr = cls.get_member(lemma).get_gr()
+        pp_sense.mappings.fn = cls.get_member(lemma).get_fn()
         pp_sense.examples.vn = cls.get_examples()
 
         arg_struct = self.get_args_verbnet(cls.id)
@@ -113,12 +119,11 @@ class PlotPointContainer(object):
     def get_sense_propbank(self, lemma, roleset):
         pp_sense = PlotPointSense(roleset.id, Dataset.PB, roleset.name)
         pp_sense.mappings.wn = []
-        pp_sense.mappings.vn = [self.verbnet.get_complete_class_name(cls) for cls in roleset.get_classes()]
+        pp_sense.mappings.vn = self.verbnet.get_complete_classes_ids(roleset.get_classes())
         pp_sense.mappings.pb = [roleset.id]
-        gr_senses = self.groupings.get_senses_from_propbank(lemma, roleset.id)
-        pp_sense.mappings.gr = [sense.id for sense in gr_senses]
-        pp_sense.mappings.fn = []
-        pp_sense.examples.pb = [example.text for example in roleset.examples]
+        pp_sense.mappings.gr = self.groupings.get_senses_ids_from_propbank(lemma, roleset.id)
+        pp_sense.mappings.fn = list(dict.fromkeys(self.verbnet.get_fn_from_classes(lemma, pp_sense.mappings.vn) + roleset.get_fn()))
+        pp_sense.examples.pb = roleset.get_examples_text()
 
         arg_struct = self.get_args_propbank(roleset.id)
         if arg_struct:
@@ -135,13 +140,15 @@ class PlotPointContainer(object):
     def get_sense_grouping(self, lemma, sense):
         pp_sense = PlotPointSense(sense.id, Dataset.GR, sense.name)
         pp_sense.mappings.wn = sense.mappings.wn
-        gr_vn = [cls.id for cls in self.verbnet.get_classes_from_grouping(lemma, sense.id).values()]
+
+        gr_vn = self.verbnet.get_classes_ids_from_grouping(lemma, sense.id)
         for roleset in sense.mappings.pb:
-            gr_vn.extend([self.verbnet.get_complete_class_name(cls) for cls in self.propbank.get_classes(roleset)])
+            gr_vn.extend(self.verbnet.get_complete_classes_ids(self.propbank.get_classes(roleset)))
+
         pp_sense.mappings.vn = list(dict.fromkeys(sense.mappings.vn + gr_vn))
         pp_sense.mappings.pb = sense.mappings.pb
         pp_sense.mappings.gr = [sense.id]
-        pp_sense.mappings.fn = sense.mappings.fn
+        pp_sense.mappings.fn = self.verbnet.get_fn_from_classes(lemma, pp_sense.mappings.vn) + sense.mappings.fn
         pp_sense.examples.gr = sense.examples
 
         for roleset in pp_sense.mappings.pb:
@@ -180,13 +187,13 @@ class PlotPointContainer(object):
                 if role.vnroles:
                     for vnrole in role.vnroles:
                         arg = PlotPointArg(role.descr, role.f, vnrole.vntheta,
-                                           self.verbnet.get_complete_class_name(vnrole.vncls), slot, False, dataset)
+                                           self.verbnet.get_complete_class_id(vnrole.vncls), slot, False, dataset)
                         arg_struct.add_arg(arg)
                 else:
                     arg = PlotPointArg(role.descr, role.f, '', '', slot, False, dataset)
                     arg_struct.add_arg(arg)
         elif dataset == Dataset.VN:
-            id = self.verbnet.get_complete_class_name(id)
+            id = self.verbnet.get_complete_class_id(id)
             arg_struct = PlotPointArgStruct(id, dataset)
             for i, role in enumerate(roles):
                 arg = PlotPointArg('', '', role.value, id, int(role.slot), role.implicit, dataset)
@@ -239,18 +246,12 @@ class PlotPointArg:
         return {'type': self.type, 'value': self.value}
 
     def combine(self, arg):
-        if self.descr == '':
-            self.descr = arg.descr
-        if self.type == '':
-            self.type = arg.type
-        if self.value == '':
-            self.value = arg.value
-        if self.cls == '':
-            self.cls = arg.cls
-        if self.slot == -1:
-            self.slot = arg.type
-        if not self.implicit:
-            self.implicit = arg.implicit
+        self.descr = arg.descr if self.descr == '' else self.descr
+        self.type = arg.type if self.type == '' else self.type
+        self.value = arg.value if self.value == '' else self.value
+        self.cls = arg.cls if self.cls == '' else self.cls
+        self.slot = arg.slot if self.slot == -1 else self.slot
+        self.implicit = arg.implicit if not self.implicit else self.implicit
         self.dataset = Dataset.PP
 
     def pprint(self, indent=0, end='\n'):
@@ -442,13 +443,16 @@ class PlotPointSense:
         yield 'arg_structs', [dict(arg) for arg in self.arg_structs]
         yield 'args', [dict(arg) for arg in self.args]
 
+    def __str__(self):
+        return f'{self.id}: {str(self.dataset)}: {str(self.descr)}'
+
 
 @dataclass
 class PlotPoint:
     ''' A data class that stores the senses of plot points and selects the sense'''
     lemma: str
     type: PlotPointType = PlotPointType.VERB
-    selected: str = ''
+    selected: PlotPointSense = None
     dataset: str = ''
     aligned: bool = False
     senses: List[PlotPointSense] = field(default_factory=list)

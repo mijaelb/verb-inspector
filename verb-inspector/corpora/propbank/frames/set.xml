@@ -65,13 +65,13 @@
       <note>SET-J NOTES: Added by Julia based on SMS. (from set.08-j)</note>
       <roles>
         <role descr="cause, agent" f="pag" n="0">
-          <vnrole vncls="59-1" vntheta="agent"/>
+          <vnrole vncls="58.1-1-1" vntheta="agent"/>
         </role>
         <role descr="prepared entity" f="ppt" n="1">
-          <vnrole vncls="59-1" vntheta="patient"/>
+          <vnrole vncls="58.1-1-1" vntheta="patient"/>
         </role>
         <role descr="ready for what, proposition" f="prd" n="2">
-          <vnrole vncls="59-1" vntheta="result"/>
+          <vnrole vncls="58.1-1-1" vntheta="result"/>
         </role>
       </roles>
       <example name="set-v: on your mark, get set, go" src="" type="">
