@@ -10,14 +10,16 @@ class EditPredWidget(QtWidgets.QWidget):
         super().__init__(parent)
         self.setObjectName('EditPredWidget')
         self.vnclass = vnclass
+
         self.argsLabel = QtWidgets.QLabel('Predicate arguments ▾ (Double click to edit)')
         self.predsLabel = QtWidgets.QLabel('Class predicates ▾')
         self.predsList = QtWidgets.QListWidget()
         self.argsList = QtWidgets.QListWidget()
         self.predsList.currentItemChanged.connect(self.changePred)
         self.argsList.currentItemChanged.connect(self.changeArg)
-        self.argsList.itemChanged.connect(self.updateArg)
         self.predsList.itemChanged.connect(self.updatePred)
+        self.argsList.itemChanged.connect(self.updateArg)
+
         self.argsLayout = QtWidgets.QVBoxLayout()
         self.predsLayout = QtWidgets.QVBoxLayout()
 
@@ -25,25 +27,27 @@ class EditPredWidget(QtWidgets.QWidget):
         self.predsButtonLayout = QtWidgets.QHBoxLayout()
 
         self.addArgButton = QtWidgets.QPushButton('Add')
-        self.addArgButton.released.connect(self.addArg)
         self.removeArgButton = QtWidgets.QPushButton('Remove')
-        self.removeArgButton.released.connect(self.removeArg)
         self.upArgButton = QtWidgets.QToolButton()
-        self.upArgButton.setArrowType(QtCore.Qt.UpArrow)
-        self.upArgButton.released.connect(self.moveUpArg)
         self.downArgButton = QtWidgets.QToolButton()
+        self.upArgButton.setArrowType(QtCore.Qt.UpArrow)
         self.downArgButton.setArrowType(QtCore.Qt.DownArrow)
+
+        self.removeArgButton.released.connect(self.removeArg)
+        self.addArgButton.released.connect(self.addArg)
+        self.upArgButton.released.connect(self.moveUpArg)
         self.downArgButton.released.connect(self.moveDownArg)
 
         self.addPredButton = QtWidgets.QPushButton('Add')
-        self.addPredButton.released.connect(self.addPred)
         self.removePredButton = QtWidgets.QPushButton('Remove')
-        self.removePredButton.released.connect(self.removePred)
         self.upPredButton = QtWidgets.QToolButton()
-        self.upPredButton.setArrowType(QtCore.Qt.UpArrow)
-        self.upPredButton.released.connect(self.moveUpPred)
         self.downPredButton = QtWidgets.QToolButton()
+        self.upPredButton.setArrowType(QtCore.Qt.UpArrow)
         self.downPredButton.setArrowType(QtCore.Qt.DownArrow)
+
+        self.addPredButton.released.connect(self.addPred)
+        self.removePredButton.released.connect(self.removePred)
+        self.upPredButton.released.connect(self.moveUpPred)
         self.downPredButton.released.connect(self.moveDownPred)
 
         self.argsButtonLayout.addWidget(self.addArgButton)
@@ -67,6 +71,7 @@ class EditPredWidget(QtWidgets.QWidget):
         self.layout = QtWidgets.QHBoxLayout()
         self.layout.addLayout(self.predsLayout)
         self.layout.addLayout(self.argsLayout)
+
         self.initUI()
 
     def initUI(self):

@@ -26,22 +26,22 @@ class EditClassWidget(QtWidgets.QWidget):
         self.classesLabel = QtWidgets.QLabel('Classes ▾')
 
         self.addArgButton = QtWidgets.QPushButton('Add')
-        self.addArgButton.released.connect(self.addArg)
         self.removeArgButton = QtWidgets.QPushButton('Remove')
+        self.addArgButton.released.connect(self.addArg)
         self.removeArgButton.released.connect(self.removeArg)
 
         self.argsLine = QtWidgets.QLineEdit()
-        self.argsLine.textChanged.connect(self.changeArgText)
         self.argsSlot = QtWidgets.QSpinBox()
+        self.argsLine.textChanged.connect(self.changeArgText)
         self.argsSlot.valueChanged.connect(self.changeArgSlot)
 
         self.hLine = QtUtils.QHLine()
         self.vLine = QtUtils.QVLine()
         self.saveButton = QtWidgets.QPushButton('Save')
-        self.saveButton.released.connect(self.save)
         self.saveAsButton = QtWidgets.QPushButton('Save As')
-        self.saveAsButton.released.connect(self.saveAs)
         self.openButton = QtWidgets.QPushButton('Open')
+        self.saveButton.released.connect(self.save)
+        self.saveAsButton.released.connect(self.saveAs)
         self.openButton.released.connect(self.open)
 
         self.classButtons = QtWidgets.QHBoxLayout()
@@ -53,6 +53,7 @@ class EditClassWidget(QtWidgets.QWidget):
         self.removeFilterButton = QtWidgets.QPushButton('Unfilter')
         self.filterByPredicateButton.released.connect(self.filterByPredicate)
         self.removeFilterButton.released.connect(self.removeFilter)
+
         self.filterButtons = QtWidgets.QHBoxLayout()
         self.filterButtons.addWidget(self.filterByPredicateButton)
         self.filterButtons.addWidget(self.removeFilterButton)
@@ -94,7 +95,7 @@ class EditClassWidget(QtWidgets.QWidget):
         self.argsEditLayout.addWidget(self.removeArgButton, 3, 1, 1, 1)
         self.argsEditLayout.addWidget(self.vLine, 0, 3, 4, 1)
 
-        self.editArgsWidget = ArgDragWidget(None, self)
+        self.editArgsWidget = ArgDragWidget(None)
         self.editArgsWidget.selected.connect(self.selectArg)
 
         self.argsLayout = QtWidgets.QHBoxLayout()

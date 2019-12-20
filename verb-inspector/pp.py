@@ -48,11 +48,11 @@ class PlotPointContainer(object):
         self.verbnet = vn.VerbNetSimplified(verbnet_path, verbnet_simplified_path)
 
         # self.vnpb = utils.fromjson(vnpb_path)
-        # self.propbank = pb.PropBank(propbank_path)
-        # self.groupings = gr.Groupings(groupings_path)
+        self.propbank = pb.PropBank(propbank_path)
+        self.groupings = gr.Groupings(groupings_path)
 
         self.bso = ''
-        # self.plotpoints = self.load_plotpoints()
+        self.plotpoints = self.load_plotpoints()
 
     def get_plotpoints(self):
         return getattr(self, 'plotpoints', {})
@@ -64,33 +64,11 @@ class PlotPointContainer(object):
                 ...
                 # pps_dict = utils.fromjson(self.json_path)
             else:
-                # Load all lemmas from every dataset
-                lemmas = {utils.norm(lemma): [Dataset.VN] for lemma in self.verbnet.get_lemmas()}
-                lemmas = utils.deep_update(lemmas,
-                                           {utils.norm(lemma): [Dataset.PB] for lemma in self.propbank.get_lemmas()})
-                lemmas = utils.deep_update(lemmas,
-                                           {utils.norm(lemma): [Dataset.GR] for lemma in self.groupings.get_lemmas()})
-                # lemmas = utils.deep_update(lemmas, {utils.norm(lemma): [Dataset.FN] for lemma in self.groupings.get_lemmas()})
-                lemmas = dict(sorted(lemmas.items(), key=lambda x: x[0].lower()))
+                lemmas = self.load_lemmas_datasets()
                 for lemma, datasets in lemmas.items():
                     plotpoints[lemma] = PlotPoint(lemma, PlotPointType.VERB)
-                    if Dataset.GR in datasets:
-                        senses = self.groupings.get_senses(lemma)
-                        for sense in senses.values():
-                            pp_sense = self.get_sense_grouping(lemma, sense)
-                            plotpoints[lemma].add_sense(pp_sense)
-
-                    if Dataset.PB in datasets:
-                        rolesets = self.propbank.get_rolesets(lemma)
-                        for roleset in rolesets:
-                            pp_sense = self.get_sense_propbank(lemma, roleset)
-                            plotpoints[lemma].add_sense(pp_sense)
-
-                    if Dataset.VN in datasets:
-                        classes = self.verbnet.get_classes(lemma)
-                        for cls in classes.values():
-                            pp_class = self.get_class_verbnet(cls, lemma)
-                            plotpoints[lemma].add_sense(pp_class)
+                    for dataset in datasets:
+                        plotpoints[lemma].senses.extend(self.get_senses(lemma, dataset))
 
                     # Set selected sense by default the first in the list
                     if len(plotpoints[lemma].senses) > 0:
@@ -99,6 +77,36 @@ class PlotPointContainer(object):
                     # Write a log about it
                     # utils.write('pps.log', plotpoints[lemma].pprint(), 'a+')
         return plotpoints
+
+    def load_lemmas_datasets(self):
+        # Load all lemmas from every dataset
+        lemmas = {utils.norm(lemma): [Dataset.VN] for lemma in self.verbnet.get_lemmas()}
+        lemmas = utils.deep_update(lemmas,
+                                   {utils.norm(lemma): [Dataset.PB] for lemma in self.propbank.get_lemmas()})
+        lemmas = utils.deep_update(lemmas,
+                                   {utils.norm(lemma): [Dataset.GR] for lemma in self.groupings.get_lemmas()})
+        # lemmas = utils.deep_update(lemmas, {utils.norm(lemma): [Dataset.FN] for lemma in self.groupings.get_lemmas()})
+        lemmas = dict(sorted(lemmas.items(), key=lambda x: x[0].lower()))
+        return lemmas
+
+    def get_senses(self, lemma, dataset):
+        pp_senses = []
+        if dataset == Dataset.GR:
+            senses = self.groupings.get_senses(lemma)
+            for sense in senses.values():
+                pp_sense = self.get_sense_grouping(lemma, sense)
+                pp_senses.append(pp_sense)
+        elif dataset == Dataset.PB:
+            rolesets = self.propbank.get_rolesets(lemma)
+            for roleset in rolesets:
+                pp_sense = self.get_sense_propbank(lemma, roleset)
+                pp_senses.append(pp_sense)
+        elif dataset == Dataset.VN:
+            classes = self.verbnet.get_classes(lemma)
+            for cls in classes.values():
+                pp_class = self.get_class_verbnet(cls, lemma)
+                pp_senses.append(pp_class)
+        return pp_senses
 
     def get_class_verbnet(self, cls, lemma):
         pp_sense = PlotPointSense(cls.id, Dataset.VN, '')
@@ -122,7 +130,8 @@ class PlotPointContainer(object):
         pp_sense.mappings.vn = self.verbnet.get_complete_classes_ids(roleset.get_classes())
         pp_sense.mappings.pb = [roleset.id]
         pp_sense.mappings.gr = self.groupings.get_senses_ids_from_propbank(lemma, roleset.id)
-        pp_sense.mappings.fn = list(dict.fromkeys(self.verbnet.get_fn_from_classes(lemma, pp_sense.mappings.vn) + roleset.get_fn()))
+        pp_sense.mappings.fn = list(
+            dict.fromkeys(self.verbnet.get_fn_from_classes(lemma, pp_sense.mappings.vn) + roleset.get_fn()))
         pp_sense.examples.pb = roleset.get_examples_text()
 
         arg_struct = self.get_args_propbank(roleset.id)
@@ -207,23 +216,6 @@ class CompiledPlotPoint(object):
 
 
 @dataclass
-class PlotPointPredicateArg:
-    type: str
-    value: str
-
-    def pprint(self, indent=0, end='\n'):
-        indent_in = utils.indent(indent)
-        indent_ = utils.indent(indent + 1)
-        return f'{indent_in}{self.__class__.__name__}{end}' \
-               f'{indent_}type={self.type!r}{end}' \
-               f'{indent_}value={self.value!r}{end}'
-
-    def __iter__(self):
-        yield 'type', self.type
-        yield 'value', self.value
-
-
-@dataclass
 class PlotPointArg:
     descr: str = ''
     type: str = ''
@@ -243,7 +235,7 @@ class PlotPointArg:
         self.dataset = dict.get('dataset', Dataset.EMPTY)
 
     def pred_dict(self):
-        return {'type': self.type, 'value': self.value}
+        return {'type': self.type, 'slot': self.slot if self.slot != -1 else 'x'}
 
     def combine(self, arg):
         self.descr = arg.descr if self.descr == '' else self.descr
@@ -283,14 +275,34 @@ class PlotPointArg:
         yield 'dataset', self.dataset
 
     def __str__(self):
-        return f'{self.type}: {self.value}'
+        if self.type == 'event':
+            return self.value
+        else:
+            return str(self.slot)
 
 
 @dataclass
 class PlotPointPredicate:
-    bool: str
-    name: str
+    bool: str = ''
+    name: str = ''
     args: List[PlotPointArg] = field(default_factory=list)
+
+    def compile(self, args, vnpred, class_id):
+        self.bool = vnpred.bool
+        self.name = vnpred.name
+        for vnarg in vnpred.args:
+            dummy_arg = PlotPointArg()  # empty dummy predicate
+            for arg in args:
+                print(f'{arg.value} {arg.cls}')
+                print(f'{vnarg.value} {class_id}')
+                if vnarg.type == 'event':
+                    dummy_arg.fill_dict(dict(vnarg))
+                    break
+                elif arg.value == vnarg.value and arg.cls == class_id:
+                    dummy_arg = arg
+                    break
+
+            self.args.append(dummy_arg)
 
     def pprint(self, indent=0, end='\n'):
         indent_in = utils.indent(indent)
@@ -305,6 +317,9 @@ class PlotPointPredicate:
         yield 'bool', self.bool
         yield 'name', self.name
         yield 'args', [arg.pred_dict() for arg in self.args]
+
+    def __str__(self):
+        return f'{self.bool}{self.name}({", ".join([str(arg) for arg in self.args])})'
 
 
 @dataclass
@@ -418,6 +433,15 @@ class PlotPointSense:
 
         self.args.sort(key=lambda x: str(x.slot), reverse=False)
 
+    def get_compiled_predicates(self, verbnet):
+        compiled_preds = []
+        for class_id in self.mappings.vn:
+            for pred in verbnet.get_predicates_from_class(class_id):
+                new_pred = PlotPointPredicate()
+                new_pred.compile(self.args, pred, class_id)
+                compiled_preds.append(new_pred)
+        return compiled_preds
+
     def pprint(self, indent=0, end='\n'):
         indent_in = ''.join(['\t' for i in range(0, indent)])
         indent_ = ''.join(['\t' for i in range(0, indent + 1)])
@@ -456,9 +480,6 @@ class PlotPoint:
     dataset: str = ''
     aligned: bool = False
     senses: List[PlotPointSense] = field(default_factory=list)
-
-    def add_sense(self, pp_sense):
-        self.senses.append(pp_sense)
 
     def pprint(self, indent=0, end='\n'):
         indent_in = ''.join(['\t' for i in range(0, indent)])

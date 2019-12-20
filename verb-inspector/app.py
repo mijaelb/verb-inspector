@@ -11,19 +11,16 @@ import xml.etree.ElementTree as ET
 import PyQt5.QtWidgets as QtWidgets
 import PyQt5.QtGui as QtGui
 import PyQt5.QtCore as QtCore
-from PyQt5.QtCore import pyqtSlot, Qt, QSize
-from PyQt5.QtGui import QPalette, QColor, QIcon
 from pathlib import Path
 import pp
-from qt.EditClassWidget import EditClassWidget
-from qt.EditPlotPointWidget import EditPlotPointWidget
+from qt.AppWidget import AppWidget
 import qt.QtUtils as QtUtils
 from qt.QtUtils import QT_VERSION
 
 _FL_STYLESHEET = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'qt/resources/frameless.qss')
 
 
-class App(QtWidgets.QWidget):
+class App(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
         self.title = 'Plot Point Editor (Verb Inspector)'
@@ -33,44 +30,23 @@ class App(QtWidgets.QWidget):
         self.top = 10
         self.width = 1000
         self.height = 800
+        self.app_icon = QtGui.QIcon()
+        self.app_widget = AppWidget(self.pp_container, self)
 
-        self.editPlotPointWidget = EditPlotPointWidget(self.pp_container)
-
-        self.hLine = QtUtils.QHLine()
-
-        self.editClassWidget = EditClassWidget(self.pp_container.verbnet)
-        self.editClassWidget.setMaximumHeight(600)
-
-        self.layout = QtWidgets.QVBoxLayout()
-        self.layout.addWidget(self.editPlotPointWidget)
-        self.layout.addWidget(self.hLine)
-        self.layout.addWidget(self.editClassWidget)
-
+        self.setCentralWidget(self.app_widget)
         self.initUI()
 
     def initUI(self):
         self.setWindowTitle(self.title)
         self.setGeometry(self.left, self.top, self.width, self.height)
-        self.setLayout(self.layout)
-        self.layout.setAlignment(QtCore.Qt.AlignTop | QtCore.Qt.AlignLeft)
-        self.hLine.setStyleSheet('QFrame { color: palette(midlight) }')
 
         with open(_FL_STYLESHEET) as stylesheet:
             self.setStyleSheet(stylesheet.read())
         QtUtils.dark(self)
 
-        self.editClassWidget.setStyleSheet(self.styleSheet())
-        self.editClassWidget.setPalette(self.palette())
-
-        self.app_icon = QIcon()
-        self.app_icon.addFile(f'{self.path}/gui/icons/32x32.png', QSize(32, 32))
+        self.app_icon.addFile(f'{self.path}/gui/icons/32x32.png', QtCore.QSize(32, 32))
         self.setWindowIcon(self.app_icon)
         self.show()
-
-    @pyqtSlot()
-    def reload_classes(self):
-        # TODO: Reload every class into the json file if it exists
-        print('Reload Classes')
 
 
 if __name__ == '__main__':

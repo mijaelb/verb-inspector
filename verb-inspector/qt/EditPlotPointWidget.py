@@ -24,8 +24,9 @@ class EditPlotPointWidget(QtWidgets.QWidget):
         self.plotPointsList.currentItemChanged.connect(self.updatePlotPoint)
         self.updatePlotPointsList()
 
-        self.editArgsWidget = ArgDragWidget(None, self)
+        self.editArgsWidget = ArgDragWidget(None)
         self.editArgsLayout = QtWidgets.QHBoxLayout()
+
         self.editArgsLayout.addWidget(self.editArgsWidget)
         # self.editArgsWidget.selected.connect(self.selectArg)
 
@@ -46,9 +47,16 @@ class EditPlotPointWidget(QtWidgets.QWidget):
         self.senseListLayout.addWidget(self.senseList)
         self.senseListLayout.addWidget(self.selectSenseButton)
 
+        self.compiledPredicateList = QtWidgets.QListWidget()
+        self.updateCompiledPredicateList()
+
+        self.compiledPredicateLayout = QtWidgets.QVBoxLayout()
+        self.compiledPredicateLayout.addWidget(self.compiledPredicateList)
+
         self.editSenseLayout = QtWidgets.QHBoxLayout()
         self.editSenseLayout.addLayout(self.senseListLayout)
         self.editSenseLayout.addLayout(self.classesListLayout)
+        self.editSenseLayout.addLayout(self.compiledPredicateLayout)
 
         self.plotpointsEditLayout = QtWidgets.QVBoxLayout()
         self.plotpointsEditLayout.addLayout(self.editArgsLayout)
@@ -102,6 +110,15 @@ class EditPlotPointWidget(QtWidgets.QWidget):
                 classItem.setData(QtCore.Qt.UserRole, classItem)
                 self.classesList.addItem(classItem)
 
+    def updateCompiledPredicateList(self):
+        if self.currentSense:
+            self.compiledPredicateList.clear()
+            for pred in self.currentSense.get_compiled_predicates(self.plotpoints.verbnet):
+                predItem = QtWidgets.QListWidgetItem(str(pred))
+                predItem.setData(QtCore.Qt.UserRole, pred)
+                #predItem.setFlags(predItem.flags() | QtCore.Qt.ItemIsEditable)
+                self.compiledPredicateList.addItem(predItem)
+
     def clearPlotPoint(self):
         self.currentSense = None
         self.currentClass = None
@@ -132,6 +149,7 @@ class EditPlotPointWidget(QtWidgets.QWidget):
             self.currentSense = current.data(QtCore.Qt.UserRole)
             self.updatePlotPointArgs()
             self.updateClassesList()
+            self.updateCompiledPredicateList()
         else:
             self.clearPlotPoint()
 

@@ -4,9 +4,6 @@ import PyQt5.QtWidgets as QtWidgets
 import PyQt5.QtGui as QtGui
 import PyQt5.QtCore as QtCore
 
-from qt.ArgEditorDialog import ArgEditorDialog
-
-
 class ArgDragLabel(QtWidgets.QLabel):
     def __init__(self, arg, parent=None, select=False):
         super(ArgDragLabel, self).__init__(parent)

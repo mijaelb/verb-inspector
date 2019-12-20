@@ -133,6 +133,13 @@ class VerbNetBase(object):
 
         return classes
 
+    def get_predicates_from_class(self, class_id):
+        cls = self.get_class(class_id)
+        if cls:
+            return cls.get_predicates()
+
+        return []
+
     def __str__(self):
         return str(self.classes.keys())
 
