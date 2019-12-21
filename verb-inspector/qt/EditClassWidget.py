@@ -121,7 +121,7 @@ class EditClassWidget(QtWidgets.QWidget):
     def changeClass(self, current: QtWidgets.QListWidgetItem, previous: QtWidgets.QListWidgetItem):
         if current:
             self.currentClass = current.data(QtCore.Qt.UserRole)
-            self.editArgWidget.updateClass(self.currentClass)
+            self.editArgWidget.update(self.currentClass)
             self.editPredWidget.updateClass(self.currentClass)
         else:
             self.resetClass()

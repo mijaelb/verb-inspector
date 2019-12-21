@@ -73,30 +73,39 @@ class EditArgWidget(QtWidgets.QWidget):
     def update(self, obj=None):
         self.currentObj = obj if obj else self.currentObj
         if self.currentObj:
-            self.resetArg()
-            self.editArgsWidget.resetWidget(self.currentObj.args, self.currentArg)
-            if self.currentObj.args:
+            args = self.currentObj.get_args()
+            self.argDragWidget.resetWidget(args, self.currentArg)
+            self.updateArg(self.currentArg)
+            if args:
                 self.argsSlot.setMinimum(0)
-                self.argsSlot.setMaximum(len(self.currentObj.args) + 1)
+                self.argsSlot.setMaximum(len(args) + 1)
 
     def clear(self):
+        self.currentObj = None
         self.resetArg()
-        self.editArgsWidget.resetWidget()
+        self.argDragWidget.resetWidget()
         self.argsSlot.setMinimum(0)
         self.argsSlot.setMaximum(0)
-        self.currentObj = None
+        self.argsLine.setEnabled(False)
+        self.argsSlot.setEnabled(False)
+        self.argsImplicitCheckBox.setEnabled(False)
 
     def resetArg(self):
-        self.currentArg = None
         self.argsLine.setText('')
         self.argsImplicitCheckBox.setChecked(False)
         self.argsSlot.setValue(0)
 
     def updateArg(self, current):
-        self.currentArg = current
-        self.argsLine.setText(self.currentArg.arg.value)
-        self.argsImplicitCheckBox.setChecked(self.currentArg.arg.implicit)
-        self.argsSlot.setValue(self.currentArg.arg.slot)
+        if current:
+            self.currentArg = current
+            self.argsLine.setText(self.currentArg.arg.value)
+            self.argsImplicitCheckBox.setChecked(self.currentArg.arg.implicit)
+            self.argsSlot.setValue(self.currentArg.arg.slot)
+            self.argsLine.setEnabled(True)
+            self.argsSlot.setEnabled(True)
+            self.argsImplicitCheckBox.setEnabled(True)
+        else:
+            self.resetArg()
 
     @pyqtSlot(ArgDragLabel)
     def selectArg(self, current: ArgDragLabel):
@@ -114,8 +123,8 @@ class EditArgWidget(QtWidgets.QWidget):
     @pyqtSlot(int)
     def changeArgSlot(self, num):
         if self.currentObj and self.currentArg:
-            if len(self.currentObj.args) > num:
-                self.currentObj.arg.slot = num
+            if len(self.currentObj.get_args()) > num:
+                self.currentArg.arg.slot = num
             self.currentObj.updateSlots()
             self.update()
 
