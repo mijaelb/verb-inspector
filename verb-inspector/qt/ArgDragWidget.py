@@ -4,27 +4,20 @@ import PyQt5.QtWidgets as QtWidgets
 import PyQt5.QtGui as QtGui
 import PyQt5.QtCore as QtCore
 
+
 class ArgDragLabel(QtWidgets.QLabel):
     def __init__(self, arg, parent=None, select=False):
         super(ArgDragLabel, self).__init__(parent)
         self.arg = arg
         self.dialog = None
         self.isSelected = select
-        if self.arg.value:
-            self.label_text = f'{self.arg.slot}: {self.arg.value}'
-        else:
-            self.label_text = f'{self.arg.slot}: {self.arg.type}'
+        self.label_text = f'{self.arg.slot}: {self.arg.value}' if self.arg.value else f'{self.arg.slot}: {self.arg.type}'
         self.reset()
 
     def reset(self):
         metric = QtGui.QFontMetrics(self.font())
-
-        if self.isSelected:
-            size = metric.size(QtCore.Qt.TextSelectableByMouse, self.label_text)
-            offset = 14
-        else:
-            size = metric.size(QtCore.Qt.TextSingleLine, self.label_text)
-            offset = 10
+        size = metric.size(QtCore.Qt.TextSingleLine, self.label_text)
+        offset = 14 if self.isSelected else 10
 
         image = QtGui.QImage(size.width() + offset, size.height() + offset, QtGui.QImage.Format_ARGB32_Premultiplied)
         image.fill(QtGui.qRgba(0, 0, 0, 0))
@@ -56,7 +49,8 @@ class ArgDragLabel(QtWidgets.QLabel):
             font.setStyleStrategy(QtGui.QFont.ForceOutline)
             painter.setFont(font)
             painter.setBrush(QtCore.Qt.white)
-            painter.drawText(QtCore.QRect(QtCore.QPoint(offset / 2, offset / 2+6), size), QtCore.Qt.AlignCenter, self.arg.cls)
+            painter.drawText(QtCore.QRect(QtCore.QPoint(offset / 2, offset / 2 + 8), size), QtCore.Qt.AlignCenter,
+                             self.arg.cls)
 
         painter.end()
         self.setPixmap(QtGui.QPixmap.fromImage(image))
@@ -85,11 +79,6 @@ class ArgDragLabel(QtWidgets.QLabel):
             self.show()
 
         self.parent().setSelection(self)
-
-    def mouseReleaseEvent(self, event):
-        if self.last == "Double Click":
-            self.dialog = ArgEditorDialog(self.arg, self)
-            self.dialog.show()
 
 
 class ArgDragWidget(QtWidgets.QWidget):
@@ -209,16 +198,12 @@ class ArgDragWidget(QtWidgets.QWidget):
             for arg in self.args:
                 select = True if self.currentSelection and self.currentSelection.arg == arg else False
                 label = ArgDragLabel(arg, self, select)
-                if slot != arg.slot:
-                    x += 4
-                    label.move(x, y)
-                else:
-                    x -= 1
-                    label.move(x, y)
+                x += 4 if slot != arg.slot else -1
+                label.move(x, y)
                 label.show()
                 x += label.width()
-                self.labels.append(label)
                 slot = arg.slot
+                self.labels.append(label)
 
             self.setMinimumSize(x, 32)
             self.setMaximumHeight(48)

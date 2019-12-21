@@ -179,6 +179,7 @@ class VerbNet(VerbNetBase):
                f'{indent_}classes={end}' \
                f'{"".join([cls.pprint(indent + 2, end) for cls in self.classes.values()])}'
 
+
 class VerbNetClass(object):
     def __init__(self, filename='', soup=None):
         self.soup = soup
@@ -285,7 +286,7 @@ class VerbNetClass(object):
                             class_args[i] = group
                             remove = True
                         else:
-                            del class_args[i]
+                            class_args.pop(i)
 
         args = []
         for i, arg in enumerate(class_args):
@@ -478,7 +479,7 @@ class VerbNetPredicate(object):
     def edit_args_name(self, arr):
         if len(arr) < len(self.args):
             for i in range(len(arr) - 1, len(self.args) - 1):
-                del self.args[i]
+                self.args.pop(i)
 
         if arr:
             for i, arg in enumerate(arr):
@@ -555,10 +556,9 @@ class VerbNetSimplified(VerbNetBase):
             json = utils.fromjson(self.json_path)
 
         if json:
-            self.classes = {}
             self.json = json
             self.json_path = json_path
-            self.classes = self.get_classes()
+            self.classes = self.load_classes()
 
     def save(self, filename=''):
         if filename:
@@ -567,15 +567,13 @@ class VerbNetSimplified(VerbNetBase):
             utils.tojson(self.json_path, dict(self))
 
     def load_classes(self):
-        classes = getattr(self, 'classes', {})
-        if not classes:
-            if self.json:
-                for cls_id, cls in self.json.items():
-                    classes[cls_id] = VerbNetSimplifiedClass(self.vn.classes[cls_id], cls)
-            else:
-                for cls_id, cls in self.vn.get_classes().items():
-                    classes[cls_id] = VerbNetSimplifiedClass(cls)
-
+        classes = {}
+        if self.json:
+            classes = {cls_id: VerbNetSimplifiedClass(self.vn.classes[cls_id], cls)
+                       for cls_id, cls in self.json.items()}
+        else:
+            classes = {cls_id: VerbNetSimplifiedClass(cls)
+                       for cls_id, cls in self.vn.get_classes().items()}
         return classes
 
     def pprint(self, indent=0, end='\n'):
@@ -593,8 +591,8 @@ class VerbNetSimplified(VerbNetBase):
 
 class VerbNetSimplifiedClass(object):
     def __init__(self, vnclass: VerbNetClass = None, json_class={}):
-        self.json = json_class
         self.vnclass = vnclass
+        self.json = json_class
         self.id = self.json['id'] if self.json else self.vnclass.id
         self.args = self.get_args()
         self.predicates = self.get_predicates()
@@ -602,9 +600,26 @@ class VerbNetSimplifiedClass(object):
         self.examples = self.get_examples()
 
     def add_pred(self, bool='', name='', args=None):
-        if args is None:
-            args = []
+        args = [] if args is None else args
         self.predicates.append(VerbNetPredicate(bool, name, args))
+
+    def add_arg(self, value='empty', implicit=False, slot=0, cls=''):
+        i = 0
+        for i, arg in enumerate(self.args):
+            if arg.slot > slot:
+                break
+
+        arg = VerbNetArg()
+        arg.value = value
+        arg.implicit = implicit
+        arg.slot = slot
+        arg.cls = cls
+        self.args.insert(i, arg)
+
+    def remove_arg(self, arg):
+        for i, arg_ in enumerate(self.args):
+            if arg == arg_:
+                return self.args.pop(i)
 
     def get_args(self):
         args = getattr(self, 'args', [])
@@ -613,6 +628,7 @@ class VerbNetSimplifiedClass(object):
                 for arg_dict in self.json['args']:
                     arg = VerbNetArg()
                     arg.fill_dict(arg_dict)
+                    arg.cls = self.id
                     args.append(arg)
             elif self.vnclass:
                 args = self.vnclass.get_args(vnclass_args.vnclass_dict[self.id])
@@ -652,25 +668,11 @@ class VerbNetSimplifiedClass(object):
         examples = getattr(self, 'examples', [])
         if not examples:
             if self.json:
-                for exampl in self.json['examples']:
-                    examples.append(exampl)
+                for ie in self.json['examples']:
+                    examples.append(ie)
             elif self.vnclass:
                 examples = self.vnclass.get_examples()
         return examples
-
-    def remove_arg(self, arg):
-        for i, arg_ in enumerate(self.args):
-            if arg == arg_:
-                self.args.pop(i)
-
-    def add_arg(self, value, implicit, slot):
-        i = 0
-        for i, arg in enumerate(self.args):
-            if arg.slot > slot:
-                break
-
-        arg = VerbNetArg('', value, self.id, slot, implicit)
-        self.args.insert(i, arg)
 
     def updateSlots(self):
         i, j = (-1, 0)

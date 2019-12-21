@@ -1,5 +1,3 @@
-from enum import Enum
-
 import bs4
 import re
 import json
@@ -14,9 +12,7 @@ from typing import List
 import gr
 import pb
 import vn
-
-
-# import spacy
+from enum import Enum
 
 
 class Dataset(Enum):
@@ -33,6 +29,9 @@ class PlotPointType(Enum):
     PREP = 'prep'
     EMPTY = ''
 
+
+
+# import spacy
 
 dirname = os.path.dirname(__file__)
 groupings_path = os.path.join(dirname, 'corpora/ontonotes/sense-inventories/')
@@ -58,7 +57,7 @@ class PlotPointContainer(object):
         return getattr(self, 'plotpoints', {})
 
     def load_plotpoints(self):
-        plotpoints = getattr(self, 'plotpoints', {})
+        plotpoints = self.get_plotpoints()
         if not plotpoints:
             if self.json_path:
                 ...
@@ -74,7 +73,7 @@ class PlotPointContainer(object):
                     if len(plotpoints[lemma].senses) > 0:
                         plotpoints[lemma].selected = plotpoints[lemma].senses[0]
 
-                    # Write a log about it
+                    # Write into a log the plotpoints information
                     # utils.write('pps.log', plotpoints[lemma].pprint(), 'a+')
         return plotpoints
 
@@ -411,6 +410,19 @@ class PlotPointSense:
     def add_arg_struct(self, pp_args):
         self.arg_structs.append(pp_args)
 
+    def add_arg(self, value='empty', implicit=False, slot=0, cls=''):
+        i = 0
+        for i, arg in enumerate(self.args):
+            if arg.slot > slot:
+                break
+
+        arg = PlotPointArg()
+        arg.value = value
+        arg.implicit = implicit
+        arg.slot = slot
+        arg.cls = cls
+        self.args.insert(i, arg)
+
     def squeeze(self):
         args = []
         for arg_struct in self.arg_structs:
@@ -432,6 +444,21 @@ class PlotPointSense:
             args.pop(0)
 
         self.args.sort(key=lambda x: str(x.slot), reverse=False)
+
+    def updateSlots(self):
+        i, j = (-1, 0)
+        while j < len(self.args):
+            if i != -1:
+                if self.args[i].slot > self.args[j].slot:
+                    self.args[i], self.args[j] = self.args[j], self.args[i]
+                    self.updateSlots()
+
+            i, j = (j, j + 1)
+
+    def remove_arg(self, arg):
+        for i, arg_ in enumerate(self.args):
+            if arg == arg_:
+                return self.args.pop(i)
 
     def get_compiled_predicates(self, verbnet):
         compiled_preds = []
@@ -478,7 +505,7 @@ class PlotPoint:
     type: PlotPointType = PlotPointType.VERB
     selected: PlotPointSense = None
     dataset: str = ''
-    aligned: bool = False
+    cleaned: bool = False
     senses: List[PlotPointSense] = field(default_factory=list)
 
     def pprint(self, indent=0, end='\n'):
@@ -489,7 +516,7 @@ class PlotPoint:
                f'{indent_}type={self.type!r}{end}' \
                f'{indent_}selected={self.selected!r}{end}' \
                f'{indent_}dataset={self.dataset!r}{end}' \
-               f'{indent_}aligned={str(self.aligned)!r}{end}' \
+               f'{indent_}cleaned={str(self.cleaned)!r}{end}' \
                f'{indent_}senses={end}' \
                f'{"".join([sense.pprint(indent + 1) for sense in self.senses])}'
 
@@ -498,7 +525,7 @@ class PlotPoint:
         yield 'type', self.type
         yield 'selected', self.selected
         yield 'dataset', self.dataset
-        yield 'aligned', self.aligned
+        yield 'cleaned', self.cleaned
         yield 'senses', [dict(sense) for sense in self.senses]
 
 

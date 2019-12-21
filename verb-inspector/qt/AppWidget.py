@@ -12,8 +12,8 @@ class AppWidget(QtWidgets.QWidget):
         super().__init__(parent)
         self.pp_container = pp
 
-        self.editPlotPointWidget = EditPlotPointWidget(self.pp_container)
         self.editClassWidget = EditClassWidget(self.pp_container.verbnet)
+        self.editPlotPointWidget = EditPlotPointWidget(self.pp_container, self.editClassWidget)
 
         self.hLine = QtUtils.QHLine()
 
