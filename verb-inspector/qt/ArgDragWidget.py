@@ -17,39 +17,32 @@ class ArgDragLabel(QtWidgets.QLabel):
     def reset(self):
         metric = QtGui.QFontMetrics(self.font())
         size = metric.size(QtCore.Qt.TextSingleLine, self.label_text)
-        offset = 14 if self.isSelected else 10
+        offset_x = 2
+        offset_y = 18 if self.isSelected else 16
 
-        image = QtGui.QImage(size.width() + offset, size.height() + offset, QtGui.QImage.Format_ARGB32_Premultiplied)
+        image = QtGui.QImage(size.width() + offset_x, size.height() + offset_y, QtGui.QImage.Format_ARGB32_Premultiplied)
         image.fill(QtGui.qRgba(0, 0, 0, 0))
 
-        font = QtGui.QFont('Helvetica', 7)
+        font = QtGui.QFont('Helvetica', 6)
         font.setStyleStrategy(QtGui.QFont.ForceOutline)
 
         painter = QtGui.QPainter()
         painter.begin(image)
         painter.setRenderHint(QtGui.QPainter.Antialiasing)
-
-        if self.arg.implicit:
-            painter.setBrush(QtCore.Qt.yellow)
-        else:
-            painter.setBrush(QtCore.Qt.white)
-
+        painter.setBrush(QtCore.Qt.yellow if self.arg.implicit else QtCore.Qt.white)
         painter.drawRoundedRect(QtCore.QRectF(0.5, 0.5, image.width() - 1, image.height() - 1), 25, 25,
                                 QtCore.Qt.RelativeSize)
-
         painter.setFont(font)
-
         painter.setBrush(QtCore.Qt.black)
-
-        painter.drawText(QtCore.QRect(QtCore.QPoint(offset / 2, offset / 2), size), QtCore.Qt.AlignCenter,
+        painter.drawText(QtCore.QRect(QtCore.QPoint(offset_x / 2, offset_y / 2 - 5), size), QtCore.Qt.AlignCenter,
                          self.label_text)
 
         if hasattr(self.arg, 'cls'):
-            font = QtGui.QFont('Helvetica', 5)
+            font = QtGui.QFont('Helvetica', 6)
             font.setStyleStrategy(QtGui.QFont.ForceOutline)
             painter.setFont(font)
             painter.setBrush(QtCore.Qt.white)
-            painter.drawText(QtCore.QRect(QtCore.QPoint(offset / 2, offset / 2 + 8), size), QtCore.Qt.AlignCenter,
+            painter.drawText(QtCore.QRect(QtCore.QPoint(offset_x / 2, offset_y / 2 + 5), size), QtCore.Qt.AlignCenter,
                              self.arg.cls)
 
         painter.end()
@@ -131,7 +124,6 @@ class ArgDragWidget(QtWidgets.QWidget):
             point = event.pos()
             i = self.getItemIndex(arg)
             j = self.getDropIndex(point)
-            print(f'{i} {j}')
 
             if i != j:
                 stor = self.args[i]
@@ -146,7 +138,7 @@ class ArgDragWidget(QtWidgets.QWidget):
                 i = self.getItemIndex(arg)
                 self.args[i].slot = self.args[i - 1].slot + 1 if i > 0 else 0
 
-            self.resetWidget()
+            self.resetWidget(self.args, self.currentSelection)
 
             if event.source() in self.children():
                 event.setDropAction(QtCore.Qt.MoveAction)

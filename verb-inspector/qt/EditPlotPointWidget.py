@@ -11,14 +11,18 @@ VERB_LIST_WIDTH = 225
 
 
 class EditPlotPointWidget(QtWidgets.QWidget):
-    def __init__(self, pp, editClassWidget, parent=None):
+    def __init__(self, pp, parent=None):
         super().__init__(parent)
-        self.editClassWidget = editClassWidget
+
+        self.editClassWidget = None
         self.plotpoints = pp
         self.currentPlotPoint = None
         self.currentPlotPoints = None
         self.currentSense = None
         self.currentClass = None
+
+        self.plotpointNameLabel = QtWidgets.QLabel()
+        self.selectedSenseLabel = QtWidgets.QLabel()
 
         self.plotpointsLabel = QtWidgets.QLabel('PlotPoints ▾')
 
@@ -29,7 +33,7 @@ class EditPlotPointWidget(QtWidgets.QWidget):
         self.plotPointCleanedCheckBox = QtWidgets.QCheckBox('Cleaned')
         self.plotPointCleanedCheckBox.stateChanged.connect(self.plotPointCleaned)
 
-        self.editArgWidget = EditArgWidget()
+        self.editArgWidget = EditArgWidget('pp')
 
         self.editArgsLayout = QtWidgets.QHBoxLayout()
         self.editArgsLayout.addWidget(self.editArgWidget)
@@ -37,14 +41,24 @@ class EditPlotPointWidget(QtWidgets.QWidget):
         self.classesList = QtWidgets.QListWidget()
         self.classesList.currentItemChanged.connect(self.updateClass)
 
+
         self.editClassButton = QtWidgets.QPushButton('Edit Class')
+        self.addClassButton = QtWidgets.QPushButton('Add Class')
+        self.removeClassButton = QtWidgets.QPushButton('Remove Class')
         self.selectSenseButton = QtWidgets.QPushButton('Select Sense')
         self.editClassButton.released.connect(self.editClass)
+        self.addClassButton.released.connect(self.addClass)
+        self.removeClassButton.released.connect(self.removeClass)
         self.selectSenseButton.released.connect(self.selectSense)
+
+        self.classesButtonsLayout = QtWidgets.QHBoxLayout()
+        self.classesButtonsLayout.addWidget(self.editClassButton)
+        self.classesButtonsLayout.addWidget(self.addClassButton)
+        self.classesButtonsLayout.addWidget(self.removeClassButton)
 
         self.classesListLayout = QtWidgets.QVBoxLayout()
         self.classesListLayout.addWidget(self.classesList)
-        self.classesListLayout.addWidget(self.editClassButton)
+        self.classesListLayout.addLayout(self.classesButtonsLayout)
 
         self.senseList = QtWidgets.QListWidget()
         self.senseList.currentItemChanged.connect(self.updateSense)
@@ -68,6 +82,8 @@ class EditPlotPointWidget(QtWidgets.QWidget):
         self.editSenseLayout.addLayout(self.compiledPredicateLayout)
 
         self.plotpointsEditLayout = QtWidgets.QVBoxLayout()
+        self.plotpointsEditLayout.addWidget(self.plotpointNameLabel)
+        self.plotpointsEditLayout.addWidget(self.selectedSenseLabel)
         self.plotpointsEditLayout.addLayout(self.editArgsLayout)
         self.plotpointsEditLayout.addLayout(self.editSenseLayout)
 
@@ -125,6 +141,7 @@ class EditPlotPointWidget(QtWidgets.QWidget):
     def clear(self):
         self.currentSense = None
         self.currentClass = None
+        self.plotpointNameLabel.setText('')
         self.senseList.clear()
         self.classesList.clear()
         self.compiledPredicateList.clear()
@@ -132,6 +149,8 @@ class EditPlotPointWidget(QtWidgets.QWidget):
 
     def setSelectedSense(self, sense):
         if sense:
+            str_ = str(sense)
+            self.selectedSenseLabel.setText(f'Selected Sense: {str_[0:50 if len(str_) > 50 else len(str_)]}...')
             for i in range(self.senseList.count()):
                 if self.senseList.item(i).text() == str(sense):
                     self.senseList.setCurrentItem(self.senseList.item(i))
@@ -143,6 +162,7 @@ class EditPlotPointWidget(QtWidgets.QWidget):
             self.currentPlotPoint = current.data(QtCore.Qt.UserRole)
             self.plotPointCleanedCheckBox.setChecked(self.currentPlotPoint.cleaned)
             self.clear()
+            self.plotpointNameLabel.setText(f'Current Plot Point: {self.currentPlotPoint.lemma}')
             self.updateSenseList()
             self.setSelectedSense(self.currentPlotPoint.selected)
         else:
@@ -152,7 +172,8 @@ class EditPlotPointWidget(QtWidgets.QWidget):
     def updateSense(self, current: QtWidgets.QListWidgetItem, previous: QtWidgets.QListWidgetItem):
         if current:
             self.currentSense = current.data(QtCore.Qt.UserRole)
-            self.editArgWidget.update()
+            self.editArgWidget.clear()
+            self.editArgWidget.update(self.currentSense)
             self.updateClassesList()
             self.updateCompiledPredicateList()
         else:
@@ -166,6 +187,7 @@ class EditPlotPointWidget(QtWidgets.QWidget):
     def selectSense(self):
         if self.currentSense:
             self.currentPlotPoint.selected = self.currentSense
+            self.setSelectedSense(self.currentPlotPoint.selected)
 
     @pyqtSlot()
     def compilePredicates(self):
@@ -178,5 +200,24 @@ class EditPlotPointWidget(QtWidgets.QWidget):
 
     @pyqtSlot()
     def editClass(self):
-        if self.currentClass:
+        if self.currentClass and self.editClassWidget:
             self.editClassWidget.selectClass(self.currentClass)
+
+    @pyqtSlot()
+    def addClass(self):
+        if self.editClassWidget:
+            self.currentSense.add_class(self.editClassWidget.getClass())
+            self.editArgWidget.update(self.currentSense)
+            self.updateClassesList()
+            self.updateCompiledPredicateList()
+
+    @pyqtSlot()
+    def removeClass(self):
+        if self.currentClass and self.editClassWidget:
+            self.currentSense.remove_class(self.plotpoints.verbnet.get_class(self.currentClass))
+            self.editArgWidget.update(self.currentSense)
+            self.updateClassesList()
+            self.updateCompiledPredicateList()
+
+    def setClassWidget(self, classWidget):
+        self.editClassWidget = classWidget

@@ -21,6 +21,7 @@ class EditClassWidget(QtWidgets.QWidget):
         self.currentPred = None
         self.currentClasses = None
 
+        self.plotPointWidget = None
         self.editArgWidget = EditArgWidget()
         self.classesLabel = QtWidgets.QLabel('Classes ▾')
 
@@ -107,6 +108,9 @@ class EditClassWidget(QtWidgets.QWidget):
             predItem.setFlags(predItem.flags() | QtCore.Qt.ItemIsEditable)
             self.predsList.addItem(predItem)
 
+    def getClass(self):
+        return self.currentClass
+
     def resetClass(self):
         self.editArgWidget.clear()
         self.currentClass = None
@@ -174,3 +178,10 @@ class EditClassWidget(QtWidgets.QWidget):
     def removeFilter(self):
         self.currentClasses = None
         self.updateClassesList()
+
+    @pyqtSlot()
+    def addClassInSense(self):
+        self.plotPointWidget.addClassInSense(self.currentClass)
+
+    def setPlotPointWidget(self, plotPointWidget):
+        self.editPlotPointWidget = plotPointWidget

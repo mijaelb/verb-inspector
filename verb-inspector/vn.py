@@ -603,18 +603,13 @@ class VerbNetSimplifiedClass(object):
         args = [] if args is None else args
         self.predicates.append(VerbNetPredicate(bool, name, args))
 
-    def add_arg(self, value='empty', implicit=False, slot=0, cls=''):
-        i = 0
+    def add_arg(self, value='empty', cls='', slot=0, implicit=False):
+        i = -1
         for i, arg in enumerate(self.args):
             if arg.slot > slot:
                 break
 
-        arg = VerbNetArg()
-        arg.value = value
-        arg.implicit = implicit
-        arg.slot = slot
-        arg.cls = cls
-        self.args.insert(i, arg)
+        self.args.insert(i + 1, VerbNetArg('', value, cls, slot, implicit))
 
     def remove_arg(self, arg):
         for i, arg_ in enumerate(self.args):
@@ -674,15 +669,26 @@ class VerbNetSimplifiedClass(object):
                 examples = self.vnclass.get_examples()
         return examples
 
-    def updateSlots(self):
+    def update_slots(self):
+        self.__update_slots()
+        self.reorder_slots()
+
+    def __update_slots(self):
         i, j = (-1, 0)
         while j < len(self.args):
             if i != -1:
                 if self.args[i].slot > self.args[j].slot:
                     self.args[i], self.args[j] = self.args[j], self.args[i]
-                    self.updateSlots()
+                    self.update_slots()
 
             i, j = (j, j + 1)
+
+    def reorder_slots(self):
+        prev_slot = 0
+        for arg in self.args:
+            if arg.slot - prev_slot > 1:
+                arg.slot = prev_slot + 1
+            prev_slot = arg.slot
 
     def pprint(self, indent=0, end='\n'):
         indent_in = utils.indent(indent)

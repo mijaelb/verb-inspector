@@ -30,9 +30,6 @@ class PlotPointType(Enum):
     EMPTY = ''
 
 
-
-# import spacy
-
 dirname = os.path.dirname(__file__)
 groupings_path = os.path.join(dirname, 'corpora/ontonotes/sense-inventories/')
 propbank_path = os.path.join(dirname, 'corpora/propbank/frames/')
@@ -91,20 +88,14 @@ class PlotPointContainer(object):
     def get_senses(self, lemma, dataset):
         pp_senses = []
         if dataset == Dataset.GR:
-            senses = self.groupings.get_senses(lemma)
-            for sense in senses.values():
-                pp_sense = self.get_sense_grouping(lemma, sense)
-                pp_senses.append(pp_sense)
+            for sense in self.groupings.get_senses(lemma).values():
+                pp_senses.append(self.get_sense_grouping(lemma, sense))
         elif dataset == Dataset.PB:
-            rolesets = self.propbank.get_rolesets(lemma)
-            for roleset in rolesets:
-                pp_sense = self.get_sense_propbank(lemma, roleset)
-                pp_senses.append(pp_sense)
+            for roleset in self.propbank.get_rolesets(lemma):
+                pp_senses.append(self.get_sense_propbank(lemma, roleset))
         elif dataset == Dataset.VN:
-            classes = self.verbnet.get_classes(lemma)
-            for cls in classes.values():
-                pp_class = self.get_class_verbnet(cls, lemma)
-                pp_senses.append(pp_class)
+            for cls in self.verbnet.get_classes(lemma).values():
+                pp_senses.append(self.get_class_verbnet(cls, lemma))
         return pp_senses
 
     def get_class_verbnet(self, cls, lemma):
@@ -114,12 +105,8 @@ class PlotPointContainer(object):
         pp_sense.mappings.pb = self.propbank.get_rolesets_ids_from_class(lemma, cls.id)
         pp_sense.mappings.gr = cls.get_member(lemma).get_gr()
         pp_sense.mappings.fn = cls.get_member(lemma).get_fn()
-        pp_sense.examples.vn = cls.get_examples()
-
-        arg_struct = self.get_args_verbnet(cls.id)
-        if arg_struct:
-            pp_sense.add_arg_struct(arg_struct)
-
+        pp_sense.add_examples(cls.get_examples())
+        pp_sense.add_arg_struct(self.get_args_verbnet(cls.id))
         pp_sense.squeeze()
         return pp_sense
 
@@ -131,16 +118,11 @@ class PlotPointContainer(object):
         pp_sense.mappings.gr = self.groupings.get_senses_ids_from_propbank(lemma, roleset.id)
         pp_sense.mappings.fn = list(
             dict.fromkeys(self.verbnet.get_fn_from_classes(lemma, pp_sense.mappings.vn) + roleset.get_fn()))
-        pp_sense.examples.pb = roleset.get_examples_text()
-
-        arg_struct = self.get_args_propbank(roleset.id)
-        if arg_struct:
-            pp_sense.add_arg_struct(arg_struct)
+        pp_sense.add_examples(roleset.get_examples_text())
+        pp_sense.add_arg_struct(self.get_args_propbank(roleset.id))
 
         for class_id in pp_sense.mappings.vn:
-            arg_struct = self.get_args_verbnet(class_id)
-            if arg_struct:
-                pp_sense.add_arg_struct(arg_struct)
+            pp_sense.add_arg_struct(self.get_args_verbnet(class_id))
 
         pp_sense.squeeze()
         return pp_sense
@@ -157,35 +139,24 @@ class PlotPointContainer(object):
         pp_sense.mappings.pb = sense.mappings.pb
         pp_sense.mappings.gr = [sense.id]
         pp_sense.mappings.fn = self.verbnet.get_fn_from_classes(lemma, pp_sense.mappings.vn) + sense.mappings.fn
-        pp_sense.examples.gr = sense.examples
+        pp_sense.add_examples(sense.examples)
 
         for roleset in pp_sense.mappings.pb:
-            arg_struct = self.get_args_propbank(roleset)
-            if arg_struct:
-                pp_sense.add_arg_struct(arg_struct)
+            pp_sense.add_arg_struct(self.get_args_propbank(roleset))
 
         for class_id in pp_sense.mappings.vn:
-            arg_struct = self.get_args_verbnet(class_id)
-            if arg_struct:
-                pp_sense.add_arg_struct(arg_struct)
+            pp_sense.add_arg_struct(self.get_args_verbnet(class_id))
 
         pp_sense.squeeze()
         return pp_sense
 
     def get_args_propbank(self, roleset):
         roles = self.propbank.get_roles(roleset)
-        if roles:
-            arg_struct = self.transform_roles(roles, roleset, Dataset.PB)
-            return arg_struct
-        return None
+        return self.transform_roles(roles, roleset, Dataset.PB) if roles else None
 
     def get_args_verbnet(self, class_id):
         cls = self.verbnet.get_class(class_id)
-        if cls:
-            args = cls.get_args()
-            arg_struct = self.transform_roles(args, class_id, Dataset.VN)
-            return arg_struct
-        return None
+        return self.transform_roles(cls.get_args(), class_id, Dataset.VN) if cls else None
 
     def transform_roles(self, roles, id, dataset):
         if dataset == Dataset.PB:
@@ -194,24 +165,18 @@ class PlotPointContainer(object):
                 slot = int(role.n) if role.n.isdigit() else len(arg_struct.args) - 1
                 if role.vnroles:
                     for vnrole in role.vnroles:
-                        arg = PlotPointArg(role.descr, role.f, vnrole.vntheta,
-                                           self.verbnet.get_complete_class_id(vnrole.vncls), slot, False, dataset)
-                        arg_struct.add_arg(arg)
+                        id = self.verbnet.get_complete_class_id(vnrole.vncls)
+                        arg_struct.add_arg(PlotPointArg(role.descr, role.f, vnrole.vntheta,
+                                                        id, slot, False, dataset))
                 else:
-                    arg = PlotPointArg(role.descr, role.f, '', '', slot, False, dataset)
-                    arg_struct.add_arg(arg)
+                    arg_struct.add_arg(PlotPointArg(role.descr, role.f, '', '', slot, False, dataset))
         elif dataset == Dataset.VN:
             id = self.verbnet.get_complete_class_id(id)
             arg_struct = PlotPointArgStruct(id, dataset)
             for i, role in enumerate(roles):
-                arg = PlotPointArg('', '', role.value, id, int(role.slot), role.implicit, dataset)
-                arg_struct.add_arg(arg)
+                arg_struct.add_arg(PlotPointArg('', '', role.value, id, int(role.slot), role.implicit, dataset))
 
         return arg_struct
-
-
-class CompiledPlotPoint(object):
-    ...
 
 
 @dataclass
@@ -274,10 +239,7 @@ class PlotPointArg:
         yield 'dataset', self.dataset
 
     def __str__(self):
-        if self.type == 'event':
-            return self.value
-        else:
-            return str(self.slot)
+        return self.value if self.type == 'event' else str(self.slot)
 
 
 @dataclass
@@ -292,15 +254,12 @@ class PlotPointPredicate:
         for vnarg in vnpred.args:
             dummy_arg = PlotPointArg()  # empty dummy predicate
             for arg in args:
-                print(f'{arg.value} {arg.cls}')
-                print(f'{vnarg.value} {class_id}')
                 if vnarg.type == 'event':
                     dummy_arg.fill_dict(dict(vnarg))
                     break
                 elif arg.value == vnarg.value and arg.cls == class_id:
                     dummy_arg = arg
                     break
-
             self.args.append(dummy_arg)
 
     def pprint(self, indent=0, end='\n'):
@@ -372,93 +331,102 @@ class PlotPointMapping:
 
 
 @dataclass
-class PlotPointExample:
-    wn: list = field(default_factory=list)
-    vn: list = field(default_factory=list)
-    fn: list = field(default_factory=list)
-    gr: list = field(default_factory=list)
-    pb: list = field(default_factory=list)
-
-    def pprint(self, indent=0, end='\n'):
-        indent_in = ''.join(['\t' for i in range(0, indent)])
-        indent_ = ''.join(['\t' for i in range(0, indent + 1)])
-        return f'{indent_in}{self.__class__.__name__}{end}' \
-               f'{indent_}wn={self.wn!r}{end}' \
-               f'{indent_}vn={self.vn!r}{end}' \
-               f'{indent_}fn={self.fn!r}{end}' \
-               f'{indent_}gr={self.gr!r}{end}' \
-               f'{indent_}pb={self.pb!r}{end}'
-
-    def __iter__(self):
-        yield 'wn', self.wn
-        yield 'vn', self.vn
-        yield 'fn', self.fn
-        yield 'gr', self.gr
-        yield 'pb', self.pb
-
-
-@dataclass
 class PlotPointSense:
     id: str
     dataset: str
     descr: str
     mappings: PlotPointMapping = field(default_factory=PlotPointMapping)
-    examples: PlotPointExample = field(default_factory=PlotPointExample)
+    examples: list = field(default_factory=list)
     arg_structs: List[PlotPointArgStruct] = field(default_factory=list)
     args: List[PlotPointArg] = field(default_factory=list)
 
-    def add_arg_struct(self, pp_args):
-        self.arg_structs.append(pp_args)
+    def add_class(self, cls):
+        if cls and cls.id not in self.mappings.vn:
+            self.mappings.vn.append(cls.id)
+            for example in cls.examples:
+                if not any([example == ie for ie in self.examples]):
+                    self.examples.append(example)
 
-    def add_arg(self, value='empty', implicit=False, slot=0, cls=''):
-        i = 0
+            arg_struct = PlotPointArgStruct(cls.id, Dataset.VN)
+            for i, arg in enumerate(cls.args):
+                arg_struct.add_arg(PlotPointArg('', '', arg.value, cls.id, int(arg.slot), arg.implicit, Dataset.VN))
+
+            self.arg_structs.append(arg_struct)
+            self.squeeze()
+
+    def remove_class(self, cls):
+        if cls and cls.id in self.mappings.vn:
+            self.mappings.vn = [cls_id for cls_id in self.mappings.vn if cls.id != cls_id]
+            self.examples = [example for example in enumerate(self.examples) if not any([example == ie for ie in cls.examples])]
+            self.arg_structs = [arg_struct for arg_struct in self.arg_structs if not all([arg.cls == cls.id for arg in arg_struct.args])]
+            for arg_struct in self.arg_structs:
+                arg_struct.args = [arg for arg in arg_struct.args if arg.cls != cls.id]
+            self.squeeze()
+            self.args = [arg for arg in self.args if arg.cls != cls.id]
+            print(str(self.args))
+
+    def add_arg_struct(self, arg_struct):
+        if arg_struct:
+            self.arg_structs.append(arg_struct)
+
+    def add_arg(self, value='empty', cls='', slot=0, implicit=False):
+        i = -1
         for i, arg in enumerate(self.args):
             if arg.slot > slot:
                 break
+        self.args.insert(i + 1, PlotPointArg('', '', value, cls, slot, implicit, Dataset.PP))
 
-        arg = PlotPointArg()
-        arg.value = value
-        arg.implicit = implicit
-        arg.slot = slot
-        arg.cls = cls
-        self.args.insert(i, arg)
+    def get_args(self):
+        return self.args
 
     def squeeze(self):
         args = []
         for arg_struct in self.arg_structs:
-            for arg_x in arg_struct.args:
-                args.append(arg_x)
+            args.extend(arg_struct.args)
 
-        args.sort(key=lambda x: str(x.slot), reverse=False)
-
+        self.args.clear()
         while len(args) != 0:
-            arg_x = args[0]
-            lst = args
-            for i, arg_y in enumerate(lst):
-                if arg_y != arg_x:
-                    if (arg_y.type == '' or arg_x.type == '') and arg_y.value == arg_x.value and arg_y.cls == arg_x.cls:
-                        arg_x.combine(arg_y)
-                        args.pop(i)
+            for arg_y in args:
+                if arg_y != args[0]:
+                    if (arg_y.type == '' or args[0].type == '') and (
+                            arg_y.value == args[0].value and arg_y.cls == args[0].cls):
+                        args[0].combine(arg_y)
+                        args.remove(arg_y)
 
-            self.args.append(arg_x)
+            self.args.append(args[0])
             args.pop(0)
 
         self.args.sort(key=lambda x: str(x.slot), reverse=False)
+        self.reorder_slots()
 
-    def updateSlots(self):
+    def update_slots(self):
+        self.__update_slots()
+        self.reorder_slots()
+
+    def __update_slots(self):
         i, j = (-1, 0)
         while j < len(self.args):
             if i != -1:
                 if self.args[i].slot > self.args[j].slot:
                     self.args[i], self.args[j] = self.args[j], self.args[i]
-                    self.updateSlots()
+                    self.update_slots()
 
             i, j = (j, j + 1)
+
+    def reorder_slots(self):
+        prev_slot = 0
+        for arg in self.args:
+            if arg.slot - prev_slot > 1:
+                arg.slot = prev_slot + 1
+            prev_slot = arg.slot
 
     def remove_arg(self, arg):
         for i, arg_ in enumerate(self.args):
             if arg == arg_:
                 return self.args.pop(i)
+
+    def add_examples(self, examples):
+        self.examples.extend(examples)
 
     def get_compiled_predicates(self, verbnet):
         compiled_preds = []
