@@ -50,8 +50,12 @@ class PlotPointContainer(object):
         self.bso = ''
         self.plotpoints = self.load_plotpoints()
 
-    def get_plotpoints(self):
-        return getattr(self, 'plotpoints', {})
+    def get_plotpoints(self, class_id=None):
+        plotpoints = getattr(self, 'plotpoints', {})
+        if class_id:
+            plotpoints = {lemma: plotpoint for lemma, plotpoint in plotpoints.items() if plotpoint.has_class(class_id)}
+
+        return plotpoints
 
     def load_plotpoints(self):
         plotpoints = self.get_plotpoints()
@@ -178,6 +182,10 @@ class PlotPointContainer(object):
 
         return arg_struct
 
+    def change_class_name(self, class_id, new_id):
+        if self.verbnet.change_class_name(class_id, new_id):
+            for pp in self.plotpoints.values():
+                pp.change_class_name(class_id, new_id)
 
 @dataclass
 class PlotPointArg:
@@ -198,8 +206,15 @@ class PlotPointArg:
         self.implicit = bool(dict.get('implicit', 'false'))
         self.dataset = dict.get('dataset', Dataset.EMPTY)
 
-    def pred_dict(self):
-        return {'type': self.type, 'slot': self.slot if self.slot != -1 else 'x'}
+    def set_class(self, class_id, sense=None, verbnet=None):
+        self.cls = class_id
+        cls = verbnet.get_class(class_id)
+        if not verbnet or cls:
+            if all([class_id != cls.id for class_id in sense.mappings.vn]):
+                sense.add_class(cls)
+
+    def change_class_name(self, class_id, new_id):
+        self.cls = new_id if self.cls == class_id else self.cls
 
     def combine(self, arg):
         self.descr = arg.descr if self.descr == '' else self.descr
@@ -209,6 +224,9 @@ class PlotPointArg:
         self.slot = arg.slot if self.slot == -1 else self.slot
         self.implicit = arg.implicit if not self.implicit else self.implicit
         self.dataset = Dataset.PP
+
+    def pred_dict(self):
+        return {'type': self.type, 'slot': self.slot if self.slot != -1 else 'x'}
 
     def pprint(self, indent=0, end='\n'):
         indent_in = ''.join(['\t' for i in range(0, indent)])
@@ -247,6 +265,10 @@ class PlotPointPredicate:
     bool: str = ''
     name: str = ''
     args: List[PlotPointArg] = field(default_factory=list)
+
+    def change_class_name(self, class_id, new_id):
+        for arg in self.args:
+            arg.change_class_name(class_id, new_id)
 
     def compile(self, args, vnpred, class_id):
         self.bool = vnpred.bool
@@ -289,6 +311,10 @@ class PlotPointArgStruct:
     def add_arg(self, pp_arg):
         self.args.append(pp_arg)
 
+    def change_class_name(self, class_id, new_id):
+        for arg in self.args:
+            arg.change_class_name(class_id, new_id)
+
     def pprint(self, indent=0, end='\n'):
         indent_in = ''.join(['\t' for i in range(0, indent)])
         indent_ = ''.join(['\t' for i in range(0, indent + 1)])
@@ -311,6 +337,11 @@ class PlotPointMapping:
     fn: list = field(default_factory=list)
     gr: list = field(default_factory=list)
     pb: list = field(default_factory=list)
+
+    def change_class_name(self, class_id, new_id):
+        for i, vn in enumerate(self.vn):
+            if vn == class_id:
+                self.vn[i] = new_id
 
     def pprint(self, indent=0, end='\n'):
         indent_in = ''.join(['\t' for i in range(0, indent)])
@@ -340,6 +371,13 @@ class PlotPointSense:
     arg_structs: List[PlotPointArgStruct] = field(default_factory=list)
     args: List[PlotPointArg] = field(default_factory=list)
 
+    def has_class(self, class_id):
+        for cls in self.mappings.vn:
+            if cls == class_id:
+                return True
+
+        return False
+
     def add_class(self, cls):
         if cls and cls.id not in self.mappings.vn:
             self.mappings.vn.append(cls.id)
@@ -354,9 +392,17 @@ class PlotPointSense:
             self.arg_structs.append(arg_struct)
             self.squeeze()
 
+    def change_class_name(self, class_id, new_id):
+        self.mappings.change_class_name(class_id, new_id)
+        for arg_struct in self.arg_structs:
+            arg_struct.change_class_name(class_id, new_id)
+
+        for arg in self.args:
+            arg.change_class_name(class_id, new_id)
+
     def remove_class(self, cls):
         if cls and cls.id in self.mappings.vn:
-            self.mappings.vn = [cls_id for cls_id in self.mappings.vn if cls.id != cls_id]
+            self.mappings.vn = [class_id for class_id in self.mappings.vn if cls.id != class_id]
             self.examples = [example for example in enumerate(self.examples) if not any([example == ie for ie in cls.examples])]
             self.arg_structs = [arg_struct for arg_struct in self.arg_structs if not all([arg.cls == cls.id for arg in arg_struct.args])]
             for arg_struct in self.arg_structs:
@@ -468,13 +514,20 @@ class PlotPointSense:
 
 @dataclass
 class PlotPoint:
-    ''' A data class that stores the senses of plot points and selects the sense'''
+    ''' A data class that stores the senses of plot points and selects the sense '''
     lemma: str
     type: PlotPointType = PlotPointType.VERB
     selected: PlotPointSense = None
     dataset: str = ''
     cleaned: bool = False
     senses: List[PlotPointSense] = field(default_factory=list)
+
+    def has_class(self, class_id):
+        return any([sense.has_class(class_id) for sense in self.senses])
+
+    def change_class_name(self, class_id, new_id):
+        for sense in self.senses:
+            sense.change_class_name(class_id, new_id)
 
     def pprint(self, indent=0, end='\n'):
         indent_in = ''.join(['\t' for i in range(0, indent)])

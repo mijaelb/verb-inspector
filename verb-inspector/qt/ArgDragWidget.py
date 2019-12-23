@@ -14,6 +14,18 @@ class ArgDragLabel(QtWidgets.QLabel):
         self.label_text = f'{self.arg.slot}: {self.arg.value}' if self.arg.value else f'{self.arg.slot}: {self.arg.type}'
         self.reset()
 
+    def setDescr(self, descr):
+        self.arg.descr = descr
+
+    def setClass(self, cls, sense=None, vn=None):
+        self.arg.set_class(cls, sense, vn)
+
+    def setValue(self, value):
+        self.arg.value = value
+
+    def setSlot(self, slot):
+        self.arg.slot = slot
+
     def reset(self):
         metric = QtGui.QFontMetrics(self.font())
         size = metric.size(QtCore.Qt.TextSingleLine, self.label_text)
@@ -24,6 +36,7 @@ class ArgDragLabel(QtWidgets.QLabel):
         image.fill(QtGui.qRgba(0, 0, 0, 0))
 
         font = QtGui.QFont('Helvetica', 6)
+        font.setBold(True)
         font.setStyleStrategy(QtGui.QFont.ForceOutline)
 
         painter = QtGui.QPainter()

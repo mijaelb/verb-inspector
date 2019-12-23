@@ -13,10 +13,10 @@ _FL_STYLESHEET = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'resou
 
 
 class EditClassWidget(QtWidgets.QWidget):
-    def __init__(self, vn, parent=None):
+    def __init__(self, pp_container, parent=None):
         super().__init__(parent)
-        self.verbnet = vn
-        self.filename = self.verbnet.json_path
+        self.pp_container = pp_container
+        self.filename = self.pp_container.verbnet.json_path
         self.currentClass = None
         self.currentPred = None
         self.currentClasses = None
@@ -93,7 +93,7 @@ class EditClassWidget(QtWidgets.QWidget):
 
     def updateClassesList(self):
         self.classesList.clear()
-        classes = self.verbnet.get_classes() if not self.currentClasses else self.currentClasses
+        classes = self.pp_container.verbnet.get_classes() if not self.currentClasses else self.currentClasses
         for cls in classes.values():
             classItem = QtWidgets.QListWidgetItem(cls.id)
             classItem.setData(QtCore.Qt.UserRole, cls)
@@ -102,7 +102,7 @@ class EditClassWidget(QtWidgets.QWidget):
 
     def updatePredsList(self):
         self.predsList.clear()
-        for pred in self.verbnet.get_all_predicates_name():
+        for pred in self.pp_container.verbnet.get_all_predicates_name():
             predItem = QtWidgets.QListWidgetItem(pred)
             predItem.setData(QtCore.Qt.UserRole, pred)
             predItem.setFlags(predItem.flags() | QtCore.Qt.ItemIsEditable)
@@ -138,20 +138,23 @@ class EditClassWidget(QtWidgets.QWidget):
     def updateClass(self, current):
         if current:
             cls = current.data(QtCore.Qt.UserRole)
-            cls.id = current.text()
+            self.pp_container.change_class_name(cls.id, current.text())
+            self.editArgWidget.update(self.currentClass)
+            if self.editPlotPointWidget:
+                self.editPlotPointWidget.refreshClasses()
 
     @pyqtSlot(QtWidgets.QListWidgetItem)
     def updatePred(self, current):
         if current:
             pred = current.data(QtCore.Qt.UserRole)
-            self.verbnet.replace_predicate_name(pred, current.text())
+            self.pp_container.verbnet.replace_predicate_name(pred, current.text())
             self.editPredWidget.updateClass(self.currentClass)
             self.updatePredsList()
 
     @pyqtSlot()
     def save(self):
         if self.filename:
-            self.verbnet.save(self.filename)
+            self.pp_container.verbnet.save(self.filename)
         else:
             self.saveAs()
 
@@ -159,19 +162,19 @@ class EditClassWidget(QtWidgets.QWidget):
     def saveAs(self):
         name = QtWidgets.QFileDialog.getSaveFileName(self, 'Save File')
         if name:
-            self.verbnet.save(name[0])
+            self.pp_container.verbnet.save(name[0])
             self.filename = name[0]
 
     @pyqtSlot()
     def open(self):
         name = QtWidgets.QFileDialog.getOpenFileName(self, 'Open File')
         if name:
-            self.verbnet.load(name[0])
+            self.pp_container.verbnet.load(name[0])
 
     @pyqtSlot()
     def filterByPredicate(self):
         if self.currentPred:
-            self.currentClasses = self.verbnet.get_classes_by_predicate(self.currentPred)
+            self.currentClasses = self.pp_container.verbnet.get_classes_by_predicate(self.currentPred)
             self.updateClassesList()
 
     @pyqtSlot()

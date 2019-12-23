@@ -8,8 +8,9 @@ from utils import utils
 
 
 class EditArgWidget(QtWidgets.QWidget):
-    def __init__(self, dataset='vn', parent=None):
+    def __init__(self, dataset='vn', pp_container=None, parent=None):
         super().__init__(parent)
+        self.pp_container = pp_container
         self.dataset = dataset
         self.currentArg = None
         self.currentObj = None
@@ -25,10 +26,10 @@ class EditArgWidget(QtWidgets.QWidget):
         self.classLine = QtWidgets.QLineEdit()
         self.argsImplicitCheckBox = QtWidgets.QCheckBox('Implicit')
 
-        self.descrLine.textChanged.connect(self.changeDescrText)
-        self.nameLine.textChanged.connect(self.changeArgText)
-        self.classLine.textChanged.connect(self.changeClassText)
-        self.argsSlot.valueChanged.connect(self.changeArgSlot)
+        self.descrLine.textChanged.connect(self.changeDescr)
+        self.nameLine.textChanged.connect(self.changeValue)
+        self.classLine.textChanged.connect(self.changeClass)
+        self.argsSlot.valueChanged.connect(self.changeSlot)
         self.argsImplicitCheckBox.stateChanged.connect(self.implicitUpdate)
 
         self.addArgButton = QtWidgets.QPushButton('Add')
@@ -41,15 +42,13 @@ class EditArgWidget(QtWidgets.QWidget):
 
         if dataset == 'vn':
             self.argsEditLayout.addWidget(self.nameLabel, 0, 0)
-            self.argsEditLayout.addWidget(self.classLabel, 1, 0)
-            self.argsEditLayout.addWidget(self.slotLabel, 2, 0)
+            self.argsEditLayout.addWidget(self.slotLabel, 1, 0)
             self.argsEditLayout.addWidget(self.nameLine, 0, 1, 1, 2)
-            self.argsEditLayout.addWidget(self.classLine, 1, 1, 1, 2)
-            self.argsEditLayout.addWidget(self.argsSlot, 2, 1, 1, 2)
-            self.argsEditLayout.addWidget(self.argsImplicitCheckBox, 3, 1, 1, 1)
-            self.argsEditLayout.addWidget(self.addArgButton, 4, 0, 1, 1)
-            self.argsEditLayout.addWidget(self.removeArgButton, 4, 1, 1, 1)
-            self.argsEditLayout.addWidget(self.vLine, 0, 3, 5, 1)
+            self.argsEditLayout.addWidget(self.argsSlot, 1, 1, 1, 2)
+            self.argsEditLayout.addWidget(self.argsImplicitCheckBox, 2, 1, 1, 1)
+            self.argsEditLayout.addWidget(self.addArgButton, 3, 0, 1, 1)
+            self.argsEditLayout.addWidget(self.removeArgButton, 3, 1, 1, 1)
+            self.argsEditLayout.addWidget(self.vLine, 0, 3, 4, 1)
         elif dataset == 'pp':
             self.argsEditLayout.addWidget(self.descrLabel, 0, 0)
             self.argsEditLayout.addWidget(self.nameLabel, 1, 0)
@@ -100,9 +99,8 @@ class EditArgWidget(QtWidgets.QWidget):
             args = self.currentObj.get_args()
             self.argDragWidget.resetWidget(args, self.currentArg)
             self.updateArg(self.currentArg)
-            if args:
-                self.argsSlot.setMinimum(0)
-                self.argsSlot.setMaximum(args[-1].slot + 1)
+            self.argsSlot.setMinimum(0)
+            self.argsSlot.setMaximum(args[-1].slot + 1 if args else 0)
 
     def clear(self):
         self.currentObj = None
@@ -147,28 +145,29 @@ class EditArgWidget(QtWidgets.QWidget):
             self.resetArg()
 
     @pyqtSlot(str)
-    def changeArgText(self, text):
+    def changeValue(self, text):
         if self.currentObj and self.currentArg:
-            self.currentArg.arg.value = text
+            self.currentArg.setValue(text)
             self.update()
 
     @pyqtSlot(str)
-    def changeDescrText(self, text):
+    def changeDescr(self, text):
         if self.currentObj and self.currentArg:
-            self.currentArg.arg.descr = text
+            self.currentArg.setDescr(text)
             self.update()
 
     @pyqtSlot(str)
-    def changeClassText(self, text):
-        if self.currentObj and self.currentArg:
-            self.currentArg.arg.cls = text
+    def changeClass(self, text):
+        if self.pp_container and self.currentObj and self.currentArg:
+            self.currentArg.setClass(text, self.currentObj, self.pp_container.verbnet)
+            self.parent().updateClassesList()
             self.update()
 
     @pyqtSlot(int)
-    def changeArgSlot(self, num):
+    def changeSlot(self, num):
         if self.currentObj and self.currentArg:
             if len(self.currentObj.get_args()) > num:
-                self.currentArg.arg.slot = num
+                self.currentArg.setSlot(num)
             self.currentObj.update_slots()
             self.update()
 

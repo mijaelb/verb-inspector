@@ -11,11 +11,11 @@ VERB_LIST_WIDTH = 225
 
 
 class EditPlotPointWidget(QtWidgets.QWidget):
-    def __init__(self, pp, parent=None):
+    def __init__(self, pp_container, parent=None):
         super().__init__(parent)
+        self.pp_container = pp_container
 
         self.editClassWidget = None
-        self.plotpoints = pp
         self.currentPlotPoint = None
         self.currentPlotPoints = None
         self.currentSense = None
@@ -33,7 +33,12 @@ class EditPlotPointWidget(QtWidgets.QWidget):
         self.plotPointCleanedCheckBox = QtWidgets.QCheckBox('Cleaned')
         self.plotPointCleanedCheckBox.stateChanged.connect(self.plotPointCleaned)
 
-        self.editArgWidget = EditArgWidget('pp')
+        self.plotPointUnFilterButton = QtWidgets.QPushButton('Unfilter')
+        self.plotPointUnFilterButton.released.connect(self.unfilter)
+        self.plotPointFilterByClassButton = QtWidgets.QPushButton('Filter By Class')
+        self.plotPointFilterByClassButton.released.connect(self.filterByClass)
+
+        self.editArgWidget = EditArgWidget('pp', self.pp_container, self)
 
         self.editArgsLayout = QtWidgets.QHBoxLayout()
         self.editArgsLayout.addWidget(self.editArgWidget)
@@ -91,6 +96,8 @@ class EditPlotPointWidget(QtWidgets.QWidget):
         self.plotpointsListLayout.addWidget(self.plotpointsLabel)
         self.plotpointsListLayout.addWidget(self.plotPointsList)
         self.plotpointsListLayout.addWidget(self.plotPointCleanedCheckBox)
+        self.plotpointsListLayout.addWidget(self.plotPointFilterByClassButton)
+        self.plotpointsListLayout.addWidget(self.plotPointUnFilterButton)
 
         self.layout = QtWidgets.QHBoxLayout()
         self.layout.addLayout(self.plotpointsListLayout)
@@ -100,17 +107,28 @@ class EditPlotPointWidget(QtWidgets.QWidget):
         self.initUI()
 
     def initUI(self):
+        font = QtGui.QFont('Helvetica', 10)
+        font.setBold(True)
+        self.plotpointNameLabel.setFont(font)
+        self.selectedSenseLabel.setFont(font)
         self.plotPointsList.setStyleSheet('QLabel { color: palette(midlight); }')
         self.plotPointsList.setMaximumWidth(self.plotPointsList.sizeHint().width())
         self.layout.setAlignment(QtCore.Qt.AlignTop | QtCore.Qt.AlignLeft)
 
+    def refreshClasses(self):
+        if self.currentPlotPoint and self.currentSense:
+            self.updateClassesList()
+            self.editArgWidget.update(self.currentSense)
+
     def updatePlotPointsList(self):
         self.plotPointsList.clear()
-        plotpoints = self.plotpoints.get_plotpoints() if not self.currentPlotPoints else self.currentPlotPoints
+        plotpoints = self.pp_container.get_plotpoints() if not self.currentPlotPoints else self.currentPlotPoints
         for pp in plotpoints.values():
             ppItem = QtWidgets.QListWidgetItem(pp.lemma)
             ppItem.setData(QtCore.Qt.UserRole, pp)
             ppItem.setFlags(ppItem.flags() | QtCore.Qt.ItemIsEditable)
+            if pp.cleaned:
+                ppItem.setBackground(QtGui.QColor.green())
             self.plotPointsList.addItem(ppItem)
 
     def updateSenseList(self):
@@ -133,7 +151,7 @@ class EditPlotPointWidget(QtWidgets.QWidget):
     def updateCompiledPredicateList(self):
         if self.currentSense:
             self.compiledPredicateList.clear()
-            for pred in self.currentSense.get_compiled_predicates(self.plotpoints.verbnet):
+            for pred in self.currentSense.get_compiled_predicates(self.pp_container.verbnet):
                 predItem = QtWidgets.QListWidgetItem(str(pred))
                 predItem.setData(QtCore.Qt.UserRole, pred)
                 self.compiledPredicateList.addItem(predItem)
@@ -214,10 +232,22 @@ class EditPlotPointWidget(QtWidgets.QWidget):
     @pyqtSlot()
     def removeClass(self):
         if self.currentClass and self.editClassWidget:
-            self.currentSense.remove_class(self.plotpoints.verbnet.get_class(self.currentClass))
+            self.currentSense.remove_class(self.pp_container.verbnet.get_class(self.currentClass))
             self.editArgWidget.update(self.currentSense)
             self.updateClassesList()
             self.updateCompiledPredicateList()
+
+    @pyqtSlot()
+    def filterByClass(self):
+        cls = self.editClassWidget.getClass()
+        if cls:
+            self.currentPlotPoints = self.pp_container.get_plotpoints(cls.id)
+            self.updatePlotPointsList()
+
+    @pyqtSlot()
+    def unfilter(self):
+        self.currentPlotPoints = None
+        self.updatePlotPointsList()
 
     def setClassWidget(self, classWidget):
         self.editClassWidget = classWidget

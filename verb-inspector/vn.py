@@ -38,19 +38,19 @@ class VerbNetBase(object):
         return classes
 
     def get_complete_class_id(self, id):
-        for cls_id in self.classes:
-            tupl = re.match(r'(\w+)-(.*)', cls_id)
+        for class_id in self.classes:
+            tupl = re.match(r'(\w+)-(.*)', class_id)
             if tupl:
                 if tupl[2] == id:
-                    return cls_id
+                    return class_id
         return id
 
     def get_complete_classes_ids(self, classes_ids):
-        cls_ids = []
+        class_ids = []
         for cls in classes_ids:
-            cls_ids.append(self.get_complete_class_id(cls))
+            class_ids.append(self.get_complete_class_id(cls))
 
-        return cls_ids
+        return class_ids
 
     def get_classes_from_grouping(self, lemma, sense_id):
         classes = {}
@@ -67,14 +67,14 @@ class VerbNetBase(object):
     def get_fn_from_classes(self, lemma, classes):
         fn = []
         if classes:
-            for cls_id in classes:
-                cls = self.get_class(cls_id)
+            for class_id in classes:
+                cls = self.get_class(class_id)
                 try:
                     member = cls.get_member(lemma)
                     if member:
                         fn.extend(member.fnframe)
                 except:
-                    print(f'get_fn_from_class({lemma},{cls_id}) not found!')
+                    print(f'get_fn_from_class({lemma},{class_id}) not found!')
 
         return list(dict.fromkeys(fn))
 
@@ -140,12 +140,22 @@ class VerbNetBase(object):
 
         return []
 
+    def change_class_name(self, class_id, new_id):
+        cls = self.get_class(class_id)
+        if cls:
+            cls.id = new_id
+            cls.change_class_name(class_id, new_id)
+            self.classes = {key if key != class_id else new_id: cls_ for key, cls_ in self.classes.items()}
+            return True
+
+        return False
+
     def __str__(self):
         return str(self.classes.keys())
 
     def __iter__(self):
-        for cls_id, cls in self.classes.items():
-            yield cls_id, dict(cls)
+        for class_id, cls in self.classes.items():
+            yield class_id, dict(cls)
 
 
 class VerbNet(VerbNetBase):
@@ -437,6 +447,10 @@ class VerbNetArg:
         self.slot = dict.get('slot', -1)
         self.implicit = bool(dict.get('implicit', 'false'))
 
+    def change_class_name(self, class_id, new_id):
+        if self.cls == class_id:
+            self.cls = new_id
+
     def pprint(self, indent=0, end='\n'):
         indent_in = utils.indent(indent)
         indent_ = utils.indent(indent + 1)
@@ -521,6 +535,10 @@ class VerbNetPredicate(object):
                 role_args.append(arg.value)
         return role_args
 
+    def change_class_name(self, class_id, new_id):
+        for arg in self.args:
+            arg.change_class_name(class_id, new_id)
+
     def pprint(self, indent=0, end='\n'):
         indent_in = utils.indent(indent)
         indent_ = utils.indent(indent + 1)
@@ -569,11 +587,11 @@ class VerbNetSimplified(VerbNetBase):
     def load_classes(self):
         classes = {}
         if self.json:
-            classes = {cls_id: VerbNetSimplifiedClass(self.vn.classes[cls_id], cls)
-                       for cls_id, cls in self.json.items()}
+            classes = {class_id: VerbNetSimplifiedClass(self.vn.classes[class_id], cls)
+                       for class_id, cls in self.json.items()}
         else:
-            classes = {cls_id: VerbNetSimplifiedClass(cls)
-                       for cls_id, cls in self.vn.get_classes().items()}
+            classes = {class_id: VerbNetSimplifiedClass(cls)
+                       for class_id, cls in self.vn.get_classes().items()}
         return classes
 
     def pprint(self, indent=0, end='\n'):
@@ -585,8 +603,8 @@ class VerbNetSimplified(VerbNetBase):
                f'{"".join([cls.pprint(indent + 2, end) for cls in self.classes.values()])}'
 
     def __iter__(self):
-        for cls_id, cls in self.classes.items():
-            yield cls_id, dict(cls)
+        for class_id, cls in self.classes.items():
+            yield class_id, dict(cls)
 
 
 class VerbNetSimplifiedClass(object):
@@ -598,6 +616,13 @@ class VerbNetSimplifiedClass(object):
         self.predicates = self.get_predicates()
         self.members = self.get_members()
         self.examples = self.get_examples()
+
+    def change_class_name(self, class_id, new_id):
+        for arg in self.args:
+            arg.change_class_name(class_id, new_id)
+
+        for pred in self.predicates:
+            pred.change_class_name(class_id, new_id)
 
     def add_pred(self, bool='', name='', args=None):
         args = [] if args is None else args

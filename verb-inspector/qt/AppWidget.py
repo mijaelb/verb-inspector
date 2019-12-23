@@ -8,11 +8,11 @@ import qt.QtUtils as QtUtils
 
 
 class AppWidget(QtWidgets.QWidget):
-    def __init__(self, pp, parent=None):
+    def __init__(self, pp_container, parent=None):
         super().__init__(parent)
-        self.pp_container = pp
+        self.pp_container = pp_container
 
-        self.editClassWidget = EditClassWidget(self.pp_container.verbnet)
+        self.editClassWidget = EditClassWidget(self.pp_container)
         self.editPlotPointWidget = EditPlotPointWidget(self.pp_container)
         self.editClassWidget.setPlotPointWidget(self.editPlotPointWidget)
         self.editPlotPointWidget.setClassWidget(self.editClassWidget)
