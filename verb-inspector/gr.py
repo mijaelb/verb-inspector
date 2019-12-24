@@ -38,7 +38,9 @@ class Groupings(object):
         if not inventories:
             for filename, soup in self.files_soup.items():
                 if soup.inventory:
-                    inventories[soup.inventory.attrs['lemma']] = GroupingInventory(filename, soup.inventory)
+                    tupl = re.match(r'(.+)-(\w)', soup.inventory.attrs['lemma'])
+                    lemma, type = (utils.norm(tupl[1]), tupl[2])
+                    inventories[f'{lemma}-{type}'] = GroupingInventory(filename, soup.inventory)
         if type:
             inventories = {key: inventories[key] for key in inventories if inventories[key].type == type}
 
@@ -65,7 +67,7 @@ class Groupings(object):
         if lemma + '-' + type in self.inventories:
             return self.inventories[lemma + '-' + type].senses
 
-        return None
+        return {}
 
     def get_pb_ids(self, lemma, type='v'):
         pb_ids = []
@@ -98,7 +100,7 @@ class Groupings(object):
 class GroupingInventory(object):
     def __init__(self, filename, soup):
         tupl = re.match(r'(.+)-(\w)', soup.attrs['lemma'])
-        self.lemma, self.type = (tupl[1], tupl[2])
+        self.lemma, self.type = (utils.norm(tupl[1]), tupl[2])
         self.filename = filename
         self.soup = soup
         self.senses = self.get_senses()
@@ -135,7 +137,7 @@ class GroupingSense(object):
     def __init__(self, lemma, filename, soup):
         self.soup = soup
         self.n = soup.attrs.get('n', '')
-        self.lemma = lemma
+        self.lemma = utils.norm(lemma)
         self.id = self.lemma + '.' + ('0' + self.n if len(self.n) < 2 else self.n)
         self.name = soup.attrs.get('name', '')
         self.filename = filename
@@ -181,36 +183,27 @@ class GroupingSense(object):
     def __str__(self):
         return self.id
 
-
-@dataclass
-class WordNetRef:
-    lemma: str
-    version: str
-    values: list
-
-
 @dataclass
 class GroupingMappings:
     gr: list = field(default_factory=list)
-    wn: List[WordNetRef] = field(default_factory=list)
+    wn: list = field(default_factory=list)
     pb: list = field(default_factory=list)
     vn: list = field(default_factory=list)
     fn: list = field(default_factory=list)
 
     def add_wn(self, lemma, version, values):
-        values = [value.lower() for value in values]
-        self.wn.append(WordNetRef(lemma.lower(), version, values))
+        self.wn.append({'lemma': lemma.lower(), 'version': version, 'values': [value.lower() for value in values]})
 
     def fill(self, mapping_name, values):
         values = [value.lower() for value in values]
         if mapping_name == 'pb':
-            self.pb = values
+            self.pb = utils.norm(values, False)
         elif mapping_name == 'vn':
             self.vn = values
         elif mapping_name == 'fn':
-            self.fn = values
+            self.fn = utils.norm(values)
         elif mapping_name == 'gr_sense':
-            self.gr = values
+            self.gr = utils.norm(values, False)
 
 
 if __name__ == '__main__':

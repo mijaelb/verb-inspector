@@ -165,15 +165,16 @@ def norm_role(role):
     return role
 
 
-def norm(text):
+def norm(text, remove_punct=True):
     if text:
         if isinstance(text, dict):
-            text = {key.lower(): norm(val) for key, val in text.items()}
+            text = {key.lower(): norm(val, remove_punct) for key, val in text.items()}
         elif isinstance(text, list):
-            text = [norm(val) for val in text]
+            text = [norm(val, remove_punct) for val in text]
         else:
-            text = text.lstrip().rstrip().replace(' ', '_').replace('?', '').lower()
-            text = remove_punctuations(text)
+            text = text.lstrip().rstrip().replace(' ', '_').replace('-', '_').replace('?', '').lower()
+            if remove_punct:
+                text = remove_punctuations(text)
     return text
 
 

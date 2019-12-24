@@ -388,7 +388,7 @@
             <MEMBERS>
                 <MEMBER fnframe="" grouping="" name="airmail" wn="airmail%2:32:00"/>
                 <MEMBER fnframe="" grouping="express.03" name="express" wn="express%2:32:09"/>
-                <MEMBER fnframe="" grouping="" name="FedEx" wn=""/>
+                <MEMBER fnframe="" grouping="" name="fedex" wn=""/>
                 <MEMBER fnframe="Sending" grouping="" name="forward" wn="forward%2:38:00"/>
                 <MEMBER fnframe="Giving" grouping="hand.01" name="hand" wn="hand%2:40:00"/>
                 <MEMBER fnframe="Sending" grouping="mail.01" name="mail" wn="mail%2:35:00 mail%2:32:00"/>

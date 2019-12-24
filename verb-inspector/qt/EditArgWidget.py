@@ -24,12 +24,15 @@ class EditArgWidget(QtWidgets.QWidget):
         self.nameLine = QtWidgets.QLineEdit()
         self.argsSlot = QtWidgets.QSpinBox()
         self.classLine = QtWidgets.QLineEdit()
+        self.implicitValuesText = QtWidgets.QTextEdit()
+
         self.argsImplicitCheckBox = QtWidgets.QCheckBox('Implicit')
 
         self.descrLine.textChanged.connect(self.changeDescr)
         self.nameLine.textChanged.connect(self.changeValue)
         self.classLine.textChanged.connect(self.changeClass)
         self.argsSlot.valueChanged.connect(self.changeSlot)
+        self.implicitValuesText.textChanged.connect(self.changeImplicitValues)
         self.argsImplicitCheckBox.stateChanged.connect(self.implicitUpdate)
 
         self.addArgButton = QtWidgets.QPushButton('Add')
@@ -59,9 +62,10 @@ class EditArgWidget(QtWidgets.QWidget):
             self.argsEditLayout.addWidget(self.classLine, 2, 1, 1, 2)
             self.argsEditLayout.addWidget(self.argsSlot, 3, 1, 1, 2)
             self.argsEditLayout.addWidget(self.argsImplicitCheckBox, 4, 1, 1, 1)
-            self.argsEditLayout.addWidget(self.addArgButton, 5, 0, 1, 1)
-            self.argsEditLayout.addWidget(self.removeArgButton, 5, 1, 1, 1)
-            self.argsEditLayout.addWidget(self.vLine, 0, 3, 6, 1)
+            self.argsEditLayout.addWidget(self.implicitValuesText, 5, 0, 3, 3)
+            self.argsEditLayout.addWidget(self.addArgButton, 8, 0, 1, 1)
+            self.argsEditLayout.addWidget(self.removeArgButton, 8, 1, 1, 1)
+            self.argsEditLayout.addWidget(self.vLine, 0, 3, 9, 1)
 
         self.argDragWidget = ArgDragWidget(None)
         self.argDragWidget.selected.connect(self.selectArg)
@@ -106,7 +110,7 @@ class EditArgWidget(QtWidgets.QWidget):
         self.currentObj = None
         self.currentArg = None
         self.resetArg()
-        self.argDragWidget.resetWidget()
+        self.argDragWidget.clearWidget()
         self.argsSlot.setMinimum(0)
         self.argsSlot.setMaximum(0)
         self.descrLine.setEnabled(False)
@@ -114,6 +118,7 @@ class EditArgWidget(QtWidgets.QWidget):
         self.classLine.setEnabled(False)
         self.argsSlot.setEnabled(False)
         self.argsImplicitCheckBox.setEnabled(False)
+        self.implicitValuesText.setEnabled(False)
 
     def resetArg(self):
         self.descrLine.setText('')
@@ -121,19 +126,34 @@ class EditArgWidget(QtWidgets.QWidget):
         self.classLine.setText('')
         self.argsSlot.setValue(0)
         self.argsImplicitCheckBox.setChecked(False)
+        self.implicitValuesText.setText('')
 
     def updateArg(self, current):
         if current:
             self.currentArg = current
+            self.descrLine.blockSignals(True)
+            self.nameLine.blockSignals(True)
+            self.classLine.blockSignals(True)
+            self.implicitValuesText.blockSignals(True)
             self.descrLine.setText(self.currentArg.arg.descr if self.dataset == 'pp' else '')
             self.nameLine.setText(self.currentArg.arg.value)
             self.classLine.setText(self.currentArg.arg.cls)
             self.argsSlot.setValue(self.currentArg.arg.slot)
+            if len(self.currentArg.arg.implicit_values) > 1:
+                implicit_values = ','.join(self.currentArg.arg.implicit_values)
+            else:
+                implicit_values = ''.join(self.currentArg.arg.implicit_values)
+            self.implicitValuesText.setText(implicit_values)
             self.argsImplicitCheckBox.setChecked(self.currentArg.arg.implicit)
+            self.descrLine.blockSignals(False)
+            self.nameLine.blockSignals(False)
+            self.classLine.blockSignals(False)
+            self.implicitValuesText.blockSignals(False)
             self.descrLine.setEnabled(True)
             self.nameLine.setEnabled(True)
             self.classLine.setEnabled(True)
             self.argsSlot.setEnabled(True)
+            self.implicitValuesText.setEnabled(True)
             self.argsImplicitCheckBox.setEnabled(True)
 
     @pyqtSlot(ArgDragLabel)
@@ -166,10 +186,19 @@ class EditArgWidget(QtWidgets.QWidget):
     @pyqtSlot(int)
     def changeSlot(self, num):
         if self.currentObj and self.currentArg:
-            if len(self.currentObj.get_args()) > num:
+            if self.currentObj.get_args()[-1].slot + 1 >= num:
                 self.currentArg.setSlot(num)
             self.currentObj.update_slots()
             self.update()
+
+    @pyqtSlot()
+    def changeImplicitValues(self):
+        if self.currentObj and self.currentArg:
+            values = ' '.join(self.implicitValuesText.toPlainText().split(',')).lstrip().rstrip().split()
+            if isinstance(values, list):
+                self.currentArg.setImplicitValues(values)
+            elif values != '':
+                self.currentArg.setImplicitValues([values])
 
     @pyqtSlot()
     def removeArg(self):

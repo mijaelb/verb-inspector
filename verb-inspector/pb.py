@@ -34,7 +34,7 @@ class PropBank(object):
         if not predicates:
             for filename, soup in self.files_soup.items():
                 for pred in soup.find_all('predicate'):
-                    predicates[pred.attrs['lemma']] = PropBankPredicate(filename, pred)
+                    predicates[utils.norm(pred.attrs['lemma'])] = PropBankPredicate(filename, pred)
 
         return predicates
 
@@ -45,12 +45,12 @@ class PropBank(object):
         if lemma in self.predicates:
             return self.predicates[lemma].rolesets
         else:
-            return None
+            return []
 
     def get_roleset(self, roleset):
         tupl = re.match(r'(.+)\.(\d+)', roleset)
         if tupl:
-            lemma, num = (tupl[1], tupl[2])
+            lemma, num = (utils.norm(tupl[1]), tupl[2])
             predicate = self.predicates[lemma]
             for roleset_ in predicate.get_rolesets():
                 if roleset_.id == roleset:
@@ -83,6 +83,23 @@ class PropBank(object):
     def get_rolesets_ids_from_class(self, lemma, cls_id):
         return [roleset.id for roleset in self.get_rolesets_from_class(lemma, cls_id)]
 
+    def get_corrected_roleset_name(self, roleset):
+        tupl = re.match(r'(.+)\.(\d+)', roleset)
+        if tupl:
+            lemma, num = (utils.norm(tupl[1]), tupl[2])
+            predicates = []
+            for key in self.predicates.keys():
+                mat = re.search(r'^'+lemma+r'_?', key)
+                if mat:
+                    predicates.append(self.predicates[key])
+
+            for predicate in predicates:
+                roleset = predicate.get_roleset_by_num(num)
+                if roleset:
+                    return roleset.id
+        return None
+
+
     def pprint(self, indent=0, end='\n'):
         indent_in = utils.indent(indent)
         indent_ = utils.indent(indent + 1)
@@ -95,7 +112,7 @@ class PropBank(object):
 class PropBankPredicate(object):
     def __init__(self, filename, soup):
         self.soup = soup
-        self.lemma = soup.attrs['lemma']
+        self.lemma = utils.norm(soup.attrs['lemma'])
         self.filename = filename
         self.rolesets = self.get_rolesets()
 
@@ -105,6 +122,16 @@ class PropBankPredicate(object):
             for roleset in self.soup.find_all('roleset'):
                 rolesets.append(PropBankRoleset(self.filename, roleset))
         return rolesets
+
+    def get_roleset_by_num(self, num):
+        rolesets = self.get_rolesets()
+        for roleset in self.rolesets:
+            tupl = re.match(r'(.+)\.(\d+)', roleset.id)
+            if tupl:
+                lemma_, num_ = (tupl[1], tupl[2])
+                if num == num_:
+                    return roleset
+
 
     def pprint(self, indent=0, end='\n'):
         indent_in = utils.indent(indent)
@@ -124,7 +151,7 @@ class PropBankRoleset(object):
     def __init__(self, filename, soup):
         self.soup = soup
         self.filename = filename
-        self.id = soup.attrs['id']
+        self.id = utils.norm(soup.attrs['id'], False)
         self.name = soup.attrs['name']
         self.aliases = self.get_aliases()
         self.roles = self.get_roles()
@@ -289,7 +316,7 @@ class PropBankAlias:
     word: str = field(default_factory=list)
 
     def fill(self, attrs, word):
-        self.framenet = attrs.get('framenet', '').split()
+        self.framenet = utils.norm(attrs.get('framenet', '').split())
         self.pos = attrs.get('pos', '')
         self.verbnet = attrs.get('verbnet', '').split()
         self.word = word.split()

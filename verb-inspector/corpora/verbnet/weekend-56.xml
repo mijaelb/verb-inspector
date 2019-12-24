@@ -1,6 +1,6 @@
 <VNCLASS ID="weekend-56" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="vn_schema-3.xsd">
     <MEMBERS>
-        <MEMBER fnframe="" grouping="" name="December" wn=""/>
+        <MEMBER fnframe="" grouping="" name="december" wn=""/>
         <MEMBER fnframe="" grouping="" name="holiday" wn="holiday%2:42:00"/>
         <MEMBER fnframe="" grouping="" name="honeymoon" wn="honeymoon%2:42:00"/>
         <MEMBER fnframe="" grouping="junket.01" name="junket" wn="junket%2:38:00"/>

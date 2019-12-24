@@ -14,6 +14,7 @@ class EditPlotPointWidget(QtWidgets.QWidget):
     def __init__(self, pp_container, parent=None):
         super().__init__(parent)
         self.pp_container = pp_container
+        self.filename = self.pp_container.json_path
 
         self.editClassWidget = None
         self.currentPlotPoint = None
@@ -21,10 +22,28 @@ class EditPlotPointWidget(QtWidgets.QWidget):
         self.currentSense = None
         self.currentClass = None
 
-        self.plotpointNameLabel = QtWidgets.QLabel()
+        self.plotPointsCompileButton = QtWidgets.QPushButton('Compile')
+        self.plotPointsCompileButton.released.connect(self.compilePlotPoints)
+
+        self.saveButton = QtWidgets.QPushButton('Save')
+        self.saveAsButton = QtWidgets.QPushButton('Save As')
+        self.openButton = QtWidgets.QPushButton('Open')
+        self.saveButton.released.connect(self.save)
+        self.saveAsButton.released.connect(self.saveAs)
+        self.openButton.released.connect(self.open)
+
+        self.plotPointsButtons = QtWidgets.QHBoxLayout()
+        self.plotPointsButtons.addWidget(self.saveButton)
+        self.plotPointsButtons.addWidget(self.saveAsButton)
+        self.plotPointsButtons.addWidget(self.openButton)
+
+        self.plotPointNameLabel = QtWidgets.QLabel()
         self.selectedSenseLabel = QtWidgets.QLabel()
 
-        self.plotpointsLabel = QtWidgets.QLabel('PlotPoints ▾')
+        self.plotPointsLabel = QtWidgets.QLabel('PlotPoints ▾')
+        self.sensesLabel = QtWidgets.QLabel('Senses ▾')
+        self.classesLabel = QtWidgets.QLabel('Classes ▾')
+        self.predicatesLabel = QtWidgets.QLabel('Compiled predicates ▾')
 
         self.plotPointsList = QtWidgets.QListWidget()
         self.plotPointsList.currentItemChanged.connect(self.updatePlotPoint)
@@ -46,7 +65,6 @@ class EditPlotPointWidget(QtWidgets.QWidget):
         self.classesList = QtWidgets.QListWidget()
         self.classesList.currentItemChanged.connect(self.updateClass)
 
-
         self.editClassButton = QtWidgets.QPushButton('Edit Class')
         self.addClassButton = QtWidgets.QPushButton('Add Class')
         self.removeClassButton = QtWidgets.QPushButton('Remove Class')
@@ -62,6 +80,7 @@ class EditPlotPointWidget(QtWidgets.QWidget):
         self.classesButtonsLayout.addWidget(self.removeClassButton)
 
         self.classesListLayout = QtWidgets.QVBoxLayout()
+        self.classesListLayout.addWidget(self.classesLabel)
         self.classesListLayout.addWidget(self.classesList)
         self.classesListLayout.addLayout(self.classesButtonsLayout)
 
@@ -69,6 +88,7 @@ class EditPlotPointWidget(QtWidgets.QWidget):
         self.senseList.currentItemChanged.connect(self.updateSense)
 
         self.senseListLayout = QtWidgets.QVBoxLayout()
+        self.senseListLayout.addWidget(self.sensesLabel)
         self.senseListLayout.addWidget(self.senseList)
         self.senseListLayout.addWidget(self.selectSenseButton)
 
@@ -78,6 +98,7 @@ class EditPlotPointWidget(QtWidgets.QWidget):
         self.updateCompiledPredicateList()
 
         self.compiledPredicateLayout = QtWidgets.QVBoxLayout()
+        self.compiledPredicateLayout.addWidget(self.predicatesLabel)
         self.compiledPredicateLayout.addWidget(self.compiledPredicateList)
         self.compiledPredicateLayout.addWidget(self.compilePredicatesButton)
 
@@ -86,30 +107,35 @@ class EditPlotPointWidget(QtWidgets.QWidget):
         self.editSenseLayout.addLayout(self.classesListLayout)
         self.editSenseLayout.addLayout(self.compiledPredicateLayout)
 
-        self.plotpointsEditLayout = QtWidgets.QVBoxLayout()
-        self.plotpointsEditLayout.addWidget(self.plotpointNameLabel)
-        self.plotpointsEditLayout.addWidget(self.selectedSenseLabel)
-        self.plotpointsEditLayout.addLayout(self.editArgsLayout)
-        self.plotpointsEditLayout.addLayout(self.editSenseLayout)
+        self.plotPointsEditLayout = QtWidgets.QVBoxLayout()
+        self.plotPointsEditLayout.addWidget(self.plotPointNameLabel)
+        self.plotPointsEditLayout.addWidget(self.selectedSenseLabel)
+        self.plotPointsEditLayout.addLayout(self.editArgsLayout)
+        self.plotPointsEditLayout.addLayout(self.editSenseLayout)
 
-        self.plotpointsListLayout = QtWidgets.QVBoxLayout()
-        self.plotpointsListLayout.addWidget(self.plotpointsLabel)
-        self.plotpointsListLayout.addWidget(self.plotPointsList)
-        self.plotpointsListLayout.addWidget(self.plotPointCleanedCheckBox)
-        self.plotpointsListLayout.addWidget(self.plotPointFilterByClassButton)
-        self.plotpointsListLayout.addWidget(self.plotPointUnFilterButton)
+        self.plotPointsFilterButtons = QtWidgets.QHBoxLayout()
+        self.plotPointsFilterButtons.addWidget(self.plotPointFilterByClassButton)
+        self.plotPointsFilterButtons.addWidget(self.plotPointUnFilterButton)
+
+        self.plotPointsListLayout = QtWidgets.QVBoxLayout()
+        self.plotPointsListLayout.addWidget(self.plotPointsCompileButton)
+        self.plotPointsListLayout.addWidget(self.plotPointsLabel)
+        self.plotPointsListLayout.addWidget(self.plotPointsList)
+        self.plotPointsListLayout.addWidget(self.plotPointCleanedCheckBox)
+        self.plotPointsListLayout.addLayout(self.plotPointsFilterButtons)
+        self.plotPointsListLayout.addLayout(self.plotPointsButtons)
 
         self.layout = QtWidgets.QHBoxLayout()
-        self.layout.addLayout(self.plotpointsListLayout)
-        self.layout.addLayout(self.plotpointsEditLayout)
+        self.layout.addLayout(self.plotPointsListLayout)
+        self.layout.addLayout(self.plotPointsEditLayout)
 
         self.setLayout(self.layout)
         self.initUI()
 
     def initUI(self):
-        font = QtGui.QFont('Helvetica', 10)
+        font = QtGui.QFont('Helvetica', 7)
         font.setBold(True)
-        self.plotpointNameLabel.setFont(font)
+        self.plotPointNameLabel.setFont(font)
         self.selectedSenseLabel.setFont(font)
         self.plotPointsList.setStyleSheet('QLabel { color: palette(midlight); }')
         self.plotPointsList.setMaximumWidth(self.plotPointsList.sizeHint().width())
@@ -128,13 +154,14 @@ class EditPlotPointWidget(QtWidgets.QWidget):
             ppItem.setData(QtCore.Qt.UserRole, pp)
             ppItem.setFlags(ppItem.flags() | QtCore.Qt.ItemIsEditable)
             if pp.cleaned:
-                ppItem.setBackground(QtGui.QColor.green())
+                ppItem.setBackground(QtGui.QBrush(QtCore.Qt.green))
             self.plotPointsList.addItem(ppItem)
 
     def updateSenseList(self):
         if self.currentPlotPoint:
             self.senseList.clear()
-            for sense in self.currentPlotPoint.senses:
+            plotpoint = self.currentPlotPoint.data(QtCore.Qt.UserRole)
+            for sense in plotpoint.senses:
                 senseItem = QtWidgets.QListWidgetItem(str(sense))
                 senseItem.setData(QtCore.Qt.UserRole, sense)
                 # senseItem.setFlags(senseItem.flags() | QtCore.Qt.ItemIsEditable)
@@ -159,7 +186,7 @@ class EditPlotPointWidget(QtWidgets.QWidget):
     def clear(self):
         self.currentSense = None
         self.currentClass = None
-        self.plotpointNameLabel.setText('')
+        self.plotPointNameLabel.setText('')
         self.senseList.clear()
         self.classesList.clear()
         self.compiledPredicateList.clear()
@@ -177,12 +204,13 @@ class EditPlotPointWidget(QtWidgets.QWidget):
     @pyqtSlot(QtWidgets.QListWidgetItem, QtWidgets.QListWidgetItem)
     def updatePlotPoint(self, current: QtWidgets.QListWidgetItem, previous: QtWidgets.QListWidgetItem):
         if current:
-            self.currentPlotPoint = current.data(QtCore.Qt.UserRole)
-            self.plotPointCleanedCheckBox.setChecked(self.currentPlotPoint.cleaned)
+            self.currentPlotPoint = current
+            plotpoint = current.data(QtCore.Qt.UserRole)
+            self.plotPointCleanedCheckBox.setChecked(plotpoint.cleaned)
             self.clear()
-            self.plotpointNameLabel.setText(f'Current Plot Point: {self.currentPlotPoint.lemma}')
+            self.plotPointNameLabel.setText(f'Current Plot Point: {plotpoint.lemma}')
             self.updateSenseList()
-            self.setSelectedSense(self.currentPlotPoint.selected)
+            self.setSelectedSense(plotpoint.selected)
         else:
             self.clear()
 
@@ -204,8 +232,9 @@ class EditPlotPointWidget(QtWidgets.QWidget):
     @pyqtSlot()
     def selectSense(self):
         if self.currentSense:
-            self.currentPlotPoint.selected = self.currentSense
-            self.setSelectedSense(self.currentPlotPoint.selected)
+            plotpoint = self.currentPlotPoint.data(QtCore.Qt.UserRole)
+            plotpoint.selected = self.currentSense
+            self.setSelectedSense(plotpoint.selected)
 
     @pyqtSlot()
     def compilePredicates(self):
@@ -214,7 +243,12 @@ class EditPlotPointWidget(QtWidgets.QWidget):
     @pyqtSlot()
     def plotPointCleaned(self):
         if self.currentPlotPoint:
-            self.currentPlotPoint.cleaned = self.plotPointCleanedCheckBox.isChecked()
+            plotpoint = self.currentPlotPoint.data(QtCore.Qt.UserRole)
+            plotpoint.cleaned = self.plotPointCleanedCheckBox.isChecked()
+            if plotpoint.cleaned:
+                self.currentPlotPoint.setBackground(QtGui.QBrush(QtCore.Qt.green))
+            else:
+                self.currentPlotPoint.setBackground(QtGui.QBrush(QtCore.Qt.white))
 
     @pyqtSlot()
     def editClass(self):
@@ -251,3 +285,33 @@ class EditPlotPointWidget(QtWidgets.QWidget):
 
     def setClassWidget(self, classWidget):
         self.editClassWidget = classWidget
+
+    @pyqtSlot()
+    def save(self):
+        if self.filename:
+            self.pp_container.save(self.filename)
+        else:
+            self.saveAs()
+
+    @pyqtSlot()
+    def saveAs(self):
+        name = QtWidgets.QFileDialog.getSaveFileName(self, 'Save File')
+        if name:
+            self.pp_container.save(name[0])
+            self.filename = name[0]
+
+    @pyqtSlot()
+    def open(self):
+        name = QtWidgets.QFileDialog.getOpenFileName(self, 'Open File')
+        if name:
+            self.pp_container.load(name[0])
+            self.currentPlotPoint = None
+            self.clear()
+            self.updatePlotPointsList()
+            self.editArgWidget.clear()
+
+    @pyqtSlot()
+    def compilePlotPoints(self):
+        name = QtWidgets.QFileDialog.getSaveFileName(self, 'Save File')
+        if name:
+            self.pp_container.compile(name[0])

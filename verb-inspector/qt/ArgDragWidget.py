@@ -26,6 +26,9 @@ class ArgDragLabel(QtWidgets.QLabel):
     def setSlot(self, slot):
         self.arg.slot = slot
 
+    def setImplicitValues(self, values):
+        self.arg.implicit_values = values
+
     def reset(self):
         metric = QtGui.QFontMetrics(self.font())
         size = metric.size(QtCore.Qt.TextSingleLine, self.label_text)
@@ -169,7 +172,6 @@ class ArgDragWidget(QtWidgets.QWidget):
             ran = list(reversed(range(dest + 1, src + 1)))
 
         if dest != src:
-            print(ran)
             for i in ran:
                 self.args[i].slot = self.args[i].slot - n
 

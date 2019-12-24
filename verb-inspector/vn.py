@@ -236,12 +236,12 @@ class VerbNetClass(object):
             for member in self.soup.MEMBERS.find_all('MEMBER'):
                 for key in member.attrs:
                     member.attrs[key] = member.attrs[key].split()
-                members.append(VerbNetMember(member.attrs['name'][0],
-                                             self.id,
-                                             self.filename,
-                                             member.attrs['fnframe'],
-                                             member.attrs['grouping'],
-                                             member.attrs['wn']))
+                member.attrs['name'] = member.attrs['name'][0]
+                mem = VerbNetMember()
+                mem.fill_dict(member.attrs)
+                mem.id = self.id
+                mem.filename = self.filename
+                members.append(mem)
         return members
 
     def get_member(self, lemma):
@@ -251,8 +251,8 @@ class VerbNetClass(object):
         return None
 
     def add_member(self, name, fnframe=None, grouping=None, wn=None):
-        fnframe = [] if not fnframe else fnframe
-        grouping = [] if not grouping else grouping
+        fnframe = [] if not fnframe else utils.norm(fnframe)
+        grouping = [] if not grouping else utils.norm(grouping, False)
         wn = [] if not wn else wn
         self.members.append(VerbNetMember(name, self.id, self.filename, fnframe, grouping, wn))
 
@@ -439,6 +439,7 @@ class VerbNetArg:
     cls: str = ''
     slot: int = -1
     implicit: bool = False
+    implicit_values: list = field(default_factory=list)
 
     def fill_dict(self, dict):
         self.type = dict.get('type', '')
@@ -827,18 +828,21 @@ class VerbNetMember:
     wn: list = field(default_factory=list)
 
     def fill_dict(self, dict):
-        self.name = dict.get('name', '')
-        self.vnclass = dict.get('vnclass', '')
-        self.filename = dict.get('filename', '')
-        self.fnframe = dict.get('fnframe', '')
-        self.grouping = dict.get('grouping', '')
-        self.wn = dict.get('wn', '')
+        self.name = utils.norm(dict.get('name', self.name))
+        self.vnclass = dict.get('vnclass', self.vnclass)
+        self.filename = dict.get('filename', self.filename)
+        self.fnframe = utils.norm(dict.get('fnframe', self.fnframe))
+        self.grouping = utils.norm(dict.get('grouping', self.grouping), False)
+        self.wn = dict.get('wn', self.wn)
 
     def get_fn(self):
         return self.fnframe
 
     def get_gr(self):
         return self.grouping
+
+    def get_wn(self):
+        return self.wn
 
     def pprint(self, indent=0, end='\n'):
         indent_in = utils.indent(indent)
