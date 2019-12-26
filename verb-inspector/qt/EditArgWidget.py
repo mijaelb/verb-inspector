@@ -189,6 +189,9 @@ class EditArgWidget(QtWidgets.QWidget):
             if self.currentObj.get_args()[-1].slot + 1 >= num:
                 self.currentArg.setSlot(num)
             self.currentObj.update_slots()
+            if getattr(self.currentObj, 'compile', None):
+                self.currentObj.compile(self.pp_container.verbnet)
+                self.parent().updateCompiledPredicateList()
             self.update()
 
     @pyqtSlot()

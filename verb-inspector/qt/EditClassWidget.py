@@ -160,10 +160,13 @@ class EditClassWidget(QtWidgets.QWidget):
 
     @pyqtSlot()
     def saveAs(self):
-        name = QtWidgets.QFileDialog.getSaveFileName(self, 'Save File')
+        name = QtWidgets.QFileDialog.getSaveFileName(self, 'Save File',
+                                                     "", "Json files (*.json)")[0]
         if name:
-            self.pp_container.verbnet.save(name[0])
-            self.filename = name[0]
+            if not QtCore.QFileInfo(name).suffix():
+                name += ".json"
+            self.pp_container.verbnet.save(name)
+            self.filename = name
 
     @pyqtSlot()
     def open(self):

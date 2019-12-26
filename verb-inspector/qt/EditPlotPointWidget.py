@@ -23,7 +23,9 @@ class EditPlotPointWidget(QtWidgets.QWidget):
         self.currentClass = None
 
         self.plotPointsCompileButton = QtWidgets.QPushButton('Compile')
+        self.plotPointReloadButton = QtWidgets.QPushButton('Reload Plot Point')
         self.plotPointsCompileButton.released.connect(self.compilePlotPoints)
+        self.plotPointReloadButton.released.connect(self.reloadPlotPoint)
 
         self.saveButton = QtWidgets.QPushButton('Save')
         self.saveAsButton = QtWidgets.QPushButton('Save As')
@@ -92,15 +94,29 @@ class EditPlotPointWidget(QtWidgets.QWidget):
         self.senseListLayout.addWidget(self.senseList)
         self.senseListLayout.addWidget(self.selectSenseButton)
 
+        self.compiledPredicateUpArgButton = QtWidgets.QToolButton()
+        self.compiledPredicateDownArgButton = QtWidgets.QToolButton()
+        self.compiledPredicateUpArgButton.setArrowType(QtCore.Qt.UpArrow)
+        self.compiledPredicateDownArgButton.setArrowType(QtCore.Qt.DownArrow)
+        self.compiledPredicateUpArgButton.released.connect(self.moveUpPredicate)
+        self.compiledPredicateDownArgButton.released.connect(self.moveDownPredicate)
+
         self.compiledPredicateList = QtWidgets.QListWidget()
+        self.compiledPredicateList.itemChanged.connect(self.updatePred)
         self.compilePredicatesButton = QtWidgets.QPushButton('Compile Predicates')
         self.compilePredicatesButton.released.connect(self.compilePredicates)
         self.updateCompiledPredicateList()
 
+        self.compiledPredicateButtons = QtWidgets.QHBoxLayout()
+        self.compiledPredicateButtons.addWidget(self.compilePredicatesButton)
+        self.compiledPredicateButtons.addWidget(self.compiledPredicateUpArgButton)
+        self.compiledPredicateButtons.addWidget(self.compiledPredicateDownArgButton)
+
         self.compiledPredicateLayout = QtWidgets.QVBoxLayout()
         self.compiledPredicateLayout.addWidget(self.predicatesLabel)
         self.compiledPredicateLayout.addWidget(self.compiledPredicateList)
-        self.compiledPredicateLayout.addWidget(self.compilePredicatesButton)
+
+        self.compiledPredicateLayout.addLayout(self.compiledPredicateButtons)
 
         self.editSenseLayout = QtWidgets.QHBoxLayout()
         self.editSenseLayout.addLayout(self.senseListLayout)
@@ -118,11 +134,12 @@ class EditPlotPointWidget(QtWidgets.QWidget):
         self.plotPointsFilterButtons.addWidget(self.plotPointUnFilterButton)
 
         self.plotPointsListLayout = QtWidgets.QVBoxLayout()
-        self.plotPointsListLayout.addWidget(self.plotPointsCompileButton)
+        self.plotPointsListLayout.addWidget(self.plotPointReloadButton)
         self.plotPointsListLayout.addWidget(self.plotPointsLabel)
         self.plotPointsListLayout.addWidget(self.plotPointsList)
         self.plotPointsListLayout.addWidget(self.plotPointCleanedCheckBox)
         self.plotPointsListLayout.addLayout(self.plotPointsFilterButtons)
+        self.plotPointsListLayout.addWidget(self.plotPointsCompileButton)
         self.plotPointsListLayout.addLayout(self.plotPointsButtons)
 
         self.layout = QtWidgets.QHBoxLayout()
@@ -164,7 +181,6 @@ class EditPlotPointWidget(QtWidgets.QWidget):
             for sense in plotpoint.senses:
                 senseItem = QtWidgets.QListWidgetItem(str(sense))
                 senseItem.setData(QtCore.Qt.UserRole, sense)
-                # senseItem.setFlags(senseItem.flags() | QtCore.Qt.ItemIsEditable)
                 self.senseList.addItem(senseItem)
 
     def updateClassesList(self):
@@ -178,9 +194,10 @@ class EditPlotPointWidget(QtWidgets.QWidget):
     def updateCompiledPredicateList(self):
         if self.currentSense:
             self.compiledPredicateList.clear()
-            for pred in self.currentSense.get_compiled_predicates(self.pp_container.verbnet):
+            for pred in self.currentSense.get_predicates():
                 predItem = QtWidgets.QListWidgetItem(str(pred))
                 predItem.setData(QtCore.Qt.UserRole, pred)
+                predItem.setFlags(predItem.flags() | QtCore.Qt.ItemIsEditable)
                 self.compiledPredicateList.addItem(predItem)
 
     def clear(self):
@@ -210,7 +227,7 @@ class EditPlotPointWidget(QtWidgets.QWidget):
             self.clear()
             self.plotPointNameLabel.setText(f'Current Plot Point: {plotpoint.lemma}')
             self.updateSenseList()
-            self.setSelectedSense(plotpoint.selected)
+            self.setSelectedSense(plotpoint.get_selected_sense())
         else:
             self.clear()
 
@@ -233,11 +250,12 @@ class EditPlotPointWidget(QtWidgets.QWidget):
     def selectSense(self):
         if self.currentSense:
             plotpoint = self.currentPlotPoint.data(QtCore.Qt.UserRole)
-            plotpoint.selected = self.currentSense
-            self.setSelectedSense(plotpoint.selected)
+            plotpoint.set_selected_sense(str(self.currentSense))
+            self.setSelectedSense(plotpoint.get_selected_sense())
 
     @pyqtSlot()
     def compilePredicates(self):
+        self.currentSense.compile(self.pp_container.verbnet)
         self.updateCompiledPredicateList()
 
     @pyqtSlot()
@@ -245,10 +263,8 @@ class EditPlotPointWidget(QtWidgets.QWidget):
         if self.currentPlotPoint:
             plotpoint = self.currentPlotPoint.data(QtCore.Qt.UserRole)
             plotpoint.cleaned = self.plotPointCleanedCheckBox.isChecked()
-            if plotpoint.cleaned:
-                self.currentPlotPoint.setBackground(QtGui.QBrush(QtCore.Qt.green))
-            else:
-                self.currentPlotPoint.setBackground(QtGui.QBrush(QtCore.Qt.white))
+            self.currentPlotPoint.setBackground(
+                QtGui.QBrush(QtCore.Qt.green) if plotpoint.cleaned else QtGui.QBrush(QtCore.Qt.white))
 
     @pyqtSlot()
     def editClass(self):
@@ -295,10 +311,13 @@ class EditPlotPointWidget(QtWidgets.QWidget):
 
     @pyqtSlot()
     def saveAs(self):
-        name = QtWidgets.QFileDialog.getSaveFileName(self, 'Save File')
+        name = QtWidgets.QFileDialog.getSaveFileName(self, 'Save File',
+                                                     "", "Json files (*.json)")[0]
         if name:
-            self.pp_container.save(name[0])
-            self.filename = name[0]
+            if not QtCore.QFileInfo(name).suffix():
+                name += ".json"
+            self.pp_container.save(name)
+            self.filename = name
 
     @pyqtSlot()
     def open(self):
@@ -312,6 +331,56 @@ class EditPlotPointWidget(QtWidgets.QWidget):
 
     @pyqtSlot()
     def compilePlotPoints(self):
-        name = QtWidgets.QFileDialog.getSaveFileName(self, 'Save File')
+        name = QtWidgets.QFileDialog.getSaveFileName(self, 'Save File',
+                                                     "", "Json files (*.json)")[0]
         if name:
-            self.pp_container.compile(name[0])
+            if not QtCore.QFileInfo(name).suffix():
+                name += ".json"
+            self.pp_container.compile(name)
+
+    @pyqtSlot()
+    def reloadPlotPoint(self):
+        if self.currentPlotPoint:
+            plotpoint = self.currentPlotPoint.data(QtCore.Qt.UserRole)
+            self.pp_container.reload_plotpoint(plotpoint.lemma)
+            self.plotPointCleanedCheckBox.setChecked(plotpoint.cleaned)
+            self.clear()
+            self.plotPointNameLabel.setText(f'Current Plot Point: {plotpoint.lemma}')
+            self.updateSenseList()
+            self.setSelectedSense(plotpoint.get_selected_sense())
+
+    def moveUpPredicate(self):
+        if self.compiledPredicateList.currentItem():
+            row = self.compiledPredicateList.currentRow()
+            preds = self.currentSense.get_predicates()
+
+            if row > 0:
+                preds[row], preds[row - 1] = preds[row - 1], preds[row]
+                self.updateCompiledPredicateList()
+                self.compiledPredicateList.setCurrentRow(row - 1)
+
+    def moveDownPredicate(self):
+        if self.compiledPredicateList.currentItem():
+            row = self.compiledPredicateList.currentRow()
+            preds = self.currentSense.get_predicates()
+
+            if row < self.compiledPredicateList.count() - 1:
+                preds[row], preds[row + 1] = preds[row + 1], preds[row]
+                self.updateCompiledPredicateList()
+                self.compiledPredicateList.setCurrentRow(row + 1)
+
+    @pyqtSlot(QtWidgets.QListWidgetItem)
+    def updatePred(self, current):
+        if current:
+            pred = current.data(QtCore.Qt.UserRole)
+            text = current.text()
+            str_arr = text.split('(')
+            if len(str_arr) == 2:
+                pred.name = str_arr[0][1:] if str_arr[0][0] == '!' else str_arr[0]
+                pred.bool = str_arr[0][0] if str_arr[0][0] == '!' else ''
+                str_arr[1] = str_arr[1].replace(')', '')
+                arg_arr = str_arr[1].split(',')
+                if arg_arr[0] != '':
+                    pred.edit_args_name(arg_arr)
+
+            self.updateCompiledPredicateList()

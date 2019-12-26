@@ -665,6 +665,7 @@ class VerbNetSimplifiedClass(object):
                     predicates.append(predicate)
             elif self.vnclass:
                 predicates = self.vnclass.get_predicates()
+
         return predicates
 
     def get_members(self):

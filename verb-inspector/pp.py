@@ -76,6 +76,13 @@ class PlotPointContainer(object):
         if filename:
             utils.tojson(filename, self.compiled_dict())
 
+    def reload_plotpoint(self, lemma):
+        self.plotpoints[lemma].senses.clear()
+        for dataset in [Dataset.GR, Dataset.PB, Dataset.VN]:
+            self.plotpoints[lemma].senses.extend(self.get_senses(lemma, dataset))
+            self.plotpoints[lemma].set_selected_sense(str(self.plotpoints[lemma].senses[0]))
+            self.plotpoints[lemma].reset()
+
     def get_plotpoints(self, class_id=None):
         plotpoints = getattr(self, 'plotpoints', {})
         if class_id:
@@ -95,10 +102,7 @@ class PlotPointContainer(object):
                 plotpoints[lemma] = PlotPoint(lemma, PlotPointType.VERB)
                 for dataset in datasets:
                     plotpoints[lemma].senses.extend(self.get_senses(lemma, dataset))
-
-                # Set selected sense by default the first in the list
-                if len(plotpoints[lemma].senses) > 0:
-                    plotpoints[lemma].selected = plotpoints[lemma].senses[0]
+                    plotpoints[lemma].set_selected_sense(str(plotpoints[lemma].senses[0]))
 
                 # Write into a log the plotpoints information
                 # utils.write('pps.log', plotpoints[lemma].pprint(), 'a+')
@@ -106,14 +110,14 @@ class PlotPointContainer(object):
 
     def load_lemmas_datasets(self):
         # Load all lemmas from every dataset
-        lemmas = {utils.norm(lemma): [Dataset.VN] for lemma in self.verbnet.get_lemmas()}
-        lemmas = utils.deep_update(lemmas,
-                                   {utils.norm(lemma): [Dataset.PB] for lemma in self.propbank.get_lemmas()})
-        lemmas = utils.deep_update(lemmas,
-                                   {utils.norm(lemma): [Dataset.GR] for lemma in self.groupings.get_lemmas()})
-        # lemmas = utils.deep_update(lemmas, {utils.norm(lemma): [Dataset.FN] for lemma in self.groupings.get_lemmas()})
-        lemmas = dict(sorted(lemmas.items(), key=lambda x: x[0].lower()))
+        lemma_vn = {utils.norm(lemma): [Dataset.VN] for lemma in self.verbnet.get_lemmas()}
+        lemma_pb = {utils.norm(lemma): [Dataset.PB] for lemma in self.propbank.get_lemmas()}
+        lemma_gr = {utils.norm(lemma): [Dataset.GR] for lemma in self.groupings.get_lemmas()}
+        # lemma_fn = {utils.norm(lemma): [Dataset.FN] for lemma in self.groupings.get_lemmas()}
 
+        lemmas = utils.deep_update(lemma_vn, lemma_pb)
+        lemmas = utils.deep_update(lemmas, lemma_gr)
+        lemmas = dict(sorted(lemmas.items(), key=lambda x: x[0].lower()))
         return lemmas
 
     def get_senses(self, lemma, dataset):
@@ -146,9 +150,10 @@ class PlotPointContainer(object):
         pp_sense.mappings.gr = cls.get_member(lemma).get_gr()
         pp_sense.mappings.fn = [fn.lower() for fn in cls.get_member(lemma).get_fn()]
         pp_sense.add_examples(cls.get_examples())
-        self.eval_correct(lemma, pp_sense.mappings)
+        self.eval_correct(lemma, pp_sense)
         pp_sense.add_arg_struct(self.get_args_verbnet(cls.id))
         pp_sense.squeeze()
+        pp_sense.compile(self.verbnet)
         return pp_sense
 
     def get_sense_propbank(self, lemma, roleset):
@@ -163,12 +168,13 @@ class PlotPointContainer(object):
                            (self.verbnet.get_fn_from_classes(lemma, pp_sense.mappings.vn) + roleset.get_fn())]))
         pp_sense.add_examples(roleset.get_examples_text())
         pp_sense.add_arg_struct(self.get_args_propbank(roleset.id))
-        self.eval_correct(lemma, pp_sense.mappings)
+        self.eval_correct(lemma, pp_sense)
 
         for class_id in pp_sense.mappings.vn:
             pp_sense.add_arg_struct(self.get_args_verbnet(class_id))
 
         pp_sense.squeeze()
+        pp_sense.compile(self.verbnet)
         return pp_sense
 
     def get_sense_grouping(self, lemma, sense):
@@ -195,6 +201,7 @@ class PlotPointContainer(object):
             pp_sense.add_arg_struct(self.get_args_verbnet(class_id))
 
         pp_sense.squeeze()
+        pp_sense.compile(self.verbnet)
         return pp_sense
 
     def eval_correct(self, lemma, pp_sense):
@@ -254,7 +261,7 @@ class PlotPointContainer(object):
     def compiled_dict(self):
         compiled_dict = {}
         for lemma, plotpoint in self.plotpoints.items():
-            dict_ = plotpoint.compiled_dict(self.verbnet)
+            dict_ = plotpoint.compiled_dict()
             if dict_:
                 compiled_dict[lemma] = dict_
         return compiled_dict
@@ -376,6 +383,27 @@ class PlotPointPredicate:
     bool: str = ''
     name: str = ''
     args: List[PlotPointArg] = field(default_factory=list)
+
+    def fill_dict(self, dict):
+        self.bool = dict.get('bool', '')
+        self.name = dict.get('name', '')
+        for arg in dict.get('args', []):
+            arg_ = PlotPointArg()
+            arg_.fill_dict(arg)
+            self.args.append(arg_)
+
+    def edit_args_name(self, arr):
+        if arr:
+            for i, arg in enumerate(arr):
+                if i >= len(self.args):
+                    break
+
+                if arg != '':
+                    arg = ''.join(arg.split()[0])
+
+                if (self.args[i].type == 'event' or re.match('e+(\d+)?$', self.args[i].value)) \
+                        and re.match('e+(\d+)?$', arg):
+                    self.args[i].value = arg
 
     def change_class_name(self, class_id, new_id):
         for arg in self.args:
@@ -502,6 +530,7 @@ class PlotPointSense:
     examples: list = field(default_factory=list)
     arg_structs: List[PlotPointArgStruct] = field(default_factory=list)
     args: List[PlotPointArg] = field(default_factory=list)
+    predicates: List[PlotPointPredicate] = field(default_factory=list)
 
     def fill_dict(self, dict):
         self.id = dict.get('id', '')
@@ -519,6 +548,11 @@ class PlotPointSense:
             arg_ = PlotPointArg()
             arg_.fill_dict(arg)
             self.args.append(arg_)
+
+        for pred in dict.get('predicates', []):
+            pred_ = PlotPointPredicate()
+            pred_.fill_dict(pred)
+            self.predicates.append(pred_)
 
     def has_class(self, class_id):
         for cls in self.mappings.vn:
@@ -540,6 +574,7 @@ class PlotPointSense:
 
             self.arg_structs.append(arg_struct)
             self.squeeze()
+            self.compile()
 
     def change_class_name(self, class_id, new_id):
         self.mappings.change_class_name(class_id, new_id)
@@ -551,16 +586,17 @@ class PlotPointSense:
 
     def remove_class(self, cls):
         if cls and cls.id in self.mappings.vn:
-            self.mappings.vn = [class_id for class_id in self.mappings.vn if cls.id != class_id]
-            self.examples = [example for example in enumerate(self.examples) if
-                             not any([example == ie for ie in cls.examples])]
-            self.arg_structs = [arg_struct for arg_struct in self.arg_structs if
-                                not all([arg.cls == cls.id for arg in arg_struct.args])]
+            self.mappings.vn = [class_id for class_id in self.mappings.vn
+                                if cls.id != class_id]
+            self.examples = [example for example in enumerate(self.examples)
+                             if not any([example == ie for ie in cls.examples])]
+            self.arg_structs = [arg_struct for arg_struct in self.arg_structs
+                                if not all([arg.cls == cls.id for arg in arg_struct.args])]
             for arg_struct in self.arg_structs:
                 arg_struct.args = [arg for arg in arg_struct.args if arg.cls != cls.id]
             self.squeeze()
             self.args = [arg for arg in self.args if arg.cls != cls.id]
-            print(str(self.args))
+            self.compile()
 
     def add_arg_struct(self, arg_struct):
         if arg_struct:
@@ -625,14 +661,21 @@ class PlotPointSense:
     def add_examples(self, examples):
         self.examples.extend(examples)
 
-    def get_compiled_predicates(self, verbnet):
-        compiled_preds = []
+    def compile(self, verbnet):
+        predicates = []
         for class_id in self.mappings.vn:
             for pred in verbnet.get_predicates_from_class(class_id):
                 new_pred = PlotPointPredicate()
                 new_pred.compile(self.args, pred, class_id)
-                compiled_preds.append(new_pred)
-        return compiled_preds
+                # Do not allow repetition of predicates with the same slots
+                if not any([str(pred) == str(new_pred) for pred in predicates]):
+                    predicates.append(new_pred)
+
+        predicates.sort(key=lambda x: x.args[0].value.replace('e', ''), reverse=False)
+        self.predicates = predicates
+
+    def get_predicates(self):
+        return getattr(self, 'predicates', [])
 
     def get_compiled_slots(self):
         slots = []
@@ -640,12 +683,13 @@ class PlotPointSense:
         for arg in self.args:
             if arg.slot != new_slot.slot:
                 new_slot = PlotPointSlot(arg.slot)
+                slots.append(new_slot)
 
             new_slot.add_descr(arg.descr)
             new_slot.implicit = new_slot.implicit or arg.implicit
             new_slot.add_themrole(arg.value, arg.cls)
             new_slot.add_implicit_values(arg.implicit_values)
-            slots.append(new_slot)
+
         return slots
 
     def pprint(self, indent=0, end='\n'):
@@ -655,29 +699,31 @@ class PlotPointSense:
                f'{indent_}id={self.id!r}{end}' \
                f'{indent_}dataset={self.dataset!r}{end}' \
                f'{indent_}descr={self.descr!r}{end}' \
+               f'{indent_}examples={self.examples}' \
+               f'{indent_}mappings={end}' \
+               f'{self.mappings.pprint(indent + 2)}' \
                f'{indent_}args={end}' \
                f'{"".join([arg.pprint(indent + 2) for arg in self.args])}' \
                f'{indent_}arg_structs={end}' \
                f'{"".join([arg.pprint(indent + 2) for arg in self.arg_structs])}' \
-               f'{indent_}mappings={end}' \
-               f'{self.mappings.pprint(indent + 2)}' \
-               f'{indent_}examples={end}' \
-               f'{self.examples.pprint(indent + 2)}'
+               f'{indent_}predicates={end}' \
+               f'{"".join([pred.pprint(indent + 2) for pred in self.predicates])}'
 
-    def compiled_dict(self, verbnet):
+    def compiled_dict(self):
         return {'description': self.descr,
-                'examples': list(self.examples),
+                'examples': self.examples,
                 'slots': [dict(slot) for slot in self.get_compiled_slots()],
-                'predicates': [pred.compiled_dict() for pred in self.get_compiled_predicates(verbnet)]}
+                'predicates': [pred.compiled_dict() for pred in self.predicates]}
 
     def __iter__(self):
         yield 'id', self.id
         yield 'dataset', self.dataset
         yield 'descr', self.descr
+        yield 'examples', self.examples,
         yield 'mappings', dict(self.mappings)
-        yield 'examples', list(self.examples),
         yield 'arg_structs', [dict(arg) for arg in self.arg_structs]
         yield 'args', [dict(arg) for arg in self.args]
+        yield 'predicates', [dict(pred) for pred in self.predicates]
 
     def __str__(self):
         return f'{self.id}: {str(self.dataset)}: {str(self.descr)}'
@@ -688,7 +734,7 @@ class PlotPoint:
     ''' A data class that stores the senses of plot points and selects the sense '''
     lemma: str = ''
     type: str = PlotPointType.VERB
-    selected: PlotPointSense = None
+    selected: str = ''
     dataset: str = Dataset.EMPTY
     cleaned: bool = False
     senses: List[PlotPointSense] = field(default_factory=list)
@@ -696,6 +742,7 @@ class PlotPoint:
     def fill_dict(self, dict):
         self.lemma = dict.get('lemma', '')
         self.type = dict.get('type', PlotPointType.VERB)
+        self.selected = dict.get('selected', '')
         self.dataset = dict.get('dataset', Dataset.EMPTY)
         self.cleaned = bool(dict.get('cleaned', 'false'))
 
@@ -704,15 +751,8 @@ class PlotPoint:
             s.fill_dict(sense)
             self.senses.append(s)
 
-        sense = dict.get('selected', None)
-        sense = None if sense == '' else sense
-        if sense:
-            selected = PlotPointSense()
-            selected.fill_dict(sense)
-            for sense in self.senses:
-                if str(sense) == str(selected):
-                    self.selected = sense
-                    break
+    def reset(self):
+        self.cleaned = False
 
     def has_class(self, class_id):
         return any([sense.has_class(class_id) for sense in self.senses])
@@ -720,6 +760,19 @@ class PlotPoint:
     def change_class_name(self, class_id, new_id):
         for sense in self.senses:
             sense.change_class_name(class_id, new_id)
+
+    def get_sense(self, str_):
+        for sense in self.senses:
+            if str(sense) == str_:
+                return sense
+        return None
+
+    def get_selected_sense(self):
+        return self.get_sense(self.selected)
+
+    def set_selected_sense(self, str_):
+        if len(self.senses) > 0 and self.get_sense(str_):
+            self.selected = str_
 
     def pprint(self, indent=0, end='\n'):
         indent_in = ''.join(['\t' for i in range(0, indent)])
@@ -733,17 +786,17 @@ class PlotPoint:
                f'{indent_}senses={end}' \
                f'{"".join([sense.pprint(indent + 1) for sense in self.senses])}'
 
-    def compiled_dict(self, verbnet):
+    def compiled_dict(self):
         if self.cleaned:
-            d = {'lemma': self.lemma, 'type': self.type}
-            d.update(self.selected.compiled_dict(verbnet))
-            return d
+            compiled_dict = {'lemma': self.lemma, 'type': self.type}
+            compiled_dict.update(self.get_selected_sense().compiled_dict())
+            return compiled_dict
         return None
 
     def __iter__(self):
         yield 'lemma', self.lemma
         yield 'type', self.type
-        yield 'selected', dict(self.selected) if self.selected else ''
+        yield 'selected', self.selected
         yield 'dataset', self.dataset
         yield 'cleaned', self.cleaned
         yield 'senses', [dict(sense) for sense in self.senses]
