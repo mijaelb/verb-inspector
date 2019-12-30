@@ -341,8 +341,7 @@ class PlotPointArg:
         self.implicit_values = arg.implicit_values if not self.implicit_values else self.implicit_values
 
     def pred_dict(self):
-        return {'type': self.type, 'slot': str(self.slot) if self.slot != -1 else
-        (self.value if self.type == 'event' else 'nan')}
+        return {'type': self.type, 'slot': str(self.slot)}
 
     def pprint(self, indent=0, end='\n'):
         indent_in = ''.join(['\t' for i in range(0, indent)])
@@ -375,7 +374,7 @@ class PlotPointArg:
         yield 'dataset', self.dataset
 
     def __str__(self):
-        return self.value if self.type == 'event' else str(self.slot)
+        return str(self.slot)
 
 
 @dataclass
@@ -398,12 +397,11 @@ class PlotPointPredicate:
                 if i >= len(self.args):
                     break
 
-                if arg != '':
-                    arg = ''.join(arg.split()[0])
+                arg = ''.join(arg.split()[0]) if arg != '' else arg
 
-                if (self.args[i].type == 'event' or re.match('e+(\d+)?$', self.args[i].value)) \
+                if (self.args[i].type == 'event' or re.match('e+(\d+)?$', str(self.args[i].slot))) \
                         and re.match('e+(\d+)?$', arg):
-                    self.args[i].value = arg
+                    self.args[i].slot = arg
 
     def change_class_name(self, class_id, new_id):
         for arg in self.args:
@@ -413,10 +411,11 @@ class PlotPointPredicate:
         self.bool = vnpred.bool
         self.name = vnpred.name
         for vnarg in vnpred.args:
-            dummy_arg = PlotPointArg()  # empty dummy predicate
+            dummy_arg = PlotPointArg()  # empty dummy arg
             for arg in args:
                 if vnarg.type == 'event':
                     dummy_arg.fill_dict(dict(vnarg))
+                    dummy_arg.slot = vnarg.value
                     break
                 elif arg.value == vnarg.value and arg.cls == class_id:
                     dummy_arg.fill_dict(dict(vnarg))
@@ -434,9 +433,7 @@ class PlotPointPredicate:
                f'{"".join([arg.pprint_pred(indent + 2, end) for arg in self.args])}'
 
     def compiled_dict(self):
-        return {'bool': self.bool,
-                'name': self.name,
-                'args': [arg.pred_dict() for arg in self.args]}
+        return {'bool': self.bool, 'name': self.name, 'args': [arg.pred_dict() for arg in self.args]}
 
     def __iter__(self):
         yield 'bool', self.bool
@@ -499,9 +496,7 @@ class PlotPointMapping:
         self.pb = dict.get('pb', [])
 
     def change_class_name(self, class_id, new_id):
-        for i, vn in enumerate(self.vn):
-            if vn == class_id:
-                self.vn[i] = new_id
+        self.vn = [new_id if vn == class_id else vn for vn in self.vn]
 
     def pprint(self, indent=0, end='\n'):
         indent_in = ''.join(['\t' for i in range(0, indent)])
