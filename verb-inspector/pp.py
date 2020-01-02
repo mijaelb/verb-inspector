@@ -35,9 +35,9 @@ groupings_path = os.path.join(dirname, 'corpora/ontonotes/sense-inventories/')
 propbank_path = os.path.join(dirname, 'corpora/propbank/frames/')
 verbnet_path = os.path.join(dirname, 'corpora/verbnet/')
 vnpb_path = os.path.join(dirname, 'corpora/mappings/vnpb-mappings.json')
-verbnet_simplified_path = os.path.join(dirname, 'data/verbnet.json')
-plotpoints_raw_path = os.path.join(dirname, 'data/plotpoints_raw.json')
-plotpoints_compiled_path = os.path.join(dirname, 'data/plotpoints_compiled.json')
+verbnet_simplified_path = os.path.join(dirname, 'data/vn.json')
+plotpoints_raw_path = os.path.join(dirname, 'data/ppraw.json')
+plotpoints_compiled_path = os.path.join(dirname, 'data/ppcompiled.json')
 
 
 class PlotPointContainer(object):
@@ -279,18 +279,18 @@ class PlotPointSlot:
     implicit: bool = False
     implicit_values: list = field(default_factory=list)
 
-    def add_descr(self, descr):
+    def add_argument(self, descr='', implicit=False, themrole='', class_id='', implicit_values=[]):
         if descr != '':
             self.descriptions.append(descr)
 
-    def add_themrole(self, role, class_id):
-        if role != '' and class_id != '':
-            self.themrole.append({'vnrole': role, 'vncls': class_id})
+        if themrole != '' and class_id != '':
+            self.themrole.append({'vnrole': themrole, 'vncls': class_id})
 
-    def add_implicit_values(self, values):
-        self.implicit_values.extend(values)
+        self.implicit_values.extend(implicit_values)
+        self.implicit = implicit
 
     def __iter__(self):
+        """ Let the instance to used within dict(__iter__) """
         yield 'slot', self.slot
         yield 'descriptions', self.descriptions
         yield 'themrole', self.themrole
@@ -319,13 +319,18 @@ class PlotPointArg:
         self.dataset = dict.get('dataset', Dataset.EMPTY)
         self.implicit_values = dict.get('implicit_values', list())
 
-    def set_class(self, class_id, sense=None, verbnet=None):
-        if sense:
+    def set_class(self, class_id, sense, verbnet):
+        """ Add a new class id to the sense
+        :param class_id: class id to be set
+        :param sense: current selected sense
+        :param verbnet: verbnet corpus data
+        :return:
+        """
+        if sense and verbnet:
             self.cls = class_id
             cls = verbnet.get_class(class_id)
-            if not verbnet or cls:
-                if all([class_id != cls.id for class_id in sense.mappings.vn]):
-                    sense.add_class(cls)
+            if cls and all([class_id != cls.id for class_id in sense.mappings.vn]):
+                sense.add_class(cls, verbnet)
 
     def change_class_name(self, class_id, new_id):
         self.cls = new_id if self.cls == class_id else self.cls
@@ -374,7 +379,7 @@ class PlotPointArg:
         yield 'dataset', self.dataset
 
     def __str__(self):
-        return str(self.slot)
+        return f'{self.value}:{self.cls}'
 
 
 @dataclass
@@ -399,8 +404,7 @@ class PlotPointPredicate:
 
                 arg = ''.join(arg.split()[0]) if arg != '' else arg
 
-                if (self.args[i].type == 'event' or re.match('e+(\d+)?$', str(self.args[i].slot))) \
-                        and re.match('e+(\d+)?$', arg):
+                if (self.args[i].type == 'event' or re.match('e+(\d+)?$', str(self.args[i].slot))) and re.match('e+(\d+)?$', arg):
                     self.args[i].slot = arg
 
     def change_class_name(self, class_id, new_id):
@@ -413,13 +417,9 @@ class PlotPointPredicate:
         for vnarg in vnpred.args:
             dummy_arg = PlotPointArg()  # empty dummy arg
             for arg in args:
-                if vnarg.type == 'event':
+                if vnarg.type == 'event' or (arg.value == vnarg.value and arg.cls == class_id):
                     dummy_arg.fill_dict(dict(vnarg))
-                    dummy_arg.slot = vnarg.value
-                    break
-                elif arg.value == vnarg.value and arg.cls == class_id:
-                    dummy_arg.fill_dict(dict(vnarg))
-                    dummy_arg.slot = arg.slot
+                    dummy_arg.slot = vnarg.value if vnarg.type == 'event' else arg.slot
                     break
             self.args.append(dummy_arg)
 
@@ -441,7 +441,7 @@ class PlotPointPredicate:
         yield 'args', [arg.pred_dict() for arg in self.args]
 
     def __str__(self):
-        return f'{self.bool}{self.name}({", ".join([str(arg) for arg in self.args])})'
+        return f'{self.bool}{self.name}({", ".join([str(arg.slot) for arg in self.args])})'
 
 
 @dataclass
@@ -550,13 +550,10 @@ class PlotPointSense:
             self.predicates.append(pred_)
 
     def has_class(self, class_id):
-        for cls in self.mappings.vn:
-            if cls == class_id:
-                return True
+        """ Check if the mappings has the specified verbnet class """
+        return any([cls == class_id for cls in self.mappings.vn])
 
-        return False
-
-    def add_class(self, cls):
+    def add_class(self, cls, verbnet=None):
         if cls and cls.id not in self.mappings.vn:
             self.mappings.vn.append(cls.id)
             for example in cls.examples:
@@ -569,7 +566,7 @@ class PlotPointSense:
 
             self.arg_structs.append(arg_struct)
             self.squeeze()
-            self.compile()
+            self.compile(verbnet)
 
     def change_class_name(self, class_id, new_id):
         self.mappings.change_class_name(class_id, new_id)
@@ -579,7 +576,7 @@ class PlotPointSense:
         for arg in self.args:
             arg.change_class_name(class_id, new_id)
 
-    def remove_class(self, cls):
+    def remove_class(self, cls, verbnet):
         if cls and cls.id in self.mappings.vn:
             self.mappings.vn = [class_id for class_id in self.mappings.vn
                                 if cls.id != class_id]
@@ -591,7 +588,7 @@ class PlotPointSense:
                 arg_struct.args = [arg for arg in arg_struct.args if arg.cls != cls.id]
             self.squeeze()
             self.args = [arg for arg in self.args if arg.cls != cls.id]
-            self.compile()
+            self.compile(verbnet)
 
     def add_arg_struct(self, arg_struct):
         if arg_struct:
@@ -608,16 +605,22 @@ class PlotPointSense:
         return self.args
 
     def squeeze(self):
-        args = []
+        args_ = []
+        # Squeeze all arguments of every argument structure into a single array
         for arg_struct in self.arg_structs:
-            args.extend(arg_struct.args)
+            args_.extend(arg_struct.args)
+
+        # Remove repetitions of arguments
+        args = []
+        for arg_ in args_:
+            if not any([str(arg) == str(arg_) for arg in args]):
+                args.append(arg_)
 
         self.args.clear()
         while len(args) != 0:
             for arg_y in args:
                 if arg_y != args[0]:
-                    if (arg_y.type == '' or args[0].type == '') and (
-                            arg_y.value == args[0].value and arg_y.cls == args[0].cls):
+                    if (arg_y.type == '' or args[0].type == '') and (arg_y.value == args[0].value and arg_y.cls == args[0].cls):
                         args[0].combine(arg_y)
                         args.remove(arg_y)
 
@@ -656,38 +659,58 @@ class PlotPointSense:
     def add_examples(self, examples):
         self.examples.extend(examples)
 
-    def compile(self, verbnet):
-        predicates = []
-        for class_id in self.mappings.vn:
-            for pred in verbnet.get_predicates_from_class(class_id):
-                new_pred = PlotPointPredicate()
-                new_pred.compile(self.args, pred, class_id)
-                # Do not allow repetition of predicates with the same slots
-                if not any([str(pred) == str(new_pred) for pred in predicates]):
-                    predicates.append(new_pred)
-
-        predicates.sort(key=lambda x: x.args[0].value.replace('e', ''), reverse=False)
-        self.predicates = predicates
-
     def get_predicates(self):
         return getattr(self, 'predicates', [])
 
+    def compile(self, verbnet):
+        """
+        :param verbnet: The verbnet object, which contains all the data of the verbnet corpus
+        :return:
+        """
+        if verbnet:
+            predicates = []
+            # For each verbnet class in the plot point
+            for class_id in self.mappings.vn:
+                # Obtain each predicate of the verbnet class
+                for pred in verbnet.get_predicates_from_class(class_id):
+                    # Create a PlotPointPredicate type
+                    new_pred = PlotPointPredicate()
+                    # Compile the predicate using the slots of the plot points
+                    new_pred.compile(self.args, pred, class_id)
+                    # Do not allow repetition of predicates with the same configuration of slots
+                    if not any([str(pred) == str(new_pred) for pred in predicates]):
+                        predicates.append(new_pred)
+
+            # Sort the predicates based on the event numbering, i.e. e1, ee2, ..., eN.
+            # to keep consistency of the order of predicates
+            predicates.sort(key=lambda x: x.args[0].value.replace('e', ''), reverse=False)
+            # Replace the predicates of the object with the new compiled predicates
+            self.predicates = predicates
+
     def get_compiled_slots(self):
         slots = []
-        new_slot = PlotPointSlot(-10)
+        new_slot = None
         for arg in self.args:
-            if arg.slot != new_slot.slot:
+            # If found an argument with a different slot number then create a new slot object
+            if not new_slot or arg.slot != new_slot.slot:
                 new_slot = PlotPointSlot(arg.slot)
                 slots.append(new_slot)
 
-            new_slot.add_descr(arg.descr)
-            new_slot.implicit = new_slot.implicit or arg.implicit
-            new_slot.add_themrole(arg.value, arg.cls)
-            new_slot.add_implicit_values(arg.implicit_values)
+            new_slot.add_argument(descr=arg.descr,
+                                  implicit=new_slot.implicit or arg.implicit,
+                                  themrole=arg.value,
+                                  class_id=arg.cls,
+                                  implicit_values=arg.implicit_values)
 
         return slots
 
     def pprint(self, indent=0, end='\n'):
+        """
+            Pretty print the plot point sense.
+        :param indent: starting tab
+        :param end: ending character
+        :return: the pretty string to be printed
+        """
         indent_in = ''.join(['\t' for i in range(0, indent)])
         indent_ = ''.join(['\t' for i in range(0, indent + 1)])
         return f'{indent_in}{self.__class__.__name__}{end}' \
@@ -705,12 +728,14 @@ class PlotPointSense:
                f'{"".join([pred.pprint(indent + 2) for pred in self.predicates])}'
 
     def compiled_dict(self):
+        """ Get the compiled dictionary of the sense. """
         return {'description': self.descr,
                 'examples': self.examples,
                 'slots': [dict(slot) for slot in self.get_compiled_slots()],
                 'predicates': [pred.compiled_dict() for pred in self.predicates]}
 
     def __iter__(self):
+        """ Let the instance to used within dict(__iter__) """
         yield 'id', self.id
         yield 'dataset', self.dataset
         yield 'descr', self.descr
@@ -721,12 +746,14 @@ class PlotPointSense:
         yield 'predicates', [dict(pred) for pred in self.predicates]
 
     def __str__(self):
+        """ :return: Return the string identifier of the plot point sense """
         return f'{self.id}: {str(self.dataset)}: {str(self.descr)}'
 
 
 @dataclass
 class PlotPoint:
-    ''' A data class that stores the senses of plot points and selects the sense '''
+    """ A data class to store the senses of plot points. The selected sense is to be compiled into the plot points
+    file. """
     lemma: str = ''
     type: str = PlotPointType.VERB
     selected: str = ''
@@ -734,42 +761,55 @@ class PlotPoint:
     cleaned: bool = False
     senses: List[PlotPointSense] = field(default_factory=list)
 
-    def fill_dict(self, dict):
-        self.lemma = dict.get('lemma', '')
-        self.type = dict.get('type', PlotPointType.VERB)
-        self.selected = dict.get('selected', '')
-        self.dataset = dict.get('dataset', Dataset.EMPTY)
-        self.cleaned = bool(dict.get('cleaned', 'false'))
+    def fill_dict(self, dict_):
+        """ Fill the data class with a dictionary """
+        self.lemma = dict_.get('lemma', '')
+        self.type = dict_.get('type', PlotPointType.VERB)
+        self.selected = dict_.get('selected', '')
+        self.dataset = dict_.get('dataset', Dataset.EMPTY)
+        self.cleaned = bool(dict_.get('cleaned', 'false'))
 
-        for sense in dict.get('senses', []):
+        for sense in dict_.get('senses', []):
             s = PlotPointSense()
             s.fill_dict(sense)
             self.senses.append(s)
 
     def reset(self):
+        """ Reset the plot point to be uncleaned"""
         self.cleaned = False
 
     def has_class(self, class_id):
+        """ Check if any sense of the plot point uses the specified verbnet class """
         return any([sense.has_class(class_id) for sense in self.senses])
 
     def change_class_name(self, class_id, new_id):
+        """ Change the name of a verbnet class within every sense """
         for sense in self.senses:
             sense.change_class_name(class_id, new_id)
 
-    def get_sense(self, str_):
+    def get_sense(self, sense_str):
+        """ Return the sense based on the sense string """
         for sense in self.senses:
-            if str(sense) == str_:
+            if str(sense) == sense_str:
                 return sense
         return None
 
     def get_selected_sense(self):
+        """ Obtain the selected sense to be compiled into the plot point file """
         return self.get_sense(self.selected)
 
-    def set_selected_sense(self, str_):
-        if len(self.senses) > 0 and self.get_sense(str_):
-            self.selected = str_
+    def set_selected_sense(self, sense_str):
+        ''' Check if the sense exists and set the selected sense '''
+        if len(self.senses) > 0 and self.get_sense(sense_str):
+            self.selected = sense_str
 
     def pprint(self, indent=0, end='\n'):
+        """
+            Pretty print the plot point data.
+        :param indent: starting tab
+        :param end: ending character
+        :return: the pretty string to be printed
+        """
         indent_in = ''.join(['\t' for i in range(0, indent)])
         indent_ = ''.join(['\t' for i in range(0, indent + 1)])
         return f'{indent_in}{self.__class__.__name__}{end}' \
@@ -782,6 +822,7 @@ class PlotPoint:
                f'{"".join([sense.pprint(indent + 1) for sense in self.senses])}'
 
     def compiled_dict(self):
+        """ Get the compiled dictionary includes the lemma, type and the selected sense data. """
         if self.cleaned:
             compiled_dict = {'lemma': self.lemma, 'type': self.type}
             compiled_dict.update(self.get_selected_sense().compiled_dict())
@@ -789,6 +830,7 @@ class PlotPoint:
         return None
 
     def __iter__(self):
+        """ Let the instance to used within dict(__iter__) """
         yield 'lemma', self.lemma
         yield 'type', self.type
         yield 'selected', self.selected
@@ -797,6 +839,7 @@ class PlotPoint:
         yield 'senses', [dict(sense) for sense in self.senses]
 
 
+# Test
 if __name__ == '__main__':
     vn = PlotPointContainer()
     # verbs = vn.get_verbs()

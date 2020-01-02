@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import PyQt5.QtWidgets as QtWidgets
 import PyQt5.QtGui as QtGui
 import PyQt5.QtCore as QtCore
@@ -17,7 +15,7 @@ class ArgDragLabel(QtWidgets.QLabel):
     def setDescr(self, descr):
         self.arg.descr = descr
 
-    def setClass(self, cls, sense=None, vn=None):
+    def setClass(self, cls, sense, vn):
         self.arg.set_class(cls, sense, vn)
 
     def setValue(self, value):
@@ -30,29 +28,34 @@ class ArgDragLabel(QtWidgets.QLabel):
         self.arg.implicit_values = values
 
     def reset(self):
+        ''' Redraw the argument shape with labels '''
         metric = QtGui.QFontMetrics(self.font())
         size = metric.size(QtCore.Qt.TextSingleLine, self.label_text)
+        # Set the margins of the argument shape
         offset_x = 2
         offset_y = 18 if self.isSelected else 16
 
+        # Create the shape of the argument
+        # and set the color when selected or if it is an implicit argument
         image = QtGui.QImage(size.width() + offset_x, size.height() + offset_y, QtGui.QImage.Format_ARGB32_Premultiplied)
         image.fill(QtGui.qRgba(0, 0, 0, 0))
-
-        font = QtGui.QFont('Helvetica', 6)
-        font.setBold(True)
-        font.setStyleStrategy(QtGui.QFont.ForceOutline)
-
         painter = QtGui.QPainter()
         painter.begin(image)
         painter.setRenderHint(QtGui.QPainter.Antialiasing)
-        painter.setBrush(QtCore.Qt.yellow if self.arg.implicit else QtCore.Qt.white)
+        painter.setBrush(QtCore.Qt.cyan if self.isSelected else QtCore.Qt.yellow if self.arg.implicit else QtCore.Qt.white)
         painter.drawRoundedRect(QtCore.QRectF(0.5, 0.5, image.width() - 1, image.height() - 1), 25, 25,
                                 QtCore.Qt.RelativeSize)
+
+        # Draw the text of the argument role
+        font = QtGui.QFont('Helvetica', 6)
+        font.setBold(True)
+        font.setStyleStrategy(QtGui.QFont.ForceOutline)
         painter.setFont(font)
         painter.setBrush(QtCore.Qt.black)
         painter.drawText(QtCore.QRect(QtCore.QPoint(offset_x / 2, offset_y / 2 - 5), size), QtCore.Qt.AlignCenter,
                          self.label_text)
 
+        # If class exists then draw the argument class
         if hasattr(self.arg, 'cls'):
             font = QtGui.QFont('Helvetica', 6)
             font.setStyleStrategy(QtGui.QFont.ForceOutline)
@@ -65,16 +68,24 @@ class ArgDragLabel(QtWidgets.QLabel):
         self.setPixmap(QtGui.QPixmap.fromImage(image))
 
     def mousePressEvent(self, event):
-        self.last = "Click"
+        """ Event handler when the mouse presses the argument """
+        # Reset parent widget to show selection
+        self.parent().resetWidget(None, self)
+        self.parent().setSelection(self)
+
+        # Create a stream of data with the argument as a dictionary,
+        # the point where it was clicked, and the argument dimensions
         itemData = QtCore.QByteArray()
         dataStream = QtCore.QDataStream(itemData, QtCore.QIODevice.WriteOnly)
         dataStream << QtCore.QByteArray().append(str(dict(self.arg))) << QtCore.QPoint(
             event.pos() - self.rect().topLeft()) << QtCore.QRect(self.rect())
 
+        # Create mime data with the item data
         mimeData = QtCore.QMimeData()
         mimeData.setData('application/x-fridgemagnet', itemData)
         mimeData.setText(self.arg.value)
 
+        # Create a dragable object
         drag = QtGui.QDrag(self)
         drag.setMimeData(mimeData)
         drag.setHotSpot(event.pos() - self.rect().topLeft())
@@ -86,8 +97,6 @@ class ArgDragLabel(QtWidgets.QLabel):
             self.close()
         else:
             self.show()
-
-        self.parent().setSelection(self)
 
 
 class ArgDragWidget(QtWidgets.QWidget):
@@ -142,15 +151,13 @@ class ArgDragWidget(QtWidgets.QWidget):
             j = self.getDropIndex(point)
 
             if i != j:
-                stor = self.args[i]
-                del self.args[i]
+                stored = self.args[i]
+                self.args.pop(i)
                 if j == len(self.args):
-                    self.args.append(stor)
+                    self.args.append(stored)
                 else:
-                    self.args.insert(j, stor)
-
+                    self.args.insert(j, stored)
                 self.moveItems(i, j)
-
                 i = self.getItemIndex(arg)
                 self.args[i].slot = self.args[i - 1].slot + 1 if i > 0 else 0
 
@@ -220,12 +227,3 @@ class ArgDragWidget(QtWidgets.QWidget):
             self.labels[i].deleteLater()
             self.labels[i] = None
         self.labels = []
-
-# if __name__ == '__main__':
-#
-#     import sys
-#
-#     app = QtWidgets.QApplication(sys.argv)
-#     window = DragArgWidget()
-#     window.show()
-#     sys.exit(app.exec_())

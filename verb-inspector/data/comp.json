@@ -1,0 +1,206 @@
+{
+   "kiss": {
+      "lemma": "kiss",
+      "type": "verb",
+      "description": "Touch with the lips.",
+      "examples": [
+         "The newly married couple kissed.",
+         "She kissed her grandfather on the forehead.",
+         "Kiss and make up!",
+         "Monkeys often appear to kiss one another."
+      ],
+      "slots": [
+         {
+            "slot": 0,
+            "descriptions": [
+               "kisser",
+               "kisser"
+            ],
+            "themrole": [
+               {
+                  "vnrole": "agent",
+                  "vncls": "marry-36.2"
+               },
+               {
+                  "vnrole": "agent",
+                  "vncls": "touch-20-1"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         },
+         {
+            "slot": 1,
+            "descriptions": [
+               "kissed",
+               "kissed"
+            ],
+            "themrole": [
+               {
+                  "vnrole": "co_agent",
+                  "vncls": "marry-36.2"
+               },
+               {
+                  "vnrole": "experiencer",
+                  "vncls": "touch-20-1"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         },
+         {
+            "slot": 2,
+            "descriptions": [],
+            "themrole": [
+               {
+                  "vnrole": "theme",
+                  "vncls": "touch-20-1"
+               }
+            ],
+            "implicit": true,
+            "implicit_values": [
+               "lips"
+            ]
+         },
+         {
+            "slot": 3,
+            "descriptions": [],
+            "themrole": [
+               {
+                  "vnrole": "instrument",
+                  "vncls": "touch-20-1"
+               }
+            ],
+            "implicit": true,
+            "implicit_values": [
+               "lips"
+            ]
+         },
+         {
+            "slot": 4,
+            "descriptions": [
+               "secondary_predication_ie_goodbye_goodnight_etc"
+            ],
+            "themrole": [],
+            "implicit": false,
+            "implicit_values": []
+         }
+      ],
+      "predicates": [
+         {
+            "bool": "",
+            "name": "social_interaction",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e1"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               }
+            ]
+         },
+         {
+            "bool": "!",
+            "name": "contact",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e1"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "3"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "2"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "do",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e2"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "utilize",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e2"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "3"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "cause",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e2"
+               },
+               {
+                  "type": "event",
+                  "slot": "e3"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "contact",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e3"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "3"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "2"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "part_of",
+            "args": [
+               {
+                  "type": "themrole",
+                  "slot": "2"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               }
+            ]
+         }
+      ]
+   }
+}

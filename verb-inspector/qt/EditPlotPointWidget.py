@@ -282,7 +282,7 @@ class EditPlotPointWidget(QtWidgets.QWidget):
     @pyqtSlot()
     def removeClass(self):
         if self.currentClass and self.editClassWidget:
-            self.currentSense.remove_class(self.pp_container.verbnet.get_class(self.currentClass))
+            self.currentSense.remove_class(self.pp_container.verbnet.get_class(self.currentClass), self.pp_container.verbnet)
             self.editArgWidget.update(self.currentSense)
             self.updateClassesList()
             self.updateCompiledPredicateList()

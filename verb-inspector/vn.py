@@ -666,6 +666,7 @@ class VerbNetSimplifiedClass(object):
             elif self.vnclass:
                 predicates = self.vnclass.get_predicates()
 
+            predicates.sort(key=lambda x: x.args[0].value.replace('e', ''), reverse=False)
         return predicates
 
     def get_members(self):
