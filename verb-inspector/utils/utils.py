@@ -177,6 +177,8 @@ def norm(text, remove_punct=True):
                 text = remove_punctuations(text)
     return text
 
+def indices(list, filtr=lambda x: bool(x)):
+    return [i for i,x in enumerate(list) if filtr(x)]
 
 def tojson(filename, dict):
     if filename:

@@ -56,8 +56,12 @@ class EditPlotPointWidget(QtWidgets.QWidget):
 
         self.plotPointUnFilterButton = QtWidgets.QPushButton('Unfilter')
         self.plotPointUnFilterButton.released.connect(self.unfilter)
-        self.plotPointFilterByClassButton = QtWidgets.QPushButton('Filter By Class')
+        self.plotPointFilterByClassButton = QtWidgets.QPushButton('By class')
         self.plotPointFilterByClassButton.released.connect(self.filterByClass)
+        self.plotPointFilterByCleanedButton = QtWidgets.QPushButton('By cleaned')
+        self.plotPointFilterByCleanedButton.released.connect(self.filterByCleaned)
+        self.plotPointFilterByPredicateButton = QtWidgets.QPushButton('By predicate')
+        self.plotPointFilterByPredicateButton.released.connect(self.filterByPredicate)
 
         self.editArgWidget = EditArgWidget('pp', self.pp_container, self)
 
@@ -115,7 +119,6 @@ class EditPlotPointWidget(QtWidgets.QWidget):
         self.compiledPredicateLayout = QtWidgets.QVBoxLayout()
         self.compiledPredicateLayout.addWidget(self.predicatesLabel)
         self.compiledPredicateLayout.addWidget(self.compiledPredicateList)
-
         self.compiledPredicateLayout.addLayout(self.compiledPredicateButtons)
 
         self.editSenseLayout = QtWidgets.QHBoxLayout()
@@ -129,8 +132,12 @@ class EditPlotPointWidget(QtWidgets.QWidget):
         self.plotPointsEditLayout.addLayout(self.editArgsLayout)
         self.plotPointsEditLayout.addLayout(self.editSenseLayout)
 
+        self.plotPointsFilterButtons_ = QtWidgets.QHBoxLayout()
+        self.plotPointsFilterButtons_.addWidget(self.plotPointFilterByClassButton)
+        self.plotPointsFilterButtons_.addWidget(self.plotPointFilterByPredicateButton)
+        self.plotPointsFilterButtons_.addWidget(self.plotPointFilterByCleanedButton)
+
         self.plotPointsFilterButtons = QtWidgets.QHBoxLayout()
-        self.plotPointsFilterButtons.addWidget(self.plotPointFilterByClassButton)
         self.plotPointsFilterButtons.addWidget(self.plotPointUnFilterButton)
 
         self.plotPointsListLayout = QtWidgets.QVBoxLayout()
@@ -138,6 +145,7 @@ class EditPlotPointWidget(QtWidgets.QWidget):
         self.plotPointsListLayout.addWidget(self.plotPointsLabel)
         self.plotPointsListLayout.addWidget(self.plotPointsList)
         self.plotPointsListLayout.addWidget(self.plotPointCleanedCheckBox)
+        self.plotPointsListLayout.addLayout(self.plotPointsFilterButtons_)
         self.plotPointsListLayout.addLayout(self.plotPointsFilterButtons)
         self.plotPointsListLayout.addWidget(self.plotPointsCompileButton)
         self.plotPointsListLayout.addLayout(self.plotPointsButtons)
@@ -163,6 +171,11 @@ class EditPlotPointWidget(QtWidgets.QWidget):
             self.updateClassesList()
             self.editArgWidget.update(self.currentSense)
 
+    def refreshPredicates(self):
+        if self.currentPlotPoint and self.currentSense:
+            self.updateCompiledPredicateList()
+            # self.editArgWidget.update(self.currentSense)
+
     def updatePlotPointsList(self):
         self.plotPointsList.clear()
         plotpoints = self.pp_container.get_plotpoints() if not self.currentPlotPoints else self.currentPlotPoints
@@ -170,8 +183,7 @@ class EditPlotPointWidget(QtWidgets.QWidget):
             ppItem = QtWidgets.QListWidgetItem(pp.lemma)
             ppItem.setData(QtCore.Qt.UserRole, pp)
             ppItem.setFlags(ppItem.flags() | QtCore.Qt.ItemIsEditable)
-            if pp.cleaned:
-                ppItem.setBackground(QtGui.QBrush(QtCore.Qt.green))
+            ppItem.setBackground(QtGui.QBrush(QtCore.Qt.green) if pp.cleaned else QtGui.QBrush(QtCore.Qt.white))
             self.plotPointsList.addItem(ppItem)
 
     def updateSenseList(self):
@@ -282,7 +294,8 @@ class EditPlotPointWidget(QtWidgets.QWidget):
     @pyqtSlot()
     def removeClass(self):
         if self.currentClass and self.editClassWidget:
-            self.currentSense.remove_class(self.pp_container.verbnet.get_class(self.currentClass), self.pp_container.verbnet)
+            self.currentSense.remove_class(self.pp_container.verbnet.get_class(self.currentClass),
+                                           self.pp_container.verbnet)
             self.editArgWidget.update(self.currentSense)
             self.updateClassesList()
             self.updateCompiledPredicateList()
@@ -291,7 +304,19 @@ class EditPlotPointWidget(QtWidgets.QWidget):
     def filterByClass(self):
         cls = self.editClassWidget.getClass()
         if cls:
-            self.currentPlotPoints = self.pp_container.get_plotpoints(cls.id)
+            self.currentPlotPoints = self.pp_container.get_plotpoints(class_id=cls.id)
+            self.updatePlotPointsList()
+
+    @pyqtSlot()
+    def filterByCleaned(self):
+        self.currentPlotPoints = self.pp_container.get_plotpoints(cleaned=True)
+        self.updatePlotPointsList()
+
+    @pyqtSlot()
+    def filterByPredicate(self):
+        predicate = self.editClassWidget.getPredicate()
+        if predicate:
+            self.currentPlotPoints = self.pp_container.get_plotpoints(pred_name=predicate)
             self.updatePlotPointsList()
 
     @pyqtSlot()

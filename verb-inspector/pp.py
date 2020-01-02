@@ -83,10 +83,16 @@ class PlotPointContainer(object):
             self.plotpoints[lemma].set_selected_sense(str(self.plotpoints[lemma].senses[0]))
             self.plotpoints[lemma].reset()
 
-    def get_plotpoints(self, class_id=None):
+    def get_plotpoints(self, class_id=None, cleaned=False, pred_name=''):
         plotpoints = getattr(self, 'plotpoints', {})
         if class_id:
             plotpoints = {lemma: plotpoint for lemma, plotpoint in plotpoints.items() if plotpoint.has_class(class_id)}
+
+        if cleaned:
+            plotpoints = {lemma: plotpoint for lemma, plotpoint in plotpoints.items() if plotpoint.cleaned}
+
+        if pred_name != '':
+            plotpoints = {lemma: plotpoint for lemma, plotpoint in plotpoints.items() if plotpoint.has_predicate(pred_name)}
 
         return plotpoints
 
@@ -257,6 +263,11 @@ class PlotPointContainer(object):
         if self.verbnet.change_class_name(class_id, new_id):
             for pp in self.plotpoints.values():
                 pp.change_class_name(class_id, new_id)
+
+    def replace_predicate_name(self, current, new):
+        self.verbnet.replace_predicate_name(current, new)
+        for pp in self.plotpoints.values():
+            pp.replace_predicate_name(current, new)
 
     def compiled_dict(self):
         compiled_dict = {}
@@ -553,6 +564,10 @@ class PlotPointSense:
         """ Check if the mappings has the specified verbnet class """
         return any([cls == class_id for cls in self.mappings.vn])
 
+    def has_predicate(self, pred_name):
+        """ Check if the mappings has the specified verbnet class """
+        return any([pred.name == pred_name for pred in self.predicates])
+
     def add_class(self, cls, verbnet=None):
         if cls and cls.id not in self.mappings.vn:
             self.mappings.vn.append(cls.id)
@@ -575,6 +590,12 @@ class PlotPointSense:
 
         for arg in self.args:
             arg.change_class_name(class_id, new_id)
+
+    def replace_predicate_name(self, current, new):
+        """ Replace the predicate name of the compiled predicates"""
+        for pred in self.predicates:
+            if pred.name == current:
+                pred.name = new
 
     def remove_class(self, cls, verbnet):
         if cls and cls.id in self.mappings.vn:
@@ -782,10 +803,19 @@ class PlotPoint:
         """ Check if any sense of the plot point uses the specified verbnet class """
         return any([sense.has_class(class_id) for sense in self.senses])
 
+    def has_predicate(self, pred_name):
+        """ Check if any sense of the plot point uses the specified predicate name """
+        return any([sense.has_predicate(pred_name) for sense in self.senses])
+
     def change_class_name(self, class_id, new_id):
         """ Change the name of a verbnet class within every sense """
         for sense in self.senses:
             sense.change_class_name(class_id, new_id)
+
+    def replace_predicate_name(self, current, new):
+        """ Replace the predicate name of the compiled predicates"""
+        for sense in self.senses:
+            sense.replace_predicate_name(current, new)
 
     def get_sense(self, sense_str):
         """ Return the sense based on the sense string """

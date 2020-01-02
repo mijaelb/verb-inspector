@@ -214,12 +214,10 @@ class EditArgWidget(QtWidgets.QWidget):
 
     @pyqtSlot()
     def addArg(self):
+        """ Slot for the button 'Add', this will add a new argument box """
         if self.currentObj:
-            if self.argDragWidget.args:
-                self.currentObj.add_arg('empty', '', self.argDragWidget.args[-1].slot + 1,  False)
-            else:
-                self.currentObj.add_arg('empty', '', 0,  False)
-
+            slot = self.argDragWidget.args[-1].slot + 1 if self.argDragWidget.args else 0
+            self.currentObj.add_arg('empty', '', slot,  False)
             self.update()
 
     @pyqtSlot()

@@ -133,6 +133,14 @@ class VerbNetBase(object):
 
         return classes
 
+    def get_cleaned_classes(self):
+        classes = {}
+        for cls in self.classes.values():
+            if getattr(cls, 'cleaned', False):
+                classes[cls.id] = cls
+
+        return classes
+
     def get_predicates_from_class(self, class_id):
         cls = self.get_class(class_id)
         if cls:
@@ -588,7 +596,7 @@ class VerbNetSimplified(VerbNetBase):
     def load_classes(self):
         classes = {}
         if self.json:
-            classes = {class_id: VerbNetSimplifiedClass(self.vn.classes[class_id], cls)
+            classes = {class_id: VerbNetSimplifiedClass(self.vn.get_class(class_id), cls)
                        for class_id, cls in self.json.items()}
         else:
             classes = {class_id: VerbNetSimplifiedClass(cls)
@@ -612,12 +620,27 @@ class VerbNetSimplifiedClass(object):
     def __init__(self, vnclass: VerbNetClass = None, json_class={}):
         self.vnclass = vnclass
         self.json = json_class
-        self.id = self.json['id'] if self.json else self.vnclass.id
+        self.id = self.json.get('id', self.vnclass.id)
         self.args = self.get_args()
         self.predicates = self.get_predicates()
         self.members = self.get_members()
         self.examples = self.get_examples()
+        self.cleaned = self.json.get('cleaned', False)
 
+    def reload(self):
+        if self.vnclass:
+            self.id = self.vnclass.id
+            self.cleaned = False
+            self.json = {}
+            self.args = None
+            self.predicates = None
+            self.members = None
+            self.examples = None
+            self.args = self.get_args()
+            self.predicates = self.get_predicates()
+            self.members = self.get_members()
+            self.examples = self.get_examples()
+    
     def change_class_name(self, class_id, new_id):
         for arg in self.args:
             arg.change_class_name(class_id, new_id)
@@ -635,7 +658,9 @@ class VerbNetSimplifiedClass(object):
             if arg.slot > slot:
                 break
 
-        self.args.insert(i + 1, VerbNetArg('', value, cls, slot, implicit))
+        cls = self.id if cls == '' else cls
+        arg = VerbNetArg('', value, cls, slot, implicit)
+        self.args.insert(i + 1, arg)
 
     def remove_arg(self, arg):
         for i, arg_ in enumerate(self.args):
@@ -723,6 +748,7 @@ class VerbNetSimplifiedClass(object):
         indent_ = utils.indent(indent + 1)
         return f'{indent_in}{self.__class__.__name__}{end}' \
                f'{indent_}id={self.id!r}{end}' \
+               f'{indent_}cleaned={self.cleaned!r}{end}' \
                f'{indent_}args={end}' \
                f'{"".join([arg.pprint(indent + 2, end) for arg in self.args])}' \
                f'{indent_}predicates={end}' \
@@ -734,6 +760,7 @@ class VerbNetSimplifiedClass(object):
 
     def __iter__(self):
         yield 'id', self.id
+        yield 'cleaned', self.cleaned
         yield 'args', [arg.general_dict() for arg in self.args]
         yield 'predicates', [dict(pred) for pred in self.predicates]
         yield 'members', [dict(member) for member in self.members]

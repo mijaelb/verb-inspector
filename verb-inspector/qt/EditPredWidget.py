@@ -116,7 +116,7 @@ class EditPredWidget(QtWidgets.QWidget):
                 self.predsList.addItem(predItem)
 
 
-    def updateClass(self, vnclass):
+    def updateClass(self, vnclass=None):
         self.vnclass = vnclass
         self.reset()
 

@@ -33,18 +33,27 @@ class EditClassWidget(QtWidgets.QWidget):
         self.saveAsButton.released.connect(self.saveAs)
         self.openButton.released.connect(self.open)
 
+        self.reloadClassButton = QtWidgets.QPushButton('Reload Class')
+        self.reloadClassButton.released.connect(self.reloadClass)
+
         self.classButtons = QtWidgets.QHBoxLayout()
         self.classButtons.addWidget(self.saveButton)
         self.classButtons.addWidget(self.saveAsButton)
         self.classButtons.addWidget(self.openButton)
 
-        self.filterByPredicateButton = QtWidgets.QPushButton('Filter by predicate')
+        self.classCleanedCheckBox = QtWidgets.QCheckBox('Cleaned')
+        self.classCleanedCheckBox.stateChanged.connect(self.classCleaned)
+
+        self.filterByCleanedButton = QtWidgets.QPushButton('By cleaned')
+        self.filterByPredicateButton = QtWidgets.QPushButton('By predicate')
         self.removeFilterButton = QtWidgets.QPushButton('Unfilter')
+        self.filterByCleanedButton.released.connect(self.filterByCleaned)
         self.filterByPredicateButton.released.connect(self.filterByPredicate)
         self.removeFilterButton.released.connect(self.removeFilter)
 
         self.filterButtons = QtWidgets.QHBoxLayout()
         self.filterButtons.addWidget(self.filterByPredicateButton)
+        self.filterButtons.addWidget(self.filterByCleanedButton)
         self.filterButtons.addWidget(self.removeFilterButton)
 
         self.predsListLabel = QtWidgets.QLabel('All predicates ▾')
@@ -60,8 +69,10 @@ class EditClassWidget(QtWidgets.QWidget):
         self.updateClassesList()
 
         self.classSelectLayout = QtWidgets.QVBoxLayout()
+        self.classSelectLayout.addWidget(self.reloadClassButton)
         self.classSelectLayout.addWidget(self.classesLabel)
         self.classSelectLayout.addWidget(self.classesList)
+        self.classSelectLayout.addWidget(self.classCleanedCheckBox)
         self.classSelectLayout.addWidget(self.predsListLabel)
         self.classSelectLayout.addWidget(self.predsList)
         self.classSelectLayout.addLayout(self.filterButtons)
@@ -85,6 +96,7 @@ class EditClassWidget(QtWidgets.QWidget):
     def initUI(self):
         self.hLine.setStyleSheet('QFrame { color: palette(midlight) }')
         self.predsListLabel.setStyleSheet('QLabel { color: palette(midlight); }')
+        self.classesList.setStyleSheet('QLabel { color: palette(midlight); }')
         self.classesList.setMaximumWidth(self.classesList.sizeHint().width())
         self.predsList.setMaximumWidth(self.predsList.sizeHint().width())
         self.predsList.setMaximumHeight(150)
@@ -98,18 +110,23 @@ class EditClassWidget(QtWidgets.QWidget):
             classItem = QtWidgets.QListWidgetItem(cls.id)
             classItem.setData(QtCore.Qt.UserRole, cls)
             classItem.setFlags(classItem.flags() | QtCore.Qt.ItemIsEditable)
+            classItem.setBackground(QtGui.QBrush(QtCore.Qt.green) if cls.cleaned else QtGui.QBrush(QtCore.Qt.white))
             self.classesList.addItem(classItem)
 
     def updatePredsList(self):
         self.predsList.clear()
         for pred in self.pp_container.verbnet.get_all_predicates_name():
+            # utils.write('predicate_names.log', pred + '\n', 'a+')
             predItem = QtWidgets.QListWidgetItem(pred)
             predItem.setData(QtCore.Qt.UserRole, pred)
             predItem.setFlags(predItem.flags() | QtCore.Qt.ItemIsEditable)
             self.predsList.addItem(predItem)
 
     def getClass(self):
-        return self.currentClass
+        return self.currentClass.data(QtCore.Qt.UserRole) if self.currentClass else None
+
+    def getPredicate(self):
+        return self.currentPred
 
     def resetClass(self):
         self.editArgWidget.clear()
@@ -124,11 +141,13 @@ class EditClassWidget(QtWidgets.QWidget):
     @pyqtSlot(QtWidgets.QListWidgetItem, QtWidgets.QListWidgetItem)
     def changeClass(self, current: QtWidgets.QListWidgetItem, previous: QtWidgets.QListWidgetItem):
         if current:
-            self.currentClass = current.data(QtCore.Qt.UserRole)
-            self.editArgWidget.update(self.currentClass)
-            self.editPredWidget.updateClass(self.currentClass)
-        else:
-            self.resetClass()
+            self.currentClass = current
+            cls = current.data(QtCore.Qt.UserRole)
+            self.classCleanedCheckBox.blockSignals(True)
+            self.classCleanedCheckBox.setChecked(cls.cleaned)
+            self.classCleanedCheckBox.blockSignals(False)
+            self.editArgWidget.update(cls)
+            self.editPredWidget.updateClass(cls)
 
     @pyqtSlot(QtWidgets.QListWidgetItem, QtWidgets.QListWidgetItem)
     def changePred(self, current: QtWidgets.QListWidgetItem, previous: QtWidgets.QListWidgetItem):
@@ -139,7 +158,7 @@ class EditClassWidget(QtWidgets.QWidget):
         if current:
             cls = current.data(QtCore.Qt.UserRole)
             self.pp_container.change_class_name(cls.id, current.text())
-            self.editArgWidget.update(self.currentClass)
+            self.editArgWidget.update(cls)
             if self.editPlotPointWidget:
                 self.editPlotPointWidget.refreshClasses()
 
@@ -147,8 +166,19 @@ class EditClassWidget(QtWidgets.QWidget):
     def updatePred(self, current):
         if current:
             pred = current.data(QtCore.Qt.UserRole)
-            self.pp_container.verbnet.replace_predicate_name(pred, current.text())
-            self.editPredWidget.updateClass(self.currentClass)
+            cls = self.getClass()
+            self.pp_container.replace_predicate_name(pred, current.text())
+            self.editPredWidget.updateClass(cls)
+            self.updatePredsList()
+            if self.editPlotPointWidget:
+                self.editPlotPointWidget.refreshPredicates()
+
+    def reloadClass(self):
+        cls = self.getClass()
+        if cls:
+            cls.reload()
+            self.editArgWidget.update(cls)
+            self.editPredWidget.updateClass(cls)
             self.updatePredsList()
 
     @pyqtSlot()
@@ -160,8 +190,7 @@ class EditClassWidget(QtWidgets.QWidget):
 
     @pyqtSlot()
     def saveAs(self):
-        name = QtWidgets.QFileDialog.getSaveFileName(self, 'Save File',
-                                                     "", "Json files (*.json)")[0]
+        name = QtWidgets.QFileDialog.getSaveFileName(self, 'Save File', "", "Json files (*.json)")[0]
         if name:
             if not QtCore.QFileInfo(name).suffix():
                 name += ".json"
@@ -173,6 +202,10 @@ class EditClassWidget(QtWidgets.QWidget):
         name = QtWidgets.QFileDialog.getOpenFileName(self, 'Open File')
         if name:
             self.pp_container.verbnet.load(name[0])
+            self.resetClass()
+            self.updateClassesList()
+            self.editArgWidget.clear()
+            self.editPredWidget.updateClass()
 
     @pyqtSlot()
     def filterByPredicate(self):
@@ -181,13 +214,21 @@ class EditClassWidget(QtWidgets.QWidget):
             self.updateClassesList()
 
     @pyqtSlot()
+    def filterByCleaned(self):
+        self.currentClasses = self.pp_container.verbnet.get_cleaned_classes()
+        self.updateClassesList()
+
+    @pyqtSlot()
     def removeFilter(self):
         self.currentClasses = None
         self.updateClassesList()
 
     @pyqtSlot()
-    def addClassInSense(self):
-        self.plotPointWidget.addClassInSense(self.currentClass)
+    def classCleaned(self):
+        cls = self.getClass()
+        if cls:
+            cls.cleaned = self.classCleanedCheckBox.isChecked()
+            self.currentClass.setBackground(QtGui.QBrush(QtCore.Qt.green) if cls.cleaned else QtGui.QBrush(QtCore.Qt.white))
 
     def setPlotPointWidget(self, plotPointWidget):
         self.editPlotPointWidget = plotPointWidget
