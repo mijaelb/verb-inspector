@@ -17,6 +17,11 @@
             "value": "source",
             "slot": 2,
             "implicit": false
+         },
+         {
+            "value": "preposition",
+            "slot": 3,
+            "implicit": false
          }
       ],
       "predicates": [
@@ -35,6 +40,10 @@
                {
                   "type": "themrole",
                   "value": "source"
+               },
+               {
+                  "type": "prep",
+                  "value": "preposition"
                }
             ]
          },
@@ -53,24 +62,6 @@
                {
                   "type": "themrole",
                   "value": "theme"
-               }
-            ]
-         },
-         {
-            "bool": "!",
-            "name": "location",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e3"
-               },
-               {
-                  "type": "themrole",
-                  "value": "theme"
-               },
-               {
-                  "type": "themrole",
-                  "value": "source"
                }
             ]
          }
@@ -115,7 +106,7 @@
    },
    "accept-77.1": {
       "id": "accept-77.1",
-      "cleaned": true,
+      "cleaned": false,
       "args": [
          {
             "value": "agent",
@@ -205,7 +196,7 @@
    },
    "accompany-51.7": {
       "id": "accompany-51.7",
-      "cleaned": true,
+      "cleaned": false,
       "args": [
          {
             "value": "agent",
@@ -258,7 +249,7 @@
             "args": [
                {
                   "type": "event",
-                  "value": "e1"
+                  "value": "e2"
                },
                {
                   "type": "themrole",
@@ -276,7 +267,7 @@
             "args": [
                {
                   "type": "event",
-                  "value": "ee2"
+                  "value": "ee3"
                },
                {
                   "type": "themrole",
@@ -294,11 +285,47 @@
             "args": [
                {
                   "type": "event",
-                  "value": "ee2"
+                  "value": "ee3"
                },
                {
                   "type": "themrole",
                   "value": "theme"
+               },
+               {
+                  "type": "predspecific",
+                  "value": "initial_location"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "motion",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "ee4"
+               },
+               {
+                  "type": "themrole",
+                  "value": "agent"
+               },
+               {
+                  "type": "predspecific",
+                  "value": "trajectory"
+               }
+            ]
+         },
+         {
+            "bool": "!",
+            "name": "location",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "ee4"
+               },
+               {
+                  "type": "themrole",
+                  "value": "agent"
                },
                {
                   "type": "predspecific",
@@ -312,47 +339,11 @@
             "args": [
                {
                   "type": "event",
-                  "value": "ee2"
+                  "value": "ee4"
                },
                {
                   "type": "event",
                   "value": "ee3"
-               }
-            ]
-         },
-         {
-            "bool": "",
-            "name": "motion",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "ee3"
-               },
-               {
-                  "type": "themrole",
-                  "value": "agent"
-               },
-               {
-                  "type": "predspecific",
-                  "value": "trajectory"
-               }
-            ]
-         },
-         {
-            "bool": "!",
-            "name": "location",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "ee3"
-               },
-               {
-                  "type": "themrole",
-                  "value": "agent"
-               },
-               {
-                  "type": "predspecific",
-                  "value": "initial_location"
                }
             ]
          },
@@ -1021,6 +1012,20 @@
          },
          {
             "bool": "",
+            "name": "cause",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e2"
+               },
+               {
+                  "type": "event",
+                  "value": "e1"
+               }
+            ]
+         },
+         {
+            "bool": "",
             "name": "desire",
             "args": [
                {
@@ -1034,20 +1039,6 @@
                {
                   "type": "themrole",
                   "value": "stimulus"
-               }
-            ]
-         },
-         {
-            "bool": "",
-            "name": "cause",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e2"
-               },
-               {
-                  "type": "event",
-                  "value": "e1"
                }
             ]
          },
@@ -1335,7 +1326,7 @@
    },
    "admire-31.2": {
       "id": "admire-31.2",
-      "cleaned": true,
+      "cleaned": false,
       "args": [
          {
             "value": "experiencer",
@@ -1374,6 +1365,20 @@
                {
                   "type": "themrole",
                   "value": "experiencer"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "reason",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e"
+               },
+               {
+                  "type": "themrole",
+                  "value": "stimulus"
                }
             ]
          },
@@ -8001,7 +8006,7 @@
    },
    "appear-48.1.1": {
       "id": "appear-48.1.1",
-      "cleaned": true,
+      "cleaned": false,
       "args": [
          {
             "value": "theme",
@@ -8016,12 +8021,26 @@
       ],
       "predicates": [
          {
-            "bool": "!",
+            "bool": "",
+            "name": "appear",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "during(e)"
+               },
+               {
+                  "type": "themrole",
+                  "value": "theme"
+               }
+            ]
+         },
+         {
+            "bool": "",
             "name": "location",
             "args": [
                {
                   "type": "event",
-                  "value": "e1"
+                  "value": "end(e)"
                },
                {
                   "type": "themrole",
@@ -8034,26 +8053,12 @@
             ]
          },
          {
-            "bool": "",
-            "name": "appear",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e2"
-               },
-               {
-                  "type": "themrole",
-                  "value": "theme"
-               }
-            ]
-         },
-         {
-            "bool": "",
+            "bool": "!",
             "name": "location",
             "args": [
                {
                   "type": "event",
-                  "value": "e2"
+                  "value": "start(e)"
                },
                {
                   "type": "themrole",
@@ -12769,7 +12774,7 @@
    },
    "berry-13.7": {
       "id": "berry-13.7",
-      "cleaned": true,
+      "cleaned": false,
       "args": [
          {
             "value": "agent",
@@ -12848,6 +12853,20 @@
          },
          {
             "bool": "",
+            "name": "cause",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e2"
+               },
+               {
+                  "type": "event",
+                  "value": "e3"
+               }
+            ]
+         },
+         {
+            "bool": "",
             "name": "transfer",
             "args": [
                {
@@ -12865,20 +12884,6 @@
                {
                   "type": "themrole",
                   "value": "agent"
-               }
-            ]
-         },
-         {
-            "bool": "",
-            "name": "cause",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e2"
-               },
-               {
-                  "type": "event",
-                  "value": "e3"
                }
             ]
          },
@@ -26437,7 +26442,7 @@
    },
    "chit_chat-37.6": {
       "id": "chit_chat-37.6",
-      "cleaned": true,
+      "cleaned": false,
       "args": [
          {
             "value": "agent",
@@ -32422,7 +32427,7 @@
    },
    "consume-66": {
       "id": "consume-66",
-      "cleaned": true,
+      "cleaned": false,
       "args": [
          {
             "value": "agent",
@@ -44702,34 +44707,21 @@
             "value": "source",
             "slot": 2,
             "implicit": false
+         },
+         {
+            "value": "location",
+            "slot": 3,
+            "implicit": false
          }
       ],
       "predicates": [
-         {
-            "bool": "",
-            "name": "location",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e1"
-               },
-               {
-                  "type": "themrole",
-                  "value": "patient"
-               },
-               {
-                  "type": "themrole",
-                  "value": "source"
-               }
-            ]
-         },
          {
             "bool": "",
             "name": "consume",
             "args": [
                {
                   "type": "event",
-                  "value": "e2"
+                  "value": "e1"
                },
                {
                   "type": "themrole",
@@ -44738,6 +44730,24 @@
                {
                   "type": "themrole",
                   "value": "patient"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "location",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e2"
+               },
+               {
+                  "type": "themrole",
+                  "value": "patient"
+               },
+               {
+                  "type": "themrole",
+                  "value": "location"
                }
             ]
          }
@@ -49031,7 +49041,7 @@
    },
    "exchange-13.6.1": {
       "id": "exchange-13.6.1",
-      "cleaned": true,
+      "cleaned": false,
       "args": [
          {
             "value": "agent",
@@ -50160,20 +50170,6 @@
       "predicates": [
          {
             "bool": "",
-            "name": "do",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e1"
-               },
-               {
-                  "type": "themrole",
-                  "value": "agent"
-               }
-            ]
-         },
-         {
-            "bool": "",
             "name": "consume",
             "args": [
                {
@@ -50187,6 +50183,34 @@
                {
                   "type": "themrole",
                   "value": "theme"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "do",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e2"
+               },
+               {
+                  "type": "themrole",
+                  "value": "agent"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "cause",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e2"
+               },
+               {
+                  "type": "event",
+                  "value": "e3"
                }
             ]
          }
@@ -55153,7 +55177,7 @@
    },
    "future_having-13.3": {
       "id": "future_having-13.3",
-      "cleaned": true,
+      "cleaned": false,
       "args": [
          {
             "value": "agent",
@@ -55232,16 +55256,6 @@
          },
          {
             "bool": "",
-            "name": "irrealis",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e2"
-               }
-            ]
-         },
-         {
-            "bool": "",
             "name": "cause",
             "args": [
                {
@@ -55251,6 +55265,16 @@
                {
                   "type": "event",
                   "value": "e3"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "irrealis",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e2"
                }
             ]
          },
@@ -56541,7 +56565,7 @@
    },
    "give-13.1": {
       "id": "give-13.1",
-      "cleaned": true,
+      "cleaned": false,
       "args": [
          {
             "value": "agent",
@@ -56768,7 +56792,7 @@
    },
    "give-13.1-1": {
       "id": "give-13.1-1",
-      "cleaned": true,
+      "cleaned": false,
       "args": [
          {
             "value": "agent",
@@ -62397,7 +62421,7 @@
    },
    "instr_communication-37.4.1": {
       "id": "instr_communication-37.4.1",
-      "cleaned": true,
+      "cleaned": false,
       "args": [
          {
             "value": "agent",
@@ -62413,11 +62437,6 @@
             "value": "recipient",
             "slot": 2,
             "implicit": false
-         },
-         {
-            "value": "instrument",
-            "slot": 3,
-            "implicit": true
          }
       ],
       "predicates": [
@@ -62436,24 +62455,6 @@
                {
                   "type": "themrole",
                   "value": "topic"
-               }
-            ]
-         },
-         {
-            "bool": "",
-            "name": "utilize",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e"
-               },
-               {
-                  "type": "themrole",
-                  "value": "agent"
-               },
-               {
-                  "type": "verbspecific",
-                  "value": "instrument"
                }
             ]
          },
@@ -62481,6 +62482,20 @@
          },
          {
             "bool": "",
+            "name": "cause",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e1"
+               },
+               {
+                  "type": "event",
+                  "value": "e2"
+               }
+            ]
+         },
+         {
+            "bool": "",
             "name": "know",
             "args": [
                {
@@ -62494,20 +62509,6 @@
                {
                   "type": "themrole",
                   "value": "topic"
-               }
-            ]
-         },
-         {
-            "bool": "",
-            "name": "cause",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e1"
-               },
-               {
-                  "type": "event",
-                  "value": "e2"
                }
             ]
          }
@@ -94148,7 +94149,7 @@
    },
    "rob-10.6.4": {
       "id": "rob-10.6.4",
-      "cleaned": true,
+      "cleaned": false,
       "args": [
          {
             "value": "agent",
@@ -94156,17 +94157,17 @@
             "implicit": false
          },
          {
-            "value": "theme",
+            "value": "beneficiary",
             "slot": 1,
             "implicit": false
          },
          {
-            "value": "source",
+            "value": "theme",
             "slot": 2,
             "implicit": false
          },
          {
-            "value": "beneficiary",
+            "value": "source",
             "slot": 3,
             "implicit": false
          }
@@ -111274,7 +111275,7 @@
    },
    "substitute-13.6.2": {
       "id": "substitute-13.6.2",
-      "cleaned": true,
+      "cleaned": false,
       "args": [
          {
             "value": "theme",
@@ -111514,7 +111515,7 @@
    },
    "substitute-13.6.2-1": {
       "id": "substitute-13.6.2-1",
-      "cleaned": true,
+      "cleaned": false,
       "args": [
          {
             "value": "theme",
@@ -113853,7 +113854,7 @@
    },
    "talk-37.5": {
       "id": "talk-37.5",
-      "cleaned": true,
+      "cleaned": false,
       "args": [
          {
             "value": "agent",
@@ -113951,6 +113952,20 @@
          },
          {
             "bool": "",
+            "name": "cause",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e1"
+               },
+               {
+                  "type": "event",
+                  "value": "e3"
+               }
+            ]
+         },
+         {
+            "bool": "",
             "name": "loop",
             "args": [
                {
@@ -113995,7 +114010,7 @@
             "args": [
                {
                   "type": "event",
-                  "value": "e3"
+                  "value": "e2"
                },
                {
                   "type": "themrole",
@@ -114017,11 +114032,29 @@
             "args": [
                {
                   "type": "event",
-                  "value": "e3"
+                  "value": "e2"
                },
                {
                   "type": "event",
                   "value": "e4"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "know",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e3"
+               },
+               {
+                  "type": "themrole",
+                  "value": "co_agent"
+               },
+               {
+                  "type": "themrole",
+                  "value": "topic"
                }
             ]
          },
@@ -114928,7 +114961,7 @@
    },
    "tell-37.2": {
       "id": "tell-37.2",
-      "cleaned": true,
+      "cleaned": false,
       "args": [
          {
             "value": "agent",
@@ -117363,7 +117396,7 @@
    },
    "transfer_mesg-37.1.1": {
       "id": "transfer_mesg-37.1.1",
-      "cleaned": true,
+      "cleaned": false,
       "args": [
          {
             "value": "agent",
@@ -117371,12 +117404,12 @@
             "implicit": false
          },
          {
-            "value": "topic",
+            "value": "recipient",
             "slot": 1,
             "implicit": false
          },
          {
-            "value": "recipient",
+            "value": "topic",
             "slot": 2,
             "implicit": false
          }
@@ -117687,7 +117720,7 @@
    },
    "transfer_mesg-37.1.1-1": {
       "id": "transfer_mesg-37.1.1-1",
-      "cleaned": true,
+      "cleaned": false,
       "args": [
          {
             "value": "agent",
@@ -117695,12 +117728,12 @@
             "implicit": false
          },
          {
-            "value": "topic",
+            "value": "recipient",
             "slot": 1,
             "implicit": false
          },
          {
-            "value": "recipient",
+            "value": "topic",
             "slot": 2,
             "implicit": false
          }
@@ -117817,7 +117850,7 @@
    },
    "transfer_mesg-37.1.1-1-1": {
       "id": "transfer_mesg-37.1.1-1-1",
-      "cleaned": true,
+      "cleaned": false,
       "args": [
          {
             "value": "agent",
@@ -117825,12 +117858,12 @@
             "implicit": false
          },
          {
-            "value": "topic",
+            "value": "recipient",
             "slot": 1,
             "implicit": false
          },
          {
-            "value": "instrument",
+            "value": "topic",
             "slot": 2,
             "implicit": false
          }
@@ -121858,18 +121891,13 @@
       "cleaned": false,
       "args": [
          {
-            "value": "agent",
+            "value": "theme",
             "slot": 0,
             "implicit": false
          },
          {
-            "value": "theme",
-            "slot": 1,
-            "implicit": false
-         },
-         {
             "value": "location",
-            "slot": 2,
+            "slot": 1,
             "implicit": false
          }
       ],
@@ -121880,29 +121908,11 @@
             "args": [
                {
                   "type": "event",
-                  "value": "e"
+                  "value": "e1"
                },
                {
                   "type": "themrole",
                   "value": "theme"
-               },
-               {
-                  "type": "themrole",
-                  "value": "location"
-               }
-            ]
-         },
-         {
-            "bool": "",
-            "name": "location",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e"
-               },
-               {
-                  "type": "themrole",
-                  "value": "agent"
                },
                {
                   "type": "themrole",
@@ -121997,7 +122007,7 @@
    },
    "wink-40.3.1": {
       "id": "wink-40.3.1",
-      "cleaned": true,
+      "cleaned": false,
       "args": [
          {
             "value": "agent",
@@ -122007,7 +122017,7 @@
          {
             "value": "patient",
             "slot": 1,
-            "implicit": true
+            "implicit": false
          },
          {
             "value": "recipient",
@@ -122022,7 +122032,7 @@
          {
             "value": "position",
             "slot": 4,
-            "implicit": true
+            "implicit": false
          }
       ],
       "predicates": [
@@ -122082,6 +122092,28 @@
          },
          {
             "bool": "",
+            "name": "transfer_info",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "ee2"
+               },
+               {
+                  "type": "themrole",
+                  "value": "agent"
+               },
+               {
+                  "type": "themrole",
+                  "value": "theme"
+               },
+               {
+                  "type": "themrole",
+                  "value": "recipient"
+               }
+            ]
+         },
+         {
+            "bool": "",
             "name": "body_motion",
             "args": [
                {
@@ -122114,23 +122146,15 @@
          },
          {
             "bool": "",
-            "name": "transfer_info",
+            "name": "cause",
             "args": [
                {
                   "type": "event",
                   "value": "ee2"
                },
                {
-                  "type": "themrole",
-                  "value": "agent"
-               },
-               {
-                  "type": "themrole",
-                  "value": "theme"
-               },
-               {
-                  "type": "themrole",
-                  "value": "recipient"
+                  "type": "event",
+                  "value": "e3"
                }
             ]
          },
@@ -122163,20 +122187,6 @@
                {
                   "type": "themrole",
                   "value": "agent"
-               }
-            ]
-         },
-         {
-            "bool": "",
-            "name": "cause",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "ee2"
-               },
-               {
-                  "type": "event",
-                  "value": "e3"
                }
             ]
          }

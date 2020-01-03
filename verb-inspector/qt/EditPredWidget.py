@@ -153,11 +153,11 @@ class EditPredWidget(QtWidgets.QWidget):
                 pred.name = str_arr[0][1:] if str_arr[0][0] == '!' else str_arr[0]
                 pred.bool = str_arr[0][0] if str_arr[0][0] == '!' else ''
                 str_arr[1] = str_arr[1].replace(')', '')
-                print(str_arr)
                 arg_arr = str_arr[1].split(',')
                 if arg_arr[0] != '':
                     pred.edit_args_name(arg_arr)
 
+            self.parent().updatePredsList()
             self.reset(True)
 
     def removeArg(self):

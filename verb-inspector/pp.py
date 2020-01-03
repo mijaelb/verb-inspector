@@ -568,6 +568,10 @@ class PlotPointSense:
         """ Check if the mappings has the specified verbnet class """
         return any([pred.name == pred_name for pred in self.predicates])
 
+    def remove_predicate(self, index):
+        """ Remove a predicate at the index """
+        return self.predicates.pop(index)
+
     def add_class(self, cls, verbnet=None):
         if cls and cls.id not in self.mappings.vn:
             self.mappings.vn.append(cls.id)

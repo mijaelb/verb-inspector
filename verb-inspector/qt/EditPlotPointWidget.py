@@ -108,11 +108,14 @@ class EditPlotPointWidget(QtWidgets.QWidget):
         self.compiledPredicateList = QtWidgets.QListWidget()
         self.compiledPredicateList.itemChanged.connect(self.updatePred)
         self.compilePredicatesButton = QtWidgets.QPushButton('Compile Predicates')
+        self.removePredicateButton = QtWidgets.QPushButton('Remove')
         self.compilePredicatesButton.released.connect(self.compilePredicates)
+        self.removePredicateButton.released.connect(self.removePredicate)
         self.updateCompiledPredicateList()
 
         self.compiledPredicateButtons = QtWidgets.QHBoxLayout()
         self.compiledPredicateButtons.addWidget(self.compilePredicatesButton)
+        self.compiledPredicateButtons.addWidget(self.removePredicateButton)
         self.compiledPredicateButtons.addWidget(self.compiledPredicateUpArgButton)
         self.compiledPredicateButtons.addWidget(self.compiledPredicateDownArgButton)
 
@@ -269,6 +272,13 @@ class EditPlotPointWidget(QtWidgets.QWidget):
     def compilePredicates(self):
         self.currentSense.compile(self.pp_container.verbnet)
         self.updateCompiledPredicateList()
+
+    @pyqtSlot()
+    def removePredicate(self):
+        if self.compiledPredicateList.currentItem():
+            sense = self.currentSense
+            sense.remove_predicate(self.compiledPredicateList.currentRow())
+            self.updateCompiledPredicateList()
 
     @pyqtSlot()
     def plotPointCleaned(self):

@@ -510,12 +510,10 @@ class VerbNetPredicate(object):
                     arg = ''.join(arg.split()[0])
 
                 if i > len(self.args) - 1:
-                    if re.match(r'e+(\d+)', arg):
-                        self.add_arg('event', arg)
-                    else:
-                        self.add_arg('themrole', arg)
+                    type_ = 'event' if re.match(r'e+(\d+)?$', arg) else 'themrole'
+                    self.add_arg(type_, arg)
                 else:
-                    if re.match(r'e+(\d+)', arg):
+                    if re.match(r'e+(\d+)?$', arg):
                         self.args[i].type = 'event'
                     self.args[i].value = arg
 

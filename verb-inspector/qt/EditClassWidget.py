@@ -78,7 +78,7 @@ class EditClassWidget(QtWidgets.QWidget):
         self.classSelectLayout.addLayout(self.filterButtons)
         self.classSelectLayout.addLayout(self.classButtons)
 
-        self.editPredWidget = EditPredWidget()
+        self.editPredWidget = EditPredWidget(parent=self)
 
         self.editClassLayout = QtWidgets.QVBoxLayout()
         self.editClassLayout.addWidget(self.editArgWidget)
