@@ -498,7 +498,7 @@
    },
    "acquiesce-95.1": {
       "id": "acquiesce-95.1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -506,13 +506,13 @@
             "implicit": false
          },
          {
-            "value": "theme",
+            "value": "co_agent",
             "slot": 1,
             "implicit": false
          },
          {
-            "value": "co_agent",
-            "slot": 2,
+            "value": "theme",
+            "slot": 1,
             "implicit": false
          }
       ],
@@ -653,7 +653,7 @@
    },
    "acquiesce-95.1-1": {
       "id": "acquiesce-95.1-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -722,7 +722,7 @@
    },
    "act-114": {
       "id": "act-114",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -855,7 +855,7 @@
    },
    "act-114-1": {
       "id": "act-114-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -919,7 +919,7 @@
    },
    "act-114-1-1": {
       "id": "act-114-1-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -9957,7 +9957,7 @@
    },
    "avoid-52": {
       "id": "avoid-52",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -9971,7 +9971,7 @@
          },
          {
             "value": "location",
-            "slot": 2,
+            "slot": 1,
             "implicit": false
          }
       ],
@@ -10592,7 +10592,7 @@
    },
    "battle-36.4": {
       "id": "battle-36.4",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -10608,11 +10608,6 @@
             "value": "theme",
             "slot": 2,
             "implicit": false
-         },
-         {
-            "value": "topic",
-            "slot": 3,
-            "implicit": false
          }
       ],
       "predicates": [
@@ -10627,20 +10622,6 @@
                {
                   "type": "themrole",
                   "value": "theme"
-               }
-            ]
-         },
-         {
-            "bool": "",
-            "name": "reason",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e"
-               },
-               {
-                  "type": "themrole",
-                  "value": "topic"
                }
             ]
          },
@@ -10973,7 +10954,7 @@
    },
    "battle-36.4-1": {
       "id": "battle-36.4-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -11170,7 +11151,7 @@
    },
    "become-109.1": {
       "id": "become-109.1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "patient",
@@ -11272,7 +11253,7 @@
    },
    "become-109.1-1": {
       "id": "become-109.1-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "patient",
@@ -11372,7 +11353,7 @@
    },
    "become-109.1-1-1": {
       "id": "become-109.1-1-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "patient",
@@ -11457,7 +11438,7 @@
    },
    "beg-58.2": {
       "id": "beg-58.2",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -11542,7 +11523,7 @@
    },
    "beg-58.2-1": {
       "id": "beg-58.2-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -11616,7 +11597,7 @@
    },
    "beg-58.2-1-1": {
       "id": "beg-58.2-1-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -11930,20 +11911,6 @@
          },
          {
             "bool": "",
-            "name": "cause",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e2"
-               },
-               {
-                  "type": "event",
-                  "value": "e1"
-               }
-            ]
-         },
-         {
-            "bool": "",
             "name": "do",
             "args": [
                {
@@ -11953,6 +11920,20 @@
                {
                   "type": "themrole",
                   "value": "agent"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "cause",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e2"
+               },
+               {
+                  "type": "event",
+                  "value": "e1"
                }
             ]
          },
@@ -12067,7 +12048,7 @@
    },
    "being_dressed-41.3.3": {
       "id": "being_dressed-41.3.3",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -13183,7 +13164,7 @@
    },
    "bill-54.5": {
       "id": "bill-54.5",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -13382,7 +13363,7 @@
    },
    "birth-28.2": {
       "id": "birth-28.2",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -13489,7 +13470,7 @@
    },
    "birth-28.2-1": {
       "id": "birth-28.2-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -18203,7 +18184,7 @@
    },
    "bump-18.4": {
       "id": "bump-18.4",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "theme",
@@ -18211,7 +18192,7 @@
             "implicit": false
          },
          {
-            "value": "location",
+            "value": "co_theme",
             "slot": 1,
             "implicit": false
          }
@@ -18249,7 +18230,7 @@
                },
                {
                   "type": "themrole",
-                  "value": "location"
+                  "value": "co_theme"
                }
             ]
          },
@@ -18285,7 +18266,7 @@
                },
                {
                   "type": "themrole",
-                  "value": "location"
+                  "value": "co_theme"
                }
             ]
          }
@@ -18328,7 +18309,7 @@
    },
    "bump-18.4-1": {
       "id": "bump-18.4-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "theme",
@@ -26180,7 +26161,7 @@
    },
    "chew-39.2": {
       "id": "chew-39.2",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -26193,13 +26174,32 @@
             "implicit": false
          }
       ],
-      "predicates": [],
+      "predicates": [
+         {
+            "bool": "",
+            "name": "consume",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e1"
+               },
+               {
+                  "type": "themrole",
+                  "value": "agent"
+               },
+               {
+                  "type": "themrole",
+                  "value": "patient"
+               }
+            ]
+         }
+      ],
       "members": [],
       "examples": []
    },
    "chew-39.2-1": {
       "id": "chew-39.2-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -26356,7 +26356,7 @@
    },
    "chew-39.2-2": {
       "id": "chew-39.2-2",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -27003,7 +27003,7 @@
    },
    "classify-29.10": {
       "id": "classify-29.10",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -30343,7 +30343,7 @@
    },
    "conduct-111.1": {
       "id": "conduct-111.1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -30392,20 +30392,6 @@
          },
          {
             "bool": "",
-            "name": "cause",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e2"
-               },
-               {
-                  "type": "event",
-                  "value": "e1"
-               }
-            ]
-         },
-         {
-            "bool": "",
             "name": "occur",
             "args": [
                {
@@ -30415,6 +30401,20 @@
                {
                   "type": "themrole",
                   "value": "theme"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "cause",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e2"
+               },
+               {
+                  "type": "event",
+                  "value": "e1"
                }
             ]
          }
@@ -33402,7 +33402,7 @@
    },
    "continue-55.3": {
       "id": "continue-55.3",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -33421,7 +33421,7 @@
          },
          {
             "value": "time",
-            "slot": 3,
+            "slot": 2,
             "implicit": false
          }
       ],
@@ -33463,12 +33463,12 @@
             "name": "do",
             "args": [
                {
-                  "type": "themrole",
-                  "value": "agent"
+                  "type": "event",
+                  "value": "e"
                },
                {
                   "type": "event",
-                  "value": "e"
+                  "value": "agent"
                }
             ]
          }
@@ -40843,7 +40843,7 @@
    },
    "destroy-44": {
       "id": "destroy-44",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -40864,7 +40864,7 @@
       "predicates": [
          {
             "bool": "!",
-            "name": "destroy",
+            "name": "destroyed",
             "args": [
                {
                   "type": "event",
@@ -40910,7 +40910,7 @@
          },
          {
             "bool": "",
-            "name": "destroy",
+            "name": "destroyed",
             "args": [
                {
                   "type": "event",
@@ -41342,7 +41342,7 @@
    },
    "die-42.4": {
       "id": "die-42.4",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "patient",
@@ -41436,7 +41436,7 @@
    },
    "die-42.4-1": {
       "id": "die-42.4-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "patient",
@@ -42103,7 +42103,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "attach",
+            "name": "attached",
             "args": [
                {
                   "type": "event",
@@ -42149,7 +42149,7 @@
          },
          {
             "bool": "!",
-            "name": "attach",
+            "name": "attached",
             "args": [
                {
                   "type": "event",
@@ -43213,7 +43213,7 @@
    },
    "dress-41.1.1": {
       "id": "dress-41.1.1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -44657,36 +44657,7 @@
    },
    "eat-39.1": {
       "id": "eat-39.1",
-      "cleaned": false,
-      "args": [
-         {
-            "value": "agent",
-            "slot": 0,
-            "implicit": false
-         },
-         {
-            "value": "patient",
-            "slot": 1,
-            "implicit": false
-         },
-         {
-            "value": "source",
-            "slot": 2,
-            "implicit": false
-         },
-         {
-            "value": "location",
-            "slot": 3,
-            "implicit": false
-         }
-      ],
-      "predicates": [],
-      "members": [],
-      "examples": []
-   },
-   "eat-39.1-1": {
-      "id": "eat-39.1-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -44711,7 +44682,7 @@
             "args": [
                {
                   "type": "event",
-                  "value": "e1"
+                  "value": "e"
                },
                {
                   "type": "themrole",
@@ -44729,7 +44700,68 @@
             "args": [
                {
                   "type": "event",
-                  "value": "e2"
+                  "value": "e1"
+               },
+               {
+                  "type": "themrole",
+                  "value": "agent"
+               },
+               {
+                  "type": "themrole",
+                  "value": "patient"
+               }
+            ]
+         }
+      ],
+      "members": [],
+      "examples": []
+   },
+   "eat-39.1-1": {
+      "id": "eat-39.1-1",
+      "cleaned": true,
+      "args": [
+         {
+            "value": "agent",
+            "slot": 0,
+            "implicit": false
+         },
+         {
+            "value": "patient",
+            "slot": 1,
+            "implicit": false
+         },
+         {
+            "value": "source",
+            "slot": 2,
+            "implicit": false
+         }
+      ],
+      "predicates": [
+         {
+            "bool": "",
+            "name": "location",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e"
+               },
+               {
+                  "type": "themrole",
+                  "value": "patient"
+               },
+               {
+                  "type": "themrole",
+                  "value": "source"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "consume",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e1"
                },
                {
                   "type": "themrole",
@@ -44766,7 +44798,7 @@
    },
    "eat-39.1-2": {
       "id": "eat-39.1-2",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -44782,14 +44814,27 @@
             "value": "source",
             "slot": 2,
             "implicit": false
-         },
-         {
-            "value": "location",
-            "slot": 3,
-            "implicit": false
          }
       ],
       "predicates": [
+         {
+            "bool": "",
+            "name": "location",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e"
+               },
+               {
+                  "type": "themrole",
+                  "value": "patient"
+               },
+               {
+                  "type": "themrole",
+                  "value": "source"
+               }
+            ]
+         },
          {
             "bool": "",
             "name": "consume",
@@ -44805,24 +44850,6 @@
                {
                   "type": "themrole",
                   "value": "patient"
-               }
-            ]
-         },
-         {
-            "bool": "",
-            "name": "location",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e2"
-               },
-               {
-                  "type": "themrole",
-                  "value": "patient"
-               },
-               {
-                  "type": "themrole",
-                  "value": "location"
                }
             ]
          }
@@ -44852,7 +44879,7 @@
    },
    "eat-39.1-3": {
       "id": "eat-39.1-3",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -44863,9 +44890,32 @@
             "value": "patient",
             "slot": 1,
             "implicit": false
+         },
+         {
+            "value": "source",
+            "slot": 2,
+            "implicit": false
          }
       ],
       "predicates": [
+         {
+            "bool": "",
+            "name": "location",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e"
+               },
+               {
+                  "type": "themrole",
+                  "value": "patient"
+               },
+               {
+                  "type": "themrole",
+                  "value": "source"
+               }
+            ]
+         },
          {
             "bool": "",
             "name": "consume",
@@ -62481,6 +62531,20 @@
          },
          {
             "bool": "",
+            "name": "cause",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e1"
+               },
+               {
+                  "type": "event",
+                  "value": "e2"
+               }
+            ]
+         },
+         {
+            "bool": "",
             "name": "know",
             "args": [
                {
@@ -62494,20 +62558,6 @@
                {
                   "type": "themrole",
                   "value": "topic"
-               }
-            ]
-         },
-         {
-            "bool": "",
-            "name": "cause",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e1"
-               },
-               {
-                  "type": "event",
-                  "value": "e2"
                }
             ]
          }
@@ -73320,7 +73370,7 @@
    },
    "murder-42.1": {
       "id": "murder-42.1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -73369,20 +73419,6 @@
          },
          {
             "bool": "",
-            "name": "cause",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e2"
-               },
-               {
-                  "type": "event",
-                  "value": "e3"
-               }
-            ]
-         },
-         {
-            "bool": "",
             "name": "utilize",
             "args": [
                {
@@ -73396,6 +73432,20 @@
                {
                   "type": "themrole",
                   "value": "instrument"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "cause",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e2"
+               },
+               {
+                  "type": "event",
+                  "value": "e3"
                }
             ]
          },
@@ -73589,7 +73639,7 @@
    },
    "murder-42.1-1": {
       "id": "murder-42.1-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -97925,7 +97975,7 @@
    },
    "rush-53.2": {
       "id": "rush-53.2",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -100634,7 +100684,7 @@
    },
    "send-11.1": {
       "id": "send-11.1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -100945,7 +100995,7 @@
    },
    "send-11.1-1": {
       "id": "send-11.1-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -101008,20 +101058,6 @@
          },
          {
             "bool": "",
-            "name": "cause",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "ee3"
-               },
-               {
-                  "type": "event",
-                  "value": "e2"
-               }
-            ]
-         },
-         {
-            "bool": "",
             "name": "motion",
             "args": [
                {
@@ -101053,6 +101089,20 @@
                {
                   "type": "themrole",
                   "value": "initial_location"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "cause",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "ee3"
+               },
+               {
+                  "type": "event",
+                  "value": "e2"
                }
             ]
          },
@@ -101244,7 +101294,7 @@
    },
    "separate-23.1": {
       "id": "separate-23.1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -101265,7 +101315,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "attach",
+            "name": "attached",
             "args": [
                {
                   "type": "event",
@@ -101311,25 +101361,7 @@
          },
          {
             "bool": "!",
-            "name": "attach",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e2"
-               },
-               {
-                  "type": "themrole",
-                  "value": "patient"
-               },
-               {
-                  "type": "themrole",
-                  "value": "co_patient"
-               }
-            ]
-         },
-         {
-            "bool": "!",
-            "name": "attach",
+            "name": "attached",
             "args": [
                {
                   "type": "event",
@@ -101400,7 +101432,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "attach",
+            "name": "attached",
             "args": [
                {
                   "type": "event",
@@ -101418,7 +101450,7 @@
          },
          {
             "bool": "!",
-            "name": "attach",
+            "name": "attached",
             "args": [
                {
                   "type": "event",
@@ -101542,7 +101574,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "attach",
+            "name": "attached",
             "args": [
                {
                   "type": "event",
@@ -101560,7 +101592,7 @@
          },
          {
             "bool": "!",
-            "name": "attach",
+            "name": "attached",
             "args": [
                {
                   "type": "event",
@@ -102004,7 +102036,7 @@
    },
    "shake-22.3-1": {
       "id": "shake-22.3-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -103282,7 +103314,7 @@
    },
    "simple_dressing-41.3.1-1": {
       "id": "simple_dressing-41.3.1-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -103297,12 +103329,30 @@
       ],
       "predicates": [
          {
+            "bool": "!",
+            "name": "wear",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e1"
+               },
+               {
+                  "type": "themrole",
+                  "value": "agent"
+               },
+               {
+                  "type": "themrole",
+                  "value": "theme"
+               }
+            ]
+         },
+         {
             "bool": "",
             "name": "wear",
             "args": [
                {
                   "type": "event",
-                  "value": "ee"
+                  "value": "e2"
                },
                {
                   "type": "themrole",
@@ -103337,7 +103387,7 @@
    },
    "simple_dressing-41.3.1-2": {
       "id": "simple_dressing-41.3.1-2",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -107271,7 +107321,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "attach",
+            "name": "attached",
             "args": [
                {
                   "type": "event",
@@ -107317,7 +107367,7 @@
          },
          {
             "bool": "!",
-            "name": "attach",
+            "name": "attached",
             "args": [
                {
                   "type": "event",
@@ -107335,7 +107385,7 @@
          },
          {
             "bool": "!",
-            "name": "attach",
+            "name": "attached",
             "args": [
                {
                   "type": "event",
@@ -114121,7 +114171,7 @@
       "predicates": [
          {
             "bool": "!",
-            "name": "attach",
+            "name": "attached",
             "args": [
                {
                   "type": "event",
@@ -114185,7 +114235,7 @@
          },
          {
             "bool": "",
-            "name": "attach",
+            "name": "attached",
             "args": [
                {
                   "type": "event",
@@ -117977,7 +118027,7 @@
    },
    "trick-59.2": {
       "id": "trick-59.2",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -122007,7 +122057,7 @@
          {
             "value": "patient",
             "slot": 1,
-            "implicit": true
+            "implicit": false
          },
          {
             "value": "recipient",
@@ -122136,6 +122186,20 @@
          },
          {
             "bool": "",
+            "name": "cause",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "ee2"
+               },
+               {
+                  "type": "event",
+                  "value": "e3"
+               }
+            ]
+         },
+         {
+            "bool": "",
             "name": "know",
             "args": [
                {
@@ -122163,20 +122227,6 @@
                {
                   "type": "themrole",
                   "value": "agent"
-               }
-            ]
-         },
-         {
-            "bool": "",
-            "name": "cause",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "ee2"
-               },
-               {
-                  "type": "event",
-                  "value": "e3"
                }
             ]
          }
@@ -122293,7 +122343,7 @@
    },
    "wipe_instr-10.4.2": {
       "id": "wipe_instr-10.4.2",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -122557,7 +122607,7 @@
    },
    "wipe_instr-10.4.2-1": {
       "id": "wipe_instr-10.4.2-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -122820,7 +122870,7 @@
    },
    "wipe_manner-10.4.1": {
       "id": "wipe_manner-10.4.1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -123214,7 +123264,7 @@
    },
    "wipe_manner-10.4.1-1": {
       "id": "wipe_manner-10.4.1-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",

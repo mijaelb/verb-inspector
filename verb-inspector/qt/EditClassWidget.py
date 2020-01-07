@@ -146,6 +146,7 @@ class EditClassWidget(QtWidgets.QWidget):
             self.classCleanedCheckBox.blockSignals(True)
             self.classCleanedCheckBox.setChecked(cls.cleaned)
             self.classCleanedCheckBox.blockSignals(False)
+            self.editArgWidget.resetArg()
             self.editArgWidget.update(cls)
             self.editPredWidget.updateClass(cls)
 
