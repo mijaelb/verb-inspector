@@ -35104,7 +35104,7 @@
       "predicates": [
          {
             "bool": "!",
-            "name": "cook",
+            "name": "cooked",
             "args": [
                {
                   "type": "event",
@@ -35186,7 +35186,7 @@
          },
          {
             "bool": "",
-            "name": "cook",
+            "name": "cooked",
             "args": [
                {
                   "type": "event",
