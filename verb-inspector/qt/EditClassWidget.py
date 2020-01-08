@@ -203,10 +203,12 @@ class EditClassWidget(QtWidgets.QWidget):
         name = QtWidgets.QFileDialog.getOpenFileName(self, 'Open File')
         if name:
             self.pp_container.verbnet.load(name[0])
+            self.currentClasses = None
             self.resetClass()
             self.updateClassesList()
             self.editArgWidget.clear()
             self.editPredWidget.updateClass()
+            self.updatePredsList()
 
     @pyqtSlot()
     def filterByPredicate(self):
