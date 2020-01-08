@@ -981,7 +981,7 @@
    },
    "addict-96": {
       "id": "addict-96",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -1134,7 +1134,7 @@
    },
    "adjust-26.9": {
       "id": "adjust-26.9",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -1155,7 +1155,7 @@
       "predicates": [
          {
             "bool": "!",
-            "name": "adjust",
+            "name": "adjusted",
             "args": [
                {
                   "type": "event",
@@ -1201,7 +1201,7 @@
          },
          {
             "bool": "",
-            "name": "adjust",
+            "name": "adjusted",
             "args": [
                {
                   "type": "event",
@@ -43520,7 +43520,7 @@
    },
    "dressing_well-41.3.2": {
       "id": "dressing_well-41.3.2",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -43677,10 +43677,15 @@
    },
    "drive-11.5": {
       "id": "drive-11.5",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
+            "slot": 0,
+            "implicit": false
+         },
+         {
+            "value": "",
             "slot": 0,
             "implicit": false
          },
@@ -43695,13 +43700,8 @@
             "implicit": false
          },
          {
-            "value": "initial_location",
-            "slot": 3,
-            "implicit": false
-         },
-         {
             "value": "trajectory",
-            "slot": 4,
+            "slot": 3,
             "implicit": false
          }
       ],
@@ -43996,7 +43996,7 @@
    },
    "drive-11.5-1": {
       "id": "drive-11.5-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -44297,7 +44297,7 @@
    },
    "dub-29.3.2": {
       "id": "dub-29.3.2",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -44580,7 +44580,7 @@
    },
    "earn-54.6": {
       "id": "earn-54.6",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "theme",
@@ -55636,7 +55636,7 @@
    },
    "get-13.5.1": {
       "id": "get-13.5.1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -55761,20 +55761,6 @@
          },
          {
             "bool": "",
-            "name": "cause",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e2"
-               },
-               {
-                  "type": "event",
-                  "value": "e3"
-               }
-            ]
-         },
-         {
-            "bool": "",
             "name": "transfer",
             "args": [
                {
@@ -55806,6 +55792,20 @@
                {
                   "type": "event",
                   "value": "e4"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "cause",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e2"
+               },
+               {
+                  "type": "event",
+                  "value": "e3"
                }
             ]
          },
@@ -56337,7 +56337,7 @@
    },
    "get-13.5.1-1": {
       "id": "get-13.5.1-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",

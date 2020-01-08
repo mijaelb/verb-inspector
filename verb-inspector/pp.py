@@ -415,7 +415,7 @@ class PlotPointPredicate:
 
                 arg = ''.join(arg.split()[0]) if arg != '' else arg
 
-                if (self.args[i].type == 'event' or re.match('e+(\d+)?$', str(self.args[i].slot))) and re.match('e+(\d+)?$', arg):
+                if (self.args[i].type == 'event' or self.args[i].type == 'constant' or re.match('e+(\d+)?$', str(self.args[i].slot))) and re.match('e+(\d+)?$', arg):
                     self.args[i].slot = arg
 
     def change_class_name(self, class_id, new_id):
@@ -428,9 +428,9 @@ class PlotPointPredicate:
         for vnarg in vnpred.args:
             dummy_arg = PlotPointArg()  # empty dummy arg
             for arg in args:
-                if vnarg.type == 'event' or (arg.value == vnarg.value and arg.cls == class_id):
+                if (vnarg.type == 'event' or vnarg.type == 'constant') or (arg.value == vnarg.value and arg.cls == class_id):
                     dummy_arg.fill_dict(dict(vnarg))
-                    dummy_arg.slot = vnarg.value if vnarg.type == 'event' else arg.slot
+                    dummy_arg.slot = vnarg.value if vnarg.type == 'event' or vnarg.type == 'constant' else arg.slot
                     break
             self.args.append(dummy_arg)
 

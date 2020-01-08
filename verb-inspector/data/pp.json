@@ -1,0 +1,268 @@
+{
+   "steal": {
+      "lemma": "steal",
+      "type": "verb",
+      "description": "take possession without consent or right",
+      "examples": [
+         "Someone stole my wallet on the train.",
+         "The number of cars which are stolen every year has risen.",
+         "They were so poor they had to steal in order to eat.",
+         "This author stole entire paragraphs from my dissertation.",
+         "It destroys its victim's memory and steals the ability to communicate.",
+         "This picture steals my heart everytime."
+      ],
+      "slots": [
+         {
+            "slot": 0,
+            "descriptions": [
+               "thief_agent",
+               "thief_agent"
+            ],
+            "themrole": [
+               {
+                  "vnrole": "agent",
+                  "vncls": "steal-10.5-1"
+               },
+               {
+                  "vnrole": "agent",
+                  "vncls": "get-13.5.1-1"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         },
+         {
+            "slot": 1,
+            "descriptions": [
+               "thing_stolen",
+               "thing_stolen"
+            ],
+            "themrole": [
+               {
+                  "vnrole": "theme",
+                  "vncls": "steal-10.5-1"
+               },
+               {
+                  "vnrole": "theme",
+                  "vncls": "get-13.5.1-1"
+               },
+               {
+                  "vnrole": "beneficiary",
+                  "vncls": "steal-10.5-1"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         },
+         {
+            "slot": 2,
+            "descriptions": [
+               "stolen_from",
+               "stolen_from"
+            ],
+            "themrole": [
+               {
+                  "vnrole": "source",
+                  "vncls": "steal-10.5-1"
+               },
+               {
+                  "vnrole": "source",
+                  "vncls": "get-13.5.1-1"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         },
+         {
+            "slot": 3,
+            "descriptions": [],
+            "themrole": [
+               {
+                  "vnrole": "asset",
+                  "vncls": "get-13.5.1-1"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         }
+      ],
+      "predicates": [
+         {
+            "bool": "",
+            "name": "possess",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e1"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "2"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               }
+            ]
+         },
+         {
+            "bool": "!",
+            "name": "possess",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e1"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "transfer",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e2"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "2"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "cause",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e2"
+               },
+               {
+                  "type": "event",
+                  "slot": "e3"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "transfer",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e2"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "2"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "manner",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e2"
+               },
+               {
+                  "type": "constant",
+                  "slot": "illegal"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "possess",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e3"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               }
+            ]
+         },
+         {
+            "bool": "!",
+            "name": "possess",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e3"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "2"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "benefit",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e3"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "cost",
+            "args": [
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "3"
+               }
+            ]
+         }
+      ]
+   }
+}
