@@ -110,17 +110,14 @@ class EditArgWidget(QtWidgets.QWidget):
         self.currentObj = None
         self.currentArg = None
         self.resetArg()
+        self.argDragWidget.args = None
         self.argDragWidget.clearWidget()
         self.argsSlot.setMinimum(0)
         self.argsSlot.setMaximum(0)
-        self.descrLine.setEnabled(False)
-        self.nameLine.setEnabled(False)
-        self.classLine.setEnabled(False)
-        self.argsSlot.setEnabled(False)
-        self.argsImplicitCheckBox.setEnabled(False)
-        self.implicitValuesText.setEnabled(False)
+        self.enable_All(False)
 
     def resetArg(self):
+        self.currentArg = None
         self.descrLine.setText('')
         self.nameLine.setText('')
         self.classLine.setText('')
@@ -131,30 +128,31 @@ class EditArgWidget(QtWidgets.QWidget):
     def updateArg(self, current):
         if current:
             self.currentArg = current
-            self.descrLine.blockSignals(True)
-            self.nameLine.blockSignals(True)
-            self.classLine.blockSignals(True)
-            self.implicitValuesText.blockSignals(True)
+            self.blockSignals_All(True)
             self.descrLine.setText(self.currentArg.arg.descr if self.dataset == 'pp' else '')
             self.nameLine.setText(self.currentArg.arg.value)
             self.classLine.setText(self.currentArg.arg.cls)
             self.argsSlot.setValue(self.currentArg.arg.slot)
-            if len(self.currentArg.arg.implicit_values) > 1:
-                implicit_values = ','.join(self.currentArg.arg.implicit_values)
-            else:
-                implicit_values = ''.join(self.currentArg.arg.implicit_values)
-            self.implicitValuesText.setText(implicit_values)
             self.argsImplicitCheckBox.setChecked(self.currentArg.arg.implicit)
-            self.descrLine.blockSignals(False)
-            self.nameLine.blockSignals(False)
-            self.classLine.blockSignals(False)
-            self.implicitValuesText.blockSignals(False)
-            self.descrLine.setEnabled(True)
-            self.nameLine.setEnabled(True)
-            self.classLine.setEnabled(True)
-            self.argsSlot.setEnabled(True)
-            self.implicitValuesText.setEnabled(True)
-            self.argsImplicitCheckBox.setEnabled(True)
+            join_str = ',' if len(self.currentArg.arg.implicit_values) > 1 else ''
+            implicit_values = join_str.join(self.currentArg.arg.implicit_values)
+            self.implicitValuesText.setText(implicit_values)
+            self.blockSignals_All(False)
+            self.enable_All(True)
+
+    def blockSignals_All(self, bool):
+        self.descrLine.blockSignals(bool)
+        self.nameLine.blockSignals(bool)
+        self.classLine.blockSignals(bool)
+        self.implicitValuesText.blockSignals(bool)
+
+    def enable_All(self, bool):
+        self.descrLine.setEnabled(bool)
+        self.nameLine.setEnabled(bool)
+        self.classLine.setEnabled(bool)
+        self.argsSlot.setEnabled(bool)
+        self.implicitValuesText.setEnabled(bool)
+        self.argsImplicitCheckBox.setEnabled(bool)
 
     @pyqtSlot(ArgDragLabel)
     def selectArg(self, current: ArgDragLabel):

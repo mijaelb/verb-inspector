@@ -587,6 +587,18 @@ class PlotPointSense:
             self.squeeze()
             self.compile(verbnet)
 
+    def add_fn(self, frame):
+        self.mappings.fn.append(frame.lower())
+        self.mappings.fn = list(dict.fromkeys(self.mappings.fn))
+
+    def remove_fn(self, index):
+        if len(self.mappings.fn) > index:
+            self.mappings.fn.pop(index)
+
+    def edit_fn(self, index, text):
+        self.mappings.fn[index] = text.lower()
+        self.mappings.fn = list(dict.fromkeys(self.mappings.fn))
+
     def change_class_name(self, class_id, new_id):
         self.mappings.change_class_name(class_id, new_id)
         for arg_struct in self.arg_structs:
@@ -757,7 +769,8 @@ class PlotPointSense:
         return {'description': self.descr,
                 'examples': self.examples,
                 'slots': [dict(slot) for slot in self.get_compiled_slots()],
-                'predicates': [pred.compiled_dict() for pred in self.predicates]}
+                'predicates': [pred.compiled_dict() for pred in self.predicates],
+                'frames': self.mappings.fn}
 
     def __iter__(self):
         """ Let the instance to used within dict(__iter__) """

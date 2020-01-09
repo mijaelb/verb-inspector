@@ -44,6 +44,7 @@ class EditPlotPointWidget(QtWidgets.QWidget):
 
         self.plotPointsLabel = QtWidgets.QLabel('PlotPoints ▾')
         self.sensesLabel = QtWidgets.QLabel('Senses ▾')
+        self.framesLabel = QtWidgets.QLabel('Frames ▾')
         self.classesLabel = QtWidgets.QLabel('Classes ▾')
         self.predicatesLabel = QtWidgets.QLabel('Compiled predicates ▾')
 
@@ -71,6 +72,9 @@ class EditPlotPointWidget(QtWidgets.QWidget):
         self.classesList = QtWidgets.QListWidget()
         self.classesList.currentItemChanged.connect(self.updateClass)
 
+        self.framesList = QtWidgets.QListWidget()
+        self.framesList.itemChanged.connect(self.updateFrame)
+
         self.editClassButton = QtWidgets.QPushButton('Edit Class')
         self.addClassButton = QtWidgets.QPushButton('Add Class')
         self.removeClassButton = QtWidgets.QPushButton('Remove Class')
@@ -80,15 +84,29 @@ class EditPlotPointWidget(QtWidgets.QWidget):
         self.removeClassButton.released.connect(self.removeClass)
         self.selectSenseButton.released.connect(self.selectSense)
 
+        self.addFrameButton = QtWidgets.QPushButton('Add Frame')
+        self.removeFrameButton = QtWidgets.QPushButton('Remove Frame')
+        self.addFrameButton.released.connect(self.addFrame)
+        self.removeFrameButton.released.connect(self.removeFrame)
+
         self.classesButtonsLayout = QtWidgets.QHBoxLayout()
         self.classesButtonsLayout.addWidget(self.editClassButton)
         self.classesButtonsLayout.addWidget(self.addClassButton)
         self.classesButtonsLayout.addWidget(self.removeClassButton)
 
+        self.framesButtonsLayout = QtWidgets.QHBoxLayout()
+        self.framesButtonsLayout.addWidget(self.addFrameButton)
+        self.framesButtonsLayout.addWidget(self.removeFrameButton)
+
         self.classesListLayout = QtWidgets.QVBoxLayout()
         self.classesListLayout.addWidget(self.classesLabel)
         self.classesListLayout.addWidget(self.classesList)
         self.classesListLayout.addLayout(self.classesButtonsLayout)
+
+        self.framesListLayout = QtWidgets.QVBoxLayout()
+        self.framesListLayout.addWidget(self.framesLabel)
+        self.framesListLayout.addWidget(self.framesList)
+        self.framesListLayout.addLayout(self.framesButtonsLayout)
 
         self.senseList = QtWidgets.QListWidget()
         self.senseList.currentItemChanged.connect(self.updateSense)
@@ -126,6 +144,7 @@ class EditPlotPointWidget(QtWidgets.QWidget):
 
         self.editSenseLayout = QtWidgets.QHBoxLayout()
         self.editSenseLayout.addLayout(self.senseListLayout)
+        self.editSenseLayout.addLayout(self.framesListLayout)
         self.editSenseLayout.addLayout(self.classesListLayout)
         self.editSenseLayout.addLayout(self.compiledPredicateLayout)
 
@@ -206,6 +225,15 @@ class EditPlotPointWidget(QtWidgets.QWidget):
                 classItem.setData(QtCore.Qt.UserRole, cls_id)
                 self.classesList.addItem(classItem)
 
+    def updateFramesList(self):
+        if self.currentSense:
+            self.framesList.clear()
+            for cls_id in self.currentSense.mappings.fn:
+                frameItem = QtWidgets.QListWidgetItem(cls_id)
+                frameItem.setData(QtCore.Qt.UserRole, cls_id)
+                frameItem.setFlags(frameItem.flags() | QtCore.Qt.ItemIsEditable)
+                self.framesList.addItem(frameItem)
+
     def updateCompiledPredicateList(self):
         if self.currentSense:
             self.compiledPredicateList.clear()
@@ -221,6 +249,7 @@ class EditPlotPointWidget(QtWidgets.QWidget):
         self.plotPointNameLabel.setText('')
         self.senseList.clear()
         self.classesList.clear()
+        self.framesList.clear()
         self.compiledPredicateList.clear()
         self.editArgWidget.clear()
 
@@ -253,6 +282,7 @@ class EditPlotPointWidget(QtWidgets.QWidget):
             self.editArgWidget.clear()
             self.editArgWidget.update(self.currentSense)
             self.updateClassesList()
+            self.updateFramesList()
             self.updateCompiledPredicateList()
         else:
             self.clear()
@@ -260,6 +290,12 @@ class EditPlotPointWidget(QtWidgets.QWidget):
     @pyqtSlot(QtWidgets.QListWidgetItem, QtWidgets.QListWidgetItem)
     def updateClass(self, current: QtWidgets.QListWidgetItem, previous: QtWidgets.QListWidgetItem):
         self.currentClass = current.data(QtCore.Qt.UserRole) if current else None
+
+    @pyqtSlot(QtWidgets.QListWidgetItem)
+    def updateFrame(self, current: QtWidgets.QListWidgetItem):
+        if self.currentSense:
+            self.currentSense.edit_fn(self.framesList.currentRow(), current.text())
+            self.updateFramesList()
 
     @pyqtSlot()
     def selectSense(self):
@@ -291,6 +327,7 @@ class EditPlotPointWidget(QtWidgets.QWidget):
     @pyqtSlot()
     def editClass(self):
         if self.currentClass and self.editClassWidget:
+            self.editClassWidget.unfilter()
             self.editClassWidget.selectClass(self.currentClass)
 
     @pyqtSlot()
@@ -309,6 +346,18 @@ class EditPlotPointWidget(QtWidgets.QWidget):
             self.editArgWidget.update(self.currentSense)
             self.updateClassesList()
             self.updateCompiledPredicateList()
+
+    @pyqtSlot()
+    def addFrame(self):
+        if self.currentSense:
+            self.currentSense.add_fn('empty')
+            self.updateFramesList()
+
+    @pyqtSlot()
+    def removeFrame(self):
+        if self.currentSense:
+            self.currentSense.remove_fn(self.framesList.currentRow())
+            self.updateFramesList()
 
     @pyqtSlot()
     def filterByClass(self):

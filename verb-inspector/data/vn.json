@@ -22,7 +22,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -58,7 +58,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -236,7 +236,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -254,7 +254,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -290,7 +290,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -340,7 +340,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -358,7 +358,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -376,7 +376,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -1039,20 +1039,6 @@
          },
          {
             "bool": "",
-            "name": "cause",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e2"
-               },
-               {
-                  "type": "event",
-                  "value": "e1"
-               }
-            ]
-         },
-         {
-            "bool": "",
             "name": "equals",
             "args": [
                {
@@ -1062,6 +1048,20 @@
                {
                   "type": "themrole",
                   "value": "patient"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "cause",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e2"
+               },
+               {
+                  "type": "event",
+                  "value": "e1"
                }
             ]
          }
@@ -1187,20 +1187,6 @@
          },
          {
             "bool": "",
-            "name": "cause",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e2"
-               },
-               {
-                  "type": "event",
-                  "value": "e3"
-               }
-            ]
-         },
-         {
-            "bool": "",
             "name": "adjusted",
             "args": [
                {
@@ -1228,6 +1214,20 @@
                {
                   "type": "themrole",
                   "value": "patient"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "cause",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e2"
+               },
+               {
+                  "type": "event",
+                  "value": "e3"
                }
             ]
          }
@@ -1379,7 +1379,7 @@
          },
          {
             "bool": "",
-            "name": "reason",
+            "name": "in_reaction_to",
             "args": [
                {
                   "type": "event",
@@ -1872,7 +1872,7 @@
    },
    "admire-31.2-1": {
       "id": "admire-31.2-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "experiencer",
@@ -1911,7 +1911,7 @@
          },
          {
             "bool": "",
-            "name": "reason",
+            "name": "in_reaction_to",
             "args": [
                {
                   "type": "event",
@@ -2037,7 +2037,7 @@
    },
    "admit-64.3": {
       "id": "admit-64.3",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -2113,7 +2113,7 @@
    },
    "admit-64.3-1": {
       "id": "admit-64.3-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -2216,7 +2216,7 @@
    },
    "adopt-93": {
       "id": "adopt-93",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -2332,7 +2332,7 @@
    },
    "advise-37.9": {
       "id": "advise-37.9",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -2353,7 +2353,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -2393,21 +2393,7 @@
          },
          {
             "bool": "",
-            "name": "cause",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e1"
-               },
-               {
-                  "type": "event",
-                  "value": "e2"
-               }
-            ]
-         },
-         {
-            "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -2420,6 +2406,20 @@
                {
                   "type": "themrole",
                   "value": "topic"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "cause",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e1"
+               },
+               {
+                  "type": "event",
+                  "value": "e2"
                }
             ]
          }
@@ -2491,7 +2491,7 @@
    },
    "advise-37.9-1": {
       "id": "advise-37.9-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -2512,7 +2512,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -2552,21 +2552,7 @@
          },
          {
             "bool": "",
-            "name": "cause",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e1"
-               },
-               {
-                  "type": "event",
-                  "value": "e2"
-               }
-            ]
-         },
-         {
-            "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -2579,6 +2565,20 @@
                {
                   "type": "themrole",
                   "value": "topic"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "cause",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e1"
+               },
+               {
+                  "type": "event",
+                  "value": "e2"
                }
             ]
          }
@@ -2671,7 +2671,7 @@
    },
    "allow-64.1": {
       "id": "allow-64.1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -2776,7 +2776,7 @@
    },
    "allow-64.1-1": {
       "id": "allow-64.1-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -2846,7 +2846,7 @@
    },
    "amalgamate-22.2": {
       "id": "amalgamate-22.2",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "patient",
@@ -2914,7 +2914,7 @@
    },
    "amalgamate-22.2-1": {
       "id": "amalgamate-22.2-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -2967,6 +2967,42 @@
          },
          {
             "bool": "",
+            "name": "mingled",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e2"
+               },
+               {
+                  "type": "themrole",
+                  "value": "patient"
+               },
+               {
+                  "type": "themrole",
+                  "value": "co_patient"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "mingled",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e3"
+               },
+               {
+                  "type": "themrole",
+                  "value": "patient"
+               },
+               {
+                  "type": "themrole",
+                  "value": "co_patient"
+               }
+            ]
+         },
+         {
+            "bool": "",
             "name": "cause",
             "args": [
                {
@@ -2976,42 +3012,6 @@
                {
                   "type": "event",
                   "value": "e3"
-               }
-            ]
-         },
-         {
-            "bool": "",
-            "name": "mingled",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e2"
-               },
-               {
-                  "type": "themrole",
-                  "value": "patient"
-               },
-               {
-                  "type": "themrole",
-                  "value": "co_patient"
-               }
-            ]
-         },
-         {
-            "bool": "",
-            "name": "mingled",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e3"
-               },
-               {
-                  "type": "themrole",
-                  "value": "patient"
-               },
-               {
-                  "type": "themrole",
-                  "value": "co_patient"
                }
             ]
          }
@@ -3077,7 +3077,7 @@
    },
    "amalgamate-22.2-1-1": {
       "id": "amalgamate-22.2-1-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "patient",
@@ -3236,7 +3236,7 @@
    },
    "amalgamate-22.2-2": {
       "id": "amalgamate-22.2-2",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -3289,6 +3289,42 @@
          },
          {
             "bool": "",
+            "name": "together",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e2"
+               },
+               {
+                  "type": "themrole",
+                  "value": "patient"
+               },
+               {
+                  "type": "themrole",
+                  "value": "co_patient"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "together",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e3"
+               },
+               {
+                  "type": "themrole",
+                  "value": "patient"
+               },
+               {
+                  "type": "themrole",
+                  "value": "co_patient"
+               }
+            ]
+         },
+         {
+            "bool": "",
             "name": "cause",
             "args": [
                {
@@ -3298,42 +3334,6 @@
                {
                   "type": "event",
                   "value": "e3"
-               }
-            ]
-         },
-         {
-            "bool": "",
-            "name": "together",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e2"
-               },
-               {
-                  "type": "themrole",
-                  "value": "patient"
-               },
-               {
-                  "type": "themrole",
-                  "value": "co_patient"
-               }
-            ]
-         },
-         {
-            "bool": "",
-            "name": "together",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e3"
-               },
-               {
-                  "type": "themrole",
-                  "value": "patient"
-               },
-               {
-                  "type": "themrole",
-                  "value": "co_patient"
                }
             ]
          }
@@ -3501,7 +3501,7 @@
    },
    "amalgamate-22.2-2-1": {
       "id": "amalgamate-22.2-2-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "patient",
@@ -3808,7 +3808,7 @@
    },
    "amalgamate-22.2-3": {
       "id": "amalgamate-22.2-3",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -3861,20 +3861,6 @@
          },
          {
             "bool": "",
-            "name": "cause",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e2"
-               },
-               {
-                  "type": "event",
-                  "value": "e3"
-               }
-            ]
-         },
-         {
-            "bool": "",
             "name": "together",
             "args": [
                {
@@ -3888,6 +3874,20 @@
                {
                   "type": "themrole",
                   "value": "co_patient"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "cause",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e2"
+               },
+               {
+                  "type": "event",
+                  "value": "e3"
                }
             ]
          }
@@ -3910,7 +3910,7 @@
    },
    "amalgamate-22.2-3-1": {
       "id": "amalgamate-22.2-3-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -3963,20 +3963,6 @@
          },
          {
             "bool": "",
-            "name": "cause",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e2"
-               },
-               {
-                  "type": "event",
-                  "value": "e3"
-               }
-            ]
-         },
-         {
-            "bool": "",
             "name": "together",
             "args": [
                {
@@ -3990,6 +3976,20 @@
                {
                   "type": "themrole",
                   "value": "co_patient"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "cause",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e2"
+               },
+               {
+                  "type": "event",
+                  "value": "e3"
                }
             ]
          }
@@ -4023,7 +4023,7 @@
    },
    "amalgamate-22.2-3-1-1": {
       "id": "amalgamate-22.2-3-1-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "patient",
@@ -4117,7 +4117,7 @@
    },
    "amalgamate-22.2-3-2": {
       "id": "amalgamate-22.2-3-2",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "patient",
@@ -4168,7 +4168,7 @@
    },
    "amuse-31.1": {
       "id": "amuse-31.1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "stimulus",
@@ -4212,7 +4212,7 @@
          },
          {
             "bool": "",
-            "name": "reason",
+            "name": "in_reaction_to",
             "args": [
                {
                   "type": "event",
@@ -4262,7 +4262,7 @@
          },
          {
             "bool": "",
-            "name": "reason",
+            "name": "in_reaction_to",
             "args": [
                {
                   "type": "event",
@@ -6870,7 +6870,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -6928,7 +6928,7 @@
          },
          {
             "bool": "",
-            "name": "reason",
+            "name": "in_reaction_to",
             "args": [
                {
                   "type": "event",
@@ -7726,7 +7726,7 @@
    },
    "appeal-31.4": {
       "id": "appeal-31.4",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "experiencer",
@@ -7765,7 +7765,7 @@
          },
          {
             "bool": "",
-            "name": "reason",
+            "name": "in_reaction_to",
             "args": [
                {
                   "type": "event",
@@ -7785,7 +7785,7 @@
    },
    "appeal-31.4-1": {
       "id": "appeal-31.4-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "experiencer",
@@ -7824,7 +7824,7 @@
          },
          {
             "bool": "",
-            "name": "reason",
+            "name": "in_reaction_to",
             "args": [
                {
                   "type": "event",
@@ -7853,7 +7853,7 @@
    },
    "appeal-31.4-2": {
       "id": "appeal-31.4-2",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "experiencer",
@@ -7892,7 +7892,7 @@
          },
          {
             "bool": "",
-            "name": "reason",
+            "name": "in_reaction_to",
             "args": [
                {
                   "type": "event",
@@ -7931,7 +7931,7 @@
    },
    "appeal-31.4-3": {
       "id": "appeal-31.4-3",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "experiencer",
@@ -7970,7 +7970,7 @@
          },
          {
             "bool": "",
-            "name": "reason",
+            "name": "in_reaction_to",
             "args": [
                {
                   "type": "event",
@@ -8017,7 +8017,7 @@
       "predicates": [
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -8049,7 +8049,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -8472,7 +8472,7 @@
    },
    "appoint-29.1": {
       "id": "appoint-29.1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -8507,20 +8507,6 @@
          },
          {
             "bool": "",
-            "name": "cause",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e2"
-               },
-               {
-                  "type": "event",
-                  "value": "e1"
-               }
-            ]
-         },
-         {
-            "bool": "",
             "name": "assign",
             "args": [
                {
@@ -8534,6 +8520,20 @@
                {
                   "type": "themrole",
                   "value": "result"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "cause",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e2"
+               },
+               {
+                  "type": "event",
+                  "value": "e1"
                }
             ]
          }
@@ -8717,7 +8717,7 @@
    },
    "assessment-34.1": {
       "id": "assessment-34.1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -9187,7 +9187,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -9685,7 +9685,7 @@
    },
    "attack-60.1-1": {
       "id": "attack-60.1-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -9747,20 +9747,6 @@
          },
          {
             "bool": "",
-            "name": "cause",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e2"
-               },
-               {
-                  "type": "event",
-                  "value": "e3"
-               }
-            ]
-         },
-         {
-            "bool": "",
             "name": "manner",
             "args": [
                {
@@ -9774,6 +9760,20 @@
                {
                   "type": "themrole",
                   "value": "agent"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "cause",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e2"
+               },
+               {
+                  "type": "event",
+                  "value": "e3"
                }
             ]
          }
@@ -9831,7 +9831,7 @@
    },
    "attend-107.4-1": {
       "id": "attend-107.4-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "theme",
@@ -9892,7 +9892,7 @@
    },
    "attend-107.4-2": {
       "id": "attend-107.4-2",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "theme",
@@ -10154,7 +10154,7 @@
    },
    "banish-10.2": {
       "id": "banish-10.2",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -10185,7 +10185,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -10235,7 +10235,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -10253,21 +10253,7 @@
          },
          {
             "bool": "",
-            "name": "cause",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "ee3"
-               },
-               {
-                  "type": "event",
-                  "value": "e2"
-               }
-            ]
-         },
-         {
-            "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -10280,6 +10266,20 @@
                {
                   "type": "themrole",
                   "value": "destination"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "cause",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "ee3"
+               },
+               {
+                  "type": "event",
+                  "value": "e2"
                }
             ]
          }
@@ -10457,7 +10457,7 @@
    },
    "base-97.1": {
       "id": "base-97.1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -10613,7 +10613,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "reason",
+            "name": "about",
             "args": [
                {
                   "type": "event",
@@ -10975,7 +10975,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "reason",
+            "name": "about",
             "args": [
                {
                   "type": "event",
@@ -11672,7 +11672,7 @@
    },
    "begin-55.1": {
       "id": "begin-55.1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -11771,7 +11771,7 @@
    },
    "begin-55.1-1": {
       "id": "begin-55.1-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -11844,7 +11844,7 @@
    },
    "begin-55.1-1-1": {
       "id": "begin-55.1-1-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -12663,7 +12663,7 @@
    },
    "benefit-72.2": {
       "id": "benefit-72.2",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "beneficiary",
@@ -13660,7 +13660,7 @@
    },
    "body_internal_motion-49.1": {
       "id": "body_internal_motion-49.1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -13884,7 +13884,7 @@
          },
          {
             "bool": "",
-            "name": "reason",
+            "name": "in_reaction_to",
             "args": [
                {
                   "type": "event",
@@ -14047,7 +14047,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -14129,7 +14129,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -14224,7 +14224,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -14306,7 +14306,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -14403,7 +14403,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -14485,7 +14485,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -15776,7 +15776,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -15890,7 +15890,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -15908,7 +15908,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -16105,7 +16105,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -16187,7 +16187,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -16205,7 +16205,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -16379,7 +16379,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -16397,7 +16397,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -16415,7 +16415,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -16483,7 +16483,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -16533,7 +16533,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -16583,7 +16583,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -16601,7 +16601,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -16619,7 +16619,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -16637,7 +16637,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -16719,7 +16719,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -16759,7 +16759,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -16873,7 +16873,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -16959,7 +16959,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -16991,7 +16991,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -17009,7 +17009,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -18731,7 +18731,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -18781,7 +18781,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -18813,7 +18813,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -21448,7 +21448,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "reason",
+            "name": "in_reaction_to",
             "args": [
                {
                   "type": "event",
@@ -21521,7 +21521,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "reason",
+            "name": "in_reaction_to",
             "args": [
                {
                   "type": "event",
@@ -21860,7 +21860,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -21878,7 +21878,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -21928,7 +21928,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -21978,7 +21978,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -22010,7 +22010,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -22028,7 +22028,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -22269,7 +22269,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -22287,7 +22287,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -22337,7 +22337,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -22387,7 +22387,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -22419,7 +22419,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -22437,7 +22437,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -22496,7 +22496,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -22514,7 +22514,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -22564,7 +22564,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -22614,7 +22614,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -22646,7 +22646,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -22664,7 +22664,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -24377,7 +24377,7 @@
          },
          {
             "bool": "",
-            "name": "reason",
+            "name": "in_reaction_to",
             "args": [
                {
                   "type": "event",
@@ -25393,7 +25393,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -25411,7 +25411,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -25447,7 +25447,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -25483,7 +25483,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -25501,7 +25501,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -25519,7 +25519,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -26463,7 +26463,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -26481,7 +26481,7 @@
          },
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -26557,7 +26557,7 @@
          },
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -26611,7 +26611,7 @@
          },
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -26805,7 +26805,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -26823,7 +26823,7 @@
          },
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -26899,7 +26899,7 @@
          },
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -26953,7 +26953,7 @@
          },
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -27304,7 +27304,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -27372,7 +27372,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -27404,7 +27404,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -27508,7 +27508,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -27576,7 +27576,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -27608,7 +27608,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -27701,7 +27701,7 @@
    },
    "cling-22.5": {
       "id": "cling-22.5",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "theme",
@@ -27774,7 +27774,7 @@
    },
    "cognize-85": {
       "id": "cognize-85",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "experiencer",
@@ -27898,7 +27898,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -28034,7 +28034,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -28070,7 +28070,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -28357,7 +28357,7 @@
    },
    "coloring-24": {
       "id": "coloring-24",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -28423,20 +28423,6 @@
          },
          {
             "bool": "",
-            "name": "cause",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e2"
-               },
-               {
-                  "type": "event",
-                  "value": "e3"
-               }
-            ]
-         },
-         {
-            "bool": "",
             "name": "cover",
             "args": [
                {
@@ -28468,6 +28454,20 @@
                {
                   "type": "themrole",
                   "value": "result"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "cause",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e2"
+               },
+               {
+                  "type": "event",
+                  "value": "e3"
                }
             ]
          }
@@ -28975,7 +28975,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -29029,7 +29029,7 @@
          },
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -29408,7 +29408,7 @@
    },
    "comprehend-87.2": {
       "id": "comprehend-87.2",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "experiencer",
@@ -29520,7 +29520,7 @@
    },
    "comprehend-87.2-1": {
       "id": "comprehend-87.2-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "experiencer",
@@ -29662,7 +29662,7 @@
    },
    "comprehend-87.2-1-1": {
       "id": "comprehend-87.2-1-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "experiencer",
@@ -29711,7 +29711,7 @@
    },
    "comprehend-87.2-1-1-1": {
       "id": "comprehend-87.2-1-1-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "experiencer",
@@ -29781,7 +29781,7 @@
    },
    "comprise-107.2": {
       "id": "comprise-107.2",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "pivot",
@@ -29800,7 +29800,7 @@
    },
    "comprise-107.2-1": {
       "id": "comprise-107.2-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "pivot",
@@ -29899,7 +29899,7 @@
    },
    "comprise-107.2-2": {
       "id": "comprise-107.2-2",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "pivot",
@@ -30074,7 +30074,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -30290,7 +30290,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -30531,7 +30531,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -30585,7 +30585,7 @@
          },
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -30717,7 +30717,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -30781,7 +30781,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -30813,7 +30813,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -30967,7 +30967,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -31031,7 +31031,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -31063,7 +31063,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -36316,7 +36316,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "reason",
+            "name": "about",
             "args": [
                {
                   "type": "event",
@@ -36537,7 +36537,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "reason",
+            "name": "about",
             "args": [
                {
                   "type": "event",
@@ -36613,7 +36613,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "reason",
+            "name": "about",
             "args": [
                {
                   "type": "event",
@@ -36822,7 +36822,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -36840,7 +36840,7 @@
          },
          {
             "bool": "!",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -36926,7 +36926,7 @@
          },
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -38357,7 +38357,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -38375,7 +38375,7 @@
          },
          {
             "bool": "!",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -38479,7 +38479,7 @@
          },
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -38694,7 +38694,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -38826,7 +38826,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -39204,7 +39204,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -39254,7 +39254,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -41232,7 +41232,7 @@
    },
    "devour-39.4": {
       "id": "devour-39.4",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -41563,7 +41563,7 @@
    },
    "differ-23.4": {
       "id": "differ-23.4",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "theme",
@@ -41661,7 +41661,7 @@
    },
    "dine-39.5": {
       "id": "dine-39.5",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -41826,7 +41826,7 @@
    },
    "disappearance-48.2": {
       "id": "disappearance-48.2",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "theme",
@@ -41842,7 +41842,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -41874,7 +41874,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -41941,7 +41941,7 @@
    },
    "disappearance-48.2-1": {
       "id": "disappearance-48.2-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "theme",
@@ -41957,7 +41957,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -41989,7 +41989,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -42082,7 +42082,7 @@
    },
    "disassemble-23.3": {
       "id": "disassemble-23.3",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -42134,20 +42134,6 @@
             ]
          },
          {
-            "bool": "",
-            "name": "cause",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e2"
-               },
-               {
-                  "type": "event",
-                  "value": "e3"
-               }
-            ]
-         },
-         {
             "bool": "!",
             "name": "attached",
             "args": [
@@ -42162,6 +42148,20 @@
                {
                   "type": "themrole",
                   "value": "co_patient"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "cause",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e2"
+               },
+               {
+                  "type": "event",
+                  "value": "e3"
                }
             ]
          }
@@ -42521,7 +42521,7 @@
    },
    "discover-84": {
       "id": "discover-84",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -42748,7 +42748,7 @@
    },
    "discover-84-1": {
       "id": "discover-84-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -42813,7 +42813,7 @@
    },
    "discover-84-1-1": {
       "id": "discover-84-1-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -42921,7 +42921,7 @@
    },
    "disfunction-105.2.2": {
       "id": "disfunction-105.2.2",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "theme",
@@ -43043,7 +43043,7 @@
    },
    "distinguish-23.5": {
       "id": "distinguish-23.5",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -43056,12 +43056,12 @@
             "implicit": false
          },
          {
-            "value": "instrument",
+            "value": "co_theme",
             "slot": 2,
             "implicit": false
          },
          {
-            "value": "co_theme",
+            "value": "instrument",
             "slot": 3,
             "implicit": false
          }
@@ -43122,7 +43122,7 @@
    },
    "distinguish-23.5-1": {
       "id": "distinguish-23.5-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -43135,12 +43135,12 @@
             "implicit": false
          },
          {
-            "value": "instrument",
+            "value": "co_theme",
             "slot": 2,
             "implicit": false
          },
          {
-            "value": "co_theme",
+            "value": "instrument",
             "slot": 3,
             "implicit": false
          }
@@ -43685,11 +43685,6 @@
             "implicit": false
          },
          {
-            "value": "",
-            "slot": 0,
-            "implicit": false
-         },
-         {
             "value": "theme",
             "slot": 1,
             "implicit": false
@@ -43700,15 +43695,20 @@
             "implicit": false
          },
          {
-            "value": "trajectory",
+            "value": "initial_location",
             "slot": 3,
+            "implicit": false
+         },
+         {
+            "value": "trajectory",
+            "slot": 4,
             "implicit": false
          }
       ],
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -43726,7 +43726,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -43776,7 +43776,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -43826,7 +43826,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -43858,7 +43858,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -43876,7 +43876,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -44027,7 +44027,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -44045,7 +44045,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -44095,7 +44095,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -44145,7 +44145,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -44177,7 +44177,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -44195,7 +44195,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -44678,7 +44678,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -44739,7 +44739,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -44819,7 +44819,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -44900,7 +44900,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -45009,7 +45009,7 @@
    },
    "empathize-88.2": {
       "id": "empathize-88.2",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "experiencer",
@@ -45019,6 +45019,11 @@
          {
             "value": "stimulus",
             "slot": 1,
+            "implicit": false
+         },
+         {
+            "value": "emotion",
+            "slot": 2,
             "implicit": false
          }
       ],
@@ -45034,12 +45039,16 @@
                {
                   "type": "themrole",
                   "value": "experiencer"
+               },
+               {
+                  "type": "themrole",
+                  "value": "emotion"
                }
             ]
          },
          {
             "bool": "",
-            "name": "reason",
+            "name": "in_reaction_to",
             "args": [
                {
                   "type": "event",
@@ -45259,7 +45268,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "reason",
+            "name": "in_reaction_to",
             "args": [
                {
                   "type": "event",
@@ -45474,20 +45483,6 @@
          },
          {
             "bool": "",
-            "name": "cause",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e2"
-               },
-               {
-                  "type": "event",
-                  "value": "e3"
-               }
-            ]
-         },
-         {
-            "bool": "",
             "name": "be",
             "args": [
                {
@@ -45497,6 +45492,20 @@
                {
                   "type": "themrole",
                   "value": "patient"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "cause",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e2"
+               },
+               {
+                  "type": "event",
+                  "value": "e3"
                }
             ]
          }
@@ -45690,20 +45699,6 @@
          },
          {
             "bool": "",
-            "name": "cause",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e1"
-               },
-               {
-                  "type": "event",
-                  "value": "e2"
-               }
-            ]
-         },
-         {
-            "bool": "",
             "name": "act",
             "args": [
                {
@@ -45717,6 +45712,20 @@
                {
                   "type": "themrole",
                   "value": "predicate"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "cause",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e1"
+               },
+               {
+                  "type": "event",
+                  "value": "e2"
                }
             ]
          }
@@ -45859,7 +45868,7 @@
    },
    "ensure-99": {
       "id": "ensure-99",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "precondition",
@@ -46004,7 +46013,7 @@
    },
    "entity_specific_cos-45.5": {
       "id": "entity_specific_cos-45.5",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "patient",
@@ -46429,7 +46438,7 @@
    },
    "entity_specific_modes_being-47.2": {
       "id": "entity_specific_modes_being-47.2",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "theme",
@@ -46459,7 +46468,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -46699,7 +46708,7 @@
    },
    "equip-13.4.2": {
       "id": "equip-13.4.2",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -46778,20 +46787,6 @@
          },
          {
             "bool": "",
-            "name": "cause",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e2"
-               },
-               {
-                  "type": "event",
-                  "value": "e3"
-               }
-            ]
-         },
-         {
-            "bool": "",
             "name": "possess",
             "args": [
                {
@@ -46823,6 +46818,20 @@
                {
                   "type": "themrole",
                   "value": "theme"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "cause",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e2"
+               },
+               {
+                  "type": "event",
+                  "value": "e3"
                }
             ]
          }
@@ -46869,7 +46878,7 @@
    },
    "equip-13.4.2-1": {
       "id": "equip-13.4.2-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -46948,20 +46957,6 @@
          },
          {
             "bool": "",
-            "name": "cause",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e2"
-               },
-               {
-                  "type": "event",
-                  "value": "e3"
-               }
-            ]
-         },
-         {
-            "bool": "",
             "name": "possess",
             "args": [
                {
@@ -46993,6 +46988,20 @@
                {
                   "type": "themrole",
                   "value": "theme"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "cause",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e2"
+               },
+               {
+                  "type": "event",
+                  "value": "e3"
                }
             ]
          }
@@ -47117,7 +47126,7 @@
    },
    "equip-13.4.2-1-1": {
       "id": "equip-13.4.2-1-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "recipient",
@@ -47247,7 +47256,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -47269,7 +47278,7 @@
             "args": [
                {
                   "type": "event",
-                  "value": "ee2"
+                  "value": "e2"
                },
                {
                   "type": "themrole",
@@ -47283,7 +47292,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -47301,7 +47310,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -47382,7 +47391,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -47404,7 +47413,7 @@
             "args": [
                {
                   "type": "event",
-                  "value": "ee2"
+                  "value": "e2"
                },
                {
                   "type": "themrole",
@@ -47418,7 +47427,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -47436,7 +47445,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -47714,7 +47723,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -47736,7 +47745,7 @@
             "args": [
                {
                   "type": "event",
-                  "value": "ee2"
+                  "value": "e2"
                },
                {
                   "type": "themrole",
@@ -47750,7 +47759,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -47768,7 +47777,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -47889,7 +47898,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -47911,7 +47920,7 @@
             "args": [
                {
                   "type": "event",
-                  "value": "ee2"
+                  "value": "e2"
                },
                {
                   "type": "themrole",
@@ -47925,7 +47934,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -47943,7 +47952,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -48015,7 +48024,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -48037,7 +48046,7 @@
             "args": [
                {
                   "type": "event",
-                  "value": "ee2"
+                  "value": "e2"
                },
                {
                   "type": "themrole",
@@ -48051,7 +48060,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -48069,7 +48078,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -49752,7 +49761,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -50427,7 +50436,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -50445,7 +50454,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -50495,7 +50504,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -50527,7 +50536,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -51284,7 +51293,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -51334,7 +51343,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -51366,7 +51375,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -52409,7 +52418,7 @@
          },
          {
             "bool": "",
-            "name": "reason",
+            "name": "in_reaction_to",
             "args": [
                {
                   "type": "event",
@@ -54543,7 +54552,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -54593,7 +54602,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -54625,7 +54634,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -54762,7 +54771,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -54812,7 +54821,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -54844,7 +54853,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -54998,7 +55007,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -55034,7 +55043,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -55052,7 +55061,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -61974,7 +61983,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -62028,7 +62037,7 @@
          },
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -62134,7 +62143,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -62188,7 +62197,7 @@
          },
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -62262,7 +62271,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -62280,7 +62289,7 @@
          },
          {
             "bool": "!",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -62334,7 +62343,7 @@
          },
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -62473,7 +62482,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -62545,7 +62554,7 @@
          },
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -63051,7 +63060,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -63069,7 +63078,7 @@
          },
          {
             "bool": "!",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -63123,7 +63132,7 @@
          },
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -64782,7 +64791,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -65371,7 +65380,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -65425,7 +65434,7 @@
          },
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -65472,7 +65481,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -65526,7 +65535,7 @@
          },
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -65632,7 +65641,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -65686,7 +65695,7 @@
          },
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -65767,7 +65776,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -65821,7 +65830,7 @@
          },
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -65903,7 +65912,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -65939,7 +65948,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -65957,7 +65966,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -66022,7 +66031,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -66058,7 +66067,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -66076,7 +66085,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -66146,7 +66155,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -66200,7 +66209,7 @@
          },
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -66245,7 +66254,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -66299,7 +66308,7 @@
          },
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -66518,7 +66527,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -66572,7 +66581,7 @@
          },
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -66644,7 +66653,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -66698,7 +66707,7 @@
          },
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -66841,7 +66850,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -67291,7 +67300,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -67546,7 +67555,7 @@
       "predicates": [
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -67564,7 +67573,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -68359,7 +68368,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -68431,7 +68440,7 @@
          },
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -69687,7 +69696,7 @@
          },
          {
             "bool": "",
-            "name": "reason",
+            "name": "in_reaction_to",
             "args": [
                {
                   "type": "event",
@@ -70634,7 +70643,7 @@
          },
          {
             "bool": "",
-            "name": "reason",
+            "name": "in_reaction_to",
             "args": [
                {
                   "type": "event",
@@ -70702,7 +70711,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -70738,7 +70747,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -71477,7 +71486,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -71527,7 +71536,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -71559,7 +71568,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -72556,7 +72565,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -73986,7 +73995,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -74004,7 +74013,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -74036,7 +74045,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -74086,7 +74095,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -74182,7 +74191,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -74232,7 +74241,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -74278,7 +74287,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -74296,7 +74305,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -74413,7 +74422,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -74431,7 +74440,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -74481,7 +74490,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -74531,7 +74540,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -74577,7 +74586,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -74595,7 +74604,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -74729,7 +74738,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -74747,7 +74756,7 @@
          },
          {
             "bool": "!",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -74805,7 +74814,7 @@
          },
          {
             "bool": "",
-            "name": "reason",
+            "name": "in_reaction_to",
             "args": [
                {
                   "type": "event",
@@ -74833,7 +74842,7 @@
          },
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -76037,7 +76046,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -76303,7 +76312,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -76339,7 +76348,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -76357,7 +76366,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -80121,7 +80130,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -80175,7 +80184,7 @@
          },
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -80421,7 +80430,7 @@
          },
          {
             "bool": "",
-            "name": "reason",
+            "name": "in_reaction_to",
             "args": [
                {
                   "type": "event",
@@ -81313,7 +81322,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "reason",
+            "name": "in_reaction_to",
             "args": [
                {
                   "type": "event",
@@ -81586,7 +81595,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -81658,7 +81667,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -81762,7 +81771,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -82239,7 +82248,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -82289,7 +82298,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -82925,7 +82934,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -82975,7 +82984,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -83007,7 +83016,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -83529,7 +83538,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -83565,7 +83574,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -83583,7 +83592,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -84877,7 +84886,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -84927,7 +84936,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -84963,7 +84972,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -84995,7 +85004,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -85013,7 +85022,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -86046,7 +86055,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -86064,7 +86073,7 @@
          },
          {
             "bool": "!",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -86118,7 +86127,7 @@
          },
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -86814,7 +86823,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -86886,7 +86895,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -86932,7 +86941,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -87070,7 +87079,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -87142,7 +87151,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -87188,7 +87197,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -87357,7 +87366,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -87407,7 +87416,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -87439,7 +87448,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -87640,7 +87649,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -87690,7 +87699,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -87722,7 +87731,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -87919,7 +87928,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -87969,7 +87978,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -88001,7 +88010,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -88133,7 +88142,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -88205,7 +88214,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -88237,7 +88246,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -88400,7 +88409,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -88450,7 +88459,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -88482,7 +88491,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -88826,7 +88835,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -88862,7 +88871,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -88880,7 +88889,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -89232,7 +89241,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "reason",
+            "name": "in_reaction_to",
             "args": [
                {
                   "type": "event",
@@ -89304,7 +89313,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "reason",
+            "name": "in_reaction_to",
             "args": [
                {
                   "type": "event",
@@ -91988,7 +91997,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -92038,7 +92047,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -92070,7 +92079,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -93832,7 +93841,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "reason",
+            "name": "in_reaction_to",
             "args": [
                {
                   "type": "event",
@@ -94485,7 +94494,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -94521,7 +94530,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -94553,7 +94562,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -94589,7 +94598,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -94639,7 +94648,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -95645,7 +95654,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -95681,7 +95690,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -95699,7 +95708,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -96672,7 +96681,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -96708,7 +96717,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -96726,7 +96735,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -97038,7 +97047,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -97056,7 +97065,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -97120,7 +97129,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -97170,7 +97179,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -97202,7 +97211,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -97238,7 +97247,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -97284,7 +97293,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -97320,7 +97329,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -97748,7 +97757,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -97784,7 +97793,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -97802,7 +97811,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -98212,7 +98221,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -98266,7 +98275,7 @@
          },
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -98350,7 +98359,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -98404,7 +98413,7 @@
          },
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -98587,7 +98596,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -98641,7 +98650,7 @@
          },
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -98959,7 +98968,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -99013,7 +99022,7 @@
          },
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -99089,7 +99098,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -99143,7 +99152,7 @@
          },
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -100048,7 +100057,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "reason",
+            "name": "in_reaction_to",
             "args": [
                {
                   "type": "event",
@@ -100114,7 +100123,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "reason",
+            "name": "in_reaction_to",
             "args": [
                {
                   "type": "event",
@@ -100195,7 +100204,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "reason",
+            "name": "in_reaction_to",
             "args": [
                {
                   "type": "event",
@@ -100334,7 +100343,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "reason",
+            "name": "in_reaction_to",
             "args": [
                {
                   "type": "event",
@@ -100715,7 +100724,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -100765,7 +100774,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -100797,7 +100806,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -101026,7 +101035,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -101076,7 +101085,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -101108,7 +101117,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -103011,7 +103020,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "reason",
+            "name": "in_reaction_to",
             "args": [
                {
                   "type": "event",
@@ -103493,7 +103502,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -103529,7 +103538,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -103561,7 +103570,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -103597,7 +103606,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -103629,7 +103638,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -103730,7 +103739,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -103780,7 +103789,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -103812,7 +103821,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -103946,7 +103955,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -103964,7 +103973,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -104256,7 +104265,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -105702,7 +105711,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -106497,7 +106506,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -106801,7 +106810,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -107721,7 +107730,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -107771,7 +107780,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -107803,7 +107812,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -107873,7 +107882,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -107909,7 +107918,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -107941,7 +107950,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -107977,7 +107986,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -108009,7 +108018,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -108423,7 +108432,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -109901,7 +109910,7 @@
          },
          {
             "bool": "",
-            "name": "reason",
+            "name": "in_reaction_to",
             "args": [
                {
                   "type": "event",
@@ -110905,7 +110914,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -111355,7 +111364,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -111373,7 +111382,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -111409,7 +111418,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -111445,7 +111454,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -111477,7 +111486,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -111495,7 +111504,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -111595,7 +111604,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -111613,7 +111622,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -111649,7 +111658,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -111685,7 +111694,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -111717,7 +111726,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -111735,7 +111744,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -113017,7 +113026,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -113063,7 +113072,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -113214,7 +113223,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -113281,7 +113290,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -113929,7 +113938,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -113947,7 +113956,7 @@
          },
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -114023,7 +114032,7 @@
          },
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -114077,7 +114086,7 @@
          },
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -114999,7 +115008,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -115053,7 +115062,7 @@
          },
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -115257,7 +115266,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -115329,7 +115338,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -115407,7 +115416,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -115502,7 +115511,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -115574,7 +115583,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -115652,7 +115661,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -116185,7 +116194,7 @@
          },
          {
             "bool": "",
-            "name": "reason",
+            "name": "in_reaction_to",
             "args": [
                {
                   "type": "event",
@@ -117434,7 +117443,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -117488,7 +117497,7 @@
          },
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -117758,7 +117767,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -117812,7 +117821,7 @@
          },
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -117888,7 +117897,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -117942,7 +117951,7 @@
          },
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -119427,7 +119436,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -119463,7 +119472,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -119481,7 +119490,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -119499,7 +119508,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -119549,7 +119558,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -119599,7 +119608,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -119631,7 +119640,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -119667,7 +119676,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -119963,7 +119972,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -120142,7 +120151,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -120160,7 +120169,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -120214,7 +120223,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -120250,7 +120259,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -120282,7 +120291,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -120300,7 +120309,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -120318,7 +120327,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -120851,7 +120860,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -120905,7 +120914,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -120923,7 +120932,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -120941,7 +120950,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -121009,7 +121018,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -121059,7 +121068,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -121091,7 +121100,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -121109,7 +121118,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -121926,7 +121935,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -121944,7 +121953,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -122078,7 +122087,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -122096,7 +122105,7 @@
          },
          {
             "bool": "!",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -122200,7 +122209,7 @@
          },
          {
             "bool": "",
-            "name": "know",
+            "name": "has_information",
             "args": [
                {
                   "type": "event",
@@ -122384,7 +122393,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -122452,7 +122461,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -122484,7 +122493,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -122643,7 +122652,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -122711,7 +122720,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -122743,7 +122752,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -122906,7 +122915,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -122974,7 +122983,7 @@
          },
          {
             "bool": "!",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -123006,7 +123015,7 @@
          },
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -123290,7 +123299,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "location",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",

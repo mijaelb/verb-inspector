@@ -46,14 +46,17 @@ class EditClassWidget(QtWidgets.QWidget):
 
         self.filterByCleanedButton = QtWidgets.QPushButton('By cleaned')
         self.filterByPredicateButton = QtWidgets.QPushButton('By predicate')
+        self.sortByIDButton = QtWidgets.QPushButton('Sort ID')
         self.removeFilterButton = QtWidgets.QPushButton('Unfilter')
         self.filterByCleanedButton.released.connect(self.filterByCleaned)
         self.filterByPredicateButton.released.connect(self.filterByPredicate)
-        self.removeFilterButton.released.connect(self.removeFilter)
+        self.sortByIDButton.released.connect(self.sortByID)
+        self.removeFilterButton.released.connect(self.unfilter)
 
         self.filterButtons = QtWidgets.QHBoxLayout()
         self.filterButtons.addWidget(self.filterByPredicateButton)
         self.filterButtons.addWidget(self.filterByCleanedButton)
+        self.filterButtons.addWidget(self.sortByIDButton)
         self.filterButtons.addWidget(self.removeFilterButton)
 
         self.predsListLabel = QtWidgets.QLabel('All predicates ▾')
@@ -97,8 +100,8 @@ class EditClassWidget(QtWidgets.QWidget):
         self.hLine.setStyleSheet('QFrame { color: palette(midlight) }')
         self.predsListLabel.setStyleSheet('QLabel { color: palette(midlight); }')
         self.classesList.setStyleSheet('QLabel { color: palette(midlight); }')
-        self.classesList.setMaximumWidth(self.classesList.sizeHint().width())
-        self.predsList.setMaximumWidth(self.predsList.sizeHint().width())
+        #self.classesList.setMaximumWidth(self.classesList.sizeHint().width())
+        #self.predsList.setMaximumWidth(self.predsList.sizeHint().width())
         self.predsList.setMaximumHeight(150)
         self.classSelectLayout.setAlignment(QtCore.Qt.AlignTop)
         self.layout.setAlignment(self.classSelectLayout, QtCore.Qt.AlignTop)
@@ -222,8 +225,13 @@ class EditClassWidget(QtWidgets.QWidget):
         self.updateClassesList()
 
     @pyqtSlot()
-    def removeFilter(self):
+    def unfilter(self):
         self.currentClasses = None
+        self.updateClassesList()
+
+    @pyqtSlot()
+    def sortByID(self):
+        self.currentClasses = self.pp_container.verbnet.get_classes(is_sorted=True)
         self.updateClassesList()
 
     @pyqtSlot()

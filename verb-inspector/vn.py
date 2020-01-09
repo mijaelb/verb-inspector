@@ -22,7 +22,7 @@ class VerbNetBase(object):
     def __init__(self):
         self.classes = {}
 
-    def get_classes(self, lemma='', class_ids=[]):
+    def get_classes(self, lemma='', class_ids=[], is_sorted=False):
         classes = getattr(self, 'classes', {})
         if classes:
             if class_ids:
@@ -35,6 +35,10 @@ class VerbNetBase(object):
                         if member.name == lemma:
                             lemma_classes[cls] = obj
                 classes = lemma_classes
+
+        if is_sorted:
+            classes = dict(sorted(classes.items(), key=lambda x: float(re.match(r'(^\d+\.?\d*)', x[1].get_id_num())[1])))
+
         return classes
 
     def get_complete_class_id(self, id):
@@ -322,6 +326,12 @@ class VerbNetClass(object):
                 if not any([str(pred) == str(pr) for pr in predicates]):
                     predicates.append(pred)
         return predicates
+
+    def get_id_num(self):
+        tupl = re.match(r'(\w+)-(.*)', self.id)
+        if tupl:
+            return tupl[2]
+        return ''
 
     def pprint(self, indent=0, end='\n'):
         indent_in = utils.indent(indent)
@@ -638,7 +648,13 @@ class VerbNetSimplifiedClass(object):
             self.predicates = self.get_predicates()
             self.members = self.get_members()
             self.examples = self.get_examples()
-    
+
+    def get_id_num(self):
+        tupl = re.match(r'(\w+)-(.*)', self.id)
+        if tupl:
+            return tupl[2]
+        return ''
+
     def change_class_name(self, class_id, new_id):
         for arg in self.args:
             arg.change_class_name(class_id, new_id)
