@@ -1,29 +1,24 @@
 {
-   "kiss": {
-      "lemma": "kiss",
+   "awake": {
+      "lemma": "awake",
       "type": "verb",
-      "description": "Touch with the lips.",
+      "description": "be awake",
       "examples": [
-         "The newly married couple kissed.",
-         "She kissed her grandfather on the forehead.",
-         "Kiss and make up!",
-         "Monkeys often appear to kiss one another."
+         "Many people feel hungry every minute they are awake and fight the fact they know they are literally killing themselves with every bite they take .",
+         "He was awake to the real things of life!",
+         "Little Davey was awake from his nap.",
+         "The clothes dried wrinkled."
       ],
       "slots": [
          {
             "slot": 0,
             "descriptions": [
-               "kisser",
-               "kisser"
+               "(former)_sleeper"
             ],
             "themrole": [
                {
-                  "vnrole": "agent",
-                  "vncls": "marry-36.2"
-               },
-               {
-                  "vnrole": "agent",
-                  "vncls": "touch-20-1"
+                  "vnrole": "patient",
+                  "vncls": "other_cos-45.4-1"
                }
             ],
             "implicit": false,
@@ -31,65 +26,27 @@
          },
          {
             "slot": 1,
-            "descriptions": [
-               "kissed",
-               "kissed"
-            ],
+            "descriptions": [],
             "themrole": [
                {
-                  "vnrole": "co_agent",
-                  "vncls": "marry-36.2"
+                  "vnrole": "result",
+                  "vncls": "other_cos-45.4-1"
                },
                {
-                  "vnrole": "experiencer",
-                  "vncls": "touch-20-1"
-               }
-            ],
-            "implicit": false,
-            "implicit_values": []
-         },
-         {
-            "slot": 2,
-            "descriptions": [],
-            "themrole": [
-               {
-                  "vnrole": "theme",
-                  "vncls": "touch-20-1"
+                  "vnrole": "final_state",
+                  "vncls": "other_cos-45.4-1"
                }
             ],
             "implicit": true,
             "implicit_values": [
-               "lips"
+               "awake"
             ]
-         },
-         {
-            "slot": 3,
-            "descriptions": [],
-            "themrole": [
-               {
-                  "vnrole": "instrument",
-                  "vncls": "touch-20-1"
-               }
-            ],
-            "implicit": true,
-            "implicit_values": [
-               "lips"
-            ]
-         },
-         {
-            "slot": 4,
-            "descriptions": [
-               "secondary_predication_ie_goodbye_goodnight_etc"
-            ],
-            "themrole": [],
-            "implicit": false,
-            "implicit_values": []
          }
       ],
       "predicates": [
          {
-            "bool": "",
-            "name": "social_interaction",
+            "bool": "!",
+            "name": "state",
             "args": [
                {
                   "type": "event",
@@ -100,14 +57,114 @@
                   "slot": "0"
                },
                {
-                  "type": "themrole",
+                  "type": "verbspecific",
                   "slot": "1"
                }
             ]
          },
          {
-            "bool": "!",
-            "name": "contact",
+            "bool": "",
+            "name": "state",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e2"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               },
+               {
+                  "type": "verbspecific",
+                  "slot": "1"
+               }
+            ]
+         }
+      ],
+      "frames": []
+   },
+   "put": {
+      "lemma": "put",
+      "type": "verb",
+      "description": "place or set, physically",
+      "examples": [
+         "She is putting the tray of food on the table.",
+         "Put the name of the author above the title.",
+         "He put the date of the meeting on his calendar.",
+         "Put your things here."
+      ],
+      "slots": [
+         {
+            "slot": 0,
+            "descriptions": [
+               "putter"
+            ],
+            "themrole": [
+               {
+                  "vnrole": "agent",
+                  "vncls": "put-9.1-2"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         },
+         {
+            "slot": 1,
+            "descriptions": [
+               "thing_put"
+            ],
+            "themrole": [
+               {
+                  "vnrole": "theme",
+                  "vncls": "put-9.1-2"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         },
+         {
+            "slot": 2,
+            "descriptions": [
+               "where_put"
+            ],
+            "themrole": [
+               {
+                  "vnrole": "destination",
+                  "vncls": "put-9.1-2"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         },
+         {
+            "slot": 3,
+            "descriptions": [],
+            "themrole": [
+               {
+                  "vnrole": "initial_location",
+                  "vncls": "put-9.1-2"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         },
+         {
+            "slot": 4,
+            "descriptions": [],
+            "themrole": [
+               {
+                  "vnrole": "trajectory",
+                  "vncls": "put-9.1-2"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         }
+      ],
+      "predicates": [
+         {
+            "bool": "",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
@@ -115,11 +172,11 @@
                },
                {
                   "type": "themrole",
-                  "slot": "3"
+                  "slot": "1"
                },
                {
                   "type": "themrole",
-                  "slot": "2"
+                  "slot": "3"
                }
             ]
          },
@@ -139,15 +196,33 @@
          },
          {
             "bool": "",
-            "name": "utilize",
+            "name": "motion",
             "args": [
                {
                   "type": "event",
-                  "slot": "e2"
+                  "slot": "ee3"
                },
                {
                   "type": "themrole",
-                  "slot": "0"
+                  "slot": "1"
+               },
+               {
+                  "type": "predspecific",
+                  "slot": "4"
+               }
+            ]
+         },
+         {
+            "bool": "!",
+            "name": "has_location",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "ee3"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
                },
                {
                   "type": "themrole",
@@ -161,46 +236,43 @@
             "args": [
                {
                   "type": "event",
+                  "slot": "ee3"
+               },
+               {
+                  "type": "event",
                   "slot": "e2"
-               },
-               {
-                  "type": "event",
-                  "slot": "e3"
                }
             ]
          },
          {
             "bool": "",
-            "name": "contact",
+            "name": "has_location",
             "args": [
                {
                   "type": "event",
-                  "slot": "e3"
-               },
-               {
-                  "type": "themrole",
-                  "slot": "3"
-               },
-               {
-                  "type": "themrole",
-                  "slot": "2"
-               }
-            ]
-         },
-         {
-            "bool": "",
-            "name": "part_of",
-            "args": [
-               {
-                  "type": "themrole",
-                  "slot": "2"
+                  "slot": "e4"
                },
                {
                   "type": "themrole",
                   "slot": "1"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "2"
                }
             ]
          }
+      ],
+      "frames": [
+         "building",
+         "causation",
+         "change_event_time",
+         "cooking_creation",
+         "dressing",
+         "execution",
+         "imprisonment",
+         "ingestion",
+         "placing"
       ]
    }
 }
