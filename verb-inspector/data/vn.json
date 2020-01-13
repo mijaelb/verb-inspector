@@ -2340,12 +2340,12 @@
             "implicit": false
          },
          {
-            "value": "recipient",
+            "value": "topic",
             "slot": 1,
             "implicit": false
          },
          {
-            "value": "topic",
+            "value": "recipient",
             "slot": 2,
             "implicit": false
          }
@@ -2499,12 +2499,12 @@
             "implicit": false
          },
          {
-            "value": "recipient",
+            "value": "topic",
             "slot": 1,
             "implicit": false
          },
          {
-            "value": "topic",
+            "value": "recipient",
             "slot": 2,
             "implicit": false
          }
@@ -13407,20 +13407,6 @@
          },
          {
             "bool": "",
-            "name": "cause",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e2"
-               },
-               {
-                  "type": "event",
-                  "value": "e3"
-               }
-            ]
-         },
-         {
-            "bool": "",
             "name": "alive",
             "args": [
                {
@@ -13430,6 +13416,20 @@
                {
                   "type": "themrole",
                   "value": "patient"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "cause",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e2"
+               },
+               {
+                  "type": "event",
+                  "value": "e3"
                }
             ]
          }
@@ -13514,20 +13514,6 @@
          },
          {
             "bool": "",
-            "name": "cause",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e2"
-               },
-               {
-                  "type": "event",
-                  "value": "e3"
-               }
-            ]
-         },
-         {
-            "bool": "",
             "name": "alive",
             "args": [
                {
@@ -13537,6 +13523,20 @@
                {
                   "type": "themrole",
                   "value": "patient"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "cause",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e2"
+               },
+               {
+                  "type": "event",
+                  "value": "e3"
                }
             ]
          }
@@ -56679,20 +56679,6 @@
          },
          {
             "bool": "",
-            "name": "cause",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e2"
-               },
-               {
-                  "type": "event",
-                  "value": "e3"
-               }
-            ]
-         },
-         {
-            "bool": "",
             "name": "has_possession",
             "args": [
                {
@@ -56724,6 +56710,20 @@
                {
                   "type": "themrole",
                   "value": "theme"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "cause",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e2"
+               },
+               {
+                  "type": "event",
+                  "value": "e3"
                }
             ]
          }
@@ -75316,7 +75316,7 @@
    },
    "obtain-13.5.2": {
       "id": "obtain-13.5.2",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -75395,20 +75395,6 @@
          },
          {
             "bool": "",
-            "name": "cause",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e2"
-               },
-               {
-                  "type": "event",
-                  "value": "e3"
-               }
-            ]
-         },
-         {
-            "bool": "",
             "name": "has_possession",
             "args": [
                {
@@ -75440,6 +75426,20 @@
                {
                   "type": "themrole",
                   "value": "theme"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "cause",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e2"
+               },
+               {
+                  "type": "event",
+                  "value": "e3"
                }
             ]
          }
@@ -87978,20 +87978,6 @@
          },
          {
             "bool": "",
-            "name": "cause",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "ee3"
-               },
-               {
-                  "type": "event",
-                  "value": "e2"
-               }
-            ]
-         },
-         {
-            "bool": "",
             "name": "has_location",
             "args": [
                {
@@ -88005,6 +87991,20 @@
                {
                   "type": "themrole",
                   "value": "destination"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "cause",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "ee3"
+               },
+               {
+                  "type": "event",
+                  "value": "e2"
                }
             ]
          }
@@ -104020,11 +104020,16 @@
    },
    "snooze-40.4": {
       "id": "snooze-40.4",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
             "slot": 0,
+            "implicit": false
+         },
+         {
+            "value": "theme",
+            "slot": 1,
             "implicit": false
          }
       ],
@@ -104054,6 +104059,24 @@
                {
                   "type": "themrole",
                   "value": "agent"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "manner",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "ee"
+               },
+               {
+                  "type": "themrole",
+                  "value": "theme"
+               },
+               {
+                  "type": "constant",
+                  "value": "quality"
                }
             ]
          }
@@ -104116,7 +104139,7 @@
    },
    "snooze-40.4-1": {
       "id": "snooze-40.4-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -104132,7 +104155,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "sleep",
+            "name": "body_process",
             "args": [
                {
                   "type": "event",
@@ -104146,7 +104169,7 @@
          },
          {
             "bool": "",
-            "name": "body_process",
+            "name": "sleep",
             "args": [
                {
                   "type": "event",

@@ -23,6 +23,7 @@ class EditClassWidget(QtWidgets.QWidget):
 
         self.plotPointWidget = None
         self.editArgWidget = EditArgWidget()
+        self.infoLabel = QtWidgets.QLabel(str(self.pp_container.verbnet.get_info()))
         self.classesLabel = QtWidgets.QLabel('Classes ▾')
 
         self.hLine = QtUtils.QHLine()
@@ -72,6 +73,7 @@ class EditClassWidget(QtWidgets.QWidget):
         self.updateClassesList()
 
         self.classSelectLayout = QtWidgets.QVBoxLayout()
+        self.classSelectLayout.addWidget(self.infoLabel)
         self.classSelectLayout.addWidget(self.reloadClassButton)
         self.classSelectLayout.addWidget(self.classesLabel)
         self.classSelectLayout.addWidget(self.classesList)

@@ -1,24 +1,28 @@
 {
-   "awake": {
-      "lemma": "awake",
+   "absorb": {
+      "lemma": "absorb",
       "type": "verb",
-      "description": "be awake",
+      "description": "take something in, soak in, or use up (often gradually)",
       "examples": [
-         "Many people feel hungry every minute they are awake and fight the fact they know they are literally killing themselves with every bite they take .",
-         "He was awake to the real things of life!",
-         "Little Davey was awake from his nap.",
-         "The clothes dried wrinkled."
+         "This is the way all plant cells grow and the way roots absorb water from the soil.",
+         "The sponge absorbs and eliminates virtually all strong odors.",
+         "We see that the black hole absorbs only a small amount of the emitted radiation.",
+         "In cold climates, houses need to have walls that will absorb heat.",
+         "Towels absorb moisture.",
+         "The drug is quickly absorbed into the bloodstream.",
+         "This project is absorbing too much money.",
+         "The project has absorbed all of our department's resources."
       ],
       "slots": [
          {
             "slot": 0,
             "descriptions": [
-               "(former)_sleeper"
+               "absorber_cause_or_agent"
             ],
             "themrole": [
                {
-                  "vnrole": "patient",
-                  "vncls": "other_cos-45.4-1"
+                  "vnrole": "goal",
+                  "vncls": "absorb-39.8"
                }
             ],
             "implicit": false,
@@ -29,94 +33,8 @@
             "descriptions": [],
             "themrole": [
                {
-                  "vnrole": "result",
-                  "vncls": "other_cos-45.4-1"
-               },
-               {
-                  "vnrole": "final_state",
-                  "vncls": "other_cos-45.4-1"
-               }
-            ],
-            "implicit": true,
-            "implicit_values": [
-               "awake"
-            ]
-         }
-      ],
-      "predicates": [
-         {
-            "bool": "!",
-            "name": "state",
-            "args": [
-               {
-                  "type": "event",
-                  "slot": "e1"
-               },
-               {
-                  "type": "themrole",
-                  "slot": "0"
-               },
-               {
-                  "type": "verbspecific",
-                  "slot": "1"
-               }
-            ]
-         },
-         {
-            "bool": "",
-            "name": "state",
-            "args": [
-               {
-                  "type": "event",
-                  "slot": "e2"
-               },
-               {
-                  "type": "themrole",
-                  "slot": "0"
-               },
-               {
-                  "type": "verbspecific",
-                  "slot": "1"
-               }
-            ]
-         }
-      ],
-      "frames": []
-   },
-   "put": {
-      "lemma": "put",
-      "type": "verb",
-      "description": "place or set, physically",
-      "examples": [
-         "She is putting the tray of food on the table.",
-         "Put the name of the author above the title.",
-         "He put the date of the meeting on his calendar.",
-         "Put your things here."
-      ],
-      "slots": [
-         {
-            "slot": 0,
-            "descriptions": [
-               "putter"
-            ],
-            "themrole": [
-               {
-                  "vnrole": "agent",
-                  "vncls": "put-9.1-2"
-               }
-            ],
-            "implicit": false,
-            "implicit_values": []
-         },
-         {
-            "slot": 1,
-            "descriptions": [
-               "thing_put"
-            ],
-            "themrole": [
-               {
                   "vnrole": "theme",
-                  "vncls": "put-9.1-2"
+                  "vncls": "absorb-39.8"
                }
             ],
             "implicit": false,
@@ -124,37 +42,11 @@
          },
          {
             "slot": 2,
-            "descriptions": [
-               "where_put"
-            ],
-            "themrole": [
-               {
-                  "vnrole": "destination",
-                  "vncls": "put-9.1-2"
-               }
-            ],
-            "implicit": false,
-            "implicit_values": []
-         },
-         {
-            "slot": 3,
             "descriptions": [],
             "themrole": [
                {
-                  "vnrole": "initial_location",
-                  "vncls": "put-9.1-2"
-               }
-            ],
-            "implicit": false,
-            "implicit_values": []
-         },
-         {
-            "slot": 4,
-            "descriptions": [],
-            "themrole": [
-               {
-                  "vnrole": "trajectory",
-                  "vncls": "put-9.1-2"
+                  "vnrole": "source",
+                  "vncls": "absorb-39.8"
                }
             ],
             "implicit": false,
@@ -176,7 +68,1072 @@
                },
                {
                   "type": "themrole",
+                  "slot": "2"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "consume",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e2"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               }
+            ]
+         },
+         {
+            "bool": "!",
+            "name": "has_location",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e3"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "2"
+               }
+            ]
+         }
+      ],
+      "frames": []
+   },
+   "chew": {
+      "lemma": "chew",
+      "type": "verb",
+      "description": "masticate",
+      "examples": [
+         "Always chew your food 30 times before swallowing.",
+         "This meat is hard to chew.",
+         "He's so tough he chews nails.",
+         "It's sad that he's totally under the thumb of Katie, who will chew him up and spit him out."
+      ],
+      "slots": [
+         {
+            "slot": 0,
+            "descriptions": [
+               "chewer"
+            ],
+            "themrole": [
+               {
+                  "vnrole": "agent",
+                  "vncls": "chew-39.2-1"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         },
+         {
+            "slot": 1,
+            "descriptions": [
+               "food"
+            ],
+            "themrole": [
+               {
+                  "vnrole": "patient",
+                  "vncls": "chew-39.2-1"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         }
+      ],
+      "predicates": [
+         {
+            "bool": "",
+            "name": "consume",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e1"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               }
+            ]
+         }
+      ],
+      "frames": [
+         "grinding"
+      ]
+   },
+   "consume": {
+      "lemma": "consume",
+      "type": "verb",
+      "description": "eat or drink, esp. in large amounts; ingest",
+      "examples": [
+         "She consumes 2 cups of sugar a day.",
+         "Total cholesterol, LDL cholesterol and apoB were lower when women consumed",
+         "the HUFA diet than when they consumed the other two diets.",
+         "My cows consume more hay than my neighbor's."
+      ],
+      "slots": [
+         {
+            "slot": 0,
+            "descriptions": [
+               "consumer",
+               "consumer"
+            ],
+            "themrole": [
+               {
+                  "vnrole": "agent",
+                  "vncls": "devour-39.4"
+               },
+               {
+                  "vnrole": "agent",
+                  "vncls": "consume-66"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         },
+         {
+            "slot": 1,
+            "descriptions": [
+               "consumed",
+               "consumed"
+            ],
+            "themrole": [
+               {
+                  "vnrole": "patient",
+                  "vncls": "devour-39.4"
+               },
+               {
+                  "vnrole": "asset",
+                  "vncls": "consume-66"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         },
+         {
+            "slot": 2,
+            "descriptions": [],
+            "themrole": [
+               {
+                  "vnrole": "goal",
+                  "vncls": "consume-66"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         }
+      ],
+      "predicates": [
+         {
+            "bool": "",
+            "name": "consume",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e1"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "has_possession",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e1"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "spend",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e2"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "2"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "cause",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e2"
+               },
+               {
+                  "type": "event",
+                  "slot": "e3"
+               }
+            ]
+         },
+         {
+            "bool": "!",
+            "name": "has_possession",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e3"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               }
+            ]
+         }
+      ],
+      "frames": [
+         "ingestion"
+      ]
+   },
+   "devour": {
+      "lemma": "devour",
+      "type": "verb",
+      "description": "eat ravenously",
+      "examples": [
+         "The glutton again devoured five pounds of raw beef.",
+         "He helped himself to a piece of chicken, which he devoured hungrily."
+      ],
+      "slots": [
+         {
+            "slot": 0,
+            "descriptions": [
+               "eater"
+            ],
+            "themrole": [
+               {
+                  "vnrole": "agent",
+                  "vncls": "devour-39.4"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         },
+         {
+            "slot": 1,
+            "descriptions": [
+               "thing_eaten"
+            ],
+            "themrole": [
+               {
+                  "vnrole": "patient",
+                  "vncls": "devour-39.4"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         }
+      ],
+      "predicates": [
+         {
+            "bool": "",
+            "name": "consume",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e1"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               }
+            ]
+         }
+      ],
+      "frames": [
+         "ingestion"
+      ]
+   },
+   "dine": {
+      "lemma": "dine",
+      "type": "verb",
+      "description": "eat dinner",
+      "examples": [
+         "Her parents dined with friends nearby.",
+         "We dined in on Saturday night.",
+         "As they dined out, night after night, year after year, they",
+         "introduced themselves to chefs."
+      ],
+      "slots": [
+         {
+            "slot": 0,
+            "descriptions": [
+               "eater"
+            ],
+            "themrole": [
+               {
+                  "vnrole": "agent",
+                  "vncls": "dine-39.5"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         },
+         {
+            "slot": 1,
+            "descriptions": [
+               "meal"
+            ],
+            "themrole": [
+               {
+                  "vnrole": "patient",
+                  "vncls": "dine-39.5"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         }
+      ],
+      "predicates": [
+         {
+            "bool": "",
+            "name": "consume",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e1"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               }
+            ]
+         }
+      ],
+      "frames": [
+         "ingestion"
+      ]
+   },
+   "drink": {
+      "lemma": "drink",
+      "type": "verb",
+      "description": "take in a liquid orally",
+      "examples": [
+         "Drink lots of water on a hot day.",
+         "At the picnic the children drank lemonade.",
+         "The colt drank its milk thirstily.",
+         "The cut roses are drinking their water nicely. (figurative extension)",
+         "Bob drank three glasses of orange juice."
+      ],
+      "slots": [
+         {
+            "slot": 0,
+            "descriptions": [
+               "drinker"
+            ],
+            "themrole": [
+               {
+                  "vnrole": "agent",
+                  "vncls": "eat-39.1-2"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         },
+         {
+            "slot": 1,
+            "descriptions": [
+               "liquid"
+            ],
+            "themrole": [
+               {
+                  "vnrole": "patient",
+                  "vncls": "eat-39.1-2"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         },
+         {
+            "slot": 2,
+            "descriptions": [
+               "source_of_liquid"
+            ],
+            "themrole": [
+               {
+                  "vnrole": "source",
+                  "vncls": "eat-39.1-2"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         }
+      ],
+      "predicates": [
+         {
+            "bool": "",
+            "name": "has_location",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "2"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "consume",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e1"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               }
+            ]
+         }
+      ],
+      "frames": [
+         "ingestion"
+      ]
+   },
+   "eat": {
+      "lemma": "eat",
+      "type": "verb",
+      "description": "consume or absorb as food, take in a meal",
+      "examples": [
+         "I ate.",
+         "She was eating an apple.",
+         "What do whales eat?",
+         "This plant eats bugs.",
+         "What did you eat for dinner last night?",
+         "I haven't eaten for three days.",
+         "Have you eaten yet?",
+         "I made some oven-baked risotto, and they ate it up.",
+         "I didn't eat yet, so I gladly accept your invitation.",
+         "She stopped eating meat on advice from her doctor.",
+         "I'm so hungry that I could eat a horse.",
+         "Will you have a bite to eat?",
+         "Stop eating like a horse, there won't be enough for our guests.",
+         "Some pigeons will eat out of your hand."
+      ],
+      "slots": [
+         {
+            "slot": 0,
+            "descriptions": [
+               "consumer_eater"
+            ],
+            "themrole": [
+               {
+                  "vnrole": "agent",
+                  "vncls": "eat-39.1-1"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         },
+         {
+            "slot": 1,
+            "descriptions": [
+               "meal"
+            ],
+            "themrole": [
+               {
+                  "vnrole": "patient",
+                  "vncls": "eat-39.1-1"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         },
+         {
+            "slot": 2,
+            "descriptions": [],
+            "themrole": [
+               {
+                  "vnrole": "source",
+                  "vncls": "eat-39.1-1"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         }
+      ],
+      "predicates": [
+         {
+            "bool": "",
+            "name": "has_location",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "2"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "consume",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e1"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               }
+            ]
+         }
+      ],
+      "frames": [
+         "ingestion"
+      ]
+   },
+   "feed": {
+      "lemma": "feed",
+      "type": "verb",
+      "description": "give food or nourishment",
+      "examples": [
+         "Do you feed your chicken corn?",
+         "We feed the guests a full 5 course meal with 2 side salads in our tradition.",
+         "Please do not feed nuts to the animals.",
+         "Let's feed the kids first and have our dinner after.",
+         "Don't forget to feed the tomatoes.",
+         "If agriculture were given priority, the country would easily be able to feed itself."
+      ],
+      "slots": [
+         {
+            "slot": 0,
+            "descriptions": [
+               "causal_agent",
+               "causal_agent"
+            ],
+            "themrole": [
+               {
+                  "vnrole": "agent",
+                  "vncls": "feeding-39.7"
+               },
+               {
+                  "vnrole": "agent",
+                  "vncls": "gorge-39.6"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         },
+         {
+            "slot": 1,
+            "descriptions": [
+               "food",
+               "food"
+            ],
+            "themrole": [
+               {
+                  "vnrole": "theme",
+                  "vncls": "feeding-39.7"
+               },
+               {
+                  "vnrole": "patient",
+                  "vncls": "gorge-39.6"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         },
+         {
+            "slot": 2,
+            "descriptions": [
+               "eater"
+            ],
+            "themrole": [
+               {
+                  "vnrole": "recipient",
+                  "vncls": "feeding-39.7"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         }
+      ],
+      "predicates": [
+         {
+            "bool": "",
+            "name": "do",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e1"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "consume",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e1"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "2"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "consume",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e1"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               }
+            ]
+         }
+      ],
+      "frames": [
+         "ingestion"
+      ]
+   },
+   "ingest": {
+      "lemma": "ingest",
+      "type": "verb",
+      "description": "physically consume or take in a substance",
+      "examples": [
+         "The child may have ingested a poisonous mushroom.",
+         "This diet recommends ingesting less saturated fats.",
+         "You ingest this medicine through dissolvable tablets."
+      ],
+      "slots": [
+         {
+            "slot": 0,
+            "descriptions": [
+               "eater"
+            ],
+            "themrole": [
+               {
+                  "vnrole": "agent",
+                  "vncls": "devour-39.4"
+               },
+               {
+                  "vnrole": "goal",
+                  "vncls": "absorb-39.8"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         },
+         {
+            "slot": 1,
+            "descriptions": [
+               "entity_ingested"
+            ],
+            "themrole": [
+               {
+                  "vnrole": "patient",
+                  "vncls": "devour-39.4"
+               },
+               {
+                  "vnrole": "theme",
+                  "vncls": "absorb-39.8"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         },
+         {
+            "slot": 2,
+            "descriptions": [],
+            "themrole": [
+               {
+                  "vnrole": "source",
+                  "vncls": "absorb-39.8"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         }
+      ],
+      "predicates": [
+         {
+            "bool": "",
+            "name": "consume",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e1"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "has_location",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e1"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "2"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "consume",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e2"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               }
+            ]
+         },
+         {
+            "bool": "!",
+            "name": "has_location",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e3"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "2"
+               }
+            ]
+         }
+      ],
+      "frames": [
+         "ingestion"
+      ]
+   },
+   "inhale": {
+      "lemma": "inhale",
+      "type": "verb",
+      "description": "draw in air; draw into the lungs",
+      "examples": [
+         "Clinton smoked marijuana but never inhaled.",
+         "Subjects inhaled the aerosol by tidal breathing for 2 minutes at 5",
+         "minute intervals."
+      ],
+      "slots": [
+         {
+            "slot": 0,
+            "descriptions": [],
+            "themrole": [
+               {
+                  "vnrole": "agent",
+                  "vncls": "exhale-40.1.3-2"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         },
+         {
+            "slot": 1,
+            "descriptions": [],
+            "themrole": [
+               {
+                  "vnrole": "theme",
+                  "vncls": "exhale-40.1.3-2"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         }
+      ],
+      "predicates": [
+         {
+            "bool": "",
+            "name": "consume",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "ee1"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "body_process",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "ee1"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               }
+            ]
+         }
+      ],
+      "frames": [
+         "breathing"
+      ]
+   },
+   "inject": {
+      "lemma": "inject",
+      "type": "verb",
+      "description": "to force fluid into by piercing",
+      "examples": [
+         "The hospital mistakenly injected the blood into the wrong patient.",
+         "The researchers injected the nanorods into mice.",
+         "When hexane is injected, the hexane rises to the top and vaporizes.",
+         "We had to inject nutrients into my diabetic cat twice a day."
+      ],
+      "slots": [
+         {
+            "slot": 0,
+            "descriptions": [
+               "injector"
+            ],
+            "themrole": [
+               {
+                  "vnrole": "agent",
+                  "vncls": "fill-9.8"
+               },
+               {
+                  "vnrole": "agent",
+                  "vncls": "eat-39.1-3"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         },
+         {
+            "slot": 1,
+            "descriptions": [
+               "stuff_being_put_in"
+            ],
+            "themrole": [
+               {
+                  "vnrole": "theme",
+                  "vncls": "fill-9.8"
+               },
+               {
+                  "vnrole": "patient",
+                  "vncls": "eat-39.1-3"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         },
+         {
+            "slot": 2,
+            "descriptions": [
+               "injected_into_what"
+            ],
+            "themrole": [
+               {
+                  "vnrole": "destination",
+                  "vncls": "fill-9.8"
+               },
+               {
+                  "vnrole": "source",
+                  "vncls": "eat-39.1-3"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         },
+         {
+            "slot": 3,
+            "descriptions": [],
+            "themrole": [
+               {
+                  "vnrole": "initial_location",
+                  "vncls": "fill-9.8"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         },
+         {
+            "slot": 4,
+            "descriptions": [],
+            "themrole": [
+               {
+                  "vnrole": "trajectory",
+                  "vncls": "fill-9.8"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         }
+      ],
+      "predicates": [
+         {
+            "bool": "",
+            "name": "has_location",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "2"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "has_location",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e1"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               },
+               {
+                  "type": "themrole",
                   "slot": "3"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "consume",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e1"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
                }
             ]
          },
@@ -264,15 +1221,1061 @@
          }
       ],
       "frames": [
-         "building",
-         "causation",
-         "change_event_time",
-         "cooking_creation",
-         "dressing",
-         "execution",
-         "imprisonment",
-         "ingestion",
-         "placing"
+         "filling",
+         "ingest_substance",
+         "placing",
+         "injest_substance"
+      ]
+   },
+   "lunch": {
+      "lemma": "lunch",
+      "type": "verb",
+      "description": "",
+      "examples": [
+         "Cynthia breakfasted.",
+         "Cynthia breakfasted on peaches."
+      ],
+      "slots": [
+         {
+            "slot": 0,
+            "descriptions": [],
+            "themrole": [
+               {
+                  "vnrole": "agent",
+                  "vncls": "dine-39.5"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         },
+         {
+            "slot": 1,
+            "descriptions": [],
+            "themrole": [
+               {
+                  "vnrole": "patient",
+                  "vncls": "dine-39.5"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         }
+      ],
+      "predicates": [
+         {
+            "bool": "",
+            "name": "consume",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e1"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               }
+            ]
+         }
+      ],
+      "frames": [
+         "ingestion"
+      ]
+   },
+   "run": {
+      "lemma": "run",
+      "type": "verb",
+      "description": "move quickly or freely, travel",
+      "examples": [
+         "Don't run or you'll be out of breath!",
+         "If you see this man, run!",
+         "Who are these people running around here?",
+         "She runs around telling everyone her troubles.",
+         "Just let the dogs run.",
+         "The children ran amok.",
+         "She ran ten miles that day.",
+         "He is running the marathon this year.",
+         "I just need to run to the store.",
+         "She ran to the arms of her lover.",
+         "Savage ran the ball 19 times for 112 yards with a touchdown.",
+         "The ship once again returned to sea to run the coast between New York and Savannah.",
+         "Local salmon that run the waters of the Pacific are chinook and coho."
+      ],
+      "slots": [
+         {
+            "slot": 0,
+            "descriptions": [
+               "runner",
+               "runner"
+            ],
+            "themrole": [
+               {
+                  "vnrole": "theme",
+                  "vncls": "run-51.3.2-2-1"
+               },
+               {
+                  "vnrole": "theme",
+                  "vncls": "swarm-47.5.1-1"
+               },
+               {
+                  "vnrole": "agent",
+                  "vncls": "carry-11.4"
+               },
+               {
+                  "vnrole": "theme",
+                  "vncls": "bump-18.4"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         },
+         {
+            "slot": 1,
+            "descriptions": [
+               "course_race_distance",
+               "course_race_distance"
+            ],
+            "themrole": [
+               {
+                  "vnrole": "location",
+                  "vncls": "run-51.3.2-2-1"
+               },
+               {
+                  "vnrole": "location",
+                  "vncls": "swarm-47.5.1-1"
+               },
+               {
+                  "vnrole": "theme",
+                  "vncls": "carry-11.4"
+               },
+               {
+                  "vnrole": "co_theme",
+                  "vncls": "bump-18.4"
+               },
+               {
+                  "vnrole": "destination",
+                  "vncls": "run-51.3.2-2-1"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         },
+         {
+            "slot": 2,
+            "descriptions": [
+               "opponent"
+            ],
+            "themrole": [
+               {
+                  "vnrole": "destination",
+                  "vncls": "carry-11.4"
+               },
+               {
+                  "vnrole": "initial_location",
+                  "vncls": "run-51.3.2-2-1"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         },
+         {
+            "slot": 3,
+            "descriptions": [],
+            "themrole": [
+               {
+                  "vnrole": "initial_location",
+                  "vncls": "carry-11.4"
+               },
+               {
+                  "vnrole": "trajectory",
+                  "vncls": "run-51.3.2-2-1"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         },
+         {
+            "slot": 4,
+            "descriptions": [],
+            "themrole": [
+               {
+                  "vnrole": "trajectory",
+                  "vncls": "carry-11.4"
+               },
+               {
+                  "vnrole": "result",
+                  "vncls": "run-51.3.2-2-1"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         }
+      ],
+      "predicates": [
+         {
+            "bool": "",
+            "name": "has_location",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e1"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "3"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "manner",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e1"
+               },
+               {
+                  "type": "constant",
+                  "slot": "directedmotion"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "has_location",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e1"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "2"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "exist",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e1"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "has_location",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e2"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "3"
+               }
+            ]
+         },
+         {
+            "bool": "!",
+            "name": "contact",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e2"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "manner",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e2"
+               },
+               {
+                  "type": "constant",
+                  "slot": "forceful"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "contact",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e2"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "motion",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "ee2"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "3"
+               }
+            ]
+         },
+         {
+            "bool": "!",
+            "name": "has_location",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "ee2"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "2"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "has_location",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e2"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "motion",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e2"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "do",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e3"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "has_location",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e3"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "state",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e3"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "4"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "motion",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e3"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "motion",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "ee4"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               },
+               {
+                  "type": "predspecific",
+                  "slot": "4"
+               }
+            ]
+         },
+         {
+            "bool": "!",
+            "name": "has_location",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "ee4"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "3"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "cause",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "ee4"
+               },
+               {
+                  "type": "event",
+                  "slot": "e3"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "motion",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "ee5"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               },
+               {
+                  "type": "predspecific",
+                  "slot": "4"
+               }
+            ]
+         },
+         {
+            "bool": "!",
+            "name": "has_location",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "ee5"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "3"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "cotemporal",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "ee5"
+               },
+               {
+                  "type": "event",
+                  "slot": "ee4"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "has_location",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e6"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "2"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "has_location",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e7"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "2"
+               }
+            ]
+         }
+      ],
+      "frames": [
+         "self_motion",
+         "cause_motion"
+      ]
+   },
+   "smoke": {
+      "lemma": "smoke",
+      "type": "verb",
+      "description": "inhale and exhale smoke from cigarettes, cigars, pipes",
+      "examples": [
+         "We never smoked marijuana.",
+         "Do you smoke?"
+      ],
+      "slots": [
+         {
+            "slot": 0,
+            "descriptions": [
+               "smoker"
+            ],
+            "themrole": [
+               {
+                  "vnrole": "agent",
+                  "vncls": "eat-39.1-3"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         },
+         {
+            "slot": 1,
+            "descriptions": [],
+            "themrole": [
+               {
+                  "vnrole": "patient",
+                  "vncls": "eat-39.1-3"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         },
+         {
+            "slot": 2,
+            "descriptions": [],
+            "themrole": [
+               {
+                  "vnrole": "source",
+                  "vncls": "eat-39.1-3"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         }
+      ],
+      "predicates": [
+         {
+            "bool": "",
+            "name": "has_location",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "2"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "consume",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e1"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               }
+            ]
+         }
+      ],
+      "frames": [
+         "ingest_substance"
+      ]
+   },
+   "swallow": {
+      "lemma": "swallow",
+      "type": "verb",
+      "description": "pass through the esophagus",
+      "examples": [
+         "It is easier to swallow pills if you take them with some water.",
+         "Jonah was swallowed by a whale.",
+         "The fish was too big for the bird to swallow whole.",
+         "Bob swallowed hard, took a deep breath and jumped off the high dive.",
+         "The patient is having trouble swallowing.",
+         "There was an old lady who swallowed a cow. I don't know why swallowed the cow."
+      ],
+      "slots": [
+         {
+            "slot": 0,
+            "descriptions": [
+               "swallower",
+               "swallower"
+            ],
+            "themrole": [
+               {
+                  "vnrole": "agent",
+                  "vncls": "gobble-39.3-2"
+               },
+               {
+                  "vnrole": "agent",
+                  "vncls": "hiccup-40.1.1"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         },
+         {
+            "slot": 1,
+            "descriptions": [
+               "thing_swallowed"
+            ],
+            "themrole": [
+               {
+                  "vnrole": "patient",
+                  "vncls": "gobble-39.3-2"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         }
+      ],
+      "predicates": [
+         {
+            "bool": "",
+            "name": "body_process",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "involuntary",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "consume",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e1"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               }
+            ]
+         }
+      ],
+      "frames": []
+   },
+   "swim": {
+      "lemma": "swim",
+      "type": "verb",
+      "description": "Travel (as if) through water.",
+      "examples": [
+         "He swam to the island.",
+         "We had to swim for twenty minutes to reach the shore.",
+         "A big fish was swimming in the tank.",
+         "We were swimming through mounds of paperwork.",
+         "She was swimming in admiration.",
+         "The bacteria swim through the blood stream and eventually reach the heart."
+      ],
+      "slots": [
+         {
+            "slot": 0,
+            "descriptions": [
+               "swimmer",
+               "swimmer"
+            ],
+            "themrole": [
+               {
+                  "vnrole": "theme",
+                  "vncls": "run-51.3.2"
+               },
+               {
+                  "vnrole": "theme",
+                  "vncls": "swarm-47.5.1"
+               },
+               {
+                  "vnrole": "theme",
+                  "vncls": "run-51.3.2-1"
+               },
+               {
+                  "vnrole": "theme",
+                  "vncls": "swarm-47.5.1-1"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         },
+         {
+            "slot": 1,
+            "descriptions": [
+               "course_(eg_channel)",
+               "course_(eg_channel)"
+            ],
+            "themrole": [
+               {
+                  "vnrole": "location",
+                  "vncls": "run-51.3.2"
+               },
+               {
+                  "vnrole": "location",
+                  "vncls": "swarm-47.5.1"
+               },
+               {
+                  "vnrole": "destination",
+                  "vncls": "run-51.3.2-1"
+               },
+               {
+                  "vnrole": "location",
+                  "vncls": "swarm-47.5.1-1"
+               },
+               {
+                  "vnrole": "destination",
+                  "vncls": "run-51.3.2"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         },
+         {
+            "slot": 2,
+            "descriptions": [
+               "to_where_destination_end_state"
+            ],
+            "themrole": [
+               {
+                  "vnrole": "initial_location",
+                  "vncls": "run-51.3.2-1"
+               },
+               {
+                  "vnrole": "initial_location",
+                  "vncls": "run-51.3.2"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         },
+         {
+            "slot": 3,
+            "descriptions": [],
+            "themrole": [
+               {
+                  "vnrole": "trajectory",
+                  "vncls": "run-51.3.2-1"
+               },
+               {
+                  "vnrole": "trajectory",
+                  "vncls": "run-51.3.2"
+               }
+            ],
+            "implicit": false,
+            "implicit_values": []
+         }
+      ],
+      "predicates": [
+         {
+            "bool": "",
+            "name": "motion",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "ee"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "3"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "has_location",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e1"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "2"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "exist",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e1"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "motion",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "ee2"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "3"
+               }
+            ]
+         },
+         {
+            "bool": "!",
+            "name": "has_location",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "ee2"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "2"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "has_location",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e2"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "motion",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e2"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "has_location",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e3"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "1"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "motion",
+            "args": [
+               {
+                  "type": "event",
+                  "slot": "e3"
+               },
+               {
+                  "type": "themrole",
+                  "slot": "0"
+               }
+            ]
+         }
+      ],
+      "frames": [
+         "self_motion"
       ]
    }
 }

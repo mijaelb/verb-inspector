@@ -22,6 +22,10 @@ class VerbNetBase(object):
     def __init__(self):
         self.classes = {}
 
+    def get_info(self):
+        ''' Get a dictionary with information about the VerbNet dataset '''
+        return {'classes': len(self.get_classes()), 'predicates': len(self.get_all_predicates_name())}
+
     def get_classes(self, lemma='', class_ids=[], is_sorted=False):
         classes = getattr(self, 'classes', {})
         if classes:
