@@ -14133,7 +14133,7 @@
          },
          {
             "bool": "",
-            "name": "part",
+            "name": "part_of",
             "args": [
                {
                   "type": "themrole",
@@ -14310,7 +14310,7 @@
          },
          {
             "bool": "",
-            "name": "part",
+            "name": "part_of",
             "args": [
                {
                   "type": "themrole",
@@ -14489,7 +14489,7 @@
          },
          {
             "bool": "",
-            "name": "part",
+            "name": "part_of",
             "args": [
                {
                   "type": "themrole",
@@ -14609,7 +14609,7 @@
          },
          {
             "bool": "",
-            "name": "part",
+            "name": "part_of",
             "args": [
                {
                   "type": "event",
@@ -20087,7 +20087,7 @@
          },
          {
             "bool": "",
-            "name": "value",
+            "name": "has_value",
             "args": [
                {
                   "type": "event",
@@ -20105,7 +20105,7 @@
          },
          {
             "bool": "",
-            "name": "change",
+            "name": "change_value",
             "args": [
                {
                   "type": "event",
@@ -20145,7 +20145,7 @@
          },
          {
             "bool": "",
-            "name": "value",
+            "name": "has_value",
             "args": [
                {
                   "type": "event",
@@ -20242,7 +20242,7 @@
          },
          {
             "bool": "",
-            "name": "value",
+            "name": "has_value",
             "args": [
                {
                   "type": "event",
@@ -20260,7 +20260,7 @@
          },
          {
             "bool": "",
-            "name": "change",
+            "name": "change_value",
             "args": [
                {
                   "type": "event",
@@ -20300,7 +20300,7 @@
          },
          {
             "bool": "",
-            "name": "value",
+            "name": "has_value",
             "args": [
                {
                   "type": "event",
@@ -23864,7 +23864,7 @@
          },
          {
             "bool": "",
-            "name": "value",
+            "name": "has_value",
             "args": [
                {
                   "type": "event",
@@ -23924,7 +23924,7 @@
          },
          {
             "bool": "",
-            "name": "change",
+            "name": "change_value",
             "args": [
                {
                   "type": "event",
@@ -23950,7 +23950,7 @@
          },
          {
             "bool": "",
-            "name": "value",
+            "name": "has_value",
             "args": [
                {
                   "type": "event",
@@ -23999,12 +23999,12 @@
       "cleaned": false,
       "args": [
          {
-            "value": "patient",
+            "value": "causer",
             "slot": 0,
             "implicit": false
          },
          {
-            "value": "extent",
+            "value": "patient",
             "slot": 1,
             "implicit": false
          },
@@ -24014,28 +24014,23 @@
             "implicit": false
          },
          {
-            "value": "direction",
+            "value": "extent",
             "slot": 3,
             "implicit": false
          },
          {
-            "value": "initial_state",
+            "value": "direction",
             "slot": 4,
             "implicit": false
          },
          {
-            "value": "causer",
+            "value": "initial_state",
             "slot": 5,
             "implicit": false
          },
          {
             "value": "result",
             "slot": 6,
-            "implicit": false
-         },
-         {
-            "value": "intial_state",
-            "slot": 7,
             "implicit": false
          }
       ],
@@ -24060,7 +24055,7 @@
          },
          {
             "bool": "",
-            "name": "value",
+            "name": "has_value",
             "args": [
                {
                   "type": "event",
@@ -24092,6 +24087,50 @@
          },
          {
             "bool": "",
+            "name": "change_value",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e3"
+               },
+               {
+                  "type": "themrole",
+                  "value": "patient"
+               },
+               {
+                  "type": "verbspecific",
+                  "value": "direction"
+               },
+               {
+                  "type": "themrole",
+                  "value": "extent"
+               },
+               {
+                  "type": "themrole",
+                  "value": "attribute"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "has_value",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e4"
+               },
+               {
+                  "type": "themrole",
+                  "value": "patient"
+               },
+               {
+                  "type": "themrole",
+                  "value": "result"
+               }
+            ]
+         },
+         {
+            "bool": "",
             "name": "cause",
             "args": [
                {
@@ -24115,94 +24154,6 @@
                {
                   "type": "event",
                   "value": "e3"
-               }
-            ]
-         },
-         {
-            "bool": "",
-            "name": "change",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e2"
-               },
-               {
-                  "type": "themrole",
-                  "value": "patient"
-               },
-               {
-                  "type": "verbspecific",
-                  "value": "direction"
-               },
-               {
-                  "type": "themrole",
-                  "value": "extent"
-               },
-               {
-                  "type": "themrole",
-                  "value": "attribute"
-               }
-            ]
-         },
-         {
-            "bool": "",
-            "name": "change",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e3"
-               },
-               {
-                  "type": "themrole",
-                  "value": "patient"
-               },
-               {
-                  "type": "verbspecific",
-                  "value": "direction"
-               },
-               {
-                  "type": "themrole",
-                  "value": "extent"
-               },
-               {
-                  "type": "themrole",
-                  "value": "attribute"
-               }
-            ]
-         },
-         {
-            "bool": "",
-            "name": "value",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e3"
-               },
-               {
-                  "type": "themrole",
-                  "value": "patient"
-               },
-               {
-                  "type": "themrole",
-                  "value": "result"
-               }
-            ]
-         },
-         {
-            "bool": "",
-            "name": "value",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e4"
-               },
-               {
-                  "type": "themrole",
-                  "value": "patient"
-               },
-               {
-                  "type": "themrole",
-                  "value": "result"
                }
             ]
          }
@@ -35073,7 +35024,7 @@
    },
    "cooking-45.3": {
       "id": "cooking-45.3",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -35097,7 +35048,7 @@
          },
          {
             "value": "result",
-            "slot": 4,
+            "slot": 3,
             "implicit": false
          }
       ],
@@ -35172,20 +35123,6 @@
          },
          {
             "bool": "",
-            "name": "cause",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e3"
-               },
-               {
-                  "type": "event",
-                  "value": "e4"
-               }
-            ]
-         },
-         {
-            "bool": "",
             "name": "cooked",
             "args": [
                {
@@ -35217,6 +35154,20 @@
                {
                   "type": "themrole",
                   "value": "result"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "cause",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e3"
+               },
+               {
+                  "type": "event",
+                  "value": "e4"
                }
             ]
          }
@@ -36694,7 +36645,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "value",
+            "name": "has_value",
             "args": [
                {
                   "type": "event",
@@ -36962,7 +36913,7 @@
          },
          {
             "bool": "",
-            "name": "part",
+            "name": "part_of",
             "args": [
                {
                   "type": "themrole",
@@ -39286,7 +39237,7 @@
          },
          {
             "bool": "",
-            "name": "part",
+            "name": "part_of",
             "args": [
                {
                   "type": "verbspecific",
@@ -41479,20 +41430,6 @@
             ]
          },
          {
-            "bool": "",
-            "name": "cause",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e2"
-               },
-               {
-                  "type": "event",
-                  "value": "e3"
-               }
-            ]
-         },
-         {
             "bool": "!",
             "name": "alive",
             "args": [
@@ -41503,6 +41440,20 @@
                {
                   "type": "themrole",
                   "value": "patient"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "cause",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e2"
+               },
+               {
+                  "type": "event",
+                  "value": "e3"
                }
             ]
          }
@@ -47238,12 +47189,12 @@
             "implicit": false
          },
          {
-            "value": "initial_location",
+            "value": "destination",
             "slot": 1,
             "implicit": false
          },
          {
-            "value": "destination",
+            "value": "initial_location",
             "slot": 2,
             "implicit": false
          },
@@ -49394,7 +49345,7 @@
    },
    "exclude-107.3": {
       "id": "exclude-107.3",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -49455,7 +49406,7 @@
    },
    "exclude-107.3-1": {
       "id": "exclude-107.3-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -52679,7 +52630,7 @@
          },
          {
             "bool": "",
-            "name": "part",
+            "name": "part_of",
             "args": [
                {
                   "type": "themrole",
@@ -60435,7 +60386,7 @@
          },
          {
             "bool": "",
-            "name": "part",
+            "name": "part_of",
             "args": [
                {
                   "type": "themrole",
@@ -60574,7 +60525,7 @@
          },
          {
             "bool": "",
-            "name": "part",
+            "name": "part_of",
             "args": [
                {
                   "type": "themrole",
@@ -60804,7 +60755,7 @@
          },
          {
             "bool": "",
-            "name": "part",
+            "name": "part_of",
             "args": [
                {
                   "type": "themrole",
@@ -61082,7 +61033,7 @@
          },
          {
             "bool": "",
-            "name": "part",
+            "name": "part_of",
             "args": [
                {
                   "type": "event",
@@ -61386,7 +61337,7 @@
          },
          {
             "bool": "",
-            "name": "part",
+            "name": "part_of",
             "args": [
                {
                   "type": "event",
@@ -80426,7 +80377,7 @@
          },
          {
             "bool": "",
-            "name": "part",
+            "name": "part_of",
             "args": [
                {
                   "type": "themrole",
@@ -82312,7 +82263,7 @@
          },
          {
             "bool": "",
-            "name": "part",
+            "name": "part_of",
             "args": [
                {
                   "type": "verbspecific",
@@ -85842,7 +85793,7 @@
          },
          {
             "bool": "",
-            "name": "value",
+            "name": "has_value",
             "args": [
                {
                   "type": "event",
@@ -89774,7 +89725,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "value",
+            "name": "has_value",
             "args": [
                {
                   "type": "event",
@@ -89837,7 +89788,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "value",
+            "name": "has_value",
             "args": [
                {
                   "type": "event",
@@ -89855,7 +89806,7 @@
          },
          {
             "bool": "",
-            "name": "value",
+            "name": "has_value",
             "args": [
                {
                   "type": "event",
@@ -89932,7 +89883,7 @@
       "predicates": [
          {
             "bool": "",
-            "name": "value",
+            "name": "has_value",
             "args": [
                {
                   "type": "event",
@@ -99175,7 +99126,7 @@
    },
    "scribble-25.2": {
       "id": "scribble-25.2",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -99228,20 +99179,6 @@
          },
          {
             "bool": "",
-            "name": "cause",
-            "args": [
-               {
-                  "type": "event",
-                  "value": "e2"
-               },
-               {
-                  "type": "event",
-                  "value": "e3"
-               }
-            ]
-         },
-         {
-            "bool": "",
             "name": "be",
             "args": [
                {
@@ -99256,7 +99193,7 @@
          },
          {
             "bool": "",
-            "name": "part",
+            "name": "part_of",
             "args": [
                {
                   "type": "event",
@@ -99269,6 +99206,20 @@
                {
                   "type": "themrole",
                   "value": "destination"
+               }
+            ]
+         },
+         {
+            "bool": "",
+            "name": "cause",
+            "args": [
+               {
+                  "type": "event",
+                  "value": "e2"
+               },
+               {
+                  "type": "event",
+                  "value": "e3"
                }
             ]
          }
@@ -99468,7 +99419,7 @@
          },
          {
             "bool": "",
-            "name": "part",
+            "name": "part_of",
             "args": [
                {
                   "type": "event",
@@ -106082,7 +106033,7 @@
          },
          {
             "bool": "",
-            "name": "part",
+            "name": "part_of",
             "args": [
                {
                   "type": "themrole",
@@ -113742,7 +113693,7 @@
          },
          {
             "bool": "",
-            "name": "part",
+            "name": "part_of",
             "args": [
                {
                   "type": "themrole",
@@ -116213,7 +116164,7 @@
          },
          {
             "bool": "",
-            "name": "part",
+            "name": "part_of",
             "args": [
                {
                   "type": "themrole",
@@ -116633,7 +116584,7 @@
          },
          {
             "bool": "",
-            "name": "part",
+            "name": "part_of",
             "args": [
                {
                   "type": "themrole",
@@ -116856,7 +116807,7 @@
          },
          {
             "bool": "",
-            "name": "part",
+            "name": "part_of",
             "args": [
                {
                   "type": "themrole",
@@ -117188,7 +117139,7 @@
          },
          {
             "bool": "",
-            "name": "part",
+            "name": "part_of",
             "args": [
                {
                   "type": "event",
@@ -119236,7 +119187,7 @@
    },
    "use-105.1": {
       "id": "use-105.1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "agent",
@@ -119938,7 +119889,7 @@
    },
    "vehicle-51.4.1-1": {
       "id": "vehicle-51.4.1-1",
-      "cleaned": false,
+      "cleaned": true,
       "args": [
          {
             "value": "theme",
@@ -122232,7 +122183,7 @@
          },
          {
             "bool": "",
-            "name": "part",
+            "name": "part_of",
             "args": [
                {
                   "type": "themrole",
