@@ -53,6 +53,9 @@ class PlotPointContainer(object):
         self.bso = ''
         self.plotpoints = self.load_plotpoints()
 
+    def get_info(self):
+        return {'plotpoints': len(self.plotpoints)}
+
     def load(self, filename=''):
         if filename:
             json_path = filename

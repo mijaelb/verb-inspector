@@ -47,6 +47,7 @@ class EditPlotPointWidget(QtWidgets.QWidget):
         self.framesLabel = QtWidgets.QLabel('Frames ▾')
         self.classesLabel = QtWidgets.QLabel('Classes ▾')
         self.predicatesLabel = QtWidgets.QLabel('Compiled predicates ▾')
+        self.infoLabel = QtWidgets.QLabel(str(self.pp_container.get_info()))
 
         self.plotPointsList = QtWidgets.QListWidget()
         self.plotPointsList.currentItemChanged.connect(self.updatePlotPoint)
@@ -171,6 +172,7 @@ class EditPlotPointWidget(QtWidgets.QWidget):
         self.plotPointsListLayout.addLayout(self.plotPointsFilterButtons)
         self.plotPointsListLayout.addWidget(self.plotPointsCompileButton)
         self.plotPointsListLayout.addLayout(self.plotPointsButtons)
+        self.plotPointsListLayout.addWidget(self.infoLabel)
 
         self.layout = QtWidgets.QHBoxLayout()
         self.layout.addLayout(self.plotPointsListLayout)

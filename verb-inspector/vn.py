@@ -97,6 +97,14 @@ class VerbNetBase(object):
                     classes.append(cls)
         return classes
 
+    def get_themroles_name(self):
+        ''' :return a list with the thematic role used as argument within the classes '''
+        themroles = []
+        for cls, obj in self.classes.items():
+            for arg in obj.args:
+                themroles.append(arg.value)
+        return list(dict(Counter(themroles)).keys())
+
     def get_class(self, class_id):
         if class_id in self.classes:
             return self.classes[class_id]

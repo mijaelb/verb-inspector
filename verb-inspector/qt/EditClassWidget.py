@@ -20,7 +20,7 @@ class EditClassWidget(QtWidgets.QWidget):
         self.currentClass = None
         self.currentPred = None
         self.currentClasses = None
-
+        print(self.pp_container.verbnet.get_themroles_name())
         self.plotPointWidget = None
         self.editArgWidget = EditArgWidget()
         self.infoLabel = QtWidgets.QLabel(str(self.pp_container.verbnet.get_info()))
@@ -73,7 +73,6 @@ class EditClassWidget(QtWidgets.QWidget):
         self.updateClassesList()
 
         self.classSelectLayout = QtWidgets.QVBoxLayout()
-        self.classSelectLayout.addWidget(self.infoLabel)
         self.classSelectLayout.addWidget(self.reloadClassButton)
         self.classSelectLayout.addWidget(self.classesLabel)
         self.classSelectLayout.addWidget(self.classesList)
@@ -82,6 +81,7 @@ class EditClassWidget(QtWidgets.QWidget):
         self.classSelectLayout.addWidget(self.predsList)
         self.classSelectLayout.addLayout(self.filterButtons)
         self.classSelectLayout.addLayout(self.classButtons)
+        self.classSelectLayout.addWidget(self.infoLabel)
 
         self.editPredWidget = EditPredWidget(parent=self)
 
